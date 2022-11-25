@@ -10,6 +10,11 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
+# Ignore everything in this directory
+*.i??
+.idea
+*.DS_Store
+
 # Package Files #
 *.jar
 *.war
