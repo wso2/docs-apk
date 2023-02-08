@@ -49,67 +49,120 @@ strict: false
 nav:
     - Documentation: index.md
     - Get Started:
-        - Quick Start Guide: get-started/quick-start-guide.md
-        - Concepts:
-            - Architecture: get-started/architecture.md
-            - Gateway: get-started/gateway.md
-        - About this Release: get-started/about-this-release.md
-    - Develop and Deploy API:
-        - Create an API from a Service:
-            - Create an API: develop-and-deploy-api/api-from-a-service/create-an-api.md
-            - Attach an interface to the API: develop-and-deploy-api/api-from-a-service/attach-api-interface.md
-        - Discover Your Services: develop-and-deploy-api/discover-your-services.md
-        - Create an API Proxy:
-            - From Scratch: develop-and-deploy-api/create-an-api-proxy/from-scratch.md
-            - From an Existing Definition: 
-                - REST API from an OAS: develop-and-deploy-api/create-an-api-proxy/from-existing-definition/rest-api-using-oas.md
-        - Test API: develop-and-deploy-api/test-api.md
+        - Get Started - Overview: get-started/get-started-overview.md
+        - Quick Start: get-started/quick-start-guide.md
+        - Basic Flow:
+            - Overview: restapi/overview.md
+            - Create an API: restapi/create-api.md
+            - Discover Services: restapi/discover-your-services.md
+            - Create an API Proxy:
+                - From Scratch: develop-and-deploy-api/create-an-api-proxy/from-scratch.md
+                - From an Existing Definition: develop-and-deploy-api/create-an-api-proxy/from-existing-definition.md
+            - Test API: develop-and-deploy-api/test-api.md
+            - Publish Your API: manage-apis/publish-your-api.md
+    - API Management:
+        - Develop and Deploy API:
+            - API Versions:
+                - Create an API Version: develop-and-deploy-api/api-versions/create-an-api-versions.md
+                - Default Version: develop-and-deploy-api/api-versions/default-version.md
+                - Backward Compatibility: develop-and-deploy-api/api-versions/backward-compatibility.md
+            - API Policies:
+                - Overview: develop-and-deploy-api/api-policies-overview.md
+                - Attach Policies: develop-and-deploy-api/api-policies/attach-policies.md
+                - Create a Policy: develop-and-deploy-api/api-policies/create-a-policy.md
+            - Rate Limiting: develop-and-deploy-api/rate-limiting.md
+            - API Security:
+                - Authentication:
+                    - Enable API Security:
+                        - JWT: develop-and-deploy-api/security/authentication/enable-api-security/jwt.md
+                        - MTLS: develop-and-deploy-api/security/authentication/enable-api-security/mtls.md
+                        - API Key: develop-and-deploy-api/security/authentication/enable-api-security/api-key.md
+                        - Internal Key: develop-and-deploy-api/security/authentication/enable-api-security/internal-key.md
+                    - Disable API Security: develop-and-deploy-api/security/authentication/disable-api-security.md
+                - Authorization:
+                    - Access Control for API Requests: develop-and-deploy-api/security/authorization/access-control-for-api-requests.md
+        - Manage APIs:
+            - API Documentation: manage-apis/api-documentation.md
+            - Consumer Management:
+                - Subscription Availability: manage-apis/consumer-management/subscription-availability.md
+                - API Visibility: manage-apis/consumer-management/api-visibility.md
+            - Usage Plans:
+                - Add a New Rate Limiting Policy: manage-apis/usage-plans/add-a-new-rate-limiting-policy.md
+                - Set Limits for Rate Limiting: manage-apis/usage-plans/set-limits-for-rate-limiting.md
+            - Lifecycle Management:
+                - API Lifecycle Overview: manage-apis/lifecycle-management/api-lifecycle-overview.md
+                - Manage API Lifecycle: manage-apis/lifecycle-management/manage-api-lifecycle.md
+                - Customize API Lifecycles: manage-apis/lifecycle-management/customize-api-lifecycles.md
+                - Extending API Lifecycles: manage-apis/lifecycle-management/extending-api-lifecycles.md
+            - Community Engagement:
+                - Community URLs: manage-apis/community-engagement/community-urls.md
+                - Share API Link: manage-apis/community-engagement/share-api-link.md
+                - Comment on API: manage-apis/community-engagement/comment-on-api.md
+            - API Categorization: manage-apis/api-categorization.md
+            - API Monetization: manage-apis/api-monetization.md
+    - Catalogs:
+        - CLI Catalog: cli-reference/cli-reference1.md
+        - API Catalog:
+            - Overview - API Catalog: api-reference/api-catalog.md
+            - Gateway APIs: api-reference/gateway.md
+            - Publisher APIs: api-reference/publisher.md
+            - Developer Portal APIs: api-reference/developer-portal.md
+    - About this Release:
+        - Release Notes: release/about-this-release.md
+        - Architecture: release/architecture.md
+        - Product Pitch: https://wso2.com/api-manager
+        - Key Concepts:
+            - Key Concept1: release/key-concepts/key-concept1.md
+            - Key Concept2: release/key-concepts/key-concept1.md
+        - WSO2 APK Deck:
+            - Gateway:
+                - Gateway - Overview: apk-deck/gateway-overview.md
+                - APIs: api-reference/gateway.md
+                - Topic 1: get-started/dummy.md
+                - Topic 2: get-started/dummy.md
+            - Key Manager:
+                - Key Manager - Overview: get-started/dummy.md
+                - Topic 1: get-started/dummy.md
+                - Topic 2: get-started/dummy.md
+            - Publisher: 
+                - Publisher Overview: apk-deck/publisher-overview.md
+                - Access: get-started/dummy.md
+                - APIs: api-reference/publisher.md
+                - Topic 1: get-started/dummy.md
+                - Topic 2: get-started/dummy.md
+                - GraphQL: 
+                    - Test API: develop-and-deploy-api/test-graphql-api.md
+                - WebSocket:
+                    - Test API: develop-and-deploy-api/test-websocket-api.md
+                - SOAP:
+                    - Test API: develop-and-deploy-api/test-soap-api.md
+            - Developer Portal:
+                - Developer Portal - Overview: get-started/dummy.md
+                - Access: get-started/dummy.md
+                - APIs: api-reference/developer-portal.md
+                - Topic 1: get-started/dummy.md
+                - Topic 2: get-started/dummy.md
+            - Admin Portal:
+                - Admin Portal - Overview: get-started/dummy.md
+                - Access: get-started/dummy.md
+                - Topic 1: get-started/dummy.md
+                - Topic 2: get-started/dummy.md
+            - Analytics Dashboard: get-started/dummy.md
+    - Setup: 
+        - Prerequisites: setup/prerequisites.md
+        - Deploy:
+            - Deployment Patterns: get-started/dummy.md
+            - All-in-one: get-started/dummy.md
+            - Distributed:
+                - Deployment Pattern 2: get-started/dummy.md
+                - Deployment Pattern 3: get-started/dummy.md
         - CI/CD: develop-and-deploy-api/ci-cd.md
-        - GraphQL: 
-            - Test API: develop-and-deploy-api/test-graphql-api.md
-        - WebSocket:
-            - Test API: develop-and-deploy-api/test-websocket-api.md
-        - SOAP:
-            - Test API: develop-and-deploy-api/test-soap-api.md
-        - API Versions:
-            - Create an API Version: develop-and-deploy-api/api-versions/create-an-api-versions.md
-            - Default Version: develop-and-deploy-api/api-versions/default-version.md
-            - Backward Compatibility: develop-and-deploy-api/api-versions/backward-compatibility.md
-        - API Policies:
-            - Overview: develop-and-deploy-api/api-policies-overview.md
-            - Attach Policies: develop-and-deploy-api/api-policies/attach-policies.md
-            - Create a Policy: develop-and-deploy-api/api-policies/create-a-policy.md
-        - Rate Limiting: develop-and-deploy-api/rate-limiting.md
-        - API Security:
-            - Authentication:
-                - Enable API Security:
-                    - JWT: develop-and-deploy-api/security/authentication/enable-api-security/jwt.md
-                    - MTLS: develop-and-deploy-api/security/authentication/enable-api-security/mtls.md
-                    - API Key: develop-and-deploy-api/security/authentication/enable-api-security/api-key.md
-                    - Internal Key: develop-and-deploy-api/security/authentication/enable-api-security/internal-key.md
-                - Disable API Security: develop-and-deploy-api/security/authentication/disable-api-security.md
-            - Authorization:
-                - Access Control for API Requests: develop-and-deploy-api/security/authorization/access-control-for-api-requests.md
-    - Manage APIs:
-        - API Documentation: manage-apis/api-documentation.md
-        - Consumer Management:
-            - Subscription Availability: manage-apis/consumer-management/subscription-availability.md
-            - API Visibility: manage-apis/consumer-management/api-visibility.md
-        - Usage Plans:
-            - Add a New Rate Limiting Policy: manage-apis/usage-plans/add-a-new-rate-limiting-policy.md
-            - Set Limits for Rate Limiting: manage-apis/usage-plans/set-limits-for-rate-limiting.md
-        - Lifecycle Management:
-            - API Lifecycle Overview: manage-apis/lifecycle-management/api-lifecycle-overview.md
-            - Manage API Lifecycle: manage-apis/lifecycle-management/manage-api-lifecycle.md
-            - Customize API Lifecycles: manage-apis/lifecycle-management/customize-api-lifecycles.md
-            - Extending API Lifecycles: manage-apis/lifecycle-management/extending-api-lifecycles.md
-        - Community Engagement:
-            - Community URLs: manage-apis/community-engagement/community-urls.md
-            - Share API Link: manage-apis/community-engagement/comment-on-api.md
-            - Comment on API: manage-apis/community-engagement/comment-on-api.md
-        - API Categorization: manage-apis/api-categorization.md
-        - API Monetization: manage-apis/api-monetization.md
-        - Publish Your API: manage-apis/publish-your-api.md
+    - Reach Out:
+        - Support: get-started/dummy.md #https://wso2.com/subscription/#support
+        - Community: reachout/community.md # Breif description and links to Discord and Stack OverFlow
+        - Report Bugs: get-started/dummy.md # Breif description and links to Git links for doc issues and product issues
+        - Training and Certification: get-started/dummy.md #https://wso2.com/training/
+        - Resources: get-started/dummy.md #https://wso2.com/library/
 
 # Extensions
 markdown_extensions:
