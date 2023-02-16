@@ -4,10 +4,8 @@
 
 1. If you want to run APK on your local machine, you need to install [Rancher Desktop](https://docs.rancherdesktop.io/getting-started/installation), [minikube](https://minikube.sigs.k8s.io/), [kind](https://kind.sigs.k8s.io/docs/) or a similar software.
 
-    >**Note**
-    >
-    >It is recommended to use [Rancher Desktop](https://docs.rancherdesktop.io/getting-started/installation) if you are using macOS Apple Silicon (M1).
-    >
+    !!! note
+        It is recommended to use [Rancher Desktop](https://docs.rancherdesktop.io/getting-started/installation) if you are using macOS Apple Silicon (M1).
 
 2. Install [Helm](https://helm.sh/docs/intro/install/).
 
@@ -30,9 +28,7 @@ Deploy APK DS servers and CloudNativePG in the Kubernetes clutser.
 
 2. Navigate to the `<HELM-HOME>` directory.
 
-     ```
-     cd <HELM-HOME>
-     ```
+      `cd <HELM-HOME>`
 
 3. Define the path of the Bitnami Library for Kubernetes, which is a dependency in Helm.
 
@@ -52,13 +48,13 @@ Deploy APK DS servers and CloudNativePG in the Kubernetes clutser.
      helm dependency build
      ```
 
-5.  Install the APK components.
+6.  Install the APK components.
 
      ```
      helm install apk-test . -n apk
      ```
 
-6.  Verify the deployment
+7.  Verify the deployment
 
      ```
      kubectl get pods -n apk

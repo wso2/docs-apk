@@ -101,13 +101,16 @@ nav:
             - API Categorization: manage-apis/api-categorization.md
             - API Monetization: manage-apis/api-monetization.md
     - Catalogs:
-        - CLI Catalog: cli-reference/cli-reference1.md
         - API Catalog:
-            - Overview - API Catalog: api-reference/api-catalog.md
-            - Gateway APIs: api-reference/gateway.md
-            - Publisher APIs: api-reference/publisher.md
-            - Developer Portal APIs: api-reference/developer-portal.md
-    - About this Release:
+            - Overview - API Catalog: catalogs/api-catalog.md
+            - Gateway APIs: catalogs/api-reference-gateway.md
+            - Back Office APIs: catalogs/api-reference-back-office
+            - Runtime APIs: catalogs/api-reference-runtime.md
+            - Developer Portal APIs: catalogs/api-reference-developer-portal.md
+            - Admin APIs: catalogs/api-reference-admin.md
+        - CLI Catalog: catalogs/cli-reference.md
+        - CRD Catalog: catalogs/kubernetes-crds.md
+    - References:
         - Release Notes: release/about-this-release.md
         - Architecture: release/architecture.md
         - Product Pitch: https://wso2.com/api-manager
@@ -115,19 +118,20 @@ nav:
             - Key Concept1: release/key-concepts/key-concept1.md
             - Key Concept2: release/key-concepts/key-concept1.md
         - WSO2 APK Deck:
+            - APK Deck Overview: apk-deck/overview.md
             - Gateway:
                 - Gateway - Overview: apk-deck/gateway-overview.md
-                - APIs: api-reference/gateway.md
+                - APIs: catalogs/api-reference-gateway.md
                 - Topic 1: get-started/dummy.md
                 - Topic 2: get-started/dummy.md
             - Key Manager:
                 - Key Manager - Overview: get-started/dummy.md
                 - Topic 1: get-started/dummy.md
                 - Topic 2: get-started/dummy.md
-            - Publisher: 
-                - Publisher Overview: apk-deck/publisher-overview.md
+            - Back Office: 
+                - Back Office Overview: apk-deck/back-office-overview.md
                 - Access: get-started/dummy.md
-                - APIs: api-reference/publisher.md
+                - APIs: catalogs/api-reference-back-office.md
                 - Topic 1: get-started/dummy.md
                 - Topic 2: get-started/dummy.md
                 - GraphQL: 
@@ -136,20 +140,27 @@ nav:
                     - Test API: develop-and-deploy-api/test-websocket-api.md
                 - SOAP:
                     - Test API: develop-and-deploy-api/test-soap-api.md
+            - Runtime:
+                - Runtime Overview: apk-deck/runtime-overview.md
+                - Access: get-started/dummy.md
+                - APIs: catalogs/api-reference-runtime.md
+                - Topic 1: get-started/dummy.md
+                - Topic 2: get-started/dummy.md
             - Developer Portal:
                 - Developer Portal - Overview: get-started/dummy.md
                 - Access: get-started/dummy.md
-                - APIs: api-reference/developer-portal.md
+                - APIs: catalogs/api-reference-developer-portal.md
                 - Topic 1: get-started/dummy.md
                 - Topic 2: get-started/dummy.md
             - Admin Portal:
                 - Admin Portal - Overview: get-started/dummy.md
                 - Access: get-started/dummy.md
+                - APIs: catalogs/api-reference-admin.md
                 - Topic 1: get-started/dummy.md
                 - Topic 2: get-started/dummy.md
-            - Analytics Dashboard: get-started/dummy.md
     - Setup: 
         - Prerequisites: setup/prerequisites.md
+        - Install: setup/install.md
         - Deploy:
             - Deployment Patterns: get-started/dummy.md
             - All-in-one: get-started/dummy.md
@@ -157,6 +168,13 @@ nav:
                 - Deployment Pattern 2: get-started/dummy.md
                 - Deployment Pattern 3: get-started/dummy.md
         - CI/CD: develop-and-deploy-api/ci-cd.md
+        - Customizations:
+            - Gateway: 
+                - Customization 1: setup/gateway-customizations.md
+                - Customization 2: setup/gateway-customizations.md
+            - Key Manager:
+                - Customization 1: setup/gateway-customizations.md
+                - Customization 2: setup/gateway-customizations.md
     - Reach Out:
         - Support: get-started/dummy.md #https://wso2.com/subscription/#support
         - Community: reachout/community.md # Breif description and links to Discord and Stack OverFlow
