@@ -1,0 +1,23 @@
+{
+  "name": "@xiaopanda/vuepress-plugin-code-copy",
+  "version": "1.0.3",
+  "description": "A vuepress plugin that copies code blocks with one click.",
+  "keywords": [
+    "vuepress",
+    "vuepress plugin",
+    "code copy",
+    "copy",
+    "clipboard"
+  ],
+  "homepage": "https://github.com/panxingcheng/vuepress-plugin-code-copy#readme",
+  "bugs": {
+    "url": "https://github.com/panxingcheng/vuepress-plugin-code-copy/issues"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/panxingcheng/vuepress-plugin-code-copy"
+  },
+  "author": "Pan"
+}

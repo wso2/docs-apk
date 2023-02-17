@@ -1,0 +1,20 @@
+{
+  "name": "markdown-it-meta",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "index.js"
+  },
+  "dependencies": {
+    "js-yaml": "^3.8.1"
+  },
+  "description": "Markdown-it Metadata as yaml for markdown documents",
+  "main": "index.js",
+  "keywords": [
+    "markdown-it",
+    "yaml",
+    "metadata",
+    "markdown"
+  ],
+  "author": "scott-wyatt",
+  "license": "MIT"
+}
