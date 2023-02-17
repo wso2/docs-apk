@@ -1,0 +1,37 @@
+{
+  "name": "apk-docs",
+  "version": "0.0.610",
+  "description": "APK Documentation",
+  "authors": {
+    "name": "",
+    "email": ""
+  },
+  "scripts": {
+    "predev": "vuepress check-md docs",
+    "dev": "vuepress dev docs",
+    "prebuild": "vuepress check-md docs",
+    "build": "vuepress build docs",
+    "postbuild": "sh check-links.sh"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.8.2",
+    "@vuepress/plugin-medium-zoom": "^1.8.2",
+    "@xiaopanda/vuepress-plugin-code-copy": "^1.0.3",
+    "broken-link-checker": "^0.7.8",
+    "markdown-it-html5-embed": "^1.0.0",
+    "serve": "^12.0.0",
+    "vue-tabs-component": "^1.5.0",
+    "vuepress": "^1.8.2",
+    "vuepress-bar": "^0.3.5",
+    "vuepress-plugin-auto-sidebar": "^1.5.0",
+    "vuepress-plugin-check-md": "0.0.2",
+    "vuepress-plugin-chunkload-redirect": "^1.0.3",
+    "vuepress-plugin-tabs": "^0.3.0",
+    "vuepress-theme-hope": "^1.13.1"
+  },
+  "dependencies": {
+    "@microsoft/applicationinsights-web": "^2.7.2",
+    "vuepress-plugin-robots": "^1.0.1"
+  }
+}
