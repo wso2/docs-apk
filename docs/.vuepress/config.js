@@ -111,11 +111,11 @@ module.exports = config({
         nav: [
           {
             text: "Get Started",
-            link: "/get-started/",
+            link: "/get-started/"
           },
           {
             text: "API Management",
-            link: "/apim/",
+            link: "/apim/"
           },
           {
             text: 'Catalogs',
@@ -123,7 +123,7 @@ module.exports = config({
           },
           {
             text: 'References',
-            link: '/references/',
+            link: '/references/'
           },
           {
             text: 'Setup',
@@ -131,7 +131,7 @@ module.exports = config({
           },
           {
             text: 'Reach Out',
-            link: '/reach-out/'
+            link: '/reachout/'
           },
         ],
         sidebar: {
@@ -139,22 +139,24 @@ module.exports = config({
                 ['quick-start-guide.md', 'Quick Start'],
                 {
                     title: 'Basic Flow',
-                    prefix: 'basic-flow',
-                    //path: 'basic-flow/',
+                    prefix: 'basic-flow/',
+                    path: 'basic-flow/',
+                    sidebarDepth: 1,
                     children: [
                         ['create-api.md', 'Create an API'],
                         ['discover-your-services.md', 'Discover Your Services'],
                         {
-                         title: 'Create an API Proxy',
-                         prefix: 'api-proxy/',
-                         //path: 'attributes/',
-                        children: [
-                            ['from-scratch.md', 'From Scratch'],
-                            ['from-existing-definition.md', 'From an Existing Definition'],
-                        ]
+                            title: 'Create an API Proxy',
+                            prefix: 'api-proxy/',
+                            path: 'api-proxy/',
+                            sidebarDepth: 2,
+                            children: [
+                                ['from-scratch.md', 'From Scratch'],
+                                ['from-existing-definition.md', 'From an Existing Definition']
+                            ]
                         },
                         ['test-api.md', 'Test API'],
-                        ['publish-api.md', 'Publish Your API'],
+                        ['publish-api.md', 'Publish Your API']
                     ]
                 }
             ]
@@ -182,7 +184,7 @@ module.exports = config({
 //                      ['k8s-crd-catalog.md', 'CRD Catalog'],
 //                  ]
 //              }
-//          ],
+//          ]
 //
 //
 //
