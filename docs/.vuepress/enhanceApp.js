@@ -10,7 +10,7 @@ export default ({
   router, // the router instance for the app
   siteData // site metadata
 }) => {
-
+/**
   router.beforeResolve((to, _from, next) => {
     const browserWindow = typeof window !== "undefined" ? window : null;
     if (browserWindow && to.matched.length && to.matched[0].path !== '*' && to.redirectedFrom) {
@@ -36,4 +36,5 @@ export default ({
       next({ path: redirect })
     } else next()
   })
+ */
 }
