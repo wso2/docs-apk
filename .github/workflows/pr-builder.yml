@@ -1,0 +1,33 @@
+# This workflow will build the project on a pull request when
+# the label 'trigger-pr-builder' is added.
+# Uses:
+#   OS: ubuntu-latest
+#   JDK: Adopt JDK 8
+
+name: PR builder
+
+on:
+  pull_request:
+    types: [labeled]
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    if: ${{github.event.label.name == 'trigger-pr-builder' || github.event_name == 'workflow_dispatch'}}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v2.3.3
+        with:
+          token: ${{ secrets.APK_DOCS_GITHUB_BOT_TOKEN }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - run: npm run build

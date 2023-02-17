@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report an issue
+    url: https://github.com/wso2-enterprise/apk-product/issues/new?labels=docs&template=doc_request.md
+    about: Click 'Open' to continue. You will be creating the new issue in the 'apk-product' repo.
