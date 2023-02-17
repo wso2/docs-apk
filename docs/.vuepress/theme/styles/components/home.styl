@@ -1,0 +1,546 @@
+.home
+  display block
+  max-width 100%
+  min-height 100vh - $navbarHeight
+  padding 0 2rem 0
+  margin 60px auto 0
+
+  .img-header-container
+    display: flex
+    align-items: center
+    flex-direction: row
+
+    // Invert color of the icon in the dark theme
+    img
+      .theme-dark &
+        filter invert(1)
+
+  .hero-image
+    position absolute
+    left 0
+    margin-top 29px !important
+
+  @media (max-width $MQNarrow)
+    min-height 100vh - $navbarMobileHeight
+    padding-top $navbarMobileHeight
+
+  @media (max-width $MQMobileNarrow)
+    padding-left 1.5rem
+    padding-right 1.5rem
+
+  .hero
+    margin 0 -2rem
+    text-align center
+    padding 6rem 0
+    background: radial-gradient(circle at 75% 45%, rgba(243, 115, 33, 0.3) 0, rgba(245, 246, 246, 0.01) 17%), 
+                radial-gradient(circle at 47% 65%, rgba(243, 115, 33, 0.1) 0%, rgba(245, 246, 246, 0.1) 15%), 
+                radial-gradient(circle at 65% 60%, rgba(144,37,142,0.15) 5%, rgba(255,255,255,1) 18%);
+
+    @media (max-width $MQNarrow)
+      display flex
+      justify-content space-evenly
+      align-items center
+      text-align left
+      padding 6rem 2rem
+
+    img
+      display block
+      max-width 100%
+      max-height 320px
+      margin 0
+
+      @media (max-width $MQNarrow)
+        max-height 280px
+        margin 3rem auto 1.5rem
+
+      @media (max-width $MQMobile)
+        max-height 240px
+        margin 2rem auto 1.2rem
+
+      @media (max-width $MQMobileNarrow)
+        max-height 210px
+        margin 1.5rem auto 1rem
+
+      .theme-light &
+        &.light
+          display block
+
+        &.dark
+          display none
+
+      .theme-dark &
+        &.light
+          display none
+
+        &.dark
+          display block
+
+    .button-row
+      display flex
+      justify-content center
+      margin-top 2rem
+
+    button
+      padding 13px 20px !important
+      margin: 10px !important
+      display: flex
+      justify-content: center
+
+    h1
+      font-size 32px
+      text-align center
+
+      @media (max-width $MQMobile)
+        font-size 2.5rem
+
+      @media (max-width $MQMobileNarrow)
+        font-size 2rem
+
+    h1, .description, .action
+      margin 1.5rem auto
+
+      @media (max-width $MQMobile)
+        margin 1.5rem auto
+
+      @media (max-width $MQMobileNarrow)
+        margin 1.2rem auto
+
+    .description
+      max-width 50rem
+      color var(--text-color-light)
+      font-size 20px
+      line-height 1.5
+      text-align center
+      font-weight 500
+
+      @media (max-width $MQMobile)
+        font-size 1.4rem
+
+      @media (max-width $MQMobileNarrow)
+        font-size 1.2rem
+
+    .action-button
+      display inline-block
+      margin 0.6rem 0.8rem
+      padding 1rem 1.5rem
+      border 2px solid var(--accent-color)
+      border-radius 2rem
+      color var(--accent-color)
+      font-size 1.2rem
+      transition background 0.1s ease
+      overflow hidden
+
+      @media (max-width $MQMobile)
+        padding 0.8rem 1.2rem
+        font-size 1.1rem
+
+      @media (max-width $MQMobileNarrow)
+        padding 0.6rem 1rem
+        font-size 1rem
+
+      &:hover
+        color var(--white)
+        background-color var(--accent-color)
+
+      &.primary
+        color var(--white)
+        background-color var(--accent-color)
+
+        &:hover
+          border-color var(--accent-color-l10)
+          background-color var(--accent-color-l10)
+
+        .theme-dark &
+          &:hover
+            border-color var(--accent-color-d10)
+            background-color var(--accent-color-d10)
+
+  .features-section
+    margin 0 -2rem
+    padding 5rem 10rem
+    background-color var(--feature-bgcolor)
+
+    @media (max-width $MQNarrow)
+      padding 5rem 2rem
+    
+    @media (max-width $MQMobile)
+      padding 5rem 1rem
+
+    h2
+      font-size 26px
+      margin-bottom 0.4rem
+      margin-top 0
+      text-align center
+
+    p
+      color var(--text-color-light)
+      margin-top 0.1rem
+      margin-bottom 1.5rem
+      font-weight 500
+
+    h2, p
+      padding 0 0.45rem
+
+    .features-description
+      text-align center
+      margin-bottom 3rem
+      font-size 17px
+
+  .features
+    display flex
+    flex-wrap wrap
+    justify-content center
+    align-items stretch
+    align-content stretch
+
+    @media (max-width $MQMobileNarrow)
+      margin 0 -1.5rem
+
+    .feature
+      display flex
+      flex-direction column
+      flex-basis calc(33.33% - 4rem)
+      margin 0.5rem
+      padding  1.5rem 1.5rem
+      transition transform 0.35s, box-shadow 0.35s
+      overflow hidden
+      background var(--bgcolor)
+      border-radius 0.8rem
+      position relative
+      justify-content flex-start
+      min-width 275px
+
+      .feature-icon-container
+        position absolute
+        width 50px
+        height 50px
+        display flex
+        flex-direction column
+        justify-content center
+        border-radius 16px
+
+        &.login
+          background-color rgba(39, 170, 225, 0.1)
+        
+        &.social-login
+          background-color rgba(146, 39, 143, 0.1)
+
+        &.enterprise-idp
+          background-color rgb(255, 236, 246)
+        
+        &.mfa
+          background-color rgba(21, 167, 158, 0.1)
+
+        &.conditional-access
+          background-color rgb(250, 243, 247)
+
+        &.users
+          background-color rgb(255, 247, 239)
+
+      .sub-link-spacer
+        min-height 4rem
+
+      h4
+        margin 4rem 0 0 0
+        font-weight 600
+        font-size 20px
+
+      a
+        font-size 14px
+        line-height 1.5rem
+        cursor pointer
+
+        &.sub-link
+
+          &:hover
+            color #ff9100
+
+      p
+        padding 0
+        color var(--text-color-light)
+        font-size 16px
+        font-weight 500
+
+        &.learn-more-2
+          margin-top 1.80rem
+          margin-bottom 0
+
+          &:hover
+            color#2E6CE6
+
+          &::after
+            margin-left 10px !important
+            margin-top 10px !important
+            vertical-align middle !important
+            content url("../../assets/icons/rightArrowIcon.svg")
+            .theme-dark &
+              filter invert(1)
+
+        &.learn-more-4
+          margin-top 2rem
+          margin-bottom 0
+          position absolute
+          bottom 1.5rem
+          cursor pointer
+          font-size 14px
+
+          &:hover
+            color#2E6CE6
+
+          &::after
+            margin-left 10px !important
+            margin-top 10px !important
+            vertical-align middle !important
+            content url("../../assets/icons/rightArrowIcon.svg")
+            .theme-dark &
+              filter invert(1)
+
+      @media (max-width $MQNarrow)
+        flex-basis calc(50% - 4rem)
+
+      @media (max-width $MQMobile)
+        font-size 0.95rem
+
+      @media (max-width $MQMobileNarrow)
+        flex-basis calc(100%)
+        font-size 0.9rem
+        margin 0.5rem 0
+        border-radius 0
+
+      &:hover
+        box-shadow 0 2px 12px 0 var(--bgcolor-light)
+        background-color var(--bgcolor)
+
+      h2
+        margin-bottom 0.25rem
+        border-bottom none
+        color var(--text-color-l10)
+        font-size 1.25rem
+        font-weight 500
+
+        @media (max-width $MQMobileNarrow)
+          font-size 1.2rem
+      
+      // Invert color of the icon in the dark theme
+      img
+        .theme-dark &
+          filter invert(1)
+
+  .technology-section
+    margin 2em -2rem
+    padding 3rem 15rem
+
+    @media (max-width 1024px)
+      padding 3rem 6rem
+    
+    @media (max-width $MQMobile)
+      padding 3rem 1rem
+
+    h2
+      font-size 26px
+      margin-bottom 0.4rem
+      margin-top 0
+      text-align center
+
+    p
+      color var(--text-color-light)
+      margin-top 0.1rem
+      margin-bottom 1.5rem
+      font-weight 500
+
+    h2, p
+      padding 0 0.45rem
+
+    .technologies-description
+      text-align center
+      margin-bottom 3rem
+      font-size 17px
+      padding 0 10rem
+
+      @media (max-width $MQNarrow)
+        padding 0
+
+    .technologies
+      display flex
+      justify-content center
+      align-items center
+      flex-direction row
+      flex-wrap wrap
+
+      .technology-card-container
+        display block
+        padding-bottom 1rem
+
+      .technology-card
+        flex-grow 1
+        flex-basis 0
+        min-width 140px
+        margin 0.5rem 0.5rem 0 0.5rem
+        background-color var(--bgcolor-light)
+        border-radius 6px
+        padding 1rem 1rem 0.1rem 1rem
+        transition all 0.3s
+        text-align center
+        border-radius 16px 16px 0 0
+
+        &.angular
+          background-color #F5E8F0
+        
+        &.javascript
+          background-color #FFF9C6
+        
+        &.react
+          background-color #E9F6FC
+        
+        &.oidc
+          background-color #FFF3E6
+
+        &.saml
+          background-color #FAF3F7
+        
+        img.technology-icon
+          height 52px
+          width auto
+          border none
+          margin 1rem auto
+        
+        .technology-name
+          font-size 16px
+          font-weight 600
+          color var(--text-color)
+
+      .bottom-button-bar
+        display flex
+        margin 0 0.5rem
+        height 35px
+        border-radius 0 0 16px 16px
+        font-size 14px
+        font-weight 500
+
+        .sdk-button
+          padding 0.5rem
+          flex 2
+          background-color #E7E7E7
+          color #000
+          border-bottom-left-radius 16px
+          text-align center
+          cursor pointer
+          transition 0.3s
+
+          &:hover
+            font-weight 600
+
+            &.angular
+              box-shadow inset 80px 0 50px 0 darken(#F5E8F0, 10)
+            
+            &.javascript
+              box-shadow inset 80px 0 50px 0 darken(#FFF9C6, 10)
+            
+            &.react
+              box-shadow inset 80px 0 50px 0 darken(#E9F6FC, 10)
+            
+            &.oidc
+              box-shadow inset 80px 0 50px 0 darken(#FFF3E6, 10)
+            
+            &.saml
+              box-shadow inset 80px 0 50px 0 darken(#FAF3F7, 10)
+            
+        .sample-button
+          padding 0.5rem
+          flex 3
+          background-color #363D43
+          border-bottom-right-radius 16px
+          color #fff
+          text-align center
+          cursor pointer
+          transition 0.3s ease-out
+
+          &:hover
+            font-weight 600
+
+            &.angular
+              box-shadow inset 100px 0 50px 0 darken(#F5E8F0, 50)
+            
+            &.javascript
+              box-shadow inset 100px 0 50px 0  darken(#FFF9C6, 50)
+            
+            &.react
+              box-shadow inset 100px 0 50px 0 darken(#E9F6FC, 50)
+            
+            &.oidc
+              box-shadow inset 100px 0 50px 0  darken(#FFF3E6, 50)
+            
+            &.saml
+              box-shadow inset 100px 0 50px 0  darken(#FAF3F7, 50)
+
+  .explore-section
+    margin 2.2em -2rem
+    padding 0 2.5rem
+
+    h1
+      font-size 1.5rem
+      margin-bottom 0.4rem
+
+    p
+      color var(--text-color-light)
+      margin-top 0.1rem
+      margin-bottom 1.5rem
+
+    h1, p
+      padding 0 0.45rem
+
+  .services
+    display flex
+    flex-wrap wrap
+    justify-content center
+    align-items stretch
+    align-content stretch
+
+    @media (max-width $MQMobileNarrow)
+      margin 0 -1.5rem
+
+    .service
+      display flex
+      flex-direction column
+      justify-content left
+      flex-basis calc(33% - 4rem)
+      margin 0.5rem
+      padding  1.5rem 1.5rem
+      border-radius 0.1rem
+      overflow hidden
+
+      a
+        font-size 16px
+        line-height 1.5rem
+        font-weight 700
+        padding-left 0.5rem
+        cursor: pointer
+
+        &:hover
+          color #ff9100
+
+      p
+        padding 0
+        color var(--text-color-light)
+        font-size 14px
+        font-weight 460
+        line-height 1.7
+        padding-left 1.8rem
+
+      @media (max-width $MQNarrow)
+        flex-basis calc(50% - 4rem)
+
+      @media (max-width $MQMobile)
+        font-size 0.95rem
+
+      @media (max-width $MQMobileNarrow)
+        flex-basis calc(100%)
+        font-size 0.9rem
+        margin 0.5rem 0
+        border-radius 0
+
+        @media (max-width $MQMobileNarrow)
+          font-size 1.2rem
+
+  {$contentClass}
+    padding-bottom 1.5rem

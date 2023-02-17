@@ -1,0 +1,14 @@
+<!--
+ * Copyright (c) 2021, WSO2 Inc. (http://www.wso2.com). All Rights Reserved.
+ *
+ * This software is the property of WSO2 Inc. and its suppliers, if any.
+ * Dissemination of any information or reproduction of any material contained
+ * herein in any form is strictly forbidden, unless permitted by WSO2 expressly.
+ * You may not alter or remove any copyright or other notice from copies of this content."
+-->
+
+<svg xmlns="http://www.w3.org/2000/svg" class="icon" width="14" height="14" viewBox="0 0 14 14">
+    <path id="application-outline" class="path fill primary"
+          d="M10.45,15.7V13.05H7.8a.3.3,0,1,1,0-.6H10.45V9.8a.3.3,0,0,1,.6,0v2.651H13.7a.3.3,0,0,1,0,.6H11.05V15.7a.3.3,0,0,1-.6,0ZM.5,16a.5.5,0,0,1-.5-.5V10a.5.5,0,0,1,.5-.5H6a.5.5,0,0,1,.5.5v5.5A.5.5,0,0,1,6,16Zm.1-.6H5.9V10.1H.6ZM8,8.5A.5.5,0,0,1,7.5,8V2.5A.5.5,0,0,1,8,2h5.5a.5.5,0,0,1,.5.5V8a.5.5,0,0,1-.5.5Zm.1-.6h5.3V2.6H8.1ZM.5,8.5A.5.5,0,0,1,0,8V2.5A.5.5,0,0,1,.5,2H6a.5.5,0,0,1,.5.5V8a.5.5,0,0,1-.5.5Zm.1-.6H5.9V2.6H.6Z"
+          transform="translate(0 -2)" fill="#464646"/>
+</svg>

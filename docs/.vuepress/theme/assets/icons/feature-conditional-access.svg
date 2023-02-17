@@ -1,0 +1,23 @@
+<!--
+ * Copyright (c) 2021, WSO2 Inc. (http://www.wso2.com). All Rights Reserved.
+ *
+ * This software is the property of WSO2 Inc. and its suppliers, if any.
+ * Dissemination of any information or reproduction of any material contained
+ * herein in any form is strictly forbidden, unless permitted by WSO2 expressly.
+ * You may not alter or remove any copyright or other notice from copies of this content."
+-->
+
+<svg xmlns="http://www.w3.org/2000/svg" width="19.468" height="19.776" viewBox="0 0 19.468 19.776">
+  <g id="key_9_" data-name="key (9)" transform="translate(-3.978)">
+    <g id="Group_1394" data-name="Group 1394" transform="translate(3.978)">
+      <g id="Group_1393" data-name="Group 1393" transform="translate(0)">
+        <path id="Path_4527" data-name="Path 4527" d="M16.762,0a6.688,6.688,0,0,0-6.251,9.056L4.121,15.447a.487.487,0,0,0-.143.344v3.5a.487.487,0,0,0,.487.487H7.347a.487.487,0,0,0,.344-.142l.971-.97a.487.487,0,0,0,.143-.345V17.126H10a.487.487,0,0,0,.487-.487v-.477h.477a.487.487,0,0,0,.487-.487V14.627H12.5a.487.487,0,0,0,.344-.143l1.55-1.55A6.685,6.685,0,1,0,16.762,0Zm0,12.394a5.666,5.666,0,0,1-2.292-.479.487.487,0,0,0-.536.1l0,0-1.636,1.636H10.961a.487.487,0,0,0-.487.487v1.048H10a.487.487,0,0,0-.487.487v.477H8.318a.487.487,0,0,0-.487.487v1.478l-.686.685H4.952v-.688l5.954-5.954a.438.438,0,0,0-.62-.62L4.952,16.873v-.88l6.477-6.478,0,0a.487.487,0,0,0,.1-.536,5.711,5.711,0,1,1,5.231,3.418Z" transform="translate(-3.978)" fill="#d8274f"/>
+      </g>
+    </g>
+    <g id="Group_1396" data-name="Group 1396" transform="translate(16.972 2.825)">
+      <g id="Group_1395" data-name="Group 1395" transform="translate(0)">
+        <path id="Path_4528" data-name="Path 4528" d="M342.225,73.144a1.824,1.824,0,1,0,1.824,1.824A1.827,1.827,0,0,0,342.225,73.144Zm0,2.675a.85.85,0,1,1,.85-.85A.851.851,0,0,1,342.225,75.819Z" transform="translate(-340.401 -73.144)" fill="#d8274f"/>
+      </g>
+    </g>
+  </g>
+</svg>

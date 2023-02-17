@@ -1,0 +1,12 @@
+<!--
+ * Copyright (c) 2021, WSO2 Inc. (http://www.wso2.com). All Rights Reserved.
+ *
+ * This software is the property of WSO2 Inc. and its suppliers, if any.
+ * Dissemination of any information or reproduction of any material contained
+ * herein in any form is strictly forbidden, unless permitted by WSO2 expressly.
+ * You may not alter or remove any copyright or other notice from copies of this content."
+-->
+
+<svg xmlns="http://www.w3.org/2000/svg" width="14.147" height="19.877" viewBox="0 0 14.147 19.877">
+  <path id="locked-outline" d="M.707,19.827A.707.707,0,0,1,0,19.12V7.8a.707.707,0,0,1,.707-.707H2.829v-2.9h0a4.244,4.244,0,1,1,8.488,0v2.9H13.44a.707.707,0,0,1,.707.707V19.12a.707.707,0,0,1-.707.707ZM.849,8.085V18.837a.141.141,0,0,0,.141.141H13.157a.141.141,0,0,0,.141-.141V8.085a.141.141,0,0,0-.141-.141H.99a.141.141,0,0,0-.141.141ZM3.678,4.194v2.9h6.791V4.265a3.4,3.4,0,1,0-6.791-.071ZM6.649,16.149V14.1a1.415,1.415,0,1,1,.849,0v2.046Zm-.141-3.4a.566.566,0,1,0,.566-.566A.566.566,0,0,0,6.508,12.753Z" transform="translate(0 0.05)" fill="#27aae1"/>
+</svg>

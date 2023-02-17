@@ -1,0 +1,46 @@
+/**
+ * Custom Styles here.
+ *
+ * ref：https://v1.vuepress.vuejs.org/config/#index-styl
+ */
+
+@require '~vuepress-plugin-tabs/dist/themes/default.styl'
+
+.home .hero img
+  max-width 450px!important
+
+.theme-default-content:not(.custom) img {
+    max-width: 100%;
+    border-color: #e9ecef;
+    border-style: solid;
+    border-width: 1px;
+    display: block;
+    margin: 1.8rem auto;
+}
+
+.search-box {
+  order 0;
+  margin-right: 0;
+  margin-left: 1rem;
+
+  .suggestions {
+    left: auto !important;
+    right: 0 !important;
+  }
+}
+
+.quickstarts-page .title-container img
+  max-width 700px!important
+
+.fragment-line-height-fix
+  line-height 1.8
+
+// To be used for transparent images to avoid black background in dark theme
+.transparent-img
+  .theme-dark &
+    background-color #fff
+
+// To be used when no need for borders
+.borderless-img
+  background-color #fff
+  border none!important

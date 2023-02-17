@@ -1,0 +1,204 @@
+@require '~@theme/styles/fonts/crimson.css'
+@require './wrapper'
+@require '~@mr-hope/vuepress-shared/styles/font-awesome';
+@require './fonts'
+
+html, body
+  padding 0
+  margin 0
+  background var(--bgcolor)
+
+body
+  font-family 'Montserrat-custom', -apple-system, BlinkMacSystemFont, Segoe UI, HelveticaNeue-Light, Ubuntu, Droid Sans, sans-serif, font-awesome
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+  font-size 16px
+  font-weight: 350;
+  color var(--text-color)
+  min-height 100vh
+  -webkit-tap-highlight-color transparent
+
+{$contentClass}:not(.custom)
+  @extend $wrapper
+
+  > *:first-child
+    margin-top $navbarHeight
+
+  a:hover
+    text-decoration underline
+
+  // unknow container
+  p.demo
+    padding 1rem 1.5rem
+    border 1px solid #ddd
+    border-radius 4px
+
+  img
+    max-width 100%
+
+
+{$contentClass}.custom
+  padding 0
+  margin 0
+
+  img
+    max-width 100%
+
+a
+  font-weight 500
+  color var(--accent-color)
+  text-decoration none
+
+p a code
+  font-weight 400
+  color var(--accent-color)
+
+kbd
+  background #eee
+  border solid 0.15rem #ddd
+  border-bottom solid 0.25rem #ddd
+  border-radius 0.15rem
+  padding 0 0.15em
+
+blockquote
+  font-size 1rem
+  color var(--light-grey)
+  border-left 0.2rem solid #dfe2e5
+  margin 1rem 0
+  padding 0.25rem 0 0.25rem 1rem
+
+  & > p
+    margin 0
+
+ul, ol
+  padding-left 2.5em
+  padding-bottom 0.5em
+  line-height 1.9
+
+strong
+  .theme-light &
+    font-weight 600
+  
+  .theme-dark &
+    font-weight 750
+
+h1, h2, h3, h4, h5, h6
+  font-weight 500
+  line-height 1.25
+
+  {$contentClass}:not(.custom) > &
+    margin-top 0.5rem - $navbarHeight
+    padding-top ($navbarHeight + 1rem)
+    margin-bottom 0.5rem
+
+    &:first-child
+      margin-top -3rem
+      margin-bottom 1rem
+
+      + p, + pre, + .custom-block
+        margin-top 2rem
+
+  &:hover .header-anchors
+    opacity 1
+
+p
+  {$contentClass}:not(.custom) > &, {$contentClass}:not(.custom) > ul &, {$contentClass}:not(.custom) > ol &
+    word-break normal
+    line-height 1.8em
+    font-weight 400
+
+    @media (max-width $MQMobileNarrow)
+      text-align left
+
+h1
+  font-size 2rem
+  font-weight 700
+
+h2
+  font-size 1.65rem
+  padding-bottom 0.3rem
+  font-weight 600
+  //border-bottom 1px solid var(--border-color)
+
+h3
+  font-size 1.35rem
+  font-weight 500
+
+a.header-anchor
+  font-size 0.85em
+  float left
+  margin-left -0.87em
+  padding-right 0.23em
+  margin-top 0.125em
+  opacity 0
+  transition opacity 0.2s
+
+  &:hover
+    text-decoration none
+
+code, kbd, .line-number
+  font-family source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace
+
+hr
+  border 0
+  // border-top 1px solid var(--border-color)
+
+table
+  border-collapse collapse
+  margin 1rem 0
+  display block
+  overflow-x auto
+
+  tr
+    th
+      border-bottom  2px solid var(--border-color)
+  
+  .badge
+    width 90px
+    display block !important
+    margin-top 6px !important
+    padding 2px 5px !important
+    font-size 12px !important
+    background transparent !important
+    text-align center
+
+    &.mandatory
+      border 1px solid #ff4141 !important
+      color #ff4141
+
+    &.optional
+      border 1px solid #42b983 !important
+      color #42b983
+
+    &.recommended
+      border 1px solid #44a6c6 !important
+      color #44a6c6
+
+
+  th, td
+    padding 1em
+    border-bottom  1px solid var(--border-color)
+    vertical-align top
+    text-align left
+
+.breadcrumb li + li:before
+  content '\276F' !important
+
+// This is the default table class from the vuepress theme
+.border-table
+  th, td
+    border 2px solid var(--border-color)
+    padding 0.6em 1em
+    vertical-align middle
+
+.intro-page > .page > .page-title > h1
+  display none
+
+// Dark theme based CSS
+body.theme-dark
+  .is-active
+    border-bottom none
+
+    a
+      color var(--text-color-light) !important
+
