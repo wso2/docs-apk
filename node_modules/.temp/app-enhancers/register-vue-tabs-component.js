@@ -1,1 +1,0 @@
-import Tabs from 'vue-tabs-component';export default ({ Vue }) => Vue.use(Tabs)
