@@ -1,0 +1,178 @@
+.item-index-page > .page > .page-title > h1
+  visibility hidden
+
+.item-index-page
+  .page
+    padding-left 22rem
+
+    @media (max-width $MQMobile)
+      padding-left 0
+
+.item-page
+  display block
+  max-width 100%
+  min-height 100vh - $navbarHeight
+  padding 0
+  margin 0 auto 0
+  background var(--bgcolor)
+
+  @media (max-width $MQMobile)
+    padding 0
+  
+  .page
+    background var(--bgcolor)
+    margin-top -15px
+    padding-right 0 !important
+    padding-left 20rem
+
+    @media (max-width $MQMobile)
+      margin-top 0
+
+  hr
+    display none
+
+  .title-container
+    justify-content center
+    text-align center
+    padding-top 1rem
+
+    h2:first-child
+      padding-top 2rem !important
+      margin-bottom 1rem !important
+
+  .item-container
+    display flex
+    flex-wrap wrap
+    justify-content center
+    margin-top 1rem
+
+    p
+      margin-top -18px !important
+
+  .item
+    display inline-block
+    flex 1 1 15%
+    min-width 139px
+    max-width 140px
+    margin 1em
+    background-color var(--bgcolor-light)
+    border-radius 6px
+    padding 1em
+    transition all 0.3s
+    text-align center
+    cursor pointer
+    border 1px solid var(--border-color)
+
+    &:hover    
+      transform: scale(1.025)
+      box-shadow: 0 2px 12px 0 var(--bgcolor-light)
+      text-decoration none !important
+      color var(--text-color) !important
+  
+  .item-name
+    padding-top 25px
+    display block
+    font-size 16px
+    font-weight 500
+    margin 0
+    text-decoration none
+    color var(--text-color)
+
+  img.item-icon.disabled
+      opacity 0.5
+      pointer-events none !important
+
+    img.item-icon
+      height 50px
+      width auto
+      border none
+      cursor: pointer !important
+      margin 1rem auto
+
+  .header-container
+    display: flex
+    align-items: center
+    flex-direction: row
+
+  .title-section
+    text-align center
+    margin-bottom 3.5rem
+
+    @media (min-width $MQNarrow)
+      display flex
+      justify-content space-evenly
+      align-items center
+      text-align left
+
+    @media (max-width $MQNarrow)
+      min-height 100vh - $navbarMobileHeight
+      padding-top $navbarMobileHeight
+
+    @media (max-width $MQMobileNarrow)
+      padding-left 1.5rem
+      padding-right 1.5rem
+
+  .description
+    color var(--text-color-light)
+    font-size 1rem
+    line-height 1.5
+    text-align center
+    font-weight 500
+    margin 1rem 1.5rem 1.5rem
+
+    @media (max-width $MQMobile)
+      font-size 1.4rem
+
+    @media (max-width $MQMobileNarrow)
+      font-size 1.2rem
+
+  &.page
+    padding-left 0
+    padding-right 0
+  
+  .search-container
+    padding-bottom 30px
+    text-align center
+    border-bottom 1px solid var(--bgcolor-light)
+    margin 0 30px 0 30px
+
+    @media (max-width $MQMobile)
+      margin 0
+  
+  .search
+    padding 10px 10px 10px 35px
+    border-radius 6px
+    width 200px
+    background var(--bgcolor-light) url(/apk/docs/assets/img/search.83621669.svg) 10px 12px no-repeat
+    transition 0.3s
+    border 1px solid var(--border-color)
+    color var(--text-color-light)
+
+    &:focus
+      outline none
+      width 300px
+      box-shadow: 0 2px 12px 0 var(--bgcolor-light)
+
+      @media (max-width $MQMobile)
+        width 200px
+
+  .qss-icon
+    position relative
+    right -30px
+    color var(--text-color-light)
+    opacity 0.5
+
+.cardAnim-enter-active, .cardAnim-leave-active
+  transition all 0.3s !important
+
+.cardAnim-enter, .cardAnim-leave-to
+  opacity 0 !important
+
+.cardAnim-leave-active
+  position absolute
+
+.cardAnim-move
+  transition transform 0.3s !important
+
+html
+  background var(--sdk-card-color) !important

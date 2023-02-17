@@ -1,0 +1,23 @@
+<!--
+ * Copyright (c) 2023, WSO2 LLC (http://www.wso2.com). All Rights Reserved.
+ *
+ * This software is the property of WSO2 LLC and its suppliers, if any.
+ * Dissemination of any information or reproduction of any material contained
+ * herein in any form is strictly forbidden, unless permitted by WSO2 expressly.
+ * You may not alter or remove any copyright or other notice from copies of this content."
+-->
+
+<svg xmlns="http://www.w3.org/2000/svg" width="17.799" height="20.943" viewBox="0 0 17.799 20.943">
+  <g id="shield_16_" data-name="shield (16)" transform="translate(-31.583)">
+    <g id="Group_1390" data-name="Group 1390" transform="translate(31.583)">
+      <g id="Group_1389" data-name="Group 1389" transform="translate(0)">
+        <path id="Path_4525" data-name="Path 4525" d="M49.155,1.685C46.02.179,40.711,0,40.476,0S34.944.179,31.81,1.685a.4.4,0,0,0-.227.358v8.571c0,.263.159,6.488,8.762,10.3a.4.4,0,0,0,.323,0c8.571-3.811,8.71-10.04,8.714-10.3V2.043A.4.4,0,0,0,49.155,1.685Zm-.57,8.921c0,.06-.147,5.894-8.109,9.5-7.93-3.584-8.1-9.26-8.109-9.5V2.3C35.3.992,40.2.8,40.476.8s5.177.2,8.109,1.5Z" transform="translate(-31.583)" fill="#15a79e"/>
+      </g>
+    </g>
+    <g id="Group_1392" data-name="Group 1392" transform="translate(33.479 2.238)">
+      <g id="Group_1391" data-name="Group 1391" transform="translate(0)">
+        <path id="Path_4526" data-name="Path 4526" d="M83.455,46.282c-2.453-1.195-6.6-1.314-6.771-1.318l-.024,0a20.539,20.539,0,0,0-6.771,1.318.4.4,0,0,0-.227.358V53.3c0,.207.127,5.1,6.85,8.085a.4.4,0,0,0,.319,0c6.727-2.983,6.85-7.878,6.85-8.089V46.641A.4.4,0,0,0,83.455,46.282ZM76.262,60.4c-5.679-2.772-5.815-6.922-5.819-7.1v-.108h5.819Zm0-8H70.444V46.9a19.794,19.794,0,0,1,5.819-1.119Zm6.615.9c0,.044-.112,4.309-5.819,7.1v-7.2h5.819Zm0-.9H77.059V45.776A19.664,19.664,0,0,1,82.878,46.9Z" transform="translate(-69.663 -44.96)" fill="#15a79e"/>
+      </g>
+    </g>
+  </g>
+</svg>

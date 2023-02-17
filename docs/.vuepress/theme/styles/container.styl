@@ -1,0 +1,97 @@
+$darkBgColor ?= #1e1e1e
+$darkTextColor ?= #9e9e9e
+
+.custom-block
+  position relative
+  border-radius 4px !important
+  padding 1rem  !important
+
+  .custom-block-title
+    line-height 1rem !important
+    font-weight 500 !important
+    color var(--text-color) !important
+    margin-top 0.15rem !important
+    margin-bottom 1rem !important
+
+  &.info
+    background var(--info-block-bgColor) !important
+  
+  &.tip
+    background var(--tip-block-bgColor) !important
+  
+  &.warning
+    background var(--warn-block-bgColor) !important
+
+  &.danger
+    background var(--danger-block-bgColor) !important
+
+  &.info, &.tip, &.warning, &.danger
+    margin 1rem 0
+    padding 0.1rem 1.5rem
+    border none !important
+    padding-left 3rem !important
+
+    .custom-block-title
+      font-size 16px
+
+    &::before
+      position absolute
+      top 25px !important
+      left 30px !important
+      zoom 0.7 !important
+      border-radius 50%
+
+      // Firefox specific CSS to fix icon position
+      @supports (-moz-appearance:none)
+        -moz-transform scale(0.7)
+        top 14px !important
+        left 19px !important
+
+    p
+      font-size 14px
+      line-height 1.4rem
+      margin-bottom 0
+      margin-top -0.2rem
+    
+    ul
+      margin 0px
+      font-size 14px
+      padding 0 1rem
+      line-height 1.4rem
+
+      li
+        margin-bottom 0.25rem
+
+  &.info, &.tip, &.warning, &.danger, &.details
+    a
+      color var(--accent-color, $accentColor)
+
+    .theme-dark &
+      background lighten($darkBgColor, 10%)
+      color lighten($darkTextColor, 10%)
+
+      code
+        background #444
+
+  &.details
+    display block
+    position relative
+    margin 1.6em 0
+    padding 1.6em
+    background #eee
+    border-radius 0.25rem
+
+    h4
+      margin-top 0
+
+    figure, p
+      &:last-child
+        margin-bottom 0
+        padding-bottom 0
+
+    summary
+      outline none
+      cursor pointer
+
+    &[open] summary
+      margin-bottom 0.5em

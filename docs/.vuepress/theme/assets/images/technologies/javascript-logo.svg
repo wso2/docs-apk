@@ -1,0 +1,13 @@
+<!--
+ * Copyright (c) 2023, WSO2 LLC (http://www.wso2.com). All Rights Reserved.
+ *
+ * This software is the property of WSO2 LLC and its suppliers, if any.
+ * Dissemination of any information or reproduction of any material contained
+ * herein in any form is strictly forbidden, unless permitted by WSO2 expressly.
+ * You may not alter or remove any copyright or other notice from copies of this content."
+-->
+
+<svg id="javascript-logo" xmlns="http://www.w3.org/2000/svg" width="299.762" height="299.762" viewBox="0 0 299.762 299.762">
+    <path id="Path_9" data-name="Path 9" d="M0,0H299.762V299.762H0Z" fill="#f7df1e"/>
+    <path id="Path_10" data-name="Path 10" d="M67.312,230.647l22.939-13.883c4.426,7.847,8.452,14.486,18.109,14.486,9.256,0,15.093-3.621,15.093-17.7V117.764h28.169v96.179c0,29.176-17.1,42.457-42.056,42.457-22.535,0-35.615-11.671-42.256-25.756m99.612-3.016,22.936-13.28c6.039,9.861,13.886,17.1,27.769,17.1,11.673,0,19.116-5.836,19.116-13.885,0-9.658-7.646-13.079-20.524-18.712l-7.041-3.021c-20.324-8.65-33.805-19.516-33.805-42.455,0-21.129,16.1-37.227,41.25-37.227,17.908,0,30.786,6.239,40.042,22.537l-21.934,14.086c-4.83-8.652-10.06-12.072-18.109-12.072-8.25,0-13.482,5.232-13.482,12.072,0,8.451,5.232,11.873,17.3,17.105l7.042,3.018c23.946,10.263,37.427,20.726,37.427,44.266,0,25.356-19.92,39.238-46.682,39.238-26.158,0-43.06-12.475-51.31-28.775" transform="translate(11.506 19.856)"/>
+</svg>

@@ -1,0 +1,157 @@
+@import "~@mr-hope/vuepress-shared/styles/font-awesome";
+
+.sdks-page
+  display block
+  max-width 100%
+  min-height 100vh - $navbarHeight
+  padding 0 2rem 0
+  margin 0 auto 0
+  background var(--sdk-bgcolor)
+
+  .page
+    background var(--sdk-bgcolor)
+    margin-top -15px
+    padding-right 0 !important
+
+    @media (max-width $MQMobile)
+      margin-top 0
+
+  @media (max-width $MQNarrow)
+    padding 0
+
+  hr
+    display none
+
+  .title-container
+    justify-content center
+    text-align center
+    padding-bottom 1rem
+
+    h1:first-child
+      padding-top 1rem !important
+      margin-bottom -0.8rem !important
+
+  .sub-title-container
+    justify-content center
+    text-align center
+    border-bottom solid 1px var(--sdk-card-color)
+    padding-top 1rem
+
+    h2:first-child
+      padding-top 5rem !important
+      margin-bottom 1rem !important
+
+  .tech-container
+    display flex
+    flex-direction column
+    justify-content center
+    margin-top 1rem
+    margin-bottom 3rem
+
+    p
+      padding 0
+      margin 0
+
+  .tech-item-container
+    display flex
+    flex-direction column
+    background-color var(--sdk-card-color)
+    margin 0.75em 0
+    height 6.5em
+    line-height 4em
+    border-radius 6px
+    text-align center
+    transition .3s
+    box-shadow inset 0px 0px 0px 1px #EEEEEE
+
+    &:hover    
+      transform: scale(1.025)
+
+    @media (max-width $MQNarrow)
+      margin 0.75em 0em
+    
+    @media (max-width $MQMobile)
+      flex-direction column
+      height 10em
+      line-height 2em
+  
+  .label-container
+    display block
+    height 18px
+
+  .tech-item
+    display flex
+    line-height 4em
+    padding 0 1em 1em 1em
+    text-align center
+    transition .3s
+
+    .icon-container
+      padding 5px
+      width 60px
+
+    .tech-name
+      margin-left 20px
+      font-size 20px
+      font-weight 600
+
+      @media (max-width $MQMobile)
+        margin-left 0
+        flex-grow 1
+    
+    .tech-links
+      margin-left auto
+
+      @media (max-width $MQMobile)
+        margin 0
+        align-self bottom 
+
+      .tech-link
+        color var(--text-color)
+        margin 20px
+        text-decoration none
+        cursor pointer
+
+        &:hover
+          color var(--accent-color)
+      
+      .tech-link-icon
+        display inline-block
+        width 16px
+        vertical-align middle
+        padding-top 3px
+
+  img.tech-icon.disabled
+      opacity 0.5
+      pointer-events: none !important
+
+    img.tech-icon
+      margin 0 
+      height 3.5em
+      width auto
+      border none
+
+      @media (max-width $MQMobile)
+        margin auto
+  
+  img.status-label
+    border none
+    margin 0
+    padding 0
+    float right
+    height 25px
+    border-radius 0 6px 0 0
+
+  .description
+    color #656565
+    font-size 1rem
+    line-height 1.5
+    text-align center
+    font-weight 500
+    margin 1rem 1.5rem 1.5rem
+
+    @media (max-width $MQMobile)
+      font-size 1.4rem
+
+    @media (max-width $MQMobileNarrow)
+      font-size 1.2rem
