@@ -22,13 +22,7 @@ export default ({
   
   router.beforeEach((to, from, next) => {
     const redirectList = {
-      '/guides/your-apk/manage-organizations/': '/guides/organization-management/manage-organizations/',
-      '/guides/your-apk/manage-environments/': '/guides/organization-management/manage-environments/',
-      '/guides/your-apk/delete-organizations/': '/guides/organization-management/manage-organizations/#delete-organizations',
-      '/references/apk-events/': '/guides/apk-events/',
-      '/sdks/': '/integrations/',
-      '/get-started/try-your-own-app/angular/': '/get-started/try-your-own-app/',
-      '/get-started/try-samples/qsg-spa-angular/': '/get-started/try-samples/'
+      '<old-path>': '<New-path>',
     }
     const redirect = redirectList[to.path]
 
