@@ -2,9 +2,7 @@
 pageClass: intro-page
 ---
 
-# API Proxy
+# Distributed Deployment
 
 <!-- markdownlint-disable-next-line -->
-# Create an API Proxy
-
-Write an overview here.
+# Distributed Deployment

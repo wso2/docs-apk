@@ -2,10 +2,10 @@
 pageClass: intro-page
 ---
 
-# Get Started
+# Get Started - Overview
 
 <!-- markdownlint-disable-next-line -->
-# Get Started - Overview
+# Overview
 
 Welcome to APK! Here's a quick guide to get you started. Pick the learning path you prefer and follow the topics to get started.
 

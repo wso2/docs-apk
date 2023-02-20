@@ -2,8 +2,7 @@
 pageClass: intro-page
 ---
 
-# Catalogs
+# Catalogs - Overview
 
 <!-- markdownlint-disable-next-line -->
 # Catalogs - Overview
-

@@ -2,9 +2,7 @@
 pageClass: intro-page
 ---
 
-# API Proxy
+# Deployment Patterns
 
 <!-- markdownlint-disable-next-line -->
-# Create an API Proxy
-
-Write an overview here.
+# Deployment Patterns

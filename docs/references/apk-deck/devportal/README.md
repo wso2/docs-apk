@@ -2,9 +2,7 @@
 pageClass: intro-page
 ---
 
-# API Proxy
+# Developer Portal - Overview
 
 <!-- markdownlint-disable-next-line -->
-# Create an API Proxy
-
-Write an overview here.
+# Overview

@@ -2,9 +2,7 @@
 pageClass: intro-page
 ---
 
-# API Proxy
+# REST API Catalogs
 
 <!-- markdownlint-disable-next-line -->
-# Create an API Proxy
-
-Write an overview here.
+# REST API Catalogs
