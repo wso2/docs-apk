@@ -113,10 +113,10 @@ module.exports = config({
             text: "Get Started",
             link: "/get-started/"
           },
-          {
-            text: "API Management",
-            link: "/apim/"
-          },
+//          {
+//            text: "API Management",
+//            link: "/apim/"
+//          },
           {
             text: 'Catalogs',
             link: '/catalogs/'
@@ -133,9 +133,14 @@ module.exports = config({
             text: 'Reach Out',
             link: '/reachout/'
           },
+          {
+            text: "API Management",
+            link: "/apim/"
+          }
         ],
         sidebar: {
             '/get-started/' : [
+                ['', 'Overview'],
                 ['quick-start-guide.md', 'Quick Start'],
                 {
                     title: 'Basic Flow',
@@ -159,32 +164,173 @@ module.exports = config({
                         ['publish-api.md', 'Publish Your API']
                     ]
                 }
+            ],
+            '/catalogs/' : [
+                ['', 'Overview'],
+                {
+                    title: 'API Catalogs',
+                    prefix: 'rest-api/',
+                    path: 'rest-api/',
+                    sidebarDepth: 2,
+                    children: [
+                        ['gateway-api-catalog.md', 'Gateway'],
+                        ['back-office-api-catalog.md', 'Back Office'],
+                        ['runtime-api-catalog.md', 'Runtime'],
+                        ['developer-portal-api-catalog.md', 'Developer Portal'],
+                        ['admin-api-catalog.md', 'Admin']
+                    ]
+                },
+                ['cli-catalog.md', 'CLI Catalog'],
+                ['crd-catalog.md', 'CRD Catalog']
+            ],
+            '/references/' : [
+                ['', 'Overview'],
+                ['about-this-release.md', 'About This Release'],
+                ['architecture.md', 'Architecture'],
+                ['https://wso2.com/api-manager/', 'Product Pitch'],
+                {
+                    title: 'Key Concepts',
+                    prefix: 'key-concepts/',
+                    path: 'key-concepts/',
+                    sidebarDepth: 1,
+                    children: [
+                        ['key-concept1.md', 'Key Concept 1'],
+                        ['key-concept2.md', 'Key Concept 2']
+                    ]
+                },
+                {
+                    title: 'APK Deck',
+                    prefix: 'apk-deck/',
+                    path: 'apk-deck/',
+                    sidebarDepth: 2,
+                    children: [
+                        {
+                            title: 'Gateway',
+                            prefix: 'gateway/',
+                            path: 'gateway/',
+                            sidebarDepth: 3,
+                            children: [
+                                ['gateway1.md', 'Topic 1'],
+                                ['gateway2.md', 'Topic 2']
+                            ]
+                        },
+                        {
+                            title: 'Key Manager',
+                            prefix: 'key-manager/',
+                            path: 'key-manager/',
+                            sidebarDepth: 3,
+                            children: [
+                                ['key-manager1.md', 'Topic 1'],
+                                ['key-manager2.md', 'Topic 2']
+                            ]
+                        },
+                        {
+                            title: 'Back Office',
+                            prefix: 'back-office/',
+                            path: 'back-office/',
+                            sidebarDepth: 3,
+                            children: [
+                                ['back-office1.md', 'Topic 1'],
+                                ['back-office2.md', 'Topic 2']
+                            ]
+                        },
+                        {
+                            title: 'Runtime',
+                            prefix: 'runtime/',
+                            path: 'runtime/',
+                            sidebarDepth: 3,
+                            children: [
+                                ['runtime1.md', 'Topic 1'],
+                                ['runtime2.md', 'Topic 2']
+                            ]
+                        },
+                        {
+                            title: 'Developer Portal',
+                            prefix: 'devportal/',
+                            path: 'devportal/',
+                            sidebarDepth: 3,
+                            children: [
+                                ['devportal1.md', 'Topic 1'],
+                                ['devportal2.md', 'Topic 2']
+                            ]
+                        },
+                        {
+                            title: 'Admin',
+                            prefix: 'admin/',
+                            path: 'admin/',
+                            sidebarDepth: 3,
+                            children: [
+                                ['admin1.md', 'Topic 1'],
+                                ['admin2.md', 'Topic 2']
+                            ]
+                        }
+                    ]
+                }
+            ],
+            '/setup/' : [
+                ['', 'Overview'],
+                ['prerequisites.md', 'Prerequisites'],
+                ['architecture.md', 'Install'],
+                {
+                    title: 'Deploy',
+                    prefix: 'deploy/',
+                    path: 'deploy/',
+                    sidebarDepth: 1,
+                    children: [
+                        ['', 'Deployment Patterns'],
+                        ['deployment-pattern-1.md', 'All-in-One'],
+                        {
+                            title: 'Distributed',
+                            prefix: 'distributed/',
+                            path: 'distributed/',
+                            sidebarDepth: 2,
+                            children: [
+                                ['deployment-pattern-2.md', 'Deployment Pattern 2'],
+                                ['deployment-pattern-3.md', 'Deployment Pattern 3']
+                            ]
+                        }
+                    ]
+                },
+                ['ci-cd.md', 'CI/CD'],
+                {
+                    title: 'Customizations',
+                    prefix: 'customizations/',
+                    path: 'customizations/',
+                    sidebarDepth: 1,
+                    children: [
+                        {
+                            title: 'Gateway',
+                            prefix: 'gateway/',
+                            path: 'gateway/',
+                            sidebarDepth: 2,
+                            children: [
+                                ['gateway-customizations-1.md', 'Gateway Customizations 1'],
+                                ['gateway-customizations-2.md', 'Gateway Customization 2']
+                            ]
+                        },
+                        {
+                            title: 'Key Manager',
+                            prefix: 'key-manager/',
+                            path: 'key-manager/',
+                            sidebarDepth: 2,
+                            children: [
+                                ['key-manager-customizations-1.md', 'Key Manager Customizations 1'],
+                                ['key-manager-customizations-2.md', 'Key Manager Customization 2']
+                            ]
+                        }
+                    ]
+                }
+            ],
+            '/reachout/' : [
+                ['', 'Overview'],
+                ['https://wso2.com/subscription/#support', 'Support'],
+                ['community.md', 'Community'],
+                ['report-bugs.md', 'Report Bugs'],
+                ['https://wso2.com/training/', 'Training and Certification'],
+                ['https://wso2.com/library/', 'Resources']
             ]
-//          '/catalogs/' : [
-//              {
-//                  title: 'Catalogs',
-//                  prefix: 'catalogs',
-//                  //path: 'catalogs/',
-//                  children: [
-//                      //['', 'CRD Catalog'],
-//                      {
-//                          title: 'API Catalogs',
-//                          prefix: 'rest-api/',
-//                          //path: 'attributes/',
-//                          //sidebarDepth: 2,
-//                          children: [
-//                              ['rest-api/gateway-api-catalog.md', 'Gateway'],
-//                              ['rest-api/back-office-api-catalog.md', 'Back Office'],
-//                              ['rest-api/runtime-api-catalog.md', 'Runtime'],
-//                              ['rest-api/developer-portal-api-catalog.md', 'Developer Portal'],
-//                              ['rest-api/admin-api-catalog.md', 'Admin'],
-//                              ]
-//                      },
-//                      ['cli-catalog.md', 'CLI Catalog'],
-//                      ['k8s-crd-catalog.md', 'CRD Catalog'],
-//                  ]
-//              }
-//          ]
+//                }
+//            ]
 //
 //
 //
