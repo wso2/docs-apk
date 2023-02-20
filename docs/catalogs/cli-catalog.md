@@ -1,1 +1,1 @@
-# CLI Reference
+# CLI Catalog

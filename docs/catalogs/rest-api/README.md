@@ -2,7 +2,7 @@
 pageClass: intro-page
 ---
 
-# Catalogs - Overview
+# REST API Catalogs
 
 <!-- markdownlint-disable-next-line -->
-# Catalogs - Overview
+# REST API Catalogs
