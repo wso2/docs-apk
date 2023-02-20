@@ -2,7 +2,7 @@
 pageClass: intro-page
 ---
 
-# Create an API Proxy
+# API Proxy
 
 <!-- markdownlint-disable-next-line -->
 # Create an API Proxy
