@@ -85,12 +85,6 @@ module.exports = config({
         logo: '/assets/img/apk-logo-b.png',
 
         search: true,
-//         algolia: {
-//             appId: "FZZ2G9EYKZ",
-//             // This is search only API key.
-//             apiKey: "eb6a5c630b8ebd2d4d862a2b0aaa7a67",
-//             indexName: "apk-algolia"
-//         },
         algoliaType: "full",
         Navbar: true,
         blog: false,
