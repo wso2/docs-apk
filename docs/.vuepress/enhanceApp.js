@@ -11,15 +11,8 @@ export default ({
   siteData // site metadata
 }) => {
 /**
-  router.beforeResolve((to, _from, next) => {
-    const browserWindow = typeof window !== "undefined" ? window : null;
-    if (browserWindow && to.matched.length && to.matched[0].path !== '*' && to.redirectedFrom) {
-      browserWindow.location.href = to.fullPath;
-    } else {
-      next();
-    }
-  });
-  
+ // Workaround for redirection - Create a blank page by the name of the page being removed.
+
   router.beforeEach((to, from, next) => {
     const redirectList = {
       '<old-path>': '<New-path>',
