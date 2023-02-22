@@ -7,10 +7,10 @@
     "email": ""
   },
   "scripts": {
-    "predev": "vuepress check-md docs",
-    "dev": "vuepress dev docs",
-    "prebuild": "vuepress check-md docs",
-    "build": "vuepress build docs",
+    "predev": "export NODE_OPTIONS=--openssl-legacy-provider && vuepress check-md docs",
+    "dev": "export NODE_OPTIONS=--openssl-legacy-provider && vuepress dev docs",
+    "prebuild": "export NODE_OPTIONS=--openssl-legacy-provider && vuepress check-md docs",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider && vuepress build docs",
     "postbuild": "sh check-links.sh"
   },
   "license": "MIT",
