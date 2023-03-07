@@ -1,1 +1,1 @@
-# Kubernetes CRDs
+# Kubernetes CRD Catalog

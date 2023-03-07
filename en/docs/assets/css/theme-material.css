@@ -1605,7 +1605,7 @@
  }
 
  .swagger-ui .opblock.opblock-get .opblock-summary-method {
-   background: #3f51b5;
+   background: #808818;
  }
 
  .swagger-ui .opblock.opblock-get .opblock-summary {
@@ -1613,7 +1613,7 @@
  }
 
  .swagger-ui .opblock.opblock-get .tab-header .tab-item.active h4 span:after {
-   background: #3f51b5;
+   background: #808818;
  }
 
  .swagger-ui .opblock.opblock-patch {
@@ -1639,7 +1639,7 @@
  }
 
  .swagger-ui .opblock.opblock-head .opblock-summary-method {
-   background: #3f51b5;
+   background: #808818;
  }
 
  .swagger-ui .opblock.opblock-head .opblock-summary {
@@ -1647,7 +1647,7 @@
  }
 
  .swagger-ui .opblock.opblock-head .tab-header .tab-item.active h4 span:after {
-  background: #3f51b5;
+  background: #808818;
  }
 
  .swagger-ui .opblock.opblock-options {
@@ -1656,7 +1656,7 @@
  }
 
  .swagger-ui .opblock.opblock-options .opblock-summary-method {
-   background: #3f51b5;
+   background: #808818;
  }
 
  .swagger-ui .opblock.opblock-options .opblock-summary {
@@ -1664,12 +1664,12 @@
  }
 
  .swagger-ui .opblock.opblock-options .tab-header .tab-item.active h4 span:after {
-   background: #3f51b5;
+   background: #808818;
  }
 
  .swagger-ui .topbar {
    padding: 8px 30px;
-   background-color: #3f51b5;
+   background-color: #808818;
    box-shadow: 0 5px 5px 0 rgba(0,0,0,.4), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
  }
 
@@ -1697,22 +1697,22 @@
    -webkit-transition: all .4s;
    transition: all .4s;
    font-family: Open Sans, sans-serif;
-   color: #3f51b5;
+   color: #808818;
  }
 
  .swagger-ui .info a:hover {
-   color: #3f51b5;
+   color: #808818;
  }
 
  .swagger-ui .btn.authorize {
    line-height: 1;
    display: inline;
-   color: #3f51b5;
-   border-color: #3f51b5;
+   color: #808818;
+   border-color: #808818;
  }
 
  .swagger-ui .btn.authorize svg {
-   fill: #3f51b5;
+   fill: #808818;
  }
 
  body {
