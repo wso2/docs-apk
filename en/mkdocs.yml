@@ -33,7 +33,7 @@ copyright: WSO2 API Platform for Kubernetes - Documentation
 # Configuration
 theme:
     name: material
-    custom_dir: theme/material
+    #custom_dir: theme/material
     #palette:
     #    primary: deep-orange
     #    accent: deep-orange
