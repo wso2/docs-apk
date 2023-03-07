@@ -13,10 +13,8 @@
 
 4. Install [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/deploy/).
 
-    >**Note**
-    >
-    > When using Rancher Desktop for local deployment clusters, [disable Traefik, which is the default Ingress Controller](https://kubernetes.github.io/ingress-nginx/deploy/#rancher-desktop).
-    >
+    !!! note
+        When using Rancher Desktop for local deployment clusters, [disable Traefik, which is the default Ingress Controller](https://kubernetes.github.io/ingress-nginx/deploy/#rancher-desktop).
 
 ## Step 1 - Install the APK components
 
