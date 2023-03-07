@@ -34,14 +34,14 @@ copyright: WSO2 API Platform for Kubernetes - Documentation
 theme:
     name: material
     custom_dir: theme/material
-    palette:
-        primary: deep-orange
-        accent: deep-orange
-    logo: images/logo.svg
-    favicon: images/favicon.png
-    highlightjs: true
-    feature:
-        tabs: true
+    #palette:
+    #    primary: deep-orange
+    #    accent: deep-orange
+    #logo: images/logo.svg
+    #favicon: images/favicon.png
+    #highlightjs: true
+    #feature:
+        #tabs: true
     language: 'en'
 #Breaks build if there's a warning
 strict: false
@@ -224,16 +224,16 @@ plugins:
     #      redirect_maps:
 
     # Extra
-extra_css:
-    - assets/lib/highlightjs/default.min.css
-    - assets/css/theme.css
-    - assets/lib/json-formatter/json-formatter.css
-extra_javascript:
-    - assets/lib/json-formatter/json-formatter.umd.js
-    - assets/lib/highlightjs/highlight.min.js
-    - assets/js/theme.js
-    - assets/lib/backtotop/js/util.js
-    - assets/lib/backtotop/js/main.js
+#extra_css:
+    #- assets/lib/highlightjs/default.min.css
+    #- assets/css/theme.css
+    #- assets/lib/json-formatter/json-formatter.css
+#extra_javascript:
+    #- assets/lib/json-formatter/json-formatter.umd.js
+    #- assets/lib/highlightjs/highlight.min.js
+    #- assets/js/theme.js
+    #- assets/lib/backtotop/js/util.js
+    #- assets/lib/backtotop/js/main.js
 extra:
     social:
         - type: github
