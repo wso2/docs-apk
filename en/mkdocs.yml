@@ -193,8 +193,8 @@ markdown_extensions:
     - markdown.extensions.meta
     - markdown.extensions.toc:
           permalink: true
-    - markdown_include.include:
-          base_path: docs
+    #- markdown_include.include:
+          #base_path: docs
     - pymdownx.arithmatex
     - pymdownx.betterem:
           smart_enable: all
