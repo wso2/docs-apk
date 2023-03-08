@@ -15,7 +15,7 @@
 # under the License.
 
 # Project information
-site_name: WSO2 APK Documentation 1.0.0
+site_name: APK Documentation 1.0.0
 site_description: Documentation for WSO2 API Platform for Kubernetes
 site_author: WSO2
 site_url: https://apk.docs.wso2.com/en/latest/
@@ -35,8 +35,8 @@ theme:
     name: material
     custom_dir: theme/material
     palette:
-        primary: #808818
-        accent: #b3c53e
+        primary: #1a6bac
+        accent: #1a6bac
     logo: images/logo.svg
     favicon: images/favicon.png
     highlightjs: true

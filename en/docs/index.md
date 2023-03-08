@@ -1,8 +1,6 @@
 ---
 template: templates/single-column.html
 ---
-
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <div class="homePage">
     <div class="section01">
         <div class="leftContent">
