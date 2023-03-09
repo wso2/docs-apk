@@ -49,7 +49,7 @@ Follow the instructions below to use Asgardeo as the Identity Provider (IdP) to 
 
 1. Open [Postman](https://github.com/wso2/apk/blob/main/test/postman-tests/README.md).
 2. Navigate to the `POST` `Generate Auth code token` REST API.
-3. Make sure that the Token generation call has the same information that was entered in the Helm Chat in Step 5.
+3. Make sure that the Token generation call has the same information that was entered in the Helm Chart in Step 5.
      
      - `Auth URL`
      - `Access Token URL`
