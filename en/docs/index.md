@@ -41,7 +41,8 @@ template: templates/single-column.html
             <div class="linkSet2 middle" onclick="location.href='{{base_path}}/about-apk/what-is-apk';">
                 <a href="/about-apk/what-is-apk"><h3>What is APK?</h3></a>
                 <p>
-                    The basic flow guide for the WSO2 APK platform provides step-by-step tutorials for developing, managing and publishing APIs.
+                    <!--The basic flow guide for the WSO2 APK platform provides step-by-step tutorials for developing, managing and publishing APIs.-->
+                    Get to know WSO2 APK one step deeper.
                 </p>
             </div>
             <div class="linkSet2 last" onclick="location.href='/about-apk/architecture';">
