@@ -4,7 +4,7 @@ Cloud native API management refers to the use of API management tools and practi
 
 WSO2 APK, designed to help you build, deploy, and manage APIs in a cloud environment. Our platform is built on top of a microservices architecture and uses containerization technologies to ensure scalability and flexibility. With features like automatic failover and load balancing, our APK platform is designed to be highly available and able to handle large numbers of API requests without performance degradation. We've also added support for continuous delivery and deployment, so you can quickly and easily push updates to your API services.
 
-## Some characteristics of APK
+## Characteristics of APK
 
 - **Scalability**: Designed to scale up and down based on demand, allowing them to handle large numbers of API requests without performance degradation.
 
