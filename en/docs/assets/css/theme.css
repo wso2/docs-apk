@@ -209,3 +209,12 @@ p {
         font-size: 0.75rem;
     }
 }
+
+@media only screen and (max-width: 640px) {
+    .beta-badge {
+        position: absolute;
+        top: 49px;
+        z-index: 100;
+        right: 0;
+    }
+}
