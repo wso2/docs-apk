@@ -121,27 +121,22 @@ Follow the instructions below to add a custom filter in the Enforcer:
         [enforcer.filters.configProperties]
             CustomProperty = "foo"
     ```
-
-6. Mount the JAR file containing the Custom Filter to the `/home/wso2/lib/dropins`. 
-    
-    !!! info
-        If you are using the `docker-compose` file within the distribution, then add the JAR file to the `docker-compose/resources/enforcer/dropins` directory.
   
-7. Create a Docker image.
+6. Create a Docker image.
    
      Use the APK Enforcer image as the base image and include the JAR into the `/home/wso2/lib/dropins` directory.
-     You can build the new image with the following sample Docker file.
+     You can build the new image with the following sample Docker file named - `Dockerfile`
 
     ```
     FROM wso2/enforcer:latest 
     COPY sample-filter-1.0-SNAPSHOT.jar /home/wso2/lib/dropins/sample-filter-1.0-SNAPSHOT.jar
     ```
 
-8.  Build the new Enforcer image.
+7.  Build the new Enforcer image.
     
     `docker build -t wso2/enforcer-new:latest . `
 
-9.  Start WSO2 APK.
+8.  Start WSO2 APK.
 
      1. Update the `values.yaml` file of the APK Helm chart.
          - `dp.gatewayRuntime.deployment.enforcer.image` - Use this image (`wso2/enforcer-new:latest`) as the value.
