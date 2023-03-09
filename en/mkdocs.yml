@@ -28,7 +28,7 @@ edit_uri: https://github.com/wso2/docs-apk/edit/main/en/docs/
 dev_addr: localhost:8000
 
 # Copyright
-copyright: Copyright © WSO2 LLC (2023)Content licensed under CC By 4.0. | Sample code licensed under Apache 2.0.
+copyright: WSO2 API Platform for Kubernetes - Documentation
 
 # Configuration
 theme:
