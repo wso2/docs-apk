@@ -1,4 +1,4 @@
-# Using Autho0 as an IdP
+# Using Auth0 as an IdP
 
 Follow the instructions below to use Auth0 as the Identity Provider (IdP) to authenticate the APIs that belong to a specific Organization:
 
@@ -16,11 +16,11 @@ If you have not created the user already, [create a user](https://auth0.com/docs
 
 [Assign the member to the Organization](https://auth0.com/docs/manage-users/organizations/configure-organizations/assign-members), which you created in Step 1.
 
-# Step 4 - Enable a connection
+## Step 4 - Enable a connection
 
 [Add a connection for your organization](https://auth0.com/docs/manage-users/organizations/configure-organizations/enable-connections) as Username-Password-Authentication.
 
-# Step 5 - Create an application
+## Step 5 - Create an application
 
 1. [Create an application](https://auth0.com/docs/get-started/auth0-overview/create-applications). 
      
@@ -30,8 +30,8 @@ If you have not created the user already, [create a user](https://auth0.com/docs
 
      Configure the organization settings that correspond to the application.
 
-     - **What type of end users will use this documentation** - `Team members of organizations`
-     - **Display organization prompt** - Enable this option.
+     - What type of end users will use this documentation - `Team members of organizations`
+     - Display organization prompt - Enable this option.
 
 ## Step 6 - Update the Helm Chart
 
