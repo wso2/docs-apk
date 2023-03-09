@@ -22,16 +22,16 @@ If you have not created the user already, [create a user](https://auth0.com/docs
 
 ## Step 5 - Create an application
 
-1. [Create an application](https://auth0.com/docs/get-started/auth0-overview/create-applications). 
+1. [Create an application](https://auth0.com/docs/get-started/auth0-overview/create-applications).
      
-      Let's create an application as `My App`.
+       Let's create an application as `My App`.
 
 2. Configure the application.
 
-      Configure the organization settings that correspond to the application.
+       Configure the organization settings that correspond to the application.
 
-      - What type of end users will use this documentation - `Team members of organizations`
-      - Display organization prompt - Enable this option.
+       - What type of end users will use this documentation - `Team members of organizations`
+       - Display organization prompt - Enable this option.
 
 ## Step 6 - Update the Helm Chart
 
@@ -39,7 +39,7 @@ If you have not created the user already, [create a user](https://auth0.com/docs
 2. Navigate to the `<APK-HOME>/helm-charts/` directory and open the `values.yaml` file.
 3. Update the IDP related configurations in the `ipd` section.
 
-     ```
+      ```
        idp:
          issuer: ""
          authorizeEndpoint: ""
@@ -51,10 +51,21 @@ If you have not created the user already, [create a user](https://auth0.com/docs
          organizationClaim: ""
          clientId: ""
          clientSecret: ""
-     ```
+      ```
 
-      - `organizationClaim` - This should always be `user_organization`.
+      - `organizationClaim` - This should always be `org_id`.
       - Update all other values based on the Endpoint details that you came across in Step 6.1.
+
+4. Restart the Helm chart.
+
+       ```tab="Format"
+       helm install <helm-chart-name> . -n <namespace>
+       ```
+
+       ```tab="Example"
+       helm install apk-test . -n apk
+       ```
+
 
 ## Step 7 - Generate an Access Token
 
@@ -87,7 +98,7 @@ If you have not created the user already, [create a user](https://auth0.com/docs
 
       Enter the `user_organization` value that you copied above as the `organizationClaimValue:` value.
 
-4. [Create an organization in APK](https://github.com/wso2/apk/wiki/Organizations#create-an-organization) using the organization CR, which you created in the previous step.
+4. [Create an organization in APK](../../../../administration/organizations/#create-an-organization) using the organization CR, which you created in the previous step.
 
 ## Step 9 - Invoke the System API
 

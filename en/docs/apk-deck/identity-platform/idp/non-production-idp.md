@@ -9,20 +9,20 @@ Follow the instructions below to use a Non-production Identity Provider (IdP) to
 ## Step 1 - Create an Organization
 
 Let's add the organization CR for `org1` to the namespace to create a new organization. 
-For more information, see [Create an Organization](https://github.com/wso2/apk/wiki/Organizations#create-an-organization).
+For more information, see [Create an organization in APK](../../../../administration/organizations).
 
 After adding the organization named `org1` it will be added to the system (Data Plane).
 
 ## Step 2 - Create an API with an Organization
 
-[Create an API](https://github.com/wso2/apk/wiki/Organizations#create-an-api-with-an-organization) that is associated to an organization.
+[Create an API](../../../../administration/organizations#create-an-api-with-an-organization) that is associated to an organization.
 
 ## Step 3 - Get an access token
 
 !!! note
     Make sure that the Helm charts are installed.
 
-1. Use [Postman](https://github.com/wso2/apk/blob/main/test/postman-tests/README.md) to get the access token using the Non-prodction IdP.
+1. Use [Postman](../../administration/postman-tests) to get the access token using the Non-production IdP.
 
     Use the following details before running the `POST` `Generate Auth code token` REST API.
 
@@ -38,11 +38,11 @@ After adding the organization named `org1` it will be added to the system (Data 
 
     After you generate the token you will be redirected to non-production IdP login UI.
 
-1. Login using the following details.
+2. Login using the following details.
 
-    - **userName** - `org1user`
-    - **Password** - `org1user`
-    - **Organization** - `org1` (The name of the organization that you created before in Step 1).
+     - **userName** - `org1user`
+     - **Password** - `org1user`
+     - **Organization** - `org1` (The name of the organization that you created before in Step 1).
 
      You will receive the JWT access token.
 

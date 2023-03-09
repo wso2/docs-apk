@@ -20,7 +20,7 @@ Follow the instructions below to use Asgardeo as the Identity Provider (IdP) to 
 2. Click on the newly created application.
 3. Click on the **Info** tab to view the IDP related configurations.
 
-       All the IDP related configurations are listed under **Service Endpoints**.
+    All the IDP related configurations are listed under **Service Endpoints**.
 
 4. [Share application with sub-organizations](https://wso2.com/asgardeo/docs/guides/organization-management/manage-suborganizations/#share-applications-with-suborganizations).
 
@@ -30,43 +30,54 @@ Follow the instructions below to use Asgardeo as the Identity Provider (IdP) to 
 2. Update the IDP related configurations in the `ipd` section.
 
       ```
-       idp:
-         issuer: ""
-         authorizeEndpoint: ""
-         tokenEndpoint: ""
-         revokeEndpoint: ""
-         jwksEndpoint: ""      
-         usernameClaim: ""
-         groupClaim: ""
-         organizationClaim: ""
-         clientId: ""
-         clientSecret: ""
+        idp:
+          issuer: ""
+          authorizeEndpoint: ""
+          tokenEndpoint: ""
+          revokeEndpoint: ""
+          jwksEndpoint: ""      
+          usernameClaim: ""
+          groupClaim: ""
+          organizationClaim: ""
+          clientId: ""
+          clientSecret: ""
       ```
       
        - `organizationClaim` - This should always be `user_organization`.
        - Update all other values based on the Service Endpoint details that you came across in Step 4.
 
+3. Restart the Helm chart.
+
+      ```tab="Format"
+        helm install <helm-chart-name> . -n <namespace>
+      ```
+
+      ```tab="Example"
+        helm install apk-test . -n apk
+      ```
+
+
 ## Step 6 - Generate an Access Token
 
-1. Open [Postman](https://github.com/wso2/apk/blob/main/test/postman-tests/README.md).
+1. Open [Postman](../../administration/postman-tests).
 2. Navigate to the `POST` `Generate Auth code token` REST API.
 3. Make sure that the Token generation call has the same information that was entered in the Helm Chart in Step 5.
      
-       - `Auth URL`
-       - `Access Token URL`
-       - `Client ID`
-       - `Client Secret`
+     - `Auth URL`
+     - `Access Token URL`
+     - `Client ID`
+     - `Client Secret`
 
 4. Click **Get New Access Token**.
      
-      This redirects you to the Asgardeo Sign in page.
+     This redirects you to the Asgardeo Sign in page.
 
 5. Click **Sign in with Organization Login**.
 6. Enter the name of the organization that you created in Step 1.
 7. Click **Submit**.
 8. Enter the user credentials (email and password) of the user that you created in the sub-organization.
 
-       You will receive an access token when the token call is successful.
+     You will receive an access token when the token call is successful.
 
 9. Copy the access token that you see listed as the `id_token`.
 
@@ -76,10 +87,10 @@ Follow the instructions below to use Asgardeo as the Identity Provider (IdP) to 
 2. Copy the value listed for `user_organization`, which is in the Payload data section.
 3. Define the CR for an organization.
 
-       Enter the `user_organization` value that you copied above as the `organizationClaimValue:` value.
+     Enter the `user_organization` value that you copied above as the `organizationClaimValue:` value.
 
-4. [Create an organization in APK](https://github.com/wso2/apk/wiki/Organizations#create-an-organization) using the organization CR, which you created in the previous step.
+4. [Create an organization in APK](../../../../administration/organizations/#create-an-organization) using the organization CR, which you created in the previous step.
 
 ## Step 8 - Invoke the System API
 
- Use the JWT token that you received in the previous step to invoke the system APIs.
+ Use the JWT token that you received in the previous step to invoke the System APIs.
