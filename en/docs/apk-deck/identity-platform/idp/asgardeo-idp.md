@@ -46,7 +46,7 @@ Follow the instructions below to use Asgardeo as the Identity Provider (IdP) to 
        - `organizationClaim` - This should always be `user_organization`.
        - Update all other values based on the Service Endpoint details that you came across in Step 4.
 
-3. Restart the Helm chart.
+3. Restart WSO2 APK.
 
       ```tab="Format"
         helm install <helm-chart-name> . -n <namespace>

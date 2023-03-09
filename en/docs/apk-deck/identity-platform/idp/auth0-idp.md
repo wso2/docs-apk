@@ -56,7 +56,7 @@ If you have not created the user already, [create a user](https://auth0.com/docs
       - `organizationClaim` - This should always be `org_id`.
       - Update all other values based on the Endpoint details that you came across in Step 6.1.
 
-4. Restart the Helm chart.
+4. Restart WSO2 APK.
 
        ```tab="Format"
        helm install <helm-chart-name> . -n <namespace>
