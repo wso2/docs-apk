@@ -9,7 +9,7 @@ template: templates/single-column.html
             </p>
             </br>
             <h2>Download</h2>
-            <a href="https://wso2.com/apk/#">
+            <a href="https://github.com/wso2/apk/releases">
                 <img src="{{base_path}}/assets/img/download-apk.png" title="Download WSO2 APK" width="5%" alt="Download WSO2 APK"/>
             </a>
         </div>
