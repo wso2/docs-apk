@@ -125,7 +125,7 @@ nav:
                #    - Topic 2: get-started/dummy.md
                 - API Gateway - Enforcer:
                 #    - Enforcer - Overview: apk-deck/enforcer-overview.md
-                   - Custom Filter: apk-deck/gateway/enforcer/custom-filter.md
+                   - Custom Filters: apk-deck/gateway/enforcer/custom-filters.md
                 #   - Topic 2: get-started/dummy.md
             - Identity Platform:
                 IdP:
