@@ -128,10 +128,11 @@ nav:
                     - Topic 1: get-started/dummy.md
                     - Topic 2: get-started/dummy.md
             - Identity Platform:
-                - IdP - Overview: apk-deck/identity-platform/idp-overview.md
-                - IdP - Non-production: apk-deck/identity-platform/non-production-idp.md
-                - IdP - Asgadeo: apk-deck/identity-platform/asgadeo-idp.md
-                - IdP - Auth0: apk-deck/identity-platform/auth0-idp.md
+                IdP:
+                    - Overview: apk-deck/identity-platform/idp/idp-overview.md
+                    - Non-production: apk-deck/identity-platform/idp/non-production-idp.md
+                    - Asgardeo: apk-deck/identity-platform/idp/asgardeo-idp.md
+                    - Auth0: apk-deck/identity-platform/idp/auth0-idp.md
             - Back Office: 
                 - Back Office Overview: apk-deck/back-office-overview.md
                 - Access: get-started/dummy.md
