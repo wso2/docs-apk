@@ -47,26 +47,24 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
 
     !!! info "Optionally, to Access Deployment through your local machine"
 
-        1. Identify the `router-service` external IP address. 
-              
+        1. Identify the `router-service` external IP address.
            ```
            kubectl get svc -n apk | grep router-service
            ```
-
         2. Invoke the API through the APK Gateway.
-
            ```
            kubectl port-forward svc/apk-test-wso2-apk-router-service -n apk 9095:9095
            ```
 
-## Step 2 - Deploy an API
+## Step 2 - Deploy the API
 
 Follow the instructions below to deploy an API using the kubectl:
 
 1. Create an API Custom Resource (CR) and create a production and/or sandbox HTTPRoute CRs, and service for the API backend.
 
     !!! info
-        You can find a sample CR set in the `<APK-HOME>/developer/tryout/samples/` directory.
+        - You can find a sample CR set in the `<APK-HOME>/developer/tryout/samples/` directory.
+        - The backend of the sample REST API is [https://httpbin.org/](https://httpbin.org/)
 
 2. Apply CRs to the Kubernetes API server using the kubectl.
 
@@ -114,8 +112,8 @@ Follow the instructions below to deploy an API using the kubectl:
 
 4. Invoke the REST API.
    
-   ```
-   curl --location --request GET '{router_service}:9095/http-bin-api/1.0.8/get' \
-   --header 'HOST: gw.wso2.com' \
-   --header 'Internal-Key: $INTERNAL_KEY'  
-   ```
+      ```
+      curl --location --request GET '{router_service}:9095/http-bin-api/1.0.8/get' \
+      --header 'HOST: gw.wso2.com' \
+      --header 'Internal-Key: $INTERNAL_KEY'  
+      ```
