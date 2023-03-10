@@ -1,8 +1,20 @@
 # Prerequisites
 
-- Install Java JDK 11.
-- Install Gradle(7.5.1).
-- Install Ballerina Ballerina version: 2201.3.1 (Swan Lake Update 3).
-- Install Go.
-- Install Lua.
-- Docker Runtime Up and Running.
+1. [Install Helm](https://helm.sh/docs/intro/install/).
+2. [Install the Kubernetes Client (kubectl)](https://kubernetes.io/docs/tasks/tools/install-kubectl/).
+3. [Setup a Kubernetes Cluster](https://kubernetes.io/docs/setup).
+     
+     If you want to run your setup locally you can use Minikube, Kind, Rancher Desktop or a similar software.
+     
+4. Setup a deployment namespace.
+   
+     `kubectl create namespace <namespace>`
+
+5. Add Helm chart dependencies.
+     - Add Bitnami
+    
+         `helm repo add bitnami https://charts.bitnami.com/bitnami`
+
+     - Add Jetstack
+    
+         `helm repo add jetstack https://charts.jetstack.io`
