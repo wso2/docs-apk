@@ -45,7 +45,7 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
       kubectl get pods -n apk
       ```
 
-    !!! info "Optionally, to Access Deployment through your local machine"
+    !!! info "(Optional) To access the deployment through your local machine"
 
         1. Identify the `router-service` external IP address.
            ```
@@ -60,15 +60,24 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
 
 Follow the instructions below to deploy an API using the kubectl:
 
-1. Create an API Custom Resource (CR) and create a production and/or sandbox HTTPRoute CRs, and service for the API backend.
+1. Create the following Custom Resource (CR).
 
-    !!! info
-        - You can find a sample CR set in the `<APK-HOME>/developer/tryout/samples/` directory.
-        - The backend of the sample REST API is [https://httpbin.org/](https://httpbin.org/)
+      1. Resource API CR.
+      2. Production and/or Sandbox HTTPRoute CR.
+      3. CR that defines the service for the API backend.
+
+        !!! Note
+
+            - You can find a sample set of CRs in the `<APK-HOME>/developer/tryout/samples/` directory.
+            - The backend of the sample REST API is [https://httpbin.org/](https://httpbin.org/)
 
 2. Apply CRs to the Kubernetes API server using the kubectl.
 
+     ```tab="Format"
+     kubectl apply -f <path-to-crs>
      ```
+
+     ```tab="Command"
      kubectl apply -f developer/tryout/samples/
      ```
 
