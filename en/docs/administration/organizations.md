@@ -8,7 +8,7 @@ For example if an API named `sample-api` was created in organization `org1`. Use
 
 Follow the instructions below to create a new organization.
 
-Let's create an organization using the sample CR that is available in APK.
+Let's create an organization using the sample Custom Resource (CR) that is available in APK.
 
 1. Define the CR for your organization in a YAML file.
    
