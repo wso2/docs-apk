@@ -100,13 +100,13 @@ nav:
     #           - Comment on API: manage-apis/community-engagement/comment-on-api.md
     #       - API Categorization: manage-apis/api-categorization.md
     #       - API Monetization: manage-apis/api-monetization.md
-    #- Catalogs:
-    #   - API Catalog:
-    #       - Overview - API Catalog: catalogs/api-catalog.md
-    #       - Back Office APIs: catalogs/api-reference-back-office.md
-    #       - Runtime APIs: catalogs/api-reference-runtime.md
-    #       - Developer Portal APIs: catalogs/api-reference-developer-portal.md
-    #       - Admin APIs: catalogs/api-reference-admin.md
+    - Catalogs:
+        - API Catalog:
+            - Overview - API Catalog: catalogs/api-catalog.md
+            - Back Office APIs: catalogs/api-reference-back-office.md
+            - Runtime APIs: catalogs/api-reference-runtime.md
+            - Developer Portal APIs: catalogs/api-reference-developer-portal.md
+            - Admin APIs: catalogs/api-reference-admin.md
     #   - CLI Catalog: catalogs/cli-reference.md
     #   - CRD Catalog: catalogs/kubernetes-crds.md
     - About APK:
