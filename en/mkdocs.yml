@@ -118,14 +118,13 @@ nav:
        #    - Key Concept 2: about-apk/key-concepts/key-concept.md
         - WSO2 APK Deck:
             #- APK Deck Overview: apk-deck/overview.md
-            - API Gateway:
+            #- API Gateway:
                #- API Gateway - Router:
                #    - Router - Overview: apk-deck/router-overview.md
                #    - Topic 1: get-started/dummy.md
                #    - Topic 2: get-started/dummy.md
-                - API Gateway - Enforcer:
+                #- API Gateway - Enforcer:
                 #    - Enforcer - Overview: apk-deck/enforcer-overview.md
-                   - Custom Filters: apk-deck/gateway/enforcer/custom-filters.md
                 #   - Topic 2: get-started/dummy.md
             - Identity Platform:
                 IdP:
@@ -170,10 +169,11 @@ nav:
        #        - Deployment Pattern 2: get-started/dummy.md
        #        - Deployment Pattern 3: get-started/dummy.md
        #- CI/CD: develop-and-deploy-api/ci-cd.md
-       #- Customizations:
-       #    - Gateway: 
-       #        - Customization 1: setup/gateway-customizations.md
-       #        - Customization 2: setup/gateway-customizations.md
+        - Customizations:
+            - API Gateway - Enforcer:
+            #    - Enforcer - Overview: apk-deck/enforcer-overview.md
+                - Mediation Extensions:
+                    - Custom Filters: setup/customizations/gateway-enforcer/mediation-extensions/custom-filters.md
     - Administration:
         - Organizations: administration/organizations.md
         - Test System APIs: administration/postman-tests.md
