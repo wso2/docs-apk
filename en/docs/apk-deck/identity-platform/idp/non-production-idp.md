@@ -1,6 +1,6 @@
 # Using a Non-production IdP
 
-Follow the instructions below to use a Non-production Identity Provider (IdP) to authenticate the APIs that belong to a specific Organization:
+Follow the instructions below to use the inbuilt Non-production Identity Provider(IdP)/token service to authenticate the APIs that belong to a specific Organization:
 
 !!! note
     - Use the non-production IdP only for testing purposes.
