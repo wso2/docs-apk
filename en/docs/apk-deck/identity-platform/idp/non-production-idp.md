@@ -8,7 +8,7 @@ Follow the instructions below to use a Non-production Identity Provider (IdP) to
 
 ## Step 1 - Create an Organization
 
-Let's add the organization CR for `org1` to the namespace to create a new organization. 
+Let's add the organization CR for `org1` to the namespace to create a new organization.
 For more information, see [Create an organization in APK](../../../../administration/organizations).
 
 After adding the organization named `org1` it will be added to the system (Data Plane).
