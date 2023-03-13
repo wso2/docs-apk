@@ -109,6 +109,7 @@ nav:
             - Admin APIs: catalogs/api-reference-admin.md
     #   - CLI Catalog: catalogs/cli-reference.md
     #   - CRD Catalog: catalogs/kubernetes-crds.md
+    #   - Helm Catalog: catalogs/config-catalog.md
     - About APK:
         - What is APK?: about-apk/what-is-apk.md
         - About This Release: about-apk/about-this-release.md
