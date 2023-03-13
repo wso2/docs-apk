@@ -60,14 +60,14 @@ nav:
         #        - From an Existing Definition: develop-and-deploy-api/create-an-api-proxy/from-existing-definition.md
         #    - Test API: develop-and-deploy-api/test-api.md
         #    - Publish Your API: manage-apis/publish-your-api.md
-    #- API Management:
-    #    - Develop and Deploy API:
+    - API Management:
+        - Develop and Deploy API:
     #        - API Versions:
     #            - Create an API Version: develop-and-deploy-api/api-versions/create-an-api-versions.md
     #            - Default Version: develop-and-deploy-api/api-versions/default-version.md
     #            - Backward Compatibility: develop-and-deploy-api/api-versions/backward-compatibility.md
-    #        - API Policies:
-    #            - Overview: develop-and-deploy-api/api-policies-overview.md
+            - API Policies:
+                - Overview: develop-and-deploy-api/api-policies-overview.md
     #            - Attach Policies: develop-and-deploy-api/api-policies/attach-policies.md
     #            - Create a Policy: develop-and-deploy-api/api-policies/create-a-policy.md
     #        - Rate Limiting: develop-and-deploy-api/rate-limiting.md
