@@ -15,7 +15,7 @@ template: templates/single-column.html
             </br>
             <h2>Download</h2>
             <a href="https://github.com/wso2/apk/releases">
-                <img src="assets/img/download-apk.png" title="Download WSO2 APK" width="90" alt="Download WSO2 APK"/>
+                <img src="{{base_path}}/assets/img/download-apk.png" title="Download WSO2 APK" width="90" alt="Download WSO2 APK"/>
             </a>
         </div>
         <!--<div class="md-main .md-content " style="float:right; width: 55%; align:right;  flex-shrink: 0;min-width: 40%; max-height: 100%; max-width:50%; margin-left:10px; margin-top:20px">
@@ -25,8 +25,8 @@ template: templates/single-column.html
     <div class="section02">
         <!--<h3>APK in a Nutshell</h3>-->
         <div class="linkWrapper">
-            <div class="linkSet2" onclick="location.href='{{base_path}}/get-started/quick-start-guide/quick-start-guide';">
-                <a href="/get-started/quick-start-guide"><h3>Quick Start Guide</h3></a>
+            <div class="linkSet2" onclick="location.href='{{base_path}}/get-started/quick-start-guide';">
+                <a href="{{base_path}}/get-started/quick-start-guide"><h3>Quick Start Guide</h3></a>
                 <p>
                     If you're new to the WSO2 APK platform, the quick start guide is a great place to get started. This guide will walk you through the process of setting up and running your first API on the platform.
                 </p>
@@ -39,14 +39,14 @@ template: templates/single-column.html
                 </p>
             </div>-->
             <div class="linkSet2 middle" onclick="location.href='{{base_path}}/about-apk/what-is-apk';">
-                <a href="/about-apk/what-is-apk"><h3>What is APK?</h3></a>
+                <a href="{{base_path}}/about-apk/what-is-apk"><h3>What is APK?</h3></a>
                 <p>
                     <!--The basic flow guide for the WSO2 APK platform provides step-by-step tutorials for developing, managing and publishing APIs.-->
                     Get to know WSO2 APK one step deeper.
                 </p>
             </div>
-            <div class="linkSet2 last" onclick="location.href='/about-apk/architecture';">
-                <a href="/about-apk/architecture"><h3>Architecture</h3></a>
+            <div class="linkSet2 last" onclick="location.href='{{base_path}}/about-apk/architecture';">
+                <a href="{{base_path}}/about-apk/architecture"><h3>Architecture</h3></a>
                 <p>
                     The architecture of a software platform is an important factor in determining its performance, scalability, and reliability. Get a better understanding of the architecture of the WSO2 APK platform.
                 </p>
