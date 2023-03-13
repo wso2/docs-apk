@@ -68,7 +68,7 @@ nav:
     #            - Backward Compatibility: develop-and-deploy-api/api-versions/backward-compatibility.md
             - API Policies:
                 - Overview: develop-and-deploy-api/api-policies-overview.md
-    #            - Attach Policies: develop-and-deploy-api/api-policies/attach-policies.md
+                - Attach Policies: develop-and-deploy-api/api-policies/attach-policies.md
     #            - Create a Policy: develop-and-deploy-api/api-policies/create-a-policy.md
     #        - Rate Limiting: develop-and-deploy-api/rate-limiting.md
     #        - API Security:
