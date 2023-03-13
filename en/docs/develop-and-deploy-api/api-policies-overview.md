@@ -9,7 +9,7 @@ WSO2 APK allows you to attach API policies in the following instances.
 - At the API-level.
 - At the Operation-level.
 
-You can not attach an API policy at two separate levels simultaneously. If you have attached a global policy for an API, WSO2 APK will not allow you to attach an Operation-level policy as well and vise versa. Furthermore, attaching an API varies as follows based on the approach you use to create an API:
+You can not attach an API policy at two separate levels simultaneously. If you have attached a global policy for an API, WSO2 APK will not allow you to attach an Operation-level policy as well and vice versa. Furthermore, attaching an API varies as follows based on the approach you use to create an API:
 
 | **Create an API from:** | **Attach Policies**                             |
 |-------------------------|-------------------------------------------------|
