@@ -47,10 +47,28 @@ You need to define the API Polices within the API Custom Resource (CR) when crea
 
 The REST API flow related configurations definitions are as follows:
 
-| **Value**                     | **Description**                                                                                                      |
-|------------------------------ |----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `ResponseHeaderModifier`      | You can use value to add or remove an HTTP header from an HTTP response before it is sent to the client.             |
-| `RequestHeaderModifier`       | You can use this value to add or remove an HTTP header from an HTTP request before it is sent to the upstream target.             |
+#### Type
+
+`Type` defines the type of HTTPHeaderFilter that is defined under the `Filter` section.
+
+| **Possible Value**                | **Description**                                                                                                      |
+|------------------------- |----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `ResponseHeaderModifier` | You can use value to add or remove an HTTP header from an HTTP response before it is sent to the client.             |
+| `RequestHeaderModifier`  | You can use this value to add or remove an HTTP header from an HTTP request before it is sent to the upstream target.             |
+
+#### RequestHeaderModifier
+
+| **Possible Value**                | **Required** | **Description**                                                                                                      |
+|------------------------- |-----------------| -----------------|
+| `Remove` | Optional | You can use this configuration to remove the provided header(s) from the HTTP request before the action. You can enter either one or a list of HTTP header names. <br/> **Note:** The header names are case-insensitive. |
+| `Set`  | Optional | You can use this configuration to overwrite the request with the given header (name, value) before the action. If an API Policy is not already attached, this will attach a new API policy. |
+
+#### ResponseHeaderModifier
+
+| **Possible Value**                | **Required** | **Description**                                                                                                      |
+|------------------------- |-----------------| -----------------|
+| `Remove` | Optional | You can use this configuration to remove the provided header(s) from the HTTP request before the action. You can enter either one or a list of HTTP header names. <br/> **Note:** The header names are case-insensitive. |
+| `Set`  | Optional | You can use this configuration to overwrite the request with the given header (name, value) before the action. If an API Policy is not already attached, this will attach a new API policy. |
 
 ### Add a request policy
 
