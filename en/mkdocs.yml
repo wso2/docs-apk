@@ -60,15 +60,17 @@ nav:
         #        - From an Existing Definition: develop-and-deploy-api/create-an-api-proxy/from-existing-definition.md
         #    - Test API: develop-and-deploy-api/test-api.md
         #    - Publish Your API: manage-apis/publish-your-api.md
-    #- API Management:
-    #    - Develop and Deploy API:
+    - API Management:
+        - Develop and Deploy API:
     #        - API Versions:
     #            - Create an API Version: develop-and-deploy-api/api-versions/create-an-api-versions.md
     #            - Default Version: develop-and-deploy-api/api-versions/default-version.md
     #            - Backward Compatibility: develop-and-deploy-api/api-versions/backward-compatibility.md
-    #        - API Policies:
-    #            - Overview: develop-and-deploy-api/api-policies-overview.md
-    #            - Attach Policies: develop-and-deploy-api/api-policies/attach-policies.md
+            - API Policies:
+                - Overview: develop-and-deploy-api/api-policies-overview.md
+                - Attach Policies: 
+                    - Via REST API: develop-and-deploy-api/api-policies/attach-policies-via-rest-api.md
+                    - Via CR: develop-and-deploy-api/api-policies/attach-policies-via-crs.md
     #            - Create a Policy: develop-and-deploy-api/api-policies/create-a-policy.md
     #        - Rate Limiting: develop-and-deploy-api/rate-limiting.md
     #        - API Security:
@@ -109,7 +111,7 @@ nav:
             - Admin APIs: catalogs/api-reference-admin.md
     #   - CLI Catalog: catalogs/cli-reference.md
     #   - CRD Catalog: catalogs/kubernetes-crds.md
-    #   - Helm Catalog: catalogs/config-catalog.md
+    #    - Helm Catalog: catalogs/config-catalog.md
     - About APK:
         - What is APK?: about-apk/what-is-apk.md
         - About This Release: about-apk/about-this-release.md
@@ -196,8 +198,8 @@ markdown_extensions:
     - markdown.extensions.meta
     - markdown.extensions.toc:
           permalink: true
-    #- markdown_include.include:
-          #base_path: docs
+    - markdown_include.include:
+          base_path: docs
     - pymdownx.arithmatex
     - pymdownx.betterem:
           smart_enable: all
