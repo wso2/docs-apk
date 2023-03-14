@@ -85,11 +85,9 @@ Follow the instructions below to use Asgardeo as the Identity Provider (IdP) to 
      
 1. Decode the access token using a JWT decoder (e.g., [https://jwt.io/](https://jwt.io/)).
 2. Copy the value listed for `user_organization`, which is in the Payload data section.
-3. Define the CR for an organization.
-
-     Enter the `user_organization` value that you copied above as the `organizationClaimValue:` value.
-
-4. [Create an organization in APK](../../../../administration/organizations/#create-an-organization) using the organization CR, which you created in the previous step.
+3. [Create an organization in APK](../../../../administration/organizations/#create-an-organization).
+      
+      Enter the `user_organization` value that you copied above as the `organizationClaimValue:` value when defining the Custom Resource (CR) for the organization.
 
 ## Step 8 - Invoke the System API
 
