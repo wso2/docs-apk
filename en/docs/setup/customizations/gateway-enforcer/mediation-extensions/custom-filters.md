@@ -17,9 +17,9 @@ Follow the instructions below to add a custom filter in the Enforcer:
 
          ```xml
            <dependency>
-               <groupId>org.wso2.choreo.connect</groupId>
+               <groupId>org.wso2.apk</groupId>
                <artifactId>org.wso2.choreo.connect.enforcer.commons</artifactId>
-               <version>{% raw %}{{choreo_connect.version}}{% endraw %}</version>
+               <version>0.0.1-m6</version>
            </dependency>
          ```
 
@@ -103,7 +103,7 @@ Follow the instructions below to add a custom filter in the Enforcer:
 
 5. Add the custom filter to the Enforcer.
 
-     1. Open the Enforcer related configuration file (`config.toml`).
+     1. Open the values.yaml.
      2. Include the custom filter related configurations.
 
          - The `className` needs to be the fully qualified `className`.
@@ -111,15 +111,15 @@ Follow the instructions below to add a custom filter in the Enforcer:
          - By default, the first position is taken by the Authentication Filter and the Throttle Filter is placed as the second filter.
          - As the following example configuration contains `1` as the `position`, it would be executed prior to the Authentication Filter.
 
-    ```toml
-    [[enforcer.filters]]
-        # ClassName of the filter
-        className = "org.example.tests.CustomFilter"
-        # Position of the filter within final filter-chain
-        position = 1
-        # Custom Configurations
-        [enforcer.filters.configProperties]
-            CustomProperty = "foo"
+    ```yaml
+    enforcer:
+        configs:
+            filters:
+            - className: org.example.tests.CustomFilter
+                position: 1
+                properties:
+                - name: CustomProperty
+                    value: foo
     ```
   
 6. Create a Docker image.
@@ -128,7 +128,7 @@ Follow the instructions below to add a custom filter in the Enforcer:
      You can build the new image with the following sample Docker file named - `Dockerfile`
 
     ```
-    FROM wso2/enforcer:latest 
+    FROM wso2/enforcer:0.0.1-m6 
     COPY sample-filter-1.0-SNAPSHOT.jar /home/wso2/lib/dropins/sample-filter-1.0-SNAPSHOT.jar
     ```
 
