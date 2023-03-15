@@ -11,17 +11,31 @@ The Gateway provides a Java interface to implement custom filters. Then the deve
 
 Follow the instructions below to add a custom filter in the Enforcer:
 
-1. Create a Java project with `org.wso2.choreo.connect.enforcer.commons` dependency.
+1. Create a Java project with `org.wso2.apk.enforcer.commons` dependency.
    
-     - For Apache Maven, use the following configurations.
+     - For Gradle or Apache Maven, use the following configurations.
 
-         ```xml
+
+        ```tab="Gradle"
+            repositories {
+                mavenLocal()
+                maven {
+                    url = 'https://maven.wso2.org/nexus/content/groups/wso2-public/'
+                }
+            }
+
+            dependencies {
+                implementation "org.wso2.apk:org.wso2.apk.enforcer.commons:0.0.1-m7"
+            }
+        ```
+
+        ```xml tab="Maven"
            <dependency>
                <groupId>org.wso2.apk</groupId>
-               <artifactId>org.wso2.choreo.connect.enforcer.commons</artifactId>
-               <version>0.0.1-m6</version>
+               <artifactId>org.wso2.apk.enforcer.commons</artifactId>
+               <version>0.0.1-m7</version>
            </dependency>
-         ```
+        ```
 
 2. Implement the custom filter.
 
@@ -93,13 +107,17 @@ Follow the instructions below to add a custom filter in the Enforcer:
 
 4. Build the project and create the JAR file.
      
-     For Apache Maven, use the following.
+     For Gradle or Apache Maven, use the following.
 
-    ```
-    mvn clean install
-    ```
+     ```tab="Gradle"
+        /.gradlew build
+     ```
 
-     Let's assume that the output JAR is named - `sample-filter-1.0-SNAPSHOT.jar`.
+     ```tab="Maven"
+        mvn clean install
+     ```
+
+     Let's assume that the output JAR is named - `sample-custom-filter-1.0-SNAPSHOT.jar`.
 
 5. Add the custom filter to the Enforcer.
 
@@ -129,7 +147,7 @@ Follow the instructions below to add a custom filter in the Enforcer:
 
     ```
     FROM wso2/enforcer:0.0.1-m6 
-    COPY sample-filter-1.0-SNAPSHOT.jar /home/wso2/lib/dropins/sample-filter-1.0-SNAPSHOT.jar
+    COPY sample-custom-filter-1.0-SNAPSHOT.jar /home/wso2/lib/dropins/sample-custom-filter-1.0-SNAPSHOT.jar
     ```
 
 7.  Build the new Enforcer image.
@@ -149,3 +167,4 @@ Follow the instructions below to add a custom filter in the Enforcer:
         ```tab="Example"
         helm install apk-test . -n apk
         ```
+As a reference, you can use the sample custom filter implementation [here](https://github.com/wso2/apk/tree/main/developer/tryout/samples/filters/sample-custom-filter) .
