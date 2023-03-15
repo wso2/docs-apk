@@ -135,6 +135,7 @@ nav:
                     - Non-production: apk-deck/identity-platform/idp/non-production-idp.md
                     - Asgardeo: apk-deck/identity-platform/idp/asgardeo-idp.md
                     - Auth0: apk-deck/identity-platform/idp/auth0-idp.md
+                    - Any Third-party IdP: apk-deck/identity-platform/third-party-idp.md
            #- Back Office: 
            #    - Back Office Overview: apk-deck/back-office-overview.md
            #    - Access: get-started/dummy.md
