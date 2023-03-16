@@ -2,7 +2,7 @@
 
 !!! Tip
     
-    To get familiar with the concept of API Policies, see [API Policies Overview]({{base_path}}/develop-and-deploy-api/api-policies-overview).
+    To get familiar with the concept of API Policies, see [API Policies Overview](../../../develop-and-deploy-api/api-policies-overview).
 
 You need to define the API Policies within the API definition when creating an API using the REST API Interface. Let's get familiar with the configurations that you will use to attach API policies via an HTTPRoute CR and also the [configurations definitions](#configuration-definitions).
 

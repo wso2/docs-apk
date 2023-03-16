@@ -69,7 +69,7 @@ If you have not created the user already, [create a user](https://auth0.com/docs
 
 ## Step 7 - Generate an Access Token
 
-1. Open [Postman](../../../administration/postman-tests).
+1. Open [Postman](../../../../administration/postman-tests).
 2. Navigate to the `POST` `Generate Auth code token` REST API.
 3. Make sure that the Token generation call has the same information that was entered in the Helm Chart in Step 6.
      
