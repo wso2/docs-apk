@@ -32,7 +32,7 @@ template: templates/single-column.html
                 </p>
             </div>
             <!--<div class="linkSet2 middle" onclick="location.href='../restapi/overview';">
-                <img src="../assets/img/home/landing-page/write-your-first-integration-service.svg" title="Lorem ipsum" width="75" alt="Lorem ipsum"/>
+                <img src="assets/img/home/landing-page/write-your-first-integration-service.svg" title="Lorem ipsum" width="75" alt="Lorem ipsum"/>
                 <a href="/get-started/quick-start-guide"><h3>Basic Flow</h3></a>
                 <p>
                     The basic flow guide for the WSO2 APK platform provides step-by-step tutorials for developing, managing and publishing APIs.
