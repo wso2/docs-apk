@@ -4,7 +4,7 @@ APK is an open-source platform for providing complete API Management capabilitie
 
 APK is composed of these components:
 
-[![Architecture]({{base_path}}/assets/img/architecture.png)]({{base_path}}/assets/img/architecture.png)
+[![Architecture]({{base_path}}/assets/img/wso2-api-platform-for-kubernetes-component-architecture.png)]({{base_path}}/assets/img/wso2-api-platform-for-kubernetes-component-architecture.png)
 
 **Control Plane** - The APK control plane. It provides API Management capabilities, marketplace capabilities along with domain services and web applications. It consists of the following sub-components:
 

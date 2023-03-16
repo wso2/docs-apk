@@ -21,8 +21,8 @@ site_author: WSO2
 site_url: https://apk.docs.wso2.com/en/latest/
 
 # Repository
-repo_name: wso2/docs-apk
-repo_url: https://github.com/wso2/docs-apk
+repo_name: wso2/apk
+repo_url: https://github.com/wso2/apk
 # Change the edit_url later when 1.0.0 is released
 edit_uri: https://github.com/wso2/docs-apk/edit/main/en/docs/
 dev_addr: localhost:8000
@@ -49,57 +49,59 @@ strict: false
 nav:
     - Home: index.md
     - Get Started:
-        - Get Started - Overview: get-started/get-started-overview.md
+        #- Get Started - Overview: get-started/get-started-overview.md
         - Quick Start: get-started/quick-start-guide.md
-        - Basic Flow:
-            - Overview: restapi/overview.md
-            - Create an API: restapi/create-api.md
-            - Discover Services: restapi/discover-your-services.md
-            - Create an API Proxy:
-                - From Scratch: develop-and-deploy-api/create-an-api-proxy/from-scratch.md
-                - From an Existing Definition: develop-and-deploy-api/create-an-api-proxy/from-existing-definition.md
-            - Test API: develop-and-deploy-api/test-api.md
-            - Publish Your API: manage-apis/publish-your-api.md
+        #- Basic Flow:
+        #    - Overview: restapi/overview.md
+        #    - Create an API: restapi/create-api.md
+        #    - Discover Services: restapi/discover-your-services.md
+        #    - Create an API Proxy:
+        #        - From Scratch: develop-and-deploy-api/create-an-api-proxy/from-scratch.md
+        #        - From an Existing Definition: develop-and-deploy-api/create-an-api-proxy/from-existing-definition.md
+        #    - Test API: develop-and-deploy-api/test-api.md
+        #    - Publish Your API: manage-apis/publish-your-api.md
     - API Management:
         - Develop and Deploy API:
-            - API Versions:
-                - Create an API Version: develop-and-deploy-api/api-versions/create-an-api-versions.md
-                - Default Version: develop-and-deploy-api/api-versions/default-version.md
-                - Backward Compatibility: develop-and-deploy-api/api-versions/backward-compatibility.md
+    #        - API Versions:
+    #            - Create an API Version: develop-and-deploy-api/api-versions/create-an-api-versions.md
+    #            - Default Version: develop-and-deploy-api/api-versions/default-version.md
+    #            - Backward Compatibility: develop-and-deploy-api/api-versions/backward-compatibility.md
             - API Policies:
                 - Overview: develop-and-deploy-api/api-policies-overview.md
-                - Attach Policies: develop-and-deploy-api/api-policies/attach-policies.md
-                - Create a Policy: develop-and-deploy-api/api-policies/create-a-policy.md
-            - Rate Limiting: develop-and-deploy-api/rate-limiting.md
-            - API Security:
-                - Authentication:
-                    - Enable API Security:
-                        - JWT: develop-and-deploy-api/security/authentication/enable-api-security/jwt.md
-                        - MTLS: develop-and-deploy-api/security/authentication/enable-api-security/mtls.md
-                        - API Key: develop-and-deploy-api/security/authentication/enable-api-security/api-key.md
-                        - Internal Key: develop-and-deploy-api/security/authentication/enable-api-security/internal-key.md
-                    - Disable API Security: develop-and-deploy-api/security/authentication/disable-api-security.md
-                - Authorization:
-                    - Access Control for API Requests: develop-and-deploy-api/security/authorization/access-control-for-api-requests.md
-        - Manage APIs:
-            - API Documentation: manage-apis/api-documentation.md
-            - Consumer Management:
-                - Subscription Availability: manage-apis/consumer-management/subscription-availability.md
-                - API Visibility: manage-apis/consumer-management/api-visibility.md
-            - Usage Plans:
-                - Add a New Rate Limiting Policy: manage-apis/usage-plans/add-a-new-rate-limiting-policy.md
-                - Set Limits for Rate Limiting: manage-apis/usage-plans/set-limits-for-rate-limiting.md
-            - Lifecycle Management:
-                - API Lifecycle Overview: manage-apis/lifecycle-management/api-lifecycle-overview.md
-                - Manage API Lifecycle: manage-apis/lifecycle-management/manage-api-lifecycle.md
-                - Customize API Lifecycles: manage-apis/lifecycle-management/customize-api-lifecycles.md
-                - Extending API Lifecycles: manage-apis/lifecycle-management/extending-api-lifecycles.md
-            - Community Engagement:
-                - Community URLs: manage-apis/community-engagement/community-urls.md
-                - Share API Link: manage-apis/community-engagement/share-api-link.md
-                - Comment on API: manage-apis/community-engagement/comment-on-api.md
-            - API Categorization: manage-apis/api-categorization.md
-            - API Monetization: manage-apis/api-monetization.md
+                - Attach Policies: 
+                    - Via REST API: develop-and-deploy-api/api-policies/attach-policies-via-rest-api.md
+                    - Via CR: develop-and-deploy-api/api-policies/attach-policies-via-crs.md
+    #            - Create a Policy: develop-and-deploy-api/api-policies/create-a-policy.md
+    #        - Rate Limiting: develop-and-deploy-api/rate-limiting.md
+    #        - API Security:
+    #            - Authentication:
+    #                - Enable API Security:
+    #                    - JWT: develop-and-deploy-api/security/authentication/enable-api-security/jwt.md
+    #                    - MTLS: develop-and-deploy-api/security/authentication/enable-api-security/mtls.md
+    #                    - API Key: develop-and-deploy-api/security/authentication/enable-api-security/api-key.md
+    #                    - Internal Key: develop-and-deploy-api/security/authentication/enable-api-security/internal-key.md
+    #                - Disable API Security: develop-and-deploy-api/security/authentication/disable-api-security.md
+    #            - Authorization:
+    #                - Access Control for API Requests: develop-and-deploy-api/security/authorization/access-control-for-api-requests.md
+    #    - Manage APIs:
+    #       - API Documentation: manage-apis/api-documentation.md
+    #       - Consumer Management:
+    #           - Subscription Availability: manage-apis/consumer-management/subscription-availability.md
+    #           - API Visibility: manage-apis/consumer-management/api-visibility.md
+    #       - Usage Plans:
+    #           - Add a New Rate Limiting Policy: manage-apis/usage-plans/add-a-new-rate-limiting-policy.md
+    #           - Set Limits for Rate Limiting: manage-apis/usage-plans/set-limits-for-rate-limiting.md
+    #       - Lifecycle Management:
+    #           - API Lifecycle Overview: manage-apis/lifecycle-management/api-lifecycle-overview.md
+    #           - Manage API Lifecycle: manage-apis/lifecycle-management/manage-api-lifecycle.md
+    #           - Customize API Lifecycles: manage-apis/lifecycle-management/customize-api-lifecycles.md
+    #           - Extending API Lifecycles: manage-apis/lifecycle-management/extending-api-lifecycles.md
+    #       - Community Engagement:
+    #           - Community URLs: manage-apis/community-engagement/community-urls.md
+    #           - Share API Link: manage-apis/community-engagement/share-api-link.md
+    #           - Comment on API: manage-apis/community-engagement/comment-on-api.md
+    #       - API Categorization: manage-apis/api-categorization.md
+    #       - API Monetization: manage-apis/api-monetization.md
     - Catalogs:
         - API Catalog:
             - Overview - API Catalog: catalogs/api-catalog.md
@@ -107,79 +109,82 @@ nav:
             - Runtime APIs: catalogs/api-reference-runtime.md
             - Developer Portal APIs: catalogs/api-reference-developer-portal.md
             - Admin APIs: catalogs/api-reference-admin.md
-        - CLI Catalog: catalogs/cli-reference.md
-        - CRD Catalog: catalogs/kubernetes-crds.md
+            - CLI Catalog: catalogs/cli-reference.md
+    #   - CRD Catalog: catalogs/kubernetes-crds.md
+    #    - Helm Catalog: catalogs/config-catalog.md
     - About APK:
         - What is APK?: about-apk/what-is-apk.md
         - About This Release: about-apk/about-this-release.md
         - Architecture: about-apk/architecture.md
-        - Key Concepts:
-            - Key Concept 1: about-apk/key-concepts/key-concept.md
-            - Key Concept 2: about-apk/key-concepts/key-concept.md
+       #- Key Concepts:
+       #    - Key Concept 1: about-apk/key-concepts/key-concept.md
+       #    - Key Concept 2: about-apk/key-concepts/key-concept.md
         - WSO2 APK Deck:
-            - APK Deck Overview: apk-deck/overview.md
-            - API Gateway:
-                - API Gateway - Router:
-                    - Router - Overview: apk-deck/router-overview.md
-                    - Topic 1: get-started/dummy.md
-                    - Topic 2: get-started/dummy.md
-                - API Gateway - Enforcer:
-                    - Enforcer - Overview: apk-deck/enforcer-overview.md
-                    - Topic 1: get-started/dummy.md
-                    - Topic 2: get-started/dummy.md
+            #- APK Deck Overview: apk-deck/overview.md
+            #- API Gateway:
+               #- API Gateway - Router:
+               #    - Router - Overview: apk-deck/router-overview.md
+               #    - Topic 1: get-started/dummy.md
+               #    - Topic 2: get-started/dummy.md
+                #- API Gateway - Enforcer:
+                #    - Enforcer - Overview: apk-deck/enforcer-overview.md
+                #   - Topic 2: get-started/dummy.md
             - Identity Platform:
-                - IdP - Overview: apk-deck/identity-platform/idp-overview.md
-                - IdP - Non-production: apk-deck/identity-platform/non-production-idp.md
-                - IdP - Asgadeo: apk-deck/identity-platform/asgadeo-idp.md
-                - IdP - Auth0: apk-deck/identity-platform/auth0-idp.md
-            - Back Office: 
-                - Back Office Overview: apk-deck/back-office-overview.md
-                - Access: get-started/dummy.md
-                - Topic 1: get-started/dummy.md
-                - Topic 2: get-started/dummy.md
-                - GraphQL: 
-                    - Test API: develop-and-deploy-api/test-graphql-api.md
-                - WebSocket:
-                    - Test API: develop-and-deploy-api/test-websocket-api.md
-                - SOAP:
-                    - Test API: develop-and-deploy-api/test-soap-api.md
-            - Runtime:
-                - Runtime Overview: apk-deck/runtime-overview.md
-                - Access: get-started/dummy.md
-                - Topic 1: get-started/dummy.md
-                - Topic 2: get-started/dummy.md
-            - Developer Portal:
-                - Developer Portal - Overview: get-started/dummy.md
-                - Access: get-started/dummy.md
-                - Topic 1: get-started/dummy.md
-                - Topic 2: get-started/dummy.md
-            - Admin Portal:
-                - Admin Portal - Overview: get-started/dummy.md
-                - Access: get-started/dummy.md
-                - Topic 1: get-started/dummy.md
-                - Topic 2: get-started/dummy.md
-        - Product Pitch: https://wso2.com/api-manager
+                IdP:
+                    - Overview: apk-deck/identity-platform/idp/idp-overview.md
+                    - Non-production: apk-deck/identity-platform/idp/non-production-idp.md
+                    - Asgardeo: apk-deck/identity-platform/idp/asgardeo-idp.md
+                    - Auth0: apk-deck/identity-platform/idp/auth0-idp.md
+                    - Any Third-party IdP: apk-deck/identity-platform/third-party-idp.md
+           #- Back Office: 
+           #    - Back Office Overview: apk-deck/back-office-overview.md
+           #    - Access: get-started/dummy.md
+           #    - Topic 1: get-started/dummy.md
+           #    - Topic 2: get-started/dummy.md
+           #    - GraphQL: 
+           #        - Test API: develop-and-deploy-api/test-graphql-api.md
+           #    - WebSocket:
+           #        - Test API: develop-and-deploy-api/test-websocket-api.md
+           #    - SOAP:
+           #        - Test API: develop-and-deploy-api/test-soap-api.md
+           #- Runtime:
+           #    - Runtime Overview: apk-deck/runtime-overview.md
+           #    - Access: get-started/dummy.md
+           #    - Topic 1: get-started/dummy.md
+           #    - Topic 2: get-started/dummy.md
+           #- Developer Portal:
+           #    - Developer Portal - Overview: get-started/dummy.md
+           #    - Access: get-started/dummy.md
+           #    - Topic 1: get-started/dummy.md
+           #    - Topic 2: get-started/dummy.md
+           #- Admin Portal:
+           #    - Admin Portal - Overview: get-started/dummy.md
+           #    - Access: get-started/dummy.md
+           #    - Topic 1: get-started/dummy.md
+           #    - Topic 2: get-started/dummy.md
+        #- Product Pitch: https://wso2.com/api-manager
     - Setup: 
         - Prerequisites: setup/prerequisites.md
-        - Install: setup/install.md
-        - Deploy:
-            - Deployment Patterns: get-started/dummy.md
-            - All-in-one: get-started/dummy.md
-            - Distributed:
-                - Deployment Pattern 2: get-started/dummy.md
-                - Deployment Pattern 3: get-started/dummy.md
-        - CI/CD: develop-and-deploy-api/ci-cd.md
+       #- Install: setup/install.md
+       #- Deploy:
+       #    - Deployment Patterns: get-started/dummy.md
+       #    - All-in-one: get-started/dummy.md
+       #    - Distributed:
+       #        - Deployment Pattern 2: get-started/dummy.md
+       #        - Deployment Pattern 3: get-started/dummy.md
+       #- CI/CD: develop-and-deploy-api/ci-cd.md
         - Customizations:
-            - Gateway: 
-                - Customization 1: setup/gateway-customizations.md
-                - Customization 2: setup/gateway-customizations.md
+            - API Gateway - Enforcer:
+            #    - Enforcer - Overview: apk-deck/enforcer-overview.md
+                - Mediation Extensions:
+                    - Custom Filters: setup/customizations/gateway-enforcer/mediation-extensions/custom-filters.md
     - Administration:
         - Organizations: administration/organizations.md
         - Test System APIs: administration/postman-tests.md
     - Reach Out:
-        - Community: reachout/community.md # Breif description and links to Discord and Stack OverFlow
+        - Community: reachout/community.md # Brief description and links to Discord and Stack OverFlow
         - Support: https://wso2.com/subscription/#support
-        - Report Bugs: get-started/dummy.md # Breif description and links to Git links for doc issues and product issues
+        #- Report Bugs: get-started/dummy.md # Brief description and links to Git links for doc issues and product issues
         - Training and Certification: https://wso2.com/training/
         - Resources: https://wso2.com/library/
 
@@ -194,8 +199,8 @@ markdown_extensions:
     - markdown.extensions.meta
     - markdown.extensions.toc:
           permalink: true
-    #- markdown_include.include:
-          #base_path: docs
+    - markdown_include.include:
+          base_path: docs
     - pymdownx.arithmatex
     - pymdownx.betterem:
           smart_enable: all
