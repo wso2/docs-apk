@@ -102,7 +102,7 @@ helm install apk-test . -n apk
 1. Decode the access token using a JWT decoder (e.g., [https://jwt.io/](https://jwt.io/)).
 2. [Create an organization in APK](../../../../administration/organizations/#create-an-organization).
      
-     Enter the `organizationClaimValue:` related value that corresponds to the IdP when creating a Custom Resource (CR) for the organization. Note that the `organizationClaimValue:` is unique to each IdP.
+     Enter the `organizationClaimValue:` related value that corresponds to the IdP when creating the organization. Note that the `organizationClaimValue:` is unique to each IdP.
 
 ## Step 10 - Invoke the System API
 
