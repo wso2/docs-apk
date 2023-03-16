@@ -46,18 +46,17 @@ Follow the instructions below to use Asgardeo as the Identity Provider (IdP) to 
        - `organizationClaim` - This should always be `user_organization`.
        - Update all other values based on the Service Endpoint details that you came across in Step 4.
 
-3. Restart WSO2 APK.
+## Step 6 - Restart WSO2 APK
 
-      ```tab="Format"
-        helm install <helm-chart-name> . -n <namespace>
-      ```
+```tab="Format"
+helm install <helm-chart-name> . -n <namespace>
+```
 
-      ```tab="Example"
-        helm install apk-test . -n apk
-      ```
+```tab="Example"
+helm install apk-test . -n apk
+```
 
-
-## Step 6 - Generate an Access Token
+## Step 7 - Generate an Access Token
 
 1. Open [Postman](../../../../administration/postman-tests).
 2. Navigate to the `POST` `Generate Auth code token` REST API.
@@ -81,7 +80,7 @@ Follow the instructions below to use Asgardeo as the Identity Provider (IdP) to 
 
 9. Copy the access token that you see listed as the `id_token`.
 
-## Step 7 - Add the organization to the Data Plane
+## Step 8 - Add the organization to the Data Plane
      
 1. Decode the access token using a JWT decoder (e.g., [https://jwt.io/](https://jwt.io/)).
 2. Copy the value listed for `user_organization`, which is in the Payload data section.
@@ -89,6 +88,6 @@ Follow the instructions below to use Asgardeo as the Identity Provider (IdP) to 
       
       Enter the `user_organization` value that you copied above as the `organizationClaimValue:` value when defining the Custom Resource (CR) for the organization.
 
-## Step 8 - Invoke the System API
+## Step 9 - Invoke the System API
 
  Use the JWT token that you received in the previous step to invoke the System APIs.
