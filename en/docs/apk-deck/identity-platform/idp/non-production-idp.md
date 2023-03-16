@@ -22,7 +22,7 @@ After adding the organization named `org1` it will be added to the system (Data 
 !!! note
     Make sure that the Helm charts are installed.
 
-1. Use [Postman](../../administration/postman-tests) to get the access token using the Non-production IdP.
+1. Use [Postman](../../../../administration/postman-tests) to get the access token using the Non-production IdP.
 
     Use the following details before running the `POST` `Generate Auth code token` REST API.
 

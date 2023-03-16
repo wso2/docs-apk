@@ -2,7 +2,7 @@
 
 !!! Tip
     
-    To get familiar with the concept of API Policies, see [API Policies Overview]({{base_path}}/develop-and-deploy-api/api-policies-overview). 
+    To get familiar with the concept of API Policies, see [API Policies Overview](../../develop-and-deploy-api/api-policies-overview). 
 
 You need to define the API Policies within the HTTPRoute Custom Resource (CR) when creating an API using the Kubernetes Command Line Interface (kubctl). Let's get familiar with the [configurations](#code-snippet-of-sample-httproute-cr) that you will use to attach API policies via an HTTPRoute CR and also the [configurations definitions](#configuration-definitions).
 
@@ -269,8 +269,8 @@ Follow the instructions below to attach operation-level API Policies to APIs via
 
 !!! note "Before you begin"
     
-    - Install the [prerequisites]({{base_path}}/setup/prerequisites) that are required to run WSO2 APK.
-    - [Start WSO2 APK]({{base_path}}/get-started/quick-start-guide/#step-1-start-wso2-apk).
+    - Install the [prerequisites](../../setup/prerequisites) that are required to run WSO2 APK.
+    - [Start WSO2 APK](../../../get-started/quick-start-guide/#step-1-start-wso2-apk).
 
 **Step 1 - Define the CRs**
 

@@ -2,7 +2,7 @@
 
 ## Before you begin
 
-Install the [prerequisites]({{base_path}}/setup/prerequisites) that are required to run WSO2 APK.
+Install the [prerequisites](../../setup/prerequisites) that are required to run WSO2 APK.
 
 ## Step 1 - Start WSO2 APK
 

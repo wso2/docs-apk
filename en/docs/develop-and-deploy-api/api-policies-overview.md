@@ -13,5 +13,5 @@ When you attach a policy at the API-level, it will be applied globally to all th
 
 ## What's Next?
 
-- [Learn to attach API Policies using the REST API Interface]({{base_path}}/develop-and-deploy-api/api-policies/attach-policies-via-rest-api)
-- [Learn to attach API Policies using a Custom Resource (CR)]({{base_path}}/develop-and-deploy-api/api-policies/attach-policies-via-crs)
+- [Learn to attach API Policies using the REST API Interface](../develop-and-deploy-api/api-policies/attach-policies-via-rest-api)
+- [Learn to attach API Policies using a Custom Resource (CR)](../develop-and-deploy-api/api-policies/attach-policies-via-crs)
