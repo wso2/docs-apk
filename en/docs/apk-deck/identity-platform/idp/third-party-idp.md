@@ -51,16 +51,16 @@ The Idp section should include the following parameters:
 
 | **Parameter** | **Description** |
 |---------------|-----------------|
-| issuer: | The IdP's issuer URL. |
-| authorizeEndpoint: | The URL of the IdP's authorization endpoint. |
-| tokenEndpoint: |  The URL of the IdP's token endpoint.  |
-| revokeEndpoint: |  The URL of the IdP's revoke endpoint.  |
-| jwksEndpoint: |  The URL of the IdP's JSON Web Key Set (JWKS) endpoint.  |
-| usernameClaim: |  The claim in the IdP's token that represents the user's username.  |
-| groupClaim: |  The claim in the IdP's token that represents the user's group membership, if applicable.  |
-| organizationClaim: |  The claim in the IdP's token that represents the user's organization, if applicable.  |
-| clientId: |  The client ID associated with the created application.  |
-| clientSecret: |  The client secret associated with the created application.  |
+| `issuer:` | The IdP's issuer URL. |
+| `authorizeEndpoint:` | The URL of the IdP's authorization endpoint. |
+| `tokenEndpoint:` |  The URL of the IdP's token endpoint.  |
+| `revokeEndpoint:` |  The URL of the IdP's revoke endpoint.  |
+| `jwksEndpoint:` |  The URL of the IdP's JSON Web Key Set (JWKS) endpoint.  |
+| `usernameClaim:` |  The claim in the IdP's token that represents the user's username.  |
+| `groupClaim:` |  The claim in the IdP's token that represents the user's group membership, if applicable.  |
+| `organizationClaim:` |  The claim in the IdP's token that represents the user's organization, if applicable.  |
+| `clientId:` |  The client ID associated with the created application.  |
+| `clientSecret:` |  The client secret associated with the created application.  |
 
 ## Step 7 - Restart WSO2 APK
 
@@ -100,10 +100,9 @@ helm install apk-test . -n apk
 ## Step 9 - Add the user's organization to the Data Plane
 
 1. Decode the access token using a JWT decoder (e.g., [https://jwt.io/](https://jwt.io/)).
-2. Copy the value listed for `user_organization`, which is in the Payload data section.
-3. [Create an organization in APK](../../../../administration/organizations/#create-an-organization).
+2. [Create an organization in APK](../../../../administration/organizations/#create-an-organization).
      
-     Enter the `user_organization` value that you copied above as the `organizationClaimValue:` value when creating a Custom Resource (CR) for the organization.
+     Enter the `organizationClaimValue:` related value that corresponds to the IdP when creating a Custom Resource (CR) for the organization. Note that the `organizationClaimValue:` is unique to each IdP.
 
 ## Step 10 - Invoke the System API
 
