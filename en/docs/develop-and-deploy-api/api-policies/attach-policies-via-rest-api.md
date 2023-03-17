@@ -4,11 +4,11 @@
     
     To get familiar with the concept of API Policies, see [API Policies Overview](../../../develop-and-deploy-api/api-policies-overview).
 
-You need to define the API Policies within the API definition when creating an API using the REST API Interface. Let's get familiar with the configurations that you will use to attach API policies via an HTTPRoute CR and also the [configurations definitions](#configuration-definitions).
+You need to define the API Policies in the API payload when creating an API using the REST API Interface. You can either attach API Policies at the API-level or at the Operation-level. Let's get familiar with the [API-level Policy](#api-level) and [Operational-level Policy](#operational-level) configurations and also the [configurations definitions](#configuration-definitions).
 
-## Attaching API-level Policies
+## API-level
 
-### Sample code snippet - API-level
+**Sample code snippets**
 
 The following is a sample code snippet that defines how you can attach API Policies at the API-level within an API definition.
 
@@ -47,9 +47,336 @@ The following is a sample code snippet that defines how you can attach API Polic
   }
 ```
 
-## Attaching Operational-level Policies
+??? note "Attach API Policies to the Request Flow Only"
 
-### Sample code snippet - Operational-level
+    ```tab="Remove Request Header"
+
+    # Attach an API Policy to Remove a Single Request Header
+    --------------------------------------------------------
+
+    "apiPolicies": {
+      "request": [
+          {
+              "policyName": "removeHeader",
+              "parameters": [{
+                  "headerName": "content-length"
+              }]
+          }
+      ]
+    }
+
+    ---------------------------------------------------------------------------------------------------
+
+    # Attach an API Policy to Remove Multiple Request Headers
+    ----------------------------------------------------------
+    
+    "apiPolicies": {
+      "request": [
+          {
+              "policyName": "removeHeader",
+              "parameters": [{
+                  "headerName": "content-length"
+              }]
+          },
+          {
+              "policyName": "removeHeader",
+              "parameters": [{
+                  "headerName": "content-length2"
+              }]
+          }
+      ]
+    }
+    ```
+    
+    ```tab="Update Request Header"
+
+    # Attach an API Policy to Update a Single Request Header
+    --------------------------------------------------------
+
+    "apiPolicies": {
+      "request": [
+          {
+              "policyName": "addHeader",
+              "parameters": [{
+                  "headerName": "customadd2",
+                  "headerValue": "customvalue2"
+              }]
+          }
+      ]
+    }
+
+    ---------------------------------------------------------------------------------------------------
+    
+    # Attach Policies to Update Multiple Request Headers
+    ------------------------------------------------------
+
+    "apiPolicies": {
+      "request": [
+          {
+              "policyName": "addHeader",
+              "parameters": [{
+                  "headerName": "customadd1",
+                  "headerValue": "customvalue1"
+              }]
+          },
+          {
+              "policyName": "addHeader",
+              "parameters": [{
+                  "headerName": "customadd2",
+                  "headerValue": "customvalue2"
+              }]
+          }
+      ]
+    }
+
+    ```
+
+    ```tab="Remove and Update Request Headers"
+
+    # Attach API Policies to Remove a Request Header and to Update Another Request Header
+    ---------------------------------------------------------------------------------------
+    
+    "apiPolicies": {
+      "request": [
+          {
+              "policyName": "removeHeader",
+              "parameters": [{
+                  "headerName": "content-length"
+              }]
+          },
+          {
+              "policyName": "addHeader",
+              "parameters": [{
+                  "headerName": "customadd1",
+                  "headerValue": "customvalue1"
+              }]
+          }
+      ]
+    }
+
+    ---------------------------------------------------------------------------------------------------
+
+    # Attach Policies to Remove and Update Multiple Request Headers
+    ----------------------------------------------------------------
+
+    "apiPolicies": {
+      "request": [
+          {
+              "policyName": "removeHeader",
+              "parameters": [{
+                  "headerName": "content-length"
+              }]
+          },
+          {
+              "policyName": "removeHeader",
+              "parameters": [{
+                  "headerName": "content-length2"
+              }]
+          },
+          {
+              "policyName": "addHeader",
+              "parameters": [{
+                  "headerName": "customadd1",
+                  "headerValue": "customvalue1"
+              }]
+          },
+          {
+              "policyName": "addHeader",
+              "parameters": [{
+                  "headerName": "customadd2",
+                  "headerValue": "customvalue2"
+              }]
+          }
+      ]
+    }
+
+    ```
+
+??? note "Attach API Policies to the Response Flow Only"
+
+    ```tab="Remove Response Header"
+
+    # Attach an API Policy to Remove a Single Response Header
+    --------------------------------------------------------
+
+    "apiPolicies": {
+      "response": [
+          {
+              "policyName": "removeHeader",
+              "parameters": [{
+                  "headerName": "content-length"
+              }]
+          }
+      ]
+    }
+
+    ---------------------------------------------------------------------------------------------------
+
+    # Attach an API Policy to Remove Multiple Response Headers
+    ----------------------------------------------------------
+    
+    "apiPolicies": {
+      "response": [
+          {
+              "policyName": "removeHeader",
+              "parameters": [{
+                  "headerName": "content-length"
+              }]
+          },
+          {
+              "policyName": "removeHeader",
+              "parameters": [{
+                  "headerName": "content-length2"
+              }]
+          }
+      ]
+    }
+    ```
+    
+    ```tab="Update Response Header"
+
+    # Attach an API Policy to Update a Single Response Header
+    --------------------------------------------------------
+
+    "apiPolicies": {
+      "response": [
+          {
+              "policyName": "addHeader",
+              "parameters": [{
+                  "headerName": "customadd2",
+                  "headerValue": "customvalue2"
+              }]
+          }
+      ]
+    }
+
+    ---------------------------------------------------------------------------------------------------
+    
+    # Attach Policies to Update Multiple Response Headers
+    ------------------------------------------------------
+
+    "apiPolicies": {
+      "response": [
+          {
+              "policyName": "addHeader",
+              "parameters": [{
+                  "headerName": "customadd1",
+                  "headerValue": "customvalue1"
+              }]
+          },
+          {
+              "policyName": "addHeader",
+              "parameters": [{
+                  "headerName": "customadd2",
+                  "headerValue": "customvalue2"
+              }]
+          }
+      ]
+    }
+
+    ```
+
+    ```tab="Remove and Update Response Headers"
+
+    # Attach API Policies to Remove a Response Header and to Update Another Response Header
+    ---------------------------------------------------------------------------------------
+    
+    "apiPolicies": {
+      "response": [
+          {
+              "policyName": "removeHeader",
+              "parameters": [{
+                  "headerName": "content-length"
+              }]
+          },
+          {
+              "policyName": "addHeader",
+              "parameters": [{
+                  "headerName": "customadd1",
+                  "headerValue": "customvalue1"
+              }]
+          }
+      ]
+    }
+
+    ---------------------------------------------------------------------------------------------------
+
+    # Attach Policies to Remove and Update Multiple Response Headers
+    ----------------------------------------------------------------
+
+    "apiPolicies": {
+      "response": [
+          {
+              "policyName": "removeHeader",
+              "parameters": [{
+                  "headerName": "content-length"
+              }]
+          },
+          {
+              "policyName": "removeHeader",
+              "parameters": [{
+                  "headerName": "content-length2"
+              }]
+          },
+          {
+              "policyName": "addHeader",
+              "parameters": [{
+                  "headerName": "customadd1",
+                  "headerValue": "customvalue1"
+              }]
+          },
+          {
+              "policyName": "addHeader",
+              "parameters": [{
+                  "headerName": "customadd2",
+                  "headerValue": "customvalue2"
+              }]
+          }
+      ]
+    }
+
+    ```
+
+??? note "Attach API Policies to Request and Response Flows"
+
+    ```
+    "apiPolicies": {
+      "request": [
+          {
+              "policyName": "addHeader",
+              "parameters": [{
+                  "headerName": "customadd1",
+                  "headerValue": "customvalue1"
+              }]
+          },
+          {
+              "policyName": "addHeader",
+              "parameters": [{
+                  "headerName": "customadd2",
+                  "headerValue": "customvalue2"
+              }]
+          }
+      ],
+      "response": [
+          {
+              "policyName": "removeHeader",
+              "parameters": [{
+                  "headerName": "content-length"
+              }]
+          },
+          {
+              "policyName": "removeHeader",
+              "parameters": [{
+                  "headerName": "content-length2"
+              }]
+          }
+      ]
+    }
+    ```
+
+## Operational-level
+
+**Sample code snippets**
 
 The following is a sample code snippet that defines how you can attach API Policies at the Operation-level within an API definition.
 
@@ -87,6 +414,333 @@ The following is a sample code snippet that defines how you can attach API Polic
     ]
 }
 ```
+
+??? note "Attach API Policies to the Request Flow Only"
+
+    ```tab="Remove Request Header"
+
+    # Attach an API Policy to Remove a Single Request Header
+    --------------------------------------------------------
+
+    "operationPolicies": {
+      "request": [
+          {
+              "policyName": "removeHeader",
+              "parameters": [{
+                  "headerName": "content-length"
+              }]
+          }
+      ]
+    }
+
+    ---------------------------------------------------------------------------------------------------
+
+    # Attach an API Policy to Remove Multiple Request Headers
+    ----------------------------------------------------------
+    
+    "operationPolicies": {
+      "request": [
+          {
+              "policyName": "removeHeader",
+              "parameters": [{
+                  "headerName": "content-length"
+              }]
+          },
+          {
+              "policyName": "removeHeader",
+              "parameters": [{
+                  "headerName": "content-length2"
+              }]
+          }
+      ]
+    }
+    ```
+    
+    ```tab="Update Request Header"
+
+    # Attach an API Policy to Update a Single Request Header
+    --------------------------------------------------------
+
+    "operationPolicies": {
+      "request": [
+          {
+              "policyName": "addHeader",
+              "parameters": [{
+                  "headerName": "customadd2",
+                  "headerValue": "customvalue2"
+              }]
+          }
+      ]
+    }
+
+    ---------------------------------------------------------------------------------------------------
+    
+    # Attach Policies to Update Multiple Request Headers
+    ------------------------------------------------------
+
+    "operationPolicies": {
+      "request": [
+          {
+              "policyName": "addHeader",
+              "parameters": [{
+                  "headerName": "customadd1",
+                  "headerValue": "customvalue1"
+              }]
+          },
+          {
+              "policyName": "addHeader",
+              "parameters": [{
+                  "headerName": "customadd2",
+                  "headerValue": "customvalue2"
+              }]
+          }
+      ]
+    }
+
+    ```
+
+    ```tab="Remove and Update Request Headers"
+
+    # Attach API Policies to Remove a Request Header and to Update Another Request Header
+    ---------------------------------------------------------------------------------------
+    
+    "operationPolicies": {
+      "request": [
+          {
+              "policyName": "removeHeader",
+              "parameters": [{
+                  "headerName": "content-length"
+              }]
+          },
+          {
+              "policyName": "addHeader",
+              "parameters": [{
+                  "headerName": "customadd1",
+                  "headerValue": "customvalue1"
+              }]
+          }
+      ]
+    }
+
+    ---------------------------------------------------------------------------------------------------
+
+    # Attach Policies to Remove and Update Multiple Request Headers
+    ----------------------------------------------------------------
+
+    "operationPolicies": {
+      "request": [
+          {
+              "policyName": "removeHeader",
+              "parameters": [{
+                  "headerName": "content-length"
+              }]
+          },
+          {
+              "policyName": "removeHeader",
+              "parameters": [{
+                  "headerName": "content-length2"
+              }]
+          },
+          {
+              "policyName": "addHeader",
+              "parameters": [{
+                  "headerName": "customadd1",
+                  "headerValue": "customvalue1"
+              }]
+          },
+          {
+              "policyName": "addHeader",
+              "parameters": [{
+                  "headerName": "customadd2",
+                  "headerValue": "customvalue2"
+              }]
+          }
+      ]
+    }
+
+    ```
+
+??? note "Attach API Policies to the Response Flow Only"
+
+    ```tab="Remove Response Header"
+
+    # Attach an API Policy to Remove a Single Response Header
+    --------------------------------------------------------
+
+    "operationPolicies": {
+      "response": [
+          {
+              "policyName": "removeHeader",
+              "parameters": [{
+                  "headerName": "content-length"
+              }]
+          }
+      ]
+    }
+
+    ---------------------------------------------------------------------------------------------------
+
+    # Attach an API Policy to Remove Multiple Response Headers
+    ----------------------------------------------------------
+    
+    "operationPolicies": {
+      "response": [
+          {
+              "policyName": "removeHeader",
+              "parameters": [{
+                  "headerName": "content-length"
+              }]
+          },
+          {
+              "policyName": "removeHeader",
+              "parameters": [{
+                  "headerName": "content-length2"
+              }]
+          }
+      ]
+    }
+    ```
+    
+    ```tab="Update Response Header"
+
+    # Attach an API Policy to Update a Single Response Header
+    --------------------------------------------------------
+
+    "operationPolicies": {
+      "response": [
+          {
+              "policyName": "addHeader",
+              "parameters": [{
+                  "headerName": "customadd2",
+                  "headerValue": "customvalue2"
+              }]
+          }
+      ]
+    }
+
+    ---------------------------------------------------------------------------------------------------
+    
+    # Attach Policies to Update Multiple Response Headers
+    ------------------------------------------------------
+
+    "operationPolicies": {
+      "response": [
+          {
+              "policyName": "addHeader",
+              "parameters": [{
+                  "headerName": "customadd1",
+                  "headerValue": "customvalue1"
+              }]
+          },
+          {
+              "policyName": "addHeader",
+              "parameters": [{
+                  "headerName": "customadd2",
+                  "headerValue": "customvalue2"
+              }]
+          }
+      ]
+    }
+
+    ```
+
+    ```tab="Remove and Update Response Headers"
+
+    # Attach API Policies to Remove a Response Header and to Update Another Response Header
+    ---------------------------------------------------------------------------------------
+    
+    "operationPolicies": {
+      "response": [
+          {
+              "policyName": "removeHeader",
+              "parameters": [{
+                  "headerName": "content-length"
+              }]
+          },
+          {
+              "policyName": "addHeader",
+              "parameters": [{
+                  "headerName": "customadd1",
+                  "headerValue": "customvalue1"
+              }]
+          }
+      ]
+    }
+
+    ---------------------------------------------------------------------------------------------------
+
+    # Attach Policies to Remove and Update Multiple Response Headers
+    ----------------------------------------------------------------
+
+    "operationPolicies": {
+      "response": [
+          {
+              "policyName": "removeHeader",
+              "parameters": [{
+                  "headerName": "content-length"
+              }]
+          },
+          {
+              "policyName": "removeHeader",
+              "parameters": [{
+                  "headerName": "content-length2"
+              }]
+          },
+          {
+              "policyName": "addHeader",
+              "parameters": [{
+                  "headerName": "customadd1",
+                  "headerValue": "customvalue1"
+              }]
+          },
+          {
+              "policyName": "addHeader",
+              "parameters": [{
+                  "headerName": "customadd2",
+                  "headerValue": "customvalue2"
+              }]
+          }
+      ]
+    }
+
+    ```
+
+??? note "Attach API Policies to Request and Response Flows"
+
+    ```
+    "operationPolicies": {
+      "request": [
+          {
+              "policyName": "addHeader",
+              "parameters": [{
+                  "headerName": "customadd1",
+                  "headerValue": "customvalue1"
+              }]
+          },
+          {
+              "policyName": "addHeader",
+              "parameters": [{
+                  "headerName": "customadd2",
+                  "headerValue": "customvalue2"
+              }]
+          }
+      ],
+      "response": [
+          {
+              "policyName": "removeHeader",
+              "parameters": [{
+                  "headerName": "content-length"
+              }]
+          },
+          {
+              "policyName": "removeHeader",
+              "parameters": [{
+                  "headerName": "content-length2"
+              }]
+          }
+      ]
+    }
+    ```
 
 ## Configuration definitions
 
@@ -134,3 +788,56 @@ The following are the configurations that you need when attaching API Policies t
   </tr>
 </tbody>
 </table>
+
+## Create an API with API Policies
+
+Follow the instructions below to attach API Policies to an API when creating it:
+
+!!! note "Before you begin"
+    
+    - Install the [prerequisites](../../../setup/prerequisites) that are required to run WSO2 APK.
+    - [Start WSO2 APK](../../../get-started/quick-start-guide/#step-1-start-wso2-apk).
+
+1. Define the required API policies in your API Payload.
+   
+    !!! note
+        For more information, see the [API-level Policy](#api-level) and [Operational-level Policy](#operational-level) configurations used to attach API policies and also the [configurations definitions](#configuration-definitions).
+
+     Let's attach API policies as follows:
+    
+    ```
+    "operationPolicies": {
+      "request": [
+          {
+              "policyName": "addHeader",
+              "parameters": [{
+                  "headerName": "customadd1",
+                  "headerValue": "customvalue1"
+              }]
+          },
+          {
+              "policyName": "addHeader",
+              "parameters": [{
+                  "headerName": "customadd2",
+                  "headerValue": "customvalue2"
+              }]
+          }
+      ],
+      "response": [
+          {
+              "policyName": "removeHeader",
+              "parameters": [{
+                  "headerName": "content-length"
+              }]
+          },
+          {
+              "policyName": "removeHeader",
+              "parameters": [{
+                  "headerName": "content-length2"
+              }]
+          }
+      ]
+    }
+    ```
+
+2. Create your REST API by invoking the [`POST /apis`](https://apk.docs.wso2.com/en/latest/catalogs/api-reference-runtime/#tag/APIs/operation/createAPI) operation.
