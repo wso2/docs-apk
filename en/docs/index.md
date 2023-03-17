@@ -15,7 +15,7 @@ template: templates/single-column.html
             </br>
             <h2>Download</h2>
             <a href="https://github.com/wso2/apk/releases">
-                <img src="../assets/img/download-apk.png" title="Download WSO2 APK" width="90" alt="Download WSO2 APK"/>
+                <img src="assets/img/download-apk.png" title="Download WSO2 APK" width="90" alt="Download WSO2 APK"/>
             </a>
         </div>
         <!--<div class="md-main .md-content " style="float:right; width: 55%; align:right;  flex-shrink: 0;min-width: 40%; max-height: 100%; max-width:50%; margin-left:10px; margin-top:20px">
@@ -32,7 +32,7 @@ template: templates/single-column.html
                 </p>
             </div>
             <!--<div class="linkSet2 middle" onclick="location.href='../restapi/overview';">
-                <img src="../assets/img/home/landing-page/write-your-first-integration-service.svg" title="Lorem ipsum" width="75" alt="Lorem ipsum"/>
+                <img src="assets/img/home/landing-page/write-your-first-integration-service.svg" title="Lorem ipsum" width="75" alt="Lorem ipsum"/>
                 <a href="/get-started/quick-start-guide"><h3>Basic Flow</h3></a>
                 <p>
                     The basic flow guide for the WSO2 APK platform provides step-by-step tutorials for developing, managing and publishing APIs.

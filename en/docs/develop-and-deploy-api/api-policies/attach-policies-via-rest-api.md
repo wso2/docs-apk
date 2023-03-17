@@ -92,13 +92,45 @@ The following is a sample code snippet that defines how you can attach API Polic
 
 The following are the configurations that you need when attaching API Policies to an API when working with the REST API interface.
 
-| **Configuration**       | **Description**                                 |
-|-------------------------|-------------------------------------------------|
-| `operationPolicies`     | This defines that the API Policy will be applied as an operation Policy, which will be only applicable to the specific operation within the API.   |
-|  `apiPolicies`          | This defines that the API Policy will be applied as an API-level Policy, which will be global to all the operations within the specific API. |
-| `request` | Defines that the API Policies should be attached to the Request Flow. |
-| `response` | Defines that the API Policies need to be attached to the Response Flow. |
-| `policyName` | Defines the default policy names. Possible values are `removeHeader`and `addHeader` |
-| `parameters` | This defines the HTTP Header related parameters. |
-| `headerName`| This is the name of the HTTP Header to be matched in order to update the respective HTTP header. Name matching MUST be case insensitive. <br/>If multiple entries specify equivalent header names, the first entry with an equivalent name will be considered for a match. <br/>Note that subsequent entries with an equivalent header name will be ignored. As the header names are case-insensitivity, “new” and “New” are considered equivalent entries. |
-| `headerValue` | This value is used to update or add the HTTP Header of the request or response. |
+<table>
+<thead>
+  <tr>
+    <th>Configuration</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td style="white-space: nowrap;"><code>operationPolicies</code></td>
+    <td>This defines that the API Policy will be applied as an operation Policy, which will be only applicable to the specific operation within the API.</td>
+  </tr>
+  <tr>
+    <td><code>apiPolicies</code></td>
+    <td>This defines that the API Policy will be applied as an API-level Policy, which will be global to all the operations within the specific API.</td>
+  </tr>
+  <tr>
+    <td><code>request</code></td>
+    <td>Defines that the API Policies should be attached to the Request Flow.</td>
+  </tr>
+  <tr>
+    <td><code>response</code></td>
+    <td>Defines that the API Policies need to be attached to the Response Flow.</td>
+  </tr>
+  <tr>
+    <td><code>policyName</code></td>
+    <td>Defines the default policy names. Possible values are <code>removeHeader</code> and <code>addHeader</code>.</td>
+  </tr>
+  <tr>
+    <td><code>parameters</code></td>
+    <td>This defines the HTTP Header related parameters.</td>
+  </tr>
+  <tr>
+    <td><code>headerName</code></td>
+    <td>This is the name of the HTTP Header to be matched in order to update the respective HTTP header. Name matching MUST be case insensitive.<br><br>If multiple entries specify equivalent header names, the first entry with an equivalent name will be considered for a match.<br><br>Note that subsequent entries with an equivalent header name will be ignored. As the header names are case-insensitivity, “new” and “New” are considered equivalent entries.</td>
+  </tr>
+  <tr>
+    <td><code>headerValue</code></td>
+    <td>This value is used to update or add the HTTP Header of the request or response.</td>
+  </tr>
+</tbody>
+</table>

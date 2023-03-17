@@ -56,18 +56,18 @@ If you have not created the user already, [create a user](https://auth0.com/docs
       - `organizationClaim` - This should always be `org_id`.
       - Update all other values based on the Endpoint details that you came across in Step 6.1.
 
-4. Restart WSO2 APK.
+## Step 7 - Restart WSO2 APK
 
-       ```tab="Format"
-       helm install <helm-chart-name> . -n <namespace>
-       ```
+```tab="Format"
+helm install <helm-chart-name> . -n <namespace>
+```
 
-       ```tab="Example"
-       helm install apk-test . -n apk
-       ```
+```tab="Example"
+helm install apk-test . -n apk
+```
 
 
-## Step 7 - Generate an Access Token
+## Step 8 - Generate an Access Token
 
 1. Open [Postman](../../../../administration/postman-tests).
 2. Navigate to the `POST` `Generate Auth code token` REST API.
@@ -88,9 +88,9 @@ If you have not created the user already, [create a user](https://auth0.com/docs
      
      You will receive two tokens, namely the access token and ID token, when the token call is successful.
 
-8.  Copy the ID token that you see listed as the `id_token`.
+8. Copy the ID token that you see listed as the `id_token`.
 
-## Step 8 - Add the organization to the Data Plane
+## Step 9 - Add the organization to the Data Plane
      
 1. Decode the access token using a JWT decoder (e.g., [https://jwt.io/](https://jwt.io/)).
 2. Copy the value listed for `user_organization`, which is in the Payload data section.
@@ -98,6 +98,6 @@ If you have not created the user already, [create a user](https://auth0.com/docs
     
        Enter the `user_organization` value that you copied above as the `organizationClaimValue:` value when defining the Custom Resource (CR) for the organization.
 
-## Step 9 - Invoke the System API
+## Step 10 - Invoke the System API
 
  Use the JWT token that you received in the previous step to invoke the system APIs.
