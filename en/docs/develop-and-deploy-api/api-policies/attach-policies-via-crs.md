@@ -2,9 +2,9 @@
 
 !!! Tip
     
-    To get familiar with the concept of API Policies, see [API Policies Overview](../../develop-and-deploy-api/api-policies-overview). 
+    To get familiar with the concept of API Policies, see [API Policies Overview](../../../develop-and-deploy-api/api-policies-overview). 
 
-You need to define the API Policies within the HTTPRoute Custom Resource (CR) when creating an API using the Kubernetes Command Line Interface (kubctl). Let's get familiar with the [configurations](#code-snippet-of-sample-httproute-cr) that you will use to attach API policies via an HTTPRoute CR and also the [configurations definitions](#configuration-definitions).
+You need to define the API Policies within the HTTPRoute Custom Resource (CR) when creating an API using the Kubernetes Command Line Interface (kubctl). Let's get familiar with the [configurations](#sample-code-snippet) that you will use to attach API policies via an HTTPRoute CR and also the [configurations definitions](#configuration-definitions).
 
 ## Sample code snippet
 
@@ -263,9 +263,9 @@ The following are the configurations that you need when attaching API Policies t
     | `name`                   | This is the name of the HTTP Header to be matched in order to update the respective HTTP header. Name matching MUST be case insensitive. <br/>If multiple entries specify equivalent header names, the first entry with an equivalent name will be considered for a match. <br/>Note that subsequent entries with an equivalent header name will be ignored. As the header names are case-insensitivity, “new” and “New” are considered as equivalent entries.  |
     | `value`                  | This value is used to update or add the HTTP Header of the request or response.  |
 
-## Attaching Operation-level API Policies
+## Create an API using CRs with Operation-level API Policies
 
-Follow the instructions below to attach operation-level API Policies to APIs via CRs:
+Follow the instructions below to attach operation-level API Policies to an API via CRs:
 
 !!! note "Before you begin"
     
