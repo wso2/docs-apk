@@ -269,7 +269,7 @@ Follow the instructions below to attach operation-level API Policies to an API v
 
 !!! note "Before you begin"
     
-    - Install the [prerequisites](../../setup/prerequisites) that are required to run WSO2 APK.
+    - Install the [prerequisites](../../../setup/prerequisites) that are required to run WSO2 APK.
     - [Start WSO2 APK](../../../get-started/quick-start-guide/#step-1-start-wso2-apk).
 
 **Step 1 - Define the CRs**
