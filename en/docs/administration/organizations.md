@@ -65,7 +65,7 @@ For example if an API named `sample-api` was created in organization `org1`. Use
       </tbody>
      </table>  
 
-2. Execute the [`POST /organizations`](https://apk.docs.wso2.com/en/latest/catalogs/api-reference-admin/#tag/Organization-(Individual)/operation/addOrganization) Admin REST API to create an organization in WSO2 APK.
+2. Execute the [`POST /organizations` Admin REST API](https://apk.docs.wso2.com/en/latest/catalogs/api-reference-admin/#tag/Organization-(Individual)/operation/addOrganization) to create an organization in WSO2 APK.
     
      Execute the following cURL command.
 
