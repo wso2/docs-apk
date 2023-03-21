@@ -6,54 +6,79 @@ For example if an API named `sample-api` was created in organization `org1`. Use
 
 ## Create an Organization
 
-Follow the instructions below to create a new organization.
+1. Define the organization payload JSON.
 
-Let's create an organization using the sample Custom Resource (CR) that is available in APK.
+     Create a JSON file and define the organization payload in it.
+     
+     As an example, let's create a JSON file named `organization.json` with the following definition.
 
-1. Define the CR for your organization in a YAML file.
-   
-    !!! note
-        You can view a sample CR definition for an organization, namely `sample-organization.yaml`, in the `<APK_HOME>/developer/tryout/samples/` directory. `<APK_HOME>` defines the unzipped APK distribution.
+     ```tab="Format"
+     {
+      "name": "",
+      "displayName": "",
+      "organizationClaimValue": "",
+      "enabled": ,
+      "serviceNamespaces": [
+      "string"
+      ]
+     }
+     ```
 
-     Let's navigate to the `samples` directory, which has the CR for the `org1` organization.
+     ```tab="Example"
+     {
+      "name": "org1",
+      "displayName": "org1",
+      "organizationClaimValue": "01234567-0123-0123-0123",
+      "enabled": true,
+      "serviceNamespaces": [
+      "string"
+      ]
+     }
+     ```
 
-      ```
-      cd developer/tryout/samples
-      ```
+     The following table describes the elements that you need to define in the payload when creating an organization.
+     
+     <table>
+      <thead>
+        <tr>
+          <th>Elements</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>name</td>
+          <td>Name of the organization created in the Identity Provider (IdP). </td>
+        </tr>
+        <tr>
+          <td>displayName</td>
+          <td>Display name of the organization.</td>
+        </tr>
+        <tr>
+          <td>organizationClaimValue</td>
+          <td>UUID of the organization that you created in the IdP.</td>
+        </tr>
+        <tr>
+          <td>enabled</td>
+          <td>Possible Values: <code>true</code>, <code>false</code></td>
+        </tr>
+      </tbody>
+     </table>  
 
-2. Create an organization.
+2. Execute the [`POST /organizations` Admin REST API](https://apk.docs.wso2.com/en/latest/catalogs/api-reference-admin/#tag/Organization-(Individual)/operation/addOrganization) to create an organization in WSO2 APK.
     
-     Add the organization CR for `org1` to the namespace to create a new organization.
+     Execute the following cURL command.
 
-    **Format**
-      ``` bash
-      Kubectl apply -f <organization-cr-file-name> -n apk
-      ```
+     ```tab="Format"
+     curl -k -X POST -H "Authorization: Bearer <access-token>" -H "Content-Type: application/json" -d <organization-JSON-payload> "https://127.0.0.1:9443/api/am/admin/POST"
+     ```
 
-    **Example**
+     ```tab="Example"
+     curl -k -X POST -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" -H "Content-Type: application/json" -d organization.json "https://127.0.0.1:9443/api/am/admin/organizations"
+     ```
 
-      ``` bash
-      Kubectl apply -f sample-organization.yaml -n apk
-      ```
-
-     After adding the organization named `org1` it will be added to the system (Data Plane).
-
-    **Sample CR for an organization**
-
-      ``` 
-      apiVersion: cp.wso2.com/v1alpha1
-      kind: Organization
-      metadata:
-       name: org1
-      spec:
-       displayName: org1
-       enabled: true
-       name: org1
-       organizationClaimValue: org1
-       serviceListingNamespaces:
-         - '*'
-       uuid: 01edb285-6304-1b20-a090-4d02067ed56e
-      ```
+     - `<access-token>` - Use the access token that you generated when creating an IdP.
+     - `<organization-JSON-payload>` - Define the path to the organization payload, which you created in the previous step.
 
 ## Create an API with an Organization
 
