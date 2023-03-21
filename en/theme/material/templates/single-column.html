@@ -15,30 +15,6 @@
  * specific language governing permissions and limitations
  * under the License.
 -->
-
-{% extends "main.html" %}
-
-{% block styles %}
-  {{ super() }}
-  <style>
-    .md-main .md-content {
-      margin-right: 0;
-      margin-left: 0;
-    }
-    @media (min-width: 1220px) {
-      .md-main .md-sidebar.md-sidebar--primary {
-        width: 0;
-      }
-    }
-    .md-main .md-sidebar.md-sidebar--secondary {
-      width: 0;
-    }
-   .md-footer-nav{
-      width:0;
-      display: none;
-   }
-   .quick_links {
-      display: none;
-   }
-  </style>
-{% endblock %}
+<!-- This one is used to override the layout for the home page -->
+{% extends "base.html" %}
+{% block site_nav %}{% endblock %}
