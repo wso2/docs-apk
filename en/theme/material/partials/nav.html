@@ -1,25 +1,26 @@
-<nav class="md-nav md-nav--primary" data-md-level="0">
-    <label class="md-nav__title md-nav__title--site" for="__drawer">
-      <a href="{{ config.site_url | default(nav.homepage.url, true) | url }}" title="{{ config.site_name }}"
-         class="md-nav__button md-logo">
-        {% if config.theme.logo.icon %}
-          <i class="md-icon">{{ config.theme.logo.icon }}</i>
-        {% else %}
-          <img src="{{ config.theme.logo | url }}" width="48" height="48">
-        {% endif %}
-      </a>
-      {{ config.site_name }}
-    </label>
-    {% if config.repo_url %}
-      <div class="md-nav__source">
-        {% include "partials/source.html" %}
-      </div>
-    {% endif %}
-    <ul class="md-nav__list" data-md-scrollfix>
-      {% for nav_item in nav %}
-        {% set path = "nav-" + loop.index | string %}
-        {% set level = 1 %}
+{#-
+  This file was automatically generated - do not edit
+-#}
+{% set class = "md-nav md-nav--primary" %}
+{% if "navigation.tabs" in features %}
+  {% set class = class ~ " md-nav--lifted" %}
+{% endif %}
+{% if "toc.integrate" in features %}
+  {% set class = class ~ " md-nav--integrated" %}
+{% endif %}
+<nav class="{{ class }}" aria-label="{{ lang.t('nav') }}" data-md-level="0">
+  {% if config.repo_url %}
+    <div class="md-nav__source">
+      {% include "partials/source.html" %}
+    </div>
+  {% endif %}
+  <ul class="md-nav__list" data-md-scrollfix>
+    {% for nav_item in nav %}
+      {% set path = "__nav_" ~ loop.index %}
+      {% set level = 1 %}
+      {% if nav_item.active %}
         {% include "partials/nav-item.html" %}
-      {% endfor %}
-    </ul>
-  </nav>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>
