@@ -74,7 +74,6 @@ pip3.10 install mkdocs==1.4.2
 #### Install the MkDocs plugins:
 In order to use some of the advanced features of MkDocs, you need to install some plugins. The following commands install the required plugins:
 ```bash
-pip3.10 install Pygments==2.14.0
 pip3.10 install mkdocs-material==9.1.2
 pip3.10 install pymdown-extensions==9.10
 pip3.10 install mkdocs-minify-plugin==0.6.2

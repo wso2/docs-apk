@@ -19,6 +19,10 @@
 /*
 * Handle opening external links in a new tab
 */
+/* 
+ * Initialize highlightjs 
+ */
+hljs.initHighlightingOnLoad();
 
 (function() {
     var links = document.links;
@@ -200,11 +204,6 @@ request.onerror = function() {
 };
 
 request.send();
-
-/* 
- * Initialize highlightjs 
- */
-hljs.initHighlightingOnLoad();
 
 /*
  * Handle TOC toggle

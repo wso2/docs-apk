@@ -1,9 +1,8 @@
 
 Create the following Custom Resource (CR).
-
-      - Resource API CR.
-      - Production and/or Sandbox HTTPRoute CR.
-      - CR that defines the service for the API backend.
+    - Resource API CR.
+    - Production and/or Sandbox HTTPRoute CR.
+    - CR that defines the service for the API backend.
 
         !!! Note
 

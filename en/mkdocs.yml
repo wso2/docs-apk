@@ -39,9 +39,12 @@ theme:
         accent: #1a6bac
     logo: images/logo.svg
     favicon: images/favicon.png
-    highlightjs: true
-    feature:
-        tabs: true
+    features:
+        - content.tabs.link
+        - content.code.copy
+        - navigation.tabs
+        # - navigation.top
+        - navigation.instant
     language: 'en'
 #Breaks build if there's a warning
 strict: false
@@ -190,10 +193,18 @@ nav:
 
 # Extensions
 markdown_extensions:
+    # - pymdownx.highlight:
+    #     anchor_linenums: true
+    #     line_spans: __span
+    #     pygments_lang_class: true
+    - pymdownx.snippets
+    - pymdownx.superfences
+    - pymdownx.tabbed:
+        alternate_style: true 
     - markdown.extensions.admonition
-    - markdown.extensions.codehilite:
-          linenums: true
-          use_pygments: false
+    # - markdown.extensions.codehilite:
+    #       linenums: true
+    #       use_pygments: false
     - markdown.extensions.def_list
     - markdown.extensions.footnotes
     - markdown.extensions.meta
@@ -213,7 +224,6 @@ markdown_extensions:
     - pymdownx.keys
     - pymdownx.mark
     - pymdownx.smartsymbols
-    - pymdownx.superfences
     - pymdownx.tasklist:
           custom_checkbox: true
     - pymdownx.tilde
@@ -231,15 +241,18 @@ plugins:
 
     # Extra
 extra_css:
-    - assets/lib/highlightjs/default.min.css
+    # You can select a different theme for syntax highlighting by simply 
+    # selecting a different css file file bellow from the available list.
+    - assets/lib/highlightjs/styles/vs.min.css
     - assets/css/theme.css
     - assets/lib/json-formatter/json-formatter.css
 extra_javascript:
-    - assets/lib/json-formatter/json-formatter.umd.js
     - assets/lib/highlightjs/highlight.min.js
+    - assets/lib/json-formatter/json-formatter.umd.js
     - assets/js/theme.js
     - assets/lib/backtotop/js/util.js
     - assets/lib/backtotop/js/main.js
+
 extra:
     social:
         - type: github
