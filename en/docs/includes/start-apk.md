@@ -9,30 +9,32 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
 
       `cd <APK-HOME>/<helm-charts>/`
 
-3.  Download the dependent charts.
+3. Download the dependent charts.
     
      ```
      helm dependency build
      ```
 
-4.  Install the APK components and start WSO2 APK.
+3. Install the APK components and start WSO2 APK.
+=== "Format"
 
-     ```tab="Format"
-     helm install <helm-chart> . -n <namespace>
-     ```
-     
-     ```tab="Command"
-     helm install apk-test . -n apk
-     ```
+      ```console
+      helm install <helm-chart> . -n <namespace>
+      ```
+=== "Command"
 
-    !!! info "Optional"
+      ```console
+      helm install apk-test . -n apk
+      ```
 
-         If required, use one of the following parameters when starting WSO2 APK.
+!!! info "Optional"
 
-          - To deploy Control Plane components only use `--set wso2.apk.dp.enabled=false`
-          - To deploy Data Plane components only use `--set wso2.apk.cp.enabled=false`
+      If required, use one of the following parameters when starting WSO2 APK.
 
-5.  Verify the deployment.
+      - To deploy Control Plane components only use `--set wso2.apk.dp.enabled=false`
+      - To deploy Data Plane components only use `--set wso2.apk.cp.enabled=false`
+
+1.  Verify the deployment.
 
       ```
       kubectl get pods -n apk

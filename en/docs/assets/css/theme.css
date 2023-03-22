@@ -55,8 +55,17 @@ body {
 }
 .md-typeset h1 {
     font-size: 33px;
+    margin-bottom: 33px;
 }
-
+ol + div.tabbed-set.tabbed-alternate {
+    padding-left: 30px;
+}
+div.tabbed-set.tabbed-alternate + div.admonition.info{
+    margin-left: 30px;
+}
+div.tabbed-set.tabbed-alternate + div.admonition.note{
+    margin-left: 30px;
+}
 
 
 p {
@@ -75,6 +84,8 @@ p {
     transition: color .25s, transform 0s .4s, opacity .1s, -webkit-transform 0s .4s;
     color: #2b423c;
     font-size: 0.65rem;
+    margin-top: 0;
+    line-height: 0.8rem;
 }
 
 .md-tabs .md-tabs__link.md-tabs__link--active,
@@ -106,11 +117,13 @@ p {
 .md-tabs {
     background-color: #f5f6f7;
 }
+.md-tabs__item {
+    height: 1.8rem;
+}
 
 /* Header styles */
 .main-header.md-header {
     background-color: var(--darkBack);
-    height: 106px;
 }
 
 .main-header .md-header-nav__button.md-logo.localLink img {
@@ -140,6 +153,12 @@ p {
     color: #2b423c;
     font-size: 0.8rem;
     font-weight: 600;
+}
+.md-sidebar.md-sidebar--primary {
+    padding-left: 13px;
+}
+label.md-nav__link.first-item{
+    padding-left: 0 !important;
 }
 
 /* Layout styles */
@@ -221,7 +240,10 @@ p {
 .md-nav--primary > ul > li > nav > ul > li:first-child {
     padding-left: 0;
 }
-
+/* Fix for the MKDocs search box */
+.md-search__output {
+    z-index: 10;
+}
 /* Left menu styles */
 @media only screen and (max-width: 1220px) {
     html .md-nav--primary .md-nav__title--site {

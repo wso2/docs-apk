@@ -85,17 +85,4 @@
     {% endif %}
   {% endif %}
   <nav>
-    <div class="md-container">
-      <nav class="md-tabs md-tabs--active" data-md-component="tabs" data-md-state="hidden">
-        <div class="md-tabs__inner md-grid">
-          <ul class="md-tabs__list">
-            {% for nav_item in nav %}
-            {% set path = "__nav_" ~ loop.index %}
-            {% set level = 1 %}
-            {% include "partials/nav-item-for-header.html" %}
-            {% endfor %}
-          </ul>
-        </div>
-      </nav>
-  </div>
 </header>
