@@ -1,6 +1,8 @@
 # Organizations
 
-APK supports organization/tenant isolation to enable multiple organizations to use the platform independently. Organizations can be managed in the Control Plane, and data can be isolated in the Data Plane. Organizations are used in APK to map the organizations created in Identity Providers (IdPs) to APK.
+Organizations in WSO2 APK are similar to the concept of tenants in [WSO2 API Manager's Multi-tenancy architecture](https://apim.docs.wso2.com/en/latest/administer/multitenancy/introduction-to-multitenancy/). WSO2 APK supports organization/tenant isolation, data isolation, execution isolation, and performance isolation to enable multiple organizations to use the platform independently.
+
+Organizations can be managed in the Control Plane, and data can be isolated in the Data Plane. The Control Plane (CP) of APK employs a single database with a tenant domain in each column, while the Data Plane (DP) is deployed separately for each tenant in a dedicated Kubernetes (k8s) cluster or namespace. This separation ensures that each tenant has its own isolated environment and is only allowed to access resources and data associated with its own business or department. Furthermore, Organizations are used in APK to map the organizations created in Identity Providers (IdPs) to APK. Overall, organizations provide a secure and scalable way to manage multiple tenants in a single APK deployment.
 
 For example if an API named `sample-api` was created in organization `org1`. Users who have a default token will not be allowed to access details of `sample-api` API and invoke it. Instead, users will be able to retrieve API details of `sample-api` and invoke it only if they have a token that was generated based on the `org1` organization.
 
