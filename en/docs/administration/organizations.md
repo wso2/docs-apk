@@ -60,7 +60,7 @@ For example if an API named `sample-api` was created in organization `org1`. Use
         </tr>
         <tr>
           <td>enabled</td>
-          <td>Possible Values: <code>true</code>, <code>false</code></td>
+          <td>The organization can be enable or disable using this option. The Admin can disable the organizations if required so that no one can use it.</br>Possible Values: <code>true</code>, <code>false</code></td>
         </tr>
       </tbody>
      </table>  
