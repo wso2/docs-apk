@@ -247,10 +247,8 @@ paths:
           $ref: "#/components/responses/NotFound"
         "412":
           $ref: "#/components/responses/PreconditionFailed"
-
         "500":
           $ref: "#/components/responses/InternalServerError"
-
       x-code-samples:
         - lang: Curl
           source: 'curl -k -X PUT -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" -H "Host: api.am.wso2.com" -H "Content-Type: application/json" -d @data.json
@@ -375,7 +373,6 @@ paths:
           $ref: "#/components/responses/BadRequest"
         "500":
           $ref: "#/components/responses/InternalServerError"
-
       x-code-samples:
         - lang: Curl
           source: 'curl -k -X POST "https://api.am.wso2.com:9095/api/am/runtime/apis/import-service?serviceKey=11cd3fa3-c886-49f9-bf78-0ec349b1f4c1" 
@@ -496,6 +493,7 @@ paths:
           -H "Accept: application/json"
           -H "Host: api.am.wso2.com"
           -F file=@openapi.json "https://api.am.wso2.com:9095/api/am/runtime/apis/validate-definition"'
+
   /apis/validate:
     post:
       tags:
@@ -538,7 +536,6 @@ paths:
           $ref: "#/components/responses/BadRequest"
         "412":
           $ref: "#/components/responses/PreconditionFailed"
-
         "500":
           $ref: "#/components/responses/InternalServerError"
       x-code-samples:
@@ -546,6 +543,7 @@ paths:
           source: 'curl -k -X POST -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
           -H "Host: api.am.wso2.com"
           "https://api.am.wso2.com:9095/api/am/runtime/apis/validate?query=name%3Awso2"'
+
   /apis/{apiId}/definition:
     get:
       tags:
@@ -586,7 +584,6 @@ paths:
           $ref: "#/components/responses/NotFound"
         "412":
           $ref: "#/components/responses/PreconditionFailed"
-
         "500":
           $ref: "#/components/responses/InternalServerError"
       x-code-samples:
@@ -594,6 +591,7 @@ paths:
           source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" 
           -H "Host: api.am.wso2.com"
           "https://api.am.wso2.com:9095/api/am/runtime/apis/01234567-0123-0123-0123-012345678901/definition"'
+
     put:
       tags:
         - APIs
@@ -649,7 +647,6 @@ paths:
           $ref: "#/components/responses/NotFound"
         "412":
           $ref: "#/components/responses/PreconditionFailed"
-
         "500":
           $ref: "#/components/responses/InternalServerError"
       x-code-samples:
@@ -734,6 +731,7 @@ paths:
           -H "Host: api.am.wso2.com"
           "https://api.am.wso2.com:9095/api/am/runtime/apis/export?apiId=96077508-fd01-4fae-bc64-5de0e2baf43c&name=PizzaShackAPI&version=1.0&provider=admin&format=YAML"
           > exportAPI.zip'
+
   /apis/import:
     post:
       tags:
@@ -766,16 +764,15 @@ paths:
           $ref: "#/components/responses/Forbidden"
         "409":
           $ref: "#/components/responses/Conflict"
-
         "412":
           $ref: "#/components/responses/PreconditionFailed"
-
         "500":
           $ref: "#/components/responses/InternalServerError"
       x-code-samples:
         - lang: Curl
           source: 'curl -k -X POST -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" -H "Host: api.am.wso2.com"
           -F file=@admin-PizzaShackAPI-1.0.0.zip "https://api.am.wso2.com:9095/api/am/runtime/apis/import?preserveProvider=false&overwrite=false"'
+
   /apis/copy-api:
     post:
       tags:
@@ -982,6 +979,7 @@ paths:
           source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
           -H "Host: api.am.wso2.com" 
           "https://api.am.wso2.com:9095/api/am/runtime/services/11cd3fa3-c886-49f9-bf78-0ec349b1f4c1/usage"'
+
   /policies:
     get:
       tags:
@@ -1080,6 +1078,7 @@ paths:
           source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
           -H "Host: api.am.wso2.com" 
           "https://api.am.wso2.com:9095/api/am/runtime/policies"'
+
   /policies/{policyId}:
     get:
       tags:
@@ -1121,6 +1120,7 @@ paths:
           source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
           -H "Host: api.am.wso2.com" 
           "https://api.am.wso2.com:9095/api/am/runtime/policies/1"'
+
 components:
   schemas:
     APIList:
