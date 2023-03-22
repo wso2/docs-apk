@@ -20,71 +20,12 @@
 
 {% block styles %}
   {{ super() }}
-  <style>
-    .md-content {
-      margin-left: 0;
-      margin-right: 0;
-    }
-
-    .md-main__inner {
-      margin: 0;
-      max-width: 100%;
-    }
-    .md-content {
-      z-index: 1;
-    }
-    .md-header {
-      z-index: 3;
-    }
-    .md-tabs{
-      z-index: 2 !important;
-    }
-    .md-header {
-      transition: background-color .25s,color .25s, box-shadow .25s;
-      box-shadow: 0 0 0.2rem rgba(0, 0, 0, .1), 0 0.2rem 0.4rem rgba(0, 0, 0, .2);
-    }
-
-    .redoc-wrap h5 {
-      margin: 0px;
-    }
-
-    .redoc-wrap h2 {
-      margin: 0px;
-    }
-
-    .redoc-wrap h1 {
-      margin: 0px;
-    }
-
-    pre {
-     background-color: transparent;
-     color: white;
-    }
-
-    .md-typeset pre {
-      background-color: transparent;
-      color: white;
-      white-space: initial;
-    }
-
-     .menu-content{
-      top: 5.9rem !important;
-    }
-
-     .md-nav{
-       display:none;
-    }
-
-     @media only screen and (max-width: 76.1875em){
-        .md-nav--primary, .md-nav--primary .md-nav {
-           display: block !important;
-      }
-
-  </style>
+  <link rel="stylesheet" href="{{ 'assets/css/redoc.css' | url }}">
 {% endblock %}
-
-
-{% block content %}
+{% block site_nav %}{% endblock %}
+<div class="redoc-swagger">
+{% block container %}
+<div class="md-content" data-md-component="content">
   {{ page.content }}
   {% block source %}
     {% if page and page.meta and page.meta.source %}
@@ -101,4 +42,6 @@
       </a>
     {% endif %}
   {% endblock %}
+</div>
 {% endblock %}
+</div>

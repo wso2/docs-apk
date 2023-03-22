@@ -265,3 +265,4 @@ extra:
     #base_path: http://localhost:8000
     base_path: https://apk.docs.wso2.com/en/latest
     envoy_path: https://www.envoyproxy.io/docs/envoy/v1.20.0
+# static_cache_control: "no-cache"
