@@ -187,7 +187,8 @@ paths:
           $ref: "#/components/responses/InternalServerError"
       x-code-samples:
         - lang: Curl
-          source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
+          source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" 
+          -H "Host: api.am.wso2.com" 
           "https://api.am.wso2.com:9095/api/am/runtime/apis/01234567-0123-0123-0123-012345678901"'
 
     put:
@@ -252,7 +253,7 @@ paths:
 
       x-code-samples:
         - lang: Curl
-          source: 'curl -k -X PUT -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" -H "Content-Type: application/json" -d @data.json
+          source: 'curl -k -X PUT -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" -H "Host: api.am.wso2.com" -H "Content-Type: application/json" -d @data.json
                 "https://api.am.wso2.com:9095/api/am/runtime/apis/01234567-0123-0123-0123-012345678901"'    
     delete:
       tags:
@@ -283,10 +284,10 @@ paths:
           $ref: "#/components/responses/NotFound"
         "500":
           $ref: "#/components/responses/InternalServerError"
-          x-code-samples:
-            - lang: Curl
-              source: 'curl -k -X DELETE -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
-                    "https://api.am.wso2.com:9095/api/am/runtime/apis/01234567-0123-0123-0123-012345678901"' 
+      x-code-samples:
+        - lang: Curl
+          source: 'curl -k -X DELETE -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" -H "Host: api.am.wso2.com"
+          "https://api.am.wso2.com:9095/api/am/runtime/apis/01234567-0123-0123-0123-012345678901"'
 
   /apis/{apiId}/generate-key:
     post:
@@ -375,6 +376,14 @@ paths:
         "500":
           $ref: "#/components/responses/InternalServerError"
 
+      x-code-samples:
+        - lang: Curl
+          source: 'curl -k -X POST "https://api.am.wso2.com:9095/api/am/runtime/apis/import-service?serviceKey=11cd3fa3-c886-49f9-bf78-0ec349b1f4c1" 
+          -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" 
+          -H "Content-Type: application/json" 
+          -H "Accept: application/json" 
+          -H "Host: api.am.wso2.com" -d @data.json'
+
   /apis/import-definition:
     post:
       tags:
@@ -423,6 +432,14 @@ paths:
 
         "500":
           $ref: "#/components/responses/InternalServerError"
+      x-code-samples:
+        - lang: Curl
+          source: 'curl -k -X POST "https://api.am.wso2.com:9095/api/am/runtime/apis/import-definition" 
+          -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" 
+          -H "Content-Type: application/json" 
+          -H "Accept: application/json" 
+          -H "Host: api.am.wso2.com" -F file=@openapi.json -F additionalProperties=@data.json'
+  
   /apis/validate-definition:
     post:
       tags:
@@ -472,6 +489,13 @@ paths:
           $ref: "#/components/responses/NotFound"
         "500":
           $ref: "#/components/responses/InternalServerError"
+      x-code-samples:
+        - lang: Curl
+          source: 'curl -k -X POST -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
+          -H "Content-Type: application/json"
+          -H "Accept: application/json"
+          -H "Host: api.am.wso2.com"
+          -F file=@openapi.json "https://api.am.wso2.com:9095/api/am/runtime/apis/validate-definition"'
   /apis/validate:
     post:
       tags:
@@ -517,6 +541,11 @@ paths:
 
         "500":
           $ref: "#/components/responses/InternalServerError"
+      x-code-samples:
+        - lang: Curl
+          source: 'curl -k -X POST -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
+          -H "Host: api.am.wso2.com"
+          "https://api.am.wso2.com:9095/api/am/runtime/apis/validate?query=name%3Awso2"'
   /apis/{apiId}/definition:
     get:
       tags:
@@ -562,7 +591,8 @@ paths:
           $ref: "#/components/responses/InternalServerError"
       x-code-samples:
         - lang: Curl
-          source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
+          source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" 
+          -H "Host: api.am.wso2.com"
           "https://api.am.wso2.com:9095/api/am/runtime/apis/01234567-0123-0123-0123-012345678901/definition"'
     put:
       tags:
@@ -624,8 +654,11 @@ paths:
           $ref: "#/components/responses/InternalServerError"
       x-code-samples:
         - lang: Curl
-          source: 'curl -k -X PUT -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" -H "Content-Type: application/json" -d @data.json
-                "https://api.am.wso2.com:9095/api/am/runtime/apis/01234567-0123-0123-0123-012345678901/definition"'
+          source: 'curl -k -X PUT -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" 
+          -H "Host: api.am.wso2.com" 
+          -H "Content-Type: application/json" 
+          -d @data.json
+          "https://api.am.wso2.com:9095/api/am/runtime/apis/01234567-0123-0123-0123-012345678901/definition"'
   /apis/export:
     get:
       tags:
@@ -695,6 +728,12 @@ paths:
           $ref: "#/components/responses/NotFound"
         "500":
           $ref: "#/components/responses/InternalServerError"
+      x-code-samples:
+        - lang: Curl
+          source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
+          -H "Host: api.am.wso2.com"
+          "https://api.am.wso2.com:9095/api/am/runtime/apis/export?apiId=96077508-fd01-4fae-bc64-5de0e2baf43c&name=PizzaShackAPI&version=1.0&provider=admin&format=YAML"
+          > exportAPI.zip'
   /apis/import:
     post:
       tags:
@@ -733,6 +772,10 @@ paths:
 
         "500":
           $ref: "#/components/responses/InternalServerError"
+      x-code-samples:
+        - lang: Curl
+          source: 'curl -k -X POST -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" -H "Host: api.am.wso2.com"
+          -F file=@admin-PizzaShackAPI-1.0.0.zip "https://api.am.wso2.com:9095/api/am/runtime/apis/import?preserveProvider=false&overwrite=false"'
   /apis/copy-api:
     post:
       tags:
@@ -779,6 +822,12 @@ paths:
             - apk:api_create
             - apk:api_manage
       operationId: createNewAPIVersion
+      x-code-samples:
+        - lang: Curl
+          source: 'curl -k -X POST "https://api.am.wso2.com:9095/api/am/runtime/apis/copy-api?apiId=01234567-0123-0123-0123-012345678901&newVersion=2.0.0" 
+          -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
+          -H "Host: api.am.wso2.com"'
+
   /services:
     get:
       tags:
@@ -857,6 +906,7 @@ paths:
       x-code-samples:
         - lang: Curl
           source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
+          -H "Host: api.am.wso2.com" 
           "https://api.am.wso2.com:9095/api/am/runtime/services"'
 
   /services/{serviceId}:
@@ -890,6 +940,11 @@ paths:
           $ref: "#/components/responses/NotFound"
         "500":
           $ref: "#/components/responses/InternalServerError"
+      x-code-samples:
+        - lang: Curl
+          source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
+          -H "Host: api.am.wso2.com" 
+          "https://api.am.wso2.com:9095/api/am/runtime/services/11cd3fa3-c886-49f9-bf78-0ec349b1f4c1"'
 
   /services/{serviceId}/usage:
     get:
@@ -922,6 +977,11 @@ paths:
           $ref: "#/components/responses/NotFound"
         "500":
           $ref: "#/components/responses/InternalServerError"
+      x-code-samples:
+        - lang: Curl
+          source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
+          -H "Host: api.am.wso2.com" 
+          "https://api.am.wso2.com:9095/api/am/runtime/services/11cd3fa3-c886-49f9-bf78-0ec349b1f4c1/usage"'
   /policies:
     get:
       tags:
@@ -1015,6 +1075,11 @@ paths:
           $ref: "#/components/responses/NotFound"
         "500":
           $ref: "#/components/responses/InternalServerError"
+      x-code-samples:
+        - lang: Curl
+          source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
+          -H "Host: api.am.wso2.com" 
+          "https://api.am.wso2.com:9095/api/am/runtime/policies"'
   /policies/{policyId}:
     get:
       tags:
@@ -1051,6 +1116,11 @@ paths:
           $ref: "#/components/responses/NotFound"
         "500":
           $ref: "#/components/responses/InternalServerError"
+      x-code-samples:
+        - lang: Curl
+          source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
+          -H "Host: api.am.wso2.com" 
+          "https://api.am.wso2.com:9095/api/am/runtime/policies/1"'
 components:
   schemas:
     APIList:
@@ -1092,10 +1162,10 @@ components:
           example: HTTP
         createdTime:
           type: string
-          example: 2021-02-11 09:57:25
+          example: 2023-02-11 09:57:25
         updatedTime:
           type: string
-          example: 2021-02-11 09:57:25
+          example: 2023-02-11 09:57:25
     API:
       title: API object
       required:
@@ -1513,7 +1583,7 @@ components:
             $ref: "#/components/schemas/PortMapping"
         createdTime:
           type: string
-          example: 2021-02-11 09:57:25
+          example: 2023-02-11 09:57:25
 
     PortMapping:
       title: The PortMapping Object
