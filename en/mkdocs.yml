@@ -114,7 +114,7 @@ nav:
             - Admin APIs: catalogs/api-reference-admin.md
     #   - CLI Catalog: catalogs/cli-reference.md
     #   - CRD Catalog: catalogs/kubernetes-crds.md
-    #    - Helm Catalog: catalogs/config-catalog.md
+        - Helm Catalog: catalogs/config-catalog.md
     - About APK:
         - What is APK?: about-apk/what-is-apk.md
         - About This Release: about-apk/about-this-release.md
@@ -246,12 +246,14 @@ extra_css:
     - assets/lib/highlightjs/styles/vs.min.css
     - assets/css/theme.css
     - assets/lib/json-formatter/json-formatter.css
+    - assets/css/config-catalog.css
+    - assets/lib/fontawesome-free-6.3.0-web/css/all.min.css
 extra_javascript:
     - assets/lib/highlightjs/highlight.min.js
     - assets/lib/json-formatter/json-formatter.umd.js
     - assets/js/theme.js
-    - assets/lib/backtotop/js/util.js
-    - assets/lib/backtotop/js/main.js
+    # - assets/lib/backtotop/js/util.js
+    # - assets/lib/backtotop/js/main.js
 
 extra:
     social:

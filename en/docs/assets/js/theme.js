@@ -23,6 +23,18 @@
  * Initialize highlightjs 
  */
 hljs.initHighlightingOnLoad();
+(function() {
+    document.querySelector('.tab-selector').addEventListener('click', function(e) {
+        // Show hide tab content next to the clicked tab
+        var tabContentToShow = e.target.nextElementSibling;
+        if(tabContentToShow.style.display === 'none') {
+            tabContentToShow.style.display = 'block';
+        } else {
+            tabContentToShow.style.display = 'none';
+        }
+    });
+
+})();
 
 (function() {
     var links = document.links;

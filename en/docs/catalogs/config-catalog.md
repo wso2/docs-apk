@@ -9,10 +9,9 @@ This document describes all the Helm related configuration parameters that are u
     <section>
         <div class="mb-config-options">
             <div class="superfences-tabs">
-            
-            <input name="2" type="checkbox" id="_tab_2">
+            <input name="2" type="checkbox" id="_tab_2" style='display: none'>
                 <label class="tab-selector" for="_tab_2"><i class="icon fa fa-code"></i></label>
-                <div class="superfences-content">
+                <div class="superfences-content" style='display: none'>
                     <div class="mb-config-example">
 <pre><code class="toml">[server]
 hostname = "localhost"
