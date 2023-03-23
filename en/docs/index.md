@@ -25,8 +25,8 @@ template: templates/single-column.html
     <div class="section02">
         <!--<h3>APK in a Nutshell</h3>-->
         <div class="linkWrapper">
-            <div class="linkSet2" onclick="location.href='../get-started/quick-start-guide';">
-                <a href="../get-started/quick-start-guide"><h3>Quick Start Guide</h3></a>
+            <div class="linkSet2" onclick="location.href='get-started/quick-start-guide';">
+                <a href="get-started/quick-start-guide"><h3>Quick Start Guide</h3></a>
                 <p>
                     If you're new to the WSO2 APK platform, the quick start guide is a great place to get started. This guide will walk you through the process of setting up and running your first API on the platform.
                 </p>
@@ -38,15 +38,15 @@ template: templates/single-column.html
                     The basic flow guide for the WSO2 APK platform provides step-by-step tutorials for developing, managing and publishing APIs.
                 </p>
             </div>-->
-            <div class="linkSet2 middle" onclick="location.href='../about-apk/what-is-apk';">
-                <a href="../about-apk/what-is-apk"><h3>What is APK?</h3></a>
+            <div class="linkSet2 middle" onclick="location.href='about-apk/what-is-apk';">
+                <a href="about-apk/what-is-apk"><h3>What is APK?</h3></a>
                 <p>
                     <!--The basic flow guide for the WSO2 APK platform provides step-by-step tutorials for developing, managing and publishing APIs.-->
                     Get to know WSO2 APK one step deeper.
                 </p>
             </div>
-            <div class="linkSet2 last" onclick="location.href='../about-apk/architecture';">
-                <a href="../about-apk/architecture"><h3>Architecture</h3></a>
+            <div class="linkSet2 last" onclick="location.href='about-apk/architecture';">
+                <a href="about-apk/architecture"><h3>Architecture</h3></a>
                 <p>
                     The architecture of a software platform is an important factor in determining its performance, scalability, and reliability. Get a better understanding of the architecture of the WSO2 APK platform.
                 </p>
