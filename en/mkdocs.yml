@@ -173,11 +173,11 @@ nav:
        #        - Deployment Pattern 2: get-started/dummy.md
        #        - Deployment Pattern 3: get-started/dummy.md
        #- CI/CD: develop-and-deploy-api/ci-cd.md
-        - Customizations:
-            - API Gateway - Enforcer:
+        #- Customizations:
+        #    - API Gateway - Enforcer:
             #    - Enforcer - Overview: apk-deck/enforcer-overview.md
-                - Mediation Extensions:
-                    - Custom Filters: setup/customizations/gateway-enforcer/mediation-extensions/custom-filters.md
+        #        - Mediation Extensions:
+        #            - Custom Filters: setup/customizations/gateway-enforcer/mediation-extensions/custom-filters.md
     - Administration:
         - Organizations: administration/organizations.md
         - Test System APIs: administration/postman-tests.md
