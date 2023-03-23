@@ -16,14 +16,16 @@
  * under the License.
  */
 :root {
-    --main: #066823;
-    --second: #066823;
-    --linkHover: #337462;
-    --darkBack: #2b423c;
+    --main: #1c5e6e;
+    --second: #1c5e6e;
+    --linkHover: #5dcfc0;
+    --darkBack: #10182a;
+    --pageBack: #d0d4d7;
 }
 
 body {
     font-family: 'Source Sans Pro', sans-serif;
+    /* background-color: var(--pageBack); */
 }
 .md-nav__link.first-item {
     font-size: 0.8rem;
@@ -123,7 +125,7 @@ p {
 
 /* Header styles */
 .main-header.md-header {
-    background-color: var(--darkBack);
+    background-color: var(--main);
 }
 
 .main-header .md-header-nav__button.md-logo.localLink img {
@@ -209,6 +211,9 @@ label.md-nav__link.first-item{
 /*
     * Footer styles
     */
+.md-footer {
+    background-color: var(--darkBack);
+}
 .md-footer-nav__link {
     padding-top: 0.5rem;
 }
