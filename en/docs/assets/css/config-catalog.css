@@ -237,6 +237,7 @@ html .md-typeset .superfences-tabs>label {
     color: var(--main);
     font-weight: normal;
     padding: 20px;
+    border-bottom: 0.05rem dashed var(--second);
 }
 
 .md-typeset .superfences-tabs {
@@ -247,7 +248,7 @@ html .md-typeset .superfences-tabs>label {
     border: 0.05rem solid rgba(0,0,0,.07);
 }
 .md-typeset .superfences-tabs {
-    border: 0.05rem dotted var(--second);
+    border: 0.05rem dashed var(--second);
     border-radius: 5px;
 }
 
