@@ -3,7 +3,7 @@ openapi: 3.0.1
 info:
   title: WSO2 API Platform for Kubernetes - Runtime Service API
   description: |
-    This document specifies a **RESTful API** for WSO2 **API Platform for Kubernetes(APK)** - **Runtime Service**.
+    This document specifies a **RESTful API** for WSO2 **API Platform for Kubernetes (APK)** - **Runtime Service**.
   version: 1.0.0
 paths:
   /apis:
@@ -53,7 +53,7 @@ paths:
         - name: sortOrder
           in: query
           description: |
-            Order of sorting(ascending/descending).
+            Order of sorting (ascending/descending).
           required: false
           style: form
           explode: true
@@ -100,10 +100,10 @@ paths:
         - APIs
       summary: Create a New API
       description: |
-        This operation can be used to create a new API specifying the details of the API in the payload.
+        Use this operation to create a new API specifying the details of the API in the payload.
       operationId: createAPI
       requestBody:
-        description: API object that needs to be added
+        description: The API object that needs to be added.
         content:
           application/json:
             schema:
@@ -113,7 +113,7 @@ paths:
         "201":
           description: |
             Created.
-            Successful response with the newly created object as entity in the body.
+            Successful response with the newly created object as the entity in the body.
             Location header contains URL of newly created entity.
           headers:
             Location:
@@ -152,7 +152,7 @@ paths:
         - APIs
       summary: Get Details of an API
       description: |
-        Using this operation, you can retrieve complete details of a single API. You need to provide the id of the API to retrieve it.
+        Using this operation, you can retrieve complete details of a single API. You need to provide the ID of the API to retrieve it.
       operationId: getAPI
       parameters:
         - name: apiId
@@ -195,7 +195,7 @@ paths:
         - APIs
       summary: Update an API
       description: |
-        This operation can be used to update an existing API. This operation will instruct runtime to update deployment.
+        Use this operation to update an existing API. This operation will instruct the Runtime to update the deployment.
       operationId: updateAPI
       parameters:
         - name: apiId
@@ -208,7 +208,7 @@ paths:
           schema:
             type: string
       requestBody:
-        description: API object that needs to be added
+        description: The API object that needs to be added.
         content:
           application/json:
             schema:
@@ -218,7 +218,7 @@ paths:
         "200":
           description: |
             OK.
-            Successful response with updated API object
+            Successful response with an updated API object.
           headers:
             Location:
               description: |
@@ -258,7 +258,7 @@ paths:
         - APIs
       summary: Delete an API
       description: |
-        This operation can be used to delete an existing API proving the Id of the API.
+        Use this operation to delete an existing API by providing the ID of the API.
       operationId: deleteAPI
       parameters:
         - name: apiId
@@ -291,9 +291,9 @@ paths:
     post:
       tags:
         - APIs
-      summary: Generate internal API Key to invoke APIS
+      summary: Generate Internal API Key to Invoke APIs
       description: |
-        This operation can be used to generate internal API key which used to invoke API.
+        Use this operation to generate an internal API key that you can use to invoke API.
       operationId: generateInternalAPIKey
       parameters:
         - $ref: "#/components/parameters/apiId"
@@ -325,13 +325,13 @@ paths:
     post:
       tags:
         - Service or Schema Import
-      summary: Create API from a Service
-      description: This operation can be used to create an API from available Service by providing service
+      summary: Create an API From a Service
+      description: Use this operation to create an API from an available Service by providing Service.
       operationId: importService
       parameters:
         - name: serviceKey
           in: query
-          description: ID of service that should be imported from Service Catalog
+          description: The ID of the Service that should be imported from the Service Catalog.
           required: true
           style: form
           explode: true
@@ -347,7 +347,7 @@ paths:
         "201":
           description: |
             Created.
-            Successful response with the newly created object as entity in the body.
+            Successful response with the newly created object as the entity in the body.
             Location header contains the URL of the newly created entity.
           headers:
             Location:
@@ -386,10 +386,10 @@ paths:
         - Service or Schema Import
       summary: Import an API Definition
       description: |
-        This operation can be used to create an API from an API definition. Provide either `url` or `file`
+        Use this operation to create an API from an API definition. Provide either the `url` or `file`
         to specify the definition.
 
-        Specify additionalProperties with **at least** API's name, version, context and endpointConfig.
+        Specify `additionalProperties`` with **at least** the API's name, version, context and endpointConfig.
       operationId: importAPIDefinition
       requestBody:
         content:
@@ -442,7 +442,7 @@ paths:
         - Validation
       summary: Validate an OpenAPI Definition
       description: |
-        This operation can be used to validate an OpenAPI definition and retrieve a summary. Provide either `url`
+        Use this operation to validate an OpenAPI definition and retrieve a summary. Provide either the `url`
         or `file` to specify the definition.
       operationId: validateOpenAPIDefinition
       parameters:
@@ -450,7 +450,7 @@ paths:
           in: query
           description: |
             Specify whether to return the full content of the OpenAPI definition in the response. This is only
-            applicable when using url based validation
+            applicable when using URL based validation.
           required: false
           style: form
           explode: true
@@ -466,7 +466,7 @@ paths:
         "200":
           description: |
             OK.
-            API definition validation information is returned
+            API definition validation information is returned.
           headers:
             Content-Type:
               description: |
@@ -496,9 +496,9 @@ paths:
     post:
       tags:
         - Validation
-      summary: Check Given API Context Name already Exists
+      summary: Check if the Given API Context Name Already Exists
       description: |
-        Using this operation, you can check a given API context is already used. You need to provide the context name you want to check.
+        You can use this operation to check if a given API context is already being used. You need to provide the context name you want to check.
       operationId: validateAPI
       parameters:
       - name: query
@@ -506,9 +506,10 @@ paths:
         description: |
           **Search condition**.
           You can search in attributes by using an **"<attribute>:"** modifier.
-          Eg.
+          
+          Example:
           "name:wso2" will match an API if the provider of the API is exactly "wso2".
-          Supported attribute modifiers are [** version, context, name **]
+          The supported attribute modifiers are `version`, `context`, `name`
           If no advanced attribute modifier has been specified, search will match the
           given query string against API Name.
         required: true
@@ -547,7 +548,7 @@ paths:
         - APIs
       summary: Get API Definition
       description: |
-        This operation can be used to retrieve the definition of an API.
+        Use this operation to retrieve the definition of an API.
       operationId: getAPIDefinition
       parameters:
         - name: apiId
@@ -563,7 +564,7 @@ paths:
         "200":
           description: |
             OK.
-            Requested definition document of the API is returned
+            The requested definition document of the API is returned.
           headers:
             Content-Type:
               description: |
@@ -593,7 +594,7 @@ paths:
         - APIs
       summary: Update API Definition
       description: |
-        This operation can be used to update the API definition of an existing API. API definition to be updated is passed as a form data parameter `apiDefinition`.
+        Use this operation to update the API definition of an existing API. API definition to be updated is passed as a form data parameter `apiDefinition`.
       operationId: updateAPIDefinition
       parameters:
         - name: apiId
@@ -614,7 +615,7 @@ paths:
         "200":
           description: |
             OK.
-            Successful response with updated Swagger definition
+            Successful response with updated Open API Specification.
           headers:
             Location:
               description: |
@@ -649,7 +650,7 @@ paths:
         - lang: Curl
           source: 'curl -k -X PUT -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
           -H "Content-Type: application/json" 
-          -F apiDefinition=@swagger.json
+          -F apiDefinition=@oaspecification.json
           "https://api.am.wso2.com:9095/api/am/runtime/apis/01234567-0123-0123-0123-012345678901/definition"'
   /apis/export:
     get:
@@ -657,7 +658,7 @@ paths:
         - Import Export
       summary: Export an API
       description: |
-        This operation can be used to export the details of a particular API as a zip file.
+        Use this operation to export the details of a particular API as a ZIP file.
       operationId: exportAPI
       parameters:
         - name: apiId
@@ -689,7 +690,7 @@ paths:
         - name: format
           in: query
           description: |
-            Format of output documents. Can be YAML or JSON.
+            Format of output documents. This can be YAML or JSON.
           required: false
           style: form
           explode: true
@@ -732,13 +733,13 @@ paths:
         - Import Export
       summary: Import an API
       description: |
-        This operation can be used to import an API.
+        Use this operation to import an API.
       operationId: importAPI
       parameters:
         - name: overwrite
           in: query
           description: |
-            Whether to update the API or not. This is used when updating already existing APIs
+            Whether to update the API or not. Use this when updating already existing APIs.
           required: false
           style: form
           explode: true
@@ -774,7 +775,7 @@ paths:
         - APIs
       summary: Create a New API Version
       description: |
-        This operation can be used to create a new version of an existing API. The new version is specified as `newVersion` query parameter. New API will be in `CREATED` state.
+        Use this operation to create a new version of an existing API. The new version is specified as `newVersion` query parameter. New API will be in `CREATED` state.
       parameters:
         - name: newVersion
           in: query
@@ -785,7 +786,7 @@ paths:
             type: string
         - name: serviceId
           in: query
-          description: Version of the Service that will used in creating new version
+          description: Version of the Service that you are using to create a new API version.
           schema:
             type: string
           required: false
@@ -794,7 +795,7 @@ paths:
         201:
           description: |
             Created.
-            Successful response with the newly created API as entity in the body. Location header contains URL of newly created API.
+            Successful response with the newly created API as the entity in the body. Location header contains the URL of the newly created API.
           headers:
             Location:
               description: |
@@ -816,14 +817,14 @@ paths:
       operationId: createNewAPIVersion
       x-code-samples:
         - lang: Curl
-          source: 'curl -k -X POST "https://api.am.wso2.com:9095/api/am/runtime/apis/copy-api?apiId=01234567-0123-0123-0123-012345678901&newVersion=2.0.0" 
+          source: 'curl -k -X POST "https://api.am.wso2.com:9095/api/am/runtime/apis/copy-api?apiId=01234567-0123-0123-0123-012345678901&newVersion=2.0.0"
           -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"'
 
   /services:
     get:
       tags:
         - Services
-      summary: Retrieve/search services
+      summary: Retrieve/Search for Services
       description: |
         Retrieve or search services in the Cluster.
       operationId: searchServices
@@ -852,7 +853,7 @@ paths:
         - name: sortOrder
           in: query
           description: |
-            Order of sorting(ascending/descending).
+            Order of sorting (ascending/descending).
           required: false
           style: form
           explode: true
@@ -885,7 +886,7 @@ paths:
       responses:
         "200":
           description: |
-            Paginated matched list of services returned.
+            Paginated matched list of Services returned.
           content:
             application/json:
               schema:
@@ -903,14 +904,14 @@ paths:
     get:
       tags:
         - Services
-      summary: Get details of a service
+      summary: Get Details of a Service
       description: |
-        Get details of a service using the id of the service.
+        Get details of a Service using the ID of the Service.
       operationId: getServiceById
       parameters:
         - name: serviceId
           in: path
-          description: UUID (unique across all namespaces) of the service
+          description: UUID (unique across all namespaces) of the Service
           required: true
           style: simple
           explode: false
@@ -919,7 +920,7 @@ paths:
       responses:
         "200":
           description: |
-            Requested service in the Service Catalog is returned.
+            Requested Service in the Service Catalog is returned.
           content:
             application/json:
               schema:
@@ -939,14 +940,14 @@ paths:
     get:
       tags:
         - Services
-      summary: Retrieve the usage of service
+      summary: Retrieve the Usage of a Service
       description: |
         Retrieve usage
       operationId: getServiceUsage
       parameters:
         - name: serviceId
           in: path
-          description: UUID(unique id across cluster) of the service
+          description: UUID (unique ID across cluster) of the Service
           required: true
           style: simple
           explode: false
@@ -955,7 +956,7 @@ paths:
       responses:
         "200":
           description: |
-            List of APIs that uses the service in the Service Catalog is returned.
+            List of APIs that uses the Service in the Service Catalog is returned.
           content:
             application/json:
               schema:
@@ -976,9 +977,9 @@ paths:
       tags:
         - Mediation Policies
       summary: |
-        Get all common mediation policies to all the APIs
+        Get All Common Mediation Policies For All the APIs
       description: |
-        This operation provides you a list of available operation Policies that can be used by any API
+        This operation provides you a list of the available Operation Policies that any API can use.
       operationId: getMediationPolicyList
       parameters:
         - name: limit
@@ -1017,7 +1018,7 @@ paths:
         - name: sortOrder
           in: query
           description: |
-            Order of sorting(ascending/descending).
+            Order of sorting (ascending/descending).
           required: false
           style: form
           explode: true
@@ -1037,7 +1038,7 @@ paths:
         - name: Accept
           in: header
           description: |
-            Media types acceptable for the response. Default is application/json.
+            Media types acceptable for the response.
           required: false
           style: simple
           explode: false
@@ -1048,7 +1049,7 @@ paths:
         "200":
           description: |
             OK.
-            List of qualifying policies is returned.
+            List of qualifying Policies is returned.
           headers:
             Content-Type:
               description: The content type of the body.
@@ -1073,14 +1074,14 @@ paths:
     get:
       tags:
         - Mediation Policies
-      summary: Get the details of a common mediation policy by providing mediation policy ID
+      summary: Get Details of a Specific Common Mediation Policy
       description: |
-        This operation can be used to retrieve a particular common mediation policy.
+        Use this operation to retrieve details of a specific Common Mediation Policy based on its Mediation Policy ID.
       operationId: getMediationPolicyByPolicyId
       parameters:
         - name: policyId
           in: path
-          description: Mediation policy Id
+          description: Mediation policy ID
           required: true
           style: simple
           explode: false
@@ -1188,24 +1189,19 @@ components:
           example: 1.0.0
         type:
           type: string
-          description: The api creation type to be used. Accepted values are REST, WS, GRAPHQL, WEBSUB, SSE, WEBHOOK, ASYNC
+          description: The API creation type.
           example: REST
           default: REST
           enum:
             - REST
-            - WS
-            - GRAPHQL
-            - WEBSUB
-            - SSE
-            - WEBHOOK
-            - ASYNC
         endpointConfig:
           type: object
           properties: {}
           description: |
-            Endpoint configuration of the API. This can be used to provide different types of endpoints including Simple REST Endpoints, Loadbalanced and Failover.
+            Endpoint configuration of the API. You can use this to provide different types of endpoints including Simple REST Endpoints, Loadbalanced and Failover.
 
             `Simple REST Endpoint`
+              ```
               {
                 "endpoint_type": "http",
                 "sandbox_endpoints":       {
@@ -1215,6 +1211,7 @@ components:
                    "url": "https://pizzashack-service:8080/am/sample/pizzashack/v3/api/"
                 }
               }
+              ```
           example:
             endpoint_type: http
             sandbox_endpoints:
@@ -1259,14 +1256,18 @@ components:
           type: boolean
           example: true
           default: true
-          description: Authentication mode for resource (true/false)
+          description: Authentication mode for resource.
+          enum:
+            - true
+            - false
         endpointConfig:
           type: object
           properties: {}
           description: |
-            Endpoint configuration of the API. This can be used to provide different types of endpoints including Simple REST Endpoints, Loadbalanced and Failover.
+            Endpoint configuration of the API. You can use this to provide different types of endpoints including Simple REST Endpoints, Loadbalanced and Failover.
 
             `Simple REST Endpoint`
+            ```
               {
                 "endpoint_type": "http",
                 "sandbox_endpoints":       {
@@ -1276,6 +1277,7 @@ components:
                    "url": "https://pizzashack-service:8080/am/sample/pizzashack/v3/api/"
                 }
               }
+            ```  
           example:
             endpoint_type: http
             sandbox_endpoints:
@@ -1377,7 +1379,7 @@ components:
           example: Add Header
         description:
           type: string
-          example: With this policy, user can add a new header to the request
+          example: The user can add a new header to the request using this policy.
         applicableFlows:
           type: array
           items:
@@ -1406,11 +1408,11 @@ components:
           example:  Name of the header to be added
         required:
           type: boolean
-          description: Is this option mandatory for the policy
+          description: This defines whether or not this option is mandatory for the Policy
           example: true
         validationRegex:
           type: string
-          description: UI validation regex for the attribute
+          description: UI validation Regex for the attribute
         type:
           type: string
           description: Type of the attribute
@@ -1435,15 +1437,15 @@ components:
         description:
           type: string
           description: |
-            A detail description about the error message.
+            A detailed description of the error message.
         moreInfo:
           type: string
           description: |
-            Preferably an url with more details about the error.
+            Preferably a URL with more details about the error.
         error:
           type: array
           description: |
-            If there are more than one error list them out.
+            If there is more than one error, list them out.
             For example, list out validation errors by each field.
           items:
             $ref: "#/components/schemas/ErrorListItem"
@@ -1459,11 +1461,11 @@ components:
         message:
           type: string
           description: |
-            Description about individual errors occurred
+            A description on the individual errors that occurred.
         description:
           type: string
           description: |
-            A detail description about the error message.
+            A detailed description of the error message.
     APIDefinitionValidationResponse:
       title: API Definition Validation Response
       required:
@@ -1484,7 +1486,7 @@ components:
         errors:
           type: array
           description: |
-            If there are more than one error list them out.
+            If there is more than one error, list them out.
             For example, list out validation errors by each field.
           items:
             $ref: "#/components/schemas/ErrorListItem"
@@ -1631,7 +1633,7 @@ components:
           example: HTTP
         port:
           type: number
-          description: Port of the Listener
+          description: Port of the Listener.
           example: 8080
     apis_importdefinition_body:
       properties:
@@ -1641,11 +1643,11 @@ components:
           format: string
         file:
           type: string
-          description: Definition to upload as a file
+          description: Definition to upload as a file.
           format: binary
         url:
           type: string
-          description: Definition url
+          description: Definition URL
         additionalProperties:
           type: string
           description: Additional attributes specified as a stringified JSON with API's schema
@@ -1656,7 +1658,7 @@ components:
       properties:
         url:
           type: string
-          description: API definition definition url
+          description: API definition definition URL
         file:
           type: string
           description: API definition as a file
@@ -1666,18 +1668,18 @@ components:
           description: API definition type - OpenAPI/AsyncAPI/GraphQL
         inlineAPIDefinition:
           type: string
-          description: Inline content of the API definition
+          description: Inline content of the API definition.
     apiId_definition_body:
       properties:
         apiDefinition:
           type: string
-          description: API definition of the API
+          description: API definition of the API.
         url:
           type: string
-          description: API definition URL of the API
+          description: API definition URL of the API.
         file:
           type: string
-          description: API definition as a file
+          description: API definition as a file.
           format: binary
     apis_import_body:
       required:
@@ -1685,7 +1687,7 @@ components:
       properties:
         file:
           type: string
-          description: Zip archive consisting on exported API configuration
+          description: ZIP archive consisting of exported API configuration.
           format: binary
     API_serviceInfo:
       type: object
@@ -1718,7 +1720,7 @@ components:
             Context of the API
         description:
           type: string
-          example: A sample API that uses a petstore as an example to demonstrate swagger-2.0 specification
+          example: A sample API that uses a petstore as an example to demonstrate OpenAPI Specification 2.0
           description: |
             Description of the API
         openAPIVersion:
@@ -1779,7 +1781,7 @@ components:
           example:
             code: 403
             message: Forbidden
-            description: The request must be conditional but no condition has been specified
+            description: The request must be conditional but no condition has been specified.
             moreInfo: ""
             error: []
     InternalServerError:
@@ -1791,7 +1793,7 @@ components:
           example:
             code: 500
             message: Internal Server Error
-            description: The server encountered an internal error. Please contact administrator.
+            description: The server encountered an internal error. Please contact the Administrator.
             moreInfo: ""
             error: []
     NotAcceptable:
@@ -1803,7 +1805,7 @@ components:
           example:
             code: 406
             message: Not Acceptable
-            description: The requested media type is not supported
+            description: The requested media type is not supported.
             moreInfo: ""
             error: []
     NotFound:
@@ -1815,11 +1817,11 @@ components:
           example:
             code: 404
             message: Not Found
-            description: The specified resource does not exist
+            description: The specified resource does not exist.
             moreInfo: ""
             error: []
     PreconditionFailed:
-      description: Precondition Failed. The request has not been performed because one of the preconditions is not met.
+      description: Precondition Failed. The request has not been performed because one of the preconditions was not met.
       content:
         application/json:
           schema:
@@ -1827,7 +1829,7 @@ components:
           example:
             code: 412
             message: Precondition Failed
-            description: The request has not been performed because one of the preconditions is not met
+            description: The request has not been performed because one of the preconditions was not met.
             moreInfo: ""
             error: []
     Unauthorized:
@@ -1839,7 +1841,7 @@ components:
           example:
             code: 401
             message: Unauthorized
-            description: The user is not authorized
+            description: The user is not authorized.
             moreInfo: ""
             error: []
     UnsupportedMediaType:
@@ -1851,7 +1853,7 @@ components:
           example:
             code: 415
             message: Unsupported media type
-            description: The entity of the request was not in a supported format
+            description: The entity of the request was not in a supported format.
             moreInfo: ""
             error: []
   parameters:
@@ -1870,7 +1872,7 @@ components:
       in: query
       description: |
         **API ID** consisting of the **UUID** of the API.
-        The combination of the provider of the API, name of the API and the version is also accepted as a valid API I.
+        The combination of the provider of the API, name of the API, and the version is also accepted as a valid API ID.
         Should be formatted as **provider-name-version**.
       required: true
       schema:
@@ -1948,7 +1950,7 @@ components:
       name: sortOrder
       in: query
       description: |
-        Order of sorting(ascending/descending).
+        Order of sorting (ascending/descending).
       required: false
       style: form
       explode: true
@@ -1961,7 +1963,7 @@ components:
     serviceId:
       name: serviceId
       in: path
-      description: name of the service
+      description: Name of the Service.
       required: true
       style: simple
       explode: false
@@ -1970,7 +1972,7 @@ components:
     gatewayId:
       name: gatewayId
       in: path
-      description: name of the gateway
+      description: Name of the Gateway.
       required: true
       style: simple
       explode: false
@@ -1979,7 +1981,7 @@ components:
     policyId:
       name: policyId
       in: path
-      description: policy uuid
+      description: Policy UUID
       required: true
       style: simple
       explode: false
