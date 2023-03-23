@@ -93,7 +93,7 @@ paths:
       x-code-samples:
         - lang: Curl
           source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
-          -H "Host: api.am.wso2.com" "https://api.am.wso2.com:9095/api/am/runtime/apis"'
+          "https://api.am.wso2.com:9095/api/am/runtime/apis"'
 
     post:
       tags:
@@ -143,7 +143,7 @@ paths:
           source: 'curl -k -X POST -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
           -H "Content-Type: application/json" 
           -H "Accept: application/json" 
-          -H "Host: api.am.wso2.com" -d @data.json
+          -d @data.json
           "https://api.am.wso2.com:9095/api/am/runtime/apis"'
 
   /apis/{apiId}:
@@ -187,8 +187,7 @@ paths:
           $ref: "#/components/responses/InternalServerError"
       x-code-samples:
         - lang: Curl
-          source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" 
-          -H "Host: api.am.wso2.com" 
+          source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
           "https://api.am.wso2.com:9095/api/am/runtime/apis/01234567-0123-0123-0123-012345678901"'
 
     put:
@@ -251,8 +250,9 @@ paths:
           $ref: "#/components/responses/InternalServerError"
       x-code-samples:
         - lang: Curl
-          source: 'curl -k -X PUT -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" -H "Host: api.am.wso2.com" -H "Content-Type: application/json" -d @data.json
-                "https://api.am.wso2.com:9095/api/am/runtime/apis/01234567-0123-0123-0123-012345678901"'    
+          source: 'curl -k -X PUT -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
+          -H "Content-Type: application/json" -d @data.json
+          "https://api.am.wso2.com:9095/api/am/runtime/apis/01234567-0123-0123-0123-012345678901"'
     delete:
       tags:
         - APIs
@@ -284,7 +284,7 @@ paths:
           $ref: "#/components/responses/InternalServerError"
       x-code-samples:
         - lang: Curl
-          source: 'curl -k -X DELETE -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" -H "Host: api.am.wso2.com"
+          source: 'curl -k -X DELETE -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
           "https://api.am.wso2.com:9095/api/am/runtime/apis/01234567-0123-0123-0123-012345678901"'
 
   /apis/{apiId}/generate-key:
@@ -319,8 +319,7 @@ paths:
           source: 'curl -k -X POST "https://api.am.wso2.com:9095/api/am/runtime/apis/01234567-0123-0123-0123-012345678901/generate-key" 
           -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" 
           -H "Content-Type: application/json" 
-          -H "Accept: application/json" 
-          -H "Host: api.am.wso2.com"'
+          -H "Accept: application/json"'
 
   /apis/import-service:
     post:
@@ -379,7 +378,7 @@ paths:
           -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" 
           -H "Content-Type: application/json" 
           -H "Accept: application/json" 
-          -H "Host: api.am.wso2.com" -d @data.json'
+          -d @data.json'
 
   /apis/import-definition:
     post:
@@ -435,7 +434,7 @@ paths:
           -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" 
           -H "Content-Type: application/json" 
           -H "Accept: application/json" 
-          -H "Host: api.am.wso2.com" -F file=@openapi.json -F additionalProperties=@data.json'
+          -F file=@openapi.json -F additionalProperties=@data.json'
   
   /apis/validate-definition:
     post:
@@ -491,7 +490,6 @@ paths:
           source: 'curl -k -X POST -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
           -H "Content-Type: application/json"
           -H "Accept: application/json"
-          -H "Host: api.am.wso2.com"
           -F file=@openapi.json "https://api.am.wso2.com:9095/api/am/runtime/apis/validate-definition"'
 
   /apis/validate:
@@ -541,7 +539,6 @@ paths:
       x-code-samples:
         - lang: Curl
           source: 'curl -k -X POST -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
-          -H "Host: api.am.wso2.com"
           "https://api.am.wso2.com:9095/api/am/runtime/apis/validate?query=name%3Awso2"'
 
   /apis/{apiId}/definition:
@@ -588,8 +585,7 @@ paths:
           $ref: "#/components/responses/InternalServerError"
       x-code-samples:
         - lang: Curl
-          source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" 
-          -H "Host: api.am.wso2.com"
+          source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
           "https://api.am.wso2.com:9095/api/am/runtime/apis/01234567-0123-0123-0123-012345678901/definition"'
 
     put:
@@ -651,8 +647,7 @@ paths:
           $ref: "#/components/responses/InternalServerError"
       x-code-samples:
         - lang: Curl
-          source: 'curl -k -X PUT -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" 
-          -H "Host: api.am.wso2.com" 
+          source: 'curl -k -X PUT -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
           -H "Content-Type: application/json" 
           -d @data.json
           "https://api.am.wso2.com:9095/api/am/runtime/apis/01234567-0123-0123-0123-012345678901/definition"'
@@ -728,7 +723,6 @@ paths:
       x-code-samples:
         - lang: Curl
           source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
-          -H "Host: api.am.wso2.com"
           "https://api.am.wso2.com:9095/api/am/runtime/apis/export?apiId=96077508-fd01-4fae-bc64-5de0e2baf43c&name=PizzaShackAPI&version=1.0&provider=admin&format=YAML"
           > exportAPI.zip'
 
@@ -770,8 +764,9 @@ paths:
           $ref: "#/components/responses/InternalServerError"
       x-code-samples:
         - lang: Curl
-          source: 'curl -k -X POST -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" -H "Host: api.am.wso2.com"
-          -F file=@admin-PizzaShackAPI-1.0.0.zip "https://api.am.wso2.com:9095/api/am/runtime/apis/import?preserveProvider=false&overwrite=false"'
+          source: 'curl -k -X POST -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
+          -F file=@admin-PizzaShackAPI-1.0.0.zip 
+          "https://api.am.wso2.com:9095/api/am/runtime/apis/import?preserveProvider=false&overwrite=false"'
 
   /apis/copy-api:
     post:
@@ -822,8 +817,7 @@ paths:
       x-code-samples:
         - lang: Curl
           source: 'curl -k -X POST "https://api.am.wso2.com:9095/api/am/runtime/apis/copy-api?apiId=01234567-0123-0123-0123-012345678901&newVersion=2.0.0" 
-          -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
-          -H "Host: api.am.wso2.com"'
+          -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"'
 
   /services:
     get:
@@ -903,7 +897,6 @@ paths:
       x-code-samples:
         - lang: Curl
           source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
-          -H "Host: api.am.wso2.com" 
           "https://api.am.wso2.com:9095/api/am/runtime/services"'
 
   /services/{serviceId}:
@@ -940,7 +933,6 @@ paths:
       x-code-samples:
         - lang: Curl
           source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
-          -H "Host: api.am.wso2.com" 
           "https://api.am.wso2.com:9095/api/am/runtime/services/11cd3fa3-c886-49f9-bf78-0ec349b1f4c1"'
 
   /services/{serviceId}/usage:
@@ -977,7 +969,6 @@ paths:
       x-code-samples:
         - lang: Curl
           source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
-          -H "Host: api.am.wso2.com" 
           "https://api.am.wso2.com:9095/api/am/runtime/services/11cd3fa3-c886-49f9-bf78-0ec349b1f4c1/usage"'
 
   /policies:
@@ -1076,7 +1067,6 @@ paths:
       x-code-samples:
         - lang: Curl
           source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
-          -H "Host: api.am.wso2.com" 
           "https://api.am.wso2.com:9095/api/am/runtime/policies"'
 
   /policies/{policyId}:
@@ -1118,7 +1108,6 @@ paths:
       x-code-samples:
         - lang: Curl
           source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
-          -H "Host: api.am.wso2.com" 
           "https://api.am.wso2.com:9095/api/am/runtime/policies/1"'
 
 components:
