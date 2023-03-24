@@ -1227,7 +1227,7 @@ paths:
         `GET https://api.am.wso2.com:9095/api/am/backoffice/v1/subscriptions`
 
         2. Retrieving subscriptions for a specific API.
-        `GET https://api.am.wso2.com:9095/api/am/backoffice/v1/subscriptions?apiId=c43a325c-260b-4302-81cb-768eafaa3aed`
+        `GET https://api.am.wso2.com:9095/api/am/backoffice/v1/subscriptions?apiId=01234567-0123-0123-0123-012345678901`
       parameters:
         - $ref: '#/components/parameters/apiId-Q-Opt'
         - $ref: '#/components/parameters/limit'
@@ -1275,7 +1275,7 @@ paths:
       x-code-samples:
         - lang: Curl
           source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
-          "https://api.am.wso2.com:9095/api/am/backoffice/v1/subscriptions?apiId=96077508-fd01-4fae-bc64-5de0e2baf43c"'
+          "https://api.am.wso2.com:9095/api/am/backoffice/v1/subscriptions?apiId=01234567-0123-0123-0123-012345678901"'
       operationId: getSubscriptions
 
   /subscriptions/{subscriptionId}/subscriber-info:
@@ -1636,7 +1636,7 @@ paths:
       x-code-samples:
         - lang: Curl
           source: 'curl -k -X POST -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
-          "https://api.am.wso2.com:9095/api/am/backoffice/v1/apis/change-lifecycle?apiId=890a4f4d-09eb-4877-a323-57f6ce2ed79b&action=Publish"'
+          "https://api.am.wso2.com:9095/api/am/backoffice/v1/apis/change-lifecycle?apiId=01234567-0123-0123-0123-012345678901&action=Publish"'
       operationId: changeAPILifecycle
 
   /apis/{apiId}/lifecycle-history:
@@ -1671,14 +1671,14 @@ paths:
       x-code-samples:
         - lang: Curl
           source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
-          "https://api.am.wso2.com:9095/api/am/backoffice/v1/apis/890a4f4d-09eb-4877-a323-57f6ce2ed79b/lifecycle-history"'
+          "https://api.am.wso2.com:9095/api/am/backoffice/v1/apis/01234567-0123-0123-0123-012345678901/lifecycle-history"'
       operationId: getAPILifecycleHistory
 
   /apis/{apiId}/lifecycle-state:
     get:
       tags:
         - API Lifecycle
-      summary: Get Lifecycle State Data of the API.
+      summary: Get Lifecycle State Data of the API
       description: |
         This operation can be used to retrieve Lifecycle state data of the API.
       parameters:
@@ -1707,7 +1707,7 @@ paths:
       x-code-samples:
         - lang: Curl
           source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
-          "https://api.am.wso2.com:9095/api/am/backoffice/v1/apis/890a4f4d-09eb-4877-a323-57f6ce2ed79b/lifecycle-state"'
+          "https://api.am.wso2.com:9095/api/am/backoffice/v1/apis/01234567-0123-0123-0123-012345678901/lifecycle-state"'
       operationId: getAPILifecycleState
 ######################################################
 # The "Business Plans Collection" resource API
@@ -1718,7 +1718,7 @@ paths:
         - Business Plan (Collection)
       summary: Get all Business Plans
       description: |
-        This operation can be used to retrieve all Business Plans.
+        This operation can be used to retrieve all Business Plans
       parameters:
         - $ref: '#/components/parameters/Accept'
       responses:
@@ -1745,7 +1745,7 @@ paths:
       x-code-samples:
         - lang: Curl
           source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
-          "https://api.am.wso2.com:9095/api/am/admin/business-plans"'
+          "https://api.am.wso2.com:9095/api/am/backoffice/v1/business-plans"'
       operationId: getAllBusinessPlans
 components:
   schemas:
