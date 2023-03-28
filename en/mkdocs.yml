@@ -77,7 +77,7 @@ nav:
                 - Overview: develop-and-deploy-api/rate-limiting-policy-overview.md
                 - Add a New Rate Limiting Policy:
                     - Via REST API: develop-and-deploy-api/rate-limiting/add-new-rate-limiting-policies-via-rest-api.md
-                    - Via CLI: develop-and-deploy-api/rate-limiting/add-new-rate-limiting-policies-via-crs.md
+                    - Via CRs: develop-and-deploy-api/rate-limiting/add-new-rate-limiting-policies-via-crs.md
     #        - API Security:
     #            - Authentication:
     #                - Enable API Security:
