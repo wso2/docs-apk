@@ -88,6 +88,14 @@
     font-size: 0.60rem;
 }
 /* Home page specific styles */
+.section02 .linkWrapper{
+    display: flex;
+    flex-direction: row;
+}
+.linkSet2 {
+    flex: 1;
+    padding: 0 10px;
+}
 .homePage h2 {
     font-size: 1.2rem;
     color: var(--main);

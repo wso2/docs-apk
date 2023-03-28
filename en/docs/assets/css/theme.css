@@ -171,6 +171,10 @@ label.md-nav__link.first-item{
 }
 
 /* Home page specific styles */
+.section02 .linkWrapper{
+    display: flex;
+    flex-direction: row;
+}
 .homePage h2 {
     font-size: 1.2rem;
     color: var(--main);
