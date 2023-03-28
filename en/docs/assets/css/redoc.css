@@ -8,3 +8,7 @@
 .md-main__inner_redoc div.sc-jSFjdj {
   padding-top: 100px;
 }
+.redoc-wrap .menu-content {
+  top:125px !important;
+  padding-bottom: 20px;
+}

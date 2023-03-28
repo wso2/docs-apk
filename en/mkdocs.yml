@@ -40,6 +40,7 @@ theme:
         - content.tabs.link
         - content.code.copy
         - navigation.tabs
+        - navigation.tabs.sticky
         # - navigation.top
     language: 'en'
     palette:
@@ -261,6 +262,8 @@ extra_css:
     # You can select a different theme for syntax highlighting by simply 
     # selecting a different css file file bellow from the available list.
     - assets/lib/highlightjs/styles/vs.min.css
+    - assets/css/blue-palette.css
+    # - assets/css/green-palette.css
     - assets/css/apktheme.css
     - assets/lib/json-formatter/json-formatter.css
     - assets/css/config-catalog.css
