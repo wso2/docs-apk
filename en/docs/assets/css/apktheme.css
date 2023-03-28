@@ -1,42 +1,3 @@
-
-:root {
-    --md-primary-fg-color: #1c5e6e;
-    --md-primary-fg-color--light: #5691a0;
-    --md-primary-fg-color--dark: #303fa1;
-    --md-primary-bg-color: #fff;
-    --md-primary-bg-color--light: #ffffffb3;
-    --md-accent-fg-color: #1c5e6e;
-    --md-accent-fg-color--transparent: #526cfe1a;
-    --md-accent-bg-color: #fff;
-    --md-accent-bg-color--light: #ffffffb3;
-}
-:root {
-    --md-text-font: 'Source Sans Pro', sans-serif;
-    --md-code-font: 'Source Sans Pro', sans-serif;
-}
-/* colors for dark theme */
-[data-md-color-scheme="slate"] {
-    --md-primary-fg-color-header: #0b3d4a;
-    --md-primary-fg-color-header-text: #f5f6f7;
-    --md-primary-fg-color-header-text-active: #5dcfc0;
-    --md-default-bg-color: #05323e;
-    --md-typeset-a-color: #97e8dd;
-}
-/* colors for the light theme */
-[data-md-color-scheme="default"] {
-    --md-primary-fg-color-header: #f5f6f7;
-    --md-primary-fg-color-header-text: #1d1d1d;
-    --md-primary-fg-color-header-text-active: #1c5e6e;
-    --md-default-bg-color: #ffffff;
-    --md-typeset-a-color: var(--md-primary-fg-color);
-}
-.md-tabs {
-    background-color: var(--md-primary-fg-color-header);
-    color: var(--md-primary-fg-color-header-text);
-}
-.md-tabs__link--active, .md-tabs__link:focus, .md-tabs__link:hover {
-    color: var(--md-primary-fg-color-header-text-active);
-}
 .md-tabs__link--active {
     font-weight: 600;
 }
@@ -98,19 +59,30 @@
 }
 .homePage h2 {
     font-size: 1.2rem;
-    color: var(--main);
     border-bottom: 0;
     margin-top: -5px;
 }
 
 .homePage h3 {
     font-size: 1rem;
-    color: #333;
     border-bottom: 0;
     font-weight: 600;
 }
 
 .homePage h4 {
-    color: var(--main);
     margin: 0;
 }
+.fa-file-arrow-down {
+    background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 100px;
+  }
+  .banner-link {
+    background: var(--md-banner);
+    display: inline-block;
+    width: 800px;
+    height: 277px;
+  }
