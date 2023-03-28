@@ -71,6 +71,7 @@ nav:
                 - Attach Policies: 
                     - Via REST API: develop-and-deploy-api/api-policies/attach-policies-via-rest-api.md
                     - Via CR: develop-and-deploy-api/api-policies/attach-policies-via-crs.md
+                    - Interceptor APIPolicy: develop-and-deploy-api/api-policies/interceptors.md
     #            - Create a Policy: develop-and-deploy-api/api-policies/create-a-policy.md
     #        - Rate Limiting: develop-and-deploy-api/rate-limiting.md
     #        - API Security:
