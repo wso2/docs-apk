@@ -66,13 +66,15 @@ The Idp section should include the following parameters:
 
 Restart WSO2 APK using the following command:
 
-```tab="Format"
-helm install <helm-chart-name> . -n <namespace>
-```
+=== "Format"
+	```
+	helm install <helm-chart-name> . -n <namespace>
+	```
 
-```tab="Example"
-helm install apk-test . -n apk
-```
+=== "Example"
+	```
+	helm install apk-test . -n apk
+	```
 
 ## Step 8 - Generate an Access Token
 
