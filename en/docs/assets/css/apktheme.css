@@ -1,0 +1,89 @@
+
+:root {
+    --md-primary-fg-color: #1c5e6e;
+    --md-primary-fg-color--light: #5691a0;
+    --md-primary-fg-color--dark: #303fa1;
+    --md-primary-bg-color: #fff;
+    --md-primary-bg-color--light: #ffffffb3;
+    --md-accent-fg-color: #1c5e6e;
+    --md-accent-fg-color--transparent: #526cfe1a;
+    --md-accent-bg-color: #fff;
+    --md-accent-bg-color--light: #ffffffb3;
+}
+:root {
+    --md-text-font: 'Source Sans Pro', sans-serif;
+    --md-code-font: 'Source Sans Pro', sans-serif;
+}
+/* colors for dark theme */
+[data-md-color-scheme="slate"] {
+    --md-primary-fg-color-header: #0b3d4a;
+    --md-primary-fg-color-header-text: #f5f6f7;
+    --md-primary-fg-color-header-text-active: #5dcfc0;
+    --md-default-bg-color: #05323e;
+    --md-typeset-a-color: #97e8dd;
+}
+/* colors for the light theme */
+[data-md-color-scheme="default"] {
+    --md-primary-fg-color-header: #f5f6f7;
+    --md-primary-fg-color-header-text: #1d1d1d;
+    --md-primary-fg-color-header-text-active: #1c5e6e;
+    --md-default-bg-color: #ffffff;
+    --md-typeset-a-color: var(--md-primary-fg-color);
+}
+.md-tabs {
+    background-color: var(--md-primary-fg-color-header);
+    color: var(--md-primary-fg-color-header-text);
+}
+.md-tabs__link--active, .md-tabs__link:focus, .md-tabs__link:hover {
+    color: var(--md-primary-fg-color-header-text-active);
+}
+.md-tabs__link--active {
+    font-weight: 600;
+}
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+    font-weight: 600;
+}
+/*
+* Footer styles
+*/
+.md-footer {
+    /* background-color: var(--darkBack); */
+}
+
+.md-footer-nav__link {
+    padding-top: 0.5rem;
+}
+
+.md-flex__ellipsis {
+    font-size: 0.70rem;
+}
+
+.md-footer-nav__direction {
+    font-size: 0.50rem;
+}
+
+.md-copyright {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.footer-copyright {
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.footer-copyright-left {
+    flex: 1;
+    font-size: 0.60rem;
+}
+
+.footer-copyright-right {
+    font-size: 0.60rem;
+}

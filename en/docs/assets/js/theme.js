@@ -24,16 +24,17 @@
  */
 hljs.initHighlightingOnLoad();
 (function() {
-    document.querySelector('.tab-selector').addEventListener('click', function(e) {
-        // Show hide tab content next to the clicked tab
-        var tabContentToShow = e.target.nextElementSibling;
-        if(tabContentToShow.style.display === 'none') {
-            tabContentToShow.style.display = 'block';
-        } else {
-            tabContentToShow.style.display = 'none';
-        }
-    });
-
+    if(document.querySelector('.tab-selector')){
+        document.querySelector('.tab-selector').addEventListener('click', function(e) {
+            // Show hide tab content next to the clicked tab
+            var tabContentToShow = e.target.nextElementSibling;
+            if(tabContentToShow.style.display === 'none') {
+                tabContentToShow.style.display = 'block';
+            } else {
+                tabContentToShow.style.display = 'none';
+            }
+        });
+    }
 })();
 
 (function() {
@@ -109,7 +110,7 @@ for (var i = 0; i < dropdowns.length; i++) {
  * Reading versions
  */
 var pageHeader = document.getElementById('page-header');
-var docSetLang = pageHeader.getAttribute('data-lang');
+var docSetLang = (pageHeader && pageHeader.getAttribute('data-lang')) || 'en';
 
 (window.location.pathname.split('/')[1] !== docSetLang) ? 
     docSetLang = '' :

@@ -34,9 +34,6 @@ copyright: WSO2 API Platform for Kubernetes - Documentation
 theme:
     name: material
     custom_dir: theme/material
-    palette:
-        primary: #1a6bac
-        accent: #1a6bac
     logo: images/logo.svg
     favicon: images/favicon.png
     features:
@@ -44,8 +41,28 @@ theme:
         - content.code.copy
         - navigation.tabs
         # - navigation.top
-        - navigation.instant
     language: 'en'
+    palette:
+
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
 #Breaks build if there's a warning
 strict: false
 # Navigation
@@ -244,14 +261,15 @@ extra_css:
     # You can select a different theme for syntax highlighting by simply 
     # selecting a different css file file bellow from the available list.
     - assets/lib/highlightjs/styles/vs.min.css
-    - assets/css/theme.css
+    - assets/css/apktheme.css
     - assets/lib/json-formatter/json-formatter.css
     - assets/css/config-catalog.css
     - assets/lib/fontawesome-free-6.3.0-web/css/all.min.css
+    - assets/css/redoc.css
 extra_javascript:
     - assets/lib/highlightjs/highlight.min.js
     - assets/lib/json-formatter/json-formatter.umd.js
-    - assets/js/theme.js
+    - assets/js/apktheme.js
     # - assets/lib/backtotop/js/util.js
     # - assets/lib/backtotop/js/main.js
 

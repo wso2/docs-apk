@@ -16,23 +16,24 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
      ```
 
 3. Install the APK components and start WSO2 APK.
-=== "Format"
+   
+	=== "Format"
 
-      ```console
-      helm install <helm-chart> . -n <namespace>
-      ```
-=== "Command"
+		```console
+		helm install <helm-chart> . -n <namespace>
+		```
+	=== "Command"
 
-      ```console
-      helm install apk-test . -n apk
-      ```
+		```console
+		helm install apk-test . -n apk
+		```
 
-!!! info "Optional"
+	!!! info "Optional"
 
-      If required, use one of the following parameters when starting WSO2 APK.
+		If required, use one of the following parameters when starting WSO2 APK.
 
-      - To deploy Control Plane components only use `--set wso2.apk.dp.enabled=false`
-      - To deploy Data Plane components only use `--set wso2.apk.cp.enabled=false`
+		- To deploy Control Plane components only use `--set wso2.apk.dp.enabled=false`
+		- To deploy Data Plane components only use `--set wso2.apk.cp.enabled=false`
 
 1.  Verify the deployment.
 
