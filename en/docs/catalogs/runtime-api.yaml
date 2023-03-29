@@ -809,10 +809,6 @@ paths:
           $ref: '#/components/responses/BadRequest'
         404:
           $ref: '#/components/responses/NotFound'
-      security:
-        - OAuth2Security:
-            - apk:api_create
-            - apk:api_manage
       operationId: createNewAPIVersion
       x-code-samples:
         - lang: Curl
@@ -1290,6 +1286,8 @@ components:
             type: string
         operationPolicies:
           $ref: "#/components/schemas/APIOperationPolicies"
+        operationRateLimit:
+          $ref: "#/components/schemas/APIRateLimit"
     APIOperationPolicies:
       title: API Operation Level Policies
       properties:
@@ -1319,17 +1317,27 @@ components:
         policyId:
           type: string
         parameters:
-          type: array
-          items:
-            $ref: "#/components/schemas/OperationPolicyParameters"
-    OperationPolicyParameters:
-      title: API Operation Policy Parameters
+          type: object
+          example: {"headerName":"header1"}
+    APIRateLimit:
+      title: API Rate Limit Details
       type: object
+      required:
+        - requestsPerUnit
+        - unit
       properties:
-        headerName:
+        requestsPerUnit:
+          type: integer
+          description: Number of requests allowed per specified unit of time
+          example: 30
+        unit:
           type: string
-        headerValue:
-          type: string
+          description: Unit of time
+          enum:
+          - Minute
+          - Hour
+          - Day
+          example: Minute
     GraphQLSchema:
       title: GraphQL Schema
       required:
