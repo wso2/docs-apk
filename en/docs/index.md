@@ -1,6 +1,13 @@
----
-template: templates/single-column.html
----
+<style>
+      /* 
+  *  Media queries to address screens smaller than 1220px
+  */
+    @media (min-width: 1220px) {
+        .md-sidebar.md-sidebar--primary {
+        display: none;
+        }
+    }
+</style>
 <div class="homePage">
     <div class="section01">
         <div class="leftContent">
