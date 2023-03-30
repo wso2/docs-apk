@@ -4,7 +4,7 @@
     
     To get familiar with the concept of API Policies, see [API Policies Overview](../../../develop-and-deploy-api/api-policies-overview).
 
-You need to define the API Policies in the API payload when creating an API using the REST API Interface. You can either attach API Policies at the API-level or at the Operation-level. Let's get familiar with the [API-level Policy](#api-level) and [Operational-level Policy](#operational-level) configurations and also the [configurations definitions](#configuration-definitions).
+You need to define the API Policies in the API payload when creating an API using the REST API Interface. You can either attach API Policies at the API-level or at the Operation-level. Let's get familiar with the [API-level Policy](#api-level) and [Operation-level Policy](#operation-level) configurations and also the [configurations definitions](#configuration-definitions).
 
 ## API-level
 
@@ -374,7 +374,7 @@ The following is a sample code snippet that defines how you can attach API Polic
     }
     ```
 
-## Operational-level
+## Operation-level (Resource-level)
 
 **Sample code snippets**
 
@@ -749,8 +749,8 @@ The following are the configurations that you need when attaching API Policies t
 <table>
 <thead>
   <tr>
-    <th>Configuration</th>
-    <th>Description</th>
+    <th><b>Configuration</b></th>h>
+    <th><b>Description</b></th>
   </tr>
 </thead>
 <tbody>
@@ -801,7 +801,7 @@ Follow the instructions below to attach API Policies to an API when creating it:
 1. Define the required API policies in your API Payload.
    
     !!! note
-        For more information, see the [API-level Policy](#api-level) and [Operational-level Policy](#operational-level) configurations used to attach API policies and also the [configurations definitions](#configuration-definitions).
+        For more information, see the [API-level Policy](#api-level) and [Operation-level Policy](#operation-level-resource-level) configurations used to attach API policies and also the [configurations definitions](#configuration-definitions).
 
      Let's attach API policies as follows:
     

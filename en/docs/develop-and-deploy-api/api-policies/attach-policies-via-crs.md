@@ -1,4 +1,4 @@
-# Attach Operational-level API Policies to APIs via CRs
+# Attach Operation-level API Policies to APIs via CRs
 
 !!! Tip
     
@@ -279,7 +279,7 @@ Follow the instructions below to attach operation-level API Policies to an API v
 2. Define the required operation-level API policy in your HTTPRoute CR.
    
     !!! note
-        For more information, see the [configurations](#code-snippet-of-sample-api-cr) used to attach API policies via an HTTPRoute CR and also the [configurations definitions](#configuration-definitions-cr).
+        For more information, see the [configurations](#sample-code-snippet) used to attach API policies via an HTTPRoute CR and also the [configurations definitions](#configuration-definitions).
 
      Let's attach API policies as follows:
     
