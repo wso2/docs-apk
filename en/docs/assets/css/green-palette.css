@@ -10,6 +10,7 @@
     --md-accent-bg-color: #fff;
     --md-accent-bg-color--light: #ffffffb3;
     --md-banner: url(../img/apk-blog-blue.png) no-repeat left top;
+    --md-hjs-color: #00f;
 }
 :root {
     --md-text-font: 'Source Sans Pro', sans-serif;
@@ -23,6 +24,7 @@
     --md-default-bg-color: #05323e;
     --md-typeset-a-color: #97e8dd;
     --md-banner: url(../img/apk-blog-blue-dark.png) no-repeat left top;
+    --md-hjs-color: rgb(186, 186, 255);
 }
 /* colors for the light theme */
 [data-md-color-scheme="default"] {
@@ -38,4 +40,11 @@
 }
 .md-tabs__link--active, .md-tabs__link:focus, .md-tabs__link:hover {
     color: var(--md-primary-fg-color-header-text-active);
+}
+.hljs-built_in, .hljs-keyword, .hljs-name, .hljs-selector-tag, .hljs-tag {
+    color: var( --md-hjs-color);
+}
+.banner-link {
+    width: 800px;
+    height: 277px;
 }

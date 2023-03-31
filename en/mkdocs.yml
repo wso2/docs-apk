@@ -262,7 +262,10 @@ extra_css:
     # You can select a different theme for syntax highlighting by simply 
     # selecting a different css file file bellow from the available list.
     - assets/lib/highlightjs/styles/vs.min.css
-    - assets/css/blue-palette.css
+    # Make sure to activate only one palette at a time.
+    # If all the palettes are commented out, the default material theme palette will take over
+    - assets/css/blue-palette-alt1.css
+    # - assets/css/blue-palette.css
     # - assets/css/green-palette.css
     - assets/css/apktheme.css
     - assets/lib/json-formatter/json-formatter.css
