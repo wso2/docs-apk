@@ -83,7 +83,11 @@
   .banner-link {
     background: var(--md-banner);
     display: inline-block;
-    width: 800px;
-    height: 277px;
+  }
+  .redoc-wrap {
+    background-color: #fff;
+  }
+  .redoc-wrap .scrollbar-container {
+    padding-bottom: 200px;
   }
   
