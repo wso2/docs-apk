@@ -1,5 +1,5 @@
 ---
-openapi: 3.0.1
+  openapi: 3.0.1
   info:
     title: WSO2 API Platform for Kubernetes - Runtime Service API
     description: |
@@ -644,12 +644,6 @@ openapi: 3.0.1
             $ref: "#/components/responses/PreconditionFailed"
           "500":
             $ref: "#/components/responses/InternalServerError"
-      x-code-samples:
-          - lang: Curl
-            source: 'curl -k -X PUT -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
-            -H "Content-Type: multipart/form-data"
-            -F apiDefinition=@oaspecification.json
-            "https://api.am.wso2.com:9095/api/am/runtime/apis/01234567-0123-0123-0123-012345678901/definition"'
   
   ######################################################
     # The "Certificate Management" resource APIs
@@ -1478,8 +1472,9 @@ openapi: 3.0.1
                 {
                   "endpoint_type": "http",
                   "sandbox_endpoints":       {
-                     "url": "https://pizzashack-service:8080/am/sample/pizzashack/v3/api/"
-                  },
+                     "url": "https://pizzashack-service:8080/am/sample/pizzashack/v3/api/",
+                     "certificate"
+                 },
                   "production_endpoints":       {
                      "url": "https://pizzashack-service:8080/am/sample/pizzashack/v3/api/"
                   }
