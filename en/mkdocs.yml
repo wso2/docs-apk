@@ -170,6 +170,7 @@ nav:
         #- Product Pitch: https://wso2.com/api-manager
     - Setup: 
         - Prerequisites: setup/prerequisites.md
+        - Migration: setup/migration.md
        #- Install: setup/install.md
        #- Deploy:
        #    - Deployment Patterns: get-started/dummy.md
