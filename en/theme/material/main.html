@@ -2,3 +2,14 @@
 This file is the main template use in every page except the redoc and home page.
 -#}
 {% extends "base.html" %}
+{% block announce %}
+This documentation is work in progress. For updates follow
+<a href="https://twitter.com/wso2" target="_blank">
+    <span class="twemoji twitter">
+        <i class="fa-brands fa-square-twitter"></i>
+        </svg>
+    </span>
+    <strong>Twitter</strong>
+</a>
+<!-- Add announcement here, including arbitrary HTML -->
+{% endblock %}
