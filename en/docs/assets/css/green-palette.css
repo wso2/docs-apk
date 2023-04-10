@@ -9,7 +9,7 @@
     --md-accent-fg-color--transparent: #526cfe1a;
     --md-accent-bg-color: #fff;
     --md-accent-bg-color--light: #ffffffb3;
-    --md-banner: url(../img/apk-blog-blue.png) no-repeat left top;
+    --md-banner: url(../img/apk-blog.png) no-repeat left top;
     --md-hjs-color: #00f;
 }
 :root {
@@ -23,7 +23,7 @@
     --md-primary-fg-color-header-text-active: #5dcfc0;
     --md-default-bg-color: #05323e;
     --md-typeset-a-color: #97e8dd;
-    --md-banner: url(../img/apk-blog-blue-dark.png) no-repeat left top;
+    --md-banner: url(../img/apk-blog.png) no-repeat left top;
     --md-hjs-color: rgb(186, 186, 255);
 }
 /* colors for the light theme */
@@ -46,5 +46,5 @@
 }
 .banner-link {
     width: 800px;
-    height: 277px;
+    height: 400px;
 }

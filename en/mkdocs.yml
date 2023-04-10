@@ -65,6 +65,7 @@ theme:
         icon: material/brightness-4
         name: Switch to system preference
 #Breaks build if there's a warning
+comments: true
 strict: false
 # Navigation
 nav:
