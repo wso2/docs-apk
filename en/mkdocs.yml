@@ -95,6 +95,11 @@ nav:
                     - Via CR: develop-and-deploy-api/api-policies/attach-policies-via-crs.md
     #            - Create a Policy: develop-and-deploy-api/api-policies/create-a-policy.md
     #        - Rate Limiting: develop-and-deploy-api/rate-limiting.md
+            - Rate Limiting:
+                - Overview: develop-and-deploy-api/rate-limiting-policy-overview.md
+                - Add a New Rate Limiting Policy:
+                    - Via REST API: develop-and-deploy-api/rate-limiting/add-new-rate-limiting-policies-via-rest-api.md
+                    - Via CRs: develop-and-deploy-api/rate-limiting/add-new-rate-limiting-policies-via-crs.md
     #        - API Security:
     #            - Authentication:
     #                - Enable API Security:

@@ -14,7 +14,7 @@
 ################################################################################
 openapi: 3.0.1
 info:
-  title: WSO2 API Platform for Kubernetes(APK) - BackOffice REST API
+  title: WSO2 API Platform for Kubernetes (APK) - BackOffice REST API
   description: This document specifies a **RESTful API** for WSO2 **APK** - **BackOffice**.
   contact:
     name: WSO2
@@ -51,16 +51,18 @@ paths:
           description: |
             **Search condition**.
 
-            You can search in attributes by using an **"<attribute>:"** modifier.
+            You can search in attributes by using an **`<attribute>:`** modifier.
 
-            Eg.
-            "provider:wso2" will match an API if the provider of the API contains "wso2".
-            "provider:"wso2"" will match an API if the provider of the API is exactly "wso2".
-            "status:PUBLISHED" will match an API if the API is in PUBLISHED state.
+            **Example**
 
-            Also you can use combined modifiers
-            Eg.
-            name:pizzashack version:v1 will match an API if the name of the API is pizzashack and version is v1.
+            - `provider:wso2` will match an API if the provider of the API contains `wso2`.
+            - `provider:"wso2` will match an API if the provider of the API is exactly `wso2`.
+            - `status:PUBLISHED` will match an API if the API is in `PUBLISHED` state.
+
+            In addition, you can use combined modifiers.
+
+            **Example**
+            `name:pizzashack version:v1` will match an API if the name of the API is pizzashack and version is v1.
 
             Supported attribute modifiers are [**version, context, name, status,
             description, provider, api-category, tags, doc, contexttemplate,
