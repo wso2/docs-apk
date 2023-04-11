@@ -6,24 +6,35 @@ APK is composed of these components:
 
 [![Architecture](../assets/img/wso2-api-platform-for-kubernetes-component-architecture.png)](../assets/img/wso2-api-platform-for-kubernetes-component-architecture.png)
 
-**Control Plane** - The APK control plane. It provides API Management capabilities, marketplace capabilities along with domain services and web applications. It consists of the following sub-components:
 
-- **Back Office** - Responsible for configuring the portal aspects of API including descriptions, documents, images, etc. Also, manage API visibility and lifecycle. The backend component was developed using Ballerina.
 
-- **Dev Portal** - Responsible for API consumer interaction. API consumers can discover APIs, read documents, try them out and eventually subscribe to and consume APIs. The backend component was developed using Ballerina.
+To support cloud native Kubernetes environments, the platform’s deployment consists of two main components.
 
-- **Admin Portal** - Responsible for configuring rate limit policies, key management services, and other administrative tasks. Backend components developed using Ballerina.
+**The Control Plane** is responsible for managing the overall functioning of WSO2’s APK system.  It includes API management back-office capabilities, admin tasks, and API marketplace functionality. It consists of four main sub-components: 
+- The Back Office is responsible for configuring the portal aspects of APIs, including description, document, image, etc.
+- The Dev Portal allows API consumers to discover and consume APIs.
+- The Admin Portal is used to configure rate limit policies, key management services, and other administrative tasks.
+- The Management Server communicates with data planes and pushes updates whenever required.
 
-- **Management Server** - Responsible for communication with data planes and pushing updates. Backend components developed using Go lang
+The APK control plane serves different user personas, such as API product managers, organization or system administrators, and API consumers. Each persona interacts with the control plane components differently.
+API product managers oversee API lifecycles, including attaching documents, thumbnails, and descriptions to APIs, managing portal aspects and visibility, and attach different business plans to APIs..
+API consumers use the APK control plane to search and discover APIs, try them out, read documents, subscribe to APIs, consume APIs, generate SDKs, and provide feedback to improve API performance.
+Admin users,, manage organizations and business plans, define user and permission mappings, govern key management aspects, and oversee the management and governance of the organization or entire deployment.
 
-**Data Plane** - The APK data plane. It provides API runtime capabilities such as gateway, rate-limiting services, and runtime management. It consists of the following sub-components:
 
-- **Runtime Manager** - Responsible for configuring the runtime aspects of API including API endpoints, discovering Kubernetes services, and converting them into APIs, etc. The backend component was developed using Ballerina.
+**The Data Plane** is responsible for handling the runtime design, processing API requests, and applying API management quality of services. It’s designed to handle high volume, real-time data processing and includes functions for routing, rate limiting, and security. The APK runtime consists of three main sub-components: 
+- The Runtime Manager is responsible for configuring the runtime aspects of APIs, discovering Kubernetes services, and converting them into APIs.
+- The Management Client communicates with the management server (control plane) to push and pull updates and maintain connectivity between the data plane and the control plane.
+- The API Gateway has two main components. The Router intercepts incoming API traffic and applies quality of service such as authentication, authorization, and rate limiting. Meanwhile, the Enforcer enforces API management capabilities, such as security, rate limiting, analytics, validation, etc.
+- Redis and Envoy Rate Limiter components are deployed to manage and throttle traffic within the dataplane. These components effectively address the requirements for traffic management and enable fine-grained control of API traffic. By using these components, organizations can ensure that their APIs are protected from overuse, while also providing an optimized user experience.
 
-- **Management Client** - Responsible for communication with the management server(control plane) to push/pull updates and maintain connectivity between the data plane and the control plane. The backend component was developed using Go.
+The dataplane components are primarily used by individuals who invoke APIs and make use of their functionality. When a user invokes an API, it first enters the router component, which serves as the main entry point. The router identifies resources and matched APIs and then connects with the enforcer to authenticate the API request. Rate limit policies and other API-level policies are then applied to the request.
+Once the gateway processing is complete, the request is passed to the backend service, and similarly, API policies can be executed in the response path as well. Since the dataplane is responsible for handling the majority of the load when users consume APIs, it is essential to plan carefully to ensure proper scaling of the deployment with load.
 
-- **API Gateway - Router** - Router will intercept incoming API traffic and apply quality of services such as authentication, authorization, and rate limiting. The router uses the Envoy Proxy as the core component that does the traffic routing. Required additional extensions were developed using C++.
 
-- **API Gateway - Enforcer** - The Enforcer is the component that enforces the API management capabilities such as security, Rate Limiting, analytics, validation and etc. When the Router receives a request, it forwards that request to the Enforcer in order to perform the additional QoS. Plugins were developed using Java.
+# Technologies Used 
+A multi-language approach is adopted for implementation in WSO2 APK, with management domain services being written in Ballerina and Java. The API gateway is built using Envoy as the foundation and certain gateway extensions are developed using Go and C++. The front-end applications are envisioned to be built with the ReactJS framework.
 
-- **Identity Platform** - Responsible for authentication and authorization happens in the data plane.
+In the initial product analysis, it was found that the Kubernetes gateway API could effectively define APIs and gateways. The Envoy API gateway project was chosen as the API gateway implementation due to its streamlined deployment model and API layer, specifically suited for API gateway use cases. The Kubernetes gateway API is utilized for configuring the gateway. The use of Envoy as the foundation for the API gateway provides high performance, light weight, and rich features, including centralized API traffic management, authentication, rate limiting, and request/response transformation.
+
+Custom resource definitions (CRDs) are utilized internally to define the APIs (known as ingress resources), policies, and other required information for API deployment, providing greater flexibility and control over artifact management and deployment within the platform. For a more comprehensive understanding of the technologies and frameworks used in WSO2 APK, users are invited to visit the project's GitHub repository.
