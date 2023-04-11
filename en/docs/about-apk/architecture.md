@@ -32,6 +32,20 @@ The dataplane components are primarily used by individuals who invoke APIs and m
 Once the gateway processing is complete, the request is passed to the backend service, and similarly, API policies can be executed in the response path as well. Since the dataplane is responsible for handling the majority of the load when users consume APIs, it is essential to plan carefully to ensure proper scaling of the deployment with load.
 
 
+# Deployment Architecture
+The APK product offers a highly flexible deployment architecture that is suitable for modern cloud native deployments. There are various deployment options available to users, including a multi-cluster deployment model, where each region has its own cluster running the APK dataplane, and these dataplanes are connected to a central control plane through a global network. This ensures high availability and disaster recovery scenarios, preventing an outage in one region from impacting the availability of the entire system.
+
+To support these deployment models, APK utilizes Kubernetes features such as node selectors, affinity, and anti-affinity rules, to schedule pods in the appropriate region. This approach provides organizations with the flexibility to deploy the APK platform across different data centers, clusters within the same data center, or different mega clouds, based on their requirements.
+
+Moreover, APK also provides a flexible solution for different departments or lines of business within an organization to have their own deployments. This can be achieved by using Kubernetes cluster or namespaces to create isolated environments for each department or line of business, with their API gateway instances and custom configurations. Each department can have its own set of resources, such as pods, services, and ingress controllers, that are managed independently of other clusters or namespaces. This approach allows for better control over resource allocation and access control, enabling each department or line of business to deploy and manage their APIs as per their preferences.
+
+The technical diagram below illustrates the deployment of the control plane, data plane components, and microservices that are exposed as managed APIs. It showcases the implementation of a unified control plane that manages both external and internal data planes, which are deployed on separate Kubernetes clusters to ensure better isolation. These data planes are connected to microservices deployments that are housed in distinct namespaces within the data plane clusters.
+
+[![Deployment Architecture](../assets/img/apk-deployment-clusters.png)](../assets/img/apk-deployment-clusters.png)
+
+Alternatively, all components can be deployed within a single Kubernetes cluster, providing organizations with greater flexibility in terms of deployment options. With this approach, the control plane, data plane, and microservices can be managed and monitored from a single location, simplifying management and improving resource utilization.
+
+
 # Technologies Used 
 A multi-language approach is adopted for implementation in WSO2 APK, with management domain services being written in Ballerina and Java. The API gateway is built using Envoy as the foundation and certain gateway extensions are developed using Go and C++. The front-end applications are envisioned to be built with the ReactJS framework.
 
