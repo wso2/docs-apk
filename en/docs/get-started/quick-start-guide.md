@@ -23,32 +23,32 @@ WSO2 API Platform For Kubernetes system have default organization called `defaul
     APIs can be created using several methods. In this quick start guide, we will use the Runtime API to create and deploy the API. Refer more details on API creation methods using the [Create and Deploy API](../../develop/runtime-api).
 
 
-!!! Note 
-    Before creating an API, you need sample backend service to invoke the API. In this quick start guide, we will use the [httpbin](https://httpbin.org/) service as the backend service.
-    The services should be created in a different namespace than the APK or Kubernetes System namespaces
-    To deploy sample backend use the following command.
 
-    ```
-    kubctl apply -f sample-backend.yaml -n apk-backend
-    ```
-    ```
+Before creating an API, you need sample backend service to invoke the API. In this quick start guide, we will use the [httpbin](https://httpbin.org/) service as the backend service.
+The services should be created in a different namespace than the APK or Kubernetes System namespaces
+To deploy sample backend use the following command.
 
-    sample-backend.yaml
-    ---
-    apiVersion: v1
-    kind: Service
-    metadata:
+```
+kubctl apply -f sample-backend.yaml -n apk-backend
+```
+```
+
+sample-backend.yaml
+---
+apiVersion: v1
+kind: Service
+metadata:
     name: backend
-    spec:
+spec:
     ports:
-        - name: http
+      - name: http
         port: 80
         targetPort: 80
     selector:
         app: httpbin
-    ---
-    
-    ```
+---
+
+```
 
 
 Follow the instructions below to Create and deploy an API using the Runtime API:
@@ -71,7 +71,7 @@ Follow the instructions below to Create and deploy an API using the Runtime API:
         "type": "REST",
         "operations": [
             {
-                "target": "/menu",
+                "target": "/get",
                 "verb": "GET",
                 "authTypeEnabled": true,
                 "endpointConfig": {
@@ -88,11 +88,11 @@ Follow the instructions below to Create and deploy an API using the Runtime API:
 Execute the following cURL command with token and payload to create an API.
 
 ```tab="Format"
-     curl -k -X POST -H "Authorization: Bearer <access-token>" -H "Content-Type: application/json" -H "Accept: application/json" -d <API-JSON-payload> "https://api.am.wso2.com:9095/api/am/runtime/apis"
+     curl -k -X POST -H "Authorization: Bearer <access-token>" -H "Content-Type: application/json" -H "Accept: application/json" -d <API-JSON-payload> "https://prod.api.am.wso2.com:9095/api/am/runtime/apis"
 ```
 
 ```tab="Example"
-     curl -k -X POST -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" -H "Content-Type: application/json" -H "Accept: application/json" -d @data.json "https://api.am.wso2.com:9095/api/am/runtime/apis"
+     curl -k -X POST -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" -H "Content-Type: application/json" -H "Accept: application/json" -d @data.json "https://prod.api.am.wso2.com:9095/api/am/runtime/apis"
 ```
 
 !!! Note
@@ -100,7 +100,7 @@ Execute the following cURL command with token and payload to create an API.
 
     ```
     curl --location 'https://{router_service}:9095/oauth2/token' \
-    --header 'Host: idp.am.wso2.com' \
+    --header 'Host: prod.idp.am.wso2.com' \
     --header 'Authorization: Basic NDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyOjRmYmQ2MmVjLWE5MmUtMTFlZC1hZmExLTAyNDJhYzEyMDAwMg==' \
     --header 'Content-Type: application/x-www-form-urlencoded' \
     --data-urlencode 'grant_type=client_credentials'
