@@ -19,3 +19,11 @@ Follow the instructions below to deploy an API using the kubectl:
 ## Step 3 - Invoke the REST API
 
 {!includes/invoke-api.md!}
+{% raw %}
+<style>
+    /* This is to indent the apply-cr tabs to right */
+ol + .tabbed-set.tabbed-alternate, ol + .tabbed-set.tabbed-alternate + .admonition.note {
+    margin-left: 30px;
+}
+</style>
+{% endraw %}
