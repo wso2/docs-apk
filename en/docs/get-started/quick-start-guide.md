@@ -20,7 +20,7 @@ WSO2 API Platform For Kubernetes system have default organization called `defaul
 ## Step 3 - Create and Deploy the API
 
 !!! Note
-    API Can create using several methods. In this quick start guide, we will use the Runtime API to create and deploy the API. Refer more details on API creation methods using the [Create and Deploy API](../../develop/runtime-api).
+    APIs can be created using several methods. In this quick start guide, we will use the Runtime API to create and deploy the API. Refer more details on API creation methods using the [Create and Deploy API](../../develop/runtime-api).
 
 
 !!! Note 

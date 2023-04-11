@@ -22,7 +22,7 @@
 3. Invoke the REST API.
    
       ```
-      curl --location --request GET '{router_service}:9095/pizza/1.0.0/get' \
+      curl --location --request GET '{router_service}:9095/pizza/1.0.0/menu' \
       --header 'HOST: gw.wso2.com' \
       --header 'Internal-Key: $INTERNAL_KEY'  
       ```
