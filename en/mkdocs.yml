@@ -171,6 +171,7 @@ nav:
     - Setup: 
         - Prerequisites: setup/prerequisites.md
         - Migration: setup/migration.md
+        - Organization: setup/organizations.md
        #- Install: setup/install.md
        #- Deploy:
        #    - Deployment Patterns: get-started/dummy.md
@@ -185,7 +186,6 @@ nav:
         #        - Mediation Extensions:
         #            - Custom Filters: setup/customizations/gateway-enforcer/mediation-extensions/custom-filters.md
     - Administration:
-        - Organizations: administration/organizations.md
         - Test System APIs: administration/postman-tests.md
     - Reach Out:
         - Community: reachout/community.md # Brief description and links to Discord and Stack OverFlow
