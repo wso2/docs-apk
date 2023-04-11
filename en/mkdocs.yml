@@ -72,13 +72,23 @@ nav:
                     - Via REST API: develop-and-deploy-api/api-policies/attach-policies-via-rest-api.md
                     - Via CR: develop-and-deploy-api/api-policies/attach-policies-via-crs.md
                     - Interceptor APIPolicy: develop-and-deploy-api/api-policies/interceptors.md
+        - Create APIs:
+           - Overview: create-api/create-api-overview.md
+           - Create and deploy APIs: 
+                - Create API from k8s service: create-api/create-and-deploy-apis/create-api-from-k8s-service.md
+                - Create API from API definition: create-api/create-and-deploy-apis/create-api-from-api-definition.md
+                - Create API using CR: create-api/create-and-deploy-apis/create-api-using-cr.md
+           - Manage Service Endpoint:
+                - Manage Certificate: create-api/manage-service-endpoint/manage-certificate.md
+                - Manage Security: create-api/manage-service-endpoint/manage-security.md
+
     #            - Create a Policy: develop-and-deploy-api/api-policies/create-a-policy.md
     #        - Rate Limiting: develop-and-deploy-api/rate-limiting.md
-            - Rate Limiting:
-                - Overview: develop-and-deploy-api/rate-limiting-policy-overview.md
-                - Add a New Rate Limiting Policy:
-                    - Via REST API: develop-and-deploy-api/rate-limiting/add-new-rate-limiting-policies-via-rest-api.md
-                    - Via CRs: develop-and-deploy-api/rate-limiting/add-new-rate-limiting-policies-via-crs.md
+        - Rate Limiting:
+            - Overview: develop-and-deploy-api/rate-limiting-policy-overview.md
+            - Add a New Rate Limiting Policy:
+                - Via REST API: develop-and-deploy-api/rate-limiting/add-new-rate-limiting-policies-via-rest-api.md
+                - Via CRs: develop-and-deploy-api/rate-limiting/add-new-rate-limiting-policies-via-crs.md
     #        - API Security:
     #            - Authentication:
     #                - Enable API Security:

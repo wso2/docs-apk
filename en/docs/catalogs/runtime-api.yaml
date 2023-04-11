@@ -3,7 +3,7 @@ openapi: 3.0.1
 info:
   title: WSO2 API Platform for Kubernetes - Runtime Service API
   description: |
-    This document specifies a **RESTful API** for WSO2 **API Platform for Kubernetes (APK)** - **Runtime Service**.
+    This document specifies a **RESTful API** for WSO2 **API Platform for Kubernetes(APK)** - **Runtime Service**.
   version: 1.0.0
 paths:
   /apis:
@@ -53,7 +53,7 @@ paths:
         - name: sortOrder
           in: query
           description: |
-            Order of sorting (ascending/descending).
+            Order of sorting(ascending/descending).
           required: false
           style: form
           explode: true
@@ -90,20 +90,15 @@ paths:
           $ref: "#/components/responses/InternalServerError"
         "400":
           $ref: "#/components/responses/BadRequest"
-      x-code-samples:
-        - lang: Curl
-          source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
-          "https://api.am.wso2.com:9095/api/am/runtime/apis"'
-
     post:
       tags:
         - APIs
       summary: Create a New API
       description: |
-        Use this operation to create a new API specifying the details of the API in the payload.
+        This operation can be used to create a new API specifying the details of the API in the payload.
       operationId: createAPI
       requestBody:
-        description: The API object that needs to be added.
+        description: API object that needs to be added
         content:
           application/json:
             schema:
@@ -113,7 +108,7 @@ paths:
         "201":
           description: |
             Created.
-            Successful response with the newly created object as the entity in the body.
+            Successful response with the newly created object as entity in the body.
             Location header contains URL of newly created entity.
           headers:
             Location:
@@ -138,21 +133,13 @@ paths:
           $ref: "#/components/responses/BadRequest"
         "500":
           $ref: "#/components/responses/InternalServerError"
-      x-code-samples:
-        - lang: Curl
-          source: 'curl -k -X POST -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
-          -H "Content-Type: application/json" 
-          -H "Accept: application/json" 
-          -d @data.json
-          "https://api.am.wso2.com:9095/api/am/runtime/apis"'
-
   /apis/{apiId}:
     get:
       tags:
         - APIs
       summary: Get Details of an API
       description: |
-        Using this operation, you can retrieve complete details of a single API. You need to provide the ID of the API to retrieve it.
+        Using this operation, you can retrieve complete details of a single API. You need to provide the id of the API to retrieve it.
       operationId: getAPI
       parameters:
         - name: apiId
@@ -185,17 +172,12 @@ paths:
           $ref: "#/components/responses/NotFound"
         "500":
           $ref: "#/components/responses/InternalServerError"
-      x-code-samples:
-        - lang: Curl
-          source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
-          "https://api.am.wso2.com:9095/api/am/runtime/apis/01234567-0123-0123-0123-012345678901"'
-
     put:
       tags:
         - APIs
       summary: Update an API
       description: |
-        Use this operation to update an existing API. This operation will instruct the Runtime to update the deployment.
+        This operation can be used to update an existing API. This operation will instruct runtime to update deployment.
       operationId: updateAPI
       parameters:
         - name: apiId
@@ -208,7 +190,7 @@ paths:
           schema:
             type: string
       requestBody:
-        description: The API object that needs to be added.
+        description: API object that needs to be added
         content:
           application/json:
             schema:
@@ -218,7 +200,7 @@ paths:
         "200":
           description: |
             OK.
-            Successful response with an updated API object.
+            Successful response with updated API object
           headers:
             Location:
               description: |
@@ -246,19 +228,15 @@ paths:
           $ref: "#/components/responses/NotFound"
         "412":
           $ref: "#/components/responses/PreconditionFailed"
+
         "500":
           $ref: "#/components/responses/InternalServerError"
-      x-code-samples:
-        - lang: Curl
-          source: 'curl -k -X PUT -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
-          -H "Content-Type: application/json" -d @data.json
-          "https://api.am.wso2.com:9095/api/am/runtime/apis/01234567-0123-0123-0123-012345678901"'
     delete:
       tags:
         - APIs
       summary: Delete an API
       description: |
-        Use this operation to delete an existing API by providing the ID of the API.
+        This operation can be used to delete an existing API proving the Id of the API.
       operationId: deleteAPI
       parameters:
         - name: apiId
@@ -282,18 +260,13 @@ paths:
           $ref: "#/components/responses/NotFound"
         "500":
           $ref: "#/components/responses/InternalServerError"
-      x-code-samples:
-        - lang: Curl
-          source: 'curl -k -X DELETE -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
-          "https://api.am.wso2.com:9095/api/am/runtime/apis/01234567-0123-0123-0123-012345678901"'
-
   /apis/{apiId}/generate-key:
     post:
       tags:
         - APIs
-      summary: Generate Internal API Key to Invoke APIs
+      summary: Generate internal API Key to invoke APIS.
       description: |
-        Use this operation to generate an internal API key that you can use to invoke API.
+        This operation can be used to generate internal API key which used to invoke API.
       operationId: generateInternalAPIKey
       parameters:
         - $ref: "#/components/parameters/apiId"
@@ -314,24 +287,17 @@ paths:
           $ref: "#/components/responses/Forbidden"
         "500":
           $ref: "#/components/responses/InternalServerError"
-      x-code-samples:
-        - lang: Curl
-          source: 'curl -k -X POST "https://api.am.wso2.com:9095/api/am/runtime/apis/01234567-0123-0123-0123-012345678901/generate-key" 
-          -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" 
-          -H "Content-Type: application/json" 
-          -H "Accept: application/json"'
-
   /apis/import-service:
     post:
       tags:
         - Service or Schema Import
-      summary: Create an API From a Service
-      description: Use this operation to create an API from an available Service by providing Service.
+      summary: Create API from a Service
+      description: This operation can be used to create an API from available Service by providing service
       operationId: importService
       parameters:
         - name: serviceKey
           in: query
-          description: The ID of the Service that should be imported from the Service Catalog.
+          description: ID of service that should be imported from Service Catalog
           required: true
           style: form
           explode: true
@@ -347,7 +313,7 @@ paths:
         "201":
           description: |
             Created.
-            Successful response with the newly created object as the entity in the body.
+            Successful response with the newly created object as entity in the body.
             Location header contains the URL of the newly created entity.
           headers:
             Location:
@@ -372,13 +338,6 @@ paths:
           $ref: "#/components/responses/BadRequest"
         "500":
           $ref: "#/components/responses/InternalServerError"
-      x-code-samples:
-        - lang: Curl
-          source: 'curl -k -X POST "https://api.am.wso2.com:9095/api/am/runtime/apis/import-service?serviceKey=11cd3fa3-c886-49f9-bf78-0ec349b1f4c1" 
-          -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" 
-          -H "Content-Type: application/json" 
-          -H "Accept: application/json" 
-          -d @data.json'
 
   /apis/import-definition:
     post:
@@ -386,10 +345,10 @@ paths:
         - Service or Schema Import
       summary: Import an API Definition
       description: |
-        Use this operation to create an API from an API definition. Provide either the `url` or `file`
+        This operation can be used to create an API from an API definition. Provide either `url` or `file`
         to specify the definition.
 
-        Specify `additionalProperties`` with **at least** the API's name, version, context and endpointConfig.
+        Specify additionalProperties with **at least** API's name, version, context and endpointConfig.
       operationId: importAPIDefinition
       requestBody:
         content:
@@ -428,20 +387,13 @@ paths:
 
         "500":
           $ref: "#/components/responses/InternalServerError"
-      x-code-samples:
-        - lang: Curl
-          source: 'curl -k -X POST "https://api.am.wso2.com:9095/api/am/runtime/apis/import-definition" 
-          -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" 
-          -H "Content-Type: multipart/form-data" 
-          -F file=@openapi.json -F additionalProperties=@data.json'
-  
   /apis/validate-definition:
     post:
       tags:
         - Validation
       summary: Validate an OpenAPI Definition
       description: |
-        Use this operation to validate an OpenAPI definition and retrieve a summary. Provide either the `url`
+        This operation can be used to validate an OpenAPI definition and retrieve a summary. Provide either `url`
         or `file` to specify the definition.
       operationId: validateOpenAPIDefinition
       parameters:
@@ -449,7 +401,7 @@ paths:
           in: query
           description: |
             Specify whether to return the full content of the OpenAPI definition in the response. This is only
-            applicable when using URL based validation.
+            applicable when using url based validation
           required: false
           style: form
           explode: true
@@ -465,7 +417,7 @@ paths:
         "200":
           description: |
             OK.
-            API definition validation information is returned.
+            API definition validation information is returned
           headers:
             Content-Type:
               description: |
@@ -482,19 +434,13 @@ paths:
           $ref: "#/components/responses/BadRequest"
         "500":
           $ref: "#/components/responses/InternalServerError"
-      x-code-samples:
-        - lang: Curl
-          source: 'curl -k -X POST -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
-          -H "Content-Type: multipart/form-data"
-          -F file=@openapi.json "https://api.am.wso2.com:9095/api/am/runtime/apis/validate-definition"'
-
   /apis/validate:
     post:
       tags:
         - Validation
-      summary: Check if the Given API Context Name Already Exists
+      summary: Check Given API Context Name already Exists
       description: |
-        You can use this operation to check if a given API context is already being used. You need to provide the context name you want to check.
+        Using this operation, you can check a given API context is already used. You need to provide the context name you want to check.
       operationId: validateAPI
       parameters:
       - name: query
@@ -502,10 +448,9 @@ paths:
         description: |
           **Search condition**.
           You can search in attributes by using an **"<attribute>:"** modifier.
-          
-          Example:
+          Eg.
           "name:wso2" will match an API if the provider of the API is exactly "wso2".
-          The supported attribute modifiers are `version`, `context`, `name`
+          Supported attribute modifiers are [** version, context, name **]
           If no advanced attribute modifier has been specified, search will match the
           given query string against API Name.
         required: true
@@ -531,20 +476,16 @@ paths:
           $ref: "#/components/responses/BadRequest"
         "412":
           $ref: "#/components/responses/PreconditionFailed"
+
         "500":
           $ref: "#/components/responses/InternalServerError"
-      x-code-samples:
-        - lang: Curl
-          source: 'curl -k -X POST -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
-          "https://api.am.wso2.com:9095/api/am/runtime/apis/validate?query=name%3Awso2"'
-
   /apis/{apiId}/definition:
     get:
       tags:
         - APIs
       summary: Get API Definition
       description: |
-        Use this operation to retrieve the definition of an API.
+        This operation can be used to retrieve the definition of an API.
       operationId: getAPIDefinition
       parameters:
         - name: apiId
@@ -560,7 +501,7 @@ paths:
         "200":
           description: |
             OK.
-            The requested definition document of the API is returned.
+            Requested definition document of the API is returned
           headers:
             Content-Type:
               description: |
@@ -578,19 +519,15 @@ paths:
           $ref: "#/components/responses/NotFound"
         "412":
           $ref: "#/components/responses/PreconditionFailed"
+
         "500":
           $ref: "#/components/responses/InternalServerError"
-      x-code-samples:
-        - lang: Curl
-          source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
-          "https://api.am.wso2.com:9095/api/am/runtime/apis/01234567-0123-0123-0123-012345678901/definition"'
-
     put:
       tags:
         - APIs
       summary: Update API Definition
       description: |
-        Use this operation to update the API definition of an existing API. API definition to be updated is passed as a form data parameter `apiDefinition`.
+        This operation can be used to update the API definition of an existing API. API definition to be updated is passed as a form data parameter `apiDefinition`.
       operationId: updateAPIDefinition
       parameters:
         - name: apiId
@@ -611,7 +548,7 @@ paths:
         "200":
           description: |
             OK.
-            Successful response with updated Open API Specification.
+            Successful response with updated Swagger definition
           headers:
             Location:
               description: |
@@ -640,6 +577,7 @@ paths:
           $ref: "#/components/responses/NotFound"
         "412":
           $ref: "#/components/responses/PreconditionFailed"
+
         "500":
           $ref: "#/components/responses/InternalServerError"
 
@@ -926,7 +864,7 @@ paths:
         - Import Export
       summary: Export an API
       description: |
-        Use this operation to export the details of a particular API as a ZIP file.
+        This operation can be used to export the details of a particular API as a zip file.
       operationId: exportAPI
       parameters:
         - name: apiId
@@ -958,7 +896,7 @@ paths:
         - name: format
           in: query
           description: |
-            Format of output documents. This can be YAML or JSON.
+            Format of output documents. Can be YAML or JSON.
           required: false
           style: form
           explode: true
@@ -989,25 +927,19 @@ paths:
           $ref: "#/components/responses/NotFound"
         "500":
           $ref: "#/components/responses/InternalServerError"
-      x-code-samples:
-        - lang: Curl
-          source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
-          "https://api.am.wso2.com:9095/api/am/runtime/apis/export?apiId=96077508-fd01-4fae-bc64-5de0e2baf43c&name=PizzaShackAPI&version=1.0&provider=admin&format=YAML"
-          > exportAPI.zip'
-
   /apis/import:
     post:
       tags:
         - Import Export
       summary: Import an API
       description: |
-        Use this operation to import an API.
+        This operation can be used to import an API.
       operationId: importAPI
       parameters:
         - name: overwrite
           in: query
           description: |
-            Whether to update the API or not. Use this when updating already existing APIs.
+            Whether to update the API or not. This is used when updating already existing APIs
           required: false
           style: form
           explode: true
@@ -1027,24 +959,19 @@ paths:
           $ref: "#/components/responses/Forbidden"
         "409":
           $ref: "#/components/responses/Conflict"
+
         "412":
           $ref: "#/components/responses/PreconditionFailed"
+
         "500":
           $ref: "#/components/responses/InternalServerError"
-      x-code-samples:
-        - lang: Curl
-          source: 'curl -k -X POST -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
-          -H "Content-Type: multipart/form-data"
-          -F file=@admin-PizzaShackAPI-1.0.0.zip 
-          "https://api.am.wso2.com:9095/api/am/runtime/apis/import?preserveProvider=false&overwrite=false"'
-
   /apis/copy-api:
     post:
       tags:
         - APIs
       summary: Create a New API Version
       description: |
-        Use this operation to create a new version of an existing API. The new version is specified as `newVersion` query parameter. New API will be in `CREATED` state.
+        This operation can be used to create a new version of an existing API. The new version is specified as `newVersion` query parameter. New API will be in `CREATED` state.
       parameters:
         - name: newVersion
           in: query
@@ -1055,7 +982,7 @@ paths:
             type: string
         - name: serviceId
           in: query
-          description: Version of the Service that you are using to create a new API version.
+          description: Version of the Service that will used in creating new version
           schema:
             type: string
           required: false
@@ -1064,7 +991,7 @@ paths:
         201:
           description: |
             Created.
-            Successful response with the newly created API as the entity in the body. Location header contains the URL of the newly created API.
+            Successful response with the newly created API as entity in the body. Location header contains URL of newly created API.
           headers:
             Location:
               description: |
@@ -1080,16 +1007,11 @@ paths:
         404:
           $ref: '#/components/responses/NotFound'
       operationId: createNewAPIVersion
-      x-code-samples:
-        - lang: Curl
-          source: 'curl -k -X POST "https://api.am.wso2.com:9095/api/am/runtime/apis/copy-api?apiId=01234567-0123-0123-0123-012345678901&newVersion=2.0.0"
-          -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"'
-
   /services:
     get:
       tags:
         - Services
-      summary: Retrieve/Search for Services
+      summary: Retrieve/search services
       description: |
         Retrieve or search services in the Cluster.
       operationId: searchServices
@@ -1118,7 +1040,7 @@ paths:
         - name: sortOrder
           in: query
           description: |
-            Order of sorting (ascending/descending).
+            Order of sorting(ascending/descending).
           required: false
           style: form
           explode: true
@@ -1151,7 +1073,7 @@ paths:
       responses:
         "200":
           description: |
-            Paginated matched list of Services returned.
+            Paginated matched list of services returned.
           content:
             application/json:
               schema:
@@ -1159,24 +1081,19 @@ paths:
         "400":
           $ref: "#/components/responses/BadRequest"
         "500":
-          $ref: "#/components/responses/InternalServerError" 
-      x-code-samples:
-        - lang: Curl
-          source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
-          "https://api.am.wso2.com:9095/api/am/runtime/services"'
-
+          $ref: "#/components/responses/InternalServerError"
   /services/{serviceId}:
     get:
       tags:
         - Services
-      summary: Get Details of a Service
+      summary: Get details of a service
       description: |
-        Get details of a Service using the ID of the Service.
+        Get details of a service using the id of the service.
       operationId: getServiceById
       parameters:
         - name: serviceId
           in: path
-          description: UUID (unique across all namespaces) of the Service
+          description: UUID (unique across all namespaces) of the service
           required: true
           style: simple
           explode: false
@@ -1185,7 +1102,7 @@ paths:
       responses:
         "200":
           description: |
-            Requested Service in the Service Catalog is returned.
+            Requested service in the Service Catalog is returned.
           content:
             application/json:
               schema:
@@ -1196,23 +1113,18 @@ paths:
           $ref: "#/components/responses/NotFound"
         "500":
           $ref: "#/components/responses/InternalServerError"
-      x-code-samples:
-        - lang: Curl
-          source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
-          "https://api.am.wso2.com:9095/api/am/runtime/services/11cd3fa3-c886-49f9-bf78-0ec349b1f4c1"'
-
   /services/{serviceId}/usage:
     get:
       tags:
         - Services
-      summary: Retrieve the Usage of a Service
+      summary: Retrieve the usage of service
       description: |
         Retrieve usage
       operationId: getServiceUsage
       parameters:
         - name: serviceId
           in: path
-          description: UUID (unique ID across cluster) of the Service
+          description: UUID(unique id across cluster) of the service
           required: true
           style: simple
           explode: false
@@ -1221,7 +1133,7 @@ paths:
       responses:
         "200":
           description: |
-            List of APIs that uses the Service in the Service Catalog is returned.
+            List of APIs that uses the service in the Service Catalog is returned.
           content:
             application/json:
               schema:
@@ -1232,19 +1144,14 @@ paths:
           $ref: "#/components/responses/NotFound"
         "500":
           $ref: "#/components/responses/InternalServerError"
-      x-code-samples:
-        - lang: Curl
-          source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
-          "https://api.am.wso2.com:9095/api/am/runtime/services/11cd3fa3-c886-49f9-bf78-0ec349b1f4c1/usage"'
-
   /policies:
     get:
       tags:
         - Mediation Policies
       summary: |
-        Get All Common Mediation Policies For All the APIs
+        Get all common mediation policies to all the APIs
       description: |
-        This operation provides you a list of the available Operation Policies that any API can use.
+        This operation provides you a list of available operation Policies that can be used by any API
       operationId: getMediationPolicyList
       parameters:
         - name: limit
@@ -1283,7 +1190,7 @@ paths:
         - name: sortOrder
           in: query
           description: |
-            Order of sorting (ascending/descending).
+            Order of sorting(ascending/descending).
           required: false
           style: form
           explode: true
@@ -1303,7 +1210,7 @@ paths:
         - name: Accept
           in: header
           description: |
-            Media types acceptable for the response.
+            Media types acceptable for the response. Default is application/json.
           required: false
           style: simple
           explode: false
@@ -1314,7 +1221,7 @@ paths:
         "200":
           description: |
             OK.
-            List of qualifying Policies is returned.
+            List of qualifying policies is returned.
           headers:
             Content-Type:
               description: The content type of the body.
@@ -1330,23 +1237,18 @@ paths:
           $ref: "#/components/responses/NotFound"
         "500":
           $ref: "#/components/responses/InternalServerError"
-      x-code-samples:
-        - lang: Curl
-          source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
-          "https://api.am.wso2.com:9095/api/am/runtime/policies"'
-
   /policies/{policyId}:
     get:
       tags:
         - Mediation Policies
-      summary: Get Details of a Specific Common Mediation Policy
+      summary: Get the details of a common mediation policy by providing mediation policy ID
       description: |
-        Use this operation to retrieve details of a specific Common Mediation Policy based on its Mediation Policy ID.
+        This operation can be used to retrieve a particular common mediation policy.
       operationId: getMediationPolicyByPolicyId
       parameters:
         - name: policyId
           in: path
-          description: Mediation policy ID
+          description: Mediation policy Id
           required: true
           style: simple
           explode: false
@@ -1371,11 +1273,6 @@ paths:
           $ref: "#/components/responses/NotFound"
         "500":
           $ref: "#/components/responses/InternalServerError"
-      x-code-samples:
-        - lang: Curl
-          source: 'curl -k -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8"
-          "https://api.am.wso2.com:9095/api/am/runtime/policies/1"'
-
 components:
   schemas:
     APIList:
@@ -1417,10 +1314,10 @@ components:
           example: HTTP
         createdTime:
           type: string
-          example: 2023-02-11 09:57:25
+          example: 2021-02-11 09:57:25
         updatedTime:
           type: string
-          example: 2023-02-11 09:57:25
+          example: 2021-02-11 09:57:25
     API:
       title: API object
       required:
@@ -1454,19 +1351,24 @@ components:
           example: 1.0.0
         type:
           type: string
-          description: The API creation type.
+          description: The api creation type to be used. Accepted values are REST, WS, GRAPHQL, WEBSUB, SSE, WEBHOOK, ASYNC
           example: REST
           default: REST
           enum:
             - REST
+            - WS
+            - GRAPHQL
+            - WEBSUB
+            - SSE
+            - WEBHOOK
+            - ASYNC
         endpointConfig:
           type: object
           properties: {}
           description: |
-            Endpoint configuration of the API. You can use this to provide different types of endpoints including Simple REST Endpoints, Loadbalanced and Failover.
+            Endpoint configuration of the API. This can be used to provide different types of endpoints including Simple REST Endpoints, Loadbalanced and Failover.
 
             `Simple REST Endpoint`
-              ```
               {
                 "endpoint_type": "http",
                 "sandbox_endpoints":       {
@@ -1477,7 +1379,6 @@ components:
                    "url": "https://pizzashack-service:8080/am/sample/pizzashack/v3/api/"
                 }
               }
-              ```
           example:
             endpoint_type: http
             sandbox_endpoints:
@@ -1499,9 +1400,14 @@ components:
             $ref: "#/components/schemas/APIOperations"
         serviceInfo:
           $ref: "#/components/schemas/API_serviceInfo"
+        provider:
+          type: string
+          example: user1
         apiPolicies:
           $ref: "#/components/schemas/APIOperationPolicies"
           optional: true
+        apiRateLimit:
+          $ref: "#/components/schemas/APIRateLimit"
         createdTime:
           type: string
           readOnly: true
@@ -1522,18 +1428,14 @@ components:
           type: boolean
           example: true
           default: true
-          description: Authentication mode for resource.
-          enum:
-            - true
-            - false
+          description: Authentication mode for resource (true/false)
         endpointConfig:
           type: object
           properties: {}
           description: |
-            Endpoint configuration of the API. You can use this to provide different types of endpoints including Simple REST Endpoints, Loadbalanced and Failover.
+            Endpoint configuration of the API. This can be used to provide different types of endpoints including Simple REST Endpoints, Loadbalanced and Failover.
 
             `Simple REST Endpoint`
-            ```
               {
                 "endpoint_type": "http",
                 "sandbox_endpoints":       {
@@ -1543,7 +1445,6 @@ components:
                    "url": "https://pizzashack-service:8080/am/sample/pizzashack/v3/api/"
                 }
               }
-            ```  
           example:
             endpoint_type: http
             sandbox_endpoints:
@@ -1657,7 +1558,7 @@ components:
           example: Add Header
         description:
           type: string
-          example: The user can add a new header to the request using this policy.
+          example: With this policy, user can add a new header to the request
         applicableFlows:
           type: array
           items:
@@ -1686,11 +1587,11 @@ components:
           example:  Name of the header to be added
         required:
           type: boolean
-          description: This defines whether or not this option is mandatory for the Policy
+          description: Is this option mandatory for the policy
           example: true
         validationRegex:
           type: string
-          description: UI validation Regex for the attribute
+          description: UI validation regex for the attribute
         type:
           type: string
           description: Type of the attribute
@@ -1715,15 +1616,15 @@ components:
         description:
           type: string
           description: |
-            A detailed description of the error message.
+            A detail description about the error message.
         moreInfo:
           type: string
           description: |
-            Preferably a URL with more details about the error.
+            Preferably an url with more details about the error.
         error:
           type: array
           description: |
-            If there is more than one error, list them out.
+            If there are more than one error list them out.
             For example, list out validation errors by each field.
           items:
             $ref: "#/components/schemas/ErrorListItem"
@@ -1739,11 +1640,11 @@ components:
         message:
           type: string
           description: |
-            A description on the individual errors that occurred.
+            Description about individual errors occurred
         description:
           type: string
           description: |
-            A detailed description of the error message.
+            A detail description about the error message.
     APIDefinitionValidationResponse:
       title: API Definition Validation Response
       required:
@@ -1764,7 +1665,7 @@ components:
         errors:
           type: array
           description: |
-            If there is more than one error, list them out.
+            If there are more than one error list them out.
             For example, list out validation errors by each field.
           items:
             $ref: "#/components/schemas/ErrorListItem"
@@ -1852,7 +1753,7 @@ components:
             $ref: "#/components/schemas/PortMapping"
         createdTime:
           type: string
-          example: 2023-02-11 09:57:25
+          example: 2021-02-11 09:57:25
 
     PortMapping:
       title: The PortMapping Object
@@ -1911,7 +1812,7 @@ components:
           example: HTTP
         port:
           type: number
-          description: Port of the Listener.
+          description: Port of the Listener
           example: 8080
     apis_importdefinition_body:
       properties:
@@ -1921,11 +1822,11 @@ components:
           format: string
         file:
           type: string
-          description: Definition to upload as a file.
+          description: Definition to upload as a file
           format: binary
         url:
           type: string
-          description: Definition URL
+          description: Definition url
         additionalProperties:
           type: string
           description: Additional attributes specified as a stringified JSON with API's schema
@@ -1936,7 +1837,7 @@ components:
       properties:
         url:
           type: string
-          description: API definition definition URL
+          description: API definition definition url
         file:
           type: string
           description: API definition as a file
@@ -1947,18 +1848,18 @@ components:
           default: REST
         inlineAPIDefinition:
           type: string
-          description: Inline content of the API definition.
+          description: Inline content of the API definition
     apiId_definition_body:
       properties:
         apiDefinition:
           type: string
-          description: API definition of the API.
+          description: API definition of the API
         url:
           type: string
-          description: API definition URL of the API.
+          description: API definition URL of the API
         file:
           type: string
-          description: API definition as a file.
+          description: API definition as a file
           format: binary
     apis_import_body:
       required:
@@ -1966,7 +1867,7 @@ components:
       properties:
         file:
           type: string
-          description: ZIP archive consisting of exported API configuration.
+          description: Zip archive consisting on exported API configuration
           format: binary
     API_serviceInfo:
       type: object
@@ -1999,7 +1900,7 @@ components:
             Context of the API
         description:
           type: string
-          example: A sample API that uses a petstore as an example to demonstrate OpenAPI Specification 2.0
+          example: A sample API that uses a petstore as an example to demonstrate swagger-2.0 specification
           description: |
             Description of the API
         openAPIVersion:
@@ -2111,7 +2012,7 @@ components:
           example:
             code: 403
             message: Forbidden
-            description: The request must be conditional but no condition has been specified.
+            description: The request must be conditional but no condition has been specified
             moreInfo: ""
             error: []
     InternalServerError:
@@ -2123,7 +2024,7 @@ components:
           example:
             code: 500
             message: Internal Server Error
-            description: The server encountered an internal error. Please contact the Administrator.
+            description: The server encountered an internal error. Please contact administrator.
             moreInfo: ""
             error: []
     NotAcceptable:
@@ -2135,7 +2036,7 @@ components:
           example:
             code: 406
             message: Not Acceptable
-            description: The requested media type is not supported.
+            description: The requested media type is not supported
             moreInfo: ""
             error: []
     NotFound:
@@ -2147,11 +2048,11 @@ components:
           example:
             code: 404
             message: Not Found
-            description: The specified resource does not exist.
+            description: The specified resource does not exist
             moreInfo: ""
             error: []
     PreconditionFailed:
-      description: Precondition Failed. The request has not been performed because one of the preconditions was not met.
+      description: Precondition Failed. The request has not been performed because one of the preconditions is not met.
       content:
         application/json:
           schema:
@@ -2159,7 +2060,7 @@ components:
           example:
             code: 412
             message: Precondition Failed
-            description: The request has not been performed because one of the preconditions was not met.
+            description: The request has not been performed because one of the preconditions is not met
             moreInfo: ""
             error: []
     Unauthorized:
@@ -2171,7 +2072,7 @@ components:
           example:
             code: 401
             message: Unauthorized
-            description: The user is not authorized.
+            description: The user is not authorized
             moreInfo: ""
             error: []
     UnsupportedMediaType:
@@ -2183,7 +2084,7 @@ components:
           example:
             code: 415
             message: Unsupported media type
-            description: The entity of the request was not in a supported format.
+            description: The entity of the request was not in a supported format
             moreInfo: ""
             error: []
   parameters:
@@ -2202,7 +2103,7 @@ components:
       in: query
       description: |
         **API ID** consisting of the **UUID** of the API.
-        The combination of the provider of the API, name of the API, and the version is also accepted as a valid API ID.
+        The combination of the provider of the API, name of the API and the version is also accepted as a valid API I.
         Should be formatted as **provider-name-version**.
       required: true
       schema:
@@ -2280,7 +2181,7 @@ components:
       name: sortOrder
       in: query
       description: |
-        Order of sorting (ascending/descending).
+        Order of sorting(ascending/descending).
       required: false
       style: form
       explode: true
@@ -2293,7 +2194,7 @@ components:
     serviceId:
       name: serviceId
       in: path
-      description: Name of the Service.
+      description: name of the service
       required: true
       style: simple
       explode: false
@@ -2302,7 +2203,7 @@ components:
     gatewayId:
       name: gatewayId
       in: path
-      description: Name of the Gateway.
+      description: name of the gateway
       required: true
       style: simple
       explode: false
@@ -2311,7 +2212,7 @@ components:
     policyId:
       name: policyId
       in: path
-      description: Policy UUID
+      description: policy uuid
       required: true
       style: simple
       explode: false
