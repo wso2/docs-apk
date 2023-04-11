@@ -37,7 +37,8 @@ If you have not created the user already, [create a user](https://auth0.com/docs
 
 1. [Access the endpoints that correspond to the application](https://auth0.com/docs/get-started/applications/application-settings#endpoints), which is available in the **Advanced Settings** section.
 2. Navigate to the `<APK-HOME>/helm-charts/` directory and open the `values.yaml` file.
-3. Update the IDP related configurations in the `ipd` section.
+3. Update the IDP related configurations in the `idp` section.
+4. Create a K8s Secret with retrieved `clientId` and `clientSecret` from Step 4 with name `apk-idp-secret`.
 
       ```
        idp:
@@ -49,8 +50,8 @@ If you have not created the user already, [create a user](https://auth0.com/docs
          usernameClaim: ""
          groupClaim: ""
          organizationClaim: ""
-         clientId: ""
-         clientSecret: ""
+         credentials:
+             secretName: "apk-idp-secret"
       ```
 
       - `organizationClaim` - This should always be `org_id`.
@@ -77,6 +78,8 @@ helm install apk-test . -n apk
      - `Access Token URL`
      - `Client ID`
      - `Client Secret`
+     - `CallBack Url`
+     - `Scopes - (rest API related scopes + openid)`
 
 4. Click **Get New Access Token**.
      
@@ -90,14 +93,7 @@ helm install apk-test . -n apk
 
 8. Copy the ID token that you see listed as the `id_token`.
 
-## Step 9 - Add the organization to the Data Plane
-     
-1. Decode the access token using a JWT decoder (e.g., [https://jwt.io/](https://jwt.io/)).
-2. Copy the value listed for `user_organization`, which is in the Payload data section.
-3. [Create an organization in APK](../../../../administration/organizations/#create-an-organization).
-    
-       Enter the `user_organization` value that you copied above as the `organizationClaimValue:` value when defining the Custom Resource (CR) for the organization.
 
-## Step 10 - Invoke the System API
+## Step 9 - Invoke the System API
 
  Use the JWT token that you received in the previous step to invoke the system APIs.
