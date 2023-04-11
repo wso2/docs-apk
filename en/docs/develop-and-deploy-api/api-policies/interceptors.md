@@ -311,7 +311,7 @@ spec:
 
 #### APIPolicy resource with API level interceptors
 
-Since the `targetRef.kind` is for the `HTTPRoute`, interceptor is applicable for all the reources defined in that `HTTPRoute`. 
+Since the `targetRef.kind` is for the `API`, interceptor is applicable for all the `HTTPRoute`s reffered from that `API`. 
 
 ```
 apiVersion: dp.wso2.com/v1alpha1
@@ -331,9 +331,9 @@ spec:
       backendRef:
          name: interceptor-backend
   targetRef:
-    group: gateway.networking.k8s.io
-    kind: HTTPRoute
-    name: my-http-route
+    group: dp.wso2.com
+    kind: API
+    name: my-sample-api
 ```
 
 #### Backend resource for Interceptor service backend
@@ -352,3 +352,38 @@ spec:
       name: interceptor-cert-secret
       key: ca.crt
 ```
+
+## Gateway Interceptors
+
+If you want all of your requests coming to the Gateway (from all the APIs deployed in the Gateway) to be intercepted, then you can target the Interceptor `APIPolicy` to your `Gateway` resource like below:
+
+```
+apiVersion: dp.wso2.com/v1alpha1
+kind: APIPolicy
+metadata:
+  name: gateway-interceptor-policy
+  namespace: apk
+spec:
+  default:
+    requestInterceptor:
+      backendRef:
+         name: gateway-request-interceptor-backend
+      includes:
+      - request_body
+      - request_headers
+      - invocation_context
+    responseInterceptor:
+      backendRef:
+         name: gateway-response-interceptor-backend
+      includes:
+      - response_body
+      - response_headers
+  targetRef:
+    group: dp.wso2.com
+    kind: Gateway
+    name: default
+```
+
+!!! Info
+
+    This global interceptor is independent from API/Resource level interceptors we discussed above and works independently. 
