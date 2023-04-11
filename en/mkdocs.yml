@@ -84,6 +84,11 @@ nav:
 
     #            - Create a Policy: develop-and-deploy-api/api-policies/create-a-policy.md
     #        - Rate Limiting: develop-and-deploy-api/rate-limiting.md
+            - Rate Limiting:
+                - Overview: develop-and-deploy-api/rate-limiting-policy-overview.md
+                - Add a New Rate Limiting Policy:
+                    - Via REST API: develop-and-deploy-api/rate-limiting/add-new-rate-limiting-policies-via-rest-api.md
+                    - Via CRs: develop-and-deploy-api/rate-limiting/add-new-rate-limiting-policies-via-crs.md
     #        - API Security:
     #            - Authentication:
     #                - Enable API Security:
@@ -176,6 +181,8 @@ nav:
         #- Product Pitch: https://wso2.com/api-manager
     - Setup: 
         - Prerequisites: setup/prerequisites.md
+        - Migration: setup/migration.md
+        - Organization: setup/organizations.md
        #- Install: setup/install.md
        #- Deploy:
        #    - Deployment Patterns: get-started/dummy.md
@@ -190,7 +197,6 @@ nav:
         #        - Mediation Extensions:
         #            - Custom Filters: setup/customizations/gateway-enforcer/mediation-extensions/custom-filters.md
     - Administration:
-        - Organizations: administration/organizations.md
         - Test System APIs: administration/postman-tests.md
     - Reach Out:
         - Community: reachout/community.md # Brief description and links to Discord and Stack OverFlow
