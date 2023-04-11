@@ -21,8 +21,8 @@ site_author: WSO2
 site_url: https://apk.docs.wso2.com/en/latest/
 
 # Repository
-repo_name: wso2/docs-apk
-repo_url: https://github.com/wso2/docs-apk
+repo_name: wso2/apk
+repo_url: https://github.com/wso2/apk
 # Change the edit_url later when 1.0.0 is released
 edit_uri: https://github.com/wso2/docs-apk/edit/main/en/docs/
 dev_addr: localhost:8000
@@ -41,6 +41,8 @@ theme:
         - content.code.copy
         - navigation.tabs
         - navigation.tabs.sticky
+        - content.action.edit
+        - content.action.view
         # - navigation.top
     language: 'en'
     palette:
@@ -270,9 +272,11 @@ extra_css:
     - assets/lib/highlightjs/styles/vs.min.css
     # Make sure to activate only one palette at a time.
     # If all the palettes are commented out, the default material theme palette will take over
-    - assets/css/blue-palette-alt1.css
+    # - assets/css/blue-palette-alt1.css
+    - assets/css/blue-palette-alt2.css
     # - assets/css/blue-palette.css
     # - assets/css/green-palette.css
+    # - assets/css/orange-palette.css
     - assets/css/apktheme.css
     - assets/lib/json-formatter/json-formatter.css
     - assets/css/config-catalog.css
