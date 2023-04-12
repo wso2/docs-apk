@@ -2,11 +2,11 @@
 
 Follow the instructions below to use Asgardeo as the Identity Provider (IdP) to authenticate the APIs that belong to a specific Organization:
 
-## Step 1 - Create an Organization
+## Step 1 - Create root Organization
 
 [Create an organization in Asgardeo](https://wso2.com/asgardeo/docs/guides/organization-management/manage-organizations/#create-a-new-organization).
 
-## Step 2 - Create a Sub-Organization
+## Step 2 - Create a Sub-Organization.
 
 [Create a sub-organization in Asgardeo](https://wso2.com/asgardeo/docs/guides/organization-management/manage-organizations/#create-a-suborganization) within the organization that you created.
 
@@ -28,7 +28,7 @@ Follow the instructions below to use Asgardeo as the Identity Provider (IdP) to 
 
 1. Navigate to the `<APK-HOME>/helm-charts/` directory and open the `values.yaml` file.
 2. Update the IDP related configurations in the `ipd` section.
-
+3. Create a K8s Secret with retrieved `clientId` and `clientSecret` from Step 4 with name `apk-idp-secret`.
       ```
         idp:
           issuer: ""
@@ -39,14 +39,14 @@ Follow the instructions below to use Asgardeo as the Identity Provider (IdP) to 
           usernameClaim: ""
           groupClaim: ""
           organizationClaim: ""
-          clientId: ""
-          clientSecret: ""
+          credentials:
+             secretName: "apk-idp-secret"
       ```
       
        - `organizationClaim` - This should always be `user_organization`.
        - Update all other values based on the Service Endpoint details that you came across in Step 4.
 
-## Step 6 - Restart WSO2 APK
+## Step 6 - Install WSO2 APK
 
 ```tab="Format"
 helm install <helm-chart-name> . -n <namespace>
@@ -66,6 +66,8 @@ helm install apk-test . -n apk
      - `Access Token URL`
      - `Client ID`
      - `Client Secret`
+     - `CallBack Url`
+     - `Scopes - (rest API related scopes + openid)`
 
 4. Click **Get New Access Token**.
      
@@ -78,16 +80,6 @@ helm install apk-test . -n apk
 
      You will receive an access token when the token call is successful.
 
-9. Copy the access token that you see listed as the `id_token`.
-
-## Step 8 - Add the organization to the Data Plane
-     
-1. Decode the access token using a JWT decoder (e.g., [https://jwt.io/](https://jwt.io/)).
-2. Copy the value listed for `user_organization`, which is in the Payload data section.
-3. [Create an organization in APK](../../../../administration/organizations/#create-an-organization).
-      
-      Enter the `user_organization` value that you copied above as the `organizationClaimValue:` value when defining the Custom Resource (CR) for the organization.
-
-## Step 9 - Invoke the System API
+## Step 8 - Invoke the System API
 
  Use the JWT token that you received in the previous step to invoke the System APIs.

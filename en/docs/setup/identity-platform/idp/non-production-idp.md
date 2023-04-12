@@ -4,20 +4,9 @@ Follow the instructions below to use the inbuilt Non-production Identity Provide
 
 !!! note
     - Use the non-production IdP only for testing purposes.
-    - The non-production IdP is defined in the `<APK-HOME>/helm-charts/templates/idp/idp-ds/idp-ds-configmap.yaml` file.
 
-## Step 1 - Create an Organization
 
-Let's add the organization CR for `org1` to the namespace to create a new organization.
-For more information, see [Create an organization in APK](../../../../administration/organizations).
-
-After adding the organization named `org1` it will be added to the system (Data Plane).
-
-## Step 2 - Create an API with an Organization
-
-[Create an API](../../../../administration/organizations#create-an-api-with-an-organization) that is associated to an organization.
-
-## Step 3 - Get an access token
+## Step 1 - Get an access token
 
 !!! note
     Make sure that the Helm charts are installed.
@@ -42,10 +31,10 @@ After adding the organization named `org1` it will be added to the system (Data 
 
      - **userName** - `org1user`
      - **Password** - `org1user`
-     - **Organization** - `org1` (The name of the organization that you created before in Step 1).
+     - **Organization** - `org1`
 
      You will receive the JWT access token.
 
-## Step 4 - Invoke the System API
+## Step 2 - Invoke the System API
 
 Use the JWT token that you received in the previous step to invoke the System API.
