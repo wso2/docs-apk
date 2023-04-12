@@ -17,13 +17,15 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
 
 4.  Install the APK components and start WSO2 API Platform For Kubernetes.
 
-     ```tab="Format"
-     helm install <helm-chart> . -n <namespace>
-     ```
-     
-     ```tab="Command"
-     helm install apk-test . -n apk
-     ```
+	=== "Format"
+		```console
+		helm install <helm-chart> . -n <namespace>
+		```
+
+	=== "Command"
+		```console
+		helm install apk-test . -n apk
+		```
 
     !!! info "Optional"
 
@@ -34,17 +36,17 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
 
 5.  Verify the deployment.
 
-      ```
+      ```console
       kubectl get pods -n apk
       ```
 
     !!! info "(Optional) To access the deployment through your local machine"
 
         1. Identify the `router-service` external IP address.
-           ```
+           ```console
            kubectl get svc -n apk | grep router-service
            ```
         2. Port forward router service to localhost.
-           ```
+           ```console
            kubectl port-forward svc/apk-test-wso2-apk-router-service -n apk 9095:9095
            ```

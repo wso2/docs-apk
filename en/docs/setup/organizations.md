@@ -14,29 +14,31 @@ For example if an API named `sample-api` was created in organization `org1`. Use
      
      As an example, let's create a JSON file named `organization.json` with the following definition.
 
-     ```tab="Format"
-     {
-      "name": "",
-      "displayName": "",
-      "organizationClaimValue": "",
-      "enabled": ,
-      "serviceNamespaces": [
-      "string"
-      ]
-     }
-     ```
+	=== "Format"
+		```
+		{
+			"name": "",
+			"displayName": "",
+			"organizationClaimValue": "",
+			"enabled": ,
+			"serviceNamespaces": [
+				"string"
+			]
+		}
+		```
 
-     ```tab="Example"
-     {
-      "name": "org1",
-      "displayName": "org1",
-      "organizationClaimValue": "01234567-0123-0123-0123",
-      "enabled": true,
-      "serviceNamespaces": [
-      "string"
-      ]
-     }
-     ```
+    === "Example"
+		```
+		{
+			"name": "org1",
+			"displayName": "org1",
+			"organizationClaimValue": "01234567-0123-0123-0123",
+			"enabled": true,
+			"serviceNamespaces": [
+				"string"
+			]
+		}
+		```
 
      The following table describes the elements that you need to define in the payload when creating an organization.
      
@@ -69,18 +71,20 @@ For example if an API named `sample-api` was created in organization `org1`. Use
 
 2. Execute the [`POST /organizations` Admin REST API](https://apk.docs.wso2.com/en/latest/catalogs/api-reference-admin/#tag/Organization-(Individual)/operation/addOrganization) to create an organization in WSO2 APK.
     
-     Execute the following cURL command.
+	Execute the following cURL command.
 
-     ```tab="Format"
-     curl -k -X POST -H "Authorization: Bearer <access-token>" -H "Content-Type: application/json" -d <organization-JSON-payload> "https://127.0.0.1:9443/api/am/admin/POST"
-     ```
+	=== "Format"
+		```
+		curl -k -X POST -H "Authorization: Bearer <access-token>" -H "Content-Type: application/json" -d <organization-JSON-payload> "https://127.0.0.1:9443/api/am/admin/POST"
+		```
 
-     ```tab="Example"
-     curl -k -X POST -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" -H "Content-Type: application/json" -d organization.json "https://127.0.0.1:9443/api/am/admin/organizations"
-     ```
+	=== "Example"
+		```
+		curl -k -X POST -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" -H "Content-Type: application/json" -d organization.json "https://127.0.0.1:9443/api/am/admin/organizations"
+		```
 
-     - `<access-token>` - Use the access token that you generated when creating an IdP.
-     - `<organization-JSON-payload>` - Define the path to the organization payload, which you created in the previous step.
+	- `<access-token>` - Use the access token that you generated when creating an IdP.
+	- `<organization-JSON-payload>` - Define the path to the organization payload, which you created in the previous step.
 
 
 In this scenario use non-production IDP to obtain the access token. For more information, see [Obtain access token from Non-production IDP](../../apk-deck/identity-platform/idp/non-production-idp/).
