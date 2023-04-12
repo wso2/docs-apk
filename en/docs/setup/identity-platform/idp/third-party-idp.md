@@ -2,6 +2,15 @@
 
 Follow the instructions below to use any third-party Identity Provider (IdP) to authenticate the APIs that belong to a specific Organization:
 
+## Prerequisites
+- IDP needs to be an OIDC compliance.
+- Access Token needs to be JWT token.
+- Access token able to validate from certificate (certificate file/jwks).
+- Required Claims to be include in JWT token
+     - username
+     - users organization
+     - scopes requested for token
+
 ## Step 1 - Set up an Identity Provider (IdP)
 
 You need to set up an Identity Provider (IdP) with your preferred third-party provider, such as Asgardeo, Auth0, or any other provider. 
@@ -26,9 +35,8 @@ This includes setting the application's settings, such as the application name a
 
 ## Step 6 - Update the Helm Chart
 
-1. [Access the endpoints that correspond to the application](https://auth0.com/docs/get-started/applications/application-settings#endpoints), which is available in the **Advanced Settings** section.
-2. Navigate to the `<APK-HOME>/helm-charts/` directory and open the `values.yaml` file.
-3. Update the IDP related configurations in the `ipd` section.
+1. Navigate to the `<APK-HOME>/helm-charts/` directory and open the `values.yaml` file.
+2. Update the IDP related configurations in the `idp` section.
 
       ```json
        idp:
@@ -40,11 +48,12 @@ This includes setting the application's settings, such as the application name a
          usernameClaim: ""
          groupClaim: ""
          organizationClaim: ""
-         clientId: ""
-         clientSecret: ""
-      ```
+         credentials:
+            secretName: "apk-idp-secret"
 
-      - `organizationClaim` - This should always be `org_id`.
+       ```
+
+      - `organizationClaim` - This needs to be configured based on organization claim in jwt.
       - Update all other values based on the Endpoint details that you came under the application settings.
 
 The Idp section should include the following parameters:
@@ -59,12 +68,11 @@ The Idp section should include the following parameters:
 | `usernameClaim:` |  The claim in the IdP's token that represents the user's username.  |
 | `groupClaim:` |  The claim in the IdP's token that represents the user's group membership, if applicable.  |
 | `organizationClaim:` |  The claim in the IdP's token that represents the user's organization, if applicable.  |
-| `clientId:` |  The client ID associated with the created application.  |
-| `clientSecret:` |  The client secret associated with the created application.  |
+| `credentials.secretName:` | clientId,clientSecret embeded k8s Secret Name |
 
-## Step 7 - Restart WSO2 APK
+## Step 7 - Start WSO2 APK
 
-Restart WSO2 APK using the following command:
+Start WSO2 APK using the following command:
 
 === "Format"
 	```
@@ -86,6 +94,8 @@ Restart WSO2 APK using the following command:
      - `Access Token URL`
      - `Client ID`
      - `Client Secret`
+     - `CallBack Url`
+     - `Scopes - (rest API related scopes + openid)`
 
 4. Click **Get New Access Token**.
      
@@ -97,15 +107,9 @@ Restart WSO2 APK using the following command:
      
      You will receive two tokens, namely the access token and ID token, when the token call is successful.
 
-8.  Copy the ID token that you see listed as the `id_token`.
+8.  Copy the Access token that you see listed as the `Access Token`.
 
-## Step 9 - Add the user's organization to the Data Plane
 
-1. Decode the access token using a JWT decoder (e.g., [https://jwt.io/](https://jwt.io/)).
-2. [Create an organization in APK](../../../../administration/organizations/#create-an-organization).
-     
-     Enter the `organizationClaimValue:` related value that corresponds to the IdP when creating the organization. Note that the `organizationClaimValue:` is unique to each IdP.
-
-## Step 10 - Invoke the System API
+## Step 9 - Invoke the System API
 
 Use the JWT token that you received in the previous step to invoke the system APIs.
