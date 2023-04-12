@@ -61,17 +61,11 @@ nav:
         #    - Test API: develop-and-deploy-api/test-api.md
         #    - Publish Your API: manage-apis/publish-your-api.md
     - API Management:
-        - Develop and Deploy API:
+        # - Develop and Deploy API:
     #        - API Versions:
     #            - Create an API Version: develop-and-deploy-api/api-versions/create-an-api-versions.md
     #            - Default Version: develop-and-deploy-api/api-versions/default-version.md
     #            - Backward Compatibility: develop-and-deploy-api/api-versions/backward-compatibility.md
-            - API Policies:
-                - Overview: develop-and-deploy-api/api-policies-overview.md
-                - Attach Policies: 
-                    - Via REST API: develop-and-deploy-api/api-policies/attach-policies-via-rest-api.md
-                    - Via CR: develop-and-deploy-api/api-policies/attach-policies-via-crs.md
-                    - Interceptor APIPolicy: develop-and-deploy-api/api-policies/interceptors.md
         - Create APIs:
            - Overview: create-api/create-api-overview.md
            - Create and deploy APIs:
@@ -81,14 +75,23 @@ nav:
            - Manage Service Endpoint:
                 - Manage Certificate: create-api/manage-service-endpoint/manage-certificate.md
                 - Manage Security: create-api/manage-service-endpoint/manage-security.md
-
-    #            - Create a Policy: develop-and-deploy-api/api-policies/create-a-policy.md
-    #        - Rate Limiting: develop-and-deploy-api/rate-limiting.md
-        - Rate Limiting:
-            - Overview: develop-and-deploy-api/rate-limiting-policy-overview.md
-            - Add a New Rate Limiting Policy:
-                - Via REST API: develop-and-deploy-api/rate-limiting/add-new-rate-limiting-policies-via-rest-api.md
-                - Via CRs: develop-and-deploy-api/rate-limiting/add-new-rate-limiting-policies-via-crs.md
+           - Create API Policies: 
+                - Overview: create-api/create-and-attach-api-policies/api-policies-overview.md
+                - Header manipulation:  
+                    - Via REST API: create-api/create-and-attach-api-policies/header-manipulation/header-manipulation-via-rest-api.md
+                    - Via CR: create-api/create-and-attach-api-policies/header-manipulation/header-manipulation-via-crs.md
+                - Interceptors Service: 
+                    - Overview: create-api/create-and-attach-api-policies/interceptors/interceptors-overview.md
+                    - Via REST API: create-api/create-and-attach-api-policies/interceptors/interceptors-via-rest-api.md
+                    - Via CR: create-api/create-and-attach-api-policies/interceptors/interceptors-via-crs.md
+                - Query manipulation: 
+                    - Overview: create-api/create-and-attach-api-policies/query-manipulation/query-manipulation-overview.md
+           - Rate Limiting:
+                - Overview: create-api/rate-limiting/rate-limiting-policy-overview.md
+                - Simple Rate Limiting:
+                    - Via REST API: create-api/rate-limiting/add-new-rate-limiting-policies-via-rest-api.md
+                    - Via CRs: create-api/rate-limiting/add-new-rate-limiting-policies-via-crs.md
+                - Custom Rate Limiting: create-api/rate-limiting/custom-rate-limiting.md
     #        - API Security:
     #            - Authentication:
     #                - Enable API Security:

@@ -1,8 +1,8 @@
-# Attach Operation-level API Policies to APIs via CRs
+# Attach Operation-level Header Manipulation Policy to APIs via CRs
 
 !!! Tip
     
-    To get familiar with the concept of API Policies, see [API Policies Overview](../../../develop-and-deploy-api/api-policies-overview). 
+    To get familiar with the concept of API Policies, see [API Policies Overview](../../api-policies-overview). 
 
 You need to define the API Policies within the HTTPRoute Custom Resource (CR) when creating an API using the Kubernetes Command Line Interface (kubctl). Let's get familiar with the [configurations](#sample-code-snippet) that you will use to attach API policies via an HTTPRoute CR and also the [configurations definitions](#configuration-definitions).
 
