@@ -28,7 +28,7 @@ template: templates/single-column.html
             <div class="linkSet2" onclick="location.href='get-started/quick-start-guide';">
                 <a href="get-started/quick-start-guide"><h3>Quick Start Guide</h3></a>
                 <p>
-                    The Quick Start Guide for WSO2 API Manager is a good starting point for developers and architects aiming to build innovative apps and services using APIs. It offers a comprehensive overview of APK platform installation, configuration, and API creation and publishing. The guide is user-friendly, featuring step-by-step instructions, making it ideal for beginners and those wanting to explore advanced features. It is an excellent foundation for building secure, scalable, and robust APIs, enhancing your overall API management capabilities. Get started with quick start guideline to take your API development to the next level.
+                    The Quick Start Guide for WSO2 API Platform for Kubernetes is a good starting point for developers and architects aiming to build innovative apps and services using APIs. It offers a comprehensive overview of APK platform installation, configuration, and API creation and publishing. The guide is user-friendly, featuring step-by-step instructions, making it ideal for beginners and those wanting to explore advanced features. It is an excellent foundation for building secure, scalable, and robust APIs, enhancing your overall API management capabilities. Get started with quick start guideline to take your API development to the next level.
                 </p>
             </div>
             <div class="linkSet2 middle" onclick="location.href='about-apk/what-is-apk';">
