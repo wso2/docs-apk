@@ -77,8 +77,5 @@
     display: flex;
     justify-content: space-between;
 }
-.section02 > div {
-  width: 33%;  
-}
 </style>
 {% endraw %}
