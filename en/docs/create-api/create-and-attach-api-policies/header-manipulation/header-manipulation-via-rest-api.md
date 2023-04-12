@@ -1,10 +1,10 @@
-# Attach API Policies via the REST API Interface
+# Attaching Header Manipulation Policy via the REST API Interface
 
 !!! Tip
     
-    To get familiar with the concept of API Policies, see [API Policies Overview](../../../develop-and-deploy-api/api-policies-overview).
+    To get familiar with the concept of API Policies, see [API Policies Overview](../../api-policies-overview).
 
-You need to define the API Policies in the API payload when creating an API using the REST API Interface. You can either attach API Policies at the API-level or at the Operation-level. Let's get familiar with the [API-level Policy](#api-level) and [Operation-level Policy](#operation-level) configurations and also the [configurations definitions](#configuration-definitions).
+You need to define the API Policies in the API payload when creating an API using the REST API Interface. You can either attach API Policies at the API-level or at the Operation-level. Let's get familiar with the [API-level Policy](#api-level) and [Operation-level Policy](#operation-level-resource-level) configurations and also the [configurations definitions](#configuration-definitions).
 
 ## API-level
 
@@ -17,31 +17,31 @@ The following is a sample code snippet that defines how you can attach API Polic
       "request": [
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd1",
                   "headerValue": "customvalue1"
-              }]
+              }
           },
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd2",
                   "headerValue": "customvalue2"
-              }]
+              }
           }
       ],
       "response": [
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length"
-              }]
+              }
           },
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length2"
-              }]
+              }
           }
       ]
   }
@@ -58,9 +58,9 @@ The following is a sample code snippet that defines how you can attach API Polic
       "request": [
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length"
-              }]
+              }
           }
       ]
     }
@@ -74,15 +74,15 @@ The following is a sample code snippet that defines how you can attach API Polic
       "request": [
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length"
-              }]
+              }
           },
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length2"
-              }]
+              }
           }
       ]
     }
@@ -97,10 +97,10 @@ The following is a sample code snippet that defines how you can attach API Polic
       "request": [
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd2",
                   "headerValue": "customvalue2"
-              }]
+              }
           }
       ]
     }
@@ -114,17 +114,17 @@ The following is a sample code snippet that defines how you can attach API Polic
       "request": [
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd1",
                   "headerValue": "customvalue1"
-              }]
+              }
           },
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd2",
                   "headerValue": "customvalue2"
-              }]
+              }
           }
       ]
     }
@@ -140,16 +140,16 @@ The following is a sample code snippet that defines how you can attach API Polic
       "request": [
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length"
-              }]
+              }
           },
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd1",
                   "headerValue": "customvalue1"
-              }]
+              }
           }
       ]
     }
@@ -163,29 +163,29 @@ The following is a sample code snippet that defines how you can attach API Polic
       "request": [
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length"
-              }]
+              }
           },
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length2"
-              }]
+              }
           },
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd1",
                   "headerValue": "customvalue1"
-              }]
+              }
           },
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd2",
                   "headerValue": "customvalue2"
-              }]
+              }
           }
       ]
     }
@@ -203,9 +203,9 @@ The following is a sample code snippet that defines how you can attach API Polic
       "response": [
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length"
-              }]
+              }
           }
       ]
     }
@@ -219,15 +219,15 @@ The following is a sample code snippet that defines how you can attach API Polic
       "response": [
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length"
-              }]
+              }
           },
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length2"
-              }]
+              }
           }
       ]
     }
@@ -242,10 +242,10 @@ The following is a sample code snippet that defines how you can attach API Polic
       "response": [
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd2",
                   "headerValue": "customvalue2"
-              }]
+              }
           }
       ]
     }
@@ -259,17 +259,17 @@ The following is a sample code snippet that defines how you can attach API Polic
       "response": [
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd1",
                   "headerValue": "customvalue1"
-              }]
+              }
           },
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd2",
                   "headerValue": "customvalue2"
-              }]
+              }
           }
       ]
     }
@@ -285,16 +285,16 @@ The following is a sample code snippet that defines how you can attach API Polic
       "response": [
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length"
-              }]
+              }
           },
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd1",
                   "headerValue": "customvalue1"
-              }]
+              }
           }
       ]
     }
@@ -308,29 +308,29 @@ The following is a sample code snippet that defines how you can attach API Polic
       "response": [
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length"
-              }]
+              }
           },
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length2"
-              }]
+              }
           },
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd1",
                   "headerValue": "customvalue1"
-              }]
+              }
           },
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd2",
                   "headerValue": "customvalue2"
-              }]
+              }
           }
       ]
     }
@@ -344,31 +344,31 @@ The following is a sample code snippet that defines how you can attach API Polic
       "request": [
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd1",
                   "headerValue": "customvalue1"
-              }]
+              }
           },
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd2",
                   "headerValue": "customvalue2"
-              }]
+              }
           }
       ],
       "response": [
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length"
-              }]
+              }
           },
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length2"
-              }]
+              }
           }
       ]
     }
@@ -385,31 +385,31 @@ The following is a sample code snippet that defines how you can attach API Polic
     "request": [
         {
             "policyName": "addHeader",
-            "parameters": [{
+            "parameters": {
                 "headerName": "customadd1",
                 "headerValue": "customvalue1"
-            }]
+            }
         },
         {
             "policyName": "addHeader",
-            "parameters": [{
+            "parameters": {
                 "headerName": "customadd2",
                 "headerValue": "customvalue2"
-            }]
+            }
         }
     ],
     "response": [
         {
             "policyName": "removeHeader",
-            "parameters": [{
+            "parameters": {
                 "headerName": "content-length"
-            }]
+            }
         },
         {
             "policyName": "removeHeader",
-            "parameters": [{
+            "parameters": {
                 "headerName": "content-length2"
-            }]
+            }
         }
     ]
 }
@@ -426,9 +426,9 @@ The following is a sample code snippet that defines how you can attach API Polic
       "request": [
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length"
-              }]
+              }
           }
       ]
     }
@@ -442,15 +442,15 @@ The following is a sample code snippet that defines how you can attach API Polic
       "request": [
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length"
-              }]
+              }
           },
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length2"
-              }]
+              }
           }
       ]
     }
@@ -465,10 +465,10 @@ The following is a sample code snippet that defines how you can attach API Polic
       "request": [
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd2",
                   "headerValue": "customvalue2"
-              }]
+              }
           }
       ]
     }
@@ -482,17 +482,17 @@ The following is a sample code snippet that defines how you can attach API Polic
       "request": [
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd1",
                   "headerValue": "customvalue1"
-              }]
+              }
           },
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd2",
                   "headerValue": "customvalue2"
-              }]
+              }
           }
       ]
     }
@@ -508,16 +508,16 @@ The following is a sample code snippet that defines how you can attach API Polic
       "request": [
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length"
-              }]
+              }
           },
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd1",
                   "headerValue": "customvalue1"
-              }]
+              }
           }
       ]
     }
@@ -531,29 +531,29 @@ The following is a sample code snippet that defines how you can attach API Polic
       "request": [
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length"
-              }]
+              }
           },
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length2"
-              }]
+              }
           },
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd1",
                   "headerValue": "customvalue1"
-              }]
+              }
           },
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd2",
                   "headerValue": "customvalue2"
-              }]
+              }
           }
       ]
     }
@@ -571,9 +571,9 @@ The following is a sample code snippet that defines how you can attach API Polic
       "response": [
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length"
-              }]
+              }
           }
       ]
     }
@@ -587,15 +587,15 @@ The following is a sample code snippet that defines how you can attach API Polic
       "response": [
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length"
-              }]
+              }
           },
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length2"
-              }]
+              }
           }
       ]
     }
@@ -610,10 +610,10 @@ The following is a sample code snippet that defines how you can attach API Polic
       "response": [
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd2",
                   "headerValue": "customvalue2"
-              }]
+              }
           }
       ]
     }
@@ -627,17 +627,17 @@ The following is a sample code snippet that defines how you can attach API Polic
       "response": [
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd1",
                   "headerValue": "customvalue1"
-              }]
+              }
           },
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd2",
                   "headerValue": "customvalue2"
-              }]
+              }
           }
       ]
     }
@@ -653,16 +653,16 @@ The following is a sample code snippet that defines how you can attach API Polic
       "response": [
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length"
-              }]
+              }
           },
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd1",
                   "headerValue": "customvalue1"
-              }]
+              }
           }
       ]
     }
@@ -676,29 +676,29 @@ The following is a sample code snippet that defines how you can attach API Polic
       "response": [
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length"
-              }]
+              }
           },
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length2"
-              }]
+              }
           },
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd1",
                   "headerValue": "customvalue1"
-              }]
+              }
           },
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd2",
                   "headerValue": "customvalue2"
-              }]
+              }
           }
       ]
     }
@@ -712,31 +712,31 @@ The following is a sample code snippet that defines how you can attach API Polic
       "request": [
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd1",
                   "headerValue": "customvalue1"
-              }]
+              }
           },
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd2",
                   "headerValue": "customvalue2"
-              }]
+              }
           }
       ],
       "response": [
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length"
-              }]
+              }
           },
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length2"
-              }]
+              }
           }
       ]
     }
@@ -749,7 +749,7 @@ The following are the configurations that you need when attaching API Policies t
 <table>
 <thead>
   <tr>
-    <th><b>Configuration</b></th>h>
+    <th><b>Configuration</b></th>
     <th><b>Description</b></th>
   </tr>
 </thead>
@@ -810,31 +810,31 @@ Follow the instructions below to attach API Policies to an API when creating it:
       "request": [
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd1",
                   "headerValue": "customvalue1"
-              }]
+              }
           },
           {
               "policyName": "addHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "customadd2",
                   "headerValue": "customvalue2"
-              }]
+              }
           }
       ],
       "response": [
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length"
-              }]
+              }
           },
           {
               "policyName": "removeHeader",
-              "parameters": [{
+              "parameters": {
                   "headerName": "content-length2"
-              }]
+              }
           }
       ]
     }
