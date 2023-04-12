@@ -1,4 +1,4 @@
-# IdPs
+# Identity Providers
 
 Identity Providers, which are also referred to as IdPs, store and manage digital identities. By default, APK supports an inbuilt non-production identity provider/token service, which is only meant for testing purposes. APK also supports third party IdPs, namely Asgardeo and Auth0.
 

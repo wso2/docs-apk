@@ -68,7 +68,7 @@ nav:
     #            - Backward Compatibility: develop-and-deploy-api/api-versions/backward-compatibility.md
         - Create APIs:
            - Overview: create-api/create-api-overview.md
-           - Create and deploy APIs: 
+           - Create and deploy APIs:
                 - Create API from k8s service: create-api/create-and-deploy-apis/create-api-from-k8s-service.md
                 - Create API from API definition: create-api/create-and-deploy-apis/create-api-from-api-definition.md
                 - Create API using CR: create-api/create-and-deploy-apis/create-api-using-cr.md
@@ -138,7 +138,7 @@ nav:
        #- Key Concepts:
        #    - Key Concept 1: about-apk/key-concepts/key-concept.md
        #    - Key Concept 2: about-apk/key-concepts/key-concept.md
-        - WSO2 APK Deck:
+        # - WSO2 APK Deck:
             #- APK Deck Overview: apk-deck/overview.md
             #- API Gateway:
                #- API Gateway - Router:
@@ -148,13 +148,6 @@ nav:
                 #- API Gateway - Enforcer:
                 #    - Enforcer - Overview: apk-deck/enforcer-overview.md
                 #   - Topic 2: get-started/dummy.md
-            - Identity Platform:
-                IdP:
-                    - Overview: apk-deck/identity-platform/idp/idp-overview.md
-                    - Non-production: apk-deck/identity-platform/idp/non-production-idp.md
-                    - Asgardeo: apk-deck/identity-platform/idp/asgardeo-idp.md
-                    - Auth0: apk-deck/identity-platform/idp/auth0-idp.md
-                    - Any Third-party IdP: apk-deck/identity-platform/idp/third-party-idp.md
            #- Back Office: 
            #    - Back Office Overview: apk-deck/back-office-overview.md
            #    - Access: get-started/dummy.md
@@ -186,6 +179,12 @@ nav:
         - Prerequisites: setup/prerequisites.md
         - Migration: setup/migration.md
         - Organization: setup/organizations.md
+        - Configure Identity Provider:
+            - Overview: setup/identity-platform/idp/idp-overview.md
+            - Non-production: setup/identity-platform/idp/non-production-idp.md
+            - Asgardeo: setup/identity-platform/idp/asgardeo-idp.md
+            - Auth0: setup/identity-platform/idp/auth0-idp.md
+            - Any Third-party IdP: setup/identity-platform/idp/third-party-idp.md
        #- Install: setup/install.md
        #- Deploy:
        #    - Deployment Patterns: get-started/dummy.md
