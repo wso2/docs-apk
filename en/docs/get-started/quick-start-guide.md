@@ -28,7 +28,7 @@ Before creating an API, you need sample backend service to invoke the API. In th
 The services should be created in a different namespace than the APK or Kubernetes System namespaces
 To deploy sample backend use the following command.
 
-```
+```command
 kubctl apply -f sample-backend.yaml -n apk-backend
 ```
 ```
@@ -53,52 +53,56 @@ spec:
 
 Follow the instructions below to Create and deploy an API using the Runtime API:
 
-```tab="Format"
-    {
-        "context": "",
-        "name": "",
-        "version": "",
-        "type": "",
-        "operations": []
-    }
-```
+=== "Format"
+    ```json
+        {
+            "context": "",
+            "name": "",
+            "version": "",
+            "type": "",
+            "operations": []
+        }
+    ```
 
-```tab="Example"
-    {
-        "context": "/pizza",
-        "name": "PizzaShackAPI",
-        "version": "1.0.0",
-        "type": "REST",
-        "operations": [
-            {
-                "target": "/get",
-                "verb": "GET",
-                "authTypeEnabled": true,
-                "endpointConfig": {
-                    "endpoint_type": "http",
-                    "production_endpoints": {
-                        "url": "http://httpbin.org"
+=== "Example"
+    ```json
+        {
+            "context": "/pizza",
+            "name": "PizzaShackAPI",
+            "version": "1.0.0",
+            "type": "REST",
+            "operations": [
+                {
+                    "target": "/get",
+                    "verb": "GET",
+                    "authTypeEnabled": true,
+                    "endpointConfig": {
+                        "endpoint_type": "http",
+                        "production_endpoints": {
+                            "url": "http://httpbin.org"
+                        }
                     }
                 }
-            }
-        ]
-    }
-```
+            ]
+        }
+    ```
 
 Execute the following cURL command with token and payload to create an API.
 
-```tab="Format"
-     curl -k -X POST -H "Authorization: Bearer <access-token>" -H "Content-Type: application/json" -H "Accept: application/json" -d <API-JSON-payload> "https://prod.api.am.wso2.com:9095/api/am/runtime/apis"
-```
+=== "Format"
+    ```command
+        curl -k -X POST -H "Authorization: Bearer <access-token>" -H "Content-Type: application/json" -H "Accept: application/json" -d <API-JSON-payload> "https://prod.api.am.wso2.com:9095/api/am/runtime/apis"
+    ```
 
-```tab="Example"
-     curl -k -X POST -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" -H "Content-Type: application/json" -H "Accept: application/json" -d @data.json "https://prod.api.am.wso2.com:9095/api/am/runtime/apis"
-```
+=== "Example"
+    ```command
+        curl -k -X POST -H "Authorization: Bearer ae4eae22-3f65-387b-a171-d37eaa366fa8" -H "Content-Type: application/json" -H "Accept: application/json" -d @data.json "https://prod.api.am.wso2.com:9095/api/am/runtime/apis"
+    ```
 
 !!! Note
     Generate access token to invoke API Create request using the following command.
 
-    ```
+    ```command
     curl --location 'https://{router_service}:9095/oauth2/token' \
     --header 'Host: prod.idp.am.wso2.com' \
     --header 'Authorization: Basic NDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyOjRmYmQ2MmVjLWE5MmUtMTFlZC1hZmExLTAyNDJhYzEyMDAwMg==' \

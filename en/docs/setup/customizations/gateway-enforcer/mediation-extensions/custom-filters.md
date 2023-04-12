@@ -142,10 +142,12 @@ Follow the instructions below to add a custom filter in the Enforcer:
          - `dp.gatewayRuntime.deployment.enforcer.image` - Use this image (`wso2/enforcer-new:latest`) as the value.
      2. Start APK.
 
-        ```tab="Format"
-        helm install <helm-chart-name> . -n <namespace>
-        ```
+        === "Format"
+            ```
+            helm install <helm-chart-name> . -n <namespace>
+            ```
 
-        ```tab="Example"
-        helm install apk-test . -n apk
-        ```
+        === "Example"
+            ```
+            helm install apk-test . -n apk
+            ```

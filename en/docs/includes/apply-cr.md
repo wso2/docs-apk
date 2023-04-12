@@ -1,13 +1,15 @@
 
 Apply CRs to the Kubernetes API server using the kubectl.
 
-```tab="Format"
-kubectl apply -f <path-to-crs>
-```
+=== "Format"
+    ```command
+    kubectl apply -f <path-to-crs>
+    ```
 
-```tab="Command"
-kubectl apply -f developer/tryout/samples/
-```
+=== "Command"
+    ```command
+    kubectl apply -f developer/tryout/samples/
+    ```
 
 !!! Note
     - The services should be created in a different namespace than the APK or Kubernetes System namespaces. 
