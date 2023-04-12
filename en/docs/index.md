@@ -32,10 +32,10 @@ template: templates/single-column.html
                 </p>
             </div>
             </div>
-            <div class="linkSet2 middle" onclick="location.href='about-apk/what-is-apk';">
+            <div class="linkSet2 middle" onclick="location.href='about-apk/what-is-apk';"> ssss
                 <a href="about-apk/what-is-apk"><h3>What is APK?</h3></a>
                 <p>
-                    WSO2 API Manager (APK) provides a complete solution for API management, covering the entire API lifecycle from design and development to publishing and consumption. With its support for API gateway, developer portal, and marketplace capabilities, the platform offers a robust set of tools for managing APIs. Additionally, WSO2 APK includes key architectural features specifically designed for Kubernetes environments, making it easy to deploy and manage APIs in a cloud-native way.
+                    WSO2 API Platform for Kubernetes (APK) provides a complete solution for API management, covering the entire API lifecycle from design and development to publishing and consumption. With its support for API gateway, developer portal, and marketplace capabilities, the platform offers a robust set of tools for managing APIs. Additionally, WSO2 APK includes key architectural features specifically designed for Kubernetes environments, making it easy to deploy and manage APIs in a cloud-native way.
                 </p>
             </div>
             <div class="linkSet2 last" onclick="location.href='about-apk/architecture';">
