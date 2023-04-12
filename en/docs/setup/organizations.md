@@ -87,4 +87,4 @@ For example if an API named `sample-api` was created in organization `org1`. Use
 	- `<organization-JSON-payload>` - Define the path to the organization payload, which you created in the previous step.
 
 
-In this scenario use non-production IDP to obtain the access token. For more information, see [Obtain access token from Non-production IDP](../../apk-deck/identity-platform/idp/non-production-idp/).
+In this scenario use non-production IDP to obtain the access token. For more information, see [Obtain access token from Non-production IDP](../../setup/identity-platform/idp/non-production-idp/).

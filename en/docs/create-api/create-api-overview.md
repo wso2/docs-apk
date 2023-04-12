@@ -1,5 +1,5 @@
 
-In the APK, you can deploy APIs by using Kubernetes resources, if you prefer a Kubernetes-native experience. However, APK also expose REST APIs, and you can create APIs using any of the following three methods:
+In APK, you can deploy APIs by using Kubernetes resources, if you prefer a Kubernetes-native experience. However, APK also expose REST APIs, and you can create APIs using any of the following three methods:
 
 - [Create API using CRs](../create-and-deploy-apis/create-api-using-cr) - This method requires manually defining the API by creating YAML files for Kubernetes resources such as APIs, HTTPRoutes, Deployments, Services, ..etc, giving you complete control over the deployment but requiring some knowledge of Kubernetes and being potentially more time-consuming.
 
