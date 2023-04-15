@@ -48,13 +48,15 @@ Follow the instructions below to use Asgardeo as the Identity Provider (IdP) to 
 
 ## Step 6 - Install WSO2 APK
 
-```tab="Format"
-helm install <helm-chart-name> . -n <namespace>
-```
+=== "Format"
+	```console
+	helm install <helm-chart-name> . -n <namespace>
+	```
 
-```tab="Example"
-helm install apk-test . -n apk
-```
+=== "Example"
+	```console
+	helm install apk-test . -n apk
+	```
 
 ## Step 7 - Generate an Access Token
 

@@ -1,13 +1,8 @@
----
-template: templates/single-column.html
----
 <div class="homePage">
     <div class="section01">
         <div class="leftContent">
-            <div class="md-main .md-content " style="float:right; width: 55%; align:right;  flex-shrink: 0;min-width: 40%; max-height: 100%; max-width:50%; margin-left:10px; margin-top:20px">
-            <a href="https://wso2.com/blogs/thesource/announcing-wso2-api-platform-for-kubernetes/">
-                <img src="assets/img/apk-blog.png" title="WSO2 APK Blog" width="800" height="300" alt="WSO2 APK Blog"/>
-            </a>
+            <div class="md-main .md-content " style="float:right; width: 55%; align:right;  flex-shrink: 0;min-width: 40%; max-height: 100%; max-width:50%; margin-left:10px;">
+            <a href="https://wso2.com/blogs/thesource/announcing-wso2-api-platform-for-kubernetes/" class="banner-link"></a>
             </div>
             <p>
                 APK is WSO2's cloud native API management platform. APK is designed to help you build, deploy, and manage APIs in a cloud environment. Our platform is built on top of a microservices architecture and uses containerization technologies to ensure scalability and flexibility. With features like automatic failover and load balancing, our APK platform is designed to be highly available and able to handle large numbers of API requests without performance degradation. We've also added support for continuous delivery and deployment, so you can quickly and easily push updates to your API services.
@@ -15,7 +10,8 @@ template: templates/single-column.html
             </br>
             <h2>Download</h2>
             <a href="https://github.com/wso2/apk/releases">
-                <img src="assets/img/download-apk.png" title="Download WSO2 APK" width="90" alt="Download WSO2 APK"/>
+                                 <i class="fa-solid fa-file-arrow-down"></i>
+
             </a>
         </div>
         <!--<div class="md-main .md-content " style="float:right; width: 55%; align:right;  flex-shrink: 0;min-width: 40%; max-height: 100%; max-width:50%; margin-left:10px; margin-top:20px">
@@ -69,3 +65,17 @@ template: templates/single-column.html
         </div>
     </div>-->
 </div>
+{% raw %}
+<style>
+.md-sidebar.md-sidebar--primary {
+    display: none;
+}
+.md-sidebar.md-sidebar--secondary{
+    display: none;
+}
+.section02 {
+    display: flex;
+    justify-content: space-between;
+}
+</style>
+{% endraw %}

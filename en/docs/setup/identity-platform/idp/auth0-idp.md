@@ -59,13 +59,15 @@ If you have not created the user already, [create a user](https://auth0.com/docs
 
 ## Step 7 - Restart WSO2 APK
 
-```tab="Format"
-helm install <helm-chart-name> . -n <namespace>
-```
+=== "Format"
+	```
+	helm install <helm-chart-name> . -n <namespace>
+	```
 
-```tab="Example"
-helm install apk-test . -n apk
-```
+=== "Example"
+	```
+	helm install apk-test . -n apk
+	```
 
 
 ## Step 8 - Generate an Access Token

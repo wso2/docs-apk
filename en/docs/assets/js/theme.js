@@ -19,6 +19,23 @@
 /*
 * Handle opening external links in a new tab
 */
+/* 
+ * Initialize highlightjs 
+ */
+hljs.initHighlightingOnLoad();
+(function() {
+    if(document.querySelector('.tab-selector')){
+        document.querySelector('.tab-selector').addEventListener('click', function(e) {
+            // Show hide tab content next to the clicked tab
+            var tabContentToShow = e.target.nextElementSibling;
+            if(tabContentToShow.style.display === 'none') {
+                tabContentToShow.style.display = 'block';
+            } else {
+                tabContentToShow.style.display = 'none';
+            }
+        });
+    }
+})();
 
 (function() {
     var links = document.links;
@@ -93,7 +110,7 @@ for (var i = 0; i < dropdowns.length; i++) {
  * Reading versions
  */
 var pageHeader = document.getElementById('page-header');
-var docSetLang = pageHeader.getAttribute('data-lang');
+var docSetLang = (pageHeader && pageHeader.getAttribute('data-lang')) || 'en';
 
 (window.location.pathname.split('/')[1] !== docSetLang) ? 
     docSetLang = '' :
@@ -200,11 +217,6 @@ request.onerror = function() {
 };
 
 request.send();
-
-/* 
- * Initialize highlightjs 
- */
-hljs.initHighlightingOnLoad();
 
 /*
  * Handle TOC toggle

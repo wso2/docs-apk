@@ -10,7 +10,7 @@ You need to define the API Policies within the HTTPRoute Custom Resource (CR) wh
 
 The following is a code snippet of sample HTTPRoute CR.
 
-```
+```yml
 filters:
     - type: RequestHeaderModifier
       requestHeaderModifier:
@@ -30,164 +30,167 @@ filters:
 
 ??? note "Attach API Policies to the Request Flow Only"
 
-    ```tab="Remove Request Header"
+    === "Remove Request Header"
     
-    # Attach an API Policy to Remove a Single Request Header
-    --------------------------------------------------------
-    filters:
-        - type: RequestHeaderModifier
-          requestHeaderModifier:
-            remove:
-            - sampleRemove1
-    
-    ---------------------------------------------------------------------------------------------------
+        Attach an API Policy to Remove a Single Request Header
 
-    # Attach an API Policy to Remove Multiple Request Headers
-    ----------------------------------------------------------
-    filters:
-        - type: RequestHeaderModifier
-          requestHeaderModifier:
-            remove:
-            - sampleRemove1
-            - sampleRemove3
-
-    ```
-
-    ```tab="Update Request Header"
-
-    # Attach an API Policy to Update a Single Request Header
-    --------------------------------------------------------
-    filters:
-        - type: RequestHeaderModifier
-          requestHeaderModifier:
-            set:
-            - name: sampleAdd1
-              value: sampleValue1
-    
-    ---------------------------------------------------------------------------------------------------
-    
-    # Attach Policies to Update Multiple Request Headers
-    ------------------------------------------------------
-    filters:
-        - type: RequestHeaderModifier
-          requestHeaderModifier:
-            set:
-            - name: sampleAdd1
-              value: sampleValue1
-            - name: sampleAdd4
-              value: sampleValue4
-    ```
-
-
-    ```tab="Remove and Update Request Headers"
-
-    # Attach API Policies to Remove a Request Header and to Update Another Request Header
-    ---------------------------------------------------------------------------------------
-    filters:
-        - type: RequestHeaderModifier
-          requestHeaderModifier:
-            remove:
-            - sampleRemove1
-            set:
-            - name: sampleAdd1
-              value: sampleValue1
-
-    ---------------------------------------------------------------------------------------------------
-
-    # Attach Policies to Remove and Update Multiple Request Headers
-    ----------------------------------------------------------------
-    filters:
-        - type: RequestHeaderModifier
-          requestHeaderModifier:
-            remove:
-            - sampleRemove1
-            - sampleRemove2
-            set:
-            - name: sampleAdd1
-              value: sampleValue1
-            - name: sampleAdd2
-              value: sampleValue2
+        ```yml
+        filters:
+            - type: RequestHeaderModifier
+              requestHeaderModifier:
+                remove:
+                - sampleRemove1
+        ``` 
         
-    ```
+        Attach an API Policy to Remove Multiple Request Headers
+
+        ```yml
+        filters:
+            - type: RequestHeaderModifier
+              requestHeaderModifier:
+                remove:
+                - sampleRemove1
+                - sampleRemove3
+        ```
+
+    === "Update Request Header"
+
+		Attach an API Policy to Update a Single Request Header
+
+		```yml
+		filters:
+			- type: RequestHeaderModifier
+			requestHeaderModifier:
+				set:
+				- name: sampleAdd1
+				value: sampleValue1
+
+
+		Attach Policies to Update Multiple Request Headers
+
+		```yml
+		filters:
+			- type: RequestHeaderModifier
+			requestHeaderModifier:
+				set:
+				- name: sampleAdd1
+				value: sampleValue1
+				- name: sampleAdd4
+				value: sampleValue4
+		```
+
+    === "Remove and Update Request Headers"
+
+		Attach API Policies to Remove a Request Header and to Update Another Request Header
+
+		```yml
+		filters:
+			- type: RequestHeaderModifier
+			requestHeaderModifier:
+				remove:
+				- sampleRemove1
+				set:
+				- name: sampleAdd1
+				value: sampleValue1
+		```
+
+		Attach Policies to Remove and Update Multiple Request Headers
+
+		```yml
+		filters:
+			- type: RequestHeaderModifier
+			requestHeaderModifier:
+				remove:
+				- sampleRemove1
+				- sampleRemove2
+				set:
+				- name: sampleAdd1
+				value: sampleValue1
+				- name: sampleAdd2
+				value: sampleValue2
+		```
 
 ??? note "Attach API Policies to a Response Flow Only"
 
-    ```tab="Remove Response Header"
+    === "Remove Response Header"
 
-    # Attach an API Policy to Remove a Single Response Header
-    --------------------------------------------------------
-    filters:
-        - type: ResponseHeaderModifier
-          responseHeaderModifier:
-            remove:
-            - sampleRemove1
+		Attach an API Policy to Remove a Single Response Header
+
+		```yml
+		filters:
+			- type: ResponseHeaderModifier
+			responseHeaderModifier:
+				remove:
+				- sampleRemove1
+		```
+
+		Attach an API Policy to Remove Multiple Response Headers
+
+		```yml
+		filters:
+			- type: ResponseHeaderModifier
+			responseHeaderModifier:
+				remove:
+				- sampleRemove1
+				- sampleRemove2
+		```
+
+    === "Update Response Header"
     
-    ---------------------------------------------------------------------------------------------------
+		Attach an API Policy to Update a Single Response Header
 
-    # Attach an API Policy to Remove Multiple Response Headers
-    ----------------------------------------------------------
-    filters:
-        - type: ResponseHeaderModifier
-          responseHeaderModifier:
-            remove:
-            - sampleRemove1
-            - sampleRemove2
-    ```
+		```yml
+		filters:
+			- type: ResponseHeaderModifier
+				responseHeaderModifier:
+				set:
+				- name: sampleAdd2
+					value: sampleValue2
+		```
+		
+		Attach Policies to Update Multiple Response Headers
 
-    ```tab="Update Response Header"
-    
-    # Attach an API Policy to Update a Single Response Header
-    ----------------------------------------------------------
-    filters:
-        - type: ResponseHeaderModifier
-          responseHeaderModifier:
-            set:
-            - name: sampleAdd2
-              value: sampleValue2
-    
-    ---------------------------------------------------------------------------------------------------
-    
-    # Attach Policies to Update Multiple Response Headers
-    ------------------------------------------------------
-    filters:
-        - type: ResponseHeaderModifier
-          responseHeaderModifier:
-            set:
-            - name: sampleAdd2
-              value: sampleValue2
-            - name: sampleAdd4
-              value: sampleValue4
-    ```
+		```yml
+		filters:
+			- type: ResponseHeaderModifier
+				responseHeaderModifier:
+				set:
+				- name: sampleAdd2
+					value: sampleValue2
+				- name: sampleAdd4
+					value: sampleValue4
+		```
 
-    ```tab="Remove and Update Response Headers"
+    === "Remove and Update Response Headers"
 
-    # Attach API Policies to Remove a Response Header and to Update Another Response Header
-    ---------------------------------------------------------------------------------------
-    filters:
-        - type: ResponseHeaderModifier
-          responseHeaderModifier:
-            remove:
-            - sampleRemove1
-            set:
-            - name: sampleAdd2
-              value: sampleValue2
+		Attach API Policies to Remove a Response Header and to Update Another Response Header
 
-    ---------------------------------------------------------------------------------------------------
+		```yml
+		filters:
+			- type: ResponseHeaderModifier
+			responseHeaderModifier:
+				remove:
+				- sampleRemove1
+				set:
+				- name: sampleAdd2
+				value: sampleValue2
+		```
 
-    # Attach Policies to Remove and Update Multiple Response Headers
-    ----------------------------------------------------------------
-    filters:
-        - type: ResponseHeaderModifier
-          responseHeaderModifier:
-            remove:
-            - sampleRemove1
-            - sampleRemove2
-            set:
-            - name: sampleAdd2
-              value: sampleValue2
-            - name: sampleAdd4
-              value: sampleValue4
-    ```
+		Attach Policies to Remove and Update Multiple Response Headers
+
+		```yml
+		filters:
+			- type: ResponseHeaderModifier
+			responseHeaderModifier:
+				remove:
+				- sampleRemove1
+				- sampleRemove2
+				set:
+				- name: sampleAdd2
+				value: sampleValue2
+				- name: sampleAdd4
+				value: sampleValue4
+		```
 
 ??? note "Attach API Policies to Request and Response Flows"
 
@@ -283,7 +286,7 @@ Follow the instructions below to attach operation-level API Policies to an API v
 
      Let's attach API policies as follows:
     
-     ```
+     ```yml
       filters:
         - type: ResponseHeaderModifier
           responseHeaderModifier:

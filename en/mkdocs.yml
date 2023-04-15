@@ -21,8 +21,8 @@ site_author: WSO2
 site_url: https://apk.docs.wso2.com/en/latest/
 
 # Repository
-repo_name: wso2/docs-apk
-repo_url: https://github.com/wso2/docs-apk
+repo_name: wso2/apk
+repo_url: https://github.com/wso2/apk
 # Change the edit_url later when 1.0.0 is released
 edit_uri: https://github.com/wso2/docs-apk/edit/main/en/docs/
 dev_addr: localhost:8000
@@ -34,17 +34,41 @@ copyright: WSO2 API Platform for Kubernetes - Documentation
 theme:
     name: material
     custom_dir: theme/material
-    palette:
-        primary: #1a6bac
-        accent: #1a6bac
-    logo: images/logo.svg
+    logo: images/logo-for-light.svg
     favicon: images/favicon.png
-    highlightjs: true
-    feature:
-        tabs: true
+    features:
+        - content.tabs.link
+        - content.code.copy
+        - navigation.tabs
+        - navigation.tabs.sticky
+        - content.action.edit
+        - content.action.view
+        # - navigation.top
     language: 'en'
+    palette:
+
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
 #Breaks build if there's a warning
-strict: true
+comments: true
+strict: false
 # Navigation
 nav:
     - Home: index.md
@@ -209,10 +233,18 @@ nav:
 
 # Extensions
 markdown_extensions:
+    # - pymdownx.highlight:
+    #     anchor_linenums: true
+    #     line_spans: __span
+    #     pygments_lang_class: true
+    - pymdownx.snippets
+    - pymdownx.superfences
+    - pymdownx.tabbed:
+        alternate_style: true 
     - markdown.extensions.admonition
-    - markdown.extensions.codehilite:
-          linenums: true
-          use_pygments: false
+    # - markdown.extensions.codehilite:
+    #       linenums: true
+    #       use_pygments: false
     - markdown.extensions.def_list
     - markdown.extensions.footnotes
     - markdown.extensions.meta
@@ -232,7 +264,6 @@ markdown_extensions:
     - pymdownx.keys
     - pymdownx.mark
     - pymdownx.smartsymbols
-    - pymdownx.superfences
     - pymdownx.tasklist:
           custom_checkbox: true
     - pymdownx.tilde
@@ -250,15 +281,28 @@ plugins:
 
     # Extra
 extra_css:
-    - assets/lib/highlightjs/default.min.css
-    - assets/css/theme.css
+    # You can select a different theme for syntax highlighting by simply 
+    # selecting a different css file file bellow from the available list.
+    - assets/lib/highlightjs/styles/vs.min.css
+    # Make sure to activate only one palette at a time.
+    # If all the palettes are commented out, the default material theme palette will take over
+    # - assets/css/blue-palette-alt1.css
+    - assets/css/blue-palette-alt2.css
+    # - assets/css/blue-palette.css
+    # - assets/css/green-palette.css
+    # - assets/css/orange-palette.css
+    - assets/css/apktheme.css
     - assets/lib/json-formatter/json-formatter.css
+    - assets/css/config-catalog.css
+    - assets/lib/fontawesome-free-6.3.0-web/css/all.min.css
+    - assets/css/redoc.css
 extra_javascript:
-    - assets/lib/json-formatter/json-formatter.umd.js
     - assets/lib/highlightjs/highlight.min.js
-    - assets/js/theme.js
-    - assets/lib/backtotop/js/util.js
-    - assets/lib/backtotop/js/main.js
+    - assets/lib/json-formatter/json-formatter.umd.js
+    - assets/js/apktheme.js
+    # - assets/lib/backtotop/js/util.js
+    # - assets/lib/backtotop/js/main.js
+
 extra:
     social:
         - type: github
@@ -271,3 +315,4 @@ extra:
     #base_path: http://localhost:8000
     base_path: https://apk.docs.wso2.com/en/latest
     envoy_path: https://www.envoyproxy.io/docs/envoy/v1.20.0
+# static_cache_control: "no-cache"

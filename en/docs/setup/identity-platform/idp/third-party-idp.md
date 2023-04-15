@@ -38,7 +38,7 @@ This includes setting the application's settings, such as the application name a
 1. Navigate to the `<APK-HOME>/helm-charts/` directory and open the `values.yaml` file.
 2. Update the IDP related configurations in the `idp` section.
 
-      ```
+      ```json
        idp:
          issuer: ""
          authorizeEndpoint: ""
@@ -74,13 +74,15 @@ The Idp section should include the following parameters:
 
 Start WSO2 APK using the following command:
 
-```tab="Format"
-helm install <helm-chart-name> . -n <namespace>
-```
+=== "Format"
+	```
+	helm install <helm-chart-name> . -n <namespace>
+	```
 
-```tab="Example"
-helm install apk-test . -n apk
-```
+=== "Example"
+	```
+	helm install apk-test . -n apk
+	```
 
 ## Step 8 - Generate an Access Token
 
