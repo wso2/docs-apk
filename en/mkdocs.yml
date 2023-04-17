@@ -98,7 +98,9 @@ nav:
                 - Create API using CR: create-api/create-and-deploy-apis/create-api-using-cr.md
            - Manage Service Endpoint:
                 - Manage Certificate: create-api/manage-service-endpoint/manage-certificate.md
-                - Manage Security: create-api/manage-service-endpoint/manage-security.md
+                - Manage Security:
+                    - Via REST API: create-api/manage-service-endpoint/manage-security-via-rest-api.md
+                    - Via CR: create-api/manage-service-endpoint/manage-security-via-crs.md
            - Create API Policies: 
                 - Overview: create-api/create-and-attach-api-policies/api-policies-overview.md
                 - Header manipulation:  
