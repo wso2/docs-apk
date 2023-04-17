@@ -1,3 +1,6 @@
+# Add Basic Auth Backend Security via CRs
+
+
 You can secure the access to your backend via Basic Authentication scheme. For that you need to specify the Basic Auth credentials in the `Backend` resource. You have to have a `Secret` resource containing `usename` and `password` data.
 
 Let's say you have the following `Secret` which contains the credentials:
