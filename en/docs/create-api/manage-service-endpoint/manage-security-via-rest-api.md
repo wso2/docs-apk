@@ -17,9 +17,10 @@ For that, you can use one of the following ways.
   kind: Secret
   metadata:
     name: backend-creds
+    namespace: apk
   data:
-    username: YWRtaW4K
-    password: YWRtaW4K
+    username: YWRtaW4=
+    password: YWRtaW4=
   type: Opaque
   ```
 
