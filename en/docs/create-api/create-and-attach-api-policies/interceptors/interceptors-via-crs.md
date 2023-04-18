@@ -280,7 +280,8 @@ spec:
       key: ca.crt
 ```
 
-Refer to [request-response-mediation-interceptors](https://github.com/wso2/apk/tree/main/samples/request-response-mediation-interceptors) sample resources in APK repo.
+For reference, a sample interceptor service for data conversion between application/json and application/xml data types with interceptor policy CRs can be found here: [request-response-mediation-interceptors](https://github.com/wso2/apk/tree/main/samples/request-response-mediation-interceptors)
+
 
 ## Configuring Gateway level Interceptors
 
