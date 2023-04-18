@@ -7,17 +7,6 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
 
 3.  Install the APK components and start WSO2 API Platform For Kubernetes.
 
-<<<<<<< HEAD
-	=== "Format"
-		```console
-		helm install <helm-chart> . -n <namespace>
-		```
-
-	=== "Command"
-		```console
-		helm install apk-test . -n apk
-		```
-=======
      ```tab="Format"
     helm install <chart-name> <repository-name>/apk-helm -n <namespace>
      ```
@@ -26,7 +15,6 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
      ```tab="Command"
      helm install apk_test wso2apk/apk-helm -n apk
      ```
->>>>>>> 2362101 (Update docs)
 
     !!! info "Optional"
 
