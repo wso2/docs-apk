@@ -23,8 +23,9 @@ spec:
   apiVersion: 1.0.0
   context: /my-sample-api/1.0.0
   definitionFileRef: swagger-definition-file
-  prodHTTPRouteRefs: 
-  - my-http-route
+  production:
+  - httpRouteRefs:
+    - my-http-route
   organization: wso2-org
 ```
 
@@ -143,11 +144,11 @@ Here `interceptor-cert-secret` refers to a Kubernetes `Secret` resource which co
 
 !!! Tip
     
-    You can define CA certificate of interceptor service using three different ways. If you have the certificate on your hand use `certificateInline` to define it inlien. Or you can use `secretRef` or `configMapRef` feilds to read them from a `Secret` resource or a `ConfigMap` resource respectively.
+    You can define CA certificate of interceptor service using three different ways. If you have the certificate on your hand use `certificateInline` to define it inline. Or you can use `secretRef` or `configMapRef` feilds to read them from a `Secret` resource or a `ConfigMap` resource respectively. Check the [Manage Certificate](../../../manage-service-endpoint/manage-certificate/) section for more information.
 
 ## Configuring API level Interceptors
 
-When you want to apply the Interceptor `APIPolicy` for the `API`, you can create a `APIPolicy` with `targetRef.kind` property set to `HTTPRoute` and give the `targetRef.name` as the name of the `HTTPRoute`resource. Refer the following example which describes a complete example.
+When you want to apply the Interceptor `APIPolicy` for the `API`, you can create a `APIPolicy` with `targetRef.kind` property set to `API` and give the `targetRef.name` as the name of the `API`resource. Refer the following example which describes a complete example.
 
 ### Create your API
 
@@ -164,8 +165,9 @@ spec:
   apiVersion: 1.0.0
   context: /my-sample-api/1.0.0
   definitionFileRef: swagger-definition-file
-  prodHTTPRouteRefs: 
-  - my-http-route
+  production:
+  - httpRouteRefs:
+    - my-http-route
   organization: wso2-org
 ```
 
@@ -311,4 +313,4 @@ spec:
 
 !!! Info
 
-    This global interceptor is a separate execution from API/Resource level interceptors we discussed above and works independently. 
+    This global interceptor is a separate execution from API/Resource level interceptors as we discussed above and they works independently.
