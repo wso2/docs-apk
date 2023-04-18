@@ -1,22 +1,13 @@
 
 Follow the instructions below to deploy APK Data Service (DS) servers and the Cloud Native Postgres(CloudNativePG) in the Kubernetes cluster.
 
-1. Download the latest [WSO2 API Platform For Kubernetes release](https://github.com/wso2/apk/releases) and unzip it.
+1. ``` helm repo add <repository-name> https://github.com/wso2/apk/releases/download/0.0.1-m8 ```
 
-      Let's refer to the unzipped folder as `<APK-HOME>`.
+2. ``` helm dependency update ```
 
-2. Navigate to the `<APK-HOME>/<helm-charts>/` directory.
+3.  Install the APK components and start WSO2 API Platform For Kubernetes.
 
-      `cd <APK-HOME>/<helm-charts>/`
-
-3.  Download the dependent charts.
-    
-     ```
-     helm dependency build
-     ```
-
-4.  Install the APK components and start WSO2 API Platform For Kubernetes.
-
+<<<<<<< HEAD
 	=== "Format"
 		```console
 		helm install <helm-chart> . -n <namespace>
@@ -26,6 +17,16 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
 		```console
 		helm install apk-test . -n apk
 		```
+=======
+     ```tab="Format"
+    helm install <chart-name> <repository-name>/apk-helm -n <namespace>
+     ```
+     
+     
+     ```tab="Command"
+     helm install apk_test wso2apk/apk-helm -n apk
+     ```
+>>>>>>> 2362101 (Update docs)
 
     !!! info "Optional"
 
