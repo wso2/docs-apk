@@ -280,6 +280,8 @@ spec:
       key: ca.crt
 ```
 
+Refer to [request-response-mediation-interceptors](https://github.com/wso2/apk/tree/main/samples/request-response-mediation-interceptors) sample resources in APK repo.
+
 ## Configuring Gateway level Interceptors
 
 If you want all of your requests coming to the Gateway (from all the APIs deployed in the Gateway) to be intercepted, then you can target the Interceptor `APIPolicy` to your `Gateway` resource like below:
