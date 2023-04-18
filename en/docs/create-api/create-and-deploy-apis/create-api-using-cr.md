@@ -29,8 +29,8 @@ spec:
   apiVersion: 1.0.0
   context: /http-bin-api/1.0.0
   production:
-    - httpRouteRefs:
-      - prod-http-route-http-bin-api
+  - httpRouteRefs:
+    - prod-http-route-http-bin-api
 ```
 
 !!! Info

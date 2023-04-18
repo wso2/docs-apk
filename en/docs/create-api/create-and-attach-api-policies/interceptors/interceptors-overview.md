@@ -23,9 +23,9 @@ spec:
          namespace: ns
       - response_headers
   targetRef:
-    group: gateway.networking.k8s.io
-    kind: HTTPRoute
-    name: sample-http-route
+    group: dp.wso2.com
+    kind: API
+    name: sample-api
 ```
 
 If you are an API developer, you can write a custom request/response interceptor microservice in any programming language of your choice by following [the Interceptor OpenAPI Definition](https://github.com/wso2/apk/blob/main/developer/resources/interceptor-service-open-api-v1.yaml). Then you can configure the following spec feilds in the `APIPolicy` CR to wire your interceptor serivce with the `API`.
@@ -50,7 +50,7 @@ If you are an API developer, you can write a custom request/response interceptor
 </table>
 
 
-You can define interceptors on an API level (per API) and at resource level. How to do these are explained below in detail. If a request/response interceptor is on an API level and a resource level, interceptors properties are combined using proirity order defined in the following order. You can define properties under `default` and/or `override` section in API level `APIPolicy` and/or resource level `APIPolicy`. Those values are combined using the priority order defined as below. Priority descreses towards the bottom of the table.
+You can define interceptors on an API level (per API) and at resource level. How to do these are explained below in detail. If a request/response interceptor is on an API level and a resource level, interceptors properties are combined using proirity order defined in the following order. You can define properties under `default` and/or `override` section in API level `APIPolicy` and/or resource level `APIPolicy`. These values are combined using the priority order defined below, with priority decreasing towards the bottom of the table.
 
 <table>
 <tbody>
@@ -69,7 +69,7 @@ You can define interceptors on an API level (per API) and at resource level. How
 </tbody>
 </table>
 
-When you want the policy only to be defined in a single level, then defining the interceptor configurations in either `default` or `overribe` sections will work.
+When you want the policy only to be defined in a single level, then defining the interceptor configurations in either `default` or `override` sections will work.
 
 ## Configuring Interceptors
 
