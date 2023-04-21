@@ -28,6 +28,11 @@ spec:
     name: sample-api
 ```
 
+When you have attahced an Interceptor `APIPolicy` like above example to your `API`, then the request flow (`1`, `2`, `3`, and `4` numbered circles) and response flow (`5`, `6`, `7`, and `8` numbered circles) can be depicted as below.
+
+![Interceptors]({{base_path}}/en/latest/assets/img/api-management/api-policies/interceptors/interceptors-light.png#only-light)
+![Interceptors]({{base_path}}/en/latest/assets/img/api-management/api-policies/interceptors/interceptors-dark.png#only-dark)
+
 If you are an API developer, you can write a custom request/response interceptor microservice in any programming language of your choice by following [the Interceptor OpenAPI Definition](https://github.com/wso2/apk/blob/main/developer/resources/interceptor-service-open-api-v1.yaml). Then you can configure the following spec feilds in the `APIPolicy` CR to wire your interceptor serivce with the `API`.
 
 <table>
