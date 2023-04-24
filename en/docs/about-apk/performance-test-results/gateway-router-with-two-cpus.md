@@ -75,7 +75,7 @@ In order to handle high request counts in Enforcer, `authService`'s resource all
 
 The following graph illustrates the throughput against the number of concurrent users.
 
-[![Architecture](../../assets/img/performance-test-results/tps-2-cpu.png)](../../assets/img/performance-test-results/tps-2-cpu.png)
+[![TPS 2 CPUs](../../assets/img/performance-test-results/tps-2-cpu.png)](../../assets/img/performance-test-results/tps-2-cpu.png)
 
 **Key Observations**
 
@@ -85,7 +85,7 @@ For a given payload size, APK provides a most likely consistent throughput level
 
 Backend delay is assigned as zero milliseconds when obtaining test results. The below graph shows how response time varied for different concurrent user counts. Also, the same graph shows the impact of the payload size considering the same two parameters.
 
-[![Architecture](../../assets/img/performance-test-results/response-time-2-cpu.png)](../../assets/img/performance-test-results/response-time-2-cpu.png)
+[![Response time 2 CPUs](../../assets/img/performance-test-results/response-time-2-cpu.png)](../../assets/img/performance-test-results/response-time-2-cpu.png)
 
 **Key observations:**
 
@@ -95,4 +95,4 @@ When increasing concurrent users for given payload size, APK consumes steady gro
 
 Below graphs show 90th, 95th, and 99th Response Time percentiles for 0ms backend delay. This is useful to measure the percentage of requests that exceeded the response time value for a given percentile. A percentile can also tell the percentage of requests completed below the particular response time value.
 
-[![Architecture](../../assets/img/performance-test-results/percentile-2-cpu.png)](../../assets/img/performance-test-results/percentile-2-cpu.png)
+[![Percentiles 2 CPUs](../../assets/img/performance-test-results/percentile-2-cpu.png)](../../assets/img/performance-test-results/percentile-2-cpu.png)

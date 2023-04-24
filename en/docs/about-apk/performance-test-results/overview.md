@@ -13,7 +13,7 @@ Two key performance metrics were used to measure the performance of each test.
 
 Given below are the details of the deployment that was used for the performance test that is recorded in this documentation.
 
-[![Architecture](../../assets/img/performance-test-results/apk-perf-test.png)](../../assets/img/performance-test-results/apk-perf-test.png)
+[![Deployment](../../assets/img/performance-test-results/apk-perf-test.png)](../../assets/img/performance-test-results/apk-perf-test.png)
 
 !!! important
     For better throughput and performance, it is recommended to use compute optimized nodes for the cluster and the Jmeter servers.
