@@ -79,3 +79,23 @@ spec:
 ```
 
 If you have used a combination of above methods for a single `Backend`, only one is picked with the priority defined as `certificateInline` > `secretRef` > `configMapRef` order where `certificateInline` has the highest priority.
+
+## Configuring SAN verification of the certificate
+
+By default SAN verification is enabled and it uses the `spec.services[*].host` as the verifier. If you have a certificate configured in your service that is not same as the above mentioned value then you can configure it in `spec.tls.allowedSANs`:
+
+```
+apiVersion: dp.wso2.com/v1alpha1
+kind: Backend
+metadata:
+  name: my-sample-backend
+spec:
+  protocol: https
+  services:
+  - host: backend-service.namespace
+    port: 443
+  tls:
+    ...
+    allowedSANs:
+    - "my.site.host.name"
+```
