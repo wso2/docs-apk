@@ -154,6 +154,8 @@ nav:
             - Runtime APIs: catalogs/api-reference-runtime.md
             - Developer Portal APIs: catalogs/api-reference-developer-portal.md
             - Admin APIs: catalogs/api-reference-admin.md
+        - Config Catalog:
+            - Overview - Config Catalog: catalogs/config-catalog.md
     #   - CLI Catalog: catalogs/cli-reference.md
     #   - CRD Catalog: catalogs/kubernetes-crds.md
     #    - Helm Catalog: catalogs/config-catalog.md
