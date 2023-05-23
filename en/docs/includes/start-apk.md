@@ -1,7 +1,7 @@
 
 Follow the instructions below to deploy APK Data Service (DS) servers and the Cloud Native Postgres(CloudNativePG) in the Kubernetes cluster.
 
-1. ``` helm repo add <repository-name> https://github.com/wso2/apk/releases/download/0.0.1-m8 ```
+1. ``` helm repo add <repository-name> https://github.com/wso2/apk/releases/download/0.0.1-m10 ```
 
 2. ``` helm dependency update ```
 
