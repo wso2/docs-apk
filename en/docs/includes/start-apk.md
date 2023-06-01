@@ -14,7 +14,7 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
 	
 	=== "Command"
 		```
-		helm install apk_test wso2apk/apk-helm --version 0.0.1-m10 -n apk
+		helm install apk-test wso2apk/apk-helm --version 0.0.1-m10 -n apk
 		```
 
 	!!! info "Optional"
