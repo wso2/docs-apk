@@ -1,6 +1,6 @@
 # Quick Start Guide
 
-This section is a step-by-step guide to create, depoly and invoke an API using the WSO2 API Platform For Kubernetes.
+This section is a step-by-step guide to create, deploy and invoke an API using the WSO2 API Platform For Kubernetes.
 
 ## Before you begin...
 
