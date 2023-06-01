@@ -37,7 +37,6 @@ theme:
     logo: images/logo-for-light.svg
     favicon: images/favicon.png
     features:
-        - content.tabs.link
         - content.code.copy
         - navigation.tabs
         - navigation.tabs.sticky
