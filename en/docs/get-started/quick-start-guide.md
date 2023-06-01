@@ -29,7 +29,7 @@ The services should be created in a different namespace than the APK or Kubernet
 To deploy sample backend use the following command.
 
 ```command
-kubctl apply -f sample-backend.yaml -n apk-backend
+kubectl apply -f sample-backend.yaml -n apk-backend
 ```
 ```
 
