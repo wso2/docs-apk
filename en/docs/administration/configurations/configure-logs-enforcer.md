@@ -50,7 +50,7 @@ Filters log entries based on their level. For example, threshold set to 'WARN' w
     ```properties
     appender.ENFORCER_CONSOLE.filter.threshold.level = DEBUG
     ...
-    logger.enforcer.name = org.wso2.choreo.connect.enforcer
+    logger.enforcer.name = org.wso2.apk.enforcer
     logger.enforcer.level = ERROR
     logger.enforcer.additivity = false
     logger.enforcer.appenderRef.rolling.ref = ENFORCER_LOGFILE
