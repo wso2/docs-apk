@@ -235,6 +235,7 @@ nav:
                 - Adapter: administration/configurations/configure-logs-adapter.md
                 - Enforcer: administration/configurations/configure-logs-enforcer.md
                 - Router: administration/configurations/configure-logs-router.md
+        - Setup Distributed Tracing: administration/distributed-tracing.md
     - Reach Out:
         - Community: reachout/community.md # Brief description and links to Discord and Stack OverFlow
         - Support: https://wso2.com/subscription/#support
@@ -323,7 +324,7 @@ extra:
         - type: linkedin
           link: https://www.linkedin.com/company/wso2
     site_version: 1.0.0
-    #base_path: http://localhost:8000
-    base_path: https://apk.docs.wso2.com
+    base_path: http://localhost:8000
+    # base_path: https://apk.docs.wso2.com
     envoy_path: https://www.envoyproxy.io/docs/envoy/v1.20.0
 # static_cache_control: "no-cache"
