@@ -229,6 +229,12 @@ nav:
         #            - Custom Filters: setup/customizations/gateway-enforcer/mediation-extensions/custom-filters.md
     - Administration:
         - Test System APIs: administration/postman-tests.md
+        - Configurations:
+            - Configure Logs:
+                - Overview: administration/configurations/configure-logs-overview.md
+                - Adapter: administration/configurations/configure-logs-adapter.md
+                - Enforcer: administration/configurations/configure-logs-enforcer.md
+                - Router: administration/configurations/configure-logs-router.md
     - Reach Out:
         - Community: reachout/community.md # Brief description and links to Discord and Stack OverFlow
         - Support: https://wso2.com/subscription/#support
