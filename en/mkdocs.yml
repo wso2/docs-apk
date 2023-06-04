@@ -112,6 +112,9 @@ nav:
                     - Via CR: create-api/create-and-attach-api-policies/interceptors/interceptors-via-crs.md
                 - Query manipulation: 
                     - Overview: create-api/create-and-attach-api-policies/query-manipulation/query-manipulation-overview.md
+                - CORS:
+                    - Via REST API: create-api/create-and-attach-api-policies/cors/enable-cors-via-rest-api.md
+                    - Via CR: create-api/create-and-attach-api-policies/cors/enable-cors-via-crs.md
            - Rate Limiting:
                 - Overview: create-api/rate-limiting/rate-limiting-policy-overview.md
                 - Simple Rate Limiting:
