@@ -4,7 +4,15 @@ As the Enforcer component is implemented in Java, we are using the `log4j2` fram
 
 ## Configuring Log4j2 Properties
 
-All WSO2 products are shipped with the `log4j2` logging capabilities, which generates administrative activities and server side logs. The `log4j2` file governs how logging is performed by the Enforcer. You can configure the Log4j2 properties via the `log4j2.properties` file, which is located in ConfigMap file located in the following file in the APK helm chart.
+To configure log4j2 properties, update the `<APK_HOME>/helm-charts/values.yaml`'s `wso2.apk.dp.gatewayRuntime.deployment.enforcer.logging` section with the following values.
+
+```yaml
+logging:
+  level: DEBUG
+  logFile: logs/enforcer.log
+``` 
+
+All WSO2 products are shipped with the `log4j2` logging capabilities, which generates administrative activities and server side logs. The `log4j2` file governs how logging is performed by the Enforcer. You can configure the all the Log4j2 properties via the `log4j2.properties` file for advance use cases, which is located in ConfigMap file located in the following file in the APK helm chart.
 
 ```yaml
 apk/helm-charts/templates/data-plane/gateway-components/log-conf.yaml
