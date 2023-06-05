@@ -173,7 +173,7 @@ When using **Jaeger** for tracing, the format is same as for **Zipkin** to publi
         host: "jaeger"
         port: "9411"
         endpoint: "/api/v2/spans"
-        instrumentationName: "CHOREO-CONNECT"
+        instrumentationName: "APK"
         maximumTracesPerSecond: "2"
         maxPathLength: "256"
     ``` 
@@ -199,14 +199,14 @@ Follow these steps to configure WSO2 APK with Zipkin.
         host: "jaeger"
         port: "9411"
         endpoint: "/api/v2/spans"
-        instrumentationName: "CHOREO-CONNECT"
+        instrumentationName: "APK"
         maximumTracesPerSecond: "2"
         maxPathLength: "256"
     ``` 
     
 2. Follow the [quick start]({{base_path}}/en/latest/get-started/quick-start-guide/) guide and invoke backend.
 3. Invoke the newly create API and open Zipkin UI to view the traces. Navigate to <http://CLUSTER_IP:9411> 
-4. Filter traces by `tagQuery=otel.library.name=CHOREO-CONNECT` query.
+4. Filter traces by `tagQuery=otel.library.name=APK` query.
 
 You will be able to see all traces. Detailed trace view will look like below.
 
@@ -233,7 +233,7 @@ Follow these steps to configure WSO2 APK with Azure Application Insights.
           type: "azure"
           configProperties: 
             connectionString: {APPLICATIONINSIGHTS_CONNECTION_STRING}
-            instrumentationName: "CHOREO-CONNECT"
+            instrumentationName: "APK"
             maximumTracesPerSecond: "2"
         ``` 
 
@@ -245,7 +245,7 @@ Follow these steps to configure WSO2 APK with Azure Application Insights.
           type: "azure"
           configProperties: 
             connectionString: "InstrumentationKey=ab71943f-xxxx-xxxx-xxxx-fb2eb69ae11d;IngestionEndpoint=https://xxxxxx.applicationinsights.azure.com/"
-            instrumentationName: "CHOREO-CONNECT"
+            instrumentationName: "APK"
             maximumTracesPerSecond: "2"
         ``` 
 
@@ -273,7 +273,7 @@ You will be able to see all traces. Detailed trace view will look like below.
         host: "jaeger"
         port: "4317"
         endpoint: "/api/v2/spans"
-        instrumentationName: "CHOREO-CONNECT"
+        instrumentationName: "APK"
         maximumTracesPerSecond: "2"
         maxPathLength: "256"
         connectionTimeout: "20"
@@ -299,7 +299,7 @@ You will be able to browse through the request traces and expand each trace to v
         connectionString: "https://otlp.nr-data.net"
         authHeaderName: "api-key"
         authHeaderValue: "<INGEST_LICENSE_KEY>"
-        instrumentationName: "CHOREO-CONNECT"
+        instrumentationName: "APK"
         maximumTracesPerSecond: "2"
         maxPathLength: "256"
         connectionTimeout: "20"
@@ -314,7 +314,7 @@ You will be able to browse through the request traces and expand each trace to v
         connectionString: "https://otlp.nr-data.net"
         authHeaderName: "api-key"
         authHeaderValue: "e8f478ae6d3c97f845e16b6cfba0ea5e95e3NRAL"
-        instrumentationName: "CHOREO-CONNECT"
+        instrumentationName: "APK"
         maximumTracesPerSecond: "2"
         maxPathLength: "256"
         connectionTimeout: "20"
