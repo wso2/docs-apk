@@ -129,6 +129,18 @@ Supported distributed tracing systems,
                       cpu: "0.2"
                       memory: "256Mi"
         ---
+        apiVersion: v1
+        kind: Service
+        metadata:
+          name: zipkin
+        spec:
+          selector:
+            app: zipkin
+          ports:
+            - protocol: TCP
+              port: 9411
+              targetPort: 9411  
+        ---
         apiVersion: networking.k8s.io/v1
         kind: Ingress
         metadata:
@@ -145,19 +157,9 @@ Supported distributed tracing systems,
                         name: zipkin
                         port:
                           number: 9411
-        ---
-        apiVersion: v1
-        kind: Service
-        metadata:
-          name: zipkin
-        spec:
-          selector:
-            app: zipkin
-          ports:
-            - protocol: TCP
-              port: 9411
-              targetPort: 9411  
         ```
+    
+    Get your cluster IP and map that to either `jaeger.example.com` or `zipkin.example.com` in your /etc/hosts file. 
 
 ### Jaeger
 
@@ -179,7 +181,7 @@ When using **Jaeger** for tracing, the format is same as for **Zipkin** to publi
     ``` 
 
 2. Follow the [quick start]({{base_path}}/en/latest/get-started/quick-start-guide/) guide and invoke backend.
-3. Open Jaeger UI to view the traces. Navigate to http://CLUSTER_IP:16686
+3. Open Jaeger UI to view the traces. Navigate to <http://jaeger.example.com>
 
 You will be able to browse through the request traces and expand each trace to view complete trace details.
 
@@ -205,7 +207,7 @@ Follow these steps to configure WSO2 APK with Zipkin.
     ``` 
     
 2. Follow the [quick start]({{base_path}}/en/latest/get-started/quick-start-guide/) guide and invoke backend.
-3. Invoke the newly create API and open Zipkin UI to view the traces. Navigate to <http://CLUSTER_IP:9411> 
+3. Invoke the newly create API and open Zipkin UI to view the traces. Navigate to <http://zipkin.example.com> 
 4. Filter traces by `tagQuery=otel.library.name=APK` query.
 
 You will be able to see all traces. Detailed trace view will look like below.
