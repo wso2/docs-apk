@@ -251,11 +251,11 @@ Follow these steps to configure WSO2 APK with Azure Application Insights.
 
 3. Follow the [quick start]({{base_path}}/en/latest/get-started/quick-start-guide/) guide and invoke backend.
 4. Now open "Azure Application Insights" Trasaction search window and select `Dependency` for `Event types` filter  
-    ![Azure Trace Filter]({{base_path}}/assets/img/distributed-tracing/trace-azure-filter.png)
+    [![Azure Trace Filter](../assets/img/distributed-tracing/trace-azure-filter.png)](../assets/img/distributed-tracing/trace-azure-filter.png)
 
 You will be able to see all traces. Detailed trace view will look like below.
 
-![Azure Trace]({{base_path}}/assets/img/distributed-tracing/trace-azure.png)
+[![Azure Trace](../assets/img/distributed-tracing/trace-azure.png)](../assets/img/distributed-tracing/trace-azure.png)
 
 ### OpenTelemetry protocol (OTLP)
 
