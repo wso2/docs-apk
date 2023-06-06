@@ -15,6 +15,8 @@ Both these files are located in the same ConfigMap file located in the following
 apk/helm-charts/templates/data-plane/gateway-components/log-conf.yaml
 ```
 
+These configurations can be set using the `<APK_HOME>/helm-charts/values.yaml` file. Follow each section to configure the logs for each of the components.
+
 ## Error Codes in Logs 
 
 In addition to these, the adapter and enforcer components have been defined with a set of error codes for each of the components’ error logs, in order to uniquely identify application errors. Following are the error codes ranges for each of the components.

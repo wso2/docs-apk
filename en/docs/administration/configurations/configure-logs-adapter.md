@@ -1,6 +1,15 @@
 # Adapter Log Configurations
 
-The log configurations file for the Adapter is in `Config.toml` file located in ConfigMap file located in the following file in the APK helm chart.
+To configure Adapter logs, update the `<APK_HOME>/helm-charts/values.yaml`'s `wso2.apk.dp.adapter.logging` section with the following values.
+
+```yaml
+  logging:
+    level: "INFO" # LogLevels can be "DEBG", "FATL", "ERRO", "WARN", "INFO", "PANC"
+    logFile: "logs/adapter.log"
+    logFormat: "TEXT" # Values can be "JSON", "TEXT"
+``` 
+
+For the advanced configurations, the log configurations file for the Adapter is in `Config.toml` file located in ConfigMap file located in the following file in the APK helm chart.
 
 ```yaml
 apk/helm-charts/templates/data-plane/gateway-components/log-conf.yaml
