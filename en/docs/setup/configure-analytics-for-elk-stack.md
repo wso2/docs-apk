@@ -2,58 +2,26 @@
 
 ## Step 1 - Configure Enforcer
 
-1. Open `apk/helm-charts/templates/data-plane/gateway-components/log-conf.yaml` file.
+1. Open `<APK_HOME>/helm-charts/values.yaml` file.
 
-2. Set following config under `config.toml` section to enable analytics.
+2. Set following config under `wso2.apk.dp.gatewayRuntime` section to enable analytics.
 
-    ```toml
-    [analytics]
-      enabled = true
-      type = "ELK"
+    ```yaml
+    analytics:
+      enabled: true
+      type: "ELK"
     ```
 
-3. Add following configs under `log4j2.properties` section to publish logs to a file. 
+    !!! Note
+        Optionally, you can set the following configs to customize the analytics data.
 
-    1. Add `ENFORCER_ANALYTICS` to the appenders list.
-
-        ```toml
-        appenders = ENFORCER_ANALYTICS, ... (list of other available appenders)
-        ```
-
-    2. Add configurations for `ENFORCER_ANALYTICS` after `appenders`.
-
-        ```toml
-        appender.ENFORCER_ANALYTICS.type = RollingFile
-        appender.ENFORCER_ANALYTICS.name = ENFORCER_ANALYTICS
-        appender.ENFORCER_ANALYTICS.fileName = logs/enforcer_analytics.log
-        appender.ENFORCER_ANALYTICS.filePattern = /logs/enforcer_analytics-%d{MM-dd-yyyy}.log
-        appender.ENFORCER_ANALYTICS.layout.type = PatternLayout
-        appender.ENFORCER_ANALYTICS.layout.pattern = [%d] - %m%ex%n
-        appender.ENFORCER_ANALYTICS.policies.type = Policies
-        appender.ENFORCER_ANALYTICS.policies.time.type = TimeBasedTriggeringPolicy
-        appender.ENFORCER_ANALYTICS.policies.time.interval = 1
-        appender.ENFORCER_ANALYTICS.policies.time.modulate = true
-        appender.ENFORCER_ANALYTICS.policies.size.type = SizeBasedTriggeringPolicy
-        appender.ENFORCER_ANALYTICS.policies.size.size=10MB
-        appender.ENFORCER_ANALYTICS.strategy.type = DefaultRolloverStrategy
-        appender.ENFORCER_ANALYTICS.strategy.max = 20
-        appender.ENFORCER_ANALYTICS.filter.threshold.type = ThresholdFilter
-        appender.ENFORCER_ANALYTICS.filter.threshold.level = DEBUG
-        ```
-
-    3. Add `reporter` to the loggers list.
-
-        ```toml
-        loggers = reporter, ... (list of other available loggers)
-        ```
-
-    4. Add configurations for `reporter` after `loggers`.
-
-        ```toml
-        logger.reporter.name = org.wso2.am.analytics.publisher.reporter.elk
-        logger.reporter.level = INFO
-        logger.reporter.additivity = false
-        logger.reporter.appenderRef.rolling.ref = ENFORCER_ANALYTICS
+        ```yaml
+        analytics:
+          ...
+          # File name of the log file. Default value is "enforcer_analytics.log".
+          logFileName: "logs/analytics.log"
+          # Log level of the analytics data. Default value is "INFO".
+          logLevel: "DEBUG" 
         ```
 
 ## Step 2 - Set up the ELK Stack
