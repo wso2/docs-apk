@@ -216,7 +216,8 @@ nav:
             - Auth0: setup/identity-platform/idp/auth0-idp.md
             - Any Third-party IdP: setup/identity-platform/idp/third-party-idp.md
         - Configure Analytics: 
-            - ELK Stack: setup/configure-analytics-for-elk-stack.md
+            - Choreo Insights: setup/analytics/configure-analytics-for-choreo-insights.md
+            - ELK Stack: setup/analytics/configure-analytics-for-elk-stack.md
        #- Install: setup/install.md
        #- Deploy:
        #    - Deployment Patterns: get-started/dummy.md
