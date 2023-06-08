@@ -160,6 +160,40 @@ nav:
     #   - CLI Catalog: catalogs/cli-reference.md
     #   - CRD Catalog: catalogs/kubernetes-crds.md
     #    - Helm Catalog: catalogs/config-catalog.md
+    - Setup: 
+        - Prerequisites: setup/prerequisites.md
+        - Migration: setup/migration.md
+        - Organization: setup/organizations.md
+        - Configure Identity Provider:
+            - Overview: setup/identity-platform/idp/idp-overview.md
+            - Non-production: setup/identity-platform/idp/non-production-idp.md
+            - Asgardeo: setup/identity-platform/idp/asgardeo-idp.md
+            - Auth0: setup/identity-platform/idp/auth0-idp.md
+            - Any Third-party IdP: setup/identity-platform/idp/third-party-idp.md
+        - Configure Analytics: 
+            - Choreo Insights: setup/analytics/configure-analytics-for-choreo-insights.md
+            - ELK Stack: setup/analytics/configure-analytics-for-elk-stack.md
+       #- Install: setup/install.md
+       #- Deploy:
+       #    - Deployment Patterns: get-started/dummy.md
+       #    - All-in-one: get-started/dummy.md
+       #    - Distributed:
+       #        - Deployment Pattern 2: get-started/dummy.md
+       #        - Deployment Pattern 3: get-started/dummy.md
+       #- CI/CD: develop-and-deploy-api/ci-cd.md
+        #- Customizations:
+        #    - API Gateway - Enforcer:
+            #    - Enforcer - Overview: apk-deck/enforcer-overview.md
+        #        - Mediation Extensions:
+        #            - Custom Filters: setup/customizations/gateway-enforcer/mediation-extensions/custom-filters.md
+    - Administration:
+        - Test System APIs: administration/postman-tests.md
+        - Setup Logs:
+            - Overview: administration/configurations/configure-logs-overview.md
+            - Adapter: administration/configurations/configure-logs-adapter.md
+            - Enforcer: administration/configurations/configure-logs-enforcer.md
+            - Router: administration/configurations/configure-logs-router.md
+        - Setup Distributed Tracing: administration/distributed-tracing.md
     - About APK:
         - What is APK?: about-apk/what-is-apk.md
         - About This Release: about-apk/about-this-release.md
@@ -208,40 +242,6 @@ nav:
            #    - Topic 1: get-started/dummy.md
            #    - Topic 2: get-started/dummy.md
         #- Product Pitch: https://wso2.com/api-manager
-    - Setup: 
-        - Prerequisites: setup/prerequisites.md
-        - Migration: setup/migration.md
-        - Organization: setup/organizations.md
-        - Configure Identity Provider:
-            - Overview: setup/identity-platform/idp/idp-overview.md
-            - Non-production: setup/identity-platform/idp/non-production-idp.md
-            - Asgardeo: setup/identity-platform/idp/asgardeo-idp.md
-            - Auth0: setup/identity-platform/idp/auth0-idp.md
-            - Any Third-party IdP: setup/identity-platform/idp/third-party-idp.md
-        - Configure Analytics: 
-            - ELK Stack: setup/configure-analytics-for-elk-stack.md
-       #- Install: setup/install.md
-       #- Deploy:
-       #    - Deployment Patterns: get-started/dummy.md
-       #    - All-in-one: get-started/dummy.md
-       #    - Distributed:
-       #        - Deployment Pattern 2: get-started/dummy.md
-       #        - Deployment Pattern 3: get-started/dummy.md
-       #- CI/CD: develop-and-deploy-api/ci-cd.md
-        #- Customizations:
-        #    - API Gateway - Enforcer:
-            #    - Enforcer - Overview: apk-deck/enforcer-overview.md
-        #        - Mediation Extensions:
-        #            - Custom Filters: setup/customizations/gateway-enforcer/mediation-extensions/custom-filters.md
-    - Administration:
-        - Test System APIs: administration/postman-tests.md
-        - Configurations:
-            - Configure Logs:
-                - Overview: administration/configurations/configure-logs-overview.md
-                - Adapter: administration/configurations/configure-logs-adapter.md
-                - Enforcer: administration/configurations/configure-logs-enforcer.md
-                - Router: administration/configurations/configure-logs-router.md
-        - Setup Distributed Tracing: administration/distributed-tracing.md
     - Reach Out:
         - Community: reachout/community.md # Brief description and links to Discord and Stack OverFlow
         - Support: https://wso2.com/subscription/#support
