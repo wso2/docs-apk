@@ -1,6 +1,6 @@
 # Quick Start Guide
 
-This section is a step-by-step guide to create, depoly and invoke an API using the WSO2 API Platform For Kubernetes.
+This section is a step-by-step guide to create, deploy and invoke an API using the WSO2 API Platform For Kubernetes.
 
 ## Before you begin...
 
@@ -29,7 +29,7 @@ The services should be created in a different namespace than the APK or Kubernet
 To deploy sample backend use the following command.
 
 ```command
-kubctl apply -f sample-backend.yaml -n apk-backend
+kubectl apply -f sample-backend.yaml -n apk-backend
 ```
 ```
 
