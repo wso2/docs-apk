@@ -1,6 +1,6 @@
 # Configure Analytics for ELK Stack
 
-## Step 1 - Configure Enforcer
+## Step 1 - Setup Enforcer
 
 1. Open `<APK_HOME>/helm-charts/values.yaml` file.
 
@@ -9,44 +9,69 @@
     ```yaml
     analytics:
       enabled: true
-      type: "ELK"
+      type: "File"
     ```
 
     !!! Note
-        Optionally, you can set the following configs to customize the analytics data.
+        Optionally, you can set the `logFileName` and `logLevel`. By default, these configs are set to `logs/enforcer_analytics.log` and `INFO` respectively.
 
         ```yaml
         analytics:
-          ...
-          # File name of the log file. Default value is "enforcer_analytics.log".
-          logFileName: "logs/analytics.log"
-          # Log level of the analytics data. Default value is "INFO".
-          logLevel: "DEBUG" 
+          enabled: true
+          type: "File"
+          logFileName: "logs/elk_analytics.log"
+          logLevel: "DEBUG"
         ```
 
-## Step 2 - Set up the ELK Stack
+## Step 2 - Setup Filebeat
 
-1. Configure and setup the following elements in ELK Stack.
-    - Elasticsearch
-    - Kibana
-    - Logstash
-    - Filebeat
+1. Follow [Filebeat Documentation - Running on Kubernetes](https://www.elastic.co/guide/en/beats/filebeat/current/running-on-kubernetes.html) to setup Filebeat in Kubernetes.
 
-2. Configure Filebeat to read the log file as the input source.
+2. Modify `filebeat-kubernetes.yaml` manifest file as follows to enable Filebeat to read the analytics logs.
 
-    1. Open the `filebeat.yml` file.
-
-    2. Configure the log file as the input source.
+    1. ConfigMap
 
         ```yaml
-        filebeat.inputs:
-        - type: log
-          enabled: true
-          paths:
-          - /logs/enforcer_analytics.log
-          include_lines: ['(apimMetrics):']
+        ...
+        data:
+          filebeat.yml: |-
+            filebeat.inputs:
+            - type: log
+              paths:
+                - /var/log/apk/elk_analytics.log
+
+            output.console:
+              pretty: true
         ```
 
-3. Set up Kibana dashboards.
+        !!! Note
+            You can change the output to Elasticsearch, Logstash, or other output option according to your preference. For more information, see [Filebeat Documentation - Configuring Output](https://www.elastic.co/guide/en/beats/filebeat/current/configuring-output.html).
+  
+    2. DaemonSet
 
-After setting up the enforcer and the ELK Stack, invoke a few requests (success and failure) for a deployed API. You will be able to view the analytics data in the Kibana dashboard.
+        ```yaml
+        ...
+        containers:
+          volumeMounts:
+          - name: enforcer-analytics-logs-volume
+            mountPath: /var/log/apk
+        ...
+        volumes:
+        - name: enforcer-analytics-logs-volume
+          persistentVolumeClaim:
+            claimName: enforcer-analytics-logs-volume-pvc
+        ```
+
+3. Deploy Filebeat using the modified manifest file.
+
+4. Monitor the logs of Filebeat pod to verify that the analytics logs are being read correctly.
+
+## Step 3 - View Analytics Data
+
+1. Configure Elasticsearch, Logstash, and Kibana to process the analytics logs.
+
+2. Generate Kibana Dashboards according to your preference.
+
+3. After setting up the ELK stack, invoke a few requests (success and failure) for a deployed API.
+
+4. Go to Kibana and view the dashboards.
