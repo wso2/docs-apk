@@ -10,7 +10,7 @@
 
 ## Step 2 - Setup Enforcer
 
-1. Open `<APK_HOME>/helm-charts/values.yaml` file.
+1. Open `values.yaml` file.
 
 2. Set following config under `wso2.apk.dp.gatewayRuntime` section to enable analytics.
 
@@ -22,7 +22,7 @@
       authToken: "<on-prem-key>"
     ```
 
-3. Redeploy the enforcer.
+3. Redeploy the enforcer with the changes in `values.yaml`.
 
 ## Step 3 - View Analytics Data
 
