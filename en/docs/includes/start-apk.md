@@ -1,11 +1,37 @@
 
 Follow the instructions below to deploy APK Data Service (DS) servers and the Cloud Native Postgres(CloudNativePG) in the Kubernetes cluster.
 
-1. ``` helm repo add <repository-name> https://github.com/wso2/apk/releases/download/0.0.1-m10 ```
+1. Create a new helm repository with the latest apk release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apk``` for this guide.
 
-2. ``` helm repo update ```
+	=== "Format"
+		```
+		helm repo add <repository-name> <link-to-latest-apk-release>
+		```
+	
+	=== "Command"
+		```
+		helm repo add wso2apk https://github.com/wso2/apk/releases/download/0.0.1-m12
+		```
 
-3.  Install the APK components and start WSO2 API Platform For Kubernetes.
+2. Execute the following command to update the helm repositories.
+
+      ```console
+      helm repo update
+      ```
+
+3.  Create a namespace in kubernetes if you have not done so already with prerequisites above. Consider the ```<namespace>``` as ```apk``` for this guide.
+
+	=== "Format"
+		```
+		kubectl create namespace <namespace>
+		```
+	
+	=== "Command"
+		```
+		kubectl create namespace apk
+		```
+
+4. Install the APK components and start WSO2 API Platform For Kubernetes. Consider ```apk-test``` as the ```<chart-name>``` for this guide. As the ```--version``` of this command, use the version of the release you used in point 1 above. It will take a few minutes for the deployment to complete.
 
 	=== "Format"
 		```
@@ -14,29 +40,31 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
 	
 	=== "Command"
 		```
-		helm install apk-test wso2apk/apk-helm --version 0.0.1-m10 -n apk
+		helm install apk-test wso2apk/apk-helm --version 0.0.1-m12 -n apk
 		```
 
-	!!! info "Optional"
+5.  Now you can verify the deployment by executing the following command. You will see the status of the pods as follows once completed.
 
-			If required, use one of the following parameters when starting WSO2 API Platform For Kubernetes.
+    === "Format"
+        ```
+        kubectl get pods -n <namespace>
+        ```
 
-			- To deploy Control Plane components only use `--set wso2.apk.dp.enabled=false`
-			- To deploy Data Plane components only use `--set wso2.apk.cp.enabled=false`
+    === "Command"
+        ```
+        kubectl get pods -n apk
+        ```
 
-5.  Verify the deployment.
+    [![Pod Status](../assets/img/get-started/pod-status.png)](../assets/img/get-started/pod-status.png)
 
-      ```console
-      kubectl get pods -n apk
-      ```
 
-    !!! info "(Optional) To access the deployment through your local machine"
+!!! info "(Optional) To access the deployment through your local machine"
 
-        1. Identify the `router-service` external IP address.
-           ```console
-           kubectl get svc -n apk | grep router-service
-           ```
-        2. Port forward router service to localhost.
-           ```console
-           kubectl port-forward svc/apk-test-wso2-apk-router-service -n apk 9095:9095
-           ```
+    1. Identify the `router-service` external IP address.
+        ```console
+        kubectl get svc -n apk | grep router-service
+        ```
+    2. Port forward router service to localhost.
+        ```console
+        kubectl port-forward svc/apk-test-wso2-apk-router-service -n apk 9095:9095
+        ```
