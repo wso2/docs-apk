@@ -6,7 +6,7 @@
     },
     "servers": [
         {
-            "url": "https://6492bf1f428c3d2035d09c18.mockapi.io/",
+            "url": "https://run.mocky.io/v3/85516819-1edd-412b-a32b-a9284705a0b4",
             "description": "Server URL",
             "variables": {}
         }

@@ -57,7 +57,7 @@ Apart from the above API definition file, we also need an `apk-conf` file which 
         type: "REST"
         endpointConfigurations:
             production:
-                endpoint: "https://6492bf1f428c3d2035d09c18.mockapi.io/"
+                endpoint: "https://run.mocky.io/v3/85516819-1edd-412b-a32b-a9284705a0b4"
         operations:
         - target: "/employee"
         verb: "GET"
@@ -118,7 +118,7 @@ Apart from the above API definition file, we also need an `apk-conf` file which 
                 - "default.gw.wso2.com"
         endpointConfigurations:
             production:
-                endpoint: "https://6492bf1f428c3d2035d09c18.mockapi.io/"
+                endpoint: "https://run.mocky.io/v3/85516819-1edd-412b-a32b-a9284705a0b4"
         operations:
         - target: "/employee"
         verb: "GET"
@@ -217,7 +217,7 @@ You now have the API Definition (`EndpointServiceDefinition.json`) and the apk-c
         organization: "apk-org"
         endpointConfigurations:
             production:
-                endpoint: "https://6492bf1f428c3d2035d09c18.mockapi.io/"
+                endpoint: "https://run.mocky.io/v3/85516819-1edd-412b-a32b-a9284705a0b4"
         operations:
         - target: "/employee"
         verb: "GET"
@@ -276,7 +276,7 @@ Now the API is ready to be invoked. Let’s get the list of Employees by invokin
 
     === "Sample Response"
         ```
-        [{"createdAt":"2023-06-21T04:55:23.581Z","name":"Mandy Hayes","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/960.jpg","id":"1"},{"createdAt":"2023-06-21T14:03:03.687Z","name":"Mrs. Brandy Hoppe","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1042.jpg","id":"2"},{"createdAt":"2023-06-21T20:06:39.331Z","name":"Terence McLaughlin","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1044.jpg","id":"3"},{"createdAt":"2023-06-21T14:45:40.991Z","name":"Mr. Nina Keebler","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/955.jpg","id":"4"},{"createdAt":"2023-06-21T23:06:52.136Z","name":"Sergio Paucek","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/674.jpg","id":"5"},{"createdAt":"2023-06-21T04:42:41.388Z","name":"Mrs. Jerry Wiza","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/796.jpg","id":"6"},{"createdAt":"2023-06-21T10:32:37.753Z","name":"Yolanda Becker","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/357.jpg","id":"7"},{"createdAt":"2023-06-21T21:29:08.315Z","name":"Renee Berge","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1011.jpg","id":"8"},{"createdAt":"2023-06-21T15:19:26.606Z","name":"Sergio Rohan","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/726.jpg","id":"9"},{"createdAt":"2023-06-21T11:08:47.194Z","name":"Genevieve Stoltenberg","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/601.jpg","id":"10"},{"createdAt":"2023-06-21T16:50:00.119Z","name":"Alicia Wiegand","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/193.jpg","id":"11"},{"createdAt":"2023-06-21T15:49:23.731Z","name":"Constance Grady","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/388.jpg","id":"12"},{"createdAt":"2023-06-22T03:25:52.248Z","name":"Genevieve Dooley","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/466.jpg","id":"13"},{"createdAt":"2023-06-22T00:04:51.711Z","name":"Sadie Collier","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/976.jpg","id":"14"},{"createdAt":"2023-06-21T10:08:54.889Z","name":"Laurence Green","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1148.jpg","id":"15"},{"createdAt":"2023-06-21T16:31:37.505Z","name":"Mr. Moses Crona PhD","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/434.jpg","id":"16"},{"createdAt":"2023-06-21T17:23:44.525Z","name":"Aaron Ortiz","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/639.jpg","id":"17"},{"createdAt":"2023-06-22T00:26:44.641Z","name":"Eileen Sawayn","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/366.jpg","id":"18"},{"createdAt":"2023-06-21T12:07:49.226Z","name":"Nora Adams II","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1128.jpg","id":"19"},{"createdAt":"2023-06-21T16:32:35.940Z","name":"Mr. Jodi Farrell","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/233.jpg","id":"20"},{"createdAt":"2023-06-21T19:42:36.587Z","name":"Miss Brandi McCullough IV","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/164.jpg","id":"21"},{"createdAt":"2023-06-21T16:24:22.520Z","name":"Dr. Mildred Mertz","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/27.jpg","id":"22"},{"createdAt":"2023-06-22T02:54:22.644Z","name":"Mr. Edward Miller","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1143.jpg","id":"23"},{"createdAt":"2023-06-21T23:39:43.412Z","name":"Bernadette Ratke Sr.","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/144.jpg","id":"24"},{"createdAt":"2023-06-21T10:45:34.494Z","name":"Bobby Pollich","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/885.jpg","id":"25"},{"createdAt":"2023-06-21T06:24:19.163Z","name":"Ms. Darnell Willms","avatar":"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1111.jpg","id":"26"}]
+        [{"name":"Mrs. Heily Feyers","id":"1234123","department":"IT"},{"name":"Mr. Brendon MacSmith","id":"23451234","department":"Sales"},{"name":"Mr. Peter Queenslander","id":"34561234","department":"IT"},{"name":"Miss. Liza MacAdams","id":"45671243","department":"Finance"}]
         ```
 
 You will now be able to see a successful response with the details of the Employees from the mock backend that we used for this guide.
