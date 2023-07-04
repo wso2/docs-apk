@@ -116,7 +116,7 @@ header.md-header .md-header__button:not([hidden]) {
     }
 }
 .md-typeset h1{
-    display: none;
+    visibility: hidden;
 }
 </style>
 {% endraw %}

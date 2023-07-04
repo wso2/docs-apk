@@ -34,6 +34,7 @@ copyright: WSO2 API Platform for Kubernetes - Documentation
 theme:
     name: material
     custom_dir: theme/material
+    logo: images/dummy-logo.svg # Real logo is coming from theme.
     favicon: images/favicon.png
     features:
         - content.code.copy

@@ -56,5 +56,6 @@
     height: 363px;
 }
 .md-header__button {
-    color: var(--md-primary-fg-color-header-text);
+    color: var(--md-primary-heder-fg-color);
+    
 }
