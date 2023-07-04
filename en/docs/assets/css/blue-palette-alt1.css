@@ -9,8 +9,9 @@
     --md-accent-fg-color--transparent: #0339821a;
     --md-accent-bg-color: #fff;
     --md-accent-bg-color--light: #ffffffb3;
-    --md-banner: url(../img/banner-for-blue-alt-light.png) no-repeat left top;
+    --md-banner: url(../img/banner-for-blue-alt-light.png) no-repeat right top;
     --md-hjs-color: #00f;
+    --md-primary-heder-fg-color: var(--md-primary-fg-color);
 }
 :root {
     --md-text-font: 'Source Sans Pro', sans-serif;
@@ -25,8 +26,11 @@
     --md-accent-fg-color: #3d8fca;
     --md-default-bg-color: #23272f;
     --md-typeset-a-color: #75c9e7;
-    --md-banner: url(../img/banner-for-blue-alt-dark.png) no-repeat left top;
+    --md-banner: url(../img/banner-for-blue-alt-dark.png) no-repeat right top;
     --md-hjs-color: rgb(186, 186, 255);
+    --md-primary-bg-color: #23272f;
+    --md-primary-heder-fg-color: var(--md-primary-fg-color--light);
+    --md-logo: transparent url(../img/logo.svg) no-repeat left top;
 }
 /* colors for the light theme */
 [data-md-color-scheme="default"] {
@@ -35,6 +39,7 @@
     --md-primary-fg-color-header-text-active: #094570;
     --md-default-bg-color: #ffffff;
     --md-typeset-a-color: var(--md-primary-fg-color);
+    --md-logo: transparent url(../img/logo-for-light.svg) no-repeat left top;
 }
 .md-tabs {
     background-color: var(--md-primary-fg-color-header);
@@ -49,4 +54,8 @@
 .banner-link {
     width: 711px;
     height: 363px;
+}
+.md-header__button {
+    color: var(--md-primary-heder-fg-color);
+    
 }

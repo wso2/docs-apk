@@ -34,7 +34,7 @@ copyright: WSO2 API Platform for Kubernetes - Documentation
 theme:
     name: material
     custom_dir: theme/material
-    logo: images/logo-for-light.svg
+    logo: images/dummy-logo.svg # Real logo is coming from theme.
     favicon: images/favicon.png
     features:
         - content.code.copy
@@ -304,8 +304,8 @@ extra_css:
     - assets/lib/highlightjs/styles/vs.min.css
     # Make sure to activate only one palette at a time.
     # If all the palettes are commented out, the default material theme palette will take over
-    # - assets/css/blue-palette-alt1.css
-    - assets/css/blue-palette-alt2.css
+    - assets/css/blue-palette-alt1.css
+    # - assets/css/blue-palette-alt2.css
     # - assets/css/blue-palette.css
     # - assets/css/green-palette.css
     # - assets/css/orange-palette.css
