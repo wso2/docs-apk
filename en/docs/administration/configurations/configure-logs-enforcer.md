@@ -144,6 +144,20 @@ APK is capable of enabling access logs to drill down on errors that occurred dur
     !!! Note
         Here we are setting the threshold for the appender's log level as `DEBUG`. For more information on this, please refer [here](#setting-the-threshold).
 
+## Trace ID
+
+The Enforcer relies on the `x-request-id` header for unique request identification and request path tracing. If the client includes the `x-request-id` header in the request, it will be used as is. However, if the header is absent, the Envoy will generate a random UUID for each request. The Enforcer logs this as `TRACE_ID` by default. Refer the below example.
+
+```properties
+[2023-06-26 06:43:46,240][TRACE_ID: 9141d933-7a3f-4788-aec3-758b099bca84][in, a3b58ccf-6ecc-4557-b5bb-0a35cce38256, /in/1.0.0] DEBUG - {org.wso2.apk.enforcer.security.jwt.InternalAPIKeyAuthenticator} - Internal Key Authentication initialized []
+[2023-06-26 06:43:46,276][TRACE_ID: 9141d933-7a3f-4788-aec3-758b099bca84][in, a3b58ccf-6ecc-4557-b5bb-0a35cce38256, /in/1.0.0] DEBUG - {org.wso2.apk.enforcer.security.jwt.InternalAPIKeyAuthenticator} - Internal Key not found in the cache. []
+[2023-06-26 06:43:46,276][TRACE_ID: 9141d933-7a3f-4788-aec3-758b099bca84][in, a3b58ccf-6ecc-4557-b5bb-0a35cce38256, /in/1.0.0] DEBUG - {org.wso2.apk.enforcer.security.jwt.APIKeyHandler} - InternalKey not found in the cache. []
+[2023-06-26 06:43:46,297][TRACE_ID: 9141d933-7a3f-4788-aec3-758b099bca84][in, a3b58ccf-6ecc-4557-b5bb-0a35cce38256, /in/1.0.0] DEBUG - {org.wso2.apk.enforcer.security.jwt.InternalAPIKeyAuthenticator} - Internal Key signature is verified. []
+[2023-06-26 06:43:46,297][TRACE_ID: 9141d933-7a3f-4788-aec3-758b099bca84][in, a3b58ccf-6ecc-4557-b5bb-0a35cce38256, /in/1.0.0] DEBUG - {org.wso2.apk.enforcer.security.jwt.InternalAPIKeyAuthenticator} - InternalKey payload not found in the cache. []
+[2023-06-26 06:43:46,300][TRACE_ID: 9141d933-7a3f-4788-aec3-758b099bca84][in, a3b58ccf-6ecc-4557-b5bb-0a35cce38256, /in/1.0.0] DEBUG - {org.wso2.apk.enforcer.security.jwt.InternalAPIKeyAuthenticator} - Internal Key Authentication is successful. []
+[2023-06-26 06:43:46,300][TRACE_ID: 9141d933-7a3f-4788-aec3-758b099bca84][in, a3b58ccf-6ecc-4557-b5bb-0a35cce38256, /in/1.0.0] DEBUG - {org.wso2.apk.enforcer.security.jwt.InternalAPIKeyAuthenticator} - Internal Key authentication is completed. []
+```
+
 ## Setting the log format
 
 ### Plain Text format
