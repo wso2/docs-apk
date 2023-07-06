@@ -10,12 +10,3 @@
    
      `kubectl create namespace <namespace>`
 
-5. Add Helm chart dependencies.
-     - Add Bitnami
-    
-         `helm repo add bitnami https://charts.bitnami.com/bitnami`
-
-     - Add Jetstack
-    
-         `helm repo add jetstack https://charts.jetstack.io`
-

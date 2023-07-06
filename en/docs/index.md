@@ -1,18 +1,20 @@
 <div class="homePage">
     <div class="section01">
         <div class="leftContent">
-            <div class="md-main .md-content " style="float:right; width: 55%; align:right;  flex-shrink: 0;min-width: 40%; max-height: 100%; max-width:50%; margin-left:10px;">
-            <a href="https://wso2.com/blogs/thesource/announcing-wso2-api-platform-for-kubernetes/" class="banner-link"></a>
+            <div class="about-home">
+                    <div>
+                        APK is WSO2's cloud native API management platform. APK is designed to help you build, deploy, and manage APIs in a cloud environment. Our platform is built on top of a microservices architecture and uses containerization technologies to ensure scalability and flexibility. With features like automatic failover and load balancing, our APK platform is designed to be highly available and able to handle large numbers of API requests without performance degradation. We've also added support for continuous delivery and deployment, so you can quickly and easily push updates to your API services.
+                    </div>
+                <div>
+                    <a href="https://wso2.com/blogs/thesource/announcing-wso2-api-platform-for-kubernetes/" class="banner-link"></a>
+                </div>
             </div>
-            <p>
-                APK is WSO2's cloud native API management platform. APK is designed to help you build, deploy, and manage APIs in a cloud environment. Our platform is built on top of a microservices architecture and uses containerization technologies to ensure scalability and flexibility. With features like automatic failover and load balancing, our APK platform is designed to be highly available and able to handle large numbers of API requests without performance degradation. We've also added support for continuous delivery and deployment, so you can quickly and easily push updates to your API services.
-            </p>
-            </br>
-            <h2>Download</h2>
-            <a href="https://github.com/wso2/apk/releases">
-                                 <i class="fa-solid fa-file-arrow-down"></i>
-
-            </a>
+            <div class="download-btn-wrapper">
+                 <h2>Download</h2>
+                <a href="https://github.com/wso2/apk/releases">
+                    <i class="fa-solid fa-file-arrow-down"></i>
+                </a>
+            </div>
         </div>
         <!--<div class="md-main .md-content " style="float:right; width: 55%; align:right;  flex-shrink: 0;min-width: 40%; max-height: 100%; max-width:50%; margin-left:10px; margin-top:20px">
         < IMAGE >
@@ -76,6 +78,46 @@
 .section02 {
     display: flex;
     justify-content: space-between;
+}
+header.md-header .md-header__button:not([hidden]) {
+    /* display: none; */
+}
+.about-home {
+    display: flex;
+}
+.about-home div:first-child {
+    width: 50%;
+    padding-top: 50px;
+}
+.about-home div:nth-child(2) {
+    width: 50%;
+}
+@media screen and (max-width: 76.1875em) {
+    .md-sidebar.md-sidebar--primary {
+        display: block;
+    }
+}
+@media screen and (max-width: 945px) {
+    .about-home div:first-child {
+        width: 100%;
+    }
+    .about-home div:nth-child(2) {
+        width: 100%;
+    }
+    .about-home {
+        flex-direction: column;
+    }
+    .md-typeset a {
+        background-position-x: left;
+    }
+    .download-btn-wrapper {
+        display: block;
+        text-align: center;
+    }
+}
+.md-typeset h1{
+    visibility: hidden;
+    margin-bottom: 0;
 }
 </style>
 {% endraw %}

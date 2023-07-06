@@ -30,6 +30,8 @@
 
 Following are some of the graphs generated in the Choreo Insights.
 
-[![Choreo Insights Overview](../../assets/img/analytics/choreo-insights-overview.png)](../assets/img/analytics/choreo-insights-overview.png)
+[![Choreo Insights Overview](../../assets/img/analytics/choreo-insights-overview.png)](../../assets/img/analytics/choreo-insights-overview.png)
 
-[![Choreo Insights Latency](../../assets/img/analytics/choreo-insights-latency.png)](../assets/img/analytics/choreo-insights-latency.png)
+[![Choreo Insights Latency](../../assets/img/analytics/choreo-insights-latency.png)](../../assets/img/analytics/choreo-insights-latency.png)
+
+
