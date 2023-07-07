@@ -12,7 +12,7 @@ Install the [prerequisites](../../setup/prerequisites) that are required to run 
 
 ## Step 2 - Create and Deploy the API
 
-1. Download the sample [![EmployeeServiceDefinition.json](../assets/files/get-started/EmployeeServiceDefinition.json)](../assets/files/get-started/EmployeeServiceDefinition.json) file. This is the OAS definition of the API that we are going to deploy in APK.
+1. Save and download the sample [EmployeeServiceDefinition.json](../assets/files/get-started/EmployeeServiceDefinition.json) file. This is the OAS definition of the API that we are going to deploy in APK.
 2. Add a hostname mapping to the ```/etc/hosts``` file as follows.
 
     |     IP      |     Domain name     |
@@ -55,26 +55,28 @@ Apart from the above API definition file, we also need an `apk-conf` file which 
         context: ""
         version: "3.14"
         type: "REST"
+        organization: ""
+        defaultVersion: false
         endpointConfigurations:
             production:
                 endpoint: "https://run.mocky.io/v3/85516819-1edd-412b-a32b-a9284705a0b4"
         operations:
         - target: "/employee"
-        verb: "GET"
-        authTypeEnabled: true
-        scopes: []
+            verb: "GET"
+            authTypeEnabled: true
+            scopes: []
         - target: "/employee"
-        verb: "POST"
-        authTypeEnabled: true
-        scopes: []
+            verb: "POST"
+            authTypeEnabled: true
+            scopes: []
         - target: "/employee/{employeeId}"
-        verb: "PUT"
-        authTypeEnabled: true
-        scopes: []
+            verb: "PUT"
+            authTypeEnabled: true
+            scopes: []
         - target: "/employee/{employeeId}"
-        verb: "DELETE"
-        authTypeEnabled: true
-        scopes: []
+            verb: "DELETE"
+            authTypeEnabled: true
+            scopes: []
         ```
 
 2. You will get the apk-conf file content as the response. Save this content into a file named `EmployeeService.apk-conf`. Modify the content to add the `context`, `organization` and `vhosts`. The specific changes you have to make are indicated in the table below.
@@ -116,26 +118,27 @@ Apart from the above API definition file, we also need an `apk-conf` file which 
         vhosts:
             production:
                 - "default.gw.wso2.com"
+        defaultVersion: false
         endpointConfigurations:
             production:
                 endpoint: "https://run.mocky.io/v3/85516819-1edd-412b-a32b-a9284705a0b4"
         operations:
         - target: "/employee"
-        verb: "GET"
-        authTypeEnabled: true
-        scopes: []
+            verb: "GET"
+            authTypeEnabled: true
+            scopes: []
         - target: "/employee"
-        verb: "POST"
-        authTypeEnabled: true
-        scopes: []
+            verb: "POST"
+            authTypeEnabled: true
+            scopes: []
         - target: "/employee/{employeeId}"
-        verb: "PUT"
-        authTypeEnabled: true
-        scopes: []
+            verb: "PUT"
+            authTypeEnabled: true
+            scopes: []
         - target: "/employee/{employeeId}"
-        verb: "DELETE"
-        authTypeEnabled: true
-        scopes: []
+            verb: "DELETE"
+            authTypeEnabled: true
+            scopes: []
         ```
 
 ### Generate an access token to invoke APIs
@@ -215,26 +218,27 @@ You now have the API Definition (`EndpointServiceDefinition.json`) and the apk-c
         version: "3.14"
         type: "REST"
         organization: "apk-org"
+        defaultVersion: false
         endpointConfigurations:
             production:
                 endpoint: "https://run.mocky.io/v3/85516819-1edd-412b-a32b-a9284705a0b4"
         operations:
         - target: "/employee"
-        verb: "GET"
-        authTypeEnabled: true
-        scopes: []
+            verb: "GET"
+            authTypeEnabled: true
+            scopes: []
         - target: "/employee"
-        verb: "POST"
-        authTypeEnabled: true
-        scopes: []
+            verb: "POST"
+            authTypeEnabled: true
+            scopes: []
         - target: "/employee/{employeeId}"
-        verb: "PUT"
-        authTypeEnabled: true
-        scopes: []
+            verb: "PUT"
+            authTypeEnabled: true
+            scopes: []
         - target: "/employee/{employeeId}"
-        verb: "DELETE"
-        authTypeEnabled: true
-        scopes: []
+            verb: "DELETE"
+            authTypeEnabled: true
+            scopes: []
         vhosts:
             production:
                 - "default.gw.wso2.com"
