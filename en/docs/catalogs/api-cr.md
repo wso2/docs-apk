@@ -20,3 +20,5 @@ spec:
   - httpRouteRefs:
     - prod-http-route-http-bin-api
 ```
+
+Refer [Manage API](../../create-api/create-api-overview/) for more information on how to configure API.
