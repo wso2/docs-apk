@@ -150,6 +150,20 @@ nav:
     #       - API Categorization: manage-apis/api-categorization.md
     #       - API Monetization: manage-apis/api-monetization.md
     - Catalogs:
+        - CRD Catalog: 
+            - Overview - CRD Catalog: catalogs/kubernetes-crds.md
+            - API: catalogs/api-cr.md
+            - HTTPRoute: catalogs/http-route.md
+            - Backend: catalogs/backend.md
+            - APIPolicy: 
+                - Overview: catalogs/api-policy.md
+                - CORS: catalogs/cors.md
+                - Interceptors: catalogs/interceptors.md
+            - RateLimitPolicy: 
+                - Overview: catalogs/rate-limit-policy.md
+                - API Level: catalogs/ratelimit-api.md
+                - Resource Level: catalogs/ratelimit-resource.md
+                - Custom: catalogs/ratelimit-custom.md
         - API Catalog:
             - Overview - API Catalog: catalogs/api-catalog.md
             - Back Office APIs: catalogs/api-reference-back-office.md
@@ -158,7 +172,6 @@ nav:
             - Admin APIs: catalogs/api-reference-admin.md
         - Config Catalog: catalogs/config-catalog.md
     #   - CLI Catalog: catalogs/cli-reference.md
-    #   - CRD Catalog: catalogs/kubernetes-crds.md
     #    - Helm Catalog: catalogs/config-catalog.md
     - Setup: 
         - Prerequisites: setup/prerequisites.md
