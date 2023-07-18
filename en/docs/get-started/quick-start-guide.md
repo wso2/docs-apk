@@ -179,7 +179,7 @@ Now you can use this access token to invoke the Resources and APIs that follow.
 
 ### Deploy the API in APK
 
-You now have the API Definition (`EndpointServiceDefinition.json`) and the apk-conf file (`EmployeeService.apk-conf`) corresponding to the API. We can use these files to deploy the API in APK. 
+You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-conf file (`EmployeeService.apk-conf`) corresponding to the API. We can use these files to deploy the API in APK. 
 
 1. Use the values provided in the table below in the body of your request.
 
