@@ -84,11 +84,6 @@ nav:
         #    - Test API: develop-and-deploy-api/test-api.md
         #    - Publish Your API: manage-apis/publish-your-api.md
     - API Management:
-        # - Develop and Deploy API:
-    #        - API Versions:
-    #            - Create an API Version: develop-and-deploy-api/api-versions/create-an-api-versions.md
-    #            - Default Version: develop-and-deploy-api/api-versions/default-version.md
-    #            - Backward Compatibility: develop-and-deploy-api/api-versions/backward-compatibility.md
         - Create APIs:
            - Overview: create-api/create-api-overview.md
            - Create and deploy APIs:
@@ -130,6 +125,11 @@ nav:
     #                - Disable API Security: develop-and-deploy-api/security/authentication/disable-api-security.md
     #            - Authorization:
     #                - Access Control for API Requests: develop-and-deploy-api/security/authorization/access-control-for-api-requests.md
+        - Develop and Deploy API:
+            - API Versions:
+                - Create an API Version: develop-and-deploy-api/api-versions/create-an-api-versions.md
+                - Default Version: develop-and-deploy-api/api-versions/default-version.md
+                - Backward Compatibility: develop-and-deploy-api/api-versions/backward-compatibility.md
     #    - Manage APIs:
     #       - API Documentation: manage-apis/api-documentation.md
     #       - Consumer Management:
