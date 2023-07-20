@@ -2,220 +2,164 @@
 
 **Sample code snippets**
 
-The following is a sample code snippet that defines how you can attach Interceptor API Policies at the API-level within an API definition.
+The following is a sample code snippet that defines how you can attach Interceptor API Policies at the API-level within an API APK configuration file.
 
 ```
-  "apiPolicies": {
-      "request": [
-          {
-            "policyName": "addInterceptor",
-            "parameters":
-              {
-                  "headersEnabled": true,
-                  "bodyEnabled": false,
-                  "trailersEnabled": false,
-                  "contextEnabled": true,
-                  "backendUrl": "http://legacy-xml-backend-v1.inter:9082"
-              }
-          }
-      ],
-      "response": [
-          {
-            "policyName": "addInterceptor",
-            "parameters":
-              {
-                  "headersEnabled": true,
-                  "bodyEnabled": false,
-                  "trailersEnabled": false,
-                  "contextEnabled": true,
-                  "backendUrl": "http://legacy-xml-backend-v1.inter:9082"
-              }
-          }
-      ]
-  }
+apiPolicies:
+  request:
+    - policyName: "Interceptor"
+      policyVersion: v1
+      parameters:
+        backendUrl: "http://interceptor-service.test-apk.svc.cluster.local:8443"
+        headersEnabled: true
+        bodyEnabled: false
+        trailersEnabled: false
+        contextEnabled: true
+  response:
+    - policyName: "Interceptor"
+      policyVersion: v1
+      parameters:
+        backendUrl: "http://interceptor-service.test-apk.svc.cluster.local:8443"       
+        headersEnabled: true       
+        bodyEnabled: false      
+        trailersEnabled: false      
+        contextEnabled: true
 ```
 
 ??? note "Attach an Interceptor API Policy to the Request Flow Only"
 
     ```
-    "apiPolicies": {
-        "request": [
-            {
-              "policyName": "addInterceptor",
-              "parameters":
-                {
-                    "headersEnabled": true,
-                    "bodyEnabled": false,
-                    "trailersEnabled": false,
-                    "contextEnabled": true,
-                    "backendUrl": "http://legacy-xml-backend-v1.inter:9082"
-                }
-            }
-        ]
-    }
+    apiPolicies:
+      request:
+        - policyName: "Interceptor"
+          policyVersion: v1
+          parameters:
+            backendUrl: "http://interceptor-service.test-apk.svc.cluster.local:8443"
+            headersEnabled: true
+            bodyEnabled: false
+            trailersEnabled: false
+            contextEnabled: true
     ```
 
 ??? note "Attach an Interceptor API Policy to the Response Flow Only"
 
     ```
-    "apiPolicies": {
-        "response": [
-            {
-              "policyName": "addInterceptor",
-              "parameters":
-                {
-                    "headersEnabled": true,
-                    "bodyEnabled": false,
-                    "trailersEnabled": false,
-                    "contextEnabled": true,
-                    "backendUrl": "http://legacy-xml-backend-v1.inter:9082"
-                }
-            }
-        ]
-    }
+    apiPolicies:
+      response:
+        - policyName: "Interceptor"
+          policyVersion: v1
+          parameters:
+            backendUrl: "http://interceptor-service.test-apk.svc.cluster.local:8443"
+            headersEnabled: true
+            bodyEnabled: false
+            trailersEnabled: false
+            contextEnabled: true
     ```
 
 ??? note "Attach an Interceptor API Policy to Request and Response Flows"
 
     ```
-    "apiPolicies": {
-        "request": [
-            {
-              "policyName": "addInterceptor",
-              "parameters":
-                {
-                    "headersEnabled": true,
-                    "bodyEnabled": false,
-                    "trailersEnabled": false,
-                    "contextEnabled": true,
-                    "backendUrl": "http://legacy-xml-backend-v1.inter:9082"
-                }
-            }
-        ],
-        "response": [
-            {
-              "policyName": "addInterceptor",
-              "parameters":
-                {
-                    "headersEnabled": true,
-                    "bodyEnabled": false,
-                    "trailersEnabled": false,
-                    "contextEnabled": true,
-                    "backendUrl": "http://legacy-xml-backend-v1.inter:9082"
-                }
-            }
-        ]
-    }
+    apiPolicies:
+      request:
+        - policyName: "Interceptor"
+          policyVersion: v1
+          parameters:
+            backendUrl: "http://interceptor-service.test-apk.svc.cluster.local:8443"
+            headersEnabled: true
+            bodyEnabled: false
+            trailersEnabled: false
+            contextEnabled: true
+      response:
+        - policyName: "Interceptor"
+          policyVersion: v1
+          parameters:
+            backendUrl: "http://interceptor-service.test-apk.svc.cluster.local:8443"
+            headersEnabled: true
+            bodyEnabled: false
+            trailersEnabled: false
+            contextEnabled: true
     ```
 
 ## Operation-level (Resource-level)
 
 **Sample code snippets**
 
-The following is a sample code snippet that defines how you can attach Interceptor API Policies at the Operation-level within an API definition.
+The following is a sample code snippet that defines how you can attach Interceptor API Policies at the Operation-level within an API APK configuration file.
 
 ```
-  "operationPolicies": {
-      "request": [
-          {
-            "policyName": "addInterceptor",
-            "parameters":
-              {
-                  "headersEnabled": true,
-                  "bodyEnabled": false,
-                  "trailersEnabled": false,
-                  "contextEnabled": true,
-                  "backendUrl": "http://legacy-xml-backend-v1.inter:9082"
-              }
-          }
-      ],
-      "response": [
-          {
-            "policyName": "addInterceptor",
-            "parameters":
-              {
-                  "headersEnabled": true,
-                  "bodyEnabled": false,
-                  "trailersEnabled": false,
-                  "contextEnabled": true,
-                  "backendUrl": "http://legacy-xml-backend-v1.inter:9082"
-              }
-          }
-      ]
-  }
+    operationPolicies:
+      request:
+        - policyName: "Interceptor"
+          policyVersion: v1
+          parameters:
+            backendUrl: "http://interceptor-service.test-apk.svc.cluster.local:8443"
+            headersEnabled: true
+            bodyEnabled: false
+            trailersEnabled: false
+            contextEnabled: true
+      response:
+       - policyName: "Interceptor"
+          policyVersion: v1
+          parameters:
+            backendUrl: "http://interceptor-service.test-apk.svc.cluster.local:8443"
+            headersEnabled: true
+            bodyEnabled: false
+            trailersEnabled: false
+            contextEnabled: true
 ```
 
 ??? note "Attach an Interceptor API Policy to the Request Flow Only"
 
     ```
-    "operationPolicies": {
-        "request": [
-            {
-              "policyName": "addInterceptor",
-              "parameters":
-                {
-                    "headersEnabled": true,
-                    "bodyEnabled": false,
-                    "trailersEnabled": false,
-                    "contextEnabled": true,
-                    "backendUrl": "http://legacy-xml-backend-v1.inter:9082"
-                }
-            }
-        ]
-    }
+    operationPolicies:
+      request:
+        - policyName: "Interceptor"
+          policyVersion: v1
+          parameters:
+            backendUrl: "http://interceptor-service.test-apk.svc.cluster.local:8443"
+            headersEnabled: true
+            bodyEnabled: false
+            trailersEnabled: false
+            contextEnabled: true
     ```
 
 ??? note "Attach an Interceptor API Policy to the Response Flow Only"
 
     ```
-    "operationPolicies": {
-        "response": [
-            {
-              "policyName": "addInterceptor",
-              "parameters":
-                {
-                    "headersEnabled": true,
-                    "bodyEnabled": false,
-                    "trailersEnabled": false,
-                    "contextEnabled": true,
-                    "backendUrl": "http://legacy-xml-backend-v1.inter:9082"
-                }
-            }
-        ]
-    }
+    operationPolicies:
+      response:
+        - policyName: "Interceptor"
+          policyVersion: v1
+          parameters:
+            backendUrl: "http://interceptor-service.test-apk.svc.cluster.local:8443"
+            headersEnabled: true
+            bodyEnabled: false
+            trailersEnabled: false
+            contextEnabled: true
     ```
 
 ??? note "Attach an Interceptor API Policy to Request and Response Flows"
 
     ```
-    "operationPolicies": {
-        "request": [
-            {
-              "policyName": "addInterceptor",
-              "parameters":
-                {
-                    "headersEnabled": true,
-                    "bodyEnabled": false,
-                    "trailersEnabled": false,
-                    "contextEnabled": true,
-                    "backendUrl": "http://legacy-xml-backend-v1.inter:9082"
-                }
-            }
-        ],
-        "response": [
-            {
-              "policyName": "addInterceptor",
-              "parameters":
-                {
-                    "headersEnabled": true,
-                    "bodyEnabled": false,
-                    "trailersEnabled": false,
-                    "contextEnabled": true,
-                    "backendUrl": "http://legacy-xml-backend-v1.inter:9082"
-                }
-            }
-        ]
-    }
+    operationPolicies:
+      request:
+        - policyName: "Interceptor"
+          policyVersion: v1
+          parameters:
+            backendUrl: "http://interceptor-service.test-apk.svc.cluster.local:8443"
+            headersEnabled: true
+            bodyEnabled: false
+            trailersEnabled: false
+            contextEnabled: true
+      response:
+       - policyName: "Interceptor"
+          policyVersion: v1
+          parameters:
+            backendUrl: "http://interceptor-service.test-apk.svc.cluster.local:8443"
+            headersEnabled: true
+            bodyEnabled: false
+            trailersEnabled: false
+            contextEnabled: true
     ```
 
 ## Configuration definitions
@@ -249,6 +193,10 @@ The following are the configurations that you need when attaching API Policies t
   <tr>
     <td><code>policyName</code></td>
     <td>Defines the default policy names. Possible values are <code>addInterceptor</code>.</td>
+  </tr>
+  <tr>
+    <td><code>policyVersion</code></td>
+    <td>Defines the version of the API policy.</td>
   </tr>
   <tr>
     <td><code>parameters</code></td>
