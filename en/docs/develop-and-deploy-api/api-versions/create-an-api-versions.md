@@ -106,6 +106,7 @@ Execute the following request to generate the access token. Use the base64 encod
    | Client Secret   | 4fbd62ec-a92e-11ed-afa1-0242ac120002        |
 
 === "Request"
+
     ```
        curl --location 'https://<host>:9095/oauth2/token' \
        --header 'Host: <host>' \
@@ -115,6 +116,7 @@ Execute the following request to generate the access token. Use the base64 encod
     ```
 
 === "Sample Request"
+
     ```
        curl -k --location 'https://idp.am.wso2.com:9095/oauth2/token' \
        --header 'Host: idp.am.wso2.com' \
@@ -124,6 +126,7 @@ Execute the following request to generate the access token. Use the base64 encod
     ```
 
 === "Sample Response"
+
     ```
        {"access_token":"eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiZXhwIjoxNjg4MTMxNDQ0LCAibmJmIjoxNjg4MTI3ODQ0LCAiaWF0IjoxNjg4MTI3ODQ0LCAianRpIjoiMDFlZTE3NDEtMDA0Ni0xOGE2LWFhMjEtYmQwYTk4ZjYzNzkwIiwgImNsaWVudElkIjoiNDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyIiwgInNjb3BlIjoiZGVmYXVsdCJ9.RfKQq2fUZKZFAyjimvsPD3cOzaVWazabmq7b1iKYacqIdNjkvO9CQmu7qdtrVNDmdZ_gHhWLXiGhN4UTSCXv_n1ArDnxTLFBroRS8dxuFBZoD9Mpj10vYFSDDhUfFqjgMqtpr30TpDMfee1wkqB6K757ZSjgCDa0hAbv555GkLdZtRsSgR3xWcxPBsIozqAMFDCWoUCbgTQuA5OiEhhpVco2zv4XLq2sz--VRoBieO12C69KnGRmoLuPtvOayInvrnV96Tbt9fR0fLS2l1nvAdFzVou0SIf9rMZLnURLVQQYE64GR14m-cFRYdUI9vTsFHZBl5w-uCLdzMMofzZaLQ", "token_type":"Bearer", "expires_in":3600, "scope":"default"}
     ```
@@ -145,57 +148,60 @@ Use the values provided in the table below in the body of your request.
 2.  Execute the API deployment request. You will receive a successful response with an Id for the API.
 
     === "Request"
-    ```
-      curl --location 'https://<host>:9095/api/deployer/1.0.0/apis/deploy' \
-      --header 'Host: <host>' \
-      --header 'Authorization: bearer <access-token>' \
-      --form 'apkConfiguration=@"path/to/EmployeeServiceV2.apk-conf"' \
-      --form 'definitionFile=@"path/to/EmployeeServiceDefinition.json"'
-    ```
+
+        ```
+        curl --location 'https://<host>:9095/api/deployer/1.0.0/apis/deploy' \
+        --header 'Host: <host>' \
+        --header 'Authorization: bearer <access-token>' \
+        --form 'apkConfiguration=@"path/to/EmployeeServiceV2.apk-conf"' \
+        --form 'definitionFile=@"path/to/EmployeeServiceDefinition.json"'
+        ```
 
     === "Sample Request"
-    ```
-      curl -k --location 'https://api.am.wso2.com:9095/api/deployer/1.0.0/apis/deploy' \
-      --header 'Host: api.am.wso2.com' \
-      --header 'Authorization: bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiZXhwIjoxNjg4MTMxNDQ0LCAibmJmIjoxNjg4MTI3ODQ0LCAiaWF0IjoxNjg4MTI3ODQ0LCAianRpIjoiMDFlZTE3NDEtMDA0Ni0xOGE2LWFhMjEtYmQwYTk4ZjYzNzkwIiwgImNsaWVudElkIjoiNDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyIiwgInNjb3BlIjoiZGVmYXVsdCJ9.RfKQq2fUZKZFAyjimvsPD3cOzaVWazabmq7b1iKYacqIdNjkvO9CQmu7qdtrVNDmdZ_gHhWLXiGhN4UTSCXv_n1ArDnxTLFBroRS8dxuFBZoD9Mpj10vYFSDDhUfFqjgMqtpr30TpDMfee1wkqB6K757ZSjgCDa0hAbv555GkLdZtRsSgR3xWcxPBsIozqAMFDCWoUCbgTQuA5OiEhhpVco2zv4XLq2sz--VRoBieO12C69KnGRmoLuPtvOayInvrnV96Tbt9fR0fLS2l1nvAdFzVou0SIf9rMZLnURLVQQYE64GR14m-cFRYdUI9vTsFHZBl5w-uCLdzMMofzZaLQ' \
-      --form 'apkConfiguration=@"/Users/user/EmployeeServiceV2.apk-conf"' \
-      --form 'definitionFile=@"/Users/user/EmployeeServiceDefinition.json"'
-    ```
+
+        ```
+        curl -k --location 'https://api.am.wso2.com:9095/api/deployer/1.0.0/apis/deploy' \
+        --header 'Host: api.am.wso2.com' \
+        --header 'Authorization: bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiZXhwIjoxNjg4MTMxNDQ0LCAibmJmIjoxNjg4MTI3ODQ0LCAiaWF0IjoxNjg4MTI3ODQ0LCAianRpIjoiMDFlZTE3NDEtMDA0Ni0xOGE2LWFhMjEtYmQwYTk4ZjYzNzkwIiwgImNsaWVudElkIjoiNDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyIiwgInNjb3BlIjoiZGVmYXVsdCJ9.RfKQq2fUZKZFAyjimvsPD3cOzaVWazabmq7b1iKYacqIdNjkvO9CQmu7qdtrVNDmdZ_gHhWLXiGhN4UTSCXv_n1ArDnxTLFBroRS8dxuFBZoD9Mpj10vYFSDDhUfFqjgMqtpr30TpDMfee1wkqB6K757ZSjgCDa0hAbv555GkLdZtRsSgR3xWcxPBsIozqAMFDCWoUCbgTQuA5OiEhhpVco2zv4XLq2sz--VRoBieO12C69KnGRmoLuPtvOayInvrnV96Tbt9fR0fLS2l1nvAdFzVou0SIf9rMZLnURLVQQYE64GR14m-cFRYdUI9vTsFHZBl5w-uCLdzMMofzZaLQ' \
+        --form 'apkConfiguration=@"/Users/user/EmployeeServiceV2.apk-conf"' \
+        --form 'definitionFile=@"/Users/user/EmployeeServiceDefinition.json"'
+        ```
 
     === "Sample Response"
-    ```
-      ---
-      id: "a70e538aeaab278437dc4c3199dbaf6fcb7df2d9"
-      name: "EmployeeServiceAPI"
-      context: "/test"
-      version: "4.0"
-      type: "REST"
-      organization: "apk-org"
-      defaultVersion: false
-      endpointConfigurations:
-      production:
-      endpoint: "https://run.mocky.io/v3/85516819-1edd-412b-a32b-a9284705a0b4"
-      operations:
-      - target: "/employee"
-      verb: "GET"
-      authTypeEnabled: true
-      scopes: []
-      - target: "/employee"
-      verb: "POST"
-      authTypeEnabled: true
-      scopes: []
-      - target: "/employee/{employeeId}"
-      verb: "PUT"
-      authTypeEnabled: true
-      scopes: []
-      - target: "/employee/{employeeId}"
-      verb: "DELETE"
-      authTypeEnabled: true
-      scopes: []
-      vhosts:
-      production:
-      - "default.gw.wso2.com"
-    ```
+
+        ```
+        ---
+        id: "a70e538aeaab278437dc4c3199dbaf6fcb7df2d9"
+        name: "EmployeeServiceAPI"
+        context: "/test"
+        version: "4.0"
+        type: "REST"
+        organization: "apk-org"
+        defaultVersion: false
+        endpointConfigurations:
+        production:
+        endpoint: "https://run.mocky.io/v3/85516819-1edd-412b-a32b-a9284705a0b4"
+        operations:
+        - target: "/employee"
+        verb: "GET"
+        authTypeEnabled: true
+        scopes: []
+        - target: "/employee"
+        verb: "POST"
+        authTypeEnabled: true
+        scopes: []
+        - target: "/employee/{employeeId}"
+        verb: "PUT"
+        authTypeEnabled: true
+        scopes: []
+        - target: "/employee/{employeeId}"
+        verb: "DELETE"
+        authTypeEnabled: true
+        scopes: []
+        vhosts:
+        production:
+        - "default.gw.wso2.com"
+        ```
 
 By now you have deployed the new version of the API. You can invoke the API new version using the access token generated in the previous step.
 
