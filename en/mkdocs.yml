@@ -115,10 +115,10 @@ nav:
                     - Via REST API: create-api/rate-limiting/add-new-rate-limiting-policies-via-rest-api.md
                     - Via CRs: create-api/rate-limiting/add-new-rate-limiting-policies-via-crs.md
                 - Custom Rate Limiting: create-api/rate-limiting/custom-rate-limiting.md
-    #        - API Security:
-    #            - Authentication:
-    #                - Enable API Security:
-    #                    - JWT: develop-and-deploy-api/security/authentication/enable-api-security/jwt.md
+           - API Security:
+               - Authentication:
+                   - Enable API Security:
+                       - JWT: develop-and-deploy-api/security/authentication/enable-api-security/jwt.md
     #                    - MTLS: develop-and-deploy-api/security/authentication/enable-api-security/mtls.md
     #                    - API Key: develop-and-deploy-api/security/authentication/enable-api-security/api-key.md
     #                    - Internal Key: develop-and-deploy-api/security/authentication/enable-api-security/internal-key.md
