@@ -130,6 +130,7 @@ nav:
                 - Create an API Version: develop-and-deploy-api/api-versions/create-an-api-versions.md
                 - Default Version: develop-and-deploy-api/api-versions/default-version.md
                 - Backward Compatibility: develop-and-deploy-api/api-versions/backward-compatibility.md
+            - Define Endpoints: develop-and-deploy-api/endpoints/prod-sand-endpoints.md
     #    - Manage APIs:
     #       - API Documentation: manage-apis/api-documentation.md
     #       - Consumer Management:
