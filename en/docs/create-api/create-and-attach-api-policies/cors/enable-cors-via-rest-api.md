@@ -45,6 +45,11 @@ Cross-Origin Resource Sharing (CORS) is a mechanism that allows accessing restri
             <td class="confluenceTd">Lists the response headers that the browser can expose to the requesting client.</td>
             <td class="confluenceTd">A list of strings representing header names. "*" to expose all headers, or specify individual headers.</td>
         </tr>
+        <tr>
+            <td colspan="2" class="confluenceTd"><pre>accessControlAllowMaxAge</pre></td>
+            <td class="confluenceTd">Indicates how long the results of a preflight request (OPTIONS) can be cached.</td>
+            <td class="confluenceTd">A positive integer representing the cache duration in seconds.</td>
+        </tr>
     </tbody>
 </table>
 
