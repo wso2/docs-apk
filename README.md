@@ -64,7 +64,7 @@ After the installation is complete, type `pip3.10 --version` or `pip3.10 -V` in 
 ## Installing and Running mkdocs
 Once you complete the prerequisite the following steps are common to both macOS and Ubuntu.
 
-Fist change directory to the `en` folder.
+First change directory to the `en` folder.
 
 #### Install MkDocs:
 The next step is to install MkDocs, a static site generator that is used to create documentation sites.
@@ -73,10 +73,13 @@ pip3.10 install mkdocs==1.4.2
 ```
 #### Install the MkDocs plugins:
 In order to use some of the advanced features of MkDocs, you need to install some plugins. The following commands install the required plugins:
+
 Method 1. Using requirements.txt
+
 ```bash
 pip3.10 install -r requirements.txt
 ```
+
 Method 2. Individually.
 
 ```bash
@@ -93,6 +96,7 @@ pip3.10 install markdown==3.2.1
 pip3.10 install mkdocs-exclude==1.0.2
 pip3.10 install jinja2==3.1.2
 ```
+
 These plugins provide support for syntax highlighting, a Material Design theme, extended Markdown syntax, and various other features.
 
 #### Running MkDocs
@@ -104,14 +108,17 @@ This command serves the documentation site locally, allowing you to preview chan
 
 #### Build for Production
 To build the site for production, run the following command.
+
 ```bash
 python3.10 -m mkdocs build
 ```
+
 This generates the static site files in the site directory, which can be deployed to a web server.
 
 ### Trouble shooting
 ##### Error while installing minify plugin.
 Solution: Run the following and retry.
+
 ```bash
 pip3.10 install --upgrade setuptools
 ```

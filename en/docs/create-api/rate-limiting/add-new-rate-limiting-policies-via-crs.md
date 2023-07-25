@@ -21,8 +21,9 @@ spec:
   default:
     type: Api
     api:
-      requestsPerUnit: 5
-      unit: Minute
+      rateLimit:
+        requestsPerUnit: 5
+        unit: Minute
   targetRef:
     kind: HTTPRoute
     name: sand-http-route-http-bin-api
@@ -44,8 +45,9 @@ spec:
   override:
     type: Api
     api:
-      requestsPerUnit: 5
-      unit: Minute
+      rateLimit:
+        requestsPerUnit: 5
+        unit: Minute
   targetRef:
     kind: Resource
     name: sand-http-route-http-bin-api
@@ -225,8 +227,9 @@ Follow the instructions below to add an API-level Rate Limiting Policy to an API
         default:
           type: Api
           api:
-            requestsPerUnit: 5
-            unit: Minute
+            rateLimit:
+              requestsPerUnit: 5
+              unit: Minute
         targetRef:
           kind: HTTPRoute
           name: sand-http-route-http-bin-api
@@ -266,8 +269,9 @@ Follow the instructions below to add an Operation-level Rate Limiting Policy to 
         override:
           type: Api
           api:
-            requestsPerUnit: 5
-            unit: Minute
+            rateLimit:
+              requestsPerUnit: 5
+              unit: Minute
         targetRef:
           kind: Resource
           name: sand-http-route-http-bin-api

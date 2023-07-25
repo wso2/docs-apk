@@ -34,10 +34,9 @@ copyright: WSO2 API Platform for Kubernetes - Documentation
 theme:
     name: material
     custom_dir: theme/material
-    logo: images/logo-for-light.svg
+    logo: images/dummy-logo.svg # Real logo is coming from theme.
     favicon: images/favicon.png
     features:
-        - content.tabs.link
         - content.code.copy
         - navigation.tabs
         - navigation.tabs.sticky
@@ -85,11 +84,6 @@ nav:
         #    - Test API: develop-and-deploy-api/test-api.md
         #    - Publish Your API: manage-apis/publish-your-api.md
     - API Management:
-        # - Develop and Deploy API:
-    #        - API Versions:
-    #            - Create an API Version: develop-and-deploy-api/api-versions/create-an-api-versions.md
-    #            - Default Version: develop-and-deploy-api/api-versions/default-version.md
-    #            - Backward Compatibility: develop-and-deploy-api/api-versions/backward-compatibility.md
         - Create APIs:
            - Overview: create-api/create-api-overview.md
            - Create and deploy APIs:
@@ -113,23 +107,32 @@ nav:
                 - Query manipulation: 
                     - Overview: create-api/create-and-attach-api-policies/query-manipulation/query-manipulation-overview.md
                 - Backend JWT Token Manipulation:
-                    - Overview: create-api/create-and-attach-api-policies/backend-jwt-token-manipulation/backend-jwt-token-manipulation-via-crs.md
+                    - Via CR: create-api/create-and-attach-api-policies/backend-jwt-token-manipulation/backend-jwt-token-manipulation-via-crs.md
+                - CORS:
+                    - Via REST API: create-api/create-and-attach-api-policies/cors/enable-cors-via-rest-api.md
+                    - Via CR: create-api/create-and-attach-api-policies/cors/enable-cors-via-crs.md
            - Rate Limiting:
                 - Overview: create-api/rate-limiting/rate-limiting-policy-overview.md
                 - Simple Rate Limiting:
                     - Via REST API: create-api/rate-limiting/add-new-rate-limiting-policies-via-rest-api.md
                     - Via CRs: create-api/rate-limiting/add-new-rate-limiting-policies-via-crs.md
                 - Custom Rate Limiting: create-api/rate-limiting/custom-rate-limiting.md
-    #        - API Security:
-    #            - Authentication:
-    #                - Enable API Security:
-    #                    - JWT: develop-and-deploy-api/security/authentication/enable-api-security/jwt.md
+           - API Security:
+               - Authentication:
+                   - Enable API Security:
+                       - JWT: develop-and-deploy-api/security/authentication/enable-api-security/jwt.md
     #                    - MTLS: develop-and-deploy-api/security/authentication/enable-api-security/mtls.md
     #                    - API Key: develop-and-deploy-api/security/authentication/enable-api-security/api-key.md
     #                    - Internal Key: develop-and-deploy-api/security/authentication/enable-api-security/internal-key.md
     #                - Disable API Security: develop-and-deploy-api/security/authentication/disable-api-security.md
     #            - Authorization:
     #                - Access Control for API Requests: develop-and-deploy-api/security/authorization/access-control-for-api-requests.md
+        - Develop and Deploy API:
+            - API Versions:
+                - Create an API Version: develop-and-deploy-api/api-versions/create-an-api-versions.md
+                - Default Version: develop-and-deploy-api/api-versions/default-version.md
+                - Backward Compatibility: develop-and-deploy-api/api-versions/backward-compatibility.md
+            - Define Endpoints: develop-and-deploy-api/endpoints/prod-sand-endpoints.md
     #    - Manage APIs:
     #       - API Documentation: manage-apis/api-documentation.md
     #       - Consumer Management:
@@ -150,15 +153,63 @@ nav:
     #       - API Categorization: manage-apis/api-categorization.md
     #       - API Monetization: manage-apis/api-monetization.md
     - Catalogs:
+        - CRD Catalog: 
+            - Overview - CRD Catalog: catalogs/kubernetes-crds.md
+            - API: catalogs/api-cr.md
+            - HTTPRoute: catalogs/http-route.md
+            - Backend: catalogs/backend.md
+            - APIPolicy: 
+                - Overview: catalogs/api-policy.md
+                - CORS: catalogs/cors.md
+                - Interceptors: catalogs/interceptors.md
+            - RateLimitPolicy: 
+                - Overview: catalogs/rate-limit-policy.md
+                - API Level: catalogs/ratelimit-api.md
+                - Resource Level: catalogs/ratelimit-resource.md
+                - Custom: catalogs/ratelimit-custom.md
         - API Catalog:
             - Overview - API Catalog: catalogs/api-catalog.md
             - Back Office APIs: catalogs/api-reference-back-office.md
             - Runtime APIs: catalogs/api-reference-runtime.md
             - Developer Portal APIs: catalogs/api-reference-developer-portal.md
             - Admin APIs: catalogs/api-reference-admin.md
+        - Config Catalog: catalogs/config-catalog.md
     #   - CLI Catalog: catalogs/cli-reference.md
-    #   - CRD Catalog: catalogs/kubernetes-crds.md
     #    - Helm Catalog: catalogs/config-catalog.md
+    - Setup: 
+        - Prerequisites: setup/prerequisites.md
+        - Migration: setup/migration.md
+        - Organization: setup/organizations.md
+        - Configure Identity Provider:
+            - Overview: setup/identity-platform/idp/idp-overview.md
+            - Non-production: setup/identity-platform/idp/non-production-idp.md
+            - Asgardeo: setup/identity-platform/idp/asgardeo-idp.md
+            - Auth0: setup/identity-platform/idp/auth0-idp.md
+            - Any Third-party IdP: setup/identity-platform/idp/third-party-idp.md
+        - Configure Analytics: 
+            - Choreo Insights: setup/analytics/configure-analytics-for-choreo-insights.md
+            - ELK Stack: setup/analytics/configure-analytics-for-elk-stack.md
+       #- Install: setup/install.md
+       #- Deploy:
+       #    - Deployment Patterns: get-started/dummy.md
+       #    - All-in-one: get-started/dummy.md
+       #    - Distributed:
+       #        - Deployment Pattern 2: get-started/dummy.md
+       #        - Deployment Pattern 3: get-started/dummy.md
+       #- CI/CD: develop-and-deploy-api/ci-cd.md
+        #- Customizations:
+        #    - API Gateway - Enforcer:
+            #    - Enforcer - Overview: apk-deck/enforcer-overview.md
+        #        - Mediation Extensions:
+        #            - Custom Filters: setup/customizations/gateway-enforcer/mediation-extensions/custom-filters.md
+    - Administration:
+        - Test System APIs: administration/postman-tests.md
+        - Setup Logs:
+            - Overview: administration/configurations/configure-logs-overview.md
+            - Adapter: administration/configurations/configure-logs-adapter.md
+            - Enforcer: administration/configurations/configure-logs-enforcer.md
+            - Router: administration/configurations/configure-logs-router.md
+        - Setup Distributed Tracing: administration/distributed-tracing.md
     - About APK:
         - What is APK?: about-apk/what-is-apk.md
         - About This Release: about-apk/about-this-release.md
@@ -207,31 +258,6 @@ nav:
            #    - Topic 1: get-started/dummy.md
            #    - Topic 2: get-started/dummy.md
         #- Product Pitch: https://wso2.com/api-manager
-    - Setup: 
-        - Prerequisites: setup/prerequisites.md
-        - Migration: setup/migration.md
-        - Organization: setup/organizations.md
-        - Configure Identity Provider:
-            - Overview: setup/identity-platform/idp/idp-overview.md
-            - Non-production: setup/identity-platform/idp/non-production-idp.md
-            - Asgardeo: setup/identity-platform/idp/asgardeo-idp.md
-            - Auth0: setup/identity-platform/idp/auth0-idp.md
-            - Any Third-party IdP: setup/identity-platform/idp/third-party-idp.md
-       #- Install: setup/install.md
-       #- Deploy:
-       #    - Deployment Patterns: get-started/dummy.md
-       #    - All-in-one: get-started/dummy.md
-       #    - Distributed:
-       #        - Deployment Pattern 2: get-started/dummy.md
-       #        - Deployment Pattern 3: get-started/dummy.md
-       #- CI/CD: develop-and-deploy-api/ci-cd.md
-        #- Customizations:
-        #    - API Gateway - Enforcer:
-            #    - Enforcer - Overview: apk-deck/enforcer-overview.md
-        #        - Mediation Extensions:
-        #            - Custom Filters: setup/customizations/gateway-enforcer/mediation-extensions/custom-filters.md
-    - Administration:
-        - Test System APIs: administration/postman-tests.md
     - Reach Out:
         - Community: reachout/community.md # Brief description and links to Discord and Stack OverFlow
         - Support: https://wso2.com/subscription/#support
@@ -294,8 +320,8 @@ extra_css:
     - assets/lib/highlightjs/styles/vs.min.css
     # Make sure to activate only one palette at a time.
     # If all the palettes are commented out, the default material theme palette will take over
-    # - assets/css/blue-palette-alt1.css
-    - assets/css/blue-palette-alt2.css
+    - assets/css/blue-palette-alt1.css
+    # - assets/css/blue-palette-alt2.css
     # - assets/css/blue-palette.css
     # - assets/css/green-palette.css
     # - assets/css/orange-palette.css
@@ -320,7 +346,7 @@ extra:
         - type: linkedin
           link: https://www.linkedin.com/company/wso2
     site_version: 1.0.0
-    #base_path: http://localhost:8000
+    # base_path: http://localhost:8000
     base_path: https://apk.docs.wso2.com
     envoy_path: https://www.envoyproxy.io/docs/envoy/v1.20.0
 # static_cache_control: "no-cache"
