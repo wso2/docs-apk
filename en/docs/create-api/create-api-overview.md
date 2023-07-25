@@ -1,8 +1,8 @@
 
-In APK, you can deploy APIs by using Kubernetes resources, if you prefer a Kubernetes-native experience. However, APK also expose REST APIs, and you can create APIs using any of the following three methods:
+In APK, you can deploy APIs by using Kubernetes resources, if you prefer a Kubernetes-native experience. However, APK offers a suite of developer tools to streamline the API development process and use these tools to create and deploy APIs.
 
-- [Create API using CRs](../create-and-deploy-apis/create-api-using-cr) - This method requires manually defining the API by creating YAML files for Kubernetes resources such as APIs, HTTPRoutes, Deployments, Services, ..etc, giving you complete control over the deployment but requiring some knowledge of Kubernetes and being potentially more time-consuming.
+- [Kubernetes Native API Creation flow](../create-and-deploy-apis/create-api-using-cr) - WSO2 APK support for the developer flow with direct Custom Resource (CR) creation, in alignment with the Kubernetes Gateway API specification.This method requires manually defining the API by creating YAML files for Kubernetes resources such as APIs, HTTPRoutes, Deployments, Services, ..etc, giving you complete control over the deployment but requiring some knowledge of Kubernetes.
 
-- [Create API from API definition](../create-and-deploy-apis/create-api-from-api-definition) - This method involves defining the API using Swagger/OpenAPI Specification, which allows you to define the API in a standardized way.
+- [Enhanced API Development flow](../create-and-deploy-apis/create-api-using-enhanced-flow) - WSO2 APK provides a set of REST APIs and tools to streamline the API development process. These APIs/tools are designed for API developers to create APIs, mock APIs, and test APIs and deploying APIs to a Kubernetes cluster.
 
-- [Create API from k8s service](../create-and-deploy-apis/create-api-from-k8s-service) - This method let's you use sequence of REST API calls to create an API from scratch without using a Swagger definition.
+
