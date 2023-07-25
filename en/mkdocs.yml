@@ -106,6 +106,8 @@ nav:
                     - Via CR: create-api/create-and-attach-api-policies/interceptors/interceptors-via-crs.md
                 - Query manipulation: 
                     - Overview: create-api/create-and-attach-api-policies/query-manipulation/query-manipulation-overview.md
+                - Backend JWT Token Manipulation:
+                    - Via CR: create-api/create-and-attach-api-policies/backend-jwt-token-manipulation/backend-jwt-token-manipulation-via-crs.md
                 - CORS:
                     - Via REST API: create-api/create-and-attach-api-policies/cors/enable-cors-via-rest-api.md
                     - Via CR: create-api/create-and-attach-api-policies/cors/enable-cors-via-crs.md
