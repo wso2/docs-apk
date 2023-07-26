@@ -26,86 +26,17 @@
 
 ## Step 2 - Setup Elasticsearch and Kibana
 
-You can setup Elasticsearch and kibana anywhere you like.
-
-!!! Tip
-      Do you need a quick guide to setup Elasticsearch and Kibana to see how APK logs look like? Follow the below steps.
-
-      1. Add elastic to your helm repo using: `helm repo add elastic https://helm.elastic.co`
-      2. Install Elasticsearch helm chart using: `helm install my-elastic elastic/elasticsearch --version 8.5.1 -n <namespace>` 
-      3. Install Kibana helm chart using: `helm install my-kibana elastic/kibana --version 8.5.1 -n <namespace>` 
-      4. Port forward the kibana UI port using: `kubectl port-forward svc/kibana-kibana -n <namespace> 5601:5601`
-      5. Go to https://localhost:5601 and you should be able to see kibana UI
-
-
+To configure Elasticsearch and Kibana on your Kubernetes cluster, you can refer to the [official guide](https://www.elastic.co/guide/en/cloud-on-k8s/current/k8s-stack-helm-chart.html) provided by Elastic. The guide includes instructions on deploying the necessary Helm charts for Elasticsearch and Kibana.
 
 
 ## Step 3 - Setup Logging agent 
 
-   You can use any logging agent that support kubernetes log forwaring
+For forwarding Kubernetes logs to Elasticsearch, you have the option to use any logging agent that supports this functionality. Two commonly used options are Filebeat and FluentBit.
 
-=== "Filebeat"
-    
-    We can use Filebeat helm charts from [Elastic Inc](https://artifacthub.io/packages/helm/elastic/filebeat)
+   - Filebeat: If you choose Filebeat, you can set it up in your Kubernetes environment by following the [official guide](https://www.elastic.co/guide/en/beats/filebeat/current/running-on-kubernetes.html) provided by Elastic. Filebeat is a lightweight log shipper that is part of the Elastic Stack. It can be configured to collect logs from your Kubernetes pods and forward them to Elasticsearch.
 
-     1. Run `helm repo add elastic https://helm.elastic.co` to add elastic helm repository
-     2. Run `helm fetch elastic/filebeat --untar`  to download and untar the Filebeat Helm chart.
-     3. Go to the `filebeat` directory and open the `values.yaml` file.
-     4. Modify the `filebeatConfig.filebeat.yml.output.elasticsearch` section of values.yaml file according to your Elasticsearch deployment
-     5. Run `helm install filebeat . -n <namespace>` to install filebeat
+   - FluentBit: Alternatively, you can opt for FluentBit as your logging agent. FluentBit is an open-source and efficient log processor and forwarder. It is designed to work well with Kubernetes environments and can be used to collect and send logs to Elasticsearch. You can follow the [official guide](https://docs.fluentbit.io/manual/installation/kubernetes) to install FluentBit.
 
-
-
-
-=== "Fluent-bit"
-
-    We can use Fluent-bit helm chart from [here](https://fluent.github.io/helm-charts)
-
-      1. Run `helm repo add fluent https://fluent.github.io/helm-charts` to add the Fluent Bit Helm repository.
-      2. Run `helm fetch fluent/fluent-bit --untar` to download and untar the Fluent Bit Helm chart.
-      3. Go to the `fluent-bit` directory and open the `values.yaml` file.
-      4. Modify the config section of values.yaml file using
-
-         ```yaml
-         inputs: |
-            [INPUT]
-               Name tail
-               Path /var/log/containers/*.log
-               multiline.parser docker, cri
-               Tag kube.*
-               Mem_Buf_Limit 5MB
-               Skip_Long_Lines On
-               Parser  docker
-         filters: |
-            [FILTER]
-               Name                kubernetes
-               Match               kube.*
-               Kube_URL            https://kubernetes.default.svc:443
-               Kube_CA_File        /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
-               Kube_Token_File     /var/run/secrets/kubernetes.io/serviceaccount/token
-               Kube_Tag_Prefix     kube.var.log.containers.
-               Merge_Log           On
-               Merge_Log_Key       log_processed
-               K8S-Logging.Parser  On
-               K8S-Logging.Exclude Off
-               Annotations Off
-         outputs: |
-            [OUTPUT]
-               Name es
-               Match *
-               Host elasticsearch-master
-               Port 9200
-               HTTP_User <usename>
-               HTTP_Passwd <password>
-               tls On
-               tls.verify Off
-               Suppress_Type_Name On
-               Trace_Error       On
-               Replace_Dots On
-               Logstash_Format On
-               Index my_index
-         ```
-      5. Run `helm install fluent-bit . -n <namespace>` to install fluent-bit.
 
 ## Step 4 - Invoke requests and view analytics logs in Kibana UI
 
