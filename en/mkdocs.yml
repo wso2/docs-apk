@@ -84,7 +84,7 @@ nav:
         #    - Test API: develop-and-deploy-api/test-api.md
         #    - Publish Your API: manage-apis/publish-your-api.md
     - API Management:
-        - Create APIs:
+        - Develop and Deploy API:
            - Overview: create-api/create-api-overview.md
            - Create and deploy APIs:
                 - K8s Native API Development: create-api/create-and-deploy-apis/create-api-using-cr.md
@@ -95,51 +95,51 @@ nav:
                         - Generate APK Configuration file: create-api/create-and-deploy-apis/generate-apk-conf.md
                         - Generate K8s custom resources and Deploy: create-api/create-and-deploy-apis/create-and-deploy-api.md
                         - Direct Deploy into K8s Server: create-api/create-and-deploy-apis/direct-deploy.md
-           - Manage Service Endpoint:
-                - Manage Certificate: create-api/manage-service-endpoint/manage-certificate.md
-                - Manage Security:
-                    - Via REST API: create-api/manage-service-endpoint/manage-security-via-rest-api.md
-                    - Via CR: create-api/manage-service-endpoint/manage-security-via-crs.md
-           - Create API Policies: 
-                - Overview: create-api/create-and-attach-api-policies/api-policies-overview.md
-                - Header manipulation:  
-                    - Via REST API: create-api/create-and-attach-api-policies/header-manipulation/header-manipulation-via-rest-api.md
-                    - Via CR: create-api/create-and-attach-api-policies/header-manipulation/header-manipulation-via-crs.md
-                - Interceptors Service: 
-                    - Overview: create-api/create-and-attach-api-policies/interceptors/interceptors-overview.md
-                    - Via REST API: create-api/create-and-attach-api-policies/interceptors/interceptors-via-rest-api.md
-                    - Via CR: create-api/create-and-attach-api-policies/interceptors/interceptors-via-crs.md
-                - Query manipulation: 
-                    - Overview: create-api/create-and-attach-api-policies/query-manipulation/query-manipulation-overview.md
-                - Backend JWT Token Manipulation:
-                    - Via REST API: create-api/create-and-attach-api-policies/backend-jwt-token-manipulation/backend-jwt-token-manipulation-via-rest-api.md
-                    - Via CR: create-api/create-and-attach-api-policies/backend-jwt-token-manipulation/backend-jwt-token-manipulation-via-crs.md
-                - CORS:
-                    - Via REST API: create-api/create-and-attach-api-policies/cors/enable-cors-via-rest-api.md
-                    - Via CR: create-api/create-and-attach-api-policies/cors/enable-cors-via-crs.md
-           - Rate Limiting:
-                - Overview: create-api/rate-limiting/rate-limiting-policy-overview.md
-                - Simple Rate Limiting:
-                    - Via REST API: create-api/rate-limiting/add-new-rate-limiting-policies-via-rest-api.md
-                    - Via CRs: create-api/rate-limiting/add-new-rate-limiting-policies-via-crs.md
-                - Custom Rate Limiting: create-api/rate-limiting/custom-rate-limiting.md
-           - API Security:
-               - Authentication:
-                   - Enable API Security:
-                       - JWT: develop-and-deploy-api/security/authentication/enable-api-security/jwt.md
+        - Manage Endpoint:
+            - Define Endpoints: develop-and-deploy-api/endpoints/prod-sand-endpoints.md
+            - Manage Certificate: create-api/manage-service-endpoint/manage-certificate.md
+            - Manage Security:
+                - Via REST API: create-api/manage-service-endpoint/manage-security-via-rest-api.md
+                - Via CR: create-api/manage-service-endpoint/manage-security-via-crs.md
+        - API Policies: 
+            - Overview: create-api/create-and-attach-api-policies/api-policies-overview.md
+            - Header manipulation:  
+                - Via REST API: create-api/create-and-attach-api-policies/header-manipulation/header-manipulation-via-rest-api.md
+                - Via CR: create-api/create-and-attach-api-policies/header-manipulation/header-manipulation-via-crs.md
+            - Interceptors Service: 
+                - Overview: create-api/create-and-attach-api-policies/interceptors/interceptors-overview.md
+                - Via REST API: create-api/create-and-attach-api-policies/interceptors/interceptors-via-rest-api.md
+                - Via CR: create-api/create-and-attach-api-policies/interceptors/interceptors-via-crs.md
+            - Query manipulation: 
+                - Overview: create-api/create-and-attach-api-policies/query-manipulation/query-manipulation-overview.md
+            - Backend JWT Token Manipulation:
+                - Via REST API: create-api/create-and-attach-api-policies/backend-jwt-token-manipulation/backend-jwt-token-manipulation-via-rest-api.md
+                - Via CR: create-api/create-and-attach-api-policies/backend-jwt-token-manipulation/backend-jwt-token-manipulation-via-crs.md
+            - CORS:
+                - Via REST API: create-api/create-and-attach-api-policies/cors/enable-cors-via-rest-api.md
+                - Via CR: create-api/create-and-attach-api-policies/cors/enable-cors-via-crs.md
+        - Rate Limiting:
+            - Overview: create-api/rate-limiting/rate-limiting-policy-overview.md
+            - Simple Rate Limiting:
+                - Via REST API: create-api/rate-limiting/add-new-rate-limiting-policies-via-rest-api.md
+                - Via CRs: create-api/rate-limiting/add-new-rate-limiting-policies-via-crs.md
+            - Custom Rate Limiting: create-api/rate-limiting/custom-rate-limiting.md
+        - API Security:
+            - Authentication:
+                - Enable API Security:
+                    - JWT: develop-and-deploy-api/security/authentication/enable-api-security/jwt.md
+        - API Versions:
+            - Create an API Version: develop-and-deploy-api/api-versions/create-an-api-versions.md
+            - Default Version: develop-and-deploy-api/api-versions/default-version.md
+            - Backward Compatibility: develop-and-deploy-api/api-versions/backward-compatibility.md
+        - API Properties: develop-and-deploy-api/api-properties/api-properties.md
+
     #                    - MTLS: develop-and-deploy-api/security/authentication/enable-api-security/mtls.md
     #                    - API Key: develop-and-deploy-api/security/authentication/enable-api-security/api-key.md
     #                    - Internal Key: develop-and-deploy-api/security/authentication/enable-api-security/internal-key.md
     #                - Disable API Security: develop-and-deploy-api/security/authentication/disable-api-security.md
     #            - Authorization:
     #                - Access Control for API Requests: develop-and-deploy-api/security/authorization/access-control-for-api-requests.md
-        - Develop and Deploy API:
-            - API Versions:
-                - Create an API Version: develop-and-deploy-api/api-versions/create-an-api-versions.md
-                - Default Version: develop-and-deploy-api/api-versions/default-version.md
-                - Backward Compatibility: develop-and-deploy-api/api-versions/backward-compatibility.md
-            - Define Endpoints: develop-and-deploy-api/endpoints/prod-sand-endpoints.md
-            - Define API Properties: develop-and-deploy-api/api-properties/api-properties.md
     #    - Manage APIs:
     #       - API Documentation: manage-apis/api-documentation.md
     #       - Consumer Management:
