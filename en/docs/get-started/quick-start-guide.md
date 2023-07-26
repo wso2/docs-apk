@@ -92,8 +92,8 @@ Apart from the above API definition file, we also need an `apk-conf` file which 
                 <td class="confluenceTd">Change the context parameter to "/test"</td>
             </tr>
             <tr>
-                <td colspan="2" class="confluenceTd"><pre>organization: "apk-org"</pre></td>
-                <td class="confluenceTd">Add the "organization" parameter with a value you prefer. We are using "apk-org" in this case.</td>
+                <td colspan="2" class="confluenceTd"><pre>organization: "apk-system"</pre></td>
+                <td class="confluenceTd">Add the "organization" parameter with a value you prefer. We are using "apk-system" in this case.</td>
             </tr>
             <tr>
                 <td colspan="2" class="confluenceTd">
@@ -114,7 +114,7 @@ Apart from the above API definition file, we also need an `apk-conf` file which 
         context: "/test"
         version: "3.14"
         type: "REST"
-        organization: "apk-org"
+        organization: "apk-system"
         vhosts:
             production:
                 - "default.gw.wso2.com"
@@ -140,6 +140,9 @@ Apart from the above API definition file, we also need an `apk-conf` file which 
             authTypeEnabled: true
             scopes: []
         ```
+
+!!!NOTE
+    If you are using a different organization to the one used in this guide, you will have to create a JWTIssuer with relevant organization name in APK before proceeding to the next step. You can use the [Add JWT Issuer](../develop-and-deploy-api/jwt-issuers/jwt-issuers.md) to create a new jwt issuer.
 
 ### Generate an access token to invoke APIs
 
@@ -217,7 +220,7 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
         context: "/test"
         version: "3.14"
         type: "REST"
-        organization: "apk-org"
+        organization: "apk-system"
         defaultVersion: false
         endpointConfigurations:
             production:
