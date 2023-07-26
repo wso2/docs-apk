@@ -7,19 +7,19 @@ The following is a sample code snippet that defines how you can attach Intercept
 ```
 apiPolicies:
   request:
-    - policyName: "Interceptor"
+    - policyName: "addInterceptor"
       policyVersion: v1
       parameters:
-        backendUrl: "http://interceptor-service.test-apk.svc.cluster.local:8443"
+        backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
         headersEnabled: true
         bodyEnabled: false
         trailersEnabled: false
         contextEnabled: true
   response:
-    - policyName: "Interceptor"
+    - policyName: "addInterceptor"
       policyVersion: v1
       parameters:
-        backendUrl: "http://interceptor-service.test-apk.svc.cluster.local:8443"       
+        backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"       
         headersEnabled: true       
         bodyEnabled: false      
         trailersEnabled: false      
@@ -31,10 +31,10 @@ apiPolicies:
     ```
     apiPolicies:
       request:
-        - policyName: "Interceptor"
+        - policyName: "addInterceptor"
           policyVersion: v1
           parameters:
-            backendUrl: "http://interceptor-service.test-apk.svc.cluster.local:8443"
+            backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
             headersEnabled: true
             bodyEnabled: false
             trailersEnabled: false
@@ -46,10 +46,10 @@ apiPolicies:
     ```
     apiPolicies:
       response:
-        - policyName: "Interceptor"
+        - policyName: "addInterceptor"
           policyVersion: v1
           parameters:
-            backendUrl: "http://interceptor-service.test-apk.svc.cluster.local:8443"
+            backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
             headersEnabled: true
             bodyEnabled: false
             trailersEnabled: false
@@ -61,19 +61,19 @@ apiPolicies:
     ```
     apiPolicies:
       request:
-        - policyName: "Interceptor"
+        - policyName: "addInterceptor"
           policyVersion: v1
           parameters:
-            backendUrl: "http://interceptor-service.test-apk.svc.cluster.local:8443"
+            backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
             headersEnabled: true
             bodyEnabled: false
             trailersEnabled: false
             contextEnabled: true
       response:
-        - policyName: "Interceptor"
+        - policyName: "addInterceptor"
           policyVersion: v1
           parameters:
-            backendUrl: "http://interceptor-service.test-apk.svc.cluster.local:8443"
+            backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
             headersEnabled: true
             bodyEnabled: false
             trailersEnabled: false
@@ -89,19 +89,19 @@ The following is a sample code snippet that defines how you can attach Intercept
 ```
     operationPolicies:
       request:
-        - policyName: "Interceptor"
+        - policyName: "addInterceptor"
           policyVersion: v1
           parameters:
-            backendUrl: "http://interceptor-service.test-apk.svc.cluster.local:8443"
+            backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
             headersEnabled: true
             bodyEnabled: false
             trailersEnabled: false
             contextEnabled: true
       response:
-       - policyName: "Interceptor"
+       - policyName: "addInterceptor"
           policyVersion: v1
           parameters:
-            backendUrl: "http://interceptor-service.test-apk.svc.cluster.local:8443"
+            backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
             headersEnabled: true
             bodyEnabled: false
             trailersEnabled: false
@@ -113,10 +113,10 @@ The following is a sample code snippet that defines how you can attach Intercept
     ```
     operationPolicies:
       request:
-        - policyName: "Interceptor"
+        - policyName: "addInterceptor"
           policyVersion: v1
           parameters:
-            backendUrl: "http://interceptor-service.test-apk.svc.cluster.local:8443"
+            backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
             headersEnabled: true
             bodyEnabled: false
             trailersEnabled: false
@@ -128,10 +128,10 @@ The following is a sample code snippet that defines how you can attach Intercept
     ```
     operationPolicies:
       response:
-        - policyName: "Interceptor"
+        - policyName: "addInterceptor"
           policyVersion: v1
           parameters:
-            backendUrl: "http://interceptor-service.test-apk.svc.cluster.local:8443"
+            backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
             headersEnabled: true
             bodyEnabled: false
             trailersEnabled: false
@@ -143,19 +143,19 @@ The following is a sample code snippet that defines how you can attach Intercept
     ```
     operationPolicies:
       request:
-        - policyName: "Interceptor"
+        - policyName: "addInterceptor"
           policyVersion: v1
           parameters:
-            backendUrl: "http://interceptor-service.test-apk.svc.cluster.local:8443"
+            backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
             headersEnabled: true
             bodyEnabled: false
             trailersEnabled: false
             contextEnabled: true
       response:
-       - policyName: "Interceptor"
+       - policyName: "addInterceptor"
           policyVersion: v1
           parameters:
-            backendUrl: "http://interceptor-service.test-apk.svc.cluster.local:8443"
+            backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
             headersEnabled: true
             bodyEnabled: false
             trailersEnabled: false
