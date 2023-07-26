@@ -284,4 +284,3 @@ Now the API is ready to be invoked. Let’s get the list of Employees by invokin
         ```
 
 You will now be able to see a successful response with the details of the Employees from the mock backend that we used for this guide.
-
