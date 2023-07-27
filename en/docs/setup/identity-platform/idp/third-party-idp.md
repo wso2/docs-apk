@@ -38,20 +38,20 @@ This includes setting the application's settings, such as the application name a
 1. Navigate to the `<APK-HOME>/helm-charts/` directory and open the `values.yaml` file.
 2. Update the IDP related configurations in the `idp` section.
 
-      ```json
-       idp:
-         issuer: ""
-         authorizeEndpoint: ""
-         tokenEndpoint: ""
-         revokeEndpoint: ""
-         jwksEndpoint: ""      
-         usernameClaim: ""
-         groupClaim: ""
-         organizationClaim: ""
-         credentials:
-            secretName: "apk-idp-secret"
+     ```yaml
+     idp:
+          issuer: ""
+          authorizeEndpoint: ""
+          tokenEndpoint: ""
+          revokeEndpoint: ""
+          jwksEndpoint: ""      
+          usernameClaim: ""
+          groupClaim: ""
+          organizationClaim: ""
+          credentials:
+               secretName: "apk-idp-secret"
 
-       ```
+     ```
 
       - `organizationClaim` - This needs to be configured based on organization claim in jwt.
       - Update all other values based on the Endpoint details that you came under the application settings.
