@@ -199,6 +199,7 @@ nav:
             - ELK Stack: setup/analytics/configure-analytics-for-elk-stack.md
         - Configure Listeners:
             - Configure Gateway Listeners: setup/listeners/configure-gateway-listeners.md
+        - Deploy in OpenShift: setup/deploy-in-openshift.md
        #- Install: setup/install.md
        #- Deploy:
        #    - Deployment Patterns: get-started/dummy.md
