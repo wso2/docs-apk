@@ -104,15 +104,10 @@ nav:
                 - Via CR: create-api/manage-service-endpoint/manage-security-via-crs.md
         - API Policies: 
             - Overview: create-api/create-and-attach-api-policies/api-policies-overview.md
-            - Header manipulation:  
-                - Via REST API: create-api/create-and-attach-api-policies/header-manipulation/header-manipulation-via-rest-api.md
-                - Via CR: create-api/create-and-attach-api-policies/header-manipulation/header-manipulation-via-crs.md
             - Interceptors Service: 
                 - Overview: create-api/create-and-attach-api-policies/interceptors/interceptors-overview.md
                 - Via REST API: create-api/create-and-attach-api-policies/interceptors/interceptors-via-rest-api.md
                 - Via CR: create-api/create-and-attach-api-policies/interceptors/interceptors-via-crs.md
-            - Query manipulation: 
-                - Overview: create-api/create-and-attach-api-policies/query-manipulation/query-manipulation-overview.md
             - Backend JWT Token Manipulation:
                 - Via REST API: create-api/create-and-attach-api-policies/backend-jwt-token-manipulation/backend-jwt-token-manipulation-via-rest-api.md
                 - Via CR: create-api/create-and-attach-api-policies/backend-jwt-token-manipulation/backend-jwt-token-manipulation-via-crs.md
@@ -189,18 +184,6 @@ nav:
         - Prerequisites: setup/prerequisites.md
         - Migration: setup/migration.md
         - Organization: setup/organizations.md
-        - Configure Identity Provider:
-            - Overview: setup/identity-platform/idp/idp-overview.md
-            - Non-production: setup/identity-platform/idp/non-production-idp.md
-            - Asgardeo: setup/identity-platform/idp/asgardeo-idp.md
-            - Auth0: setup/identity-platform/idp/auth0-idp.md
-            - Any Third-party IdP: setup/identity-platform/idp/third-party-idp.md
-        - Configure Analytics: 
-            - Choreo Insights: setup/analytics/configure-analytics-for-choreo-insights.md
-            - ELK Stack: setup/analytics/configure-analytics-for-elk-stack.md
-        - Configure Listeners:
-            - Configure Gateway Listeners: setup/listeners/configure-gateway-listeners.md
-        - Deploy in OpenShift: setup/deploy-in-openshift.md
        #- Install: setup/install.md
        #- Deploy:
        #    - Deployment Patterns: get-started/dummy.md
@@ -215,13 +198,24 @@ nav:
         #        - Mediation Extensions:
         #            - Custom Filters: setup/customizations/gateway-enforcer/mediation-extensions/custom-filters.md
     - Administration:
-        - Test System APIs: administration/postman-tests.md
-        - Setup Logs:
+        - Configure Identity Provider:
+            - Overview: setup/identity-platform/idp/idp-overview.md
+            - Non-production: setup/identity-platform/idp/non-production-idp.md
+            - Asgardeo: setup/identity-platform/idp/asgardeo-idp.md
+            - Auth0: setup/identity-platform/idp/auth0-idp.md
+            - Any Third-party IdP: setup/identity-platform/idp/third-party-idp.md
+        - Configure Analytics: 
+            - Choreo Insights: setup/analytics/configure-analytics-for-choreo-insights.md
+            - ELK Stack: setup/analytics/configure-analytics-for-elk-stack.md
+        - Configure Listeners:
+            - Configure Gateway Listeners: setup/listeners/configure-gateway-listeners.md
+        - Configure Logs:
             - Overview: administration/configurations/configure-logs-overview.md
             - Adapter: administration/configurations/configure-logs-adapter.md
             - Enforcer: administration/configurations/configure-logs-enforcer.md
             - Router: administration/configurations/configure-logs-router.md
-        - Setup Distributed Tracing: administration/distributed-tracing.md
+        - Configure Distributed Tracing: administration/distributed-tracing.md
+        - Deploy in OpenShift: setup/deploy-in-openshift.md
     - About APK:
         - What is APK?: about-apk/what-is-apk.md
         - About This Release: about-apk/about-this-release.md
