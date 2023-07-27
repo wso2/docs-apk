@@ -11,6 +11,7 @@ You need to create the `APIPolicy` with `targetRef.kind` property set to `Resour
 ### Create your API
 
 #### API resource
+
 ```
 apiVersion: dp.wso2.com/v1alpha1
 kind: API
@@ -54,7 +55,7 @@ spec:
     matches:
     - path:
         type: RegularExpression
-        value: /interceptor/1.0.0/books/with-interceptors
+        value: /books/with-interceptors
       method: POST
     filters:
     - type: URLRewrite
@@ -74,7 +75,7 @@ spec:
     matches:
     - path:
         type: RegularExpression
-        value: /interceptor/1.0.0/books/without-interceptors
+        value: /books/without-interceptors
       method: POST
     filters:
     - type: URLRewrite
@@ -85,6 +86,7 @@ spec:
 ```
 
 #### Backend resource for API backend
+
 ```
 apiVersion: dp.wso2.com/v1alpha1
 kind: Backend
@@ -100,6 +102,7 @@ spec:
 ### Create Interceptor APIPolicy
 
 #### APIPolicy resource with resource level interceptors
+
 ```
 apiVersion: dp.wso2.com/v1alpha1
 kind: APIPolicy
@@ -108,22 +111,36 @@ metadata:
   namespace: ns
 spec:
   override:
-    requestInterceptor:
-      backendRef:
-         name: interceptor-backend
-      includes:
-      - request_body
-      - request_headers
-    responseInterceptor:
-      backendRef:
-         name: interceptor-backend
+    requestInterceptors:
+    - name: request-interceptor-service-resource-level
+    responseInterceptors:
+    - name: response-interceptor-service-resource-level
   targetRef:
     group: gateway.networking.k8s.io
     kind: Resource
     name: my-http-route
 ```
 
+#### InterceptorService resource for Interceptor API policy
+
+```
+apiVersion: dp.wso2.com/v1alpha1
+kind: InterceptorService
+metadata:
+  name: request-interceptor-service-resource-level
+  namespace: ns
+spec:
+  backendRef:
+    name: interceptor-backend
+    namespace: ns
+  includes:
+    - request_headers
+    - request_body
+    - invocation_context
+```
+
 #### Backend resource for Interceptor service backend
+
 ```
 kind: Backend
 metadata:
@@ -143,7 +160,7 @@ spec:
 Here `interceptor-cert-secret` refers to a Kubernetes `Secret` resource which contains the tls certificate information for the interceptor service.
 
 !!! Tip
-    
+
     You can define CA certificate of interceptor service using three different ways. If you have the certificate on your hand use `certificateInline` to define it inline. Or you can use `secretRef` or `configMapRef` feilds to read them from a `Secret` resource or a `ConfigMap` resource respectively. Check the [Manage Certificate](../../../manage-service-endpoint/manage-certificate/) section for more information.
 
 ## Configuring API level Interceptors
@@ -153,6 +170,7 @@ When you want to apply the Interceptor `APIPolicy` for the `API`, you can create
 ### Create your API
 
 #### API resource
+
 ```
 apiVersion: dp.wso2.com/v1alpha1
 kind: API
@@ -196,7 +214,7 @@ spec:
     matches:
     - path:
         type: RegularExpression
-        value: /my-sample-api/1.0.0/books
+        value: /books
       method: POST
     filters:
     - type: URLRewrite
@@ -211,7 +229,7 @@ spec:
     matches:
     - path:
         type: RegularExpression
-        value: /my-sample-api/1.0.0/offers
+        value: /offers
       method: POST
     filters:
     - type: URLRewrite
@@ -222,6 +240,7 @@ spec:
 ```
 
 #### Backend resource for API backend
+
 ```
 apiVersion: dp.wso2.com/v1alpha1
 kind: Backend
@@ -238,7 +257,7 @@ spec:
 
 #### APIPolicy resource with API level interceptors
 
-Since the `targetRef.kind` is for the `API`, interceptor is applicable for all the `HTTPRoute`s reffered from that `API`. 
+Since the `targetRef.kind` is for the `API`, interceptor is applicable for all the `HTTPRoute`s reffered from that `API`.
 
 ```
 apiVersion: dp.wso2.com/v1alpha1
@@ -248,22 +267,36 @@ metadata:
   namespace: ns
 spec:
   override:
-    requestInterceptor:
-      backendRef:
-         name: interceptor-backend
-      includes:
-      - request_body
-      - request_headers
+    requestInterceptors:
+      - name: request-interceptor-service-api-level
     responseInterceptor:
-      backendRef:
-         name: interceptor-backend
+      - name: response-interceptor-service-api-level
   targetRef:
     group: dp.wso2.com
     kind: API
     name: my-sample-api
 ```
 
+#### InterceptorService resource for Interceptor API policy
+
+```
+apiVersion: dp.wso2.com/v1alpha1
+kind: InterceptorService
+metadata:
+  name: request-interceptor-service-api-level
+  namespace: ns
+spec:
+  backendRef:
+    name: interceptor-backend
+    namespace: ns
+  includes:
+    - request_headers
+    - request_body
+    - invocation_context
+```
+
 #### Backend resource for Interceptor service backend
+
 ```
 kind: Backend
 metadata:
@@ -282,7 +315,6 @@ spec:
 
 For reference, a sample interceptor service for data conversion between application/json and application/xml data types with interceptor policy CRs can be found here: [request-response-mediation-interceptors](https://github.com/wso2/apk/tree/main/samples/request-response-mediation-interceptors)
 
-
 ## Configuring Gateway level Interceptors
 
 If you want all of your requests coming to the Gateway (from all the APIs deployed in the Gateway) to be intercepted, then you can target the Interceptor `APIPolicy` to your `Gateway` resource like below:
@@ -295,23 +327,50 @@ metadata:
   namespace: apk
 spec:
   default:
-    requestInterceptor:
-      backendRef:
-         name: gateway-request-interceptor-backend
-      includes:
-      - request_body
-      - request_headers
-      - invocation_context
-    responseInterceptor:
-      backendRef:
-         name: gateway-response-interceptor-backend
-      includes:
-      - response_body
-      - response_headers
+    requestInterceptors:
+      - name: request-interceptor-service-gateway-level
+    responseInterceptors:
+      - name: response-interceptor-service-gateway-level
   targetRef:
     group: dp.wso2.com
     kind: Gateway
     name: default
+```
+
+#### InterceptorService resource for Interceptor API policy
+
+```
+apiVersion: dp.wso2.com/v1alpha1
+kind: InterceptorService
+metadata:
+  name: request-interceptor-service-gateway-level
+  namespace: ns
+spec:
+  backendRef:
+    name: interceptor-backend
+    namespace: ns
+  includes:
+    - request_headers
+    - request_body
+    - invocation_context
+```
+
+#### Backend resource for Interceptor service backend
+
+```
+kind: Backend
+metadata:
+  namespace: ns
+  name: interceptor-backend
+spec:
+  protocol: https
+  services:
+  - host: interceptor-backend.ns
+    port: 9081
+  tls:
+    secretRef:
+      name: interceptor-cert-secret
+      key: ca.crt
 ```
 
 !!! Info

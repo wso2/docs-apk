@@ -11,21 +11,30 @@ metadata:
   namespace: ns
 spec:
   override:
-    requestInterceptor:
-      backendRef:
-         name: req-interceptor-backend
-         namespace: ns
-      includes:
-      - request_body
-    responseInterceptor:
-      backendRef:
-         name: res-interceptor-backend
-         namespace: ns
-      - response_headers
+    requestInterceptors:
+      - name: request-interceptor-service
+    responseInterceptors:
+      - name: response-interceptor-service
   targetRef:
     group: dp.wso2.com
     kind: API
     name: sample-api
+```
+
+##### Sample InterceptorService Custom Resource
+```
+apiVersion: dp.wso2.com/v1alpha1
+kind: InterceptorService
+metadata:
+  name: request-interceptor-service
+spec:
+  backendRef:
+    name: interceptor-backend
+    namespace: ns
+  includes:
+    - request_headers
+    - response_body
+    - invocation_context
 ```
 
 When you have attahced an Interceptor `APIPolicy` like above example to your `API`, then the request flow (`1`, `2`, `3`, and `4` numbered circles) and response flow (`5`, `6`, `7`, and `8` numbered circles) can be depicted as below.
