@@ -102,6 +102,10 @@ nav:
             - Manage Security:
                 - Via REST API: create-api/manage-service-endpoint/manage-security-via-rest-api.md
                 - Via CR: create-api/manage-service-endpoint/manage-security-via-crs.md
+            - Manage Resiliency:
+                - Timeout: create-api/manage-service-endpoint/manage-resiliency-timeout.md
+                - Retry Policy: create-api/manage-service-endpoint/manage-resiliency-retry-policy.md
+                - Circuit Breaker: create-api/manage-service-endpoint/manage-resiliency-circuit-breaker.md
         - API Policies: 
             - Overview: create-api/create-and-attach-api-policies/api-policies-overview.md
             - Header manipulation:  
