@@ -166,6 +166,7 @@ nav:
             - API: catalogs/api-cr.md
             - HTTPRoute: catalogs/http-route.md
             - Backend: catalogs/backend.md
+            - BackendJWT: catalogs/backend-jwt.md
             - APIPolicy: 
                 - Overview: catalogs/api-policy.md
                 - CORS: catalogs/cors.md

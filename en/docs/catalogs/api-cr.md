@@ -16,9 +16,11 @@ spec:
   apiType: REST
   apiVersion: 1.0.0
   context: /http-bin-api/1.0.0
+  isDefaultVersion: true
   production:
   - httpRouteRefs:
     - prod-http-route-http-bin-api
+  organization: apk-org
 ```
 
 Refer [Manage API](../../create-api/create-api-overview/) for more information on how to configure API.
