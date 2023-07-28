@@ -142,6 +142,7 @@ spec:
 #### Backend resource for Interceptor service backend
 
 ```
+apiVersion: dp.wso2.com/v1alpha1
 kind: Backend
 metadata:
   namespace: ns
@@ -269,7 +270,7 @@ spec:
   override:
     requestInterceptors:
       - name: request-interceptor-service-api-level
-    responseInterceptor:
+    responseInterceptors:
       - name: response-interceptor-service-api-level
   targetRef:
     group: dp.wso2.com
@@ -298,6 +299,7 @@ spec:
 #### Backend resource for Interceptor service backend
 
 ```
+apiVersion: dp.wso2.com/v1alpha1
 kind: Backend
 metadata:
   namespace: ns
@@ -358,6 +360,7 @@ spec:
 #### Backend resource for Interceptor service backend
 
 ```
+apiVersion: dp.wso2.com/v1alpha1
 kind: Backend
 metadata:
   namespace: ns
