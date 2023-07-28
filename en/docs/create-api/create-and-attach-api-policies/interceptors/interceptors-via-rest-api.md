@@ -7,7 +7,7 @@ The following is a sample code snippet that defines how you can attach Intercept
 ```
 apiPolicies:
   request:
-    - policyName: "addInterceptor"
+    - policyName: "Interceptor"
       policyVersion: v1
       parameters:
         backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
@@ -16,7 +16,7 @@ apiPolicies:
         trailersEnabled: false
         contextEnabled: true
   response:
-    - policyName: "addInterceptor"
+    - policyName: "Interceptor"
       policyVersion: v1
       parameters:
         backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"       
@@ -31,7 +31,7 @@ apiPolicies:
     ```
     apiPolicies:
       request:
-        - policyName: "addInterceptor"
+        - policyName: "Interceptor"
           policyVersion: v1
           parameters:
             backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
@@ -46,7 +46,7 @@ apiPolicies:
     ```
     apiPolicies:
       response:
-        - policyName: "addInterceptor"
+        - policyName: "Interceptor"
           policyVersion: v1
           parameters:
             backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
@@ -61,7 +61,7 @@ apiPolicies:
     ```
     apiPolicies:
       request:
-        - policyName: "addInterceptor"
+        - policyName: "Interceptor"
           policyVersion: v1
           parameters:
             backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
@@ -70,7 +70,7 @@ apiPolicies:
             trailersEnabled: false
             contextEnabled: true
       response:
-        - policyName: "addInterceptor"
+        - policyName: "Interceptor"
           policyVersion: v1
           parameters:
             backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
@@ -89,7 +89,7 @@ The following is a sample code snippet that defines how you can attach Intercept
 ```
     operationPolicies:
       request:
-        - policyName: "addInterceptor"
+        - policyName: "Interceptor"
           policyVersion: v1
           parameters:
             backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
@@ -98,7 +98,7 @@ The following is a sample code snippet that defines how you can attach Intercept
             trailersEnabled: false
             contextEnabled: true
       response:
-       - policyName: "addInterceptor"
+       - policyName: "Interceptor"
           policyVersion: v1
           parameters:
             backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
@@ -113,7 +113,7 @@ The following is a sample code snippet that defines how you can attach Intercept
     ```
     operationPolicies:
       request:
-        - policyName: "addInterceptor"
+        - policyName: "Interceptor"
           policyVersion: v1
           parameters:
             backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
@@ -128,7 +128,7 @@ The following is a sample code snippet that defines how you can attach Intercept
     ```
     operationPolicies:
       response:
-        - policyName: "addInterceptor"
+        - policyName: "Interceptor"
           policyVersion: v1
           parameters:
             backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
@@ -143,7 +143,7 @@ The following is a sample code snippet that defines how you can attach Intercept
     ```
     operationPolicies:
       request:
-        - policyName: "addInterceptor"
+        - policyName: "Interceptor"
           policyVersion: v1
           parameters:
             backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
@@ -152,7 +152,7 @@ The following is a sample code snippet that defines how you can attach Intercept
             trailersEnabled: false
             contextEnabled: true
       response:
-       - policyName: "addInterceptor"
+       - policyName: "Interceptor"
           policyVersion: v1
           parameters:
             backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
@@ -192,7 +192,7 @@ The following are the configurations that you need when attaching API Policies t
   </tr>
   <tr>
     <td><code>policyName</code></td>
-    <td>Defines the default policy names. Possible values are <code>addInterceptor</code>.</td>
+    <td>Defines the default policy names. For interceptor API policies this should equal to <code>Interceptor</code>.</td>
   </tr>
   <tr>
     <td><code>policyVersion</code></td>
