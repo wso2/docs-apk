@@ -91,7 +91,9 @@ Configuring an interceptor requires the following two steps.
 
 1. [Implement an interceptor microservice adhering to the Interceptor OpenAPI Definition](https://apim.docs.wso2.com/en/latest/deploy-and-publish/deploy-on-gateway/choreo-connect/message-transformation/interceptor-microservice/interceptor-microservice/)
 
-2. Create `APIPolicy` with interceptor configuration and attach it to your `API`.
+2. For reference, a sample interceptor service for data conversion between application/json and application/xml data types with interceptor policy CRs can be found here: [request-response-mediation-interceptors](https://github.com/wso2/apk/tree/main/samples/request-response-mediation-interceptors)
+
+3. Create `APIPolicy` with interceptor configuration and attach it to your `API`.
     
     - [Attach Interceptor APIPolicy via REST API](../interceptors-via-rest-api)
     - [Attach Interceptor APIPolicy via CR](../interceptors-via-crs)
