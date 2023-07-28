@@ -177,10 +177,11 @@ nav:
                 - Custom: catalogs/ratelimit-custom.md
         - API Catalog:
             - Overview - API Catalog: catalogs/api-catalog.md
-            - Back Office APIs: catalogs/api-reference-back-office.md
-            - Runtime APIs: catalogs/api-reference-runtime.md
-            - Developer Portal APIs: catalogs/api-reference-developer-portal.md
-            - Admin APIs: catalogs/api-reference-admin.md
+#            - Back Office APIs: catalogs/api-reference-back-office.md
+            - Config Deployer APIs: catalogs/api-reference-config-deployer.md
+            - Config Generator APIs: catalogs/api-reference-config-generator.md
+#            - Developer Portal APIs: catalogs/api-reference-developer-portal.md
+#            - Admin APIs: catalogs/api-reference-admin.md
         - Config Catalog: catalogs/config-catalog.md
     #   - CLI Catalog: catalogs/cli-reference.md
     #    - Helm Catalog: catalogs/config-catalog.md
