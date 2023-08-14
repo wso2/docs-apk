@@ -2,10 +2,7 @@
 
 
 You can secure access to your backend via the Basic Authentication scheme. 
-For that, you can use one of the following ways.
-
-1. [Refer an already created  K8 `Secret` resource containing `username` and `password` data](#refer-an-already-created-k8-secret)
-2. [Directly Add the username and password via REST API](#directly-add-the-username-and-password)
+For that, you can refer to an already created K8 `Secret`.
 
 
 ## Refer an already created  K8 `Secret`
@@ -27,80 +24,36 @@ For that, you can use one of the following ways.
   Then you can add the secret name `backend-creds` via REST APIs in the following way.
 
 
-  The following is a sample code snippet that defines how you can define Basic auth endpoint security within an API definition.
+  The following is a sample code snippet that defines how you can define Basic auth endpoint security within an API `apk-conf` file.
 
 #### Direct Endpoints
 
   ```
-      "endpointConfig": {
-          "endpoint_type": "http",
-          "production_endpoints": {
-              "url": "https://httpbin.org"
-          },
-          "endpoint_security": {
-              "production": {
-                  "enabled": true,
-                  "type": "Basic",
-                  "secretRefName": "backend-creds"
-              }
-          }
-      }
+    endpointConfigurations:
+      production:
+        endpoint: "https://httpbin.org"
+        endpointSecurity:
+          enabled: true
+          securityType:
+            secretName: "backend-creds"
+            userNameKey: "username"
+            passwordKey: "password"
   ```
 
 #### Service Endpoints
 
   ```
-      "serviceInfo": {
-          "name": "{{ServiceName}}",
-          "namespace": "{{ServiceNamespace}}",
-          "endpoint_security": {
-              "production": {
-                  "enabled": true,
-                  "type": "Basic",
-                  "secretRefName": "backend-creds"
-              }
-          }
-
-      }
+    endpointConfigurations:
+      production:
+        endpoint:
+          name: "backend-service"
+          namespace: "ns"
+          port: 80
+          protocol: "http"
+        endpointSecurity:
+          enabled: true
+          securityType:
+            secretName: "backend-creds"
+            userNameKey: "username"
+            passwordKey: "password"
   ```
-
-## Directly Add the `username` and `password`
-
-
-The following is a sample code snippet that defines how you can define Basic auth endpoint security within an API definition.
-
-#### Direct Endpoints
-
-```
-    "endpointConfig": {
-        "endpoint_type": "http",
-        "production_endpoints": {
-            "url": "https://httpbin.org"
-        },
-        "endpoint_security": {
-            "production": {
-                "enabled": true,
-                "type": "Basic",
-                "username": "admin",
-                "password": "admin"
-            }
-        }
-    }
-```
-
-#### Service Endpoints
-
-```
-    "serviceInfo": {
-        "name": "{{ServiceName}}",
-        "namespace": "{{ServiceNamespace}}",
-        "endpoint_security": {
-            "production": {
-                "enabled": true,
-                "type": "Basic",
-                "username": "admin",
-                "password": "admin"
-            }
-        }
-    }
-```
