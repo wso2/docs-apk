@@ -1,4 +1,4 @@
-You can define CA certificate of your endpoint service using three different ways. If you have the certificate on your hand use `certificateInline` to define it inline. Or you can use `secretRef` or `configMapRef` feilds to read them from a `Secret` resource or a `ConfigMap` resource respectively.
+You can define CA certificate of your endpoint service using three different ways. If you have the certificate on your hand use `certificateInline` to define it inline. Or you can use `secretRef` or `configMapRef` fields to read them from a `Secret` resource or a `ConfigMap` resource respectively.
 
 ## Using the certificate data as a inline string
 

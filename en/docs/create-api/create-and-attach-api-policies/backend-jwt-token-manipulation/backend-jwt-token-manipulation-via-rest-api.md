@@ -6,7 +6,7 @@ To find more information about backend JWT generation, please refer to the [Pass
 
 ## Before you begin
 
-- [Create an API](../../get-started/quick-start-guide.md)
+- [Create an API](../../../get-started/quick-start-guide.md)
 
 ### Backend JWT configuration
 

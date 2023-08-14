@@ -5,9 +5,9 @@ By default JWT authentication is enabled for all the APIs. The default configura
 
 ## Before you begin
 
-- [Create an API](../../get-started/quick-start-guide.md)
+- [Create an API](../../../../get-started/quick-start-guide.md)
 
-you can use the apk-conf file which is created in [Create an API](../../get-started/quick-start-guide.md) documentation and Save this content into a file named `EmployeeServiceDisabledJWT.apk-conf`.
+You can use the apk-conf file which is created in [Create an API](../../../../get-started/quick-start-guide.md) documentation and save this content into a file named `EmployeeServiceDisabledJWT.apk-conf`.
 
 
 Sample content before the modification is shown below.
@@ -45,7 +45,7 @@ Sample content before the modification is shown below.
 
 ### Disable JWT authentication
 
-Modify the conent with the following config to disable JWT
+Modify the content with the following config to disable JWT
   
    ```yaml
    authentication: 
@@ -95,7 +95,7 @@ Modified APK configuration content to disable JWT
 ### Use custom bearer header name
 
 
-Modify the conent with the following config to use custom auth header name
+Modify the content with the following config to use custom auth header name
   
    ```yaml
    authentication: 
