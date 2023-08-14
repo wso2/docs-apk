@@ -2,7 +2,7 @@
 
 !!! Tip
     
-    To get familiar with the concept of Rate Limiting, see [Rate Limiting Overview](../../../develop-and-deploy-api/rate-limiting-policy-overview).
+    To get familiar with the concept of Rate Limiting, see [Rate Limiting Overview](./rate-limiting-policy-overview.md).
 
 You need to define the API Policies as separate Custom Resources (CRs) when creating an API using the Kubernetes Command Line Interface (kubctl). Let's get familiar with the [API-level](#api-level) and [Operation-level](#operation-level) configurations that you will use to add Rate Limiting Policies and also the [configurations definitions](#configuration-definitions).
 
@@ -19,11 +19,9 @@ metadata:
   name: sand-http-bin-ratelimit
 spec:
   default:
-    type: Api
     api:
-      rateLimit:
-        requestsPerUnit: 5
-        unit: Minute
+      requestsPerUnit: 5
+      unit: Minute
   targetRef:
     kind: HTTPRoute
     name: sand-http-route-http-bin-api
@@ -43,7 +41,6 @@ metadata:
   name: sand-http-bin-ratelimit
 spec:
   override:
-    type: Api
     api:
       rateLimit:
         requestsPerUnit: 5
@@ -225,11 +222,9 @@ Follow the instructions below to add an API-level Rate Limiting Policy to an API
         name: sand-http-bin-ratelimit
       spec:
         default:
-          type: Api
           api:
-            rateLimit:
-              requestsPerUnit: 5
-              unit: Minute
+            requestsPerUnit: 5
+            unit: Minute
         targetRef:
           kind: HTTPRoute
           name: sand-http-route-http-bin-api
@@ -267,11 +262,9 @@ Follow the instructions below to add an Operation-level Rate Limiting Policy to 
         name: sand-http-bin-ratelimit
       spec:
         override:
-          type: Api
           api:
-            rateLimit:
-              requestsPerUnit: 5
-              unit: Minute
+            requestsPerUnit: 5
+            unit: Minute
         targetRef:
           kind: Resource
           name: sand-http-route-http-bin-api
