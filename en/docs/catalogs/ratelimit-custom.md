@@ -15,7 +15,7 @@ spec:
       value: admin
       requestsPerUnit: 20
       unit: Minute
-    organization: default
+      organization: default
   targetRef:
     kind: Gateway
     name: default
