@@ -10,7 +10,7 @@ You need to define the Rate Limiting Policies in the API payload when creating a
 
 **Sample code snippets**
 
-The following is a sample code snippet that defines how you can define Rate Limiting policies at the API-level within an API definition.
+The following is a sample code snippet that defines how you can define Rate Limiting policies at the API-level within an API configuration.
 
 ```
 apiRateLimit:
@@ -18,9 +18,9 @@ apiRateLimit:
   unit: "Minute"
 ```
 
-??? note "Sample API definition"
+??? note "Sample API Configuration"
     
-    The following in a sample API definition with an API-Level Rate Limiting Policy defined in it.
+    The following is a sample apk-conf file with an API-Level Rate Limiting Policy defined in it.
     ```
     name: "EmployeeServiceAPI"
     context: "/test"
@@ -48,7 +48,7 @@ apiRateLimit:
 
 **Sample code snippets**
 
-The following is a sample code snippet that defines how you can define Rate Limiting policies at the Operation-level within an API definition.
+The following is a sample code snippet that defines how you can define Rate Limiting policies at the Operation-level within an API configuration.
 
 ```
 operationRateLimit:
@@ -56,9 +56,9 @@ operationRateLimit:
   unit: "Minute"
 ```
 
-??? note "Sample API definition"
+??? note "Sample API Configuration"
     
-    The following in a sample API definition with an Operation-Level Rate Limiting Policy defined in it.
+    The following is a sample apk-conf file with an Operation-Level Rate Limiting Policy defined in it.
     ```
     name: "EmployeeServiceAPI"
     context: "/test"

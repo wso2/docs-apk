@@ -10,7 +10,7 @@ You need to define the API Policies as separate Custom Resources (CRs) when crea
 
 **Sample code snippets**
 
-The following is a sample code snippet that defines how you can define Rate Limiting Policies at the API-level within an API definition.
+The following is a sample code snippet that defines how you can define Rate Limiting Policies at the API-level via a Rate Limiting Policy Custom Resource (CR) definition.
 
 ```
 apiVersion: dp.wso2.com/v1alpha1
