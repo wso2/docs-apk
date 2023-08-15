@@ -2,11 +2,6 @@
 
 You can use timeouts to gracefully handle connections that take an unusual amount of time to respond. Timeouts mainly ensure that the client gets a success or an error response within the specified amount of time, and thereby the client does not hang indefinitely. Timeouts also enable both the client and the backend to free its resources, allocated for the connection, within the time gap defined.
 
-maxRouteTimeoutSeconds: Specifies the maximum timeout for a route (in seconds). This is the maximum time allowed for processing the entire request-response cycle for an API route.
-routeIdleTimeoutSeconds: Specifies the maximum idle time (in seconds) allowed for a route. If no data is received or sent within this timeout, the connection will be closed.
-routeTimeoutSeconds: Specifies the timeout (in seconds) for a single request-response cycle of a route. If the backend response is not received within this time, the request will be considered timed-out.
-
-
 <table>
     <thead>
       <tr>
@@ -17,19 +12,14 @@ routeTimeoutSeconds: Specifies the timeout (in seconds) for a single request-res
     </thead>
     <tbody>
       <tr>
-        <td style="white-space: nowrap;"><code>maxRouteTimeoutSeconds</code></td>
-        <td>Maximum value accepted as the Endpoint Level Upstream Timeout.</td>
-        <td>60</td>
-      </tr>
-      <tr>
-        <td style="white-space: nowrap;"><code>routeIdleTimeoutSeconds</code></td>
-        <td>The backend (upstream) connection idle timeout. The amount of time the request’s stream may be idle.</td>
+        <td style="white-space: nowrap;"><code>downstreamRequestIdleTimeout</code></td>
+        <td>DownstreamRequestIdleTimeout bounds the amount of time (in seconds) the request's stream may be idle. A value of 0 will completely disable the route's idle timeout.</td>
         <td>300</td>
       </tr>
       <tr>
-        <td style="white-space: nowrap;"><code>routeTimeoutSeconds</code></td>
-        <td>The time duration that the Router waits for the response from the backend, starting from the time the request arrived at the router. This value always should be lower than <code>maxRouteTimeoutSeconds</code></td>
-        <td>60</td>
+        <td style="white-space: nowrap;"><code>upstreamResponseTimeout</code></td>
+        <td>UpstreamResponseTimeout spans between the point at which the entire downstream request (i.e. end-of-stream) has been processed and when the upstream response has been completely processed. A value of 0 will disable the route’s timeout. If the timeout fires, the stream is terminated with a 504 Gateway Timeout error code.</td>
+        <td>15</td>
       </tr>
     </tbody>
 </table>
@@ -46,9 +36,8 @@ endpointConfigurations:
   endpoint: "http://backend-service.ns:443"
   resiliency:
       timeout:
-        maxRouteTimeoutSeconds: 20
-        routeIdleTimeoutSeconds: 30
-        routeTimeoutSeconds: 10
+        downstreamRequestIdleTimeout: 45
+        upstreamResponseTimeout: 10
 ```
 
 ## Via CRs
@@ -63,9 +52,8 @@ metadata:
 spec:
   protocol: http
   timeout:
-    maxRouteTimeoutSeconds: 20
-    routeIdleTimeoutSeconds: 30
-    routeTimeoutSeconds: 10
+    downstreamRequestIdleTimeout: 45
+    upstreamResponseTimeout: 10
   services:
   - host: backend-service.ns
     port: 443
