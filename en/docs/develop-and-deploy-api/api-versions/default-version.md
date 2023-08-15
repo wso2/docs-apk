@@ -205,7 +205,7 @@ Use the values provided in the table below in the body of your request.
 
 By now, you have deployed the default version of the API. You can invoke the API using URLs both with and without the versions. Please try out the following URLs, and you will receive the same response:
 
-- https://localhost:9095/test/3.14/employee/
+- https://localhost:9095/test/4.0/employee/
 - https://localhost:9095/test/employee/
 
 Both of these requests are directed to the same backend and utilize the same API policies. For example, if you set up a rate limit for a particular operation, the rate limit will be applied for both invocations, and the same rate limit counter will be used.

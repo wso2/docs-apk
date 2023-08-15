@@ -4,7 +4,7 @@ API policies are a powerful tool in WSO2 APK for enforcing business logic and mo
 
 ## Policy Attachment Levels
 
-There are a few levels where a  Policy attachment can happen in APK resources. 
+There are a few levels where a Policy attachment can happen in APK resources. 
 
 | **Level**              | **Actor**      | **Description**  |
 |------------------------|----------------|------------------|

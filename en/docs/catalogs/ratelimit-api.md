@@ -9,11 +9,9 @@ metadata:
   name: sand-http-bin-ratelimit
 spec:
   default:
-    type: Api
     api:
-      rateLimit:
-        requestsPerUnit: 5
-        unit: Minute
+      requestsPerUnit: 5
+      unit: Minute
   targetRef:
     kind: HTTPRoute
     name: sand-http-route-http-bin-api

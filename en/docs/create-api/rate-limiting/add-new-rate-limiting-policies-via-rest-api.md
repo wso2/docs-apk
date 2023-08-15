@@ -2,7 +2,7 @@
 
 !!! Tip
     
-    To get familiar with the concept of Rate Limiting, see [Rate Limiting Overview](../../../develop-and-deploy-api/rate-limiting-policy-overview).
+    To get familiar with the concept of Rate Limiting, see [Rate Limiting Overview](./rate-limiting-policy-overview.md).
 
 You need to define the Rate Limiting Policies in the API payload when creating an API using the REST API Interface. You can define either API-level or Operation-level Rate Limiting Policies. Let's get familiar with the [API-level](#api-level) and [Operation-level (Resource-Level)](#operation-level-resource-level-rate-limiting) configurations and also the [configuration definitions](#configuration-definitions).
 
@@ -10,70 +10,76 @@ You need to define the Rate Limiting Policies in the API payload when creating a
 
 **Sample code snippets**
 
-The following is a sample code snippet that defines how you can define Rate Limiting policies at the API-level within an API definition.
+The following is a sample code snippet that defines how you can define Rate Limiting policies at the API-level within an API configuration.
 
 ```
-"apiRateLimit": {
-    "requestsPerUnit": 5,
-    "unit": "Minute"
-},
+apiRateLimit:
+  requestsPerUnit: 5
+  unit: "Minute"
 ```
 
-??? note "Sample API definition"
+??? note "Sample API Configuration"
     
-    The following in a sample API definition with an API-Level Rate Limiting Policy defined in it.
+    The following is a sample apk-conf file with an API-Level Rate Limiting Policy defined in it.
     ```
-    name: "PizzaAPIPolicies",
-        context: "/pizzaAPIPolcies/1.0.0",
-        'version: "1.0.0",
-        endpointConfig: {"production_endpoints": {"url": "https://localhost"}},
-        operations: [
-            {
-                "target": "/menu",
-                "verb": "GET",
-                "authTypeEnabled": true,
-                "throttlingPolicy": 1000
-            }
-        ],
-        apiRateLimit: {
-            "requestsPerUnit": 10,
-            "unit": "Minute"
-        }
+    name: "EmployeeServiceAPI"
+    context: "/test"
+    version: "3.14"
+    type: "REST"
+    organization: "apk-system"
+    vhosts:
+      production:
+        - "default.gw.wso2.com"
+    defaultVersion: false
+    endpointConfigurations:
+      production:
+        endpoint: "https://run.mocky.io/v3/85516819-1edd-412b-a32b-a9284705a0b4"
+    operations:
+      - target: "/employee"
+        verb: "GET"
+        authTypeEnabled: true
+        scopes: []
+    apiRateLimit:
+      requestsPerUnit: 5
+      unit: "Minute"
     ```
 
 ## Operation-Level (Resource-Level) Rate Limiting
 
 **Sample code snippets**
 
-The following is a sample code snippet that defines how you can define Rate Limiting policies at the Operation-level within an API definition.
+The following is a sample code snippet that defines how you can define Rate Limiting policies at the Operation-level within an API configuration.
 
 ```
-"operationRateLimit": {
-    "requestsPerUnit": 10,
-    "unit": "Minute"
-}
+operationRateLimit:
+  requestsPerUnit: 10
+  unit: "Minute"
 ```
 
-??? note "Sample API definition"
+??? note "Sample API Configuration"
     
-    The following in a sample API definition with an Operation-Level Rate Limiting Policy defined in it.
+    The following is a sample apk-conf file with an Operation-Level Rate Limiting Policy defined in it.
     ```
-    name: "PizzaAPIPolicies",
-        context: "/pizzaAPIPolcies/1.0.0",
-        'version: "1.0.0",
-        endpointConfig: {"production_endpoints": {"url": "https://localhost"}},
-        operations: [
-            {
-                "target": "/menu",
-                "verb": "GET",
-                "authTypeEnabled": true,
-                "throttlingPolicy": 1000,
-                "operationRateLimit": {
-                    "requestsPerUnit": 10,
-                    "unit": "Minute"
-                }
-            }
-        ]
+    name: "EmployeeServiceAPI"
+    context: "/test"
+    version: "3.14"
+    type: "REST"
+    organization: "apk-system"
+    vhosts:
+      production:
+        - "default.gw.wso2.com"
+    defaultVersion: false
+    endpointConfigurations:
+      production:
+        endpoint: "https://run.mocky.io/v3/85516819-1edd-412b-a32b-a9284705a0b4"
+    operations:
+      - target: "/employee"
+        verb: "GET"
+        authTypeEnabled: true
+        scopes: []
+        operationRateLimit:
+          requestsPerUnit: 10
+          unit: "Minute"
     ```
 
 ## Configuration definitions

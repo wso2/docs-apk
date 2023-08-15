@@ -4,7 +4,7 @@ Cross-Origin Resource Sharing (CORS) is a mechanism that allows accessing restri
 
 ## Before you begin
 
-- [Create an API](../../get-started/quick-start-guide.md)
+- [Create an API](../../../get-started/quick-start-guide.md)
 
 ### CORS configuration
 
