@@ -17,10 +17,6 @@ To find more information about backend JWT generation, please refer to the [Pass
             <th>Description</th>
         </tr>
         <tr>
-            <td colspan="2" class="confluenceTd"><pre>enabled</pre></td>
-            <td class="confluenceTd">Set this value to <code>true</code> to enable Backend JWT.</td>
-        </tr>
-        <tr>
             <td colspan="2" class="confluenceTd"><pre>encoding</pre></td>
             <td class="confluenceTd">The encoding mechanism used to encode the Backend JWT.</td>
         </tr>
@@ -67,8 +63,7 @@ To find more information about backend JWT generation, please refer to the [Pass
      request:
        - policyName: "BackendJwt"
          parameters:
-           enabled: true
-           encoding: base64
+           encoding: Base64
            signingAlgorithm: SHA256withRSA
            header: X-JWT-Assertion
            tokenTTL: 3600
