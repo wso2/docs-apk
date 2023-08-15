@@ -13,9 +13,8 @@ spec:
     custom:
       key: rlkey_usergroup
       value: admin
-      rateLimit:
-        requestsPerUnit: 20
-        unit: Minute
+      requestsPerUnit: 20
+      unit: Minute
     organization: default
   targetRef:
     kind: Gateway
