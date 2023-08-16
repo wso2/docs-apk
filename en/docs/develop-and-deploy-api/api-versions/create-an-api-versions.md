@@ -17,10 +17,6 @@ Sample content before the modification is shown below.
    context: "/test"
    version: "3.14"
    type: "REST"
-   organization: "apk-org"
-   vhosts:
-   production:
-   - "default.gw.wso2.com"
    defaultVersion: false
    endpointConfigurations:
    production:
@@ -64,10 +60,6 @@ Sample content before the modification is shown below.
    context: "/test"
    version: "4.0"
    type: "REST"
-   organization: "apk-org"
-   vhosts:
-   production:
-   - "default.gw.wso2.com"
    defaultVersion: false
    endpointConfigurations:
    production:
@@ -176,7 +168,6 @@ Use the values provided in the table below in the body of your request.
         context: "/test"
         version: "4.0"
         type: "REST"
-        organization: "apk-org"
         defaultVersion: false
         endpointConfigurations:
         production:
@@ -198,9 +189,6 @@ Use the values provided in the table below in the body of your request.
         verb: "DELETE"
         authTypeEnabled: true
         scopes: []
-        vhosts:
-        production:
-        - "default.gw.wso2.com"
         ```
 
 By now you have deployed the new version of the API. You can invoke the API new version using the access token generated in the previous step.

@@ -19,7 +19,6 @@ name: "EmployeeServiceAPI"
 context: ""
 version: "3.14"
 type: "REST"
-organization: ""
 defaultVersion: false
 endpointConfigurations:
     production:

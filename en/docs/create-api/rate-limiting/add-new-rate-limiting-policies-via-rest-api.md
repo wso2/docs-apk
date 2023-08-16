@@ -26,10 +26,6 @@ apiRateLimit:
     context: "/test"
     version: "3.14"
     type: "REST"
-    organization: "apk-system"
-    vhosts:
-      production:
-        - "default.gw.wso2.com"
     defaultVersion: false
     endpointConfigurations:
       production:
@@ -64,10 +60,6 @@ operationRateLimit:
     context: "/test"
     version: "3.14"
     type: "REST"
-    organization: "apk-system"
-    vhosts:
-      production:
-        - "default.gw.wso2.com"
     defaultVersion: false
     endpointConfigurations:
       production:

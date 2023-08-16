@@ -16,10 +16,6 @@ Sample content before the modification is shown below.
    context: "/test"
    version: "3.14"
    type: "REST"
-   organization: "apk-org"
-   vhosts:
-    production:
-    - "default.gw.wso2.com"
    defaultVersion: false
    endpointConfigurations:
     production:
@@ -59,10 +55,6 @@ Modified APK configuration content to disable JWT
    context: "/test"
    version: "3.14"
    type: "REST"
-   organization: "apk-org"
-   vhosts:
-    production:
-    - "default.gw.wso2.com"
    defaultVersion: false
    endpointConfigurations:
     production:
@@ -109,10 +101,6 @@ Modified APK configuration content to use custom auth header name
    context: "/test"
    version: "3.14"
    type: "REST"
-   organization: "apk-org"
-   vhosts:
-    production:
-    - "default.gw.wso2.com"
    defaultVersion: false
    endpointConfigurations:
     production:

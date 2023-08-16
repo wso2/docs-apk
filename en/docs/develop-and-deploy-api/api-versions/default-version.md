@@ -17,10 +17,6 @@ Sample content before the modification is shown below.
    context: "/test"
    version: "3.14"
    type: "REST"
-   organization: "apk-org"
-   vhosts:
-   production:
-   - "default.gw.wso2.com"
    defaultVersion: false
    endpointConfigurations:
    production:
@@ -64,11 +60,7 @@ Sample content before the modification is shown below.
    context: "/test"
    version: "4.0"
    type: "REST"
-   organization: "apk-org"
    defaultVersion: true
-   vhosts:
-   production:
-   - "default.gw.wso2.com"
    endpointConfigurations:
    production:
    endpoint: "https://run.mocky.io/v3/85516819-1edd-412b-a32b-a9284705a0b4"
@@ -176,7 +168,6 @@ Use the values provided in the table below in the body of your request.
           context: "/test"
           version: "4.0"
           type: "REST"
-          organization: "apk-org"
           defaultVersion: true
           endpointConfigurations:
           production:
@@ -198,9 +189,6 @@ Use the values provided in the table below in the body of your request.
           verb: "DELETE"
           authTypeEnabled: true
           scopes: []
-          vhosts:
-          production:
-          - "default.gw.wso2.com"
         ```
 
 By now, you have deployed the default version of the API. You can invoke the API using URLs both with and without the versions. Please try out the following URLs, and you will receive the same response:

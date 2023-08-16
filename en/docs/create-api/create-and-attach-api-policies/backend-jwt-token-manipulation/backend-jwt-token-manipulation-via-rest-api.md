@@ -47,7 +47,6 @@ To find more information about backend JWT generation, please refer to the [Pass
    context: "/backend_jwt"
    version: "1.0.0"
    type: "REST"
-   organization: "apk-org"
    defaultVersion: false
    endpointConfigurations:
      production:
@@ -57,8 +56,6 @@ To find more information about backend JWT generation, please refer to the [Pass
          verb: "GET"
          authTypeEnabled: true
          scopes: []
-   vhosts:
-     production: ["default.gw.wso2.com"]
    apiPolicies:
      request:
        - policyName: "BackendJwt"

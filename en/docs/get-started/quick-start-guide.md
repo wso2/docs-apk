@@ -55,7 +55,6 @@ Apart from the above API definition file, we also need an `apk-conf` file which 
         context: ""
         version: "3.14"
         type: "REST"
-        organization: ""
         defaultVersion: false
         endpointConfigurations:
             production:
@@ -91,20 +90,6 @@ Apart from the above API definition file, we also need an `apk-conf` file which 
                 <td colspan="2" class="confluenceTd"><pre>context: "/test"</pre></td>
                 <td class="confluenceTd">Change the context parameter to "/test"</td>
             </tr>
-            <tr>
-                <td colspan="2" class="confluenceTd"><pre>organization: "apk-system"</pre></td>
-                <td class="confluenceTd">Add the "organization" parameter with a value you prefer. We are using "apk-system" in this case.</td>
-            </tr>
-            <tr>
-                <td colspan="2" class="confluenceTd">
-                    <pre>
-    vhosts:
-        production:
-            - "default.gw.wso2.com"
-                    </pre>
-                </td>
-                <td class="confluenceTd">Add the vhosts parameter with a production hostname of "default.gw.wso2.com"</td>
-            </tr>
         </tbody>
     </table>
 
@@ -114,10 +99,6 @@ Apart from the above API definition file, we also need an `apk-conf` file which 
         context: "/test"
         version: "3.14"
         type: "REST"
-        organization: "apk-system"
-        vhosts:
-            production:
-                - "default.gw.wso2.com"
         defaultVersion: false
         endpointConfigurations:
             production:
@@ -220,7 +201,6 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
         context: "/test"
         version: "3.14"
         type: "REST"
-        organization: "apk-system"
         defaultVersion: false
         endpointConfigurations:
             production:
@@ -242,9 +222,6 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
             verb: "DELETE"
             authTypeEnabled: true
             scopes: []
-        vhosts:
-            production:
-                - "default.gw.wso2.com"
         ```
 
 4. Execute the command below. You will be able to see that the `EmployeeServiceAPI` is successfully deployed as shown in the image.

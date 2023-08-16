@@ -13,10 +13,6 @@ Sample content before the modification is shown below.
    context: "/test"
    version: "3.14"
    type: "REST"
-   organization: "apk-org"
-   vhosts:
-    production:
-    - "default.gw.wso2.com"
    defaultVersion: false
    endpointConfigurations:
     production:
@@ -69,11 +65,7 @@ Here, we have added a property named `definitionPath` with the new value `/docs`
    context: "/test"
    version: "3.14"
    type: "REST"
-   organization: "apk-org"
    definitionPath: "/docs"
-   vhosts:
-     production:
-       - "default.gw.wso2.com"
    defaultVersion: false
    endpointConfigurations:
      production:

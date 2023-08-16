@@ -20,7 +20,6 @@ name: "EmployeeServiceAPI"
 context: "/test"
 version: "3.14"
 type: "REST"
-organization: "apk-org"
 defaultVersion: false
 endpointConfigurations:
     production:
