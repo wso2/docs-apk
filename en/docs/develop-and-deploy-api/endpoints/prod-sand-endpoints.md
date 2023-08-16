@@ -14,10 +14,6 @@ Sample content before the modification is shown below.
    context: "/test"
    version: "3.14"
    type: "REST"
-   organization: "apk-org"
-   vhosts:
-    production:
-    - "default.gw.wso2.com"
    defaultVersion: false
    endpointConfigurations:
     production:
@@ -54,12 +50,6 @@ Update the APK configuration as the following to add different endpoints to sand
    context: "/test"
    version: "3.14"
    type: "REST"
-   organization: "apk-org"
-   vhosts:
-    production:
-    - "default.gw.wso2.com"
-    sandbox: 
-    - "sand.gw.wso2.com"
    defaultVersion: false
    endpointConfigurations:
     production:
@@ -100,12 +90,6 @@ You can define different endpoint URLs for different resources. Following is the
    context: "/test"
    version: "3.14"
    type: "REST"
-   organization: "apk-org"
-   vhosts:
-    production:
-    - "default.gw.wso2.com"
-    sandbox: 
-    - "sand.gw.wso2.com"
    defaultVersion: false
    endpointConfigurations:
     production:

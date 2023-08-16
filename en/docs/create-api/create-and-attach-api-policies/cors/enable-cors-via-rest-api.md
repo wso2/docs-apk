@@ -60,11 +60,7 @@ Cross-Origin Resource Sharing (CORS) is a mechanism that allows accessing restri
    context: "/test"
    version: "4.0"
    type: "REST"
-   organization: "apk-org"
    defaultVersion: true
-   vhosts:
-    production:
-    - "default.gw.wso2.com"
    endpointConfigurations:
     production:
       endpoint: "https://run.mocky.io/v3/85516819-1edd-412b-a32b-a9284705a0b4"
