@@ -78,7 +78,7 @@ Apart from the above API definition file, we also need an `apk-conf` file which 
             scopes: []
         ```
 
-2. You will get the apk-conf file content as the response. Save this content into a file named `EmployeeService.apk-conf`. Modify the content to add the `context`, `organization` and `vhosts`. The specific changes you have to make are indicated in the table below.
+2. You will get the apk-conf file content as the response. Save this content into a file named `EmployeeService.apk-conf`. Modify the content to add the `context`. The specific changes you have to make are indicated in the table below.
 
     <table>
         <tbody>
