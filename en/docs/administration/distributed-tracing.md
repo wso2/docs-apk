@@ -329,5 +329,8 @@ You will be able to browse through the request traces and expand each trace to v
 
 [![OLTP New Relic Trace](../assets/img/distributed-tracing/trace-newrelic.png)](../assets/img/distributed-tracing/trace-newrelic.png)
 
+!!! note
+    Envoy's ratelimiter exclusively supports OTLP tracing. Thus its necessary to use OTLP tracing type to monitor rate limiter traces in the APK.
+
 !!! info
     Similarly any telemetry backend that supports OTLP gRPC telemetry data collection can be used by setting up related values for `connectionString`, `authHeaderName` and `authHeaderValue`.
