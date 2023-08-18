@@ -30,8 +30,7 @@ If you have not created the user already, [create a user](https://auth0.com/docs
 
        Configure the organization settings that correspond to the application.
 
-       - What type of end users will use this documentation - `Team members of organizations`
-       - Display organization prompt - Enable this option.
+       - Define the type of users that will log in to this application - `Individuals`
 
 ## Step 6 - Update the Helm Chart
 
@@ -74,25 +73,19 @@ If you have not created the user already, [create a user](https://auth0.com/docs
 
 1. Open [Postman](../../../../administration/postman-tests).
 2. Navigate to the `POST` `Generate Auth code token` REST API.
-3. Make sure that the Token generation call has the same information that was entered in the Helm Chart in Step 6.
-     
+3. Make sure that the token generation call has the same information that was entered in the Helm Chart in Step 6.
+
      - `Auth URL`
      - `Access Token URL`
      - `Client ID`
      - `Client Secret`
+     - `Username`
+     - `Password`
      - `CallBack Url`
      - `Scopes - (rest API related scopes + openid)`
 
 4. Click **Get New Access Token**.
-     
-      This redirects you to the Auth0 Sign in page.
-
-5. Enter the name of the organization that you created in Step 1.
-6. Click **Continue**.
-7. Enter the user credentials (email and password) of the user that you assigned to the organization.
-     
-     You will receive two tokens, namely the access token and ID token, when the token call is successful.
-
+5. You will receive two tokens, namely the access token and ID token, when the token call is successful.
 8. Copy the ID token that you see listed as the `id_token`.
 
 
