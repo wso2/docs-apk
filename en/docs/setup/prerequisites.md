@@ -29,7 +29,7 @@
             </tr>
             <tr>
                 <td colspan="2" class="confluenceTd"><pre>Kubernetes cluster(Rancher)</pre></td>
-                <td class="confluenceTd">Pending</td>
+                <td class="confluenceTd">1.27.2</td>
             </tr>
             <tr>
                 <td colspan="2" class="confluenceTd"><pre>Kubernetes cluster(Openshift)</pre></td>
@@ -41,7 +41,7 @@
             </tr>
             <tr>
                 <td colspan="2" class="confluenceTd"><pre>Rancher</pre></td>
-                <td class="confluenceTd">Pending</td>
+                <td class="confluenceTd">1.9.1</td>
             </tr>
             <tr>
                 <td colspan="2" class="confluenceTd"><pre>Kind</pre></td>
