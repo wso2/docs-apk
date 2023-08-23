@@ -11,61 +11,16 @@
      `kubectl create namespace <namespace>`
 
 # Requirements
+You can install APK for production use, or you can install the OpenSource APK for get a quick feel of APK. You can refer the requirements for each in the following table:
 
-<table>
-        <tbody>
-            <tr>
-                <th colspan="2" >Requirement</th>
-                <th>Version</th>
-            </tr>
-            <tr>
-            <tr>
-                <td colspan="2" class="confluenceTd"><pre>Kubernetes cluster(minukube)</pre></td>
-                <td class="confluenceTd">1.26.3 - 1.27.4</td>
-            </tr>
-            <tr>
-                <td colspan="2" class="confluenceTd"><pre>Kubernetes cluster(kind)</pre></td>
-                <td class="confluenceTd">1.26.3</td>
-            </tr>
-            <tr>
-                <td colspan="2" class="confluenceTd"><pre>Kubernetes cluster(Rancher)</pre></td>
-                <td class="confluenceTd">1.27.2</td>
-            </tr>
-            <tr>
-                <td colspan="2" class="confluenceTd"><pre>Kubernetes cluster(Openshift)</pre></td>
-                <td class="confluenceTd">4.13.3</td>
-            </tr>
-            <tr>
-                <td colspan="2" class="confluenceTd"><pre>Minikube</pre></td>
-                <td class="confluenceTd">1.30.1 - 1.31.1</td> 
-            </tr>
-            <tr>
-                <td colspan="2" class="confluenceTd"><pre>Rancher</pre></td>
-                <td class="confluenceTd">1.9.1</td>
-            </tr>
-            <tr>
-                <td colspan="2" class="confluenceTd"><pre>Kind</pre></td>
-                <td class="confluenceTd">1.25.3</td>  
-            </tr>
-            <tr>
-                <td colspan="2" class="confluenceTd"><pre>Openshift</pre></td>
-                <td class="confluenceTd">2.23.0+ddcfe8</td> 
-            </tr>
-            <tr>
-                <td colspan="2" class="confluenceTd"><pre>Docker Engine</pre></td>
-                <td class="confluenceTd">23.0.2 or above</td> 
-            </tr>
-            <tr>
-                <td colspan="2" class="confluenceTd"><pre>Redis</pre></td>
-                <td class="confluenceTd">17.8.0</td> 
-            </tr>
-            <tr>
-                <td colspan="2" class="confluenceTd"><pre>Cert-manager</pre></td>
-                <td class="confluenceTd">1.10.1</td> 
-            </tr>
-            <tr>
-                <td colspan="2" class="confluenceTd"><pre>Postgresql</pre></td>
-                <td class="confluenceTd">11.9.6</td> 
-            </tr>
-        </tbody>
-</table>
+|                                                                                                                                                                  | Production APK             | OpenSource APK              |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|-----------------------------|
+| **Kubernetes Cluster:** <br/> EKS Pending <br/> GKE Pending <br/> AKS Pending <br/> OpenShift 4.13.3 <br/> Minikube 1.26.3 - 1.27.4 <br/> Rancher 1.27.2 <br/> Kind 1.26.3 | :material-check-all:       | :material-check-all:        |
+| **Minikube**  1.30.1 - 1.31.1                                                                                                                                    | :material-check:           | :material-check:            |
+| **Rancher**  1.9.1                                                                                                                                               | :material-check:           | :material-check:            |
+| **Kind**  1.25.3                                                                                                                                                 | :material-check:           | :material-check:            |
+| **Openshift**  2.23.0+ddcfe8                                                                                                                                     | :material-check:           | :material-check:            |
+| **Docker Engine**  23.0.2 or above                                                                                                                               | :material-check:           | :material-check:            |
+| **Redis**  17.8.0                                                                                                                                                  | :material-check:           | :material-check: (Packaged) |
+| **Cert-manager**  1.10.1                                                                                                                                            | :material-check:           | :material-check: (Packaged) |
+| **Postgresql**  11.9.6                                                                                                                                              | :material-close: (No need) | :material-check: (Packaged) |
