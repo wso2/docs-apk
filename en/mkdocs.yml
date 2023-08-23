@@ -133,6 +133,7 @@ nav:
             - Default Version: develop-and-deploy-api/api-versions/default-version.md
             - Backward Compatibility: develop-and-deploy-api/api-versions/backward-compatibility.md
         - API Properties: develop-and-deploy-api/api-properties/api-properties.md
+        - API Scopes: develop-and-deploy-api/api-scopes/api-scopes.md
         - API Definition Endpoint: develop-and-deploy-api/api-definition-endpoint/api-definition-endpoint.md
         - JWT Issuers: develop-and-deploy-api/jwt-issuers/jwt-issuers.md
 
