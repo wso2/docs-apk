@@ -23,8 +23,8 @@ spec:
       requestsPerUnit: 5
       unit: Minute
   targetRef:
-    kind: HTTPRoute
-    name: sand-http-route-http-bin-api
+    kind: API
+    name: http-bin-api
     group: gateway.networking.k8s.io
 ```
 
@@ -116,7 +116,7 @@ The following are the configurations that you need when defining Rate Limiting P
         </tr>
         <tr>
           <td><code><a href="#targetRef">targetRef</a></code></td>
-          <td>Use this to define the HTTPRoute CR that the Rate Limiting Policy corresponds to. </td>
+          <td>Use this to define the API/Resource(HTTPRoute)/Gateway CR that the Rate Limiting Policy corresponds to. </td>
         </tr>
       </tbody>
       </table>
@@ -226,8 +226,8 @@ Follow the instructions below to add an API-level Rate Limiting Policy to an API
             requestsPerUnit: 5
             unit: Minute
         targetRef:
-          kind: HTTPRoute
-          name: sand-http-route-http-bin-api
+          kind: API
+          name: http-bin-api
           group: gateway.networking.k8s.io
     ```
 
