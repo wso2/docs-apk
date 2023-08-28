@@ -40,7 +40,7 @@ endpointConfigurations:
   resiliency:
    retryPolicy:
     count: 3
-    baseIntervalInMillis: 200
+    baseIntervalMillis: 200
     statusCodes:
     - 500
     - 501
