@@ -32,15 +32,9 @@ Follow the instructions below to use Asgardeo as the Identity Provider (IdP) to 
       ```
         idp:
           issuer: ""
-          authorizeEndpoint: ""
-          tokenEndpoint: ""
-          revokeEndpoint: ""
           jwksEndpoint: ""      
           usernameClaim: ""
-          groupClaim: ""
           organizationClaim: ""
-          credentials:
-             secretName: "apk-idp-secret"
       ```
       
        - `organizationClaim` - This should always be `user_organization`.

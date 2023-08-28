@@ -41,15 +41,9 @@ This includes setting the application's settings, such as the application name a
      ```yaml
      idp:
           issuer: ""
-          authorizeEndpoint: ""
-          tokenEndpoint: ""
-          revokeEndpoint: ""
           jwksEndpoint: ""      
           usernameClaim: ""
-          groupClaim: ""
           organizationClaim: ""
-          credentials:
-               secretName: "apk-idp-secret"
 
      ```
 
@@ -61,14 +55,9 @@ The Idp section should include the following parameters:
 | **Parameter** | **Description** |
 |---------------|-----------------|
 | `issuer:` | The IdP's issuer URL. |
-| `authorizeEndpoint:` | The URL of the IdP's authorization endpoint. |
-| `tokenEndpoint:` |  The URL of the IdP's token endpoint.  |
-| `revokeEndpoint:` |  The URL of the IdP's revoke endpoint.  |
 | `jwksEndpoint:` |  The URL of the IdP's JSON Web Key Set (JWKS) endpoint.  |
 | `usernameClaim:` |  The claim in the IdP's token that represents the user's username.  |
-| `groupClaim:` |  The claim in the IdP's token that represents the user's group membership, if applicable.  |
 | `organizationClaim:` |  The claim in the IdP's token that represents the user's organization, if applicable.  |
-| `credentials.secretName:` | clientId,clientSecret embeded k8s Secret Name |
 
 ## Step 7 - Start WSO2 APK
 

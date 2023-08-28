@@ -8,18 +8,29 @@
 
 3. Copy the generated on-prem key.
 
-## Step 2 - Configure Enforcer
 
-1. Open `<APK_HOME>/helm-charts/values.yaml` file.
+## Step 2 - Configure APK
 
-2. Set following config under `wso2.apk.dp.gatewayRuntime` section to enable analytics.
+1. Create K8s Secret as folows.
+
+```yaml
+  apiVersion: v1
+  kind: Secret
+  metadata:
+    name: choreo-analytics-secret
+  type: Opaque
+  stringData:
+    analytics_authURL: "https://analytics-event-auth.choreo.dev/auth/v1"
+    analytics_authToken: "<on-prem-key>"
+```
+
+2. Set following config under `wso2.apk.dp.gatewayRuntime` section and apply helm chart.
 
     ```yaml
     analytics:
       enabled: true
       type: "Choreo"
-      authURL: "https://analytics-event-auth.choreo.dev/auth/v1"
-      authToken: "<on-prem-key>"
+      secretName: "<secret-name>"
     ```
 
 ## Step 3 - View Analytics Data
