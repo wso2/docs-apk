@@ -43,7 +43,7 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
 		helm install apk-test wso2apk/apk-helm --version 1.0.0-beta -n apk
 		```
 
-	To commence the installation while making use of the customization capabilities inherent in the `values.yaml` file, follow the subsequent command format. Instructions in [Customizing Helm Deployment Configurations](../includes/Customizing-Helm-Deployment-Configurations.md) will guide you through the process of acquiring the `values.yaml` file.
+	To commence the installation while making use of the customization capabilities inherent in the `values.yaml` file, follow the subsequent command format. Instructions in [Customize Configurations](../setup/Customize-Configurations.md) will guide you through the process of acquiring the `values.yaml` file.
 
 	=== "Format"
 		```

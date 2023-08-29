@@ -2,9 +2,11 @@
 
 As the APK uses an Envoy proxy as the Router component, it only supports the logging mechanisms provided by the Envoy proxy. In the following sections, you may find how to enable Router access logs and debug logs.
 
+To set up Router Logs, start by following the instructions outlined in [Customize Configurations](../../setup/Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file, which you will then use to tailor the log configurations to your specific needs.
+
 ## Router Access Logging
 
-To enable the Router access logs, update the `values.yaml`'s `wso2.apk.dp.gatewayRuntime.deployment.router.logging` section with the following values.
+To enable the Router access logs, update the `values.yaml`'s `wso2.apk.dp.gatewayRuntime.deployment.router.logging` section with the following values. 
 
 ```yaml
   logging:

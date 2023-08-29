@@ -2,7 +2,7 @@
 
 ## Step 1 - Setup APK
 
-1. Open `values.yaml` file.
+1. Start by following the instructions outlined in [Customize Configurations](../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file, which you will then use to tailor the analytics configurations to your specific needs. Open `values.yaml` file.
 
 2. Set following config under `wso2.apk.dp.gatewayRuntime` section to enable analytics.
 
