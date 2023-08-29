@@ -64,7 +64,7 @@ If you are an API developer, you can write a custom request/response interceptor
 </table>
 
 
-You can define interceptors on an API level (per API) and at resource level. How to do these are explained below in detail. If a request/response interceptor is on an API level and a resource level, interceptors properties are combined using proirity order defined in the following order. You can define properties under `default` and/or `override` section in API level `APIPolicy` and/or resource level `APIPolicy`. These values are combined using the priority order defined below, with priority decreasing towards the bottom of the table.
+You can define interceptors on an API level (per API) and at operation level. How to do these are explained below in detail. If a request/response interceptor is on an API level and a operation level, interceptors properties are combined using priority order defined in the following order. You can define properties under `default` and/or `override` section in API level `APIPolicy` and/or operation level `APIPolicy`. These values are combined using the priority order defined below, with priority decreasing towards the bottom of the table.
 
 <table>
 <tbody>
@@ -72,10 +72,10 @@ You can define interceptors on an API level (per API) and at resource level. How
     <td>API level override</td>
   </tr>
   <tr>
-    <td>Resource level override</td>
+    <td>Operation level override</td>
   </tr>
   <tr>
-    <td>Resource level default</td>
+    <td>Operation level default</td>
   </tr>
   <tr>
     <td>API level default</td>

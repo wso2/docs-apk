@@ -1,10 +1,71 @@
-## API-level
+## Before you begin
+
+- [Create an API](../../get-started/quick-start-guide.md)
+  
+You can use the apk-conf file which is created in [Quick Start Guide](../../get-started/quick-start-guide.md) documentation and save this content into a file named `EmployeeServiceEndpoints.apk-conf`.
+
+Sample content before the modification is shown below.
+
+```yaml
+name: "EmployeeServiceAPI"
+context: "/test"
+version: "3.14"
+type: "REST"
+defaultVersion: false
+endpointConfigurations:
+ production:
+   endpoint: "https://run.mocky.io/v3/85516819-1edd-412b-a32b-a9284705a0b4"
+operations:
+- target: "/employee"
+  verb: "GET"
+  authTypeEnabled: true
+ scopes: []
+- target: "/employee"
+  verb: "POST"
+  authTypeEnabled: true
+  scopes: []
+- target: "/employee/{employeeId}"
+  verb: "PUT"
+  authTypeEnabled: true
+  scopes: []
+- target: "/employee/{employeeId}"
+  verb: "DELETE"
+  authTypeEnabled: true
+  scopes: []
+```
+
+## Adding API-level interceptors
 
 **Sample code snippets**
 
 The following is a sample code snippet that defines how you can attach Interceptor API Policies at the API-level within an API APK configuration file.
 
-```
+```yaml
+name: "EmployeeServiceAPI"
+context: "/test"
+version: "3.14"
+type: "REST"
+defaultVersion: false
+endpointConfigurations:
+ production:
+   endpoint: "https://run.mocky.io/v3/85516819-1edd-412b-a32b-a9284705a0b4"
+operations:
+- target: "/employee"
+  verb: "GET"
+  authTypeEnabled: true
+  scopes: []
+- target: "/employee"
+  verb: "POST"
+  authTypeEnabled: true
+  scopes: []
+- target: "/employee/{employeeId}"
+  verb: "PUT"
+  authTypeEnabled: true
+  scopes: []
+- target: "/employee/{employeeId}"
+  verb: "DELETE"
+  authTypeEnabled: true
+  scopes: []
 apiPolicies:
   request:
     - policyName: "Interceptor"
@@ -80,32 +141,57 @@ apiPolicies:
             contextEnabled: true
     ```
 
-## Operation-level (Resource-level)
+## Adding operation-level interceptors
 
 **Sample code snippets**
 
 The following is a sample code snippet that defines how you can attach Interceptor API Policies at the Operation-level within an API APK configuration file.
 
-```
-    operationPolicies:
-      request:
-        - policyName: "Interceptor"
-          policyVersion: v1
-          parameters:
-            backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
-            headersEnabled: true
-            bodyEnabled: false
-            trailersEnabled: false
-            contextEnabled: true
-      response:
-       - policyName: "Interceptor"
-          policyVersion: v1
-          parameters:
-            backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
-            headersEnabled: true
-            bodyEnabled: false
-            trailersEnabled: false
-            contextEnabled: true
+```yaml
+name: "EmployeeServiceAPI"
+context: "/test"
+version: "3.14"
+type: "REST"
+defaultVersion: false
+endpointConfigurations:
+ production:
+   endpoint: "https://run.mocky.io/v3/85516819-1edd-412b-a32b-a9284705a0b4"
+operations:
+- target: "/employee"
+  verb: "GET"
+  authTypeEnabled: true
+  scopes: []
+  operationPolicies:
+    request:
+      - policyName: "Interceptor"
+        policyVersion: v1
+        parameters:
+          backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
+          headersEnabled: true
+          bodyEnabled: false
+          trailersEnabled: false
+          contextEnabled: true
+    response:
+      - policyName: "Interceptor"
+        policyVersion: v1
+        parameters:
+          backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
+          headersEnabled: true
+          bodyEnabled: false
+          trailersEnabled: false
+          contextEnabled: true
+- target: "/employee"
+  verb: "POST"
+  authTypeEnabled: true
+  scopes: []
+- target: "/employee/{employeeId}"
+  verb: "PUT"
+  authTypeEnabled: true
+  scopes: []
+- target: "/employee/{employeeId}"
+  verb: "DELETE"
+  authTypeEnabled: true
+  scopes: []
 ```
 
 ??? note "Attach an Interceptor API Policy to the Request Flow Only"
@@ -152,7 +238,7 @@ The following is a sample code snippet that defines how you can attach Intercept
             trailersEnabled: false
             contextEnabled: true
       response:
-       - policyName: "Interceptor"
+        - policyName: "Interceptor"
           policyVersion: v1
           parameters:
             backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
@@ -224,3 +310,7 @@ The following are the configurations that you need when attaching API Policies t
   </tr>
 </tbody>
 </table>
+
+## Deploy APK configuration
+
+Refer [Quick Start Guide](../../get-started/quick-start-guide.md) to deploy the API using APK configuration.
