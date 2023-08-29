@@ -1,6 +1,6 @@
 # Configure Analytics for ELK Stack
 
-## Step 1 - Setup Enforcer
+## Step 1 - Setup APK
 
 1. Open `values.yaml` file.
 
@@ -22,7 +22,7 @@
           logLevel: "INFO"
         ```
 
-3. Redeploy the enforcer with the changes in `values.yaml`.
+3. Redeploy the helm chart with the changes in `values.yaml`.
 
 ## Step 2 - Setup Elasticsearch and Kibana
 

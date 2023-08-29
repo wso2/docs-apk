@@ -42,15 +42,9 @@ If you have not created the user already, [create a user](https://auth0.com/docs
       ```
        idp:
          issuer: ""
-         authorizeEndpoint: ""
-         tokenEndpoint: ""
-         revokeEndpoint: ""
          jwksEndpoint: ""      
          usernameClaim: ""
-         groupClaim: ""
          organizationClaim: ""
-         credentials:
-             secretName: "apk-idp-secret"
       ```
 
       - `organizationClaim` - This should always be `org_id`.
