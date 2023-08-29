@@ -35,7 +35,7 @@ If you have not created the user already, [create a user](https://auth0.com/docs
 ## Step 6 - Update the Helm Chart
 
 1. [Access the endpoints that correspond to the application](https://auth0.com/docs/get-started/applications/application-settings#endpoints), which is available in the **Advanced Settings** section.
-2. Navigate to the `<APK-HOME>/helm-charts/` directory and open the `values.yaml` file.
+2. Follow the instructions outlined in [Customize Configurations](../../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file. Open the `values.yaml` file.
 3. Update the IDP related configurations in the `idp` section.
 4. Create a K8s Secret with retrieved `clientId` and `clientSecret` from Step 4 with name `apk-idp-secret`.
 

@@ -26,7 +26,7 @@ Follow the instructions below to use Asgardeo as the Identity Provider (IdP) to 
 
 ## Step 5 - Update the Helm Chart
 
-1. Navigate to the `<APK-HOME>/helm-charts/` directory and open the `values.yaml` file.
+1. Follow the instructions outlined in [Customize Configurations](../../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file. Open the `values.yaml` file.
 2. Update the IDP related configurations in the `idp` section.
 3. Create a K8s Secret with retrieved `clientId` and `clientSecret` from Step 4 with name `apk-idp-secret`.
       ```

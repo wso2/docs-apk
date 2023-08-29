@@ -193,6 +193,7 @@ nav:
         - Prerequisites: setup/prerequisites.md
         - Install: setup/install.md
         - Migration: setup/migration.md
+        - Customize Configurations: setup/Customize-Configurations.md
 #        - Organization: setup/organizations.md
        #- Deploy:
        #    - Deployment Patterns: get-started/dummy.md
