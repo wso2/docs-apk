@@ -72,11 +72,11 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
 
 !!! info "(Optional) To access the deployment through your local machine"
 
-    1. Identify the `router-service` external IP address.
+    1. Identify the `gateway-service` external IP address.
         ```console
-        kubectl get svc -n apk | grep router-service
+        kubectl get svc -n apk | grep gateway-service
         ```
     2. Port forward router service to localhost.
         ```console
-        kubectl port-forward svc/apk-test-wso2-apk-router-service -n apk 9095:9095
+        kubectl port-forward svc/apk-test-wso2-apk-gateway-service -n apk 9095:9095
         ```
