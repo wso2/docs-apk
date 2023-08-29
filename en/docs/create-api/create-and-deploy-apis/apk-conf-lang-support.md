@@ -30,3 +30,4 @@ By incorporating the `APK Config Language Support` extension, you can enhance yo
 
 5. The extension will be installed and activated automatically. Please note that this extension relies on the YAML Language Support by Red Hat extension. If the YAML Language Support extension isn't installed, it will be automatically installed as well.
 
+For further information, explore the details on the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=WSO2.apk-config-language-support).
