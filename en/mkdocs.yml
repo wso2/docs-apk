@@ -96,6 +96,7 @@ nav:
                         - Generate K8s custom resources and Deploy: create-api/create-and-deploy-apis/create-and-deploy-api.md
                         - Direct Deploy into K8s Server: create-api/create-and-deploy-apis/direct-deploy.md
                         - Undeploy API: create-api/create-and-deploy-apis/direct-undeploy.md
+                        - APK Config Language Support Plugin: create-api/create-and-deploy-apis/apk-conf-lang-support.md
         - Manage Endpoint:
             - Define Endpoints: develop-and-deploy-api/endpoints/prod-sand-endpoints.md
             - Manage Certificate: create-api/manage-service-endpoint/manage-certificate.md

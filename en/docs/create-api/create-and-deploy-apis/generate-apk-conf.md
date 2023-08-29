@@ -35,7 +35,7 @@ operations:
 ```
 
 4. Save the content to a file with extension .apk-conf. For example, EmployeeService.apk-conf.
-5. To enhance the configuration process, APK offers a VS Code plugin that provides syntax highlighting and suggestions. This plugin makes it easier to add rate limitations, new resources, and security configurations to your API. Modify the content of the APK Configuration file according to the requirement. 
+5. To optimize the configuration process, APK presents a VS Code plugin designed to offer syntax highlighting and intelligent suggestions. This plugin simplifies the incorporation of rate limitations, new resources, and security configurations into your API. Adapt the contents of the APK Configuration file as needed. For further details, refer to the section on [Enhance Configuration with APK Config Language Support](./apk-conf-lang-support.md)
 
 
 !!!NOTE
