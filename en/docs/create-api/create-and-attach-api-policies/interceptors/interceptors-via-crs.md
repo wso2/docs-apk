@@ -1,10 +1,10 @@
 There are three levels you can attach Interceptor APIPolicy:
 
-- [Configuring Resource level Interceptors](#configuring-resource-level-interceptors)
-- [Configuring API level Interceptors](#configuring-api-level-interceptors)
-- [Configuring Gateway level Interceptors](#configuring-gateway-level-interceptors)
+* [Configuring Operation level Interceptors](#configuring-operation-level-interceptors)
+* [Configuring API level Interceptors](#configuring-api-level-interceptors)
+* [Configuring Gateway level Interceptors](#configuring-gateway-level-interceptors)
 
-## Configuring Resource level Interceptors
+## Configuring Operation level Interceptors
 
 You need to create the `APIPolicy` with `targetRef.kind` property set to `Resource` for that and give the `targetRef.name` as the name of the `HTTPRoute`resource. Then you need to define a filter in that `HTTPRoute` with `ExtensiomRef` type which refers the `APIPolicy` you created. Refer the following example which describes the full example.
 
@@ -32,7 +32,7 @@ spec:
 
 #### HTTPRoute resource
 
-Note that the first `rule` in this `HTTPRoute` has a `filter` defined using filter type `ExtensionRef` which refers to the Interceptor `APIPolicy` we have defined below. This makes the Interceptor serivce applicable in the resource level.
+Note that the first `rule` in this `HTTPRoute` has a `filter` defined using filter type `ExtensionRef` which refers to the Interceptor `APIPolicy` we have defined below. This makes the Interceptor serivce applicable in the operation level.
 
 ```
 apiVersion: gateway.networking.k8s.io/v1beta1
@@ -67,7 +67,7 @@ spec:
       extensionRef:
         group: dp.wso2.com
         kind: APIPolicy
-        name: interceptor-api-policy-resource-level
+        name: interceptor-api-policy-operation-level
   - backendRefs:
     - group: dp.wso2.com
       kind: Backend
@@ -101,20 +101,20 @@ spec:
 
 ### Create Interceptor APIPolicy
 
-#### APIPolicy resource with resource level interceptors
+#### APIPolicy resource with operation level interceptors
 
 ```
 apiVersion: dp.wso2.com/v1alpha1
 kind: APIPolicy
 metadata:
-  name: interceptor-api-policy-resource-level
+  name: interceptor-api-policy-operation-level
   namespace: ns
 spec:
   override:
     requestInterceptors:
-    - name: request-interceptor-service-resource-level
+    - name: request-interceptor-service-operation-level
     responseInterceptors:
-    - name: response-interceptor-service-resource-level
+    - name: response-interceptor-service-operation-level
   targetRef:
     group: gateway.networking.k8s.io
     kind: Resource
@@ -127,7 +127,7 @@ spec:
 apiVersion: dp.wso2.com/v1alpha1
 kind: InterceptorService
 metadata:
-  name: request-interceptor-service-resource-level
+  name: request-interceptor-service-operation-level
   namespace: ns
 spec:
   backendRef:
@@ -192,7 +192,7 @@ spec:
 
 #### HTTPRoute resource
 
-Note that we do not define filter with `ExtensionRef` type as we did for resource level interceptors.
+Note that we do not define filter with `ExtensionRef` type as we did for operation level interceptors.
 
 ```
 apiVersion: gateway.networking.k8s.io/v1beta1
@@ -315,7 +315,6 @@ spec:
       key: ca.crt
 ```
 
-
 ## Configuring Gateway level Interceptors
 
 If you want all of your requests coming to the Gateway (from all the APIs deployed in the Gateway) to be intercepted, then you can target the Interceptor `APIPolicy` to your `Gateway` resource like below:
@@ -377,4 +376,4 @@ spec:
 
 !!! Info
 
-    This global interceptor is a separate execution from API/Resource level interceptors as we discussed above and they works independently.
+    This global interceptor is a separate execution from API/Operation level interceptors as we discussed above and they works independently.

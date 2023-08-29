@@ -9,10 +9,10 @@ There are a few levels where a Policy attachment can happen in APK resources.
 | **Level**              | **Actor**      | **Description**  |
 |------------------------|----------------|------------------|
 | Gateway                | System Admin   | Any policy which is applicable to all the APIs deployed to gateway runtime should be attached to `Gateway` resource. |     
-| API                    | API Owner      |  Attach a policy which is applicable to all the resources of that API.  |   
-| Resource               | API Owner      |  Attach a policy to a resource of a API.   |
+| API                    | API Owner      |  Attach a policy which is applicable to all the operations of that API.  |   
+| Operation               | API Owner      |  Attach a policy to an operation of a API.   |
 
-How to attach a policy to a specific level is descibed under each policy.
+Attaching a policy to a specific level is descibed under each policy.
 
 
 ## Policy Execution Order
@@ -28,7 +28,7 @@ When you have multiple policies attahced in different levels policies, you need 
     <td>Global level Interceptor Service Policy</td>
   </tr>
   <tr>
-    <td>API / Resource level Interceptor Service Policy</td>
+    <td>API / Operation level Interceptor Service Policy</td>
   </tr>
   <tr>
     <td>Static Header Manipulation Policy</td>

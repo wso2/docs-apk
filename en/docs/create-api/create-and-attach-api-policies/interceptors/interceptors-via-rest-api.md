@@ -80,7 +80,7 @@ apiPolicies:
             contextEnabled: true
     ```
 
-## Operation-level (Resource-level)
+## Operation-level
 
 **Sample code snippets**
 
