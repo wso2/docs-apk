@@ -13,21 +13,21 @@ curl --location 'https://api.am.wso2.com:9095/api/configurator/1.0.0/apis/genera
 --header 'Accept: application/zip' \
 --form 'apkConfiguration=@"/Users/user/EmployeeService.apk-conf"' \
 --form 'definitionFile=@"/Users/user/EmployeeServiceDefinition.json"' \
---form 'apiType="REST"'
+--form 'apiType="REST"' -k --output ./api-crds.zip
 ```
 
 The sample output of the generated zip file looks as follows.
 
 ```
-├── production-httproute.yaml
-├── sandbox-httproute.yaml
-├── backend-production-api.yaml
-├── backend-sandbox-api.yaml
-├── production-authentication.yaml
-├── sandbox-authentication.yaml
-├── api-policy.yaml
-├── api-definition.yaml
-└── api.yaml
+├── production-httproute-uuid.yaml
+├── sandbox-httproute-uuid.yaml
+├── backend-production-api-uuid-resource.yaml
+├── backend-sandbox-api-uuid-resource.yaml
+├── uuid-production-authentication.yaml
+├── uuid-sandbox-authentication.yaml
+├── uuid-backend-jwt-policy.yaml
+├── uuid-definition.yaml
+└── api-uuid.yaml
 ```
 Once you have generated your K8s artifacts, the next step is to apply them to the Kubernetes API server. 
 
