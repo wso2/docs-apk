@@ -2,8 +2,9 @@
 
 You need to create an `APIPolicy` with referencing to a `BackendJWT` resource under `override` or `default` sections in `APIPolicy.spec`. Then you need to create the `BackendJWT` custom resource with required properties. This policy can be used on both the `SYSTEM_API` and non system APIs separately. To find more information about backend JWT generation, please refer to the [Passing End User Attributes to the Backend](https://apim.docs.wso2.com/en/latest/deploy-and-publish/deploy-on-gateway/choreo-connect/passing-enduser-attributes-to-the-backend-via-choreo-connect/#enabling-the-default-backend-jwt-generator).
 
+## Step 1 - Create the CRs
 
-## Sample code snippet
+### Sample code snippet
 
 The following is a code snippet of sample `APIPolicy` CR.
 
@@ -20,7 +21,7 @@ The following is a code snippet of sample `APIPolicy` CR.
     targetRef:
       group: dp.wso2.com
       kind: API
-      name: sample-api
+      name: sample-api-uuid
 ```
 
 The following is a code snippet of sample `BackendJWT` CR.
@@ -45,7 +46,7 @@ The following is a code snippet of sample `BackendJWT` CR.
     tokenTTL: 3600
 ```
 
-## Configuration definitions
+### Configuration definitions
 
 The following are the configurations that you need when attaching API Policies to an API when working with CRs:
 
@@ -84,7 +85,7 @@ The following are the configurations that you need when attaching API Policies t
     </tbody>
     </table>
 
-**Step 2 - Apply the CRs**
+## Step 2 - Apply the CRs
 
 Apply CRs to the Kubernetes API server using the kubectl.
 
