@@ -1,6 +1,6 @@
 # Adapter Log Configurations
 
-To configure Adapter logs, update the `<APK_HOME>/helm-charts/values.yaml`'s `wso2.apk.dp.adapter.logging` section with the following values.
+To configure Adapter logs, update the `values.yaml`'s `wso2.apk.dp.adapter.logging` section with the following values.
 
 ```yaml
   logging:

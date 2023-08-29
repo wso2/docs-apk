@@ -43,6 +43,18 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
 		helm install apk-test wso2apk/apk-helm --version 1.0.0-beta -n apk
 		```
 
+	To commence the installation while making use of the customization capabilities inherent in the `values.yaml` file, follow the subsequent command format. Instructions in [Customizing Helm Deployment Configurations](../includes/Customizing-Helm-Deployment-Configurations.md) will guide you through the process of acquiring the `values.yaml` file.
+
+	=== "Format"
+		```
+		helm install <chart-name> <repository-name>/apk-helm --version <verison-of-APK> -f <path-to-values.yaml-file> -n <namespace>
+		```
+	
+	=== "Command"
+		```
+		helm install apk-test wso2apk/apk-helm --version 1.0.0-beta -f values.yaml -n apk
+		```
+
 5.  Now you can verify the deployment by executing the following command. You will see the status of the pods as follows once completed.
 
     === "Format"

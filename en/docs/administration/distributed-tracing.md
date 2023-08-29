@@ -165,7 +165,7 @@ Supported distributed tracing systems,
 
 When using **Jaeger** for tracing, the format is same as for **Zipkin** to publish spans from APK. Therefore, the tracer type is configured as `zipkin`. Follow these steps to configure APK with Jaeger.
 
-1. Update the `<APK_HOME>/helm-charts/values.yaml`'s `wso2.apk.dp.gatewayRuntime.tracing` section with the following values
+1. Update the `values.yaml`'s `wso2.apk.dp.gatewayRuntime.tracing` section with the following values
 
     ```yaml
     tracing: 
@@ -191,7 +191,7 @@ You will be able to browse through the request traces and expand each trace to v
 
 Follow these steps to configure WSO2 APK with Zipkin.
 
-1. Update the `<APK_HOME>/helm-charts/values.yaml`'s `wso2.apk.dp.gatewayRuntime.tracing` section with the following values
+1. Update the `values.yaml`'s `wso2.apk.dp.gatewayRuntime.tracing` section with the following values
 
     ```yaml
     tracing: 
@@ -225,7 +225,7 @@ Follow these steps to configure WSO2 APK with Azure Application Insights.
     InstrumentationKey=ab71943f-xxxx-xxxx-xxxx-fb2eb69ae11d;IngestionEndpoint=https://region.applicationinsights.azure.com/
     ```
 
-2. Add the following configuration to `<APK_HOME>/helm-charts/values.yaml`'s `wso2.apk.dp.gatewayRuntime.tracing` section.
+2. Add the following configuration to `values.yaml`'s `wso2.apk.dp.gatewayRuntime.tracing` section.
 
     === "Configuration"
 
@@ -265,7 +265,7 @@ You will be able to see all traces. Detailed trace view will look like below.
 
 #### Configure APK to publish OTLP traces to a Jaeger backend
 
-1. The kubernetes artifacts you have applied at the beginning already contain the required configuration for APK to publish OTLP traces. Add the following configuration to `<APK_HOME>/helm-charts/values.yaml`'s `wso2.apk.dp.gatewayRuntime.tracing` section.
+1. The kubernetes artifacts you have applied at the beginning already contain the required configuration for APK to publish OTLP traces. Add the following configuration to `values.yaml`'s `wso2.apk.dp.gatewayRuntime.tracing` section.
 
     ```yaml
     tracing: 
@@ -289,7 +289,7 @@ You will be able to browse through the request traces and expand each trace to v
 #### Configure APK to publish OTLP traces to New Relic OTLP gRPC collector
 
 1. Create an account in New Relic portal and generate a license key to publish traces. [New Relic OTLP guide](https://docs.newrelic.com/docs/more-integrations/open-source-telemetry-integrations/opentelemetry/opentelemetry-setup/)
-2. Add the following configuration to`<APK_HOME>/helm-charts/values.yaml`'s `wso2.apk.dp.gatewayRuntime.tracing` section
+2. Add the following configuration to`values.yaml`'s `wso2.apk.dp.gatewayRuntime.tracing` section
 
 === "Configuration"
 
@@ -330,7 +330,7 @@ You will be able to browse through the request traces and expand each trace to v
 [![OLTP New Relic Trace](../assets/img/distributed-tracing/trace-newrelic.png)](../assets/img/distributed-tracing/trace-newrelic.png)
 
 !!! note
-    Envoy's ratelimiter exclusively supports OTLP tracing. Thus its necessary to use OTLP tracing type to monitor rate limiter traces in the APK.
+    Envoy's ratelimiter exclusively supports `OTLP` tracing. Thus its necessary to use OTLP tracing type to monitor rate limiter traces in the APK.
 
 !!! info
     Similarly any telemetry backend that supports OTLP gRPC telemetry data collection can be used by setting up related values for `connectionString`, `authHeaderName` and `authHeaderValue`.
