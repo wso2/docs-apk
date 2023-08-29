@@ -4,7 +4,7 @@ As the APK uses an Envoy proxy as the Router component, it only supports the log
 
 ## Router Access Logging
 
-To enable the Router access logs, update the `<APK_HOME>/helm-charts/values.yaml`'s `wso2.apk.dp.gatewayRuntime.deployment.router.logging` section with the following values.
+To enable the Router access logs, update the `values.yaml`'s `wso2.apk.dp.gatewayRuntime.deployment.router.logging` section with the following values.
 
 ```yaml
   logging:
@@ -38,7 +38,7 @@ To enable Router debug logs, provide the log level as trailing arguments for the
 --component-log-level upstream:debug,connection:trace
 ```
 
-To enable the Router debug logs for APK Deployment, update the `<APK_HOME>/helm-charts/values.yaml`'s `wso2.apk.dp.gatewayRuntime.deployment.router.env` section with the following values.
+To enable the Router debug logs for APK Deployment, update the `values.yaml`'s `wso2.apk.dp.gatewayRuntime.deployment.router.env` section with the following values.
 
 ```yaml
 router:
@@ -300,7 +300,7 @@ Follow [command line options]({{envoy_path}}/operations/cli) for more informatio
 
 By enabling wire logs in the Router component, you can inspect headers, body, and trailers of the request/response. This is helpful to see the changes applied to the request or response after request path and/or response path interceptors.
 
-To enable the wire logs, update the `<APK_HOME>/helm-charts/values.yaml`'s `wso2.apk.dp.gatewayRuntime.deployment.router.logging` section with the following values.
+To enable the wire logs, update the `values.yaml`'s `wso2.apk.dp.gatewayRuntime.deployment.router.logging` section with the following values.
 
 ```yaml
   logging:

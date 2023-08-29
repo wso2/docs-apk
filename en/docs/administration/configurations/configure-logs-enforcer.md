@@ -4,7 +4,7 @@ As the Enforcer component is implemented in Java, we are using the `log4j2` fram
 
 ## Configuring Log4j2 Properties
 
-To configure log4j2 properties, update the `<APK_HOME>/helm-charts/values.yaml`'s `wso2.apk.dp.gatewayRuntime.deployment.enforcer.logging` section with the following values.
+To configure log4j2 properties, update the `values.yaml`'s `wso2.apk.dp.gatewayRuntime.deployment.enforcer.logging` section with the following values.
 
 ```yaml
 logging:
