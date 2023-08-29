@@ -105,3 +105,5 @@ The following are the configurations that you need when defining Rate Limiting P
 </tbody>
 </table>
 
+!!!NOTE
+    Once the ratelimit is enforced, the ratelimited requests will receive a 429 response code with no content as the response.

@@ -172,7 +172,7 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
     | apkConfiguration       | `EmployeeService.apk-conf` file       |
     | definitionFile   | `EmployeeServiceDefinition.json` file        |
 
-2. Send the access token in the Authorization header as a bearer token. This is the access token received by following the steps under ["Generate an access token to invoke APIs"](#generate-an-access-token-to-invoke-apis) section above.
+2. Set the access token in the Authorization header as a bearer token. This is the access token received by following the steps under ["Generate an access token to invoke APIs"](#generate-an-access-token-to-invoke-apis) section above.
 3. Execute the API deployment request. You will receive a successful response with an Id for the API.
 
     === "Request"

@@ -274,3 +274,6 @@ Follow the instructions below to add an Operation-level Rate Limiting Policy to 
 **Step 2 - Apply the CRs**
 
 {!includes/apply-cr.md!}
+
+!!!NOTE
+    Once the ratelimit is enforced, the ratelimited requests will receive a 429 response code with no content as the response.
