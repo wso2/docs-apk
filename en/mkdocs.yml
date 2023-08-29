@@ -125,13 +125,14 @@ nav:
                 - Via CRs: create-api/rate-limiting/add-new-rate-limiting-policies-via-crs.md
             - Custom Rate Limiting: create-api/rate-limiting/custom-rate-limiting.md
         - API Security:
+            - Generate Access Token: develop-and-deploy-api/security/generate-access-token.md
             - Authentication:
                 - Enable API Security:
                     - JWT: develop-and-deploy-api/security/authentication/enable-api-security/jwt.md
         - API Versions:
             - Create an API Version: develop-and-deploy-api/api-versions/create-an-api-versions.md
             - Default Version: develop-and-deploy-api/api-versions/default-version.md
-            - Backward Compatibility: develop-and-deploy-api/api-versions/backward-compatibility.md
+            #- Backward Compatibility: develop-and-deploy-api/api-versions/backward-compatibility.md
         - API Properties: develop-and-deploy-api/api-properties/api-properties.md
         - API Scopes: develop-and-deploy-api/api-scopes/api-scopes.md
         - API Definition Endpoint: develop-and-deploy-api/api-definition-endpoint/api-definition-endpoint.md
