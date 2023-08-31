@@ -10,7 +10,7 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
 	
 	=== "Command"
 		```
-		helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.0.0-beta
+		helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.0.0-rc
 		```
 
 2. Execute the following command to update the helm repositories.
@@ -40,7 +40,7 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
 	
 	=== "Command"
 		```
-		helm install apk-test wso2apk/apk-helm --version 1.0.0-beta -n apk
+		helm install apk-test wso2apk/apk-helm --version 1.0.0-rc -n apk
 		```
 
 	To commence the installation while making use of the customization capabilities inherent in the `values.yaml` file, follow the subsequent command format. Instructions in [Customize Configurations](../setup/Customize-Configurations.md) will guide you through the process of acquiring the `values.yaml` file.
@@ -52,7 +52,7 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
 	
 	=== "Command"
 		```
-		helm install apk-test wso2apk/apk-helm --version 1.0.0-beta -f values.yaml -n apk
+		helm install apk-test wso2apk/apk-helm --version 1.0.0-rc -f values.yaml -n apk
 		```
 
 5.  Now you can verify the deployment by executing the following command. You will see the status of the pods as follows once completed.
