@@ -2,7 +2,7 @@
 
 ## Step 1 - Generate On-prem Key
 
-1. Sign in to https://console.choreo.dev/login/.
+1. Sign in to [Choreo](https://console.choreo.dev/login/).
 
 2. Go to `Settings > On-prem Keys` and click on `Generate Key` button.
 
