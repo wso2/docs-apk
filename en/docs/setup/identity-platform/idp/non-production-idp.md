@@ -11,9 +11,8 @@ Follow the instructions below to use the inbuilt Non-production Identity Provide
 !!! note
     Make sure that the Helm charts are installed.
 
-1. Use [Postman](../../../../administration/postman-tests) to get the access token using the Non-production IdP.
-
-    Use the following details before running the `POST` `Generate Auth code token` REST API.
+1. Open Postman and create a new request to get the access token using the non-production IdP.
+2. Navigate to the Authorization tab of the request.
 
      - Grant Type - `authorization_code`
      - Callback URL- `http://httpbin.org`
@@ -27,7 +26,7 @@ Follow the instructions below to use the inbuilt Non-production Identity Provide
 
     After you generate the token you will be redirected to non-production IdP login UI.
 
-2. Login using the following details.
+3. Login using the following details.
 
      - **userName** - `org1user`
      - **Password** - `org1user`

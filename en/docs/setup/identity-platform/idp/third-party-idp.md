@@ -75,8 +75,8 @@ Start WSO2 APK using the following command:
 
 ## Step 8 - Generate an Access Token
 
-1. Open [Postman](../../../../administration/postman-tests).
-2. Navigate to the `POST` `Generate Auth code token` REST API.
+1. Open Postman and create a new request to generate the auth code token.
+2. Navigate to the Authorization tab of the request.
 3. Make sure that the Token generation call has the same information that was entered in the Helm Chart in Step 6.
      
      - `Auth URL`
