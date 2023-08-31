@@ -217,7 +217,8 @@ spec:
   parentRefs:
   - group: gateway.networking.k8s.io
     kind: Gateway
-    name: Default
+    name: default
+    sectionName: httpslistener
   rules:
   - backendRefs:
     - group: dp.wso2.com
