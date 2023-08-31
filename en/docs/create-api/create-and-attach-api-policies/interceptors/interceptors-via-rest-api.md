@@ -1,35 +1,23 @@
 ## Before you begin
 
-- [Create an API](../../../get-started/quick-start-guide.md) 
-  
-You can use the apk-conf file which is created in [Quick Start Guide](../../../get-started/quick-start-guide.md) documentation and save this content into a file named `EmployeeServiceEndpoints.apk-conf`.
-
-Sample content before the modification is shown below.
+- You can use the below sample `apk-conf` file to create an API. For reference follow [Quick Start Guide](../../get-started/quick-start-guide.md) documentation.
 
 ```yaml
-name: "EmployeeServiceAPI"
-context: "/test"
-version: "3.14"
+name: "Interceptor API"
+context: "/interceptor-api"
+version: "1.0.0"
 type: "REST"
 defaultVersion: false
 endpointConfigurations:
  production:
-   endpoint: "https://run.mocky.io/v3/85516819-1edd-412b-a32b-a9284705a0b4"
+   endpoint: "http://backend-svc.ns:9082"
 operations:
-- target: "/employee"
-  verb: "GET"
-  authTypeEnabled: true
- scopes: []
-- target: "/employee"
+- target: "/books"
   verb: "POST"
   authTypeEnabled: true
   scopes: []
-- target: "/employee/{employeeId}"
-  verb: "PUT"
-  authTypeEnabled: true
-  scopes: []
-- target: "/employee/{employeeId}"
-  verb: "DELETE"
+- target: "/offers"
+  verb: "POST"
   authTypeEnabled: true
   scopes: []
 ```
@@ -41,29 +29,21 @@ operations:
 The following is a sample code snippet that defines how you can attach Interceptor API Policies at the API-level within an API APK configuration file.
 
 ```yaml
-name: "EmployeeServiceAPI"
-context: "/test"
-version: "3.14"
+name: "Interceptor API"
+context: "/interceptor-api"
+version: "1.0.0"
 type: "REST"
 defaultVersion: false
 endpointConfigurations:
  production:
-   endpoint: "https://run.mocky.io/v3/85516819-1edd-412b-a32b-a9284705a0b4"
+   endpoint: "http://backend-svc.ns:9082"
 operations:
-- target: "/employee"
-  verb: "GET"
-  authTypeEnabled: true
-  scopes: []
-- target: "/employee"
+- target: "/books"
   verb: "POST"
   authTypeEnabled: true
   scopes: []
-- target: "/employee/{employeeId}"
-  verb: "PUT"
-  authTypeEnabled: true
-  scopes: []
-- target: "/employee/{employeeId}"
-  verb: "DELETE"
+- target: "/offers"
+  verb: "POST"
   authTypeEnabled: true
   scopes: []
 apiPolicies:
@@ -71,20 +51,24 @@ apiPolicies:
     - policyName: "Interceptor"
       policyVersion: v1
       parameters:
-        backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
+        backendUrl: "https://interceptor-svc.ns:9081"
         headersEnabled: true
-        bodyEnabled: false
-        trailersEnabled: false
+        bodyEnabled: true
+        trailersEnabled: true
         contextEnabled: true
+        tlsSecretName: "interceptor-cert"
+        tlsSecretKey: "ca.crt"
   response:
     - policyName: "Interceptor"
       policyVersion: v1
       parameters:
-        backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"       
+        backendUrl: "https://interceptor-svc.ns:9081"       
         headersEnabled: true       
-        bodyEnabled: false      
-        trailersEnabled: false      
+        bodyEnabled: true      
+        trailersEnabled: true      
         contextEnabled: true
+        tlsSecretName: "interceptor-cert"
+        tlsSecretKey: "ca.crt"
 ```
 
 ??? note "Attach an Interceptor API Policy to the Request Flow Only"
@@ -95,11 +79,13 @@ apiPolicies:
         - policyName: "Interceptor"
           policyVersion: v1
           parameters:
-            backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
+            backendUrl: "https://interceptor-svc.ns:9081"
             headersEnabled: true
-            bodyEnabled: false
-            trailersEnabled: false
+            bodyEnabled: true
+            trailersEnabled: true
             contextEnabled: true
+            tlsSecretName: "interceptor-cert"
+            tlsSecretKey: "ca.crt"
     ```
 
 ??? note "Attach an Interceptor API Policy to the Response Flow Only"
@@ -110,11 +96,13 @@ apiPolicies:
         - policyName: "Interceptor"
           policyVersion: v1
           parameters:
-            backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
+            backendUrl: "https://interceptor-svc.ns:9081"
             headersEnabled: true
-            bodyEnabled: false
-            trailersEnabled: false
+            bodyEnabled: true
+            trailersEnabled: true
             contextEnabled: true
+            tlsSecretName: "interceptor-cert"
+            tlsSecretKey: "ca.crt"
     ```
 
 ??? note "Attach an Interceptor API Policy to Request and Response Flows"
@@ -125,20 +113,24 @@ apiPolicies:
         - policyName: "Interceptor"
           policyVersion: v1
           parameters:
-            backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
+            backendUrl: "https://interceptor-svc.ns:9081"
             headersEnabled: true
-            bodyEnabled: false
-            trailersEnabled: false
+            bodyEnabled: true
+            trailersEnabled: true
             contextEnabled: true
+            tlsSecretName: "interceptor-cert"
+            tlsSecretKey: "ca.crt"
       response:
         - policyName: "Interceptor"
           policyVersion: v1
           parameters:
-            backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
+            backendUrl: "https://interceptor-svc.ns:9081"
             headersEnabled: true
-            bodyEnabled: false
-            trailersEnabled: false
+            bodyEnabled: true
+            trailersEnabled: true
             contextEnabled: true
+            tlsSecretName: "interceptor-cert"
+            tlsSecretKey: "ca.crt"
     ```
 
 ## Adding operation-level interceptors
@@ -148,17 +140,17 @@ apiPolicies:
 The following is a sample code snippet that defines how you can attach Interceptor API Policies at the Operation-level within an API APK configuration file.
 
 ```yaml
-name: "EmployeeServiceAPI"
-context: "/test"
-version: "3.14"
+name: "Interceptor API"
+context: "/interceptor-api"
+version: "1.0.0"
 type: "REST"
 defaultVersion: false
 endpointConfigurations:
  production:
-   endpoint: "https://run.mocky.io/v3/85516819-1edd-412b-a32b-a9284705a0b4"
+   endpoint: "http://backend-svc.interceptor:9082"
 operations:
-- target: "/employee"
-  verb: "GET"
+- target: "/books"
+  verb: "POST"
   authTypeEnabled: true
   scopes: []
   operationPolicies:
@@ -166,30 +158,26 @@ operations:
       - policyName: "Interceptor"
         policyVersion: v1
         parameters:
-          backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
+          backendUrl: "https://interceptor-svc.ns:9081"
           headersEnabled: true
-          bodyEnabled: false
-          trailersEnabled: false
+          bodyEnabled: true
+          trailersEnabled: true
           contextEnabled: true
+          tlsSecretName: "interceptor-cert"
+          tlsSecretKey: "ca.crt"
     response:
       - policyName: "Interceptor"
         policyVersion: v1
         parameters:
-          backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
+          backendUrl: "https://interceptor-svc.ns:9081"
           headersEnabled: true
-          bodyEnabled: false
-          trailersEnabled: false
+          bodyEnabled: true
+          trailersEnabled: true
           contextEnabled: true
-- target: "/employee"
+          tlsSecretName: "interceptor-cert"
+          tlsSecretKey: "ca.crt"
+- target: "/offers"
   verb: "POST"
-  authTypeEnabled: true
-  scopes: []
-- target: "/employee/{employeeId}"
-  verb: "PUT"
-  authTypeEnabled: true
-  scopes: []
-- target: "/employee/{employeeId}"
-  verb: "DELETE"
   authTypeEnabled: true
   scopes: []
 ```
@@ -202,11 +190,13 @@ operations:
         - policyName: "Interceptor"
           policyVersion: v1
           parameters:
-            backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
+            backendUrl: "https://interceptor-svc.ns:9081"
             headersEnabled: true
-            bodyEnabled: false
-            trailersEnabled: false
+            bodyEnabled: true
+            trailersEnabled: true
             contextEnabled: true
+            tlsSecretName: "interceptor-cert"
+            tlsSecretKey: "ca.crt"
     ```
 
 ??? note "Attach an Interceptor API Policy to the Response Flow Only"
@@ -217,11 +207,13 @@ operations:
         - policyName: "Interceptor"
           policyVersion: v1
           parameters:
-            backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
+            backendUrl: "https://interceptor-svc.ns:9081"
             headersEnabled: true
-            bodyEnabled: false
-            trailersEnabled: false
+            bodyEnabled: true
+            trailersEnabled: true
             contextEnabled: true
+            tlsSecretName: "interceptor-cert"
+            tlsSecretKey: "ca.crt"
     ```
 
 ??? note "Attach an Interceptor API Policy to Request and Response Flows"
@@ -232,20 +224,24 @@ operations:
         - policyName: "Interceptor"
           policyVersion: v1
           parameters:
-            backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
+            backendUrl: "https://interceptor-svc.ns:9081"
             headersEnabled: true
-            bodyEnabled: false
-            trailersEnabled: false
+            bodyEnabled: true
+            trailersEnabled: true
             contextEnabled: true
+            tlsSecretName: "interceptor-cert"
+            tlsSecretKey: "ca.crt"
       response:
         - policyName: "Interceptor"
           policyVersion: v1
           parameters:
-            backendUrl: "http://interceptor-service.ns.svc.cluster.local:8443"
+            backendUrl: "https://interceptor-svc.ns:9081"
             headersEnabled: true
-            bodyEnabled: false
-            trailersEnabled: false
+            bodyEnabled: true
+            trailersEnabled: true
             contextEnabled: true
+            tlsSecretName: "interceptor-cert"
+            tlsSecretKey: "ca.crt"
     ```
 
 ## Configuration definitions
@@ -307,6 +303,14 @@ The following are the configurations that you need when attaching API Policies t
     <tr>
     <td><code>backendUrl</code></td>
     <td>Backend URL of the interceptor service</td>
+  </tr>
+  <tr>
+    <td><code>tlsSecretName</code></td>
+    <td>Optional parameter which indicates the reference name for Kubernetes <code>ConfigMap</code> resource which contains the tls information</td>
+  </tr>
+  <tr>
+    <td><code>tlsSecretKey</code></td>
+    <td>Optional parameter which Indicates the tls key name</td>
   </tr>
 </tbody>
 </table>

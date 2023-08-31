@@ -16,18 +16,17 @@ You need to create the `APIPolicy` with `targetRef.kind` property set to `Resour
 apiVersion: dp.wso2.com/v1alpha1
 kind: API
 metadata:
-  name: my-sample-api
+  name: interceptor-api
   namespace: ns
 spec:
   apiDisplayName: Interceptor API
   apiType: REST
   apiVersion: 1.0.0
-  context: /my-sample-api/1.0.0
-  definitionFileRef: swagger-definition-file
+  context: /interceptor-api/1.0.0
   production:
   - httpRouteRefs:
-    - my-http-route
-  organization: wso2-org
+    - interceptor-http-route
+  organization: default
 ```
 
 #### HTTPRoute resource
@@ -38,15 +37,16 @@ Note that the first `rule` in this `HTTPRoute` has a `filter` defined using filt
 apiVersion: gateway.networking.k8s.io/v1beta1
 kind: HTTPRoute
 metadata:
-  name: my-http-route
+  name: interceptor-http-route
   namespace: ns
 spec:
   hostnames:
-  - interceptor-resource.test.gw.wso2.com
+  - default.gw.wso2.com
   parentRefs:
   - group: gateway.networking.k8s.io
     kind: Gateway
-    name: Default
+    name: default
+    sectionName: httpslistener
   rules:
   - backendRefs:
     - group: dp.wso2.com
@@ -116,9 +116,9 @@ spec:
     responseInterceptors:
     - name: response-interceptor-service-operation-level
   targetRef:
-    group: gateway.networking.k8s.io
+    group: dp.wso2.com
     kind: Resource
-    name: my-http-route
+    name: interceptor-api
 ```
 
 #### InterceptorService resource for Interceptor API policy
@@ -132,10 +132,22 @@ metadata:
 spec:
   backendRef:
     name: interceptor-backend
-    namespace: ns
   includes:
     - request_headers
     - request_body
+    - invocation_context
+---
+apiVersion: dp.wso2.com/v1alpha1
+kind: InterceptorService
+metadata:
+  name: response-interceptor-service-operation-level
+  namespace: ns
+spec:
+  backendRef:
+    name: interceptor-backend
+  includes:
+    - response_headers
+    - response_body
     - invocation_context
 ```
 
@@ -176,18 +188,17 @@ When you want to apply the Interceptor `APIPolicy` for the `API`, you can create
 apiVersion: dp.wso2.com/v1alpha1
 kind: API
 metadata:
-  name: my-sample-api
+  name: interceptor-api
   namespace: ns
 spec:
   apiDisplayName: Interceptor API
   apiType: REST
   apiVersion: 1.0.0
-  context: /my-sample-api/1.0.0
-  definitionFileRef: swagger-definition-file
+  context: /interceptor-api/1.0.0
   production:
   - httpRouteRefs:
-    - my-http-route
-  organization: wso2-org
+    - interceptor-http-route
+  organization: default
 ```
 
 #### HTTPRoute resource
@@ -198,15 +209,16 @@ Note that we do not define filter with `ExtensionRef` type as we did for operati
 apiVersion: gateway.networking.k8s.io/v1beta1
 kind: HTTPRoute
 metadata:
-  name: my-http-route
+  name: interceptor-http-route
   namespace: ns
 spec:
   hostnames:
-  - interceptor-resource.test.gw.wso2.com
+  - default.gw.wso2.com
   parentRefs:
   - group: gateway.networking.k8s.io
     kind: Gateway
-    name: Default
+    name: default
+    sectionName: httpslistener
   rules:
   - backendRefs:
     - group: dp.wso2.com
@@ -275,7 +287,7 @@ spec:
   targetRef:
     group: dp.wso2.com
     kind: API
-    name: my-sample-api
+    name: interceptor-api
 ```
 
 #### InterceptorService resource for Interceptor API policy
@@ -293,6 +305,19 @@ spec:
   includes:
     - request_headers
     - request_body
+    - invocation_context
+---
+apiVersion: dp.wso2.com/v1alpha1
+kind: InterceptorService
+metadata:
+  name: response-interceptor-service-api-level
+  namespace: apk
+spec:
+  backendRef:
+    name: interceptor-backend
+  includes:
+    - response_headers
+    - response_body
     - invocation_context
 ```
 
@@ -332,7 +357,7 @@ spec:
     responseInterceptors:
       - name: response-interceptor-service-gateway-level
   targetRef:
-    group: dp.wso2.com
+    group: gateway.networking.k8s.io
     kind: Gateway
     name: default
 ```
@@ -348,7 +373,6 @@ metadata:
 spec:
   backendRef:
     name: interceptor-backend
-    namespace: ns
   includes:
     - request_headers
     - request_body
