@@ -21,7 +21,7 @@ Sample content before the modification is shown below.
    - target: "/employee"
      verb: "GET"
      authTypeEnabled: true
-    scopes: []
+     scopes: []
    - target: "/employee"
      verb: "POST"
      authTypeEnabled: true
@@ -74,7 +74,7 @@ Here, we have added a property named `definitionPath` with the new value `/docs`
      - target: "/employee"
        verb: "GET"
        authTypeEnabled: true
-     scopes: []
+       scopes: []
      - target: "/employee"
        verb: "POST"
        authTypeEnabled: true
