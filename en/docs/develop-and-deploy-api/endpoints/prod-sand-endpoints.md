@@ -78,7 +78,7 @@ Update the APK configuration as the following to add different endpoints to sand
 Deploy the APK configuration, and now you can send requests to different endpoints based on your environments, either production or sandbox.
 
 - https://default.gw.wso2.com:9095/test/3.14/employee/
-- https://sand.gw.wso2.com:9095/test/3.14/employee/
+- https://default.sandbox.gw.wso2.com:9095/test/3.14/employee/
 
 ## Resource level
 
@@ -123,6 +123,6 @@ You can define different endpoint URLs for different resources. Following is the
 Deploy the APK configuration and invoke the following get requests
 
 - https://default.gw.wso2.com:9095/test/3.14/employee/
-- https://sand.gw.wso2.com:9095/test/3.14/employee/
+- https://default.sandbox.gw.wso2.com:9095/test/3.14/employee/
 
 You will notice that the request goes to the appropriate endpoint based on the URL used. 
