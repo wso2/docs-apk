@@ -1,8 +1,8 @@
 ## Before you begin
 
-- [Create an API](../../get-started/quick-start-guide.md)
+- [Create an API](../../../get-started/quick-start-guide.md) 
   
-You can use the apk-conf file which is created in [Quick Start Guide](../../get-started/quick-start-guide.md) documentation and save this content into a file named `EmployeeServiceEndpoints.apk-conf`.
+You can use the apk-conf file which is created in [Quick Start Guide](../../../get-started/quick-start-guide.md) documentation and save this content into a file named `EmployeeServiceEndpoints.apk-conf`.
 
 Sample content before the modification is shown below.
 
@@ -313,4 +313,4 @@ The following are the configurations that you need when attaching API Policies t
 
 ## Deploy APK configuration
 
-Refer [Quick Start Guide](../../get-started/quick-start-guide.md) to deploy the API using APK configuration.
+Refer [Quick Start Guide](../../../get-started/quick-start-guide.md)  to deploy the API using APK configuration.
