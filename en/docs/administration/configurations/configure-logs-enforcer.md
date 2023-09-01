@@ -9,7 +9,6 @@ To configure log4j2 properties, update the `values.yaml`'s `wso2.apk.dp.gatewayR
 ```yaml
 logging:
   level: DEBUG
-  logFile: logs/enforcer.log
 ``` 
 
 All WSO2 products are shipped with the `log4j2` logging capabilities, which generates administrative activities and server side logs. The `log4j2` file governs how logging is performed by the Enforcer. You can configure the all the Log4j2 properties via the `log4j2.properties` file for advance use cases, which is located in ConfigMap file located in the following file in the APK helm chart.
@@ -71,8 +70,6 @@ Filters log entries based on their level. For example, threshold set to 'WARN' w
 This section shows you how to configure appenders individually. Log4j2 allows logging requests to print to multiple destinations. These output destinations are called `Appenders`. You can attach several appenders to one of the loggers. The following are the appenders used in the Enforcer.
 
 -   **ENFORCER_CONSOLE**: Logs to the console when the enforcer is running.
--   **ENFORCER_LOGFILE**: Writes the logs to `logs/enforcer.log` file inside the container.   
--   **ENFORCER_ACCESS_LOG**: Writes the access logs to `logs/enforcer_access.log` file inside the container. 
 
 !!! Info
     These appenders are configured by default to use for destinations mentined above. If you want to modify any of the configurations related to that, you can modify them according to log configurations defined in [log4j2 documentation](https://logging.apache.org/log4j/2.x/manual/appenders.html#).

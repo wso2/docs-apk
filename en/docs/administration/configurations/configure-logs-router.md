@@ -12,7 +12,6 @@ To enable the Router access logs, update the `values.yaml`'s `wso2.apk.dp.gatewa
   logging:
     accessLogs:
       enable: true
-      logfile: "/tmp/envoy.access.log"
 ``` 
 
 For the Advance Configuration, you can configure Router access logs by using the following configs. Router access logs related configurations are in the `log_config.toml` file, which is located in ConfigMap file located in the following file in the APK helm chart.
@@ -26,7 +25,6 @@ Setting `enable` as `true` will let you enable the Router access logs and the fi
 ```yaml
 [accessLogs]
 enable = true
-logfile = "/tmp/envoy.access.log"
 format = "[%START_TIME%] '%REQ(:METHOD)% %REQ(X-ENVOY-ORIGINAL-PATH?:PATH)% %PROTOCOL%' %RESPONSE_CODE% %RESPONSE_FLAGS% %BYTES_RECEIVED% %BYTES_SENT% %DURATION% %RESP(X-ENVOY-UPSTREAM-SERVICE-TIME)% '%REQ(X-FORWARDED-FOR)%' '%REQ(USER-AGENT)%' '%REQ(X-REQUEST-ID)%' '%REQ(:AUTHORITY)%' '%UPSTREAM_HOST%'\n"
 ```
 
