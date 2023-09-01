@@ -1,16 +1,33 @@
-To customize configurations in the Helm deployment, you need to have the `values.yaml` file. Follow one of the steps below to download the `values.yaml` file:
+To customize configurations in the Helm deployment, you need to create and modify the `values.yaml` file. Here's how you can do it:
 
-1. Cloning the APK Repository
+1. **Download `values.yaml` File:**
 
-    You can clone the APK GitHub repository using the following command.
+    To obtain the `values.yaml` file, you can use the `helm show values` command. Replace `<repository-name>` with the actual repository name and `<version-of-APK>` with the desired version of the APK. Run the following command:
 
-    ```
-    git clone https://github.com/wso2/apk.git
+    === "Format"
+        ```
+        helm show values <repository-name>/apk-helm --version <verison-of-APK> > values.yaml
+        ```
 
-    ```
+    === "Command"
+        ```
+        helm show values wso2apk/apk-helm --version 1.0.0-rc  > values.yaml
+        ```
 
-    This will create a local copy of the entire repository on your machine. You can then navigate to the `helm-charts` directory and locate the `values.yaml` file.
+2. **Modify the Configuration:**
 
-2. Downloading the `values.yaml` File
+    Once you have the `values.yaml` file, you can modify the configuration parameters according to your requirements.
 
-    If you prefer not to clone the whole repository, you can directly download the `values.yaml` file from the repository's URL [https://github.com/wso2/apk/blob/main/helm-charts/values.yaml](https://github.com/wso2/apk/blob/main/helm-charts/values.yaml).
+3. **Deploy the APK with Customized Configuration:**
+
+    To deploy the APK using the customized configuration, use the `helm install` command. Replace `<chart-name>`, `<repository-name>`, `<version-of-APK>`, `<path-to-values.yaml-file>`, and `<namespace>` with appropriate values. Run the following command:
+
+    === "Format"
+		```
+		helm install <chart-name> <repository-name>/apk-helm --version <verison-of-APK> -f <path-to-values.yaml-file> -n <namespace>
+		```
+	
+	=== "Command"
+		```
+		helm install apk-test wso2apk/apk-helm --version 1.0.0-rc -f values.yaml -n apk
+		```
