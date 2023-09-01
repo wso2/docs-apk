@@ -18,7 +18,7 @@ APK supports OpenShift, which is a Kubernetes distribution with additional featu
 	
 	=== "Command"
 		```
-		helm repo add wso2apk https://github.com/wso2/apk/releases/download/0.0.1-m13
+		helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.0.0-rc
 		```
 
 2. Execute the following command to update the helm repositories.
@@ -48,7 +48,7 @@ APK supports OpenShift, which is a Kubernetes distribution with additional featu
 	
 	=== "Command"
 		```
-		helm install apk-test wso2apk/apk-helm --version 0.0.1-m13 -n apk
+		helm install apk-test wso2apk/apk-helm --version 1.0.0-rc -n apk
 		```
 
 5.  Now you can verify the deployment by executing the following command. You will see the status of the pods as follows once completed.
