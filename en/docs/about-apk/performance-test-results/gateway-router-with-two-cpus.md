@@ -96,3 +96,5 @@ When increasing concurrent users for given payload size, APK consumes steady gro
 Below graphs show 90th, 95th, and 99th Response Time percentiles for 0ms backend delay. This is useful to measure the percentage of requests that exceeded the response time value for a given percentile. A percentile can also tell the percentage of requests completed below the particular response time value.
 
 [![Percentiles 2 CPUs](../../assets/img/performance-test-results/percentile-2-cpu.png)](../../assets/img/performance-test-results/percentile-2-cpu.png)
+
+Test scenario results in CSV format are available [here](https://raw.githubusercontent.com/wso2/apk/perf-summary/test/performance/benchmarks/cpus-2/summary.csv).
