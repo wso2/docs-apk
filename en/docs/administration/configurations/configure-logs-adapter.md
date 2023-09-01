@@ -5,7 +5,6 @@ To configure Adapter logs, update the `values.yaml`'s `wso2.apk.dp.adapter.loggi
 ```yaml
   logging:
     level: "INFO" # LogLevels can be "DEBG", "FATL", "ERRO", "WARN", "INFO", "PANC"
-    logFile: "logs/adapter.log"
     logFormat: "TEXT" # Values can be "JSON", "TEXT"
 ``` 
 
@@ -22,7 +21,6 @@ The sample for Adapter log configurations looks similar to the following.
 
 ## Adapter root Level configurations
 
-logfile = "logs/adapter.log"
 logLevel = "INFO"
 LogFormat = "TEXT"
 
@@ -53,10 +51,6 @@ logLevel = "INFO"
         </tr>
     </thead>
     <tbody>
-        <tr class="odd">
-            <td><code>logfile</code></td>
-            <td>The file, which will be created inside the container for writting logs.</td>
-        </tr>
         <tr class="even">
             <td><code>logLevel</code></td>
             <td>Upto which level the logs should be printed. If this is set under root level, it will be applied through all packages unless specified in package log levels. LogLevels can be <code>"DEBG"</code>, <code>"FATL"</code>, <code>"ERRO"</code>, <code>"WARN"</code>, <code>"INFO"</code>, <code>"PANC"</code></td>
