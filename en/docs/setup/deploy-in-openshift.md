@@ -67,11 +67,11 @@ APK supports OpenShift, which is a Kubernetes distribution with additional featu
 
     1. Identify the `router-service` external IP address.
         ```console
-        oc get svc -n apk | grep router-service
+        oc get svc -n apk | grep gateway-service
         ```
     2. Port forward router service to localhost.
         ```console
-        oc port-forward svc/apk-test-wso2-apk-router-service -n apk 9095:9095
+        oc port-forward svc/apk-test-wso2-apk-gateway-service -n apk 9095:9095
         ```
 
 !!! info "(Note) Handle security context contraints"
