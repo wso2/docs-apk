@@ -1,6 +1,6 @@
 # Prerequisites
 
-1. [Install Helm](https://helm.sh/docs/intro/install/).
+1. [Install Helm](https://helm.sh/docs/intro/install/). (use helm version 3.10.0 and onwards)
 2. [Install the Kubernetes Client (kubectl)](https://kubernetes.io/docs/tasks/tools/install-kubectl/).
 3. [Setup a Kubernetes Cluster](https://kubernetes.io/docs/setup).
      
