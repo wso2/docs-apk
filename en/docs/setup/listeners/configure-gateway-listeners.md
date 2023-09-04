@@ -3,7 +3,7 @@
 This section is a step-by-step guide to add or configure existing listeners the WSO2 API Platform For Kubernetes. All the existing gateway listeners are configured in the `<APK-HELM>/helm-charts/templates/data-plane/gateway-components/adapter/gateway.yaml` file which is located in the APK Helm Charts. By default the following listeners are configured in the gateway.yaml file.
 
 - API Listener (*.api.am.wso2.com)
-- IDP Listener (*.idp.am.wso2.com
+- IDP Listener (*.idp.am.wso2.com)
 - Default Gateway Listener(*.gw.wso2.com)
 
 !!! Note
@@ -11,11 +11,11 @@ This section is a step-by-step guide to add or configure existing listeners the 
 
 ## Before you begin...
 
-Install the [prerequisites](../../setup/prerequisites) that are required to run WSO2 API Platform For Kubernetes.
+Install the [prerequisites](../prerequisites.md) that are required to run WSO2 API Platform For Kubernetes.
 
 ## Step 1 - Start WSO2 API Platform For Kubernetes
 
-Start the APK deployment [start-apk](../../includes/start-apk.md).
+[Start the APK deployment ](../../get-started/quick-start-guide.md).
 
 ## Step 2 - Adding a new listener
 
