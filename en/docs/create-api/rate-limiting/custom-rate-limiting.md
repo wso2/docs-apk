@@ -9,7 +9,7 @@ To illustrate, suppose users named "Alice and "Bob" have a typical limit of four
 
 To achieve this scenario you have to define three `RateLimitPolicy` resources to meet the above example sceanrio as below:
 
-#### Custom Ratelimit Policy for user Bob
+#### Custom Rate Limit Policy for user Bob
 ```
 apiVersion: dp.wso2.com/v1alpha1
 kind: RateLimitPolicy
@@ -30,7 +30,7 @@ spec:
     group: gateway.networking.k8s.io
 ```
 
-#### Custom Ratelimit Policy for user Alice
+#### Custom Rate Limit Policy for user Alice
 ```
 apiVersion: dp.wso2.com/v1alpha1
 kind: RateLimitPolicy
@@ -51,7 +51,7 @@ spec:
     group: gateway.networking.k8s.io
 ```
 
-#### Custom Ratelimit Policy for User Group called Admin
+#### Custom Rate Limit Policy for User Group called Admin
 ```
 apiVersion: dp.wso2.com/v1alpha1
 kind: RateLimitPolicy
