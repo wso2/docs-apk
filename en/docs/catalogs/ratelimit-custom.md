@@ -9,9 +9,8 @@ metadata:
   name: http-bin-ratelimit-usergroup
 spec:
   override:
-    type: Custom
     custom:
-      key: rlkey_usergroup
+      key: org_key
       value: admin
       requestsPerUnit: 20
       unit: Minute
