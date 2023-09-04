@@ -8,7 +8,6 @@ kind: BackendJWT
 metadata:
   name: backendjwt
 spec:
-  enabled: true
   encoding: "base64"
   signingAlgorithm: "SHA256withRSA"
   header: "X-JWT-Assertion"
@@ -32,24 +31,24 @@ spec:
     </thead>
     <tbody>
       <tr>
-        <td style="white-space: nowrap;"><a href="#encoding"><code>encoding</code></a></td>
+        <td style="white-space: nowrap;"><code>encoding</code></a></td>
         <td>Determines the token encoding mechanism.</td>
       </tr>
       <tr>
-        <td style="white-space: nowrap;"><a href="#signingAlgorithm"><code>signingAlgorithm</code></a></td>
+        <td style="white-space: nowrap;"><code>signingAlgorithm</code></a></td>
         <td>Determines the signing algorithm for the token. The default algorithm is `SHA256withRSA`.</td>
       </tr>
       <tr>
-        <td style="white-space: nowrap;"><a href="#header"><code>header</code></a></td>
+        <td style="white-space: nowrap;"><code>header</code></a></td>
         <td>Determines the name of the header which carries the token in the backend request. The default value is `X-JWT-Assertion`.</td>
       </tr>
       <tr>
-        <td style="white-space: nowrap;"><a href="#tokenTTL"><code>tokenTTL</code></a></td>
+        <td style="white-space: nowrap;"><code>tokenTTL</code></a></td>
         <td>Determines the time to live property of the token.</td>
       </tr>
       <tr>
-        <td style="white-space: nowrap;"><a href="#customClaims"><code>customClaims</code></a></td>
-        <td>Contains the custom claims that need to be added to the token to be sent to the backend.</td>
+        <td style="white-space: nowrap;"><code>customClaims</code></a></td>
+        <td>Contains the custom claims that need to be added to the token to be sent to the backend. Each custom claim should contain a `type` and a `value`. The type determines the data type of the value (default type is string).</td>
       </tr>
     </tbody>
   </table>
