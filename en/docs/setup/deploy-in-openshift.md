@@ -65,7 +65,7 @@ APK supports OpenShift, which is a Kubernetes distribution with additional featu
 
 6. To access the deployment through your local machine"
 
-    1. Identify the `router-service` external IP address.
+    1. Identify the `gateway-service` external IP address.
         ```console
         oc get svc -n apk | grep gateway-service
         ```
