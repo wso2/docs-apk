@@ -20,6 +20,9 @@ spec:
   production:
   - httpRouteRefs:
     - prod-http-route-http-bin-api
+  sandbox:
+  - httpRouteRefs:
+    - sand-http-route-http-bin-api
   organization: apk-org
 ```
 
@@ -55,11 +58,15 @@ spec:
       </tr>
       <tr>
         <td style="white-space: nowrap;"><code>production</code></td>
-        <td>Contains a list of references to HTTPRoute resources.</td>
+        <td>Contains a list of references to HTTPRoute resources for the production environment.</td>
+      </tr>
+      <tr>
+        <td style="white-space: nowrap;"><code>sandbox</code></td>
+        <td>Contains a list of references to HTTPRoute resources for the sandbox environment.</td>
       </tr>
       <tr>
         <td style="white-space: nowrap;"><code>httpRouteRefs</code></td>
-        <td>Contains the HTTPRoute resources belonging to the production environment of the API.</td>
+        <td>Contains the HTTPRoute resources belonging to the production/sandbox environment of the API.</td>
       </tr>
       <tr>
         <td style="white-space: nowrap;"><code>organization</code></td>
