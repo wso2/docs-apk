@@ -1,4 +1,4 @@
-# Attach Backend JWT Token manpulation Policy to APIs via REST API
+# Attach Backend JWT Token manipulation Policy to APIs via REST API
 
 There can be scenarios where a backend service needs to make different decisions or respond with different data, depending on the application end-user that consumes an API. This can be facilitated by APK by sending the attributes in a JWT via an HTTP header, to the backend service when the API call is being forwarded.
 

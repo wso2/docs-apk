@@ -1,6 +1,6 @@
 # Backend Custom Resource
 
- This is the CR which is used to describe the actual backend and it's configurations
+ This is the CR which is used to describe the actual backend and its configurations.
 
 ```
 apiVersion: dp.wso2.com/v1alpha1

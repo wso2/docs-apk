@@ -9,4 +9,4 @@ Also WSO2 API management for Kubernetees supports the [metaresources and policy 
 - [Backend](../../catalogs/backend)
 - [BackendJWT](../../catalogs/backend-jwt)
 - [APIPolicy](../../catalogs/api-policy)
-- [RatelimitPolicy](../../catalogs/rate-limit-policy)
+- [RateLimitPolicy](../../catalogs/rate-limit-policy)
