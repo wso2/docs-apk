@@ -5,9 +5,9 @@
 
 If you encounter a situation where Simple Rate Limiting is insufficient, Custom Rate Limiting is the solution you should consider. With Custom Rate Limiting, you can create numerous custom rate limit keys and establish them through your own unique logic, which is executed against the request. You can set the custom rate limit keys using interceptor policies, and we recommend using a [Gateway level Interceptor Service Policy](../../create-and-attach-api-policies/interceptors/interceptors-via-crs/#configuring-gateway-level-interceptors) for this purpose.
 
-To illustrate, suppose users named "Alice and "Bob" have a typical limit of four requests per minute, which is the standard limit for all users in the system. However, "Bob" is also in the "Admin" group that allows all the users in the group of limit of twenty requests per minute. To handle this type of scenario, you must have two rate limit keys, such as `rlkey_usergroup` for user group and `rlkey_user` for user. 
+To illustrate, suppose users named "Alice and "Bob" have a typical limit of four requests per minute, which is the standard limit for all users in the system. However, "Bob" is also in the "Admin" group that allows all the users in the group of limit of twenty requests per minute. To handle this type of scenario, you must have two rate limit keys, such as `org_key` for user group and `user_key` for user. 
 
-To achieve this scenario you have to define three `RateLimitPolicy` resources to meet the above example sceanrio as below:
+To achieve this scenario, you have to define three `RateLimitPolicy` resources to meet the above example scenario as below:
 
 #### Custom Rate Limit Policy for user Bob
 ```
@@ -17,9 +17,8 @@ metadata:
   name: http-bin-ratelimit-user
 spec:
   override:
-    type: Custom
     custom:
-      key: rlkey_user
+      key: user_key
       value: bob
       requestsPerUnit: 4
       unit: Minute
@@ -38,9 +37,8 @@ metadata:
   name: http-bin-ratelimit-user
 spec:
   override:
-    type: Custom
     custom:
-      key: rlkey_user
+      key: user_key
       value: alice
       requestsPerUnit: 4
       unit: Minute
@@ -59,9 +57,8 @@ metadata:
   name: http-bin-ratelimit-usergroup
 spec:
   override:
-    type: Custom
     custom:
-      key: rlkey_usergroup
+      key: org_key
       value: admin
       requestsPerUnit: 20
       unit: Minute
@@ -72,20 +69,20 @@ spec:
     group: gateway.networking.k8s.io
 ```
 
-To achive the use case described above, interceptor service should set both `rlkey_usergroup` and `rlkey_user` for each request.
+When invoking the API, the request headers should contain both `org_id` and `user_id` pointing to the respective values (as shown below). This can be achieved by using an interceptor service to set both `org_id` and `user_id` for each request.
 
-For example, when user "Bob" invoke a request at gateway, then request interceptor service response should have the following data set as below:
+For example, when user "Bob" invokes a request at gateway, then the request interceptor service response should have the following data set:
 ```
 {
    ...
    ...
    rateLimitKeys: {
-      rlkey_user: "bob"
-      rlkey_usergroup: "admin"
+      user_id: "bob"
+      org_id: "admin"
    }
 }
 ```
 
-When the user "Bob" consumes his user level limt of four requests per minute, then he can consume another four requests using Admin quota. Note that the quata is reduced from both rate limit keys `rlkey_usergroup` and `rlkey_user` for a request invoked by a user. Therefore, "Bob" can consume a count in between zero and twenty per minute. This count can be zero, since some other users in the "Admin" group might have consumed tewenty count in a minute.
+When the user "Bob" consumes his user level limit of four requests per minute, then he can consume another four requests using Admin quota. Note that the quota is reduced from both rate limit keys `org_key` and `user_key` for a request invoked by a user. Therefore, "Bob" can consume a count in between zero and twenty per minute. This count can be zero, since some other users in the "Admin" group might also have consumed twenty requests in a minute.
 
 For reference, a sample interceptor service with custom rate limiting policy CRs and interceptor policy CRs can be found here: [sample-interceptor-service](https://github.com/wso2/apk/tree/main/samples/custom-ratelimit-interceptor-service)
