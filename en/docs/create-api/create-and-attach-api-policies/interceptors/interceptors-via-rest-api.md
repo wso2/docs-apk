@@ -14,11 +14,11 @@ endpointConfigurations:
 operations:
 - target: "/books"
   verb: "POST"
-  authTypeEnabled: true
+  secured: true
   scopes: []
 - target: "/offers"
   verb: "POST"
-  authTypeEnabled: true
+  secured: true
   scopes: []
 ```
 
@@ -40,11 +40,11 @@ endpointConfigurations:
 operations:
 - target: "/books"
   verb: "POST"
-  authTypeEnabled: true
+  secured: true
   scopes: []
 - target: "/offers"
   verb: "POST"
-  authTypeEnabled: true
+  secured: true
   scopes: []
 apiPolicies:
   request:
@@ -151,7 +151,7 @@ endpointConfigurations:
 operations:
 - target: "/books"
   verb: "POST"
-  authTypeEnabled: true
+  secured: true
   scopes: []
   operationPolicies:
     request:
@@ -178,7 +178,7 @@ operations:
           tlsSecretKey: "ca.crt"
 - target: "/offers"
   verb: "POST"
-  authTypeEnabled: true
+  secured: true
   scopes: []
 ```
 

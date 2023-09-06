@@ -27,10 +27,10 @@ endpointConfigurations:
 operations:
 - target: "/employee"
     verb: "GET"
-    authTypeEnabled: true
+    secured: true
     scopes: []
 - target: "/employee"
     verb: "POST"
-    authTypeEnabled: true
+    secured: true
     scopes: []
 ```

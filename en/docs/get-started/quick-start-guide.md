@@ -64,23 +64,25 @@ Apart from the above API definition file, we also need an `apk-conf` file which 
         operations:
         - target: "/employee"
             verb: "GET"
-            authTypeEnabled: true
+            secured: true
             scopes: []
         - target: "/employee"
             verb: "POST"
-            authTypeEnabled: true
+            secured: true
             scopes: []
         - target: "/employee/{employeeId}"
             verb: "PUT"
-            authTypeEnabled: true
+            secured: true
             scopes: []
         - target: "/employee/{employeeId}"
             verb: "DELETE"
-            authTypeEnabled: true
+            secured: true
             scopes: []
         ```
 
+
 2. You will get the apk-conf file content as the response. Save this content into a file named `EmployeeService.apk-conf`.
+
 
 !!!NOTE
     If you are using a different organization to the one used in this guide, you will have to create a JWTIssuer with relevant organization name in APK before proceeding to the next step. You can use the [Add JWT Issuer](../develop-and-deploy-api/jwt-issuers/jwt-issuers.md) to create a new jwt issuer.
@@ -170,19 +172,19 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
         operations:
         - target: "/employee"
             verb: "GET"
-            authTypeEnabled: true
+            secured: true
             scopes: []
         - target: "/employee"
             verb: "POST"
-            authTypeEnabled: true
+            secured: true
             scopes: []
         - target: "/employee/{employeeId}"
             verb: "PUT"
-            authTypeEnabled: true
+            secured: true
             scopes: []
         - target: "/employee/{employeeId}"
             verb: "DELETE"
-            authTypeEnabled: true
+            secured: true
             scopes: []
         ```
 

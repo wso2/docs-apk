@@ -54,7 +54,7 @@ To find more information about backend JWT generation, please refer to the [Pass
    operations:
        - target: "/test"
          verb: "GET"
-         authTypeEnabled: true
+         secured: true
          scopes: []
    apiPolicies:
      request:

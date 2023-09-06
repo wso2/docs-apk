@@ -20,19 +20,19 @@ Sample content before the modification is shown below.
    operations:
    - target: "/employee"
      verb: "GET"
-     authTypeEnabled: true
+     secured: true
      scopes: []
    - target: "/employee"
      verb: "POST"
-     authTypeEnabled: true
+     secured: true
      scopes: []
    - target: "/employee/{employeeId}"
      verb: "PUT"
-     authTypeEnabled: true
+     secured: true
      scopes: []
    - target: "/employee/{employeeId}"
      verb: "DELETE"
-     authTypeEnabled: true
+     secured: true
      scopes: []
    ```
 ## Invoke API using access token without API Scopes
@@ -55,19 +55,19 @@ Here, we have added a property named `scopes` with the value `wso2` for `/employ
    operations:
      - target: "/employee"
        verb: "GET"
-       authTypeEnabled: true
+       secured: true
        scopes: ["wso2"]
      - target: "/employee"
        verb: "POST"
-       authTypeEnabled: true
+       secured: true
        scopes: []
      - target: "/employee/{employeeId}"
        verb: "PUT"
-       authTypeEnabled: true
+       secured: true
        scopes: []
      - target: "/employee/{employeeId}"
        verb: "DELETE"
-       authTypeEnabled: true
+       secured: true
        scopes: []
    ```
 

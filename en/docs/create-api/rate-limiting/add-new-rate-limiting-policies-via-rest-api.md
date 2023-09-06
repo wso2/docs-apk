@@ -13,7 +13,7 @@ You need to define the Rate Limiting Policies in the API payload when creating a
 The following is a sample code snippet that defines how you can define Rate Limiting policies at the API-level within an API configuration.
 
 ```
-apiRateLimit:
+rateLimit:
   requestsPerUnit: 5
   unit: "Minute"
 ```
@@ -33,9 +33,9 @@ apiRateLimit:
     operations:
       - target: "/employee"
         verb: "GET"
-        authTypeEnabled: true
+        secured: true
         scopes: []
-    apiRateLimit:
+    rateLimit:
       requestsPerUnit: 5
       unit: "Minute"
     ```
@@ -47,7 +47,7 @@ apiRateLimit:
 The following is a sample code snippet that defines how you can define Rate Limiting policies at the Operation-level within an API configuration.
 
 ```
-operationRateLimit:
+rateLimit:
   requestsPerUnit: 10
   unit: "Minute"
 ```
@@ -67,9 +67,9 @@ operationRateLimit:
     operations:
       - target: "/employee"
         verb: "GET"
-        authTypeEnabled: true
+        secured: true
         scopes: []
-        operationRateLimit:
+        rateLimit:
           requestsPerUnit: 10
           unit: "Minute"
     ```
@@ -87,11 +87,11 @@ The following are the configurations that you need when defining Rate Limiting P
 </thead>
 <tbody>
   <tr>
-    <td><code>apiRateLimit</code></td>
+    <td><code>rateLimit</code></td>
     <td>Used to define API-Level Rate Limit Policies within the OpenAPI Specification (OAS) that you use to define the API.</td>
   </tr>
   <tr>
-    <td style="white-space: nowrap;"><code>operationRateLimit</code></td>
+    <td style="white-space: nowrap;"><code>rateLimit</code></td>
     <td>Used to define Operation-Level Rate Limit Policies within the OpenAPI Specification (OAS) that you use to define the API.</td>
   </tr>
   <tr>
@@ -132,19 +132,19 @@ Sample content before the modification is shown below.
   operations:
     - target: "/employee"
       verb: "GET"
-      authTypeEnabled: true
+      secured: true
       scopes: []
     - target: "/employee"
       verb: "POST"
-      authTypeEnabled: true
+      secured: true
       scopes: []
     - target: "/employee/{employeeId}"
       verb: "PUT"
-      authTypeEnabled: true
+      secured: true
       scopes: []
     - target: "/employee/{employeeId}"
       verb: "DELETE"
-      authTypeEnabled: true
+      secured: true
       scopes: []
   ```
 
@@ -153,7 +153,7 @@ Sample content before the modification is shown below.
 Add following API level rate limit policy.
 
 ```
-apiRateLimit:
+rateLimit:
   requestsPerUnit: 5
   unit: "Minute"
 ```
@@ -166,7 +166,7 @@ Sample content after the modification is shown below.
   version: "1.0.0"
   type: "REST"
   defaultVersion: false
-  apiRateLimit:
+  rateLimit:
     requestsPerUnit: 5
     unit: "Minute"
   endpointConfigurations:
@@ -175,19 +175,19 @@ Sample content after the modification is shown below.
   operations:
   - target: "/employee"
     verb: "GET"
-    authTypeEnabled: true
+    secured: true
     scopes: []
   - target: "/employee"
     verb: "POST"
-    authTypeEnabled: true
+    secured: true
     scopes: []
   - target: "/employee/{employeeId}"
     verb: "PUT"
-    authTypeEnabled: true
+    secured: true
     scopes: []
   - target: "/employee/{employeeId}"
     verb: "DELETE"
-    authTypeEnabled: true
+    secured: true
     scopes: []
   ```
 
@@ -239,7 +239,7 @@ Use the values provided in the table below in the body of your request.
         version: "1.0.0"
         type: "REST"
         defaultVersion: false
-        apiRateLimit:
+        rateLimit:
           requestsPerUnit: 5
           unit: "Minute"
         endpointConfigurations:
@@ -248,19 +248,19 @@ Use the values provided in the table below in the body of your request.
         operations:
         - target: "/employee"
           verb: "GET"
-          authTypeEnabled: true
+          secured: true
           scopes: []
         - target: "/employee"
           verb: "POST"
-          authTypeEnabled: true
+          secured: true
           scopes: []
         - target: "/employee/{employeeId}"
           verb: "PUT"
-          authTypeEnabled: true
+          secured: true
           scopes: []
         - target: "/employee/{employeeId}"
           verb: "DELETE"
-          authTypeEnabled: true
+          secured: true
           scopes: []
         ```
 
@@ -296,19 +296,19 @@ Sample content before the modification is shown below.
   operations:
     - target: "/employee"
       verb: "GET"
-      authTypeEnabled: true
+      secured: true
       scopes: []
     - target: "/employee"
       verb: "POST"
-      authTypeEnabled: true
+      secured: true
       scopes: []
     - target: "/employee/{employeeId}"
       verb: "PUT"
-      authTypeEnabled: true
+      secured: true
       scopes: []
     - target: "/employee/{employeeId}"
       verb: "DELETE"
-      authTypeEnabled: true
+      secured: true
       scopes: []
   ```
 
@@ -317,7 +317,7 @@ Sample content before the modification is shown below.
 Add following API level rate limt policy.
 
 ```
-operationRateLimit:
+rateLimit:
   requestsPerUnit: 10
   unit: "Minute"
 ```
@@ -336,22 +336,22 @@ Sample content after the modification is shown below.
   operations:
   - target: "/employee"
     verb: "GET"
-    authTypeEnabled: true
+    secured: true
     scopes: []
-    operationRateLimit:
+    rateLimit:
       requestsPerUnit: 10
       unit: "Minute"
   - target: "/employee"
     verb: "POST"
-    authTypeEnabled: true
+    secured: true
     scopes: []
   - target: "/employee/{employeeId}"
     verb: "PUT"
-    authTypeEnabled: true
+    secured: true
     scopes: []
   - target: "/employee/{employeeId}"
     verb: "DELETE"
-    authTypeEnabled: true
+    secured: true
     scopes: []
   ```
 
@@ -409,22 +409,22 @@ Use the values provided in the table below in the body of your request.
         operations:
         - target: "/employee"
           verb: "GET"
-          authTypeEnabled: true
+          secured: true
           scopes: []
-          operationRateLimit:
+          rateLimit:
             requestsPerUnit: 10
             unit: "Minute"
         - target: "/employee"
           verb: "POST"
-          authTypeEnabled: true
+          secured: true
           scopes: []
         - target: "/employee/{employeeId}"
           verb: "PUT"
-          authTypeEnabled: true
+          secured: true
           scopes: []
         - target: "/employee/{employeeId}"
           verb: "DELETE"
-          authTypeEnabled: true
+          secured: true
           scopes: []
         ```
 
