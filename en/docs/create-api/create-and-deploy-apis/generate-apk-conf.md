@@ -16,7 +16,7 @@ The sample output of the generate APK Configuration (apk-conf) file will be as f
 ```
 ---
 name: "EmployeeServiceAPI"
-context: ""
+basePath: ""
 version: "3.14"
 type: "REST"
 defaultVersion: false

@@ -11,7 +11,7 @@ Sample content before the modification is shown below.
 
    ```yaml
    name: "EmployeeServiceAPI"
-   context: "/test"
+   basePath: "/test"
    version: "3.14"
    type: "REST"
    defaultVersion: false
@@ -47,7 +47,7 @@ Update the APK configuration as the following to add different endpoints to sand
 
    ```yaml
    name: "EmployeeServiceAPI"
-   context: "/test"
+   basePath: "/test"
    version: "3.14"
    type: "REST"
    defaultVersion: false
@@ -87,7 +87,7 @@ You can define different endpoint URLs for different resources. Following is the
 
    ```yaml
    name: "EmployeeServiceAPI"
-   context: "/test"
+   basePath: "/test"
    version: "3.14"
    type: "REST"
    defaultVersion: false

@@ -15,7 +15,7 @@ spec:
   apiDisplayName: HTTP Bin API
   apiType: REST
   apiVersion: 1.0.0
-  context: /http-bin-api/1.0.0
+  basePath: /http-bin-api/1.0.0
   isDefaultVersion: true
   production:
   - httpRouteRefs:

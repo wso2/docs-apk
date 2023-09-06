@@ -14,7 +14,7 @@ Here, you can use the apk-conf file which is created in [Create an API](../../ge
 Sample content before the modification is shown below.
    ```
    name: "EmployeeServiceAPI"
-   context: "/test"
+   basePath: "/test"
    version: "3.14"
    type: "REST"
    defaultVersion: false
@@ -57,7 +57,7 @@ Sample content before the modification is shown below.
    Sample content after the modification is shown below.
    ```
    name: "EmployeeServiceAPI"
-   context: "/test"
+   basePath: "/test"
    version: "4.0"
    type: "REST"
    defaultVersion: true
@@ -131,7 +131,7 @@ Use the values provided in the table below in the body of your request.
           ---
           id: "a70e538aeaab278437dc4c3199dbaf6fcb7df2d9"
           name: "EmployeeServiceAPI"
-          context: "/test"
+          basePath: "/test"
           version: "4.0"
           type: "REST"
           defaultVersion: true

@@ -14,7 +14,7 @@ Sample content before the modification is shown below.
 
    ```yaml
    name: "EmployeeServiceAPI"
-   context: "/test"
+   basePath: "/test"
    version: "3.14"
    type: "REST"
    defaultVersion: false
@@ -54,7 +54,7 @@ Modified APK configuration content to disable JWT
 
    ```yaml
    name: "EmployeeServiceAPI"
-   context: "/test"
+   basePath: "/test"
    version: "3.14"
    type: "REST"
    defaultVersion: false
@@ -101,7 +101,7 @@ Modified APK configuration content to use custom auth header name
 
    ```yaml
    name: "EmployeeServiceAPI"
-   context: "/test"
+   basePath: "/test"
    version: "3.14"
    type: "REST"
    defaultVersion: false
