@@ -22,7 +22,7 @@ spec:
   apiDisplayName: Interceptor API
   apiType: REST
   apiVersion: 1.0.0
-  context: /interceptor-api/1.0.0
+  basePath: /interceptor-api/1.0.0
   production:
   - httpRouteRefs:
     - interceptor-http-route
@@ -194,7 +194,7 @@ spec:
   apiDisplayName: Interceptor API
   apiType: REST
   apiVersion: 1.0.0
-  context: /interceptor-api/1.0.0
+  basePath: /interceptor-api/1.0.0
   production:
   - httpRouteRefs:
     - interceptor-http-route

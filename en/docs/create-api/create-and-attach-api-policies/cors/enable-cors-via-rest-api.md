@@ -57,7 +57,7 @@ Cross-Origin Resource Sharing (CORS) is a mechanism that allows accessing restri
    Sample APK configuration content after the modification is shown below.
    ```
    name: "EmployeeServiceAPI"
-   context: "/test"
+   basePath: "/test"
    version: "4.0"
    type: "REST"
    defaultVersion: true

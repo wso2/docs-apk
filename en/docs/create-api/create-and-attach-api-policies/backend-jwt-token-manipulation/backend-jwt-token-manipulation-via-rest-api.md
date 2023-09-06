@@ -44,7 +44,7 @@ To find more information about backend JWT generation, please refer to the [Pass
 
    ```
    name: "test-backend-jwt"
-   context: "/backend_jwt"
+   basePath: "/backend_jwt"
    version: "1.0.0"
    type: "REST"
    defaultVersion: false
