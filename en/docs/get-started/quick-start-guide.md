@@ -54,7 +54,7 @@ Apart from the above API definition file, we also need an `apk-conf` file which 
         ```
         ---
         name: "EmployeeServiceAPI"
-        context: ""
+        basePath: "/RW1wbG95ZWVTZXJ2aWNlQVBJMy4xNA"
         version: "3.14"
         type: "REST"
         defaultVersion: false
@@ -80,49 +80,7 @@ Apart from the above API definition file, we also need an `apk-conf` file which 
             scopes: []
         ```
 
-2. You will get the apk-conf file content as the response. Save this content into a file named `EmployeeService.apk-conf`. Modify the content to add the `context`. The specific changes you have to make are indicated in the table below.
-
-    <table>
-        <tbody>
-            <tr>
-                <th colspan="2" >Parameter</th>
-                <th>Description</th>
-            </tr>
-            <tr>
-                <td colspan="2" class="confluenceTd"><pre>context: "/test"</pre></td>
-                <td class="confluenceTd">Change the context parameter to "/test"</td>
-            </tr>
-        </tbody>
-    </table>
-
-    Sample content after the modification is shown below.
-        ```
-        name: "EmployeeServiceAPI"
-        context: "/test"
-        version: "3.14"
-        type: "REST"
-        defaultVersion: false
-        endpointConfigurations:
-            production:
-                endpoint: "https://run.mocky.io/v3/85516819-1edd-412b-a32b-a9284705a0b4"
-        operations:
-        - target: "/employee"
-            verb: "GET"
-            authTypeEnabled: true
-            scopes: []
-        - target: "/employee"
-            verb: "POST"
-            authTypeEnabled: true
-            scopes: []
-        - target: "/employee/{employeeId}"
-            verb: "PUT"
-            authTypeEnabled: true
-            scopes: []
-        - target: "/employee/{employeeId}"
-            verb: "DELETE"
-            authTypeEnabled: true
-            scopes: []
-        ```
+2. You will get the apk-conf file content as the response. Save this content into a file named `EmployeeService.apk-conf`.
 
 !!!NOTE
     If you are using a different organization to the one used in this guide, you will have to create a JWTIssuer with relevant organization name in APK before proceeding to the next step. You can use the [Add JWT Issuer](../develop-and-deploy-api/jwt-issuers/jwt-issuers.md) to create a new jwt issuer.
@@ -202,7 +160,7 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
         ---
         id: "3940857a942e08686e58b511d43d046a7168281e"
         name: "EmployeeServiceAPI"
-        context: "/test"
+        basePath: "/RW1wbG95ZWVTZXJ2aWNlQVBJMy4xNA"
         version: "3.14"
         type: "REST"
         defaultVersion: false
@@ -257,7 +215,7 @@ Now the API is ready to be invoked. Let’s get the list of Employees by invokin
 
     === "Sample Request"
         ```
-        curl -k --location 'https://default.gw.wso2.com:9095/test/3.14/employee' \
+        curl -k --location 'https://default.gw.wso2.com:9095/RW1wbG95ZWVTZXJ2aWNlQVBJMy4xNA/3.14/employee' \
         --header 'Host: default.gw.wso2.com' \
         --header 'Authorization: bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiZXhwIjoxNjg4MTMxNDQ0LCAibmJmIjoxNjg4MTI3ODQ0LCAiaWF0IjoxNjg4MTI3ODQ0LCAianRpIjoiMDFlZTE3NDEtMDA0Ni0xOGE2LWFhMjEtYmQwYTk4ZjYzNzkwIiwgImNsaWVudElkIjoiNDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyIiwgInNjb3BlIjoiZGVmYXVsdCJ9.RfKQq2fUZKZFAyjimvsPD3cOzaVWazabmq7b1iKYacqIdNjkvO9CQmu7qdtrVNDmdZ_gHhWLXiGhN4UTSCXv_n1ArDnxTLFBroRS8dxuFBZoD9Mpj10vYFSDDhUfFqjgMqtpr30TpDMfee1wkqB6K757ZSjgCDa0hAbv555GkLdZtRsSgR3xWcxPBsIozqAMFDCWoUCbgTQuA5OiEhhpVco2zv4XLq2sz--VRoBieO12C69KnGRmoLuPtvOayInvrnV96Tbt9fR0fLS2l1nvAdFzVou0SIf9rMZLnURLVQQYE64GR14m-cFRYdUI9vTsFHZBl5w-uCLdzMMofzZaLQ'
         ```

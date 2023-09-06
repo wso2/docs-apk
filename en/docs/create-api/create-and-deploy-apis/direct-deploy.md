@@ -17,7 +17,7 @@ Once we invoke the above API, the output looks like below.
 ---
 id: "048f821480bb19de6b64973a4b69109af286cfef"
 name: "EmployeeServiceAPI"
-context: "/test"
+basePath: "/test"
 version: "3.14"
 type: "REST"
 defaultVersion: false

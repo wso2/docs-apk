@@ -4,7 +4,7 @@
 
 ```yaml
 name: "Interceptor API"
-context: "/interceptor-api"
+basePath: "/interceptor-api"
 version: "1.0.0"
 type: "REST"
 defaultVersion: false
@@ -30,7 +30,7 @@ The following is a sample code snippet that defines how you can attach Intercept
 
 ```yaml
 name: "Interceptor API"
-context: "/interceptor-api"
+basePath: "/interceptor-api"
 version: "1.0.0"
 type: "REST"
 defaultVersion: false
@@ -141,7 +141,7 @@ The following is a sample code snippet that defines how you can attach Intercept
 
 ```yaml
 name: "Interceptor API"
-context: "/interceptor-api"
+basePath: "/interceptor-api"
 version: "1.0.0"
 type: "REST"
 defaultVersion: false

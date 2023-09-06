@@ -10,7 +10,7 @@ Sample content before the modification is shown below.
 
    ```yaml
    name: "EmployeeServiceAPI"
-   context: "/test"
+   basePath: "/test"
    version: "3.14"
    type: "REST"
    defaultVersion: false
@@ -45,7 +45,7 @@ Here, we have added a property named `scopes` with the value `wso2` for `/employ
 
    ```yaml
    name: "EmployeeServiceAPI"
-   context: "/test"
+   basePath: "/test"
    version: "3.14"
    type: "REST"
    defaultVersion: false
