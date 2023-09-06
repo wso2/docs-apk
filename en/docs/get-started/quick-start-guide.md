@@ -21,9 +21,11 @@ Install the [prerequisites](../../setup/prerequisites) that are required to run 
     | 127.0.0.1   | idp.am.wso2.com     |
     | 127.0.0.1   | default.gw.wso2.com |
 
-### Generate APK configuration file for the API
+### Generate APK configuration file from the OpenAPI definition
 
-Apart from the above API definition file, we also need an `apk-conf` file which defines the configurations and metadata for this API. We have a configuration service which can be used to generate this apk-conf file given the API definition. 
+Apart from the above API definition file, we also need an `apk-conf` file which defines the configurations and metadata for this API. We have a configuration service which can be used to generate this apk-conf file when OpenAPI definition is provided. 
+
+**Note**: We recommend installing the [APK Config Language Support Visual Studio Code (VS Code) extension](../create-api/create-and-deploy-apis/apk-conf-lang-support.md) for this purpose.
 
 1. Execute the following request to generate the apk configuration. Use the values provided in the table below in the body of your request. 
 
@@ -32,20 +34,20 @@ Apart from the above API definition file, we also need an `apk-conf` file which 
     | apiType      | REST                                                                                     |
     | definition   | `EmployeeServiceDefinition.json` file that was downloaded at the beginning of [Step 2](#step-2-create-and-deploy-the-api)     |
 
-    === "Request"
-        ```
-        curl --location 'https://<host>:9095/api/configurator/1.0.0/apis/generate-configuration' \
-        --header 'Host: <host>' \
-        --form 'apiType="<api-type>"' \
-        --form 'definition=@"<path/to/EmployeeServiceDefinition.json>"'
-        ```
-
     === "Sample Request"
         ```
         curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.0.0/apis/generate-configuration' \
         --header 'Host: api.am.wso2.com' \
         --form 'apiType="REST"' \
         --form 'definition=@"/Users/user/EmployeeServiceDefinition.json"'
+        ```
+
+    === "Request Format"
+        ```
+        curl --location 'https://<host>:9095/api/configurator/1.0.0/apis/generate-configuration' \
+        --header 'Host: <host>' \
+        --form 'apiType="<api-type>"' \
+        --form 'definition=@"<path/to/EmployeeServiceDefinition.json>"'
         ```
 
     === "Sample Response"
@@ -127,7 +129,7 @@ Apart from the above API definition file, we also need an `apk-conf` file which 
 
 ### Generate an access token to invoke APIs
 
-To invoke the system APIs such as for deploying, we need a valid access token issued by an identity provider (IdP). While APK supports third party IdPs such as Asgardeo and Auth0, it supports an inbuilt non-production identity provider as well, which is only meant for testing purposes. We are going to use the non-production inbuilt IdP for this guide.
+To invoke the system APIs such as for deploying, we need a valid access token issued by an identity provider (IdP). While APK supports third party IdPs such as Asgardeo and Auth0, it also supports an inbuilt non-production identity provider as well, which is only meant for testing purposes. We are going to use the non-production inbuilt IdP for this guide.
 
 1. Execute the following request to generate the access token. Use the base64 encoded value of the colon separated client Id and client secret provided in the table below in the Authorization header of the request. We will be using the client credentials grant type to generate the token.
 
@@ -158,6 +160,8 @@ To invoke the system APIs such as for deploying, we need a valid access token is
         ```
         {"access_token":"eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiZXhwIjoxNjg4MTMxNDQ0LCAibmJmIjoxNjg4MTI3ODQ0LCAiaWF0IjoxNjg4MTI3ODQ0LCAianRpIjoiMDFlZTE3NDEtMDA0Ni0xOGE2LWFhMjEtYmQwYTk4ZjYzNzkwIiwgImNsaWVudElkIjoiNDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyIiwgInNjb3BlIjoiZGVmYXVsdCJ9.RfKQq2fUZKZFAyjimvsPD3cOzaVWazabmq7b1iKYacqIdNjkvO9CQmu7qdtrVNDmdZ_gHhWLXiGhN4UTSCXv_n1ArDnxTLFBroRS8dxuFBZoD9Mpj10vYFSDDhUfFqjgMqtpr30TpDMfee1wkqB6K757ZSjgCDa0hAbv555GkLdZtRsSgR3xWcxPBsIozqAMFDCWoUCbgTQuA5OiEhhpVco2zv4XLq2sz--VRoBieO12C69KnGRmoLuPtvOayInvrnV96Tbt9fR0fLS2l1nvAdFzVou0SIf9rMZLnURLVQQYE64GR14m-cFRYdUI9vTsFHZBl5w-uCLdzMMofzZaLQ", "token_type":"Bearer", "expires_in":3600, "scope":"default"}
         ```
+
+**Note**: These credentials and access tokens are from the inbuilt non-production sample application, and should only be used for testing purposes.
 
 Now you can use this access token to invoke the Resources and APIs that follow.
 
@@ -226,14 +230,14 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
 
 4. Execute the command below. You will be able to see that the `EmployeeServiceAPI` is successfully deployed as shown in the image.
 
-    === "Format"
-        ```
-        kubectl get apis -n <namespace>
-        ```
 
     === "Command"
         ```
         kubectl get apis -n apk
+        ```
+    === "Format"
+        ```
+        kubectl get apis -n <namespace>
         ```
 
     [![Deployed API](../assets/img/get-started/deployed-api.png)](../assets/img/get-started/deployed-api.png)
