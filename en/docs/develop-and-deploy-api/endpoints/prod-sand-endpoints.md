@@ -21,19 +21,19 @@ Sample content before the modification is shown below.
    operations:
    - target: "/employee"
      verb: "GET"
-     authTypeEnabled: true
+     secured: true
     scopes: []
    - target: "/employee"
      verb: "POST"
-     authTypeEnabled: true
+     secured: true
      scopes: []
    - target: "/employee/{employeeId}"
      verb: "PUT"
-     authTypeEnabled: true
+     secured: true
      scopes: []
    - target: "/employee/{employeeId}"
      verb: "DELETE"
-     authTypeEnabled: true
+     secured: true
      scopes: []
    ```
 
@@ -59,19 +59,19 @@ Update the APK configuration as the following to add different endpoints to sand
    operations:
    - target: "/employee"
      verb: "GET"
-     authTypeEnabled: true
+     secured: true
     scopes: []
    - target: "/employee"
      verb: "POST"
-     authTypeEnabled: true
+     secured: true
      scopes: []
    - target: "/employee/{employeeId}"
      verb: "PUT"
-     authTypeEnabled: true
+     secured: true
      scopes: []
    - target: "/employee/{employeeId}"
      verb: "DELETE"
-     authTypeEnabled: true
+     secured: true
      scopes: []
    ```
 
@@ -99,7 +99,7 @@ You can define different endpoint URLs for different resources. Following is the
    operations:
    - target: "/employee"
      verb: "GET"
-     authTypeEnabled: true
+     secured: true
      scopes: []
      endpointConfigurations:
        production:
@@ -108,15 +108,15 @@ You can define different endpoint URLs for different resources. Following is the
          endpoint: "https://run.mocky.io/v3/85516819-1edd-412b-a32b-a9284705a0b4"
    - target: "/employee"
      verb: "POST"
-     authTypeEnabled: true
+     secured: true
      scopes: []
    - target: "/employee/{employeeId}"
      verb: "PUT"
-     authTypeEnabled: true
+     secured: true
      scopes: []
    - target: "/employee/{employeeId}"
      verb: "DELETE"
-     authTypeEnabled: true
+     secured: true
      scopes: []
    ```
 

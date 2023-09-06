@@ -24,19 +24,19 @@ Sample content before the modification is shown below.
    operations:
    - target: "/employee"
    verb: "GET"
-   authTypeEnabled: true
+   secured: true
    scopes: []
    - target: "/employee"
    verb: "POST"
-   authTypeEnabled: true
+   secured: true
    scopes: []
    - target: "/employee/{employeeId}"
    verb: "PUT"
-   authTypeEnabled: true
+   secured: true
    scopes: []
    - target: "/employee/{employeeId}"
    verb: "DELETE"
-   authTypeEnabled: true
+   secured: true
    scopes: []
    ```
 
@@ -67,19 +67,19 @@ Sample content before the modification is shown below.
    operations:
    - target: "/employee"
    verb: "GET"
-   authTypeEnabled: true
+   secured: true
    scopes: []
    - target: "/employee"
    verb: "POST"
-   authTypeEnabled: true
+   secured: true
    scopes: []
    - target: "/employee/{employeeId}"
    verb: "PUT"
-   authTypeEnabled: true
+   secured: true
    scopes: []
    - target: "/employee/{employeeId}"
    verb: "DELETE"
-   authTypeEnabled: true
+   secured: true
    scopes: []
    ```
    
@@ -140,19 +140,19 @@ Use the values provided in the table below in the body of your request.
         operations:
         - target: "/employee"
         verb: "GET"
-        authTypeEnabled: true
+        secured: true
         scopes: []
         - target: "/employee"
         verb: "POST"
-        authTypeEnabled: true
+        secured: true
         scopes: []
         - target: "/employee/{employeeId}"
         verb: "PUT"
-        authTypeEnabled: true
+        secured: true
         scopes: []
         - target: "/employee/{employeeId}"
         verb: "DELETE"
-        authTypeEnabled: true
+        secured: true
         scopes: []
         ```
 

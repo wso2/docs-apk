@@ -64,19 +64,19 @@ Apart from the above API definition file, we also need an `apk-conf` file which 
         operations:
         - target: "/employee"
             verb: "GET"
-            authTypeEnabled: true
+            secured: true
             scopes: []
         - target: "/employee"
             verb: "POST"
-            authTypeEnabled: true
+            secured: true
             scopes: []
         - target: "/employee/{employeeId}"
             verb: "PUT"
-            authTypeEnabled: true
+            secured: true
             scopes: []
         - target: "/employee/{employeeId}"
             verb: "DELETE"
-            authTypeEnabled: true
+            secured: true
             scopes: []
         ```
 
@@ -108,19 +108,19 @@ Apart from the above API definition file, we also need an `apk-conf` file which 
         operations:
         - target: "/employee"
             verb: "GET"
-            authTypeEnabled: true
+            secured: true
             scopes: []
         - target: "/employee"
             verb: "POST"
-            authTypeEnabled: true
+            secured: true
             scopes: []
         - target: "/employee/{employeeId}"
             verb: "PUT"
-            authTypeEnabled: true
+            secured: true
             scopes: []
         - target: "/employee/{employeeId}"
             verb: "DELETE"
-            authTypeEnabled: true
+            secured: true
             scopes: []
         ```
 
@@ -212,19 +212,19 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
         operations:
         - target: "/employee"
             verb: "GET"
-            authTypeEnabled: true
+            secured: true
             scopes: []
         - target: "/employee"
             verb: "POST"
-            authTypeEnabled: true
+            secured: true
             scopes: []
         - target: "/employee/{employeeId}"
             verb: "PUT"
-            authTypeEnabled: true
+            secured: true
             scopes: []
         - target: "/employee/{employeeId}"
             verb: "DELETE"
-            authTypeEnabled: true
+            secured: true
             scopes: []
         ```
 

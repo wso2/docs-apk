@@ -67,19 +67,19 @@ Cross-Origin Resource Sharing (CORS) is a mechanism that allows accessing restri
    operations:
    - target: "/employee"
    verb: "GET"
-   authTypeEnabled: true
+   secured: true
    scopes: []
    - target: "/employee"
    verb: "POST"
-   authTypeEnabled: true
+   secured: true
    scopes: []
    - target: "/employee/{employeeId}"
    verb: "PUT"
-   authTypeEnabled: true
+   secured: true
    scopes: []
    - target: "/employee/{employeeId}"
    verb: "DELETE"
-   authTypeEnabled: true
+   secured: true
    scopes: []
    corsConfiguration:
      corsConfigurationEnabled: true
