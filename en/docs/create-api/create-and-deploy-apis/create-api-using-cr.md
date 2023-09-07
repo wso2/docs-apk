@@ -24,7 +24,7 @@ kind: API
 metadata:
   name: http-bin-api
 spec:
-  apiDisplayName: HTTP Bin API
+  apiName: HTTP Bin API
   apiType: REST
   apiVersion: 1.0.0
   basePath: /http-bin-api/1.0.0

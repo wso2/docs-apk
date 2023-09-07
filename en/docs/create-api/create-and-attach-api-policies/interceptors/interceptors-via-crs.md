@@ -19,7 +19,7 @@ metadata:
   name: interceptor-api
   namespace: ns
 spec:
-  apiDisplayName: Interceptor API
+  apiName: Interceptor API
   apiType: REST
   apiVersion: 1.0.0
   basePath: /interceptor-api/1.0.0
@@ -191,7 +191,7 @@ metadata:
   name: interceptor-api
   namespace: ns
 spec:
-  apiDisplayName: Interceptor API
+  apiName: Interceptor API
   apiType: REST
   apiVersion: 1.0.0
   basePath: /interceptor-api/1.0.0

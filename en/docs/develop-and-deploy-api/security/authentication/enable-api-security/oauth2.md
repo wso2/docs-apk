@@ -1,13 +1,13 @@
-# JWT Authentication
+# OAuth2 Authentication
 
-By default JWT authentication is enabled for all the APIs. The default configuration expect a bearer token in the request header `Authorization`. You can disable the JWT authentication or use a custom Authentication header for JWT authentication. 
+By default OAuth2 authentication is enabled for all the APIs. The default configuration expect a bearer token in the request header `Authorization`. You can disable the OAuth2 authentication or use a custom Authentication header for OAuth2 authentication. 
 
 
 ## Before you begin
 
 - [Create an API](../../../../get-started/quick-start-guide.md)
 
-You can use the apk-conf file which is created in [Create an API](../../../../get-started/quick-start-guide.md) documentation and save this content into a file named `EmployeeServiceDisabledJWT.apk-conf`.
+You can use the apk-conf file which is created in [Create an API](../../../../get-started/quick-start-guide.md) documentation and save this content into a file named `EmployeeServiceDisabledOAuth2.apk-conf`.
 
 
 Sample content before the modification is shown below.
@@ -40,17 +40,17 @@ Sample content before the modification is shown below.
         scopes: []
    ```
 
-### Disable JWT authentication
+### Disable OAuth2 authentication
 
-Modify the content with the following config to disable JWT
+Modify the content with the following config to disable OAuth2
   
    ```yaml
    authentication: 
-      - authType: JWT
+      - authType: OAuth2
         enabled: false
    ```
 
-Modified APK configuration content to disable JWT
+Modified APK configuration content to disable OAuth2
 
    ```yaml
    name: "EmployeeServiceAPI"
@@ -79,11 +79,11 @@ Modified APK configuration content to disable JWT
         secured: true
         scopes: []
    authentication: 
-      - authType: JWT
+      - authType: OAuth2
         enabled: false
    ```
   
-  Deploy the APK configuration. As you have not added any other authentication, you will be able to invoke requests without providing any security credentials. However, if you add API key authentication to the configuration, you will receive a 401 response, even if you use a valid access token, since you have disabled JWT authentication but added API-KEY.
+  Deploy the APK configuration. As you have not added any other authentication, you will be able to invoke requests without providing any security credentials. However, if you add API key authentication to the configuration, you will receive a 401 response, even if you use a valid access token, since you have disabled OAuth2 authentication but added API-KEY.
 
 
 ### Use custom bearer header name
@@ -93,7 +93,7 @@ Modify the content with the following config to use custom auth header name
   
    ```yaml
    authentication: 
-      - authType: JWT
+      - authType: OAuth2
         headerName: testAuth
    ```
 
@@ -126,7 +126,7 @@ Modified APK configuration content to use custom auth header name
         secured: true
         scopes: []
    authentication: 
-      - authType: JWT
+      - authType: OAuth2
         headerName: testAuth
    ```
   
