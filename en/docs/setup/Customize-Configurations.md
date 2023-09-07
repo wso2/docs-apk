@@ -20,15 +20,15 @@ To customize configurations in the Helm deployment, you need to create and modif
 
 3. **Deploy the APK with Customized Configuration:**
 
-    To deploy the APK using the customized configuration, use the `helm install` command. Replace `<chart-name>`, `<repository-name>`, `<version-of-APK>`, `<path-to-values.yaml-file>`, and `<namespace>` with appropriate values. Run the following command:
+    To deploy the APK using the customized configuration, use the `helm install` command. Replace `<chart-name>`, `<repository-name>`, `<version-of-APK>`, and `<path-to-values.yaml-file>` with appropriate values. Run the following command:
 
 	=== "Command"
 		```
-		helm install apk-test wso2apk/apk-helm --version 1.0.0-rc2 -f values.yaml -n apk
+		helm install apk-test wso2apk/apk-helm --version 1.0.0-rc2 -f values.yaml
 		```
 
     === "Format"
 		```
-		helm install <chart-name> <repository-name>/apk-helm --version <verison-of-APK> -f <path-to-values.yaml-file> -n <namespace>
+		helm install <chart-name> <repository-name>/apk-helm --version <verison-of-APK> -f <path-to-values.yaml-file>
 		```
 	

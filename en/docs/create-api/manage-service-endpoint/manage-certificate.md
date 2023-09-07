@@ -12,7 +12,7 @@ metadata:
 spec:
   protocol: https
   services:
-  - host: backend-service.namespace
+  - host: backend-service
     port: 443
   tls:
     certificateInline: |
@@ -50,7 +50,7 @@ metadata:
 spec:
   protocol: https
   services:
-  - host: backend-service.namespace
+  - host: backend-service
     port: 443
   tls:
     secretRef:
@@ -70,7 +70,7 @@ metadata:
 spec:
   protocol: https
   services:
-  - host: backend-service.namespace
+  - host: backend-service
     port: 443
   tls:
     configMapRef:
@@ -92,7 +92,7 @@ metadata:
 spec:
   protocol: https
   services:
-  - host: backend-service.namespace
+  - host: backend-service
     port: 443
   tls:
     ...

@@ -44,12 +44,12 @@ Follow the instructions below to use Asgardeo as the Identity Provider (IdP) to 
 
 === "Format"
 	```console
-	helm install <helm-chart-name> . -n <namespace>
+	helm install <helm-chart-name> .
 	```
 
 === "Example"
 	```console
-	helm install apk-test . -n apk
+	helm install apk-test .
 	```
 
 ## Step 7 - Generate an Access Token

@@ -11,7 +11,6 @@ apiVersion: dp.wso2.com/v1alpha1
 kind: TokenIssuer
 metadata:
   name: new-jwt-issuer
-  namespace: apk
 spec:
   consumerKeyClaim: azp
   issuer: https://idp.am.wso2.com/token
@@ -32,5 +31,5 @@ spec:
 2. Run the following command to add the token Issuer to APK.
 
 ```
-kubectl apply -f new-token-issuer.yaml -n <namespace>
+kubectl apply -f new-token-issuer.yaml
 ```

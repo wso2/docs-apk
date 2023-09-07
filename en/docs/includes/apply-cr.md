@@ -12,5 +12,4 @@ Apply CRs to the Kubernetes API server using the kubectl.
     ```
 
 !!! Note
-    - The services should be created in a different namespace than the APK or Kubernetes System namespaces. 
-    -  The APIs should be created in the APK deployment namespace.
+    - The APIs should be created in the APK deployment namespace.

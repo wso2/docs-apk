@@ -36,7 +36,7 @@ When deploying APIs add the configurations to the `apk-conf` file as shown in th
 ```
 endpointConfigurations:
  production:
-  endpoint: "http://backend-service.ns:443"
+  endpoint: "http://backend-service:443"
   resiliency:
    retryPolicy:
     count: 3
@@ -49,13 +49,12 @@ endpointConfigurations:
 
 ## Via CRs
 
-Define the Backend resource for the API as below and apply to the respective namespace.
+Define the Backend resource for the API as below and apply.
 ```
 apiVersion: dp.wso2.com/v1alpha1
 kind: Backend
 metadata:
   name: sample-backend
-  namespace: ns
 spec:
   protocol: http
   retry:
@@ -66,7 +65,7 @@ spec:
     - 501
     - 502
   services:
-  - host: backend-service.ns
+  - host: backend-service
     port: 443
 ```
 

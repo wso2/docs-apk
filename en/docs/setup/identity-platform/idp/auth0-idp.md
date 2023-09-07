@@ -54,12 +54,12 @@ If you have not created the user already, [create a user](https://auth0.com/docs
 
 === "Format"
 	```
-	helm install <helm-chart-name> . -n <namespace>
+	helm install <helm-chart-name> .
 	```
 
 === "Example"
 	```
-	helm install apk-test . -n apk
+	helm install apk-test .
 	```
 
 

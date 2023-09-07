@@ -8,7 +8,6 @@ apiVersion: dp.wso2.com/v1alpha1
 kind: APIPolicy
 metadata:
   name: interceptor-api-policy
-  namespace: ns
 spec:
   override:
     requestInterceptors:
@@ -30,7 +29,6 @@ metadata:
 spec:
   backendRef:
     name: interceptor-backend
-    namespace: ns
   includes:
     - request_headers
     - response_body

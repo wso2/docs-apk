@@ -42,20 +42,19 @@ endpointConfigurations:
 
 ## Via CRs
 
-Define the Backend resource for the API as below and apply to the respective namespace.
+Define the Backend resource for the API as below and apply.
 ```
 apiVersion: dp.wso2.com/v1alpha1
 kind: Backend
 metadata:
   name: sample-backend
-  namespace: ns
 spec:
   protocol: http
   timeout:
     downstreamRequestIdleTimeout: 45
     upstreamResponseTimeout: 10
   services:
-  - host: backend-service.ns
+  - host: backend-service
     port: 443
 ```
 

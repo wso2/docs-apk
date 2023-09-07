@@ -13,7 +13,6 @@ The following is a code snippet of sample `APIPolicy` CR.
   kind: APIPolicy
   metadata:
     name: backend-jwt-api-policy
-    namespace: ns
   spec:
     default:
       backendJwtPolicy:
@@ -31,7 +30,6 @@ The following is a code snippet of sample `BackendJWT` CR.
   kind: BackendJWT
   metadata:
     name: backend-jwt
-    namespace: ns
   spec:
     customClaims:
     - claim: claim1

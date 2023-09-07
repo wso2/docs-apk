@@ -65,12 +65,12 @@ Start WSO2 APK using the following command:
 
 === "Format"
 	```
-	helm install <helm-chart-name> . -n <namespace>
+	helm install <helm-chart-name> .
 	```
 
 === "Example"
 	```
-	helm install apk-test . -n apk
+	helm install apk-test .
 	```
 
 ## Step 8 - Generate an Access Token

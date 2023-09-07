@@ -14,7 +14,6 @@ For that, you can refer to an already created K8 `Secret`.
   kind: Secret
   metadata:
     name: backend-creds
-    namespace: apk
   data:
     username: YWRtaW4=
     password: YWRtaW4=
@@ -47,7 +46,6 @@ For that, you can refer to an already created K8 `Secret`.
       production:
         endpoint:
           name: "backend-service"
-          namespace: "ns"
           port: 80
           protocol: "http"
         endpointSecurity:
