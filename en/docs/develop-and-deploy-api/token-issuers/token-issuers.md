@@ -32,5 +32,5 @@ spec:
 2. Run the following command to add the token Issuer to APK.
 
 ```
-kubectl apply -f new-token-issuer.yaml -n <namespace>
+kubectl apply -f new-token-issuer.yaml
 ```

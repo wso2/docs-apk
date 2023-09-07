@@ -43,40 +43,35 @@ APK supports OpenShift, which is a Kubernetes distribution with additional featu
 
 	=== "Format"
 		```
-		helm install <chart-name> <repository-name>/apk-helm --version <verison-of-APK> -n <namespace>
+		helm install <chart-name> <repository-name>/apk-helm --version <verison-of-APK> 
 		```
 	
 	=== "Command"
 		```
-		helm install apk-test wso2apk/apk-helm --version 1.0.0-rc2 -n apk
+		helm install apk-test wso2apk/apk-helm --version 1.0.0-rc2
 		```
 
 5.  Now you can verify the deployment by executing the following command. You will see the status of the pods as follows once completed.
 
-    === "Format"
-        ```
-        oc get pods -n <namespace>
-        ```
-
     === "Command"
         ```
-        oc get pods -n apk
+        oc get pods
         ```
 
 6. To access the deployment through your local machine"
 
     1. Identify the `gateway-service` external IP address.
         ```console
-        oc get svc -n apk | grep gateway-service
+        oc get svc | grep gateway-service
         ```
     2. Port forward router service to localhost.
         ```console
-        oc port-forward svc/apk-test-wso2-apk-gateway-service -n apk 9095:9095
+        oc port-forward svc/apk-test-wso2-apk-gateway-service 9095:9095
         ```
 
 !!! info "(Note) Handle security context contraints"
 
 	OpenShift applies Security Context Constraints (SCC) to restrict the actions that pods can perform. Part of this restriction involves removing fsGroup and runAsUser from the pod definition. However, there is a known issue with Helm, where setting null keys does not remove keys in nested subcharts. This can lead to failures in Redis and Postgres deployments. To work around this issue, you need to pass the null parameters as command-line arguments when installing APK using Helm. Following command shows how to do this.
 
-		helm install apk-test wso2apk/apk-helm --version 1.0.0-rc2 -n apk --set redis.master.podSecurityContext.fsGroup=null --set redis.master.containerSecurityContext.runAsUser=null --set postgresql.primary.podSecurityContext.fsGroup=null --set postgresql.primary.containerSecurityContext.runAsUser=null
+		helm install apk-test wso2apk/apk-helm --version 1.0.0-rc2 --set redis.master.podSecurityContext.fsGroup=null --set redis.master.containerSecurityContext.runAsUser=null --set postgresql.primary.podSecurityContext.fsGroup=null --set postgresql.primary.containerSecurityContext.runAsUser=null
 

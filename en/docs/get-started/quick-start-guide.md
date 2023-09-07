@@ -192,11 +192,7 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
 
     === "Command"
         ```
-        kubectl get apis -n apk
-        ```
-    === "Format"
-        ```
-        kubectl get apis -n <namespace>
+        kubectl get apis
         ```
 
     [![Deployed API](../assets/img/get-started/deployed-api.png)](../assets/img/get-started/deployed-api.png)
