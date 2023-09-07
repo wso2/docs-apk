@@ -12,7 +12,7 @@ Error: INSTALLATION FAILED: 7 errors occurred:
    ...
 ```
 
-It is likely due to a limitation in Helm when updating Custom Resource Definitions (CRDs). Helm does not automatically delete existing CRDs, which can lead to conflicts. Downloading the chart and applying the CRDs manually will resolve the issue. Here are the steps to follow
+It is likely due to a limitation in Helm when updating Custom Resource Definitions (CRDs). Helm does not automatically redeploy existing CRDs, which can lead to conflicts. Downloading the chart and applying the CRDs manually will resolve the issue. Here are the steps to follow
 
 1.  Download chart to local
 
