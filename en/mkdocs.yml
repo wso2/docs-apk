@@ -167,20 +167,24 @@ nav:
     - Catalogs:
         - CRD Catalog: 
             - Overview - CRD Catalog: catalogs/kubernetes-crds.md
-            - CRDs: catalogs/crd.md
-            - API: catalogs/api-cr.md
-            - HTTPRoute: catalogs/http-route.md
-            - Backend: catalogs/backend.md
-            - BackendJWT: catalogs/backend-jwt.md
-            - APIPolicy: 
-                - Overview: catalogs/api-policy.md
-                - CORS: catalogs/cors.md
-                - Interceptors: catalogs/interceptors.md
-            - RateLimitPolicy: 
-                - Overview: catalogs/rate-limit-policy.md
-                - API Level: catalogs/ratelimit-api.md
-                - Resource Level: catalogs/ratelimit-resource.md
-                - Custom: catalogs/ratelimit-custom.md
+            - API: catalogs/crds/api_types.md
+            # - HTTPRoute: catalogs/http-route.md
+            - Authentication: catalogs/crds/authentication_types.md
+            - Backend: catalogs/crds/backend_types.md
+            - BackendJWT: catalogs/crds/backendjwt_types.md
+            - APIPolicy: catalogs/crds/apipolicy_types.md
+            - Interceptor Service: catalogs/crds/interceptorservice_types.md
+                # - Overview: catalogs/api-policy.md
+                # - CORS: catalogs/cors.md
+                # - Interceptors: catalogs/interceptors.md
+            - RateLimitPolicy: catalogs/crds/ratelimitpolicy_types.md
+            # - Resolved JWT Issuer: catalogs/crds/resolvedJWTIssuer.md
+            - Scope: catalogs/crds/scope_types.md
+            - Token Issuer: catalogs/crds/tokenIssuer_types.md
+                # - Overview: catalogs/rate-limit-policy.md
+                # - API Level: catalogs/ratelimit-api.md
+                # - Resource Level: catalogs/ratelimit-resource.md
+                # - Custom: catalogs/ratelimit-custom.md
         - API Catalog:
             - Overview - API Catalog: catalogs/api-catalog.md
 #            - Back Office APIs: catalogs/api-reference-back-office.md
