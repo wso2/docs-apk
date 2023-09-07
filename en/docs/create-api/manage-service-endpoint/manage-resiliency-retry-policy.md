@@ -49,7 +49,7 @@ endpointConfigurations:
 
 ## Via CRs
 
-Define the Backend resource for the API as below and apply to the respective namespace.
+Define the Backend resource for the API as below and apply.
 ```
 apiVersion: dp.wso2.com/v1alpha1
 kind: Backend

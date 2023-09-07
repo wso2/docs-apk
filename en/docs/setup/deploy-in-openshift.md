@@ -11,15 +11,15 @@ APK supports OpenShift, which is a Kubernetes distribution with additional featu
 ### Deployment Steps
 1. Create a new helm repository with the latest apk release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apk``` for this guide.
 
-	=== "Format"
-		```
-		helm repo add <repository-name> <link-to-latest-apk-release>
-		```
+    === "Format"
+        ```
+        helm repo add <repository-name> <link-to-latest-apk-release>
+        ```
 	
-	=== "Command"
-		```
-		helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.0.0-rc2
-		```
+    === "Command"
+        ```
+        helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.0.0-rc2
+        ```
 
 2. Execute the following command to update the helm repositories.
 
@@ -27,38 +27,26 @@ APK supports OpenShift, which is a Kubernetes distribution with additional featu
       helm repo update
       ```
 
-3.  Create a namespace in OpenShift. Consider the ```<namespace>``` as ```apk``` for this guide.
+3. Install the APK components and start WSO2 API Platform For Kubernetes. Consider ```apk-test``` as the ```<chart-name>``` for this guide. As the ```--version``` of this command, use the version of the release you used in point 1 above. It will take a few minutes for the deployment to complete.
 
-	=== "Format"
-		```
-		oc new-project <namespace>
-		```
+    === "Format"
+        ```
+        helm install <chart-name> <repository-name>/apk-helm --version <verison-of-APK> 
+        ```
 	
-	=== "Command"
-		```
-		oc new-project apk
-		```
+    === "Command"
+        ```
+        helm install apk-test wso2apk/apk-helm --version 1.0.0-rc2
+        ```
 
-4. Install the APK components and start WSO2 API Platform For Kubernetes. Consider ```apk-test``` as the ```<chart-name>``` for this guide. As the ```--version``` of this command, use the version of the release you used in point 1 above. It will take a few minutes for the deployment to complete.
-
-	=== "Format"
-		```
-		helm install <chart-name> <repository-name>/apk-helm --version <verison-of-APK> 
-		```
-	
-	=== "Command"
-		```
-		helm install apk-test wso2apk/apk-helm --version 1.0.0-rc2
-		```
-
-5.  Now you can verify the deployment by executing the following command. You will see the status of the pods as follows once completed.
+4. Now you can verify the deployment by executing the following command. You will see the status of the pods as follows once completed.
 
     === "Command"
         ```
         oc get pods
         ```
 
-6. To access the deployment through your local machine"
+5. To access the deployment through your local machine"
 
     1. Identify the `gateway-service` external IP address.
         ```console
