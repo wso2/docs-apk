@@ -18,7 +18,7 @@ APK supports OpenShift, which is a Kubernetes distribution with additional featu
 	
 	=== "Command"
 		```
-		helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.0.0-rc
+		helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.0.0-rc2
 		```
 
 2. Execute the following command to update the helm repositories.
@@ -48,7 +48,7 @@ APK supports OpenShift, which is a Kubernetes distribution with additional featu
 	
 	=== "Command"
 		```
-		helm install apk-test wso2apk/apk-helm --version 1.0.0-rc -n apk
+		helm install apk-test wso2apk/apk-helm --version 1.0.0-rc2 -n apk
 		```
 
 5.  Now you can verify the deployment by executing the following command. You will see the status of the pods as follows once completed.
@@ -78,5 +78,5 @@ APK supports OpenShift, which is a Kubernetes distribution with additional featu
 
 	OpenShift applies Security Context Constraints (SCC) to restrict the actions that pods can perform. Part of this restriction involves removing fsGroup and runAsUser from the pod definition. However, there is a known issue with Helm, where setting null keys does not remove keys in nested subcharts. This can lead to failures in Redis and Postgres deployments. To work around this issue, you need to pass the null parameters as command-line arguments when installing APK using Helm. Following command shows how to do this.
 
-		helm install apk-test wso2apk/apk-helm --version 1.0.0-rc -n apk --set redis.master.podSecurityContext.fsGroup=null --set redis.master.containerSecurityContext.runAsUser=null --set postgresql.primary.podSecurityContext.fsGroup=null --set postgresql.primary.containerSecurityContext.runAsUser=null
+		helm install apk-test wso2apk/apk-helm --version 1.0.0-rc2 -n apk --set redis.master.podSecurityContext.fsGroup=null --set redis.master.containerSecurityContext.runAsUser=null --set postgresql.primary.podSecurityContext.fsGroup=null --set postgresql.primary.containerSecurityContext.runAsUser=null
 
