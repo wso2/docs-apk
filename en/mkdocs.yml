@@ -167,6 +167,7 @@ nav:
     - Catalogs:
         - CRD Catalog: 
             - Overview - CRD Catalog: catalogs/kubernetes-crds.md
+            - CRDs: catalogs/crd.md
             - API: catalogs/api-cr.md
             - HTTPRoute: catalogs/http-route.md
             - Backend: catalogs/backend.md
