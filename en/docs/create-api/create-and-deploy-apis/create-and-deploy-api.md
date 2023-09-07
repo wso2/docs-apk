@@ -13,7 +13,7 @@ curl --location 'https://api.am.wso2.com:9095/api/configurator/1.0.0/apis/genera
 --header 'Accept: application/zip' \
 --form 'apkConfiguration=@"/Users/user/EmployeeService.apk-conf"' \
 --form 'definitionFile=@"/Users/user/EmployeeServiceDefinition.json"' \
---form 'apiType="REST"' -k --output ./api-crds.zip
+-k --output ./api-crds.zip
 ```
 
 The sample output of the generated zip file looks as follows.
