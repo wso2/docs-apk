@@ -7,7 +7,6 @@ Following steps describe how to generate an APK configuration file.
 ```
 curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.0.0/apis/generate-configuration' \
 --header 'Host: api.am.wso2.com' \
---form 'apiType="REST"' \
 --form 'definition=@"/Users/user/EmployeeServiceDefinition.json"'
 ```
 
