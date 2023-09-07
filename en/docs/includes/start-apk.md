@@ -5,7 +5,7 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
 
 	=== "Command"
 		```
-		helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.0.0-rc
+		helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.0.0-rc2
 		```
 	=== "Format"
 		```
@@ -34,7 +34,7 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
 
 	=== "Command"
 		```
-		helm install apk wso2apk/apk-helm --version 1.0.0-rc -n apk
+		helm install apk wso2apk/apk-helm --version 1.0.0-rc2 -n apk
 		```
 
 	=== "Format"
@@ -46,7 +46,7 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
 
 	=== "Command"
 		```
-		helm install apk wso2apk/apk-helm --version 1.0.0-rc -f values.yaml -n apk
+		helm install apk wso2apk/apk-helm --version 1.0.0-rc2 -f values.yaml -n apk
 		```
 
 	=== "Format"
