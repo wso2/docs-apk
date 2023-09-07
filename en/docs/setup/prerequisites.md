@@ -8,9 +8,9 @@
 
 
 # Requirements
-To successfully deploy WSO2 APK in your environment, it's essential to meet certain minimum requirements. These requirements ensure that the deployment process is smooth, and the platform operates efficiently
+To successfully deploy WSO2 APK in your environment, it's essential to meet certain minimum requirements. These requirements ensure that the deployment process is smooth, and the platform operates efficiently.
 
-# Package Manager Requirement
+### Package Manager Requirement
 
 Here are the requirements for the package manager to be used with this project:
 
@@ -19,7 +19,7 @@ Here are the requirements for the package manager to be used with this project:
 | Helm            | 3.10.0 or above|
 
 
-# Kubernetes Requirement
+### Kubernetes Resource Requirement
 
 Here are the minimum resource requirements for the Kubernetes cluster to run this project:
 
@@ -29,7 +29,7 @@ Here are the minimum resource requirements for the Kubernetes cluster to run thi
 | Memory    | 6 GB                |
 | Storage   | 15 GB               |
 
-# Kubernetes Cluster Versions
+### Kubernetes Cluster Versions
 
 Here are the supported Kubernetes cluster versions for different platforms:
 
@@ -43,7 +43,7 @@ Here are the supported Kubernetes cluster versions for different platforms:
 | Rancher      | 1.27.2           |
 | Kind         | 1.26.3           |
 
-# Demo/Quick Start Setup - Software Versions
+### Demo/Quick Start Setup - Software Versions
 
 Here are the supported versions for the software applications:
 
@@ -54,7 +54,7 @@ Here are the supported versions for the software applications:
 | Kind                 | 1.25.3           |
 | Openshift            | 2.23.0+ddcfe8    |
 
-# Other Dependencies
+### Other Dependencies
 
 Here are the required dependencies and their versions:
 
