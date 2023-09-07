@@ -129,7 +129,7 @@ nav:
             - Generate Access Token: develop-and-deploy-api/security/generate-access-token.md
             - Authentication:
                 - Enable API Security:
-                    - JWT: develop-and-deploy-api/security/authentication/enable-api-security/jwt.md
+                    - OAuth2: develop-and-deploy-api/security/authentication/enable-api-security/oauth2.md
         - API Versions:
             - Create an API Version: develop-and-deploy-api/api-versions/create-an-api-versions.md
             - Default Version: develop-and-deploy-api/api-versions/default-version.md
@@ -137,7 +137,7 @@ nav:
         - API Properties: develop-and-deploy-api/api-properties/api-properties.md
         - API Scopes: develop-and-deploy-api/api-scopes/api-scopes.md
         - API Definition Endpoint: develop-and-deploy-api/api-definition-endpoint/api-definition-endpoint.md
-        - JWT Issuers: develop-and-deploy-api/jwt-issuers/jwt-issuers.md
+        - Token Issuers: develop-and-deploy-api/token-issuers/token-issuers.md
 
     #                    - MTLS: develop-and-deploy-api/security/authentication/enable-api-security/mtls.md
     #                    - API Key: develop-and-deploy-api/security/authentication/enable-api-security/api-key.md

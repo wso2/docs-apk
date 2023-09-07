@@ -1,14 +1,14 @@
-# Add JWT Issuers
+# Add Token Issuers
 
-This section explains how to add a new JWT Issuer to the APK.
+This section explains how to add a new Token issuer to the APK.
 
-Follow the steps below to add JWT Issuers to APK.
+Follow the steps below to add token issuers to APK.
 
-1. Create a file named `new-jwt-issuer.yaml` and add the following content to it.
+1. Create a file named `new-token-issuer.yaml` and add the following content to it.
 
 ```
 apiVersion: dp.wso2.com/v1alpha1
-kind: JWTIssuer
+kind: TokenIssuer
 metadata:
   name: new-jwt-issuer
   namespace: apk
@@ -29,8 +29,8 @@ spec:
     name: default
 ```
 
-2. Run the following command to add the JWT Issuer to APK.
+2. Run the following command to add the token Issuer to APK.
 
 ```
-kubectl apply -f new-jwt-issuer.yaml -n <namespace>
+kubectl apply -f new-token-issuer.yaml -n <namespace>
 ```

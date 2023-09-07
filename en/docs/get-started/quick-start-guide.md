@@ -85,7 +85,7 @@ Apart from the above API definition file, we also need an `apk-conf` file which 
 
 
 !!!NOTE
-    If you are using a different organization to the one used in this guide, you will have to create a JWTIssuer with relevant organization name in APK before proceeding to the next step. You can use the [Add JWT Issuer](../develop-and-deploy-api/jwt-issuers/jwt-issuers.md) to create a new jwt issuer.
+    If you are using a different organization to the one used in this guide, you will have to create a TokenIssuer with relevant organization name in APK before proceeding to the next step. You can use the [Add Token Issuer](../develop-and-deploy-api/token-issuers/token-issuers.md) to create a new token issuer.
 
 ### Generate an access token to invoke APIs
 
