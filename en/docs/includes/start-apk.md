@@ -18,7 +18,14 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
       helm repo update
       ```
 
-3.  Create a namespace in kubernetes if you have not done so already with prerequisites above. Consider the ```<namespace>``` as ```apk``` for this guide.
+3. Apply the CRDs to cluster
+
+	```console
+	helm fetch wso2apk/apk-helm --version 1.0.0-rc2 --untar
+	kubectl apply -f ./apk-helm/crds/
+	```
+
+4.  Create a namespace in kubernetes if you have not done so already with prerequisites above. Consider the ```<namespace>``` as ```apk``` for this guide.
 	
 	=== "Command"
 		```
@@ -30,7 +37,7 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
 		kubectl create namespace <namespace>
 		```
 
-4. Install the APK components and start WSO2 API Platform For Kubernetes. Consider ```apk``` as the ```<chart-name>``` for this guide. As the ```--version``` of this command, use the version of the release you used in point 1 above. It will take a few minutes for the deployment to complete.
+5. Install the APK components and start WSO2 API Platform For Kubernetes. Consider ```apk``` as the ```<chart-name>``` for this guide. As the ```--version``` of this command, use the version of the release you used in point 1 above. It will take a few minutes for the deployment to complete.
 
 	=== "Command"
 		```
@@ -54,7 +61,7 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
 		helm install <chart-name> <repository-name>/apk-helm --version <verison-of-APK> -f <path-to-values.yaml-file> -n <namespace>
 		```
 
-5.  Now you can verify the deployment by executing the following command. You will see the status of the pods as follows once completed.
+6.  Now you can verify the deployment by executing the following command. You will see the status of the pods as follows once completed.
 
     === "Command"
         ```

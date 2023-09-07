@@ -25,7 +25,7 @@ It is likely due to a limitation in Helm when updating Custom Resource Definitio
     === "Sample command"
 
         ```
-        helm fetch wso2apk/apk-helm --version 1.0.0-rc --untar
+        helm fetch wso2apk/apk-helm --version 1.0.0-rc2 --untar
         ```
 
 2.  Go to the apk-helm/crd folder and apply the CRDs manually
@@ -33,7 +33,7 @@ It is likely due to a limitation in Helm when updating Custom Resource Definitio
     === "Command"
 
         ```
-          cd apk-helm/crd
+          cd apk-helm/crds
           kubectl apply -f .
         ```
 
