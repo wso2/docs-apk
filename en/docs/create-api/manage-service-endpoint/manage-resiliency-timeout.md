@@ -54,7 +54,7 @@ spec:
     downstreamRequestIdleTimeout: 45
     upstreamResponseTimeout: 10
   services:
-  - host: backend-service.ns
+  - host: backend-service
     port: 443
 ```
 

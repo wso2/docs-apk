@@ -92,7 +92,7 @@ metadata:
   name: legacy-xml-backend
 spec:
   services:
-  - host: legacy-xml-backend.ns
+  - host: legacy-xml-backend
     port: 9082
 ```
 
@@ -252,7 +252,7 @@ metadata:
   name: legacy-xml-backend
 spec:
   services:
-  - host: legacy-xml-backend.ns
+  - host: legacy-xml-backend
     port: 9082
 ```
 
