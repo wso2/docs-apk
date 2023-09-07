@@ -228,3 +228,5 @@ Now the API is ready to be invoked. Let’s get the list of Employees by invokin
         ```
 
 You will now be able to see a successful response with the details of the Employees from the mock backend that we used for this guide.
+
+If you encounter any issues during the installation process, don't worry! We've compiled a list of frequently asked questions (FAQs) to help you troubleshoot common problems. Please refer to the <a href="{{base_path}}/en/latest/about-apk/FAQs/">FAQs</a> section in this guide for step-by-step solutions to common installation issues.
