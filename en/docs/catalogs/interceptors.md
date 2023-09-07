@@ -5,7 +5,6 @@ apiVersion: dp.wso2.com/v1alpha1
 kind: APIPolicy
 metadata:
   name: interceptor-api-policy-resource-level
-  namespace: ns
 spec:
   override:
     requestInterceptors:
@@ -58,7 +57,6 @@ metadata:
 spec:
   backendRef:
     name: interceptor-backend
-    namespace: ns
   includes:
     - request_headers
     - request_body
@@ -78,7 +76,7 @@ spec:
     <tbody>
       <tr>
         <td style="white-space: nowrap;"><code>backendRef</code></td>
-        <td>Determines the references of <code>Backend</code> resources for interceptor. This includes the resource name and the namespace.</td>
+        <td>Determines the references of <code>Backend</code> resources for interceptor. This includes the resource name.</td>
         <td></td>
       </tr>
       <tr>

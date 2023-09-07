@@ -17,7 +17,6 @@ apiVersion: dp.wso2.com/v1alpha1
 kind: API
 metadata:
   name: interceptor-api
-  namespace: ns
 spec:
   apiName: Interceptor API
   apiType: REST
@@ -38,7 +37,6 @@ apiVersion: gateway.networking.k8s.io/v1beta1
 kind: HTTPRoute
 metadata:
   name: interceptor-http-route
-  namespace: ns
 spec:
   hostnames:
   - default.gw.wso2.com
@@ -92,7 +90,6 @@ apiVersion: dp.wso2.com/v1alpha1
 kind: Backend
 metadata:
   name: legacy-xml-backend
-  namespace: ns
 spec:
   services:
   - host: legacy-xml-backend.ns
@@ -108,7 +105,6 @@ apiVersion: dp.wso2.com/v1alpha1
 kind: APIPolicy
 metadata:
   name: interceptor-api-policy-operation-level
-  namespace: ns
 spec:
   override:
     requestInterceptors:
@@ -128,7 +124,6 @@ apiVersion: dp.wso2.com/v1alpha1
 kind: InterceptorService
 metadata:
   name: request-interceptor-service-operation-level
-  namespace: ns
 spec:
   backendRef:
     name: interceptor-backend
@@ -141,7 +136,6 @@ apiVersion: dp.wso2.com/v1alpha1
 kind: InterceptorService
 metadata:
   name: response-interceptor-service-operation-level
-  namespace: ns
 spec:
   backendRef:
     name: interceptor-backend
@@ -157,12 +151,11 @@ spec:
 apiVersion: dp.wso2.com/v1alpha1
 kind: Backend
 metadata:
-  namespace: ns
   name: interceptor-backend
 spec:
   protocol: https
   services:
-  - host: interceptor-backend.ns
+  - host: interceptor-backend
     port: 9081
   tls:
     secretRef:
@@ -189,7 +182,6 @@ apiVersion: dp.wso2.com/v1alpha1
 kind: API
 metadata:
   name: interceptor-api
-  namespace: ns
 spec:
   apiName: Interceptor API
   apiType: REST
@@ -210,7 +202,6 @@ apiVersion: gateway.networking.k8s.io/v1beta1
 kind: HTTPRoute
 metadata:
   name: interceptor-http-route
-  namespace: ns
 spec:
   hostnames:
   - default.gw.wso2.com
@@ -259,7 +250,6 @@ apiVersion: dp.wso2.com/v1alpha1
 kind: Backend
 metadata:
   name: legacy-xml-backend
-  namespace: ns
 spec:
   services:
   - host: legacy-xml-backend.ns
@@ -277,7 +267,6 @@ apiVersion: dp.wso2.com/v1alpha1
 kind: APIPolicy
 metadata:
   name: interceptor-api-policy-api-level
-  namespace: ns
 spec:
   override:
     requestInterceptors:
@@ -297,11 +286,9 @@ apiVersion: dp.wso2.com/v1alpha1
 kind: InterceptorService
 metadata:
   name: request-interceptor-service-api-level
-  namespace: ns
 spec:
   backendRef:
     name: interceptor-backend
-    namespace: ns
   includes:
     - request_headers
     - request_body
@@ -311,7 +298,6 @@ apiVersion: dp.wso2.com/v1alpha1
 kind: InterceptorService
 metadata:
   name: response-interceptor-service-api-level
-  namespace: apk
 spec:
   backendRef:
     name: interceptor-backend
@@ -327,12 +313,11 @@ spec:
 apiVersion: dp.wso2.com/v1alpha1
 kind: Backend
 metadata:
-  namespace: ns
   name: interceptor-backend
 spec:
   protocol: https
   services:
-  - host: interceptor-backend.ns
+  - host: interceptor-backend
     port: 9081
   tls:
     secretRef:
@@ -349,7 +334,6 @@ apiVersion: dp.wso2.com/v1alpha1
 kind: APIPolicy
 metadata:
   name: gateway-interceptor-policy
-  namespace: apk
 spec:
   default:
     requestInterceptors:
@@ -369,7 +353,6 @@ apiVersion: dp.wso2.com/v1alpha1
 kind: InterceptorService
 metadata:
   name: request-interceptor-service-gateway-level
-  namespace: ns
 spec:
   backendRef:
     name: interceptor-backend
@@ -385,12 +368,11 @@ spec:
 apiVersion: dp.wso2.com/v1alpha1
 kind: Backend
 metadata:
-  namespace: ns
   name: interceptor-backend
 spec:
   protocol: https
   services:
-  - host: interceptor-backend.ns
+  - host: interceptor-backend
     port: 9081
   tls:
     secretRef:

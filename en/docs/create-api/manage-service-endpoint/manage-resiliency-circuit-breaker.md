@@ -66,7 +66,6 @@ apiVersion: dp.wso2.com/v1alpha1
 kind: Backend
 metadata:
   name: sample-backend
-  namespace: ns
 spec:
   protocol: http
   circuitBreaker:
@@ -76,7 +75,7 @@ spec:
     maxRequests: 75
     maxRetries: 3
   services:
-  - host: backend-service.ns
+  - host: backend-service
     port: 443
 ```
 

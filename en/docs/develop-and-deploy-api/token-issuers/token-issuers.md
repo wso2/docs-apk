@@ -11,7 +11,6 @@ apiVersion: dp.wso2.com/v1alpha1
 kind: TokenIssuer
 metadata:
   name: new-jwt-issuer
-  namespace: apk
 spec:
   consumerKeyClaim: azp
   issuer: https://idp.am.wso2.com/token
