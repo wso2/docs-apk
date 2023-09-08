@@ -31,7 +31,6 @@ Apart from the above API definition file, we also need an `apk-conf` file which 
 
     |    Field     |                               Value                                                      |
     |--------------|------------------------------------------------------------------------------------------|
-    | apiType      | REST                                                                                     |
     | definition   | `EmployeeServiceDefinition.json` file that was downloaded at the beginning of [Step 2](#step-2-create-and-deploy-the-api)     |
 
     === "Sample Request"
