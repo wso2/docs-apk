@@ -4,7 +4,7 @@ WSO2 API management for Kubernetees now offers comprehensive support for the [Ku
 
 WSO2 API management for Kubernetes also supports the [metaresources and policy attachment specifications](https://gateway-api.sigs.k8s.io/references/policy-attachment/#supported-resources) defined by the Kubernetes Gateway API. These specifications provide a standardized approach to extending and configuring the behavior of objects within the Gateway API.
 
-The diagram below displays the CRDs used within the WSO2 APK.
+The diagram below displays the CRDs used within the WSO2 API Platform for K8s.
 <br></br>
 [![Data Plane CRDs](../assets/img/catalogs/catalog.png)](../assets/img/catalogs/catalog.png)
 
