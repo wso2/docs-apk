@@ -9,7 +9,7 @@ This documentation explains how to make an API version as default version in WSO
 ## Using APK configuration
 
 ### Retrieve existing API configuration.
-Here, you can use the apk-conf file which is created in [Create an API](../../get-started/quick-start-guide.md) documentation and Save this content into a file named `EmployeeServiceDefaultVersion.apk-conf`.
+Here, you can use the apk-conf file which is created in [Create an API](../../get-started/quick-start-guide.md) documentation and save this content into a file named `EmployeeServiceDefaultVersion.apk-conf`.
 
 Sample content before the modification is shown below.
    ```

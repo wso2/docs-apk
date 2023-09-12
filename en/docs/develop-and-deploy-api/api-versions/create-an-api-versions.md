@@ -9,7 +9,7 @@ This documentation explains how to create an API version in WSO2 APK. Follow the
 ## Create an API version
 
 ### Retrieve existing API configuration.
-Here, you can use the apk-conf file which is created in [Create an API](../../get-started/quick-start-guide.md) documentation and Save this content into a file named `EmployeeServiceV2.apk-conf`.
+Here, you can use the apk-conf file which is created in [Create an API](../../get-started/quick-start-guide.md) documentation and save this content into a file named `EmployeeServiceV2.apk-conf`.
 
 Sample content before the modification is shown below.
    ```

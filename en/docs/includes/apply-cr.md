@@ -8,7 +8,7 @@ Apply CRs to the Kubernetes API server using the kubectl.
 
 === "Command"
     ```command
-    kubectl apply -f developer/tryout/samples/
+    kubectl apply -f samples/
     ```
 
 !!! Note

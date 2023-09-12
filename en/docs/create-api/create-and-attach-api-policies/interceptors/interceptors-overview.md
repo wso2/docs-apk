@@ -35,7 +35,7 @@ spec:
     - invocation_context
 ```
 
-When you have attahced an Interceptor `APIPolicy` like above example to your `API`, then the request flow (`1`, `2`, `3`, and `4` numbered circles) and response flow (`5`, `6`, `7`, and `8` numbered circles) can be depicted as below.
+When you have attached an Interceptor `APIPolicy` like above example to your `API`, then the request flow (`1`, `2`, `3`, and `4` numbered circles) and response flow (`5`, `6`, `7`, and `8` numbered circles) can be depicted as below.
 
 ![Interceptors]({{base_path}}/en/latest/assets/img/api-management/api-policies/interceptors/interceptors-light.png#only-light)
 ![Interceptors]({{base_path}}/en/latest/assets/img/api-management/api-policies/interceptors/interceptors-dark.png#only-dark)
