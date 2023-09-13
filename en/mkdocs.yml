@@ -192,7 +192,8 @@ nav:
             - Config Generator APIs: catalogs/api-reference-config-generator.md
 #            - Developer Portal APIs: catalogs/api-reference-developer-portal.md
 #            - Admin APIs: catalogs/api-reference-admin.md
-        - Config Catalog: catalogs/config-catalog.md
+        - Helm Configuration Catalog: catalogs/config-catalog.md
+        - API Configuration Catalog: catalogs/apk-conf.md
     #   - CLI Catalog: catalogs/cli-reference.md
     #    - Helm Catalog: catalogs/config-catalog.md
     - Setup: 
