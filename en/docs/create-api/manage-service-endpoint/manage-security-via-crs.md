@@ -1,6 +1,5 @@
 # Add Basic Auth Backend Security via CRs
 
-
 You can secure the access to your backend via Basic Authentication scheme. For that you need to specify the Basic Auth credentials in the `Backend` resource. You have to have a `Secret` resource containing `usename` and `password` data.
 
 Let's say you have the following `Secret` which contains the credentials:
@@ -15,6 +14,16 @@ data:
   pwd: YWRtaW4K
 type: Opaque
 ```
+You can apply this CR using kubectl.
+=== "Format"
+    ```command
+    kubectl apply -f <path-to-crs>
+    ```
+
+=== "Command"
+    ```command
+    kubectl apply -f .
+    ```
 
 You can refer to the above `Secret` data from your `Backend` as below:
 
@@ -36,5 +45,6 @@ spec:
         usernameKey: usr
         passwordKey: pwd
 ```
+Use the same kubectl command to apply this CR as well.
 
 We use security with `spec.security[0].type` as `Basic`. Note that you have to refer the data names in the `Secret` resource in `spec.security[0].basic.secretRef.usernameKey` and `security[0].basic.secretRef.passwordKey` fields.

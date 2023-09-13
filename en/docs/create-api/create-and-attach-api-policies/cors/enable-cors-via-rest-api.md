@@ -53,45 +53,103 @@ Cross-Origin Resource Sharing (CORS) is a mechanism that allows accessing restri
     </tbody>
 </table>
 
+## Create an API with CORS configurations
 
-   Sample APK configuration content after the modification is shown below.
-   ```
-   name: "EmployeeServiceAPI"
-   basePath: "/test"
-   version: "4.0"
-   type: "REST"
-   defaultVersion: true
-   endpointConfigurations:
+Follow the instructions below to add CORS configurations to an API using the REST API Interface:
+
+!!! note "Before you begin"
+    
+    - Install the [prerequisites](../../../setup/prerequisites) that are required to run WSO2 APK.
+    - [Start WSO2 APK](../../../get-started/quick-start-guide/#step-1-start-wso2-apk).
+
+### Retrieve existing API configuration.
+
+Here, you can use the apk-conf file which is created in [Create an API](../../../get-started/quick-start-guide.md) documentation and save this content into a file named `EmployeeServiceCORS.apk-conf`.
+
+Sample content before the modification is shown below.
+  ```
+  name: "EmployeeServiceAPI"
+  basePath: "/test"
+  version: "3.14"
+  type: "REST"
+  defaultVersion: false
+  endpointConfigurations:
     production:
       endpoint: "https://run.mocky.io/v3/85516819-1edd-412b-a32b-a9284705a0b4"
-   operations:
-   - target: "/employee"
-   verb: "GET"
-   secured: true
-   scopes: []
-   - target: "/employee"
-   verb: "POST"
-   secured: true
-   scopes: []
-   - target: "/employee/{employeeId}"
-   verb: "PUT"
-   secured: true
-   scopes: []
-   - target: "/employee/{employeeId}"
-   verb: "DELETE"
-   secured: true
-   scopes: []
-   corsConfiguration:
-     corsConfigurationEnabled: true
-     accessControlAllowCredentials: true
-     accessControlAllowOrigins:
-     - "*"
-     accessControlAllowHeaders:
-     - authorization
-     accessControlAllowMethods:
-     - GET
-     accessControlExposeHeaders:
-     - "*"
-   ```
+  operations:
+    - target: "/employee"
+      verb: "GET"
+      secured: true
+      scopes: []
+    - target: "/employee"
+      verb: "POST"
+      secured: true
+      scopes: []
+    - target: "/employee/{employeeId}"
+      verb: "PUT"
+      secured: true
+      scopes: []
+    - target: "/employee/{employeeId}"
+      verb: "DELETE"
+      secured: true
+      scopes: []
+  ```
+### Update the API configuration with the CORS configurations
+
+Add the necessary CORS configurations to the `apk-conf` file. A possible example is shown below.
+
+```
+corsConfiguration:
+  corsConfigurationEnabled: true
+  accessControlAllowCredentials: true
+  accessControlAllowOrigins:
+    - "*"
+  accessControlAllowHeaders:
+    - authorization
+  accessControlAllowMethods:
+    - GET
+  accessControlExposeHeaders:
+    - "*"
+```
+
+   Sample APK configuration content after the modification is shown below.
+```
+name: "EmployeeServiceAPI"
+basePath: "/test"
+version: "4.0"
+type: "REST"
+defaultVersion: true
+endpointConfigurations:
+  production:
+    endpoint: "https://run.mocky.io/v3/85516819-1edd-412b-a32b-a9284705a0b4"
+operations:
+  - target: "/employee"
+    verb: "GET"
+    secured: true
+    scopes: []
+  - target: "/employee"
+    verb: "POST"
+    secured: true
+    scopes: []
+  - target: "/employee/{employeeId}"
+    verb: "PUT"
+    secured: true
+    scopes: []
+  - target: "/employee/{employeeId}"
+    verb: "DELETE"
+    secured: true
+    scopes: []
+corsConfiguration:
+  corsConfigurationEnabled: true
+  accessControlAllowCredentials: true
+  accessControlAllowOrigins:
+    - "*"
+  accessControlAllowHeaders:
+    - authorization
+  accessControlAllowMethods:
+    - GET
+  accessControlExposeHeaders:
+    - "*"
+```
    
-You have the flexibility to make any related changes to the API configuration. You can deploy the sample APK configuration and apply the CORS (Cross-Origin Resource Sharing) configuration to your API.
+You have the flexibility to make any related changes to the API configuration. You can deploy the sample APK configuration first and then apply the CORS (Cross-Origin Resource Sharing) configuration to your API.

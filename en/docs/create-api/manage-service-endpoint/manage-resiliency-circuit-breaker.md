@@ -57,10 +57,47 @@ endpointConfigurations:
         maxRequests: 75
         maxRetries: 3
 ```
+An example `apk-conf` file with the above configurations is shown below.
 
+```
+name: "EmployeeServiceAPI"
+basePath: "/test"
+version: "4.0"
+type: "REST"
+defaultVersion: true
+endpointConfigurations:
+  production:
+    endpoint: "http://backend-service.ns:443"
+    resiliency:
+      circuitBreaker:
+        maxConnectionPools: 1000
+        maxConnections: 1024
+        maxPendingRequests: 35
+        maxRequests: 75
+        maxRetries: 3
+operations:
+  - target: "/employee"
+    verb: "GET"
+    secured: true
+    scopes: []
+  - target: "/employee"
+    verb: "POST"
+    secured: true
+    scopes: []
+  - target: "/employee/{employeeId}"
+    verb: "PUT"
+    secured: true
+    scopes: []
+  - target: "/employee/{employeeId}"
+    verb: "DELETE"
+    secured: true
+    scopes: []
+```
+You can then deploy this API by following the steps in [Create an API](../../get-started/quick-start-guide.md) documentation.
 ## Via CRs
+**Step 1 - Define the CRs**
 
-Define the Backend resource for the API as below and apply.
+Define the Backend resource for the API as below.
 ```
 apiVersion: dp.wso2.com/v1alpha1
 kind: Backend
@@ -79,5 +116,8 @@ spec:
     port: 443
 ```
 
-
 For more information on above circuit breakers, refer the [Envoy documentation.](https://www.envoyproxy.io/docs/envoy/v1.24.1/intro/arch_overview/upstream/circuit_breaking)
+
+**Step 2 - Apply the CRs**
+
+{!includes/apply-cr.md!}

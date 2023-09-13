@@ -116,7 +116,7 @@ Follow the instructions below to add an API-level Rate Limiting Policy to an API
 
 ### Retrieve existing API configuration.
 
-Here, you can use the apk-conf file which is created in [Create an API](../../get-started/quick-start-guide.md) documentation and Save this content into a file named `EmployeeServiceV2.apk-conf`.
+Here, you can use the apk-conf file which is created in [Create an API](../../get-started/quick-start-guide.md) documentation and save this content into a file named `EmployeeServiceV2.apk-conf`.
 
 Sample content before the modification is shown below.
 
@@ -280,7 +280,7 @@ Follow the instructions below to add an Resource-level Rate Limiting Policy to a
 
 ### Retrieve existing API configuration.
 
-Here, you can use the apk-conf file which is created in [Create an API](../../get-started/quick-start-guide.md) documentation and Save this content into a file named `EmployeeServiceV3.apk-conf`.
+Here, you can use the apk-conf file which is created in [Create an API](../../get-started/quick-start-guide.md) documentation and save this content into a file named `EmployeeServiceV3.apk-conf`.
 
 Sample content before the modification is shown below.
 

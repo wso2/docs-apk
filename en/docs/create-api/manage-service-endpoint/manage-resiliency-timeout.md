@@ -40,9 +40,46 @@ endpointConfigurations:
         upstreamResponseTimeout: 10
 ```
 
+An example `apk-conf` file with the above configurations is shown below.
+
+```
+name: "EmployeeServiceAPI"
+basePath: "/test"
+version: "4.0"
+type: "REST"
+defaultVersion: true
+endpointConfigurations:
+  production:
+    endpoint: "http://backend-service.ns:443"
+    resiliency:
+      timeout:
+        downstreamRequestIdleTimeout: 45
+        upstreamResponseTimeout: 10
+operations:
+  - target: "/employee"
+    verb: "GET"
+    secured: true
+    scopes: []
+  - target: "/employee"
+    verb: "POST"
+    secured: true
+    scopes: []
+  - target: "/employee/{employeeId}"
+    verb: "PUT"
+    secured: true
+    scopes: []
+  - target: "/employee/{employeeId}"
+    verb: "DELETE"
+    secured: true
+    scopes: []
+```
+
+You can then deploy this API by following the steps in [Create an API](../../get-started/quick-start-guide.md) documentation.
 ## Via CRs
 
-Define the Backend resource for the API as below and apply.
+**Step 1 - Define the CRs**
+
+Define the Backend resource for the API as below.
 ```
 apiVersion: dp.wso2.com/v1alpha1
 kind: Backend
@@ -60,3 +97,7 @@ spec:
 
 For more in-depth information on how the above configurations affect the router, refer to the Timeouts in the official [Envoy documentation](https://www.envoyproxy.io/docs/envoy/v1.24.1/faq/configuration/timeouts).
 
+
+**Step 2 - Apply the CRs**
+
+{!includes/apply-cr.md!}

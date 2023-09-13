@@ -72,3 +72,48 @@ spec:
       </tr>
     </tbody>
 </table>
+
+## Create an API using CRs with CORS configurations
+
+Follow the instructions below to add CORS configurations to an API via CRs:
+
+!!! note "Before you begin"
+    
+    - Install the [prerequisites](../../../setup/prerequisites) that are required to run WSO2 APK.
+    - [Start WSO2 APK](../../../get-started/quick-start-guide/#step-1-start-wso2-apk).
+
+**Step 1 - Define the CRs**
+
+1. {!includes/crs-samples.md!}
+
+2. Define the required CORS configurations in an APIPolicy CR. The following is an example CR.
+    
+```yaml
+apiVersion: dp.wso2.com/v1alpha1
+kind: APIPolicy
+metadata:
+  name: sample-api-policy
+spec:
+  override:
+    cORSPolicy:
+      enabled: true
+      accessControlAllowCredentials: true
+      accessControlAllowOrigins:
+        - "*"
+      accessControlAllowHeaders:
+        - authorization
+      accessControlAllowMethods:
+        - GET
+        - POST
+      accessControlExposeHeaders:
+        - "*"
+  targetRef:
+    group: dp.wso2.com
+    kind: API
+    name: sample-api
+```
+
+**Step 2 - Apply the CRs**
+
+{!includes/apply-cr.md!}
+

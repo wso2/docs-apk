@@ -17,7 +17,7 @@ Attaching a policy to a specific level is descibed under each policy.
 
 ## Policy Execution Order
 
-When you have multiple policies attahced in different levels policies, you need to aware about in which order they are excuted in runtime. The following table describes the execution order. Top one executed at first and the bottom one exected at last.
+When you have multiple policies attached in different levels policies, you need to aware about in which order they are excuted in runtime. The following table describes the execution order. Top one executed at first and the bottom one exected at last.
 
 <table>
 <tbody>

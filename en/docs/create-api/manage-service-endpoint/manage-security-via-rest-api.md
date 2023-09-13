@@ -1,15 +1,13 @@
 # Add Basic Auth Backend Security via the REST API Interface
 
-
 You can secure access to your backend via the Basic Authentication scheme. 
 For that, you can refer to an already created K8 `Secret`.
 
-
 ## Refer an already created  K8 `Secret`
 
-  You can create a k8 secret using the follwing format including your username and password in base64 encoded format.
+  You can create a k8 secret using the following format including your username and password in base64 encoded format.
 
-  ```
+```
   apiVersion: v1
   kind: Secret
   metadata:
@@ -18,10 +16,18 @@ For that, you can refer to an already created K8 `Secret`.
     username: YWRtaW4=
     password: YWRtaW4=
   type: Opaque
-  ```
+```
+  You can apply this CR using kubectl.
+=== "Format"
+    ```
+    kubectl apply -f <path-to-crs>
+    ```
 
+=== "Command"
+    ```
+    kubectl apply -f .
+    ```
   Then you can add the secret name `backend-creds` via REST APIs in the following way.
-
 
   The following is a sample code snippet that defines how you can define Basic auth endpoint security within an API `apk-conf` file.
 
@@ -44,7 +50,7 @@ For that, you can refer to an already created K8 `Secret`.
   ```
     endpointConfigurations:
       production:
-        endpoint:
+        endpoint: "https://httpbin.org"
           name: "backend-service"
           port: 80
           protocol: "http"
@@ -55,3 +61,41 @@ For that, you can refer to an already created K8 `Secret`.
             userNameKey: "username"
             passwordKey: "password"
   ```
+
+A sample `apk-conf` file with direct endpoints is shown below.
+
+```
+name: "EmployeeServiceAPI"
+basePath: "/test"
+version: "4.0"
+type: "REST"
+defaultVersion: true
+endpointConfigurations:
+  production:
+    endpoint: "https://httpbin.org"
+    endpointSecurity:
+      enabled: true
+      securityType:
+        secretName: "backend-creds"
+        userNameKey: "username"
+        passwordKey: "password"
+operations:
+  - target: "/employee"
+    verb: "GET"
+    secured: true
+    scopes: []
+  - target: "/employee"
+    verb: "POST"
+    secured: true
+    scopes: []
+  - target: "/employee/{employeeId}"
+    verb: "PUT"
+    secured: true
+    scopes: []
+  - target: "/employee/{employeeId}"
+    verb: "DELETE"
+    secured: true
+    scopes: []
+```
+
+You can then deploy this API by following the steps in [Create an API](../../get-started/quick-start-guide.md) documentation.
