@@ -18,6 +18,8 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
       helm repo update
       ```
 
+3. If you already have an APK deployed in your cluster, follow these steps mentioned in <a href="{{base_path}}/en/latest/about-apk/FAQs/#q2-how-to-uninstall-apk-from-my-cluster">FAQs</a> to cleanup your cluster.
+
 3. Apply the CRDs to cluster
 
     ```console
