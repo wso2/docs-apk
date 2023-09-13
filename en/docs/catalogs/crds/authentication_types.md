@@ -440,3 +440,7 @@ dp.wso2.com/v1alpha1
 <p><em>
         Generated with <code>gen-crd-api-reference-docs</code>.
     </em></p>
+
+## Sample
+
+{!catalogs/samples/authentication.md!}
