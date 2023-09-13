@@ -19,22 +19,16 @@ It is likely due to a limitation in Helm when updating Custom Resource Definitio
     === "Command"
 
         ```
-        helm fetch <chart_name> --version <version> --untar
+        curl -L -o apk.tar.gz "https://github.com/wso2/apk/archive/refs/tags/1.0.0.tar.gz" && tar -zxvf apk.tar.gz
         ```
 
-    === "Sample command"
-
-        ```
-        helm fetch wso2apk/apk-helm --version 1.0.0-rc2 --untar
-        ```
-
-2.  Go to the apk-helm/crd folder and apply the CRDs manually
+2.  Go to the apk-1.0.0/helm-charts/crds folder and apply the CRDs manually
 
     === "Command"
 
         ```
-          cd apk-helm/crds
-          kubectl apply -f .
+        cd apk-1.0.0/helm-charts/crds
+        kubectl apply -f .
         ```
 
 3. Now uninstall the previous faulty deployment and reinstall the APK using helm.
@@ -91,8 +85,8 @@ It is likely due to a limitation in Helm when updating Custom Resource Definitio
 
 4. Delete all the APK related CRDs
    ```
-   helm fetch wso2apk/apk-helm --version 1.0.0-rc2 --untar
-   cd apk-helm/crds
+   curl -L -o apk.tar.gz "https://github.com/wso2/apk/archive/refs/tags/1.0.0.tar.gz" && tar -zxvf apk.tar.gz
+   cd apk-1.0.0/helm-charts/crds
    kubectl delete -f .
    ```
 
@@ -129,7 +123,16 @@ It is likely due to a limitation in Helm when updating Custom Resource Definitio
     kubectl delete <kind> <name> -n <namespace>
     ```
 
+## Q3: Why are pods not transitioning to the running state for a long time?
 
+If pods are taking an extended amount of time to transition to the running state, it is likely due to slow image pulling. This can occur when there are network connectivity issues, or if the image repository is experiencing high load.
+
+You can troubleshoot the problem by running the following command
+```
+kubectl describe pods <pod-name>
+```
+
+If you see `ImagePullBackOff` error or the image is still in the pulling stage it most likely due to a network problem. 
 
 ---
 

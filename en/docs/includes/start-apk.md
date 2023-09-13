@@ -18,16 +18,7 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
       helm repo update
       ```
 
-3. If you already have an APK deployed in your cluster, follow these steps mentioned in <a href="{{base_path}}/en/latest/about-apk/FAQs/#q2-how-to-uninstall-apk-from-my-cluster">FAQs</a> to cleanup your cluster.
-
-3. Apply the CRDs to cluster
-
-    ```console
-    helm fetch wso2apk/apk-helm --version 1.0.0-rc2 --untar
-    kubectl apply -f ./apk-helm/crds/
-    ```
-
-4. Install the APK components and start WSO2 API Platform For Kubernetes. Consider ```apk``` as the ```<chart-name>``` for this guide. As the ```--version``` of this command, use the version of the release you used in point 1 above. It will take a few minutes for the deployment to complete.
+3. Install the APK components and start WSO2 API Platform For Kubernetes. Consider ```apk``` as the ```<chart-name>``` for this guide. As the ```--version``` of this command, use the version of the release you used in point 1 above. It will take a few minutes for the deployment to complete.
 
     === "Command"
         ```
@@ -51,7 +42,7 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
         helm install <chart-name> <repository-name>/apk-helm --version <verison-of-APK> -f <path-to-values.yaml-file>
         ```
 
-5. Now you can verify the deployment by executing the following command. You will see the status of the pods as follows once completed.
+4. Now you can verify the deployment by executing the following command. You will see the status of the pods as follows once completed.
 
     === "Command"
         ```
@@ -59,6 +50,8 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
         ```
 
     [![Pod Status](../assets/img/get-started/pod-status.png)](../assets/img/get-started/pod-status.png)
+
+**Note**: If pods are not transitioning to running state, please follow the steps in the <a href="{{base_path}}/en/latest/about-apk/FAQs/#q2-how-to-uninstall-apk-from-my-cluster">FAQs</a> to troubleshoot the problem.
 
 
 !!! info "(Optional) To access the deployment through your local machine"
