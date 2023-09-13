@@ -1,5 +1,4 @@
-# CORS
-#### APIPolicy Resource with CORS Configuration
+### CORS Policy
 
 ```yaml
 apiVersion: dp.wso2.com/v1alpha1
@@ -26,7 +25,7 @@ spec:
     name: sample-api
 ```
 
-## Configuration Definition
+### Configuration Definition
 
 <table>
     <thead>

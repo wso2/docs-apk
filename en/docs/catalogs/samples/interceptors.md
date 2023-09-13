@@ -1,4 +1,4 @@
-# Interceptors
+### Interceptor Policy
 
 ```
 apiVersion: dp.wso2.com/v1alpha1
@@ -17,7 +17,7 @@ spec:
     name: my-http-route
 ```
 
-## Configuration Definition
+### Configuration Definition
 
 <table>
     <thead>
@@ -47,7 +47,7 @@ spec:
 </table>
 
 
-# Interceptor Service
+### Interceptor Service
 
 ```
 apiVersion: dp.wso2.com/v1alpha1
@@ -63,7 +63,7 @@ spec:
     - invocation_context
 ```
 
-## Configuration Definition
+### Configuration Definition
 
 <table>
     <thead>
