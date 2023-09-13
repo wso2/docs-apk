@@ -19,27 +19,120 @@ It is likely due to a limitation in Helm when updating Custom Resource Definitio
     === "Command"
 
         ```
-        helm fetch <chart_name> --version <version> --untar
+        curl -L -o apk.tar.gz "https://github.com/wso2/apk/archive/refs/tags/1.0.0.tar.gz" && tar -zxvf apk.tar.gz
         ```
 
-    === "Sample command"
-
-        ```
-        helm fetch wso2apk/apk-helm --version 1.0.0-rc2 --untar
-        ```
-
-2.  Go to the apk-helm/crd folder and apply the CRDs manually
+2.  Go to the apk-1.0.0/helm-charts/crds folder and apply the CRDs manually
 
     === "Command"
 
         ```
-          cd apk-helm/crds
-          kubectl apply -f .
+        cd apk-1.0.0/helm-charts/crds
+        kubectl apply -f .
         ```
 
 3. Now uninstall the previous faulty deployment and reinstall the APK using helm.
 
 
+## Q2: How to uninstall APK from my cluster?
+
+1.  List down the helm installation in your cluster using the following command, and copy the APK release name and the namespace
+    ``` 
+    helm list -A
+    ```
+
+2.  Uninstall the APK 
+
+    === "Sample command"
+
+        ```
+        helm uninstall apk
+        ```
+
+    === "Command template"
+
+        ```
+        helm uninstall <apk-name> -n <namespace>
+        ```
+
+3.  Cleanup CRs created for APK. You can use the below commands to delete all the CRs created for APK
+
+    ```
+    kubectl delete apipolicies.dp.wso2.com --all --all-namespaces
+    kubectl delete apis.dp.wso2.com --all --all-namespaces
+    kubectl delete authentications.dp.wso2.com --all --all-namespaces
+    kubectl delete backendjwts.dp.wso2.com --all --all-namespaces
+    kubectl delete backends.dp.wso2.com --all --all-namespaces
+    kubectl delete certificaterequests.cert-manager.io --all --all-namespaces
+    kubectl delete certificates.cert-manager.io --all --all-namespaces
+    kubectl delete challenges.acme.cert-manager.io --all --all-namespaces
+    kubectl delete clusterissuers.cert-manager.io --all --all-namespaces
+    kubectl delete gatewayclasses.gateway.networking.k8s.io --all --all-namespaces
+    kubectl delete gateways.gateway.networking.k8s.io --all --all-namespaces
+    kubectl delete grpcroutes.gateway.networking.k8s.io --all --all-namespaces
+    kubectl delete httproutes.gateway.networking.k8s.io --all --all-namespaces
+    kubectl delete interceptorservices.dp.wso2.com --all --all-namespaces
+    kubectl delete issuers.cert-manager.io --all --all-namespaces
+    kubectl delete orders.acme.cert-manager.io --all --all-namespaces
+    kubectl delete ratelimitpolicies.dp.wso2.com --all --all-namespaces
+    kubectl delete referencegrants.gateway.networking.k8s.io --all --all-namespaces
+    kubectl delete scopes.dp.wso2.com --all --all-namespaces
+    kubectl delete tcproutes.gateway.networking.k8s.io --all --all-namespaces
+    kubectl delete tlsroutes.gateway.networking.k8s.io --all --all-namespaces
+    kubectl delete tokenissuers.dp.wso2.com --all --all-namespaces
+    kubectl delete udproutes.gateway.networking.k8s.io --all --all-namespaces
+    ```
+
+4. Delete all the APK related CRDs
+   ```
+   curl -L -o apk.tar.gz "https://github.com/wso2/apk/archive/refs/tags/1.0.0.tar.gz" && tar -zxvf apk.tar.gz
+   cd apk-1.0.0/helm-charts/crds
+   kubectl delete -f .
+   ```
+
+5. Verify you do not have any CRs in the cluster using this command
+   ```
+    kubectl get apipolicies.dp.wso2.com -A
+    kubectl get apis.dp.wso2.com -A
+    kubectl get authentications.dp.wso2.com -A
+    kubectl get backendjwts.dp.wso2.com -A
+    kubectl get backends.dp.wso2.com -A
+    kubectl get certificaterequests.cert-manager.io -A
+    kubectl get certificates.cert-manager.io -A
+    kubectl get challenges.acme.cert-manager.io -A
+    kubectl get clusterissuers.cert-manager.io -A
+    kubectl get gatewayclasses.gateway.networking.k8s.io -A
+    kubectl get gateways.gateway.networking.k8s.io -A
+    kubectl get grpcroutes.gateway.networking.k8s.io -A
+    kubectl get httproutes.gateway.networking.k8s.io -A
+    kubectl get interceptorservices.dp.wso2.com -A
+    kubectl get issuers.cert-manager.io -A
+    kubectl get orders.acme.cert-manager.io -A
+    kubectl get ratelimitpolicies.dp.wso2.com -A
+    kubectl get referencegrants.gateway.networking.k8s.io -A
+    kubectl get scopes.dp.wso2.com -A
+    kubectl get tcproutes.gateway.networking.k8s.io -A
+    kubectl get tlsroutes.gateway.networking.k8s.io -A
+    kubectl get tokenissuers.dp.wso2.com -A
+    kubectl get udproutes.gateway.networking.k8s.io -A
+   ```
+
+    You should not see any resources. If seen use this command to delete them
+
+    ```
+    kubectl delete <kind> <name> -n <namespace>
+    ```
+
+## Q3: Why are pods not transitioning to the running state for a long time?
+
+If pods are taking an extended amount of time to transition to the running state, it is likely due to slow image pulling. This can occur when there are network connectivity issues, or if the image repository is experiencing high load.
+
+You can troubleshoot the problem by running the following command
+```
+kubectl describe pods <pod-name>
+```
+
+If you see `ImagePullBackOff` error or the image is still in the pulling stage it most likely due to a network problem. 
 
 ---
 
