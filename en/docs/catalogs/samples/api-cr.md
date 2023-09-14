@@ -1,3 +1,6 @@
+## API Sample
+
+
 A single API in the APK project is defined using a set of combined Kubernetes resources.
 
 This is the root level resource for an API. API related metadata are also defined in this CR.
@@ -24,4 +27,4 @@ spec:
   organization: apk-org
 ```
 
-Refer [Manage API](../../create-api/create-api-overview/) for more information on how to configure API.
+Refer [Manage API](../../create-api/create-api-overview.md) for more information on how to configure API.

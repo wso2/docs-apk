@@ -1,9 +1,7 @@
 <p>
 <p>Package v1alpha1 contains the API Schema definitions for WSO2 APK.</p>
 </p>
-<h3 id="dp.wso2.com/v1alpha1.TokenIssuer">TokenIssuer
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.TokenIssuer" title="Permanent link">¶</a>
-</h3>
+## Token Issuer
 <p>
 <p>TokenIssuer is the Schema for the tokenIssuer API</p>
 </p>
@@ -484,5 +482,4 @@ dp.wso2.com/v1alpha1
         Generated with <code>gen-crd-api-reference-docs</code>.
     </em></p>
 
-## Sample
 {!catalogs/samples/token-issuer.md!}

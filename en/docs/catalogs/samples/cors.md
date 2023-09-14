@@ -25,7 +25,7 @@ spec:
     name: sample-api
 ```
 
-### Configuration Definition
+#### Configuration Definition
 
 <table>
     <thead>

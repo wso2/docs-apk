@@ -1,3 +1,5 @@
+## Token Issuer Sample
+The following is a sample `TokenIssuer` CR used to add a new token issuer to the APK.
 ```
 apiVersion: dp.wso2.com/v1alpha1
 kind: TokenIssuer
