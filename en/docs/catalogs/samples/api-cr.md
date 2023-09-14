@@ -1,6 +1,5 @@
 ## API Sample
 
-
 A single API in the APK project is defined using a set of combined Kubernetes resources.
 
 This is the root level resource for an API. API related metadata are also defined in this CR.
