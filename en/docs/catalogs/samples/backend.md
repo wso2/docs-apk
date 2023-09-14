@@ -1,4 +1,6 @@
+## Backend Sample
 
+The following is a sample CR for creating a Backend.
 ```
 apiVersion: dp.wso2.com/v1alpha1
 kind: Backend

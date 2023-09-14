@@ -1,9 +1,8 @@
 <p>
 <p>Package v1alpha1 contains the API Schema definitions for WSO2 APK.</p>
 </p>
-<h3 id="dp.wso2.com/v1alpha1.APIPolicy">APIPolicy
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.APIPolicy" title="Permanent link">¶</a>
-</h3>
+## API Policy
+
 <p>
 <p>APIPolicy is the Schema for the apipolicies API</p>
 </p>
@@ -416,6 +415,4 @@ dp.wso2.com/v1alpha1
         Generated with <code>gen-crd-api-reference-docs</code>.
     </em></p>
 
-## Sample
-
-{!catalogs/samples/cors.md!}
+{!catalogs/samples/api-policy.md!}

@@ -1,9 +1,8 @@
 <p>
 <p>Package v1alpha1 contains the API Schema definitions for WSO2 APK.</p>
 </p>
-<h3 id="dp.wso2.com/v1alpha1.BackendJWT">BackendJWT
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.BackendJWT" title="Permanent link">¶</a>
-</h3>
+## Backend JWT
+
 <p>
 <p>BackendJWT is the Schema for the backendjwts API</p>
 </p>
@@ -288,7 +287,5 @@ dp.wso2.com/v1alpha1
 <p><em>
         Generated with <code>gen-crd-api-reference-docs</code>.
     </em></p>
-
-## Sample
 
 {!catalogs/samples/backend-jwt.md!}

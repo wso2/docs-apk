@@ -168,7 +168,7 @@ nav:
         - CRD Catalog: 
             - Overview - CRD Catalog: catalogs/kubernetes-crds.md
             - API: catalogs/crds/api_types.md
-            # - HTTPRoute: catalogs/http-route.md
+            - HTTPRoute: catalogs/samples/http-route.md
             - Authentication: catalogs/crds/authentication_types.md
             - Backend: catalogs/crds/backend_types.md
             - BackendJWT: catalogs/crds/backendjwt_types.md

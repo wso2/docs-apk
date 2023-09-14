@@ -1,3 +1,7 @@
+## BackendJWT Sample
+
+The following is a sample `BackendJWT` CR.
+
 ```
 apiVersion: dp.wso2.com/v1alpha1
 kind: BackendJWT

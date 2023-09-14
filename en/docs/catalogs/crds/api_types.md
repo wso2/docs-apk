@@ -1,9 +1,7 @@
 <p>
 <p>Package v1alpha1 contains the API Schema definitions for WSO2 APK.</p>
 </p>
-<h3 id="dp.wso2.com/v1alpha1.API">API
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.API" title="Permanent link">¶</a>
-</h3>
+## API
 <p>
 <p>API is the Schema for the apis API</p>
 </p>
@@ -603,7 +601,5 @@ dp.wso2.com/v1alpha1
 <p><em>
         Generated with <code>gen-crd-api-reference-docs</code>.
     </em></p>
-
-## Sample
 
 {!catalogs/samples/api-cr.md!}

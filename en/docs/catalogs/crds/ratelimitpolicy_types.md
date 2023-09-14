@@ -1,9 +1,8 @@
 <p>
 <p>Package v1alpha1 contains the API Schema definitions for WSO2 APK.</p>
 </p>
-<h3 id="dp.wso2.com/v1alpha1.RateLimitPolicy">RateLimitPolicy
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.RateLimitPolicy" title="Permanent link">¶</a>
-</h3>
+## Rate Limit Policy
+
 <p>
 <p>RateLimitPolicy is the Schema for the ratelimitpolicies API</p>
 </p>
@@ -346,7 +345,7 @@ dp.wso2.com/v1alpha1
         Generated with <code>gen-crd-api-reference-docs</code>.
     </em></p>
 
-## Samples
+## Rate Limiter Samples
 
 {!catalogs/samples/ratelimit-api.md!}
 {!catalogs/samples/ratelimit-resource.md!}

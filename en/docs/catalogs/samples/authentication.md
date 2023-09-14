@@ -1,3 +1,6 @@
+## Authentication Sample
+
+The following is a sample CR for adding authentication to an API.
 ```
 apiVersion: "dp.wso2.com/v1alpha1"
 kind: "Authentication"

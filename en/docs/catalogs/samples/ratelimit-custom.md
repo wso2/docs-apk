@@ -1,6 +1,6 @@
 ### Custom Rate Limit Policy
 
-The following defines a custom rate limiting policy via a Rate Limiting Policy Custom Resource (CR) definition.
+The following defines a custom rate limiting policy.
 
 ```
 apiVersion: dp.wso2.com/v1alpha1

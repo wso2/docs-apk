@@ -10,9 +10,13 @@ The diagram below displays the CRDs used within the WSO2 APK.
 
 The catalogs of the CRDs, including examples and the configuration definitions, can be found below.
 
-- [API](../../catalogs/api-cr)
-- [HTTPRoute](../../catalogs/http-route)
-- [Backend](../../catalogs/backend)
-- [BackendJWT](../../catalogs/backend-jwt)
-- [APIPolicy](../../catalogs/api-policy)
-- [RateLimitPolicy](../../catalogs/rate-limit-policy)
+- [API](../../catalogs/crds/api_types)
+- [HTTPRoute](../../catalogs/samples/http-route)
+- [Authentication](../../catalogs/crds/authentication_types)
+- [Backend](../../catalogs/crds/backend_types)
+- [BackendJWT](../../catalogs/crds/backendjwt_types)
+- [APIPolicy](../../catalogs/crds/apipolicy_types)
+- [Interceptor Service](../../catalogs/crds/interceptorservice_types)
+- [RateLimitPolicy](../../catalogs/crds/ratelimitpolicy_types)
+- [Scope](../../catalogs/crds/scope_types)
+- [TokenIssuer](../../catalogs/crds/tokenIssuer_types)

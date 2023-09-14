@@ -1,6 +1,6 @@
 ### RateLimitPolicy for API
 
-The following define Rate Limiting Policies at the API-level via a Rate Limiting Policy Custom Resource (CR) definition.
+The following defines a rate limiting policy at the API-level.
 
 ```
 apiVersion: dp.wso2.com/v1alpha1
