@@ -1,10 +1,8 @@
 # Prerequisites
 
-1. [Install Helm](https://helm.sh/docs/intro/install/). (use helm version 3.10.0 and onwards)
+1. [Setup a Kubernetes Cluster](https://kubernetes.io/docs/setup).
 2. [Install the Kubernetes Client (kubectl)](https://kubernetes.io/docs/tasks/tools/install-kubectl/).
-3. [Setup a Kubernetes Cluster](https://kubernetes.io/docs/setup).
-     
-     If you want to run APK on your local machine, you need to install [Rancher Desktop](https://docs.rancherdesktop.io/getting-started/installation), [minikube](https://minikube.sigs.k8s.io/), [kind](https://kind.sigs.k8s.io/docs/) or a similar software.
+3. [Install Helm](https://helm.sh/docs/intro/install/).
 
 
 # Requirements
@@ -16,7 +14,7 @@ Here are the requirements for the package manager to be used with this project:
 
 | Package Manager | Version        |
 |-----------------|----------------|
-| Helm            | 3.10.0 or above|
+| Helm            | 3.10.0 - 3.12.0|
 
 
 ### Kubernetes Resource Requirement
@@ -29,30 +27,27 @@ Here are the minimum resource requirements for the Kubernetes cluster to run thi
 | Memory    | 6 GB                |
 | Storage   | 15 GB               |
 
-### Kubernetes Cluster Versions
+### Manage kubernetes services
 
-Here are the supported Kubernetes cluster versions for different platforms:
+Here are the supported manage kubernetes services:
 
-| Platform     | Version          |
+| Platform     | Cluster Version          |
 |--------------|------------------|
 | EKS          | 1.27             |
 | GKE          | 1.27.3           |
 | AKS          | 1.27             |
-| OpenShift    | 4.13.3           |
-| Minikube     | 1.26.3 - 1.27.4  |
-| Rancher      | 1.27.2           |
-| Kind         | 1.26.3           |
 
-### Demo/Quick Start Setup - Software Versions
 
-Here are the supported versions for the software applications:
+### Kubernetes distributions
 
-| Software Application | Version          |
-|----------------------|------------------|
-| Minikube             | 1.30.1 - 1.31.1  |
-| Rancher              | 1.9.1            |
-| Kind                 | 1.25.3           |
-| Openshift            | 2.23.0+ddcfe8    |
+Here are the supported Kubernetes distributions:
+
+| Software Application | Cluster Version  |  Software Version |
+|----------------------|------------------|-------------------|
+| Minikube             |  1.26.3 - 1.27.4 | 1.30.1 - 1.31.1   |
+| Rancher              |  1.27.2          |     1.9.1         |
+| Kind                 |  1.26.3          |     1.25.3        |
+| Openshift            |  4.13.3          |  2.23.0+ddcfe8    | 
 
 ### Other Dependencies
 
@@ -63,4 +58,8 @@ Here are the required dependencies and their versions:
 | Docker Engine      | 23.0.2 or above |
 | Redis              | 17.8.0        |
 | Cert-manager       | 1.10.1        |
-| Postgresql         | 11.9.6        |
+| **Postgresql         | 11.9.6        |
+
+These dependencies are automatically installed when you deploy the Helm chart using the helm install command and the chart provides the ability to integrate external services.
+
+** Postgress is required only if you are using non-production idp configurations.
