@@ -30,17 +30,18 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
         helm install <chart-name> <repository-name>/apk-helm --version <verison-of-APK>
         ```
 	
-    To commence the installation while making use of the customization capabilities inherent in the `values.yaml` file, follow the subsequent command format. Instructions in [Customize Configurations](../setup/Customize-Configurations.md) will guide you through the process of acquiring the `values.yaml` file.
+    !!!Optional
+    
+        To commence the installation while making use of the customization       capabilities inherent in the `values.yaml` file, follow the subsequent command format. Instructions in [Customize Configurations](../setup/Customize-Configurations.md) will guide you through the process of acquiring the `values.yaml` file.
+        === "Command"
+            ```
+            helm install apk wso2apk/apk-helm --version 1.0.0-rc2 -f values.yaml
+            ```
 
-    === "Command"
-        ```
-        helm install apk wso2apk/apk-helm --version 1.0.0-rc2 -f values.yaml
-        ```
-
-    === "Format"
-        ```
-        helm install <chart-name> <repository-name>/apk-helm --version <verison-of-APK> -f <path-to-values.yaml-file>
-        ```
+        === "Format"
+            ```
+            helm install <chart-name> <repository-name>/apk-helm --version <verison-of-APK> -f <path-to-values.yaml-file>
+            ```
 
 4. Now you can verify the deployment by executing the following command. You will see the status of the pods as follows once completed.
 
@@ -49,18 +50,9 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
         kubectl get pods
         ```
 
-    [![Pod Status](../assets/img/get-started/pod-status.png)](../assets/img/get-started/pod-status.png)
+    [![Pod Status](../assets/img/get-started/pod-status.png)](../assets/img/get-started/podstatus.png)
 
-**Note**: If pods are not transitioning to running state, please follow the steps in the <a href="{{base_path}}/en/latest/about-apk/FAQs/#q2-how-to-uninstall-apk-from-my-cluster">FAQs</a> to troubleshoot the problem.
+    !!! Important
+        If pods are not transitioning to running state, please follow the steps in the [FAQs](../../about-apk/FAQs/#q3-why-are-pods-not-transitioning-to-the-running-state-for-a-long-time) to troubleshoot the problem.
 
 
-!!! info "(Optional) To access the deployment through your local machine"
-
-    1. Identify the `gateway-service` external IP address.
-        ```console
-        kubectl get svc | grep gateway-service
-        ```
-    2. Port forward router service to localhost.
-        ```console
-        kubectl port-forward svc/apk-wso2-apk-gateway-service 9095:9095
-        ```
