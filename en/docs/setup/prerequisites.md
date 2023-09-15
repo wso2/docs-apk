@@ -5,7 +5,7 @@
 3. [Install Helm](https://helm.sh/docs/intro/install/).
 
 
-# Requirements
+## Requirements
 To successfully deploy WSO2 APK in your environment, it's essential to meet certain minimum requirements. These requirements ensure that the deployment process is smooth, and the platform operates efficiently.
 
 ### Package Manager Requirement
@@ -17,7 +17,7 @@ Here are the requirements for the package manager to be used with this project:
 | Helm            | 3.10.0 - 3.12.0|
 
 
-### Kubernetes Resource Requirement
+### Kubernetes Resource Requirements
 
 Here are the minimum resource requirements for the Kubernetes cluster to run this project:
 
@@ -27,9 +27,9 @@ Here are the minimum resource requirements for the Kubernetes cluster to run thi
 | Memory    | 6 GB                |
 | Storage   | 15 GB               |
 
-### Manage kubernetes services
+### Manage Kubernetes Services
 
-Here are the supported manage kubernetes services:
+Here are the supported manage Kubernetes services:
 
 | Platform     | Cluster Version          |
 |--------------|------------------|
@@ -38,7 +38,7 @@ Here are the supported manage kubernetes services:
 | AKS          | 1.27             |
 
 
-### Kubernetes distributions
+### Kubernetes Distributions
 
 Here are the supported Kubernetes distributions:
 
@@ -58,8 +58,8 @@ Here are the required dependencies and their versions:
 | Docker Engine      | 23.0.2 or above |
 | Redis              | 17.8.0        |
 | Cert-manager       | 1.10.1        |
-| **Postgresql         | 11.9.6        |
+| **PostgreSQL         | 11.9.6        |
 
-These dependencies are automatically installed when you deploy the Helm chart using the helm install command and the chart provides the ability to integrate external services.
+These dependencies are automatically installed when you deploy the Helm chart using the `helm install` command and the chart provides the ability to integrate external services.
 
-** Postgress is required only if you are using non-production idp configurations.
+** PostgreSQL is required only if you are using non-production IdP configurations.
