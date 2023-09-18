@@ -1,18 +1,23 @@
 
 Follow the instructions below to deploy APK Data Service (DS) servers and the Cloud Native Postgres(CloudNativePG) in the Kubernetes cluster.
 
-1. Create a new helm repository with the latest apk release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apk``` for this guide.
+1.  Create WSO2 APK image pull secrets with your WSO2 credentials as shown below and apply
+this in K8s.
 
-    === "Command"
-        ```
-        helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.0.0
-        ```
-    === "Format"
-        ```
-        helm repo add <repository-name> <link-to-latest-apk-release>
-        ```
+    ```console
+    kubectl create secret docker-registry wso2creds --docker-server=docker.wso2.com --docker-username=<username> --docker-password=<password> --docker-email=<email>
+    ```
+
+    !!!Note
+        If you don't have a WSO2 user account, we've created one and sent you the details. If you already have an account, just use your existing credentials.
+
+2. Add the WSO2 APK Helm repository.
+
+    ```console
+    helm repo add wso2 https://helm.wso2.com
+    ```
 	
-2. Execute the following command to update the helm repositories.
+3. Execute the following command to update the helm repositories.
 
       ```console
       helm repo update
@@ -22,7 +27,7 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
 
     === "Command"
         ```
-        helm install apk wso2apk/apk-helm --version 1.0.0
+        helm install apk wso2/apk-helm --version 1.0.0 --set wso2.subscription.imagePullSecrets="apk-registry-secret"
         ```
 
     === "Format"
@@ -35,7 +40,7 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
         To commence the installation while making use of the customization       capabilities inherent in the `values.yaml` file, follow the subsequent command format. Instructions in [Customize Configurations](../setup/Customize-Configurations.md) will guide you through the process of acquiring the `values.yaml` file.
         === "Command"
             ```
-            helm install apk wso2apk/apk-helm --version 1.0.0 -f values.yaml
+            helm install apk wso2apk/apk-helm --version 1.0.0 -set wso2.subscription.imagePullSecrets="apk-registry-secret" -f values.yaml
             ```
 
         === "Format"
