@@ -1,6 +1,6 @@
 # Default Version
 
-This documentation explains how to make an API version as default version in WSO2 APK. The Default Version option means that you make this version the default in a group of different versions of the API. You can invoke a default API without specifying the version number in the URL. Follow the steps below to create an API version.
+This documentation explains how to make an API version the default version in WSO2 APK. The default version option means that you make this version the default in a group of different versions of the API. You can invoke a default API without specifying the version number in the URL. Follow the steps below to create an API default version.
 
 ## Before you begin
 
@@ -85,10 +85,9 @@ Sample content before the modification is shown below.
    
 Here, you can do any other related changes to the API configuration as well.
 
+### Generate an access token to deploy and invoke an API
 
-### Generate an access token to deploy API.
-
-To invoke the system APIs such as for deploying, we need a valid access token issued by an identity provider (IdP). Follow the ["Generate Access Token"](../../develop-and-deploy-api/security/generate-access-token.md) documentation to generate an access token.
+To deploy and invoke the system APIs, we need a valid access token issued by an identity provider (IdP). Follow the ["Generate Access Token"](../../develop-and-deploy-api/security/generate-access-token.md) documentation to generate an access token.
 
 
 ### Deploy the default version API.
@@ -102,7 +101,7 @@ Use the values provided in the table below in the body of your request.
    | apkConfiguration       | `EmployeeServiceDefaultVersion.apk-conf` file     |:material-check:|
    | definitionFile   | `EmployeeServiceDefinition.json` file |:material-check:|
 
-1.  Set the access token in the Authorization header as a bearer token. This is the access token received by following the steps under ["Generate an access token to invoke APIs"](#generate-an-access-token-to-invoke-apis) section above.
+1.  Set the access token in the Authorization header as a bearer token. This is the access token received by following the steps under ["Generate an access token to deploy and invoke an API"](#generate-an-access-token-to-deploy-and-invoke-an-api) section above.
 2.  Execute the API deployment request. You will receive a successful response with an Id for the API.
 
     === "Request"

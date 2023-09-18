@@ -86,9 +86,9 @@ Sample content before the modification is shown below.
 Here, you can do any other related changes to the API configuration as well.
 
 
-### Generate an access token to deploy API.
+### Generate an access token to deploy and invoke an API
 
-To invoke the system APIs such as for deploying, we need a valid access token issued by an identity provider (IdP). Follow the ["Generate Access Token"](../../develop-and-deploy-api/security/generate-access-token.md) documentation to generate an access token.
+To deploy and invoke the system APIs, we need a valid access token issued by an identity provider (IdP). Follow the ["Generate Access Token"](../../develop-and-deploy-api/security/generate-access-token.md) documentation to generate an access token.
 
 ### Deploy the new version API.
 
@@ -101,7 +101,7 @@ Use the values provided in the table below in the body of your request.
    | apkConfiguration       | `EmployeeServiceV2.apk-conf` file     |:material-check:|
    | definitionFile   | `EmployeeServiceDefinition.json` file |:material-check:|
 
-1.  Set the access token in the Authorization header as a bearer token. This is the access token received by following the steps under ["Generate an access token to invoke APIs"](#generate-an-access-token-to-invoke-apis) section above.
+1.  Set the access token in the Authorization header as a bearer token. This is the access token received by following the steps under ["Generate an access token to deploy and invoke an API"](#generate-an-access-token-to-deploy-and-invoke-an-api) section above.
 2.  Execute the API deployment request. You will receive a successful response with an Id for the API.
 
     === "Request"
@@ -156,5 +156,5 @@ Use the values provided in the table below in the body of your request.
         scopes: []
         ```
 
-By now you have deployed the new version of the API. You can invoke the API new version using the access token generated in the previous step.
+By now, you have deployed the new version of the API. You can invoke the new version of the API using the access token generated in the previous step.
 

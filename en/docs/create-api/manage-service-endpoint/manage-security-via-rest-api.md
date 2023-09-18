@@ -1,11 +1,11 @@
 # Add Basic Auth Backend Security via the REST API Interface
 
 You can secure access to your backend via the Basic Authentication scheme. 
-For that, you can refer to an already created K8 `Secret`.
+For that, you can refer to an already created K8s `Secret`.
 
-## Refer an already created  K8 `Secret`
+## Create a K8s `Secret`
 
-  You can create a k8 secret using the following format including your username and password in base64 encoded format.
+You can create a K8s secret using the following format including your username and password in base64 encoded format.
 
 ```
   apiVersion: v1
@@ -62,7 +62,7 @@ For that, you can refer to an already created K8 `Secret`.
             passwordKey: "password"
   ```
 
-A sample `apk-conf` file with direct endpoints is shown below.
+A sample `apk-conf` file with direct endpoints and basic authentication is shown below.
 
 ```
 name: "EmployeeServiceAPI"

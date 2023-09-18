@@ -12,4 +12,4 @@ spec:
     port: 80
 ```
 
-Refer [Manage Service Endpoint](../../create-api/manage-service-endpoint/manage-certificate) for more information on how to configure backend services.
+Refer [Manage Service Endpoint](../../create-api/manage-service-endpoint/manage-certificate.md) for more information on how to configure backend services.
