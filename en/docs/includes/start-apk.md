@@ -5,7 +5,7 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
 this in K8s.
 
     ```console
-    kubectl create secret docker-registry wso2creds --docker-server=docker.wso2.com --docker-username=<username> --docker-password=<password> --docker-email=<email>
+    kubectl create secret docker-registry apk-registry-secret --docker-server=docker.wso2.com --docker-username=<username> --docker-password=<password> --docker-email=<email>
     ```
 
     !!!Note
