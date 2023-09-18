@@ -2,25 +2,17 @@
 
 APK is an open-source platform for providing complete API Management capabilities on top of the Kubernetes cluster management platform.
 
-APK is composed of these components:
+**Overview architecture of the WSO2 APK platform:**
 
-[![Architecture](../assets/img/wso2-api-platform-for-kubernetes-component-architecture.png)](../assets/img/wso2-api-platform-for-kubernetes-component-architecture.png)
+[![Architecture](../assets/img/apk-overview.png)](../assets/img/apk-overview.png)
 
 
+**APK is composed of these components:**
 
-To support cloud native Kubernetes environments, the platform’s deployment consists of two main components.
+[![Architecture](../assets/img/apk-component-architecture.png)](../assets/img/apk-component-architecture.png)
 
-**The Control Plane** is responsible for managing the overall functioning of WSO2’s APK system.  It includes API management back-office capabilities, admin tasks, and API marketplace functionality. It consists of four main sub-components: 
-- The Back Office is responsible for configuring the portal aspects of APIs, including description, document, image, etc.
-- The Dev Portal allows API consumers to discover and consume APIs.
-- The Admin Portal is used to configure rate limit policies, key management services, and other administrative tasks.
-- The Management Server communicates with data planes and pushes updates whenever required.
 
-The APK control plane serves different user personas, such as API product managers, organization or system administrators, and API consumers. Each persona interacts with the control plane components differently.
-API product managers oversee API lifecycles, including attaching documents, thumbnails, and descriptions to APIs, managing portal aspects and visibility, and attach different business plans to APIs..
-API consumers use the APK control plane to search and discover APIs, try them out, read documents, subscribe to APIs, consume APIs, generate SDKs, and provide feedback to improve API performance.
-Admin users,, manage organizations and business plans, define user and permission mappings, govern key management aspects, and oversee the management and governance of the organization or entire deployment.
-
+To support cloud native Kubernetes environments, the platform’s deployment consists of data plane components.
 
 **The Data Plane** is responsible for handling the runtime design, processing API requests, and applying API management quality of services. It’s designed to handle high volume, real-time data processing and includes functions for routing, rate limiting, and security. The APK runtime consists of three main sub-components: 
 - The Runtime Manager is responsible for configuring the runtime aspects of APIs, discovering Kubernetes services, and converting them into APIs.
@@ -47,7 +39,7 @@ Alternatively, all components can be deployed within a single Kubernetes cluster
 
 
 # Technologies Used 
-A multi-language approach is adopted for implementation in WSO2 APK, with management domain services being written in Ballerina and Java. The API gateway is built using Envoy as the foundation and certain gateway extensions are developed using Go and C++. The front-end applications are envisioned to be built with the ReactJS framework.
+A multi-language approach is adopted for implementation in WSO2 APK, with management domain services being written in Ballerina and Java. The API gateway is built using Envoy as the foundation and certain gateway extensions are developed using Go and C++.
 
 In the initial product analysis, it was found that the Kubernetes gateway API could effectively define APIs and gateways. The Envoy API gateway project was chosen as the API gateway implementation due to its streamlined deployment model and API layer, specifically suited for API gateway use cases. The Kubernetes gateway API is utilized for configuring the gateway. The use of Envoy as the foundation for the API gateway provides high performance, light weight, and rich features, including centralized API traffic management, authentication, rate limiting, and request/response transformation.
 
