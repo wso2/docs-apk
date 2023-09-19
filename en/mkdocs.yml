@@ -201,6 +201,7 @@ nav:
         - Install: setup/install.md
         - Migration: setup/migration.md
         - Customize Configurations: setup/Customize-Configurations.md
+        - Configure HPA for gateway: setup/configure-hpa.md
 #        - Organization: setup/organizations.md
        #- Deploy:
        #    - Deployment Patterns: get-started/dummy.md
