@@ -4,7 +4,7 @@
     
     To get familiar with the concept of Rate Limiting, see [Rate Limiting Overview](./rate-limiting-policy-overview.md).
 
-You need to define the API Policies as separate Custom Resources (CRs) when creating an API using the Kubernetes Command Line Interface (kubctl). Let's get familiar with the [API-level](#api-level) and [Operation-level](#operation-level) configurations that you will use to add Rate Limiting Policies and also the [configurations definitions](#configuration-definitions).
+You need to define the API Policies as separate Custom Resources (CRs) when creating an API using the Kubernetes Command Line Interface (kubctl). Let's get familiar with the [API-level](#api-level) and [Operation-level](#operation-level) configurations and the [configurations definitions](#configuration-definitions) that you will use to add Rate Limiting Policies..
 
 ## API-level
 
@@ -211,7 +211,7 @@ Follow the instructions below to add an API-level Rate Limiting Policy to an API
 2. Define the required API-level Rate Limiting Policy in your HTTPRoute CR.
    
     !!! note
-        For more information, see the [configurations](#api-level) used to add an API-level Rate Limiting Policy via an HTTPRoute CR and also the [configurations definitions](#configuration-definitions).
+        For more information, see the [configurations](#api-level) used to add an API-level Rate Limiting Policy via an HTTPRoute CR and the [configurations definitions](#configuration-definitions).
 
      Let's add the Rate Limiting Policy as follows:
     
@@ -251,7 +251,7 @@ Follow the instructions below to add an Operation-level Rate Limiting Policy to 
 2. Define the required Operation-level Rate Limiting Policy in a separate CR.
    
     !!! note
-        For more information, see the [configurations](#operation-level) used to add an Operation-level Rate Limiting Policy via an HTTPRoute CR and also the [configurations definitions](#configuration-definitions).
+        For more information, see the [configurations](#operation-level) used to add an Operation-level Rate Limiting Policy via an HTTPRoute CR and the [configurations definitions](#configuration-definitions).
 
      Let's add the Rate Limiting Policy as follows:
     

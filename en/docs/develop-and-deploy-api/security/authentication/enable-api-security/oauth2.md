@@ -1,7 +1,6 @@
 # OAuth2 Authentication
 
-By default OAuth2 authentication is enabled for all the APIs. The default configuration expect a bearer token in the request header `Authorization`. You can disable the OAuth2 authentication or use a custom Authentication header for OAuth2 authentication. 
-
+By default, OAuth2 authentication is enabled for all the APIs. The default configuration expects a bearer token in the request header `Authorization`. You can disable the OAuth2 authentication or use a custom Authentication header for OAuth2 authentication. 
 
 ## Before you begin
 
@@ -50,7 +49,8 @@ Modify the content with the following config to disable OAuth2
         enabled: false
    ```
 
-Modified APK configuration content to disable OAuth2
+Sample APK configuration content after the modification to disable OAuth2 is shown below.
+
 
    ```yaml
    name: "EmployeeServiceAPI"
@@ -97,7 +97,7 @@ Modify the content with the following config to use custom auth header name
         headerName: testAuth
    ```
 
-Modified APK configuration content to use custom auth header name
+Sample APK configuration content after the modification to use a custom auth header name is shown below.
 
    ```yaml
    name: "EmployeeServiceAPI"
@@ -144,7 +144,7 @@ Modify the content with the following config to send the OAuth2 header to backen
         sendTokenToUpstream: true
    ```
 
-Modified APK configuration content to send the OAuth2 header to backend.
+Sample APK configuration content after the modification to send the OAuth2 header to the backend is shown below.
 
    ```yaml
    name: "EmployeeServiceAPI"
@@ -178,4 +178,4 @@ Modified APK configuration content to send the OAuth2 header to backend.
         sendTokenToUpstream: true
    ```
   
-  Deploy the APK configuration. Try invoking the request with a valid token in the Authorization header; you will receive a 200 response and check from backend receives the OAuth2 token in same header.
+  Deploy the APK configuration. Try invoking the request with a valid token in the Authorization header; you will receive a 200 response. Check the backend to see it receiving the OAuth2 token in the same header.

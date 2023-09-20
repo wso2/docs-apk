@@ -1,6 +1,6 @@
 A single API in APK project is defined using a set of combined Kubernetes resources.
 
-- <b>API</b> - With the `API` CRD, you can effortlessly design and manage APIs using Kubernetes-native tools. Simplify the deployment process and focus on what matters most – crafting outstanding APIs.This is the root level resource for an API. API related metadata are also defined in this CR.
+- <b>API</b> - With the `API` CRD, you can effortlessly design and manage APIs using Kubernetes-native tools. Simplify the deployment process and focus on what matters most – crafting outstanding APIs. This is the root level resource for an API. API related metadata are also defined in this CR.
 
 - <b>HTTPRoute</b> -  The `HTTPRoute` CRD empowers you to configure HTTP routes and filters for your APIs efficiently. You refer to `HTTPRoute` resources from  `API`.
 
@@ -16,7 +16,7 @@ Let's create a simple API with following steps:
 
 ## Create API CR 
 
-In the following CR, we have defined a REST API giving the name, context, and version information for the API. We have also refers to `HTTPRoute` resource in `spec.production.httpRouteRefs[0]` path which we create in the next step.
+In the following CR, we have defined a REST API giving the name, context, and version information for the API. We have also referred to `HTTPRoute` resource in `spec.production.httpRouteRefs[0]` path which we create in the next step.
 
 ```
 apiVersion: dp.wso2.com/v1alpha1
@@ -34,7 +34,7 @@ spec:
 ```
 
 !!! Info
-    If your API has many resources and cannot define within a single `HTTPRoute` resource, then you have to create two or more `HTTPRoute`s and list them under `spec.production.httpRouteRefs`.
+    If your API has many resources and cannot be defined within a single `HTTPRoute` resource, then you have to create two or more `HTTPRoute`s and list them under `spec.production.httpRouteRefs`.
 
 ## Create HTTPRoute CR
 
