@@ -25,7 +25,7 @@ this in K8s.
 
 3. Install the APK components and start WSO2 API Platform For Kubernetes. Consider ```apk``` as the ```<chart-name>``` for this guide. As the ```--version``` of this command, use the version of the release you used in point 1 above. It will take a few minutes for the deployment to complete.
 
-    ### Helm install for Linux
+    ### Helm install for Linux(amd64)
 
     === "Command"
         ```
@@ -37,7 +37,7 @@ this in K8s.
         helm install <chart-name> <repository-name>/apk-helm --version <verison-of-APK>
         ```
 	
-    ### Helm install for Mac
+    ### Helm install for Mac(arm64)
 
     === "Command"
         ```
