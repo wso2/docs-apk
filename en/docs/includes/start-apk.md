@@ -46,7 +46,7 @@ this in K8s.
 
     === "Format"
         ```
-        helm install <chart-name> <repository-name>/apk-helm --version <verison-of-APK>
+        helm install <chart-name> <repository-name>/apk-helm --version <verison-of-APK> -f <path-to-arm64.yaml-file>
         ```
 
     !!!Optional
