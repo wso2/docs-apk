@@ -25,6 +25,8 @@ this in K8s.
 
 3. Install the APK components and start WSO2 API Platform For Kubernetes. Consider ```apk``` as the ```<chart-name>``` for this guide. As the ```--version``` of this command, use the version of the release you used in point 1 above. It will take a few minutes for the deployment to complete.
 
+    ### Helm install for Linux
+
     === "Command"
         ```
         helm install apk wso2/apk-helm --version 1.0.0 --set wso2.subscription.imagePullSecrets="apk-registry-secret"
@@ -35,6 +37,18 @@ this in K8s.
         helm install <chart-name> <repository-name>/apk-helm --version <verison-of-APK>
         ```
 	
+    ### Helm install for Mac
+
+    === "Command"
+        ```
+        helm install apk wso2/apk-helm --version 1.0.0 --set wso2.subscription.imagePullSecrets="apk-registry-secret" -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/sample/arm64.yaml
+        ```
+
+    === "Format"
+        ```
+        helm install <chart-name> <repository-name>/apk-helm --version <verison-of-APK>
+        ```
+
     !!!Optional
     
         To commence the installation while making use of the customization       capabilities inherent in the `values.yaml` file, follow the subsequent command format. Instructions in [Customize Configurations](../setup/Customize-Configurations.md) will guide you through the process of acquiring the `values.yaml` file.
