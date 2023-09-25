@@ -1,10 +1,11 @@
-A single API in APK project is defined using a set of combined Kubernetes resources.
+In this section, we'll explore Kubernetes Native API Development in WSO2 APK. Learn how to define APIs using Kubernetes resources for streamlined API management.
+A single API in APK project is defined using a set of combined Kubernetes custom resources (CRs).
 
-- <b>API</b> - With the `API` CRD, you can effortlessly design and manage APIs using Kubernetes-native tools. Simplify the deployment process and focus on what matters most – crafting outstanding APIs. This is the root level resource for an API. API related metadata are also defined in this CR.
+- <b>API</b> - With the `API` CRs, you can effortlessly design and manage APIs using Kubernetes-native tools. Simplify the deployment process and focus on what matters most – crafting outstanding APIs. This is the root level resource for an API. API related metadata are also defined in this CR.
 
-- <b>HTTPRoute</b> -  The `HTTPRoute` CRD empowers you to configure HTTP routes and filters for your APIs efficiently. You refer to `HTTPRoute` resources from  `API`.
+- <b>HTTPRoute</b> -  The `HTTPRoute` CR empowers you to configure HTTP routes and filters for your API efficiently. You have to refer to `HTTPRoute` resources from  `API` CRs.
 
-- <b>Backend</b> - Elevate your endpoint configurations, including resiliency settings, using the `Backend` CRD. Ensure the reliability and availability of your API backends for uninterrupted service.
+- <b>Backend</b> - Elevate your endpoint configurations, including resiliency settings, using the `Backend` CR. Ensure the reliability and availability of your API backends for uninterrupted service.
 
 These are the basic resource you need to use specifically for APK. We have other resources for complex use cases which are described under separate sections.
 
@@ -95,7 +96,7 @@ If your backend is a Kubernetes-native `Service`, then derive the following valu
 <spec.metadata.name>.<spec.metadata.namespace>
 ```
 
-Once you have designed your APIs using these essential CRDs, the next step is to apply them to the Kubernetes API server. APK will process and deploy your APIs seamlessly, taking full advantage of the Kubernetes infrastructure.
+Once you have designed your APIs using these essential CRs, the next step is to apply them to the Kubernetes API server. APK will process and deploy your APIs seamlessly, taking full advantage of the Kubernetes infrastructure.
 
 ```
 kubectl apply -f <path_to_CR_files>
