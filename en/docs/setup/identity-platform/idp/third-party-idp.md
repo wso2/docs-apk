@@ -33,31 +33,79 @@ Create an application within your chosen IdP. This application will represent th
 Configure the application within your chosen IdP.
 This includes setting the application's settings, such as the application name and endpoints.
 
-## Step 6 - Update the Helm Chart
+## Step 5 - Add a new token issuer for the IDP
 
-1. Follow the instructions outlined in [Customize Configurations](../../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file. Open the `values.yaml` file.
-2. Update the IDP related configurations in the `idp` section.
+1. Access the endpoints that correspond to the application, which is available in the idp.
+    
 
-     ```yaml
-     idp:
-          issuer: ""
-          jwksEndpoint: ""      
-          usernameClaim: ""
-          organizationClaim: ""
+2. Create a file named `new-token-issuer.yaml` and add the following content to it.
 
-     ```
+    | **Parameter** | **Description** |
+    |---------------|-----------------|
+    | `issuer:` | The IdP's issuer URL. |
+    | `jwksEndpoint:` |  The URL of the IdP's JSON Web Key Set (JWKS) endpoint.  |
+    | `usernameClaim:` |  The claim in the IdP's token that represents the user's username.  |
+    | `organizationClaim:` |  The claim in the IdP's token that represents the user's organization.   |
+    | `organization:` |  The organization of IDP. To invoke system APIs, this should be `apk-system`. To invoke particular organizaiton's APIs, this should be organization id.  |
 
-      - `organizationClaim` - This needs to be configured based on organization claim in jwt.
-      - Update all other values based on the Endpoint details that you came under the application settings.
+```
+apiVersion: dp.wso2.com/v1alpha1
+kind: TokenIssuer
+metadata:
+  name: auth0-idp-issuer
+spec:
+  claimMappings:
+  - localClaim: x-wso2-organization
+    remoteClaim: <organizationClaim>
+  consumerKeyClaim: azp
+  issuer: https://<idp.domian>/
+  name: new-service-provider
+  organization: default
+  scopesClaim: scope
+  signatureValidation:
+    jwks:
+      url: "https://<idp.domian>/.well-known/jwks.json"
+  targetRef:
+    group: gateway.networking.k8s.io
+    kind: Gateway
+    name: default
+```
+3. Run the following command to add the token Issuer to APK.
 
-The Idp section should include the following parameters:
+```
+kubectl apply -f new-token-issuer.yaml
+```
 
-| **Parameter** | **Description** |
-|---------------|-----------------|
-| `issuer:` | The IdP's issuer URL. |
-| `jwksEndpoint:` |  The URL of the IdP's JSON Web Key Set (JWKS) endpoint.  |
-| `usernameClaim:` |  The claim in the IdP's token that represents the user's username.  |
-| `organizationClaim:` |  The claim in the IdP's token that represents the user's organization, if applicable.  |
+
+!!!Optional
+    
+        If you need to configure the IdP as the primary IdP instead of adding multiple IdPs, execute the following steps as the 6th step.
+
+          ## Step 6 - Update the Helm Chart
+
+          1. Follow the instructions outlined in [Customize Configurations](../../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file. Open the `values.yaml` file.
+          2. Update the IDP related configurations in the `idp` section.
+
+               ```yaml
+               idp:
+                    issuer: ""
+                    jwksEndpoint: ""      
+                    usernameClaim: ""
+                    organizationClaim: ""
+
+               ```
+
+               - `organizationClaim` - This needs to be configured based on organization claim in jwt.
+               - Update all other values based on the Endpoint details that you came under the application settings.
+
+          The Idp section should include the following parameters:
+
+          | **Parameter** | **Description** |
+          |---------------|-----------------|
+          | `issuer:` | The IdP's issuer URL. |
+          | `jwksEndpoint:` |  The URL of the IdP's JSON Web Key Set (JWKS) endpoint.  |
+          | `usernameClaim:` |  The claim in the IdP's token that represents the user's username.  |
+          | `organizationClaim:` |  The claim in the IdP's token that represents the user's organization, if applicable.  |
 
 ## Step 7 - Start WSO2 APK
 

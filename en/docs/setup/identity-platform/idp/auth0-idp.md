@@ -32,38 +32,86 @@ If you have not created the user already, [create a user](https://auth0.com/docs
 
        - Define the type of users that will log in to this application - `Individuals`
 
-## Step 6 - Update the Helm Chart
+## Step 6 - Add a new token issuer for the IDP
 
 1. [Access the endpoints that correspond to the application](https://auth0.com/docs/get-started/applications/application-settings#endpoints), which is available in the **Advanced Settings** section.
-2. Follow the instructions outlined in [Customize Configurations](../../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file. Open the `values.yaml` file.
-3. Update the IDP related configurations in the `idp` section.
-4. Create a K8s Secret with retrieved `clientId` and `clientSecret` from Step 4 with name `apk-idp-secret`.
-
-      ```
-       idp:
-         issuer: ""
-         jwksEndpoint: ""      
-         usernameClaim: ""
-         organizationClaim: ""
-      ```
-
-      - `organizationClaim` - This should always be `org_id`.
-      - Update all other values based on the Endpoint details that you came across in Step 6.1.
-
-## Step 7 - Restart WSO2 APK
-
-=== "Format"
-	```
-	helm install <helm-chart-name> .
-	```
-
-=== "Example"
-	```
-	helm install apk-test .
-	```
 
 
-## Step 8 - Generate an Access Token
+2. Create a file named `new-token-issuer.yaml` and add the following content to it.
+
+    | **Parameter** | **Description** |
+    |---------------|-----------------|
+    | `issuer:` | The IdP's issuer URL. |
+    | `jwksEndpoint:` |  The URL of the IdP's JSON Web Key Set (JWKS) endpoint.  |
+    | `usernameClaim:` |  The claim in the IdP's token that represents the user's username.  |
+    | `organizationClaim:` |  The claim in the IdP's token that represents the user's organization, This should always be `org_id`.   |
+    | `organization:` |  The organization of IDP. To invoke system APIs, this should be `apk-system`. To invoke particular organizaiton's APIs, this should be organization id.  |
+
+```
+apiVersion: dp.wso2.com/v1alpha1
+kind: TokenIssuer
+metadata:
+  name: auth0-idp-issuer
+spec:
+  claimMappings:
+  - localClaim: x-wso2-organization
+    remoteClaim: org_id
+  consumerKeyClaim: azp
+  issuer: https://<auth0domain>.auth0.com/
+  name: new-service-provider
+  organization: default
+  scopesClaim: scope
+  signatureValidation:
+    jwks:
+      url: "https://<auth0domain>.auth0.com/.well-known/jwks.json"
+  targetRef:
+    group: gateway.networking.k8s.io
+    kind: Gateway
+    name: default
+```
+3. Run the following command to add the token Issuer to APK.
+
+
+```
+kubectl apply -f new-token-issuer.yaml
+```
+
+
+!!!Optional
+    
+        If you need to configure the IdP as the primary IdP instead of adding multiple IdPs, execute the following steps as the 6th step.
+
+        ## Step 6 - Update the Helm Chart
+        
+        1. Follow the instructions outlined in [Customize Configurations](../../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file. Open the `values.yaml` file.
+        2. Update the IDP related configurations in the `idp` section.
+        3. Create a K8s Secret with retrieved `clientId` and `clientSecret` from Step 4 with name `apk-idp-secret`.
+
+              ```
+              idp:
+                issuer: ""
+                jwksEndpoint: ""      
+                usernameClaim: ""
+                organizationClaim: ""
+              ```
+
+              - `organizationClaim` - This should always be `org_id`.
+              - Update all other values based on the Endpoint details that you came across in Step 6.1.
+        
+        ## Step 6.1 - Install WSO2 APK
+
+        === "Format"
+          ```console
+          helm install <helm-chart-name> .
+          ```
+
+        === "Example"
+          ```console
+          helm install apk-test .
+          ```
+
+
+## Step 7 - Generate an Access Token
 
 1. Open Postman and create a new request to generate the auth code token.
 2. Navigate to the Authorization tab of the request.
@@ -83,6 +131,6 @@ If you have not created the user already, [create a user](https://auth0.com/docs
 8. Copy the ID token that you see listed as the `id_token`.
 
 
-## Step 9 - Invoke the System API
+## Step 8 - Invoke the System API
 
  Use the JWT token that you received in the previous step to invoke the system APIs.

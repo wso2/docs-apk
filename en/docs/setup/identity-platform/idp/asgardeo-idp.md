@@ -24,35 +24,83 @@ Follow the instructions below to use Asgardeo as the Identity Provider (IdP) to 
 
 4. [Share application with sub-organizations](https://wso2.com/asgardeo/docs/guides/organization-management/manage-b2b-organizations/share-applications/).
 
-## Step 5 - Update the Helm Chart
+## Step 5 - Add a new token issuer for the IDP
 
-1. Follow the instructions outlined in [Customize Configurations](../../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file. Open the `values.yaml` file.
-2. Update the IDP related configurations in the `idp` section.
-3. Create a K8s Secret with retrieved `clientId` and `clientSecret` from Step 4 with name `apk-idp-secret`.
-      ```
-        idp:
-          issuer: ""
-          jwksEndpoint: ""      
-          usernameClaim: ""
-          organizationClaim: ""
-      ```
-      
-       - `organizationClaim` - This should always be `user_organization`.
-       - Update all other values based on the Service Endpoint details that you came across in Step 4.
+1. Access the endpoints that correspond to the application, which is available in the asgradeo portal.
+    
 
-## Step 6 - Install WSO2 APK
+2. Create a file named `new-token-issuer.yaml` and add the following content to it.
 
-=== "Format"
-	```console
-	helm install <helm-chart-name> .
-	```
+    | **Parameter** | **Description** |
+    |---------------|-----------------|
+    | `issuer:` | The IdP's issuer URL. |
+    | `jwksEndpoint:` |  The URL of the IdP's JSON Web Key Set (JWKS) endpoint.  |
+    | `usernameClaim:` |  The claim in the IdP's token that represents the user's username.  |
+    | `organizationClaim:` |  The claim in the IdP's token that represents the user's organization, This should always be `user_organization`.   |
+    | `organization:` |  The organization of IDP. To invoke system APIs, this should be `apk-system`. To invoke particular organizaiton's APIs, this should be organization id.  |
 
-=== "Example"
-	```console
-	helm install apk-test .
-	```
+```
+apiVersion: dp.wso2.com/v1alpha1
+kind: TokenIssuer
+metadata:
+  name: auth0-idp-issuer
+spec:
+  claimMappings:
+  - localClaim: x-wso2-organization
+    remoteClaim: user_organization
+  consumerKeyClaim: azp
+  issuer: https://<asgardeo.domian>/
+  name: new-service-provider
+  organization: default
+  scopesClaim: scope
+  signatureValidation:
+    jwks:
+      url: "https://<asgardeo.domian>/.well-known/jwks.json"
+  targetRef:
+    group: gateway.networking.k8s.io
+    kind: Gateway
+    name: default
+```
+3. Run the following command to add the token Issuer to APK.
 
-## Step 7 - Generate an Access Token
+```
+kubectl apply -f new-token-issuer.yaml
+```
+
+
+!!!Optional
+    
+        If you need to configure the IdP as the primary IdP instead of adding multiple IdPs, execute the following steps as the 5th step.
+
+        ## Step 5 - Update the Helm Chart
+
+        1. Follow the instructions outlined in [Customize Configurations](../../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file. Open the `values.yaml` file.
+        2. Update the IDP related configurations in the `idp` section.
+        3. Create a K8s Secret with retrieved `clientId` and `clientSecret` from Step 4 with name `apk-idp-secret`.
+              ```
+                idp:
+                  issuer: ""
+                  jwksEndpoint: ""      
+                  usernameClaim: ""
+                  organizationClaim: ""
+              ```
+              
+              - `organizationClaim` - This should always be `user_organization`.
+              - Update all other values based on the Service Endpoint details that you came across in Step 4.3.
+
+        ## Step 5.1 - Install WSO2 APK
+
+        === "Format"
+          ```console
+          helm install <helm-chart-name> .
+          ```
+
+        === "Example"
+          ```console
+          helm install apk-test .
+          ```
+
+## Step 6 - Generate an Access Token
 
 1. Open Postman and create a new request to generate the auth code token.
 2. Navigate to the Authorization tab of the request.
@@ -76,6 +124,6 @@ Follow the instructions below to use Asgardeo as the Identity Provider (IdP) to 
 
      You will receive an access token when the token call is successful.
 
-## Step 8 - Invoke the System API
+## Step 7 - Invoke the System API
 
  Use the JWT token that you received in the previous step to invoke the System APIs.
