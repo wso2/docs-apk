@@ -89,9 +89,8 @@ nav:
            - Create and deploy APIs:
                 - K8s Native API Development: create-api/create-and-deploy-apis/create-api-using-cr.md
                 - Enhanced API Development:
-                    - Overview: create-api/create-and-deploy-apis/create-api-using-enhanced-flow.md
-                    - Tools for Enhanced API Development: create-api/create-and-deploy-apis/tools-for-api-development.md
-                    - Create and Deploy API:
+                    - Overview: create-api/create-and-deploy-apis/tools-for-api-development.md
+                    - Create and Deploy API using APK Tools:
                         - Generate APK Configuration file: create-api/create-and-deploy-apis/generate-apk-conf.md
                         - Generate K8s custom resources and Deploy: create-api/create-and-deploy-apis/create-and-deploy-api.md
                         - Direct Deploy into K8s Server: create-api/create-and-deploy-apis/direct-deploy.md
