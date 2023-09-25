@@ -7,6 +7,9 @@
 
 You can use the apk-conf file which is created in [Create an API](../../get-started/quick-start-guide.md) documentation and save this content into a file named `EmployeeServiceEndpoints.apk-conf`.
 
+!!! note
+        Add `default.sandbox.gw.wso2.com` to your `/etc/hosts` file in order to try the sandbox endpoints.
+
 Sample content before the modification is shown below.
 
    ```yaml

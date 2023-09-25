@@ -34,7 +34,7 @@ this in K8s.
 
     === "Format"
         ```
-        helm install <chart-name> <repository-name>/apk-helm --version <verison-of-APK>
+        helm install <chart-name> <repository-name>/apk-helm --version <version-of-APK> --set wso2.subscription.imagePullSecrets=<secret-name>
         ```
 	
     ### Helm install for Mac(arm64)
@@ -59,7 +59,7 @@ this in K8s.
 
         === "Format"
             ```
-            helm install <chart-name> <repository-name>/apk-helm --version <verison-of-APK> -f <path-to-values.yaml-file>
+            helm install <chart-name> <repository-name>/apk-helm --version <version-of-APK> --set wso2.subscription.imagePullSecrets=<secret-name> -f <path-to-values.yaml-file> 
             ```
 
 4. Now you can verify the deployment by executing the following command. You will see the status of the pods as follows once completed.

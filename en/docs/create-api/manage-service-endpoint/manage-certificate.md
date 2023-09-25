@@ -1,4 +1,4 @@
-You can define CA certificate of your endpoint service using three different ways. If you have the certificate on your hand use `certificateInline` to define it inline. Or you can use `secretRef` or `configMapRef` fields to read them from a `Secret` resource or a `ConfigMap` resource respectively.
+You can define the CA certificate of your endpoint service using three different ways. If you have the certificate on hand, you can use `certificateInline` to define it inline. You can also use `secretRef` or `configMapRef` fields to read them from a `Secret` resource or a `ConfigMap` resource respectively.
 
 ## Using the certificate data as a inline string
 
@@ -78,11 +78,11 @@ spec:
       key: <backend-tls-cm-data-name>
 ```
 
-If you have used a combination of above methods for a single `Backend`, only one is picked with the priority defined as `certificateInline` > `secretRef` > `configMapRef` order where `certificateInline` has the highest priority.
+If you have used a combination of above methods for a single `Backend`, the one with the higherst priority will be picked. The priority order is defined as `certificateInline` > `secretRef` > `configMapRef`, where `certificateInline` has the highest priority.
 
 ## Configuring SAN verification of the certificate
 
-By default SAN verification is enabled and it uses the `spec.services[*].host` as the verifier. If you have a certificate configured in your service that is not same as the above mentioned value then you can configure it in `spec.tls.allowedSANs`:
+SAN verification is enabled by default and it uses the `spec.services[*].host` as the verifier. If you have a certificate configured in your service that is not same as the above mentioned value, then you can configure it in `spec.tls.allowedSANs`:
 
 ```
 apiVersion: dp.wso2.com/v1alpha1

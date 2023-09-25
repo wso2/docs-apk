@@ -86,7 +86,7 @@ Since we used the `Standard F8s v2` instances (CPU count = 4) for the performanc
     <td>1</td>
     <td>1000 (1CPU)</td>
     <td>2</td>
-    <td><a href="{{base_path}}/en/latest/about-apk/performance-test-results/gateway-router-with-one-cpus/">Router with one CPU</a</td>
+    <td><a href="{{base_path}}/en/latest/about-apk/performance-test-results/gateway-router-with-one-cpu/">Router with one CPU</a</td>
   </tr>
   <tr>
     <td>2</td>
