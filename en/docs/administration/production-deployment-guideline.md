@@ -61,9 +61,9 @@ Disable the default idp by changing the following value to `false` in values.yam
 `idp.enabled` = `false`
 
 
-## Use a production ready redis
+## Use a production grade redis
 
-APK uses a built-in standalone Redis service which is not suitable for production usage. Please use a production-ready Redis. You can update the following values to configure the Redis configuration in APK:
+APK uses a built-in standalone Redis service which is not suitable for production usage. Please use a production grade Redis. You can update the following values to configure the Redis configuration in APK:
 
 - wso2.apk.dp.redis.type
 - wso2.apk.dp.redis.url
