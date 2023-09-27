@@ -13,9 +13,13 @@ Please refer this [document](deployment-patterns.md) on how to choose the correc
 
 By default, APK uses wso2.com for its hostnames and vhosts for the gateway. You need to change these values to your own domain, which you plan to use for production. The following values.yaml values should be modified:
 
-- wso2.apk.listener.hostname
-- wso2.apk.dp.gateway.listener.hostname
-- wso2.apk.dp.configdeployer.vhosts
+| Configuration  | Description |
+| --- | --- |
+| `wso2.apk.listener.hostname` | This configuration is used to specify the hostname for listening to API requests related to the APK system. It should be set to your desired domain for production. |
+| `wso2.apk.dp.gateway.listener.hostname` | This configuration is used to specify the hostname for listening to API requests made by users deploying their APIs. It should be set to your desired domain for production. |
+| `wso2.apk.dp.configdeployer.vhosts` | This configuration is utilized by the Config Deployer Service to create API Custom Resources (CRs) in response to user API creation requests. It should be set to the appropriate value for production use. |
+
+By modifying these configurations, you can ensure that APK operates with the correct hostnames and vhosts for your production environment.
 
 For example if you want to deploy a production environment and you have a domain name example.com and you want to expose your API's through prod.gw.example.com and expose APK system APIs through prod.apk.example.com then
 
