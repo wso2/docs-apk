@@ -32,50 +32,109 @@ If you have not created the user already, [create a user](https://auth0.com/docs
 
        - Define the type of users that will log in to this application - `Individuals`
 
+## Step 5 - Add a custom claim for the organization
+
+You need to add a [custom claim](https://auth0.com/docs/secure/tokens/json-web-tokens/create-custom-claims) to the tokens to identify the organization.
+
+
+1. Create a custom action for the login flow.
+
+    - Go to **Actions > Flows > Login > Custom** and click the + button in the top-right corner, then select **Build custom**.
+    - Create an action named `addOrgclaim`.
+    - Add the follwing code to the editor and Deploy the action. You should add a proper organization identfier as the `orgId` claim value.
+
+        ```
+        exports.onExecutePostLogin = async (event, api) => {
+          api.idToken.setCustomClaim('orgId', 'org1');
+        };
+        ```
+
+        | **Field** | **Description** |
+        |---------------|-----------------|
+        | `orgId (claim name)` | Custom claim name to identify the organization. This should be `orgId` |
+        | `org1 (claim value)` |  A value to identify the organization. You can add any identifier for the organization like organization name.  |
+
+
+1. Apply the custom action to the Post Login flow.
+    - Go to **Actions > Flows > Login > Custom** and select the created action `addOrgclaim` and drop that to the flow.
+
+
+
 ## Step 6 - Add a new token issuer for the IDP
 
 1. [Access the endpoints that correspond to the application](https://auth0.com/docs/get-started/applications/application-settings#endpoints), which is available in the **Advanced Settings** section.
 
 
-2. Create a file named `new-token-issuer.yaml` and add the following content to it.
+2. Create two file named `idp-system-token-issuer.yaml` and `idp-org-token-issuer.yaml` add the following content to it.
 
     | **Parameter** | **Description** |
     |---------------|-----------------|
     | `issuer:` | The IdP's issuer URL. |
     | `jwksEndpoint:` |  The URL of the IdP's JSON Web Key Set (JWKS) endpoint.  |
     | `usernameClaim:` |  The claim in the IdP's token that represents the user's username.  |
-    | `organizationClaim:` |  The claim in the IdP's token that represents the user's organization, This should always be `org_id`.   |
-    | `organization:` |  The organization of IDP. To invoke system APIs, this should be `apk-system`. To invoke particular organizaiton's APIs, this should be organization id.  |
-
-```
-apiVersion: dp.wso2.com/v1alpha1
-kind: TokenIssuer
-metadata:
-  name: auth0-idp-issuer
-spec:
-  claimMappings:
-  - localClaim: x-wso2-organization
-    remoteClaim: org_id
-  consumerKeyClaim: azp
-  issuer: https://<auth0domain>.auth0.com/
-  name: new-service-provider
-  organization: default
-  scopesClaim: scope
-  signatureValidation:
-    jwks:
-      url: "https://<auth0domain>.auth0.com/.well-known/jwks.json"
-  targetRef:
-    group: gateway.networking.k8s.io
-    kind: Gateway
-    name: default
-```
-3. Run the following command to add the token Issuer to APK.
+    | `organizationClaim:` |  The claim in the IdP's token that represents the user's organization, This should always be `orgId`.   |
+    | `organization:` |  The organization of IDP. To invoke system APIs, this should be `apk-system`. To invoke particular organizaiton's APIs, this should be organization claim value.  |
 
 
-```
-kubectl apply -f new-token-issuer.yaml
-```
+    === "For System APIs"
+      ```
+        apiVersion: dp.wso2.com/v1alpha1
+        kind: TokenIssuer
+        metadata:
+          name: auth0-idp-issuer
+        spec:
+          claimMappings:
+          - localClaim: x-wso2-organization
+            remoteClaim: orgId
+          consumerKeyClaim: azp
+          issuer: https://<auth0domain>.auth0.com/
+          name: new-service-provider
+          organization: apk-system
+          scopesClaim: scope
+          signatureValidation:
+            jwks:
+              url: "https://<auth0domain>.auth0.com/.well-known/jwks.json"
+          targetRef:
+            group: gateway.networking.k8s.io
+            kind: Gateway
+            name: default
+      ```
 
+    === "For Organization APIs"
+      ```
+        apiVersion: dp.wso2.com/v1alpha1
+        kind: TokenIssuer
+        metadata:
+          name: auth0-idp-issuer
+        spec:
+          claimMappings:
+          - localClaim: x-wso2-organization
+            remoteClaim: orgId
+          consumerKeyClaim: azp
+          issuer: https://<auth0domain>.auth0.com/
+          name: new-service-provider
+          organization: default
+          scopesClaim: scope
+          signatureValidation:
+            jwks:
+              url: "https://<auth0domain>.auth0.com/.well-known/jwks.json"
+          targetRef:
+            group: gateway.networking.k8s.io
+            kind: Gateway
+            name: default
+      ```
+
+
+3. Run the following commands to add the token Issuers to APK.
+
+
+    ```
+    kubectl apply -f idp-system-token-issuer.yaml
+    ```
+
+    ```
+    kubectl apply -f idp-org-token-issuer.yaml
+    ```
 
 !!!Optional
     
@@ -95,7 +154,7 @@ kubectl apply -f new-token-issuer.yaml
                 organizationClaim: ""
               ```
 
-              - `organizationClaim` - This should always be `org_id`.
+              - `organizationClaim` - This should be the custom organization claim(`orgId`) which configured in Step 5.1.
               - Update all other values based on the Endpoint details that you came across in Step 6.1.
         
         ## Step 6.1 - Install WSO2 APK
@@ -131,6 +190,6 @@ kubectl apply -f new-token-issuer.yaml
 8. Copy the ID token that you see listed as the `id_token`.
 
 
-## Step 8 - Invoke the System API
+## Step 8 - Invoke the APIs
 
- Use the JWT token that you received in the previous step to invoke the system APIs.
+ Use the JWT token that you received in the previous step to invoke the System APIs and other APIs.

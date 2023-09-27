@@ -29,43 +29,76 @@ Follow the instructions below to use Asgardeo as the Identity Provider (IdP) to 
 1. Access the endpoints that correspond to the application, which is available in the asgradeo portal.
     
 
-2. Create a file named `new-token-issuer.yaml` and add the following content to it.
+2. Create two file named `idp-system-token-issuer.yaml` and `idp-org-token-issuer.yaml` add the following content to it.
 
     | **Parameter** | **Description** |
     |---------------|-----------------|
     | `issuer:` | The IdP's issuer URL. |
     | `jwksEndpoint:` |  The URL of the IdP's JSON Web Key Set (JWKS) endpoint.  |
     | `usernameClaim:` |  The claim in the IdP's token that represents the user's username.  |
-    | `organizationClaim:` |  The claim in the IdP's token that represents the user's organization, This should always be `user_organization`.   |
-    | `organization:` |  The organization of IDP. To invoke system APIs, this should be `apk-system`. To invoke particular organizaiton's APIs, this should be organization id.  |
+    | `organizationClaim:` |  The claim in the IdP's token that represents the user's organization, This should always be `orgId`.   |
+    | `organization:` |  The organization of IDP. To invoke system APIs, this should be `apk-system`. To invoke particular organizaiton's APIs, this should be organization claim value.  |
 
-```
-apiVersion: dp.wso2.com/v1alpha1
-kind: TokenIssuer
-metadata:
-  name: auth0-idp-issuer
-spec:
-  claimMappings:
-  - localClaim: x-wso2-organization
-    remoteClaim: user_organization
-  consumerKeyClaim: azp
-  issuer: https://<asgardeo.domian>/
-  name: new-service-provider
-  organization: default
-  scopesClaim: scope
-  signatureValidation:
-    jwks:
-      url: "https://<asgardeo.domian>/.well-known/jwks.json"
-  targetRef:
-    group: gateway.networking.k8s.io
-    kind: Gateway
-    name: default
-```
-3. Run the following command to add the token Issuer to APK.
 
-```
-kubectl apply -f new-token-issuer.yaml
-```
+    === "For System APIs"
+      ```
+        apiVersion: dp.wso2.com/v1alpha1
+        kind: TokenIssuer
+        metadata:
+          name: auth0-idp-issuer
+        spec:
+          claimMappings:
+          - localClaim: x-wso2-organization
+            remoteClaim: org_id
+          consumerKeyClaim: azp
+          issuer: https://<asgardeo.domain>/
+          name: new-service-provider
+          organization: apk-system
+          scopesClaim: scope
+          signatureValidation:
+            jwks:
+              url: "https://<asgardeo.domain>/.well-known/jwks"
+          targetRef:
+            group: gateway.networking.k8s.io
+            kind: Gateway
+            name: default
+      ```
+
+    === "For Organization APIs"
+      ```
+        apiVersion: dp.wso2.com/v1alpha1
+        kind: TokenIssuer
+        metadata:
+          name: auth0-idp-issuer
+        spec:
+          claimMappings:
+          - localClaim: x-wso2-organization
+            remoteClaim: org_id
+          consumerKeyClaim: azp
+          issuer: https://<asgardeo.domain>/
+          name: new-service-provider
+          organization: default
+          scopesClaim: scope
+          signatureValidation:
+            jwks:
+              url: "https://<asgardeo.domain>/.well-known/jwks"
+          targetRef:
+            group: gateway.networking.k8s.io
+            kind: Gateway
+            name: default
+      ```
+
+
+3. Run the following commands to add the token Issuers to APK.
+
+
+    ```
+    kubectl apply -f idp-system-token-issuer.yaml
+    ```
+
+    ```
+    kubectl apply -f idp-org-token-issuer.yaml
+    ```
 
 
 !!!Optional
@@ -85,7 +118,7 @@ kubectl apply -f new-token-issuer.yaml
                   organizationClaim: ""
               ```
               
-              - `organizationClaim` - This should always be `user_organization`.
+              - `organizationClaim` - This should always be `org_id`.
               - Update all other values based on the Service Endpoint details that you came across in Step 4.3.
 
         ## Step 5.1 - Install WSO2 APK
@@ -124,6 +157,6 @@ kubectl apply -f new-token-issuer.yaml
 
      You will receive an access token when the token call is successful.
 
-## Step 7 - Invoke the System API
+## Step 7 - Invoke the APIs
 
- Use the JWT token that you received in the previous step to invoke the System APIs.
+ Use the JWT token that you received in the previous step to invoke the System APIs and other APIs.
