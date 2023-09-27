@@ -2,7 +2,11 @@
 
 The requirements for deploying WSO2 products can vary based on the deployment scenario and pattern. The recommendations in this topic are intended for general production use.
 
-WSO2 APK can be configured through `values.yaml` file.  Please refer to [Customize Configurations](../setup/Customize-Configurations.md) for information on how to use a customized values file for APK deployment. When deploying WSO2 APK in a production environment, we strongly recommend following these guidelines.
+WSO2 APK can be configured through `values.yaml` file.  Please refer to [Customize Configurations](../setup/Customize-Configurations.md) for information on how to use a customized values file for APK deployment. When deploying WSO2 APK in a production environment, we strongly recommend following these guidelines. 
+
+## Choose the correct deployment pattern
+
+Please refer this [document](deployment-patterns.md) on how to choose the correct pattern for you environment.
 
 
 ## Change the hostnames and vhosts
@@ -12,6 +16,13 @@ By default, APK uses wso2.com for its hostnames and vhosts for the gateway. You 
 - wso2.apk.listener.hostname
 - wso2.apk.dp.gateway.listener.hostname
 - wso2.apk.dp.configdeployer.vhosts
+
+For example if you want to deploy a production environment and you have a domain name example.com and you want to expose your API's through prod.gw.example.com and expose APK system APIs through prod.apk.example.com then
+
+- wso2.apk.listener.hostname: 'prod.apk.example.com'
+- wso2.apk.dp.gateway.listener.hostname: 'gw.example.com'
+- wso2.apk.dp.configdeployer.vhosts: [{"hosts":["gw.example.com"],"name":"prod","type":"production"}]
+
 
 For further clarification on the keys, please refer to the description and default values [here](https://github.com/wso2/apk/blob/main/helm-charts/README.md)
 
@@ -50,9 +61,9 @@ Disable the default idp by changing the following value to `false` in values.yam
 `idp.enabled` = `false`
 
 
-## Use a managed redis service
+## Use a production ready redis
 
-APK uses a built-in standalone Redis service which is not suitable for production usage. Please use a managed, production-ready Redis. You can update the following values to configure the Redis configuration in APK:
+APK uses a built-in standalone Redis service which is not suitable for production usage. Please use a production-ready Redis. You can update the following values to configure the Redis configuration in APK:
 
 - wso2.apk.dp.redis.type
 - wso2.apk.dp.redis.url
@@ -60,6 +71,9 @@ APK uses a built-in standalone Redis service which is not suitable for productio
 - wso2.apk.dp.redis.auth.certificatesSecret
 - wso2.apk.dp.redis.auth.secretKey
 - wso2.apk.dp.redis.poolSize
+
+Disable the default redis that comes with the APK deployment
+- redis.enabled: bool
 
 
 ## Protect gateway admin port
