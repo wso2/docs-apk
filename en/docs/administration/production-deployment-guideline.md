@@ -1,6 +1,6 @@
 # Production Deployment guideline
 
-The requirements for deploying WSO2 products can vary based on the deployment scenario and pattern. The recommendations in this topic are intended for general production use.
+This document provide the steps for APK production deployment.
 
 WSO2 APK can be configured through `values.yaml` file.  Please refer to [Customize Configurations](../setup/Customize-Configurations.md) for information on how to use a customized values file for APK deployment. When deploying WSO2 APK in a production environment, we strongly recommend following these guidelines. 
 
@@ -61,7 +61,7 @@ Disable the default idp by changing the following value to `false` in values.yam
 `idp.enabled` = `false`
 
 
-## Use a production grade redis
+## Use a production grade Redis
 
 APK uses a built-in standalone Redis service which is not suitable for production usage. Please use a production grade Redis. You can update the following values to configure the Redis configuration in APK:
 
