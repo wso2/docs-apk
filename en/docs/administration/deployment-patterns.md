@@ -49,13 +49,13 @@ Wso2:
       adapter:
         configs:
           apiNamespaces:
-            - "ns-1"
-            - "ns-2”
+          - "ns-1"
+          - "ns-2"
       commonController:
         configs:
           apiNamespaces:
-            - "ns-1"
-            - "ns-1"
+          - "ns-1"
+          - "ns-2"
 ```
 
 This approach is recommended for Production and UAT environments
@@ -85,16 +85,16 @@ Inorder to deploy APK as Dataplane per namespace pattern you need to change some
 
 ```yaml
 Wso2:
-	apk:
-		dp:
-			adapter:
+  apk:
+    dp:
+      adapter:
         configs:
           apiNamespaces:
-            - "development"
+          - "development"
       commonController:
         configs:
           apiNamespaces:
-            - "development"
+          - "development"
 ```
 
 You need to change the default hostname and vhost. Change the following values.yaml configurations. Lets say you want to deploy a development environment and you have a domain name example.com and you want to expose your API's through dev.gw.example.com and expose APK system APIs through dev.apk.example.com then
