@@ -44,9 +44,9 @@ If you wish to specify a predefined set of namespaces for monitoring, you can co
 
 ```yaml
 Wso2:
-	apk:
-		dp:
-			adapter:
+  apk:
+    dp:
+      adapter:
         configs:
           apiNamespaces:
             - "ns-1"
