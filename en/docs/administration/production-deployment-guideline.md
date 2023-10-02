@@ -94,7 +94,16 @@ wso2:
     dp:
       gateway: 
         listener:
-          secretName: <created-secret-name>
+          secretName: <created-secret-name-for-gateway-listener>
+```
+
+- To update the APK system listener certificates, update the following values.yaml config
+
+```yaml
+wso2:
+  apk:
+    listener:
+      secretName: <created-secret-name-for-apk-system-listener>
 ```
 
 - To update the APK system servers certificates, update the following values.yaml config
