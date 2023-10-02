@@ -153,3 +153,5 @@ APK uses a built-in standalone Redis service which is not suitable for productio
 
 Disable the default redis that comes with the APK deployment
 - redis.enabled: bool
+
+In conclusion, following these guidelines is essential for a smooth and secure production deployment of WSO2 APK. By carefully selecting the deployment pattern, customizing hostnames and vhosts, configuring CA-validated public certificates, and using a production-grade Redis, you can ensure a robust environment for your APIs. Additionally, disabling the default IDP and opting for a production-ready solution adds an extra layer of security. By adhering to these best practices, you'll be well-prepared to handle the demands of a production environment. If you have any further questions or need additional assistance, please don't hesitate to reach out to our support team. Happy deploying!
