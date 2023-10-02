@@ -153,13 +153,3 @@ APK uses a built-in standalone Redis service which is not suitable for productio
 
 Disable the default redis that comes with the APK deployment
 - redis.enabled: bool
-
-
-## Protect gateway admin port
-
-APK uses EnvoyProxy in the router implementation. EnvoyProxy offers an administrator interface that can be used to query and modify different aspects of the server. In the production environment, we should disable or restrict access to this port. By default, APK exposes this interface through port `9000`. To disable external access to the port, you can set the following Helm value to `false`:
-`wso2.apk.dp.gatewayRuntime.deployment.router.adminInterfaceEnabled`
-
-
-If admin port is enabled, it is critical that access to the administration interface is only allowed via a secure network. It is also critical that hosts that access the administration interface are only attached to the secure network (i.e., to avoid CSRF attacks). This involves setting up an appropriate firewall.
-
