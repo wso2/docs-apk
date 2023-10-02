@@ -2,11 +2,11 @@
 
 This document outlines the recommended deployment patterns for the WSO2 APK. There are two primary deployment patterns for APK
 
-* Dataplane per kubernetes cluster
-* Dataplane per kubernetes namespace
+* Dataplane per Kubernetes cluster
+* Dataplane per Kubernetes namespace
 
 
-## Dataplane per kubernetes cluster
+## Dataplane per Kubernetes cluster
 
 ### Overview
 
