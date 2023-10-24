@@ -233,6 +233,8 @@ nav:
             - Router: administration/configurations/configure-logs-router.md
         - Configure Distributed Tracing: administration/distributed-tracing.md
         - Deploy in OpenShift: setup/deploy-in-openshift.md
+        - Production Deployment guidelines: administration/production-deployment-guideline.md
+        - Deployment patterns: administration/deployment-patterns.md
     - About APK:
         - What is APK?: about-apk/what-is-apk.md
         - About This Release: about-apk/about-this-release.md
