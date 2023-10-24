@@ -1,13 +1,13 @@
 # Quick Start Guide
 
-This section is a step-by-step guide to create, deploy and invoke an API using the WSO2 API Platform For Kubernetes.
+This section is a step-by-step guide to creating, deploying, and invoking an API using the WSO2 API Platform For Kubernetes.
 
 ## Before you begin...
 
-Install the [prerequisites](../../setup/prerequisites) that are required to run WSO2 API Platform For Kubernetes.
+Install the [prerequisites](../../setup/prerequisites) that are required to run the WSO2 API Platform For Kubernetes.
 
 !!!NOTE
-    If you have already installed pre-release version of the APK into your cluster please remove the installation by following the steps specified in <a href="{{base_path}}/en/latest/about-apk/FAQs/#q2-how-to-uninstall-apk-from-my-cluster">FAQs</a> section.
+    If you have already installed the pre-release version of the APK into your cluster please remove the installation by following the steps specified in <a href="{{base_path}}/en/latest/about-apk/FAQs/#q2-how-to-uninstall-apk-from-my-cluster">FAQs</a> section.
 
 ## Step 1 - Start WSO2 API Platform For Kubernetes
 
@@ -37,10 +37,10 @@ Install the [prerequisites](../../setup/prerequisites) that are required to run 
 
 ### Generate APK configuration file from the OpenAPI definition
 
-Apart from the above API definition file, we also need an `apk-conf` file which defines the configurations and metadata for this API. We have a configuration service which can be used to generate this apk-conf file when OpenAPI definition is provided. 
+Apart from the above API definition file, we also need an `apk-conf` file that defines the configurations and metadata for this API. We have a configuration service that can be used to generate this apk-conf file when the OpenAPI definition is provided. 
 
 
-1. Execute the following request to generate the apk configuration. Use the values provided in the table below in the body of your request. 
+1. Execute the following request to generate the APK configuration. Use the values provided in the table below in the body of your request. 
 
     |    Field     |                               Value                                                      |
     |--------------|------------------------------------------------------------------------------------------|
@@ -95,15 +95,15 @@ Apart from the above API definition file, we also need an `apk-conf` file which 
 2. You will get the apk-conf file content as the response. Save this content into a file named `EmployeeService.apk-conf`.
 
 !!! Important
-    We recommend installing the [APK Config Language Support Visual Studio Code (VS Code) extension](../create-api/create-and-deploy-apis/apk-conf-lang-support.md) for this edit the APK Conf file.
+    We recommend installing the [APK Config Language Support Visual Studio Code (VS Code) extension](../create-api/create-and-deploy-apis/apk-conf-lang-support.md) to edit the APK Configuration file.
 
 
 ### Generate an access token to invoke APIs
 
-To invoke the system APIs such as for deploying, we need a valid access token issued by an identity provider (IdP). While APK supports third party IdPs such as Asgardeo and Auth0, it also supports an inbuilt non-production identity provider as well, which is only meant for testing purposes. We are going to use the non-production inbuilt IdP for this guide.
+To invoke the system APIs such as for deploying, we need a valid access token issued by an identity provider (IdP). While APK supports third-party IdPs such as Asgardeo and Auth0, it also supports an inbuilt non-production identity provider as well, which is only meant for testing purposes. We are going to use the non-production inbuilt IdP for this guide.
 
 !!!NOTE
-    If you are using a different organization to the one used in this guide, you will have to create a TokenIssuer with relevant organization name in APK before proceeding to the next step. You can use the [Add Token Issuer](../develop-and-deploy-api/token-issuers/token-issuers.md) to create a new token issuer.
+    If you are using a different organization to the one used in this guide, you will have to create a TokenIssuer with the relevant organization name in APK before proceeding to the next step. You can use the [Add Token Issuer](../develop-and-deploy-api/token-issuers/token-issuers.md) to create a new token issuer.
 
 1. We will be using the client credentials grant type to generate the token.
 
@@ -145,7 +145,7 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
     | apkConfiguration       | `EmployeeService.apk-conf` file       |:material-check:|
     | definitionFile   | `EmployeeServiceDefinition.json` file        |:material-check:|
 
-2. Set the access token in the Authorization header as a bearer token. This is the access token received by following the steps under ["Generate an access token to invoke APIs"](#generate-an-access-token-to-invoke-apis) section above.
+2. Set the access token in the Authorization header as a bearer token. This is the access token received by following the steps under the ["Generate an access token to invoke APIs"](#generate-an-access-token-to-invoke-apis) section above.
 3. Execute the API deployment request. You will receive a successful response with an Id for the API.
 
     === "Sample Request"
@@ -235,6 +235,6 @@ Now the API is ready to be invoked. Let’s get the list of Employees by invokin
 You will now be able to see a successful response with the details of the Employees from the mock backend that we used for this guide.
 
 !!!Note
-    To invoke the APIs, we need a valid access token issued by an identity provider(IdP). APK support third party IdPs such as Asgardeo and Auth0. Refer [Configure IDP](../../setup/identity-platform/idp/idp-overview/).
+    To invoke the APIs, we need a valid access token issued by an identity provider(IdP). APK supports third-party IdPs such as Asgardeo and Auth0. Refer [Configure IDP](../../setup/identity-platform/idp/idp-overview/).
 
 If you encounter any issues during the installation process, don't worry! We've compiled a list of frequently asked questions (FAQs) to help you troubleshoot common problems. Please refer to the <a href="{{base_path}}/en/latest/about-apk/FAQs/">FAQs</a> section in this guide for step-by-step solutions to common installation issues.
