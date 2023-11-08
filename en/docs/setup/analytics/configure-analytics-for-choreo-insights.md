@@ -11,26 +11,17 @@
 
 ## Step 2 - Configure APK
 
-1. Create K8s Secret as folows.
-
-```yaml
-  apiVersion: v1
-  kind: Secret
-  metadata:
-    name: choreo-analytics-secret
-  type: Opaque
-  stringData:
-    analytics_authURL: "https://analytics-event-auth.choreo.dev/auth/v1"
-    analytics_authToken: "<on-prem-key>"
-```
-
-2. Follow the instructions outlined in [Customize Configurations](../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file, which you will then use to tailor the analytics configurations to your specific needs. Open the `values.yaml` file. Set following config under `wso2.apk.dp.gatewayRuntime` section and apply helm chart.
+1. Follow the instructions outlined in [Customize Configurations](../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file, which you will then use to tailor the analytics configurations to your specific needs. Open the `values.yaml` file. Set following config under `wso2.apk.dp.gatewayRuntime` section and apply helm chart.
 
     ```yaml
     analytics:
       enabled: true
-      type: "Choreo"
-      secretName: "<secret-name>"
+      publisher:
+      - enabled: true
+        properties:
+          auth.api.token: <on-prem-key>
+          auth.api.url: https://analytics-event-auth.choreo.dev/auth/v1
+        type: default
     ```
 
 ## Step 3 - View Analytics Data
