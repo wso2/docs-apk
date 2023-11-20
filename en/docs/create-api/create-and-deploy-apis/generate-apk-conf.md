@@ -1,37 +1,45 @@
 Following steps describe how to generate an APK configuration file.
 
 1. Develop a backend service and deploy it in an environment you prefer.
-2. Generate an API schema file, typically an OpenAPI file for your service.
-3. You can start by providing your API schema file to the Configuration Service in  APK. This service generates an APK configuration file that includes important API metadata, rate limiting details, security settings, and other necessary information.To generate the APK configuration file corresponding to your API Schema, use the following command that invokes the configuration service. You can assign the values according to the table below.
+   
+    To begin, it's essential to have a backend service that your API will interact with. The APK Configuration file is generated based on the API schema, which, in turn, relies on the functionality of your backend service. 
 
-```
-curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.0.0/apis/generate-configuration' \
---header 'Host: api.am.wso2.com' \
---form 'definition=@"/Users/user/EmployeeServiceDefinition.json"'
-```
+2. Generate an API schema file, typically an OpenAPI file for your service. 
 
-The sample output of the generate APK Configuration (apk-conf) file will be as follows
+    You'll need an OpenAPI Specification 3.x, that describes the structure and behavior of your API. This file serves as the foundation for configuring your API and is essential for generating the APK Configuration file.
 
-```
----
-name: "EmployeeServiceAPI"
-basePath: ""
-version: "3.14"
-type: "REST"
-defaultVersion: false
-endpointConfigurations:
-    production:
-        endpoint: "https://run.mocky.io/v3/85516819-1edd-412b-a32b-a9284705a0b4"
-operations:
-- target: "/employee"
-    verb: "GET"
-    secured: true
-    scopes: []
-- target: "/employee"
-    verb: "POST"
-    secured: true
-    scopes: []
-```
+3. Generate APK configuration file.
+    
+    You can start by providing your API schema file to the Configuration Service in  APK. This service generates an APK configuration file that includes important API metadata, rate limiting details, security settings, and other necessary information. To generate the APK configuration file corresponding to your API Schema, use the following command that invokes the configuration service. You can assign the values according to the table below.
+    
+    ```
+    curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.0.0/apis/generate-configuration' \
+    --header 'Host: api.am.wso2.com' \
+    --form 'definition=@"/Users/user/EmployeeServiceDefinition.json"'
+    ```
+    
+    The sample output of the generate APK Configuration (apk-conf) file will be as follows
+    
+    ```
+    ---
+    name: "EmployeeServiceAPI"
+    basePath: ""
+    version: "3.14"
+    type: "REST"
+    defaultVersion: false
+    endpointConfigurations:
+        production:
+            endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
+    operations:
+    - target: "/employee"
+        verb: "GET"
+        secured: true
+        scopes: []
+    - target: "/employee"
+        verb: "POST"
+        secured: true
+        scopes: []
+    ```
 
 4. Save the content to a file with extension .apk-conf. For example, EmployeeService.apk-conf.
 5. To optimize the configuration process, APK presents a VS Code plugin designed to offer syntax highlighting and intelligent suggestions. This plugin simplifies the incorporation of rate limitations, new resources, and security configurations into your API. Adapt the contents of the APK Configuration file as needed. For further details, refer to the section on [Enhance Configuration with APK Config Language Support](./apk-conf-lang-support.md)

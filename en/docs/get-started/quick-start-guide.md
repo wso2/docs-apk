@@ -63,7 +63,7 @@ Apart from the above API definition file, we also need an `apk-conf` file that d
         defaultVersion: false
         endpointConfigurations:
             production:
-                endpoint: "https://run.mocky.io/v3/85516819-1edd-412b-a32b-a9284705a0b4"
+                endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
         operations:
         - target: "/employee"
             verb: "GET"
@@ -168,7 +168,7 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
         defaultVersion: false
         endpointConfigurations:
             production:
-                endpoint: "https://run.mocky.io/v3/85516819-1edd-412b-a32b-a9284705a0b4"
+                endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
         operations:
         - target: "/employee"
             verb: "GET"

@@ -20,7 +20,7 @@ Sample content before the modification is shown below.
    defaultVersion: false
    endpointConfigurations:
       production:
-         endpoint: "https://run.mocky.io/v3/85516819-1edd-412b-a32b-a9284705a0b4"
+         endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
    operations:
       - target: "/employee"
         verb: "GET"
@@ -60,7 +60,7 @@ Modified APK configuration content to disable OAuth2
    defaultVersion: false
    endpointConfigurations:
       production:
-         endpoint: "https://run.mocky.io/v3/85516819-1edd-412b-a32b-a9284705a0b4"
+         endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
    operations:
       - target: "/employee"
         verb: "GET"
@@ -107,7 +107,7 @@ Modified APK configuration content to use custom auth header name
    defaultVersion: false
    endpointConfigurations:
       production:
-         endpoint: "https://run.mocky.io/v3/85516819-1edd-412b-a32b-a9284705a0b4"
+         endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
    operations:
       - target: "/employee"
         verb: "GET"
@@ -154,7 +154,7 @@ Modified APK configuration content to send the OAuth2 header to backend.
    defaultVersion: false
    endpointConfigurations:
       production:
-         endpoint: "https://run.mocky.io/v3/85516819-1edd-412b-a32b-a9284705a0b4"
+         endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
    operations:
       - target: "/employee"
         verb: "GET"
