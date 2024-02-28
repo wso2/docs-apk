@@ -28,11 +28,6 @@
         [apim]
         gateway_type = "APK"
     ```
-=== "Regular Only"
-    ``` toml
-        [apim]
-        gateway_type = "Regular"
-    ```
 
 2. Change the default gateway environment if APK Only scenario.
 
@@ -40,8 +35,8 @@
 
     ``` toml
     [[apim.gateway.environment]]
-    name = "Default"
-    type = "hybrid"
+    name = "Default_production"
+    type = "production"
     gateway_type = "APK"
     provider = "wso2"
     display_in_api_console = true
@@ -50,12 +45,22 @@
     service_url = "https://localhost:${mgt.transport.https.port}/services/"
     username= "${admin.username}"
     password= "${admin.password}"
-    ws_endpoint = "http://default.gw.wso2.com"
-    wss_endpoint = "https://default.gw.wso2.com"
     http_endpoint = "http://default.gw.wso2.com"
     https_endpoint = "https://default.gw.wso2.com"
-    websub_event_receiver_http_endpoint = "http://default.gw.wso2.com:9021"
-    websub_event_receiver_https_endpoint = "https://default.gw.wso2.com:8021"
+
+    [[apim.gateway.environment]]
+    name = "Default_sandbox"
+    type = "sandbox"
+    gateway_type = "APK"
+    provider = "wso2"
+    display_in_api_console = true
+    description = "This is a hybrid gateway that handles both production and sandbox token traffic."
+    show_as_token_endpoint_url = true
+    service_url = "https://localhost:${mgt.transport.https.port}/services/"
+    username= "${admin.username}"
+    password= "${admin.password}"
+    http_endpoint = "http://default.sandbox.gw.wso2.com"
+    https_endpoint = "https://default.sandbox.gw.wso2.com"
     ```
 
 ### Configuring APK
