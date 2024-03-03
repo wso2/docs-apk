@@ -1,9 +1,4 @@
-## Deploy WSO2 API Manager
-
-[Download](https://wso2.com/api-management/install/) and deploy WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
-
-
-### Configuring API Manager Control Plane
+### Configuring APK for  Existing API Manager Control Plane
 
 1.  Configure supported gateway types in API Manager.
 
