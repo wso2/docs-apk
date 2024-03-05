@@ -9,7 +9,9 @@
     ```yaml
     analytics:
       enabled: true
-      type: "ELK"
+      publisher:
+      - enabled: true
+        type: elk
     ```
 
     !!! Note
@@ -18,8 +20,10 @@
         ```yaml
         analytics:
           enabled: true
-          type: "ELK"
-          logLevel: "INFO"
+          publisher:
+          - enabled: true
+            type: elk
+            logLevel: INFO
         ```
 
 3. Redeploy the helm chart with the changes in `values.yaml`.
