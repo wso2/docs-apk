@@ -5,9 +5,3 @@ This section provides information on how to perform operations in the WSO2 API M
 - [Add APK Gateway](##add-apk-gateway)
 - [Create an API](##create-api)
 - [Deploy an API](##deploy-api)
-
-## Add APK Gateway
-
-## Create an API
-
-## Deploy an API
