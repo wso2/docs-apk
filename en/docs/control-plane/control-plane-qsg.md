@@ -31,6 +31,14 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
         ```
         helm install <chart-name> <repository-name>/apk-agent-helm --version <verison-of-APIM> -f <path-to-values.yaml-file>
         ```
+
+4. Install NGINX Ingress Controller using the following command. Please refer to the [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/deploy/) for more information.
+
+    ```console
+    helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+    helm install nginx-ingress ingress-nginx/ingress-nginx
+    ```
+
 !!! Note
     Please refer to the [Advance Configuration for APIM](../control-plane/apim-deploy.md) for more information.
 
@@ -39,7 +47,7 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
 1. Create a new helm repository with the latest apk release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apk```.
 
     ```console
-    helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.0.0
+    helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.1.0
     ```
 
 2. Execute the following command to update the helm repositories.
@@ -52,13 +60,13 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
 
     === "Command"
         ```
-         helm install apk wso2apk/apk-helm --version 1.0.0 -f values.yaml
-        ```
-        
+         helm install apk wso2apk/apk-helm --version 1.1.0 -f values.yaml
+        ``` 
     === "Format"
         ```
         helm install <chart-name> <repository-name>/apk-helm --version <verison-of-APK> -f <path-to-values.yaml-file>
         ```
+
 !!! Note
     Please refer to the [Advance Configuration for APK](../control-plane/apk-deploy.md) for more information.
 
@@ -87,6 +95,7 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
         ```
         helm install <chart-name> <repository-name>/apk-agent-helm --version <verison-of-APK-Agent> -f <path-to-values.yaml-file>
         ```
+
 !!! Note
     Please refer to the [Advance Configuration for agent](../control-plane/apim-apk-agent-deploy.md) for more information.
 
@@ -101,4 +110,18 @@ Now you can verify the deployment by executing the following command. You will s
 
 ## Step 2 - Create and Deploy the API
 
+### Create Deploy and Publish the API
+
+{!control-plane/api-management/control-plane-create-and-deploy-apis.md!}
+
+### Create Application and Subscribe to the API
+
+{!control-plane/api-management/control-plane-create-application-and-subscription.md!}
+
 ## Step 3 - Invoke the API
+
+1. Use the following command to invoke the API using the access token generated in the previous step.
+
+    ```bash
+    curl -X GET "https://default.gw.wso2.com:9095/petstore/1.0.0/pet/findByStatus?status=available" -H "Authorization: Bearer <access-token>"
+    ```
