@@ -163,6 +163,26 @@ nav:
     #           - Comment on API: manage-apis/community-engagement/comment-on-api.md
     #       - API Categorization: manage-apis/api-categorization.md
     #       - API Monetization: manage-apis/api-monetization.md
+    - Control Plane:
+        - Overview: control-plane/overview.md
+        - Quick Start Guide: control-plane/control-plane-qsg.md
+        - Advanced Configuraion:
+            - API Manager Control plane: control-plane/apim-deploy.md
+            - APK Data plane: control-plane/apk-deploy.md
+            - APIM APK Agent: control-plane/apim-apk-agent-deploy.md
+        - API Management: 
+            - Overview: control-plane/api-management/control-plane-operations.md
+            - Develop and Deploy API:
+                - Create and Deploy APIs: control-plane/api-management/control-plane-create-and-deploy-apis.md
+                - Manage Endpoints: control-plane/api-management/control-plane-manage-endpoints.md
+                - API Policies:
+                    - Overview: control-plane/api-management/control-plane-api-policies.md
+                    - Interceptor Service: control-plane/api-management/control-plane-interceptor-service.md
+                    - CORS: control-plane/api-management/control-plane-cors.md
+            - Add APK Gateway: control-plane/api-management/control-plane-add-apk-gateway.md
+            - Create Application and Subscribe: control-plane/api-management/control-plane-create-application-and-subscription.md
+        - Security: control-plane/control-plane-security.md
+        - Troubleshooting: control-plane/control-plane-troubleshooting.md
     - Catalogs:
         - CRD Catalog: 
             - Overview - CRD Catalog: catalogs/kubernetes-crds.md
