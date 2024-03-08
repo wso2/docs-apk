@@ -47,7 +47,7 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
 1. Create a new helm repository with the latest apk release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apk```.
 
     ```console
-    helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.1.0
+    helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.1.0-alpha
     ```
 
 2. Execute the following command to update the helm repositories.
@@ -60,7 +60,7 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
 
     === "Command"
         ```
-         helm install apk wso2apk/apk-helm --version 1.1.0 -f values.yaml
+         helm install apk wso2apk/apk-helm --version 1.1.0-alpha -f values.yaml
         ``` 
     === "Format"
         ```
