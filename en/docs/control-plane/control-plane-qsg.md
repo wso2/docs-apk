@@ -76,7 +76,7 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
 1. Create a new helm repository with the latest apim apk agent release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apkagent``` for this guide.
 
     ```console
-    helm repo add wso2apkagent https://github.com/wso2/product-apim-tooling/releases/download/1.1.0
+    helm repo add wso2apkagent https://github.com/wso2/product-apim-tooling/releases/download/1.1.0-alpha
     ```
 
 2. Execute the following command to update the helm repositories.
@@ -85,15 +85,15 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
     helm repo update
     ```
 
-3. Install the APK components and start WSO2 API Platform For Kubernetes. Consider ```apk``` as the ```<chart-name>``` for this guide. As the ```--version``` of this command, use the version of the release you used in point 1 above. It will take a few minutes for the deployment to complete.
+3. Install the APIM APK Agent components and start WSO2 API Platform For Kubernetes. Consider ```apk``` as the ```<chart-name>``` for this guide. As the ```--version``` of this command, use the version of the release you used in point 1 above. It will take a few minutes for the deployment to complete.
 
     === "Command"
         ```
-        helm install apk wso2apkagent/apk-agent-helm --version 1.1.0 -f apk-agent-values.yaml
+        helm install apim-apk-agent wso2apkagent/apim-apk-agent --version 1.1.0-alpha -f apk-agent-values.yaml
         ```
     === "Format"
         ```
-        helm install <chart-name> <repository-name>/apk-agent-helm --version <verison-of-APK-Agent> -f <path-to-values.yaml-file>
+        helm install <chart-name> <repository-name>/apim-apk-agent --version <verison-of-APK-Agent> -f <path-to-values.yaml-file>
         ```
 
 !!! Note
