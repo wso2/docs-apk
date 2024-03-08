@@ -252,6 +252,7 @@ nav:
             - Enforcer: administration/configurations/configure-logs-enforcer.md
             - Router: administration/configurations/configure-logs-router.md
         - Configure Distributed Tracing: administration/distributed-tracing.md
+        - Configure Prometheus Metric Support: administration/prometheus-metric-support.md
         - Deploy in OpenShift: setup/deploy-in-openshift.md
         - Production Deployment guidelines: administration/production-deployment-guideline.md
         - Deployment patterns: administration/deployment-patterns.md
