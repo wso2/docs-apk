@@ -129,6 +129,7 @@ nav:
             - Authentication:
                 - Enable API Security:
                     - OAuth2: develop-and-deploy-api/security/authentication/enable-api-security/oauth2.md
+                    - Mutual SSL: develop-and-deploy-api/security/authentication/enable-api-security/mtls.md
         - API Versions:
             - Create an API Version: develop-and-deploy-api/api-versions/create-an-api-versions.md
             - Default Version: develop-and-deploy-api/api-versions/default-version.md
