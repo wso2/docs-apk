@@ -1,6 +1,7 @@
 <p>
 <p>Package v1alpha1 contains the API Schema definitions for WSO2 APK.</p>
 </p>
+
 ## Interceptor Service
 
 <p>
@@ -14,24 +15,6 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>
-                <code>apiVersion</code></br>
-                string
-            </td>
-            <td>
-                <code>
-dp.wso2.com/v1alpha1
-</code>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>kind</code></br>
-                string
-            </td>
-            <td><code>InterceptorService</code></td>
-        </tr>
         <tr>
             <td>
                 <code>metadata</code></br>
@@ -103,6 +86,7 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
+
 <h3 id="dp.wso2.com/v1alpha1.BackendReference">BackendReference
     <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.BackendReference" title="Permanent link">¶</a>
 </h3>
@@ -134,6 +118,7 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
+
 <h3 id="dp.wso2.com/v1alpha1.InterceptorInclusion">InterceptorInclusion
     (<code>string</code> alias)</p><a class="headerlink" href="#dp.wso2.com%2fv1alpha1.InterceptorInclusion"
         title="Permanent link">¶</a>

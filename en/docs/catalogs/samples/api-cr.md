@@ -7,7 +7,7 @@ This is the root level resource for an API. API related metadata are also define
 In the following CR, we have defined a REST API by giving the name, context, and version information for the API. We have also referred to the HTTPRoute resource in spec.production.httpRouteRefs[0] path.
 
 ```
-apiVersion: dp.wso2.com/v1alpha1
+apiVersion: dp.wso2.com/v1alpha2
 kind: API
 metadata:
   name: http-bin-api
