@@ -47,29 +47,3 @@ This is the current stable version of the project.
         <!-- Will populate from the script -->
     </tbody>
 </table>
-
-<!--
-### Pre-release versions
-These are the latest changes that have yet to be released.
-
-<table>
-    <tbody>
-        <tr>
-            <th>4.2.0</th>
-            <td>
-                <a id="pre-release-version-documentation-link">Documentation</a>
-                <a href="https://apim.docs.wso2.com/en/4.2.0/" target="_blank">Documentation</a>
-            </td>
-            <td>
-                <a href="https://github.com/wso2/docs-apim/tree/4.2.0" target="_blank">
-                    <div class="md-source-code-icon">
-                        <svg viewBox="0 0 24 24" width="24" height="24">
-                          <use xlink:href="#__github" width="24" height="24"></use>
-                        </svg>
-                    </div> Source Code
-                </a>
-            </td>
-        </tr>
-    </tbody>
-</table>
--->
