@@ -97,7 +97,7 @@ nav:
                         - Undeploy API: create-api/create-and-deploy-apis/direct-undeploy.md
                         - APK Config Language Support Plugin: create-api/create-and-deploy-apis/apk-conf-lang-support.md
         - Manage Endpoint:
-            - Define Endpoints: develop-and-deploy-api/endpoints/prod-sand-endpoints.md
+            - Define Endpoint: develop-and-deploy-api/endpoints/prod-sand-endpoints.md
             - Manage Certificate: create-api/manage-service-endpoint/manage-certificate.md
             - Manage Security:
                 - Via REST API: create-api/manage-service-endpoint/manage-security-via-rest-api.md
@@ -108,7 +108,7 @@ nav:
                 - Circuit Breaker: create-api/manage-service-endpoint/manage-resiliency-circuit-breaker.md
         - API Policies: 
             - Overview: create-api/create-and-attach-api-policies/api-policies-overview.md
-            - Interceptors Service: 
+            - Interceptor Service: 
                 - Overview: create-api/create-and-attach-api-policies/interceptors/interceptors-overview.md
                 - Via REST API: create-api/create-and-attach-api-policies/interceptors/interceptors-via-rest-api.md
                 - Via CR: create-api/create-and-attach-api-policies/interceptors/interceptors-via-crs.md
