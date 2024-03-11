@@ -16,61 +16,8 @@
  * under the License.
  */
 
-/*
-* Handle opening external links in a new tab
-*/
 /* 
- * Initialize highlightjs 
- */
-hljs.initHighlightingOnLoad();
-(function() {
-    if(document.querySelector('.tab-selector')){
-        document.querySelector('.tab-selector').addEventListener('click', function(e) {
-            // Show hide tab content next to the clicked tab
-            var tabContentToShow = e.target.nextElementSibling;
-            if(tabContentToShow.style.display === 'none') {
-                tabContentToShow.style.display = 'block';
-            } else {
-                tabContentToShow.style.display = 'none';
-            }
-        });
-    }
-})();
-
-(function() {
-    var links = document.links;
-    for (var i = 0, linksLength = links.length; i < linksLength; i++) {
-        if (links[i].hostname != window.location.hostname) {
-            links[i].target = "_blank";
-            links[i].setAttribute("rel", "noopener noreferrer");
-            links[i].className += " externalLink";
-        } else {
-            links[i].className += " localLink";
-        }
-    }
-    var jsonTreeInputs = document.getElementsByClassName('jsonTreeInput');
-    if(jsonTreeInputs && jsonTreeInputs.length > 0){
-        for( var i=0; i < jsonTreeInputs.length; i++){
-            try {
-                var jsonTreeInput = jsonTreeInputs[i];
-                var jsonTreeOutput = jsonTreeInput.previousElementSibling;
-                var level = jsonTreeInput.getAttribute('data-level');
-                var levelInteger = level ? parseInt(level) : 1;
-                var formatter = new JSONFormatter(JSON.parse(jsonTreeInput.innerHTML), levelInteger, { hoverPreviewEnabled: false });
-                jsonTreeOutput.innerHTML = '';
-                jsonTreeOutput.appendChild(formatter.render());
-                jsonTreeInput.style.display = 'none';
-            } catch (e) {
-                console.error(e);
-            } 
-        }
-        
-    }
-    
-})();
-
-/*
- * Initialize custom dropdown component
+ * Initialize custom dropdown component 
  */
 var dropdowns = document.getElementsByClassName('md-tabs__dropdown-link');
 var dropdownItems = document.getElementsByClassName('mb-tabs__dropdown-item');
@@ -110,7 +57,7 @@ for (var i = 0; i < dropdowns.length; i++) {
  * Reading versions
  */
 var pageHeader = document.getElementById('page-header');
-var docSetLang = (pageHeader && pageHeader.getAttribute('data-lang')) || 'en';
+var docSetLang = pageHeader.getAttribute('data-lang');
 
 (window.location.pathname.split('/')[1] !== docSetLang) ? 
     docSetLang = '' :
@@ -203,8 +150,8 @@ request.onload = function() {
                   .setAttribute('href', docSetUrl + data.all[data.current].notes);
         
           // Pre-release version update
-          document.getElementById('pre-release-version-documentation-link')
-              .setAttribute('href', docSetUrl + 'next/');
+          //document.getElementById('pre-release-version-documentation-link')
+          //    .setAttribute('href', docSetUrl + '4.2.0/');
       }
       
   } else {
@@ -218,122 +165,7 @@ request.onerror = function() {
 
 request.send();
 
-/*
- * Handle TOC toggle
+/* 
+ * Initialize highlightjs 
  */
-var tocBtn = document.querySelector('.md-sidebar.md-sidebar--secondary #tocToggleBtn');
-var tocClass = document.getElementsByTagName('main')[0];
-
-if (tocBtn) {
-    tocBtn.onclick = function () {
-        event.preventDefault();
-        tocClass.classList.toggle('hide-toc');
-        if (tocBtn.innerHTML === "keyboard_arrow_right") {
-            tocBtn.innerHTML = "keyboard_arrow_left";
-        } else {
-            tocBtn.innerHTML = "keyboard_arrow_right";
-        }
-    };
-}
-
-/*
- * TOC position highlight on scroll
- */
-var observeeList = document.querySelectorAll(".md-sidebar__inner > .md-nav--secondary .md-nav__link");
-var listElems = document.querySelectorAll(".md-sidebar__inner > .md-nav--secondary > ul li");
-var config = { attributes: true, childList: true, subtree: true };
-
-var callback = function(mutationsList, observer) {
-    for(var mutation of mutationsList) {
-        if (mutation.type == 'attributes') {
-            mutation.target.parentNode.setAttribute(mutation.attributeName,
-                mutation.target.getAttribute(mutation.attributeName));
-            scrollerPosition(mutation);
-        }
-    }
-};
-
-var observer = new MutationObserver(callback);
-
-if (listElems.length > 0) {
-    listElems[0].classList.add('active');
-}
-
-for (var i = 0; i < observeeList.length; i++) {
-    var el = observeeList[i];
-
-    observer.observe(el, config);
-
-    el.onclick = function(e) {
-        listElems.forEach(function(elm) {
-            if (elm.classList) {
-                elm.classList.remove('active');
-            }
-        });
-
-        e.target.parentNode.classList.add('active');
-    }
-}
-
-function scrollerPosition(mutation) {
-    var blurList = document.querySelectorAll(".md-sidebar__inner > .md-nav--secondary > ul li > .md-nav__link[data-md-state='blur']");
-
-    listElems.forEach(function(el) {
-        if (el.classList) {
-            el.classList.remove('active');
-        }
-    });
-
-    if (blurList.length > 0) {
-        if (mutation.target.getAttribute('data-md-state') === 'blur') {
-            if (mutation.target.parentNode.querySelector('ul li')) {
-                mutation.target.parentNode.querySelector('ul li').classList.add('active');
-            } else {
-                setActive(mutation.target.parentNode);
-            }
-        } else {
-            mutation.target.parentNode.classList.add('active');
-        }
-    } else {
-        if (listElems.length > 0) {
-            listElems[0].classList.add('active');
-        }
-    }
-}
-
-function setActive(parentNode, i) {
-    i = i || 0;
-    if (i === 5) {
-        return;
-    }
-    if (parentNode.nextElementSibling) {
-        parentNode.nextElementSibling.classList.add('active');
-        return;
-    }
-    setActive(parentNode.parentNode.parentNode.parentNode, ++i);
-}
-
-
-/*
- * Handle edit icon on scroll
- */
-var editIcon = document.getElementById('editIcon');
-
-window.addEventListener('scroll', function() {
-    var scrollPosition = window.scrollY || document.documentElement.scrollTop;
-    if (scrollPosition >= 90) {
-        editIcon.classList.add('active');
-    } else {
-        editIcon.classList.remove('active');
-    }
-});
-
-/*
- * Fixes the issue related to clicking on anchors and landing somewhere below it
- */
-
-window.addEventListener("hashchange", function () {
-
-    window.scrollTo(window.scrollX, window.scrollY - 90, 'smooth');
-
-});
+hljs.initHighlightingOnLoad();
