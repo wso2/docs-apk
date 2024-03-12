@@ -153,3 +153,7 @@ header>.md-grid {
         display: none;
     }
 }
+
+.md-sidebar {
+  display: none;
+}

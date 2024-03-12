@@ -21,8 +21,8 @@ site_author: WSO2
 site_url: https://apk.docs.wso2.com/en/latest/
 
 # Repository
-repo_name: wso2/apk
-repo_url: https://github.com/wso2/apk
+repo_name: wso2/docs-apk
+repo_url: https://github.com/wso2/docs-apk
 # Change the edit_url with every new release
 edit_uri: https://github.com/wso2/docs-apk/edit/1.1.0/en/docs/
 dev_addr: localhost:8000
@@ -36,13 +36,13 @@ theme:
     custom_dir: theme/material
     logo: images/dummy-logo.svg # Real logo is coming from theme.
     favicon: images/favicon.png
-    features:
-        - content.code.copy
-        - navigation.tabs
-        - navigation.tabs.sticky
-        - content.action.edit
-        - content.action.view
-        # - navigation.top
+#    features:
+#        - content.code.copy
+#        - navigation.tabs
+#        - navigation.tabs.sticky
+#        - content.action.edit
+#        - content.action.view
+#        - navigation.top
     language: 'en'
     palette:
 
@@ -71,52 +71,14 @@ strict: false
 
 # Extensions
 markdown_extensions:
-    # - pymdownx.highlight:
-    #     anchor_linenums: true
-    #     line_spans: __span
-    #     pygments_lang_class: true
-    - pymdownx.snippets
-    - pymdownx.superfences
-    - pymdownx.tabbed:
-        alternate_style: true 
-    - markdown.extensions.admonition
-    # - markdown.extensions.codehilite:
-    #       linenums: true
-    #       use_pygments: false
-    - markdown.extensions.def_list
-    - markdown.extensions.footnotes
-    - markdown.extensions.meta
-    - markdown.extensions.toc:
-          permalink: true
-    - markdown_include.include:
-          base_path: docs
-    - pymdownx.arithmatex
-    - pymdownx.betterem:
-          smart_enable: all
-    - pymdownx.caret
-    - pymdownx.critic
-    - pymdownx.details
-    - pymdownx.emoji:
-          emoji_generator: !!python/name:pymdownx.emoji.to_svg
-    - pymdownx.inlinehilite
-    - pymdownx.keys
-    - pymdownx.mark
-    - pymdownx.smartsymbols
-    - pymdownx.tasklist:
-          custom_checkbox: true
-    - pymdownx.tilde
-    - pymdownx.snippets:
-          base_path: docs
-    - attr_list
-    - pymdownx.emoji:
-        emoji_index: !!python/name:materialx.emoji.twemoji
-        emoji_generator: !!python/name:materialx.emoji.to_svg
-plugins:
-    - search
-    - markdownextradata: {}
-    - exclude:
-          glob:
-              - wip/*
+  - fenced_code
+  - codehilite
+#plugins:
+#    - search
+#    - markdownextradata: {}
+#    - exclude:
+#          glob:
+#              - wip/*
     #- redirects:
     #      redirect_maps:
 
@@ -143,6 +105,11 @@ extra_javascript:
     - assets/js/apktheme.js
     # - assets/lib/backtotop/js/util.js
     # - assets/lib/backtotop/js/main.js
+hide:
+  - navigation
+  - toc
+  - title
+toc: false
 
 extra:
     social:
@@ -155,5 +122,3 @@ extra:
     site_version: 1.1.0
     # base_path: http://localhost:8000
     base_path: https://apk.docs.wso2.com
-    envoy_path: https://www.envoyproxy.io/docs/envoy/v1.20.0
-# static_cache_control: "no-cache"
