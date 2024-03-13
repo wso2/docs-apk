@@ -15,111 +15,53 @@
 # under the License.
 
 # Project information
-site_name: APK Documentation 1.1.0
-site_description: Documentation for WSO2 API Platform for Kubernetes
+site_name: WSO2 API Manager Documentation
+site_description: Documentation for WSO2 API Manager
 site_author: WSO2
-site_url: https://apk.docs.wso2.com/en/latest/
+site_url: https://wso2.com/
 
 # Repository
-repo_name: wso2/docs-apk
-repo_url: https://github.com/wso2/docs-apk
-# Change the edit_url with every new release
-edit_uri: https://github.com/wso2/docs-apk/edit/1.1.0/en/docs/
-dev_addr: localhost:8000
+repo_name: wso2/docs-apim
+repo_url: https://github.com/wso2/docs-apim
+edit_uri: https://github.com/wso2/docs-apim/edit/master/en/docs/
 
 # Copyright
-copyright: WSO2 API Platform for Kubernetes - Documentation
+copyright: WSO2 API Manager - Documentation
 
 # Configuration
+theme: material
 theme:
-    name: material
-    custom_dir: theme/material
-    logo: images/dummy-logo.svg # Real logo is coming from theme.
-    favicon: images/favicon.png
-#    features:
-#        - content.code.copy
-#        - navigation.tabs
-#        - navigation.tabs.sticky
-#        - content.action.edit
-#        - content.action.view
-#        - navigation.top
-    language: 'en'
-    palette:
-
-    # Palette toggle for automatic mode
-    - media: "(prefers-color-scheme)"
-      toggle:
-        icon: material/brightness-auto
-        name: Switch to light mode
-
-    # Palette toggle for light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default 
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-
-    # Palette toggle for dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      toggle:
-        icon: material/brightness-4
-        name: Switch to system preference
-#Breaks build if there's a warning
-comments: true
-strict: false
+  name: material
+  palette:
+    primary: deep-orange
+    accent: deep-orange
+  custom_dir: theme/material
+  logo: images/logo.svg
+  highlightjs: true
+  feature:
+    tabs: true
+  language: 'en'
 
 # Extensions
 markdown_extensions:
-  - fenced_code
-  - codehilite
-#plugins:
-#    - search
-#    - markdownextradata: {}
-#    - exclude:
-#          glob:
-#              - wip/*
-    #- redirects:
-    #      redirect_maps:
-
-    # Extra
+    - fenced_code
+    - codehilite
+    
+# Customization
 extra_css:
-    # You can select a different theme for syntax highlighting by simply 
-    # selecting a different css file file bellow from the available list.
-    - assets/lib/highlightjs/styles/vs.min.css
-    # Make sure to activate only one palette at a time.
-    # If all the palettes are commented out, the default material theme palette will take over
-    - assets/css/blue-palette-alt1.css
-    # - assets/css/blue-palette-alt2.css
-    # - assets/css/blue-palette.css
-    # - assets/css/green-palette.css
-    # - assets/css/orange-palette.css
-    - assets/css/apktheme.css
-    - assets/lib/json-formatter/json-formatter.css
-    - assets/css/config-catalog.css
-    - assets/lib/fontawesome-free-6.3.0-web/css/all.min.css
-    - assets/css/redoc.css
+  - assets/lib/highlightjs/default.min.css
+  - assets/css/theme.css
+  - assets/css/versions.css
 extra_javascript:
-    - assets/lib/highlightjs/highlight.min.js
-    - assets/lib/json-formatter/json-formatter.umd.js
-    - assets/js/apktheme.js
-    - assets/js/theme.js
-    # - assets/lib/backtotop/js/util.js
-    # - assets/lib/backtotop/js/main.js
-hide:
-  - navigation
-  - toc
-  - title
-toc: false
+  - assets/lib/highlightjs/highlight.min.js
+  - assets/js/theme.js
 
 extra:
-    social:
-        - type: github
-          link: https://github.com/wso2
-        - type: twitter
-          link: https://twitter.com/wso2
-        - type: linkedin
-          link: https://www.linkedin.com/company/wso2
-    site_version: 1.1.0
-    # base_path: http://localhost:8000
-    base_path: https://apk.docs.wso2.com
+  social:
+    - type: github
+      link: https://github.com/wso2
+    - type: twitter
+      link: https://twitter.com/wso2
+    - type: linkedin
+      link: https://www.linkedin.com/company/wso2
+  site_version: versions
