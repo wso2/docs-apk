@@ -16,61 +16,8 @@
  * under the License.
  */
 
-/*
-* Handle opening external links in a new tab
-*/
 /* 
- * Initialize highlightjs 
- */
-hljs.initHighlightingOnLoad();
-(function() {
-    if(document.querySelector('.tab-selector')){
-        document.querySelector('.tab-selector').addEventListener('click', function(e) {
-            // Show hide tab content next to the clicked tab
-            var tabContentToShow = e.target.nextElementSibling;
-            if(tabContentToShow.style.display === 'none') {
-                tabContentToShow.style.display = 'block';
-            } else {
-                tabContentToShow.style.display = 'none';
-            }
-        });
-    }
-})();
-
-(function() {
-    var links = document.links;
-    for (var i = 0, linksLength = links.length; i < linksLength; i++) {
-        if (links[i].hostname != window.location.hostname) {
-            links[i].target = "_blank";
-            links[i].setAttribute("rel", "noopener noreferrer");
-            links[i].className += " externalLink";
-        } else {
-            links[i].className += " localLink";
-        }
-    }
-    var jsonTreeInputs = document.getElementsByClassName('jsonTreeInput');
-    if(jsonTreeInputs && jsonTreeInputs.length > 0){
-        for( var i=0; i < jsonTreeInputs.length; i++){
-            try {
-                var jsonTreeInput = jsonTreeInputs[i];
-                var jsonTreeOutput = jsonTreeInput.previousElementSibling;
-                var level = jsonTreeInput.getAttribute('data-level');
-                var levelInteger = level ? parseInt(level) : 1;
-                var formatter = new JSONFormatter(JSON.parse(jsonTreeInput.innerHTML), levelInteger, { hoverPreviewEnabled: false });
-                jsonTreeOutput.innerHTML = '';
-                jsonTreeOutput.appendChild(formatter.render());
-                jsonTreeInput.style.display = 'none';
-            } catch (e) {
-                console.error(e);
-            } 
-        }
-        
-    }
-    
-})();
-
-/*
- * Initialize custom dropdown component
+ * Initialize custom dropdown component 
  */
 var dropdowns = document.getElementsByClassName('md-tabs__dropdown-link');
 var dropdownItems = document.getElementsByClassName('mb-tabs__dropdown-item');
@@ -110,7 +57,7 @@ for (var i = 0; i < dropdowns.length; i++) {
  * Reading versions
  */
 var pageHeader = document.getElementById('page-header');
-var docSetLang = (pageHeader && pageHeader.getAttribute('data-lang')) || 'en';
+var docSetLang = pageHeader.getAttribute('data-lang');
 
 (window.location.pathname.split('/')[1] !== docSetLang) ? 
     docSetLang = '' :
@@ -204,8 +151,8 @@ request.onload = function() {
         
           // Pre-release version update
           //document.getElementById('pre-release-version-documentation-link')
-          //    .setAttribute('href', docSetUrl + 'next/');
-      //}
+          //    .setAttribute('href', docSetUrl + '4.2.0/');
+      }
       
   } else {
       console.error("We reached our target server, but it returned an error");
@@ -218,6 +165,7 @@ request.onerror = function() {
 
 request.send();
 
-
-
-
+/* 
+ * Initialize highlightjs 
+ */
+hljs.initHighlightingOnLoad();
