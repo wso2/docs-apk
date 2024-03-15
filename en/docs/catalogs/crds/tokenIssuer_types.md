@@ -1,9 +1,17 @@
 <p>
-<p>Package v1alpha1 contains the API Schema definitions for WSO2 APK.</p>
+<p>Package v1alpha2 contains the API Schema definitions for WSO2 APK.</p>
 </p>
+
 ## Token Issuer
+
 <p>
 <p>TokenIssuer is the Schema for the tokenIssuer API</p>
+</p>
+<h3 id="dp.wso2.com/v1alpha2.TokenIssuer">TokenIssuer
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.TokenIssuer" title="Permanent link">¶</a>
+</h3>
+<p>
+<p>TokenIssuer is the Schema for the tokenissuers API</p>
 </p>
 <table>
     <thead>
@@ -20,7 +28,7 @@
             </td>
             <td>
                 <code>
-dp.wso2.com/v1alpha1
+dp.wso2.com/v1alpha2
 </code>
             </td>
         </tr>
@@ -49,7 +57,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>spec</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.TokenIssuerSpec">
+                    <a href="#dp.wso2.com/v1alpha2.TokenIssuerSpec">
                         TokenIssuerSpec
                     </a>
                 </em>
@@ -119,7 +127,7 @@ dp.wso2.com/v1alpha1
                         <td>
                             <code>signatureValidation</code></br>
                             <em>
-                                <a href="#dp.wso2.com/v1alpha1.SignatureValidation">
+                                <a href="#dp.wso2.com/v1alpha2.SignatureValidation">
                                     SignatureValidation
                                 </a>
                             </em>
@@ -133,8 +141,8 @@ dp.wso2.com/v1alpha1
                             <code>claimMappings</code></br>
                             <em>
                                 <a
-                                    href="#dp.wso2.com/v1alpha1.[]github.com/wso2/apk/adapter/internal/operator/apis/dp/v1alpha1/tokenIssuer_types.ClaimMapping">
-                                    []github.com/wso2/apk/adapter/internal/operator/apis/dp/v1alpha1/tokenIssuer_types.ClaimMapping
+                                    href="#dp.wso2.com/v1alpha2.[]github.com/wso2/apk/common-go-libs/apis/dp/v1alpha2.ClaimMapping">
+                                    []github.com/wso2/apk/common-go-libs/apis/dp/v1alpha2.ClaimMapping
                                 </a>
                             </em>
                         </td>
@@ -153,6 +161,18 @@ dp.wso2.com/v1alpha1
                             <p>TargetRef denotes the reference to the which gateway it applies to</p>
                         </td>
                     </tr>
+                    <tr>
+                        <td>
+                            <code>environments</code></br>
+                            <em>
+                                []string
+                            </em>
+                        </td>
+                        <td>
+                            <em>(Optional)</em>
+                            <p>Environments denotes the environments that are applicable for the token issuer.</p>
+                        </td>
+                    </tr>
                 </table>
             </td>
         </tr>
@@ -160,7 +180,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>status</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.TokenIssuerStatus">
+                    <a href="#dp.wso2.com/v1alpha2.TokenIssuerStatus">
                         TokenIssuerStatus
                     </a>
                 </em>
@@ -170,13 +190,13 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.CERTConfig">CERTConfig
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.CERTConfig" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha2.CERTConfig">CERTConfig
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.CERTConfig" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.JWKS">JWKS</a>,
-    <a href="#dp.wso2.com/v1alpha1.SignatureValidation">SignatureValidation</a>)
+    <a href="#dp.wso2.com/v1alpha2.JWKS">JWKS</a>,
+    <a href="#dp.wso2.com/v1alpha2.SignatureValidation">SignatureValidation</a>)
 </p>
 <p>
 <p>CERTConfig defines the certificate configuration</p>
@@ -204,7 +224,9 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>secretRef</code></br>
                 <em>
-                    invalid type
+                    <a href="#dp.wso2.com/v1alpha2.RefConfig">
+                        RefConfig
+                    </a>
                 </em>
             </td>
             <td>
@@ -215,7 +237,9 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>configMapRef</code></br>
                 <em>
-                    invalid type
+                    <a href="#dp.wso2.com/v1alpha2.RefConfig">
+                        RefConfig
+                    </a>
                 </em>
             </td>
             <td>
@@ -224,8 +248,8 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.ClaimMapping">ClaimMapping
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.ClaimMapping" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha2.ClaimMapping">ClaimMapping
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.ClaimMapping" title="Permanent link">¶</a>
 </h3>
 <p>
 <p>ClaimMapping defines the reference configuration</p>
@@ -262,12 +286,12 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.JWKS">JWKS
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.JWKS" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha2.JWKS">JWKS
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.JWKS" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.SignatureValidation">SignatureValidation</a>)
+    <a href="#dp.wso2.com/v1alpha2.SignatureValidation">SignatureValidation</a>)
 </p>
 <p>
 <p>JWKS defines the JWKS endpoint</p>
@@ -295,7 +319,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>tls</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.CERTConfig">
+                    <a href="#dp.wso2.com/v1alpha2.CERTConfig">
                         CERTConfig
                     </a>
                 </em>
@@ -306,12 +330,12 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.SignatureValidation">SignatureValidation
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.SignatureValidation" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha2.SignatureValidation">SignatureValidation
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.SignatureValidation" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.TokenIssuerSpec">TokenIssuerSpec</a>)
+    <a href="#dp.wso2.com/v1alpha2.TokenIssuerSpec">TokenIssuerSpec</a>)
 </p>
 <p>
 <p>SignatureValidation defines the signature validation method</p>
@@ -328,7 +352,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>jwks</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.JWKS">
+                    <a href="#dp.wso2.com/v1alpha2.JWKS">
                         JWKS
                     </a>
                 </em>
@@ -341,7 +365,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>certificate</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.CERTConfig">
+                    <a href="#dp.wso2.com/v1alpha2.CERTConfig">
                         CERTConfig
                     </a>
                 </em>
@@ -352,12 +376,12 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.TokenIssuerSpec">TokenIssuerSpec
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.TokenIssuerSpec" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha2.TokenIssuerSpec">TokenIssuerSpec
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.TokenIssuerSpec" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.TokenIssuer">TokenIssuer</a>)
+    <a href="#dp.wso2.com/v1alpha2.TokenIssuer">TokenIssuer</a>)
 </p>
 <p>
 <p>TokenIssuerSpec defines the desired state of TokenIssuer</p>
@@ -431,7 +455,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>signatureValidation</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.SignatureValidation">
+                    <a href="#dp.wso2.com/v1alpha2.SignatureValidation">
                         SignatureValidation
                     </a>
                 </em>
@@ -444,9 +468,8 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>claimMappings</code></br>
                 <em>
-                    <a
-                        href="#dp.wso2.com/v1alpha1.[]github.com/wso2/apk/adapter/internal/operator/apis/dp/v1alpha1/tokenIssuer_types.ClaimMapping">
-                        []github.com/wso2/apk/adapter/internal/operator/apis/dp/v1alpha1/tokenIssuer_types.ClaimMapping
+                    <a href="#dp.wso2.com/v1alpha2.[]github.com/wso2/apk/common-go-libs/apis/dp/v1alpha2.ClaimMapping">
+                        []github.com/wso2/apk/common-go-libs/apis/dp/v1alpha2.ClaimMapping
                     </a>
                 </em>
             </td>
@@ -465,14 +488,26 @@ dp.wso2.com/v1alpha1
                 <p>TargetRef denotes the reference to the which gateway it applies to</p>
             </td>
         </tr>
+        <tr>
+            <td>
+                <code>environments</code></br>
+                <em>
+                    []string
+                </em>
+            </td>
+            <td>
+                <em>(Optional)</em>
+                <p>Environments denotes the environments that are applicable for the token issuer.</p>
+            </td>
+        </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.TokenIssuerStatus">TokenIssuerStatus
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.TokenIssuerStatus" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha2.TokenIssuerStatus">TokenIssuerStatus
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.TokenIssuerStatus" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.TokenIssuer">TokenIssuer</a>)
+    <a href="#dp.wso2.com/v1alpha2.TokenIssuer">TokenIssuer</a>)
 </p>
 <p>
 <p>TokenIssuerStatus defines the observed state of TokenIssuer</p>

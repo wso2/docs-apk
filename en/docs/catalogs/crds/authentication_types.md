@@ -3,6 +3,9 @@
 </p>
 ## Authentication
 
+<h3 id="dp.wso2.com/v1alpha2.Authentication">Authentication
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.Authentication" title="Permanent link">¶</a>
+</h3>
 <p>
 <p>Authentication is the Schema for the authentications API</p>
 </p>
@@ -21,7 +24,7 @@
             </td>
             <td>
                 <code>
-dp.wso2.com/v1alpha1
+dp.wso2.com/v1alpha2
 </code>
             </td>
         </tr>
@@ -50,7 +53,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>spec</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.AuthenticationSpec">
+                    <a href="#dp.wso2.com/v1alpha2.AuthenticationSpec">
                         AuthenticationSpec
                     </a>
                 </em>
@@ -63,7 +66,7 @@ dp.wso2.com/v1alpha1
                         <td>
                             <code>default</code></br>
                             <em>
-                                <a href="#dp.wso2.com/v1alpha1.AuthSpec">
+                                <a href="#dp.wso2.com/v1alpha2.AuthSpec">
                                     AuthSpec
                                 </a>
                             </em>
@@ -75,7 +78,7 @@ dp.wso2.com/v1alpha1
                         <td>
                             <code>override</code></br>
                             <em>
-                                <a href="#dp.wso2.com/v1alpha1.AuthSpec">
+                                <a href="#dp.wso2.com/v1alpha2.AuthSpec">
                                     AuthSpec
                                 </a>
                             </em>
@@ -100,7 +103,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>status</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.AuthenticationStatus">
+                    <a href="#dp.wso2.com/v1alpha2.AuthenticationStatus">
                         AuthenticationStatus
                     </a>
                 </em>
@@ -110,12 +113,12 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.APIAuth">APIAuth
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.APIAuth" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha2.APIAuth">APIAuth
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.APIAuth" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.AuthSpec">AuthSpec</a>)
+    <a href="#dp.wso2.com/v1alpha2.AuthSpec">AuthSpec</a>)
 </p>
 <p>
 <p>APIAuth Authentication scheme type and details</p>
@@ -132,7 +135,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>oauth2</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.Oauth2Auth">
+                    <a href="#dp.wso2.com/v1alpha2.Oauth2Auth">
                         Oauth2Auth
                     </a>
                 </em>
@@ -146,7 +149,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>apiKey</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.APIKeyAuth">
+                    <a href="#dp.wso2.com/v1alpha2.APIKeyAuth">
                         []APIKeyAuth
                     </a>
                 </em>
@@ -158,81 +161,40 @@ dp.wso2.com/v1alpha1
         </tr>
         <tr>
             <td>
-                <code>testConsoleKey</code></br>
+                <code>jwt</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.TestConsoleKeyAuth">
-                        TestConsoleKeyAuth
+                    <a href="#dp.wso2.com/v1alpha2.JWT">
+                        JWT
                     </a>
                 </em>
             </td>
             <td>
                 <em>(Optional)</em>
-                <p>TestConsoleKey is to specify the Test Console Key authentication scheme details</p>
+                <p>JWT is to specify the JWT authentication scheme details</p>
             </td>
         </tr>
-    </tbody>
-</table>
-<h3 id="dp.wso2.com/v1alpha1.APIKeyAuth">APIKeyAuth
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.APIKeyAuth" title="Permanent link">¶</a>
-</h3>
-<p>
-    (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.APIAuth">APIAuth</a>)
-</p>
-<p>
-<p>APIKeyAuth APIKey Authentication scheme details</p>
-</p>
-<table>
-    <thead>
-        <tr>
-            <th>Field</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
         <tr>
             <td>
-                <code>in</code></br>
+                <code>mtls</code></br>
                 <em>
-                    string
-                </em>
-            </td>
-            <td>
-                <pre><code>In is to specify how the APIKey is passed to the request
-</code></pre>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>name</code></br>
-                <em>
-                    string
-                </em>
-            </td>
-            <td>
-                <p>Name is the name of the header or query parameter to be used</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>sendTokenToUpstream</code></br>
-                <em>
-                    bool
+                    <a href="#dp.wso2.com/v1alpha2.MutualSSLConfig">
+                        MutualSSLConfig
+                    </a>
                 </em>
             </td>
             <td>
                 <em>(Optional)</em>
-                <p>SendTokenToUpstream is to specify whether the APIKey should be sent to the upstream</p>
+                <p>MutualSSL is to specify the features and certificates for mutual SSL</p>
             </td>
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.AuthSpec">AuthSpec
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.AuthSpec" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha2.AuthSpec">AuthSpec
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.AuthSpec" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.AuthenticationSpec">AuthenticationSpec</a>)
+    <a href="#dp.wso2.com/v1alpha2.AuthenticationSpec">AuthenticationSpec</a>)
 </p>
 <p>
 <p>AuthSpec specification of the authentication service</p>
@@ -260,7 +222,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>authTypes</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.APIAuth">
+                    <a href="#dp.wso2.com/v1alpha2.APIAuth">
                         APIAuth
                     </a>
                 </em>
@@ -271,12 +233,12 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.AuthenticationSpec">AuthenticationSpec
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.AuthenticationSpec" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha2.AuthenticationSpec">AuthenticationSpec
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.AuthenticationSpec" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.Authentication">Authentication</a>)
+    <a href="#dp.wso2.com/v1alpha2.Authentication">Authentication</a>)
 </p>
 <p>
 <p>AuthenticationSpec defines the desired state of Authentication</p>
@@ -293,7 +255,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>default</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.AuthSpec">
+                    <a href="#dp.wso2.com/v1alpha2.AuthSpec">
                         AuthSpec
                     </a>
                 </em>
@@ -305,7 +267,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>override</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.AuthSpec">
+                    <a href="#dp.wso2.com/v1alpha2.AuthSpec">
                         AuthSpec
                     </a>
                 </em>
@@ -325,22 +287,19 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.AuthenticationStatus">AuthenticationStatus
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.AuthenticationStatus" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha2.AuthenticationStatus">AuthenticationStatus
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.AuthenticationStatus" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.Authentication">Authentication</a>)
+    <a href="#dp.wso2.com/v1alpha2.Authentication">Authentication</a>)
 </p>
-<p>
-<p>AuthenticationStatus defines the observed state of Authentication</p>
-</p>
-<h3 id="dp.wso2.com/v1alpha1.Oauth2Auth">Oauth2Auth
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.Oauth2Auth" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha2.Oauth2Auth">Oauth2Auth
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.Oauth2Auth" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.APIAuth">APIAuth</a>)
+    <a href="#dp.wso2.com/v1alpha2.APIAuth">APIAuth</a>)
 </p>
 <p>
 <p>Oauth2Auth OAuth2 Authentication scheme details</p>
@@ -353,6 +312,18 @@ dp.wso2.com/v1alpha1
         </tr>
     </thead>
     <tbody>
+        <tr>
+            <td>
+                <code>required</code></br>
+                <em>
+                    string
+                </em>
+            </td>
+            <td>
+                <em>(Optional)</em>
+                <p>Required indicates whether OAuth2 is mandatory or optional</p>
+            </td>
+        </tr>
         <tr>
             <td>
                 <code>disabled</code></br>
@@ -391,15 +362,16 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.TestConsoleKeyAuth">TestConsoleKeyAuth
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.TestConsoleKeyAuth" title="Permanent link">¶</a>
+
+<h3 id="dp.wso2.com/v1alpha2.MutualSSLConfig">MutualSSLConfig
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.MutualSSLConfig" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.APIAuth">APIAuth</a>)
+    <a href="#dp.wso2.com/v1alpha2.APIAuth">APIAuth</a>)
 </p>
 <p>
-<p>TestConsoleKeyAuth Test Console Key Authentication scheme details</p>
+<p>MutualSSLConfig scheme type and details</p>
 </p>
 <table>
     <thead>
@@ -411,30 +383,97 @@ dp.wso2.com/v1alpha1
     <tbody>
         <tr>
             <td>
-                <code>header</code></br>
-                <em>
-                    string
-                </em>
-            </td>
-            <td>
-                <em>(Optional)</em>
-                <p>Header is the header name used to pass the Test Console Key</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>sendTokenToUpstream</code></br>
+                <code>disabled</code></br>
                 <em>
                     bool
                 </em>
             </td>
             <td>
                 <em>(Optional)</em>
-                <p>SendTokenToUpstream is to specify whether the Test Console Key should be sent to the upstream</p>
+                <p>Disabled is to disable mTLS authentication</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>required</code></br>
+                <em>
+                    string
+                </em>
+            </td>
+            <td>
+                <em>(Optional)</em>
+                <p>Required indicates whether mutualSSL is mandatory or optional</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>certificatesInline</code></br>
+                <em>
+                    []*string
+                </em>
+            </td>
+            <td>
+                <p>CertificatesInline is the Inline Certificate entry</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>secretRefs</code></br>
+            </td>
+            <td>
+                <p>SecretRefs denotes the reference to the Secret that contains the Certificate</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>configMapRefs</code></br>
+            </td>
+            <td>
+                <p>ConfigMapRefs denotes the reference to the ConfigMap that contains the Certificate</p>
             </td>
         </tr>
     </tbody>
 </table>
+
+<h3 id="dp.wso2.com/v1alpha2.RefConfig">RefConfig
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.RefConfig" title="Permanent link">¶</a>
+</h3>
+<p>
+<p>RefConfig holds a config for a secret or a configmap</p>
+</p>
+<table>
+    <thead>
+        <tr>
+            <th>Field</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <code>name</code></br>
+                <em>
+                    string
+                </em>
+            </td>
+            <td>
+                <p>Name of the secret or configmap</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>key</code></br>
+                <em>
+                    string
+                </em>
+            </td>
+            <td>
+                <p>Key of the secret or configmap</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
 <hr />
 <p><em>
         Generated with <code>gen-crd-api-reference-docs</code>.

@@ -1,11 +1,8 @@
-<p>
-<p>Package v1alpha1 contains the API Schema definitions for WSO2 APK.</p>
-</p>
 
-## Backend JWT
+## Application
 
 <p>
-<p>BackendJWT is the Schema for the backendjwts API</p>
+<p>Application is the Schema for the applications API</p>
 </p>
 <table>
     <thead>
@@ -33,8 +30,8 @@
             <td>
                 <code>spec</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.BackendJWTSpec">
-                        BackendJWTSpec
+                    <a href="#dp.wso2.com/v1alpha2.ApplicationSpec">
+                        ApplicationSpec
                     </a>
                 </em>
             </td>
@@ -44,64 +41,55 @@
                 <table>
                     <tr>
                         <td>
-                            <code>encoding</code></br>
+                            <code>name</code></br>
                             <em>
                                 string
                             </em>
                         </td>
                         <td>
-                            <em>(Optional)</em>
-                            <p>Encoding of the JWT token</p>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <code>header</code></br>
+                            <code>owner</code></br>
                             <em>
                                 string
                             </em>
                         </td>
                         <td>
-                            <em>(Optional)</em>
-                            <p>Header of the JWT token</p>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <code>signingAlgorithm</code></br>
+                            <code>organization</code></br>
                             <em>
                                 string
                             </em>
                         </td>
                         <td>
-                            <em>(Optional)</em>
-                            <p>Signing algorithm of the JWT token</p>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <code>tokenTTL</code></br>
+                            <code>attributes</code></br>
                             <em>
-                                uint32
+                                map[string]string
                             </em>
                         </td>
                         <td>
                             <em>(Optional)</em>
-                            <p>TokenTTL time to live for the backend JWT token in seconds</p>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <code>customClaims</code></br>
+                            <code>securitySchemes</code></br>
                             <em>
-                                <a href="#dp.wso2.com/v1alpha1.CustomClaim">
-                                    []CustomClaim
+                                <a href="#dp.wso2.com/v1alpha2.SecuritySchemes">
+                                    SecuritySchemes
                                 </a>
                             </em>
                         </td>
                         <td>
-                            <em>(Optional)</em>
-                            <p>CustomClaims holds custom claims that needs to be added to the jwt</p>
                         </td>
                     </tr>
                 </table>
@@ -111,8 +99,8 @@
             <td>
                 <code>status</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.BackendJWTStatus">
-                        BackendJWTStatus
+                    <a href="#dp.wso2.com/v1alpha2.ApplicationStatus">
+                        ApplicationStatus
                     </a>
                 </em>
             </td>
@@ -121,15 +109,15 @@
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.BackendJWTSpec">BackendJWTSpec
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.BackendJWTSpec" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha2.ApplicationSpec">ApplicationSpec
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.ApplicationSpec" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.BackendJWT">BackendJWT</a>)
+    <a href="#dp.wso2.com/v1alpha2.Application">Application</a>)
 </p>
 <p>
-<p>BackendJWTSpec defines the desired state of BackendJWT</p>
+<p>ApplicationSpec defines the desired state of Application</p>
 </p>
 <table>
     <thead>
@@ -141,87 +129,79 @@
     <tbody>
         <tr>
             <td>
-                <code>encoding</code></br>
+                <code>name</code></br>
                 <em>
                     string
                 </em>
             </td>
             <td>
-                <em>(Optional)</em>
-                <p>Encoding of the JWT token</p>
             </td>
         </tr>
         <tr>
             <td>
-                <code>header</code></br>
+                <code>owner</code></br>
                 <em>
                     string
                 </em>
             </td>
             <td>
-                <em>(Optional)</em>
-                <p>Header of the JWT token</p>
             </td>
         </tr>
         <tr>
             <td>
-                <code>signingAlgorithm</code></br>
+                <code>organization</code></br>
                 <em>
                     string
                 </em>
             </td>
             <td>
-                <em>(Optional)</em>
-                <p>Signing algorithm of the JWT token</p>
             </td>
         </tr>
         <tr>
             <td>
-                <code>tokenTTL</code></br>
+                <code>attributes</code></br>
                 <em>
-                    uint32
+                    map[string]string
                 </em>
             </td>
             <td>
                 <em>(Optional)</em>
-                <p>TokenTTL time to live for the backend JWT token in seconds</p>
             </td>
         </tr>
         <tr>
             <td>
-                <code>customClaims</code></br>
+                <code>securitySchemes</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.CustomClaim">
-                        []CustomClaim
+                    <a href="#dp.wso2.com/v1alpha2.SecuritySchemes">
+                        SecuritySchemes
                     </a>
                 </em>
             </td>
             <td>
-                <em>(Optional)</em>
-                <p>CustomClaims holds custom claims that needs to be added to the jwt</p>
             </td>
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.BackendJWTStatus">BackendJWTStatus
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.BackendJWTStatus" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha2.ApplicationStatus">ApplicationStatus
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.ApplicationStatus" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.BackendJWT">BackendJWT</a>)
+    <a href="#dp.wso2.com/v1alpha2.Application">Application</a>)
 </p>
 <p>
-<p>BackendJWTStatus defines the observed state of BackendJWT</p>
+<p>ApplicationStatus defines the observed state of Application</p>
 </p>
-<h3 id="dp.wso2.com/v1alpha1.CustomClaim">CustomClaim
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.CustomClaim" title="Permanent link">¶</a>
+
+<h3 id="dp.wso2.com/v1alpha2.SecurityScheme">SecurityScheme
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.SecurityScheme" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.BackendJWTSpec">BackendJWTSpec</a>)
+    <a href="#dp.wso2.com/v1alpha2.SecuritySchemes">SecuritySchemes</a>)
 </p>
 <p>
-<p>CustomClaim holds custom claim information</p>
+<p>SecurityScheme defines the details specific to a security scheme</p>
 </p>
 <table>
     <thead>
@@ -233,42 +213,106 @@
     <tbody>
         <tr>
             <td>
-                <code>claim</code></br>
+                <code>environments</code></br>
                 <em>
-                    string
+                    <a href="#dp.wso2.com/v1alpha2.Environment">
+                        []Environment
+                    </a>
                 </em>
             </td>
             <td>
-                <p>Claim name</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>value</code></br>
-                <em>
-                    string
-                </em>
-            </td>
-            <td>
-                <p>Claim value</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>type</code></br>
-                <em>
-                    string
-                </em>
-            </td>
-            <td>
-                <p>Claim type</p>
             </td>
         </tr>
     </tbody>
 </table>
+<h3 id="dp.wso2.com/v1alpha2.SecuritySchemes">SecuritySchemes
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.SecuritySchemes" title="Permanent link">¶</a>
+</h3>
+<p>
+    (<em>Appears on:</em>
+    <a href="#dp.wso2.com/v1alpha2.ApplicationSpec">ApplicationSpec</a>)
+</p>
+<p>
+<p>SecuritySchemes defines the supported security schemes</p>
+</p>
+<table>
+    <thead>
+        <tr>
+            <th>Field</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <code>oauth2</code></br>
+                <em>
+                    <a href="#dp.wso2.com/v1alpha2.SecurityScheme">
+                        SecurityScheme
+                    </a>
+                </em>
+            </td>
+            <td>
+                <p>OAuth2 denotes the OAuth2 security scheme</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="dp.wso2.com/v1alpha2.Environment">Environment
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.Environment" title="Permanent link">¶</a>
+</h3>
+<p>
+    (<em>Appears on:</em>
+    <a href="#dp.wso2.com/v1alpha2.SecurityScheme">SecurityScheme</a>)
+</p>
+<p>
+<p>Environment defines the environment specific details related to the security scheme</p>
+</p>
+<table>
+    <thead>
+        <tr>
+            <th>Field</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <code>envId</code></br>
+                <em>
+                    string
+                </em>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>appId</code></br>
+                <em>
+                    string
+                </em>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>keyType</code></br>
+                <em>
+                    string
+                </em>
+            </td>
+            <td>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
 <hr />
 <p><em>
         Generated with <code>gen-crd-api-reference-docs</code>.
-    </em></p>
+</em></p>
 
-{!catalogs/samples/backend-jwt.md!}
+{!catalogs/samples/application.md!}
