@@ -88,15 +88,18 @@ Similar configurations should be added for all of the components you wish to exp
 
 ** Note that the Config Deployer Service and IDP Domain Service both have two ports exposed for both Ballerina and JVM metrics.
 
-NOTE:
-* Configure the prometheus service with the required level of permissions on Kubernetes.
+!!! Note
+    Configure the prometheus service with the required level of permissions on Kubernetes.
 
 ## Using APK Grafana Dashboards
 
-* Download the dashboard json files from [WSO2 APK Grafana Dashboards](./grafana-dashboards/APK%20Grafana%20Dashboards.zip)
+* Download the dashboard json files from [WSO2 APK Grafana Dashboards](../assets/img/prometheus/grafana-dashboards/APK%20Grafana%20Dashboards.zip)
 * Import the dashboards to Grafana.
 * Change the Prometheus data source, job name and other dashboard variables as required.
-* Image previews of the dashboards are available at [WSO2 APK Grafana Dashboard Images](./grafana-dashboards/WSO2%20APK%20Grafana%20Dashboard%20Images.zip)
+* Image previews of the dashboards are available at [WSO2 APK Grafana Dashboard Images](../assets/img/prometheus/grafana-dashboards/WSO2%20APK%20Grafana%20Dashboard%20Images.zip)
+* The following is the dashboard of the APK Router component.
+
+[![Router Grafana Dashboard](../assets/img/prometheus/grafana-dashboards/router-dashboard.png)](../assets/img/prometheus/grafana-dashboards/router-dashboard.png)
 
 ## Exposed Metrics
 
