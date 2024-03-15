@@ -55,7 +55,7 @@
 }
 
 .md-header__version-select .md-tabs__link.md-tabs__dropdown-link {
-    display: inline-block;
+    display: none;
     padding: .45rem;
     margin-top: .3rem;
     border-radius: .1rem;
