@@ -112,7 +112,7 @@ Now you can verify the deployment by executing the following command. You will s
 
 ### Create Deploy and Publish the API
 
-{!control-plane/api-management/control-plane-create-and-deploy-apis.md!}
+{!control-plane/api-management/control-plane-create-and-deploy-rest-apis.md!}
 
 ### Create Application and Subscribe to the API
 
