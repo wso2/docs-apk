@@ -174,7 +174,9 @@ nav:
         - API Management: 
             - Overview: control-plane/api-management/control-plane-operations.md
             - Develop and Deploy API:
-                - Create and Deploy APIs: control-plane/api-management/control-plane-create-and-deploy-apis.md
+                - Create APIs:
+                  - Create REST APIs: control-plane/api-management/control-plane-create-and-deploy-rest-apis.md
+                  - Create GraphQL APIs: control-plane/api-management/control-plane-create-and-deploy-apis-graphql.md
                 - Manage Endpoints: control-plane/api-management/control-plane-manage-endpoints.md
                 - API Policies:
                     - Overview: control-plane/api-management/control-plane-api-policies.md
