@@ -170,9 +170,11 @@ nav:
         - Overview: control-plane/overview.md
         - Quick Start Guide: control-plane/control-plane-qsg.md
         - Advanced Configuration:
-            - API Manager Control plane: control-plane/apim-deploy.md
-            - APK Data plane: control-plane/apk-deploy.md
-            - APIM APK Agent: control-plane/apim-apk-agent-deploy.md
+            - API Manager Control Plane: control-plane/apim-deploy.md
+            - APK Data Plane: control-plane/apk-deploy.md
+            - APIM APK Agent: 
+                - Deployment: control-plane/apim-apk-agent-deploy.md
+                - Prometheus Configuration: control-plane/apim-apk-agent-prometheus.md
         - API Management: 
             - Overview: control-plane/api-management/control-plane-operations.md
             - Develop and Deploy API:
