@@ -87,7 +87,9 @@ nav:
         - Develop and Deploy API:
            - Overview: create-api/create-api-overview.md
            - Create and deploy APIs:
-                - K8s Native API Development: create-api/create-and-deploy-apis/create-api-using-cr.md
+                - K8s Native API Development: 
+                    - Rest APIs: create-api/create-and-deploy-apis/rest/create-rest-api-using-crs.md
+                    - GraphQL APIs: create-api/create-and-deploy-apis/graphql/create-graphql-api-using-crs.md
                 - Enhanced API Development:
                     - Overview: create-api/create-and-deploy-apis/tools-for-api-development.md
                     - Create and Deploy API using APK Tools:
@@ -167,7 +169,7 @@ nav:
     - Control Plane:
         - Overview: control-plane/overview.md
         - Quick Start Guide: control-plane/control-plane-qsg.md
-        - Advanced Configuraion:
+        - Advanced Configuration:
             - API Manager Control plane: control-plane/apim-deploy.md
             - APK Data plane: control-plane/apk-deploy.md
             - APIM APK Agent: control-plane/apim-apk-agent-deploy.md
@@ -176,7 +178,7 @@ nav:
             - Develop and Deploy API:
                 - Create APIs:
                   - Create REST APIs: control-plane/api-management/control-plane-create-and-deploy-rest-apis.md
-                  - Create GraphQL APIs: control-plane/api-management/control-plane-create-and-deploy-apis-graphql.md
+                  - Create GraphQL APIs: control-plane/api-management/control-plane-create-and-deploy-graphql-apis.md
                 - Manage Endpoints: control-plane/api-management/control-plane-manage-endpoints.md
                 - API Policies:
                     - Overview: control-plane/api-management/control-plane-api-policies.md

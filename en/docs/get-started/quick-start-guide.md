@@ -113,7 +113,8 @@ To invoke the system APIs such as for deploying, we need a valid access token is
         --header 'Host: idp.am.wso2.com' \
         --header 'Authorization: Basic NDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyOjRmYmQ2MmVjLWE5MmUtMTFlZC1hZmExLTAyNDJhYzEyMDAwMg==' \
         --header 'Content-Type: application/x-www-form-urlencoded' \
-        --data-urlencode 'grant_type=client_credentials'
+        --data-urlencode 'grant_type=client_credentials' \
+        --data-urlencode 'scope=apk:api_create'
         ```
 
     === "Sample Response"
