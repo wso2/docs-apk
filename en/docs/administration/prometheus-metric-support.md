@@ -37,7 +37,7 @@ metrics:
 | idpDSBalHost            | IP or Hostname or 0.0.0.0 of the node in which the IdP Domain Service is running. Used for exposing Ballerina metrics in the IdP Domain Service. Default value is 0.0.0.0.                          |
 | statsd             | Statsd is an exporter used to expose the metrics of the ratelimiter service. Statsd will run as a sidecar to the ratelimiter if metrics are enabled and the statsd section has been uncommented                            |
 | statsd.image.repository             | Specifies the Docker image repository for the statsd-exporter.                             |
-| statsd.image.tag            | Number of total downstream requests                              |
+| statsd.image.tag            | Specifies the Docker image version for the statsd-exporter.                             |
 | imagePullPolicy            | Defines the policy for pulling the statsd Docker image.                           |
 | statsd.resources.limits.memory      | The maximum amount of memory the container can use.                          |
 | statsd.resources.requests.cpu      | The minimum amount of CPU the container is guaranteed.                         |
