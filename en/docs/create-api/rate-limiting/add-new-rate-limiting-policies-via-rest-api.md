@@ -193,7 +193,7 @@ Sample content after the modification is shown below.
 
 ### Generate an access token to deploy API.
 
-To invoke the system APIs such as for deploying, we need a valid access token issued by an identity provider (IdP). Follow the ["Generate Access Token"](../../develop-and-deploy-api/security/generate-access-token.md) documentation to generate an access token.
+To invoke the system APIs to deploy your own API, we need a valid access token issued by an identity provider (IdP). Follow the ["Generate Access Token"](../../develop-and-deploy-api/security/generate-access-token.md) documentation to generate an access token.
 
 ### Deploy the API with API level rate limit policy.
 

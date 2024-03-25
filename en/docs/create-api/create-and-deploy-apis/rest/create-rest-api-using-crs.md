@@ -88,7 +88,7 @@ spec:
     port: 80
 ```
 
-Here, we have set the httpbin.org domain name as the host with port 80, which is an insecure port. To make it a TLS-secured endpoint, refer to the [Manage Certificate](../manage-service-endpoint/manage-certificate.md) section.
+Here, we have set the httpbin.org domain name as the host with port 80, which is an insecure port. To make it a TLS-secured endpoint, refer to the [Manage Certificate](../../manage-service-endpoint/manage-certificate.md) section.
 
 If your backend is a Kubernetes-native `Service`, then derive the following value according to your `Service` and use it as the `host`. 
 
