@@ -29,18 +29,18 @@ edit_uri: https://github.com/wso2/docs-apk/edit/1.1.0/en/docs/
 copyright: WSO2 API Platform for Kubernetes - Documentation
 
 # Configuration
-theme: material
+
 theme:
   name: material
   palette:
-    primary: deep-orange
-    accent: deep-orange
+    primary: default
   custom_dir: theme/material
   logo: images/logo.svg
   highlightjs: true
   feature:
     tabs: true
   language: 'en'
+
 
 # Extensions
 markdown_extensions:
@@ -52,16 +52,17 @@ extra_css:
   - assets/lib/highlightjs/default.min.css
   - assets/css/theme.css
   - assets/css/versions.css
+  - assets/css/blue-palette-alt1.css
 extra_javascript:
   - assets/lib/highlightjs/highlight.min.js
   - assets/js/theme.js
 
 extra:
   social:
-    - type: github
+    - icon: fontawesome/brands/github
       link: https://github.com/wso2
-    - type: twitter
+    - icon: fontawesome/brands/twitter
       link: https://twitter.com/wso2
-    - type: linkedin
+    - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/company/wso2
   site_version: versions
