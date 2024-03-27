@@ -396,6 +396,7 @@ extra_javascript:
     - assets/lib/highlightjs/highlight.min.js
     - assets/lib/json-formatter/json-formatter.umd.js
     - assets/js/apktheme.js
+    # - assets/js/theme.js
     # - assets/lib/backtotop/js/util.js
     # - assets/lib/backtotop/js/main.js
 
