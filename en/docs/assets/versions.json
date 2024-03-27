@@ -1,15 +1,10 @@
 {
-  "1.1.0": "1.1.0",
-  "current": "1.1.0",
+  "1.0.0": "1.0.0",
+  "current": "1.0.0",
   "list": [
-    "1.1.0",
     "1.0.0"
    ],
   "all": {
-    "1.1.0":{
-        "doc": "1.1.0",
-        "notes": "1.1.0/about-apk/about-this-release"
-    },
     "1.0.0":{
         "doc": "https://apk.docs.wso2.com/en/1.0.0/",
         "notes": "https://apk.docs.wso2.com/en/1.0.0/about-apk/about-this-release/"

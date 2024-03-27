@@ -38,12 +38,14 @@ template: templates/versions.html
 
 This is the current stable version of the project.
 
+<!-- 
+
 ---
 
 ### Past Versions
 
 <table>
-    <tbody id="previous-versions">
-        <!-- Will populate from the script -->
-    </tbody>
+    <tbody id="previous-versions"> /** Will populate from the script **/ </tbody>
 </table>
+
+-->
