@@ -11,8 +11,8 @@
         "notes": "1.1.0-dev/about-apk/about-this-release"
     },
     "1.0.0-dev":{
-        "doc": "1.0.0-dev",
-        "notes": "1.0.0-dev/about-apk/about-this-release"
+        "doc": "https://dev.apk.docs.wso2.com/en/1.0.0-dev/",
+        "notes": "https://dev.apk.docs.wso2.com/en/1.0.0-dev/about-apk/about-this-release/"
     }
   }
 }
