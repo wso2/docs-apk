@@ -128,7 +128,7 @@ request.onload = function() {
           });
 
           document.getElementById('show-all-versions-link')
-              .setAttribute('href', docSetUrl + 'versions');
+              .setAttribute('href', docSetUrl + 'versions-dev');
       }
 
       /*
