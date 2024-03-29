@@ -6,7 +6,7 @@
     },
     "servers": [
         {
-            "url": "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b",
+            "url": "http://employee-service:80",
             "description": "Server URL",
             "variables": {}
         }
