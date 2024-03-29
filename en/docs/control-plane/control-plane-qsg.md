@@ -12,7 +12,7 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
 1. Create a new helm repository with the latest apim release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apim```.
 
     ```console
-    helm repo add wso2apim https://github.com/wso2/product-apim/releases/download/4.3.0
+    helm repo add wso2apim https://github.com/wso2/helm-apim/releases/download/cp-4.3.0-alpha
     ```
 
 2. Execute the following command to update the helm repositories.
@@ -23,13 +23,17 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
 
 3. Consider ```apim``` as the ```<chart-name>``` for this guide. As the ```--version``` of this command, use the version of the release you used in point 1 above. It will take a few minutes for the deployment to complete.
 
-    === "Command"
+    === "Mac Command"
         ```
-        helm install apim wso2apim/apim-helm --version 4.3.0 -f apim-values.yaml
+        helm install apim wso2apim/wso2am-cp --version 4.3.0-alpha -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/sample/apim/cp/arm-values.yaml -n apk
+        ```
+    === "AMD Command"
+        ```
+        helm install apim wso2apim/wso2am-cp --version 4.3.0-alpha -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/sample/apim/cp/amd-values.yaml -n apk
         ```
     === "Format"
         ```
-        helm install <chart-name> <repository-name>/apk-agent-helm --version <verison-of-APIM> -f <path-to-values.yaml-file>
+        helm install <chart-name> <repository-name>/wso2am-cp --version <verison-of-APIM> -f <path-to-values.yaml-file>
         ```
 
 4. Install NGINX Ingress Controller using the following command. Please refer to the [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/deploy/) for more information.
@@ -47,7 +51,7 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
 1. Create a new helm repository with the latest apk release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apk```.
 
     ```console
-    helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.1.0-alpha
+    helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.1.0-alpha2
     ```
 
 2. Execute the following command to update the helm repositories.
@@ -60,7 +64,7 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
 
     === "Command"
         ```
-         helm install apk wso2apk/apk-helm --version 1.1.0-alpha -f values.yaml
+        helm install apk wso2apk/apk-helm --version 1.1.0-alpha2 -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/sample/apk/cp-enabled-values.yaml -n apk
         ``` 
     === "Format"
         ```
@@ -76,7 +80,7 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
 1. Create a new helm repository with the latest apim apk agent release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apkagent``` for this guide.
 
     ```console
-    helm repo add wso2apkagent https://github.com/wso2/product-apim-tooling/releases/download/1.1.0-alpha
+    helm repo add wso2apkagent https://github.com/wso2/product-apim-tooling/releases/download/1.1.0-alpha2
     ```
 
 2. Execute the following command to update the helm repositories.
@@ -89,7 +93,7 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
 
     === "Command"
         ```
-        helm install apim-apk-agent wso2apkagent/apim-apk-agent --version 1.1.0-alpha -f apk-agent-values.yaml
+        helm install apim-apk-agent wso2apkagent/apim-apk-agent --version 1.1.0-alpha2 -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/sample/apim-apk-agent/values.yaml -n apk
         ```
     === "Format"
         ```
@@ -117,6 +121,13 @@ Now you can verify the deployment by executing the following command. You will s
 ### Create Application and Subscribe to the API
 
 {!control-plane/api-management/control-plane-create-application-and-subscription.md!}
+
+### Set JWKS URL
+
+1. Login to Admin Portal
+2. Click on the `Key Managers` tab.
+3. Click on the `Edit` button of the `Resident Key Manager` key manager.
+4. Set the `JWKS URL` as `https://apim-wso2am-cp-1-service:9443/oauth2/jwks` and Save.
 
 ## Step 3 - Invoke the API
 
