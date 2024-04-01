@@ -6,7 +6,7 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
 1. Create a new helm repository with the latest apk release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apk``` for this guide.
 
     ```console
-    helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.1.0-alpha
+    helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.1.0-alpha2
     ```
 
 2. Execute the following command to update the helm repositories.
@@ -19,7 +19,7 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
 
 === "Command"
     ```
-    helm install apk wso2apk/apk-helm --version 1.1.0-alpha
+    helm install apk wso2apk/apk-helm --version 1.1.0-alpha2
     ```
 
 === "Format"
@@ -31,7 +31,7 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
     To commence the installation while making use of the customization capabilities inherent in the `values.yaml` file, follow the subsequent command format. Instructions in [Customize Configurations](../setup/Customize-Configurations.md) will guide you through the process of acquiring the `values.yaml` file.
     === "Command"
         ```
-         helm install apk wso2apk/apk-helm --version 1.1.0-alpha -f values.yaml
+         helm install apk wso2apk/apk-helm --version 1.1.0-alpha2 -f values.yaml
         ```
         
     === "Format"
@@ -69,7 +69,7 @@ this in K8s.
 
     === "Command"
         ```
-        helm install apk wso2/apk-helm --version 1.1.0-alpha --set wso2.subscription.imagePullSecrets="apk-registry-secret"
+        helm install apk wso2/apk-helm --version 1.1.0-alpha2 --set wso2.subscription.imagePullSecrets="apk-registry-secret"
         ```
 
     === "Format"
@@ -81,7 +81,7 @@ this in K8s.
 
     === "Command"
         ```
-        helm install apk wso2/apk-helm --version 1.1.0-alpha --set wso2.subscription.imagePullSecrets="apk-registry-secret" -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/sample/arm64.yaml
+        helm install apk wso2/apk-helm --version 1.1.0-alpha2 --set wso2.subscription.imagePullSecrets="apk-registry-secret" -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/sample/arm64.yaml
         ```
 
     === "Format"
@@ -94,7 +94,7 @@ this in K8s.
         To commence the installation while making use of the customization       capabilities inherent in the `values.yaml` file, follow the subsequent command format. Instructions in [Customize Configurations](../setup/Customize-Configurations.md) will guide you through the process of acquiring the `values.yaml` file.
         === "Command"
             ```
-            helm install apk wso2apk/apk-helm --version 1.1.0-alpha -set wso2.subscription.imagePullSecrets="apk-registry-secret" -f values.yaml
+            helm install apk wso2apk/apk-helm --version 1.1.0-alpha2 -set wso2.subscription.imagePullSecrets="apk-registry-secret" -f values.yaml
             ```
 
         === "Format"

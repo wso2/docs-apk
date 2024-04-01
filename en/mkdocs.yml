@@ -74,6 +74,7 @@ nav:
     - Get Started:
         #- Get Started - Overview: get-started/get-started-overview.md
         - Quick Start: get-started/quick-start-guide.md
+        - Quick Start With Control Plane: get-started/quick-start-guide-with-cp.md
         #- Basic Flow:
         #    - Overview: restapi/overview.md
         #    - Create an API: restapi/create-api.md

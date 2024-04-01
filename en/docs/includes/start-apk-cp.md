@@ -1,9 +1,6 @@
-# Quick Start Guide
-This section is a step-by-step guide to creating, deploying, and invoking an API using the WSO2 APK with APIM Control Plane.
 
-## Step 1 - Setup APIM Control Plane with APK
+Follow the instructions below to deploy APK Data Service (DS) servers and the Cloud Native Postgres(CloudNativePG) in the Kubernetes cluster.
 
-There are 3 components which you need to setup to get the APK working with APIM. They are,
 
 ### Setup WSO2 API Manager Control Plane 4.3.0
 
@@ -25,11 +22,11 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
 
     === "Mac Command"
         ```
-        helm install apim wso2apim/wso2am-cp --version 4.3.0-alpha -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/sample/apim/cp/arm-values.yaml -n apk
+        helm install apim wso2apim/wso2am-cp --version 4.3.0-alpha -f https://github.com/wso2/apk/blob/main/helm-charts/sample/apim/cp/apk-cp/arm-values.yaml -n apk
         ```
     === "AMD Command"
         ```
-        helm install apim wso2apim/wso2am-cp --version 4.3.0-alpha -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/sample/apim/cp/amd-values.yaml -n apk
+        helm install apim wso2apim/wso2am-cp --version 4.3.0-alpha -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/sample/apim/cp/apk-cp/amd-values.yaml -n apk
         ```
     === "Format"
         ```
@@ -43,8 +40,6 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
     helm install nginx-ingress ingress-nginx/ingress-nginx
     ```
 
-!!! Note
-    Please refer to the [Advance Configuration for APIM](../control-plane/apim-deploy.md) for more information.
 
 ### Setup WSO2 APK Dataplane 1.1.0
 
@@ -64,15 +59,12 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
 
     === "Command"
         ```
-        helm install apk wso2apk/apk-helm --version 1.1.0-alpha2 -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/sample/apk/cp-enabled-values.yaml -n apk
+        helm install apk wso2apk/apk-helm --version 1.1.0-alpha2 -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/sample/apk/values.yaml -n apk
         ``` 
     === "Format"
         ```
         helm install <chart-name> <repository-name>/apk-helm --version <verison-of-APK> -f <path-to-values.yaml-file>
         ```
-
-!!! Note
-    Please refer to the [Advance Configuration for APK](../control-plane/apk-deploy.md) for more information.
 
 
 ### Setup WSO2 APIM-APK Agent 1.1.0
@@ -93,46 +85,20 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
 
     === "Command"
         ```
-        helm install apim-apk-agent wso2apkagent/apim-apk-agent --version 1.1.0-alpha2 -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/sample/apim-apk-agent/values.yaml -n apk
+        helm install apim-apk-agent wso2apkagent/apim-apk-agent --version 1.1.0-alpha2 -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/sample/apim-apk-agent/cp/values.yaml -n apk
         ```
     === "Format"
         ```
         helm install <chart-name> <repository-name>/apim-apk-agent --version <verison-of-APK-Agent> -f <path-to-values.yaml-file>
         ```
 
-!!! Note
-    Please refer to the [Advance Configuration for agent](../control-plane/apim-apk-agent-deploy.md) for more information.
 
 ### Verify the deployment
 
-Now you can verify the deployment by executing the following command. You will see the status of the pods as follows once completed.
+Now you can verify the deployment by executing the following command. You will see the status of the pods of APK dataplane and APIM Control plane as follows once completed.
 
 === "Command"
     ```
     kubectl get pods
     ```
-
-## Step 2 - Create and Deploy the API
-
-### Create Deploy and Publish the API
-
-{!control-plane/api-management/control-plane-create-and-deploy-rest-apis.md!}
-
-### Create Application and Subscribe to the API
-
-{!control-plane/api-management/control-plane-create-application-and-subscription.md!}
-
-### Set JWKS URL
-
-1. Login to Admin Portal
-2. Click on the `Key Managers` tab.
-3. Click on the `Edit` button of the `Resident Key Manager` key manager.
-4. Set the `JWKS URL` as `https://apim-wso2am-cp-1-service:9443/oauth2/jwks` and Save.
-
-## Step 3 - Invoke the API
-
-1. Use the following command to invoke the API using the access token generated in the previous step.
-
-    ```bash
-    curl -X GET "https://default.gw.wso2.com:9095/petstore/1.0.0/pet/findByStatus?status=available" -H "Authorization: Bearer <access-token>"
-    ```
+    [![Pod Status](../assets/img/get-started/cp-podstatus.png)](../assets/img/get-started/cp-podstatus.png)

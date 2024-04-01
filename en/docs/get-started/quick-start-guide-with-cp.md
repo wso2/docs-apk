@@ -1,6 +1,6 @@
-# Quick Start Guide
+# Quick Start Guide With Control Plane
 
-This section is a step-by-step guide to creating, deploying, and invoking an API using the WSO2 API Platform For Kubernetes.
+This section is a step-by-step guide to creating, deploying, and invoking an API using the WSO2 API Platform For Kubernetes integrate with Control Plane.
 
 ## Before you begin...
 
@@ -9,11 +9,11 @@ Install the [prerequisites](../../setup/prerequisites) that are required to run 
 !!!NOTE
     If you have already installed the pre-release version of the APK into your cluster please remove the installation by following the steps specified in <a href="{{base_path}}/en/latest/about-apk/FAQs/#q2-how-to-uninstall-apk-from-my-cluster">FAQs</a> section.
 
-## Step 1 - Start WSO2 API Platform For Kubernetes
+## Step 1 - Setup WSO2 API Platform For Kubernetes With Control Plane
 
-{!includes/start-apk.md!}
+{!includes/start-apk-cp.md!}
 
-## Step 2 - Create and Deploy the API
+## Step 2 - Create and Deploy the API From Dataplane
 
 1. Save and download the sample [EmployeeServiceDefinition.json](../assets/files/get-started/EmployeeServiceDefinition.json) file. This is the OAS definition of the API that we are going to deploy in APK.
 2. Add a hostname mapping to the ```/etc/hosts``` file as follows.
@@ -225,55 +225,65 @@ Wait for this pod to spin up. You can check its status using the following comma
 kubectl get pods
 ```
 
-## Step 4 - Invoke the API
+## Step 4 - Manage API From Control Plane
 
-Now the API is ready to be invoked. Let’s get the list of Employees by invoking the `/employee` resource in the `EmployeeServiceAPI`.
+1. Login to the Publisher Console [API Publisher](https://am.wso2.com/publisher) of the WSO2 API Manager.
 
-1. Execute the following request to invoke the API. Make sure to provide the access token obtained in the previous step under ["Generate an access token to invoke APIs"](#generate-an-access-token-to-invoke-apis) section as the `Authorization` header in this request.
+    you can see the deploy EmployeeService API as below.
+
+    [![ControlPlane API](../assets/img/control-plane/cp-overview.png)](../assets/img/control-plane/cp-overview.png)
+
+2. Once you click the API you will redirect to overciew page.
+
+    [![ControlPlaneOverview API](../assets/img/control-plane/main-overview.png)](../assets/img/control-plane/main-overview.png)
+
+3. Now you can edit portal cnfigurations such as basic info, documentation etc.
+
+    [![ControlPlaneBasic API](../assets/img/control-plane/portal-conf.png)](../assets/img/control-plane/portal-conf.png)
+
+4. Finally publish to developer portal.
 
 
-    === "Sample Request"
-        ```
-        curl -k --location 'https://default.gw.wso2.com:9095/RW1wbG95ZWVTZXJ2aWNlQVBJMy4xNA/3.14/employee' \
-        --header 'Host: default.gw.wso2.com' \
-        --header 'Authorization: bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiZXhwIjoxNjg4MTMxNDQ0LCAibmJmIjoxNjg4MTI3ODQ0LCAiaWF0IjoxNjg4MTI3ODQ0LCAianRpIjoiMDFlZTE3NDEtMDA0Ni0xOGE2LWFhMjEtYmQwYTk4ZjYzNzkwIiwgImNsaWVudElkIjoiNDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyIiwgInNjb3BlIjoiZGVmYXVsdCJ9.RfKQq2fUZKZFAyjimvsPD3cOzaVWazabmq7b1iKYacqIdNjkvO9CQmu7qdtrVNDmdZ_gHhWLXiGhN4UTSCXv_n1ArDnxTLFBroRS8dxuFBZoD9Mpj10vYFSDDhUfFqjgMqtpr30TpDMfee1wkqB6K757ZSjgCDa0hAbv555GkLdZtRsSgR3xWcxPBsIozqAMFDCWoUCbgTQuA5OiEhhpVco2zv4XLq2sz--VRoBieO12C69KnGRmoLuPtvOayInvrnV96Tbt9fR0fLS2l1nvAdFzVou0SIf9rMZLnURLVQQYE64GR14m-cFRYdUI9vTsFHZBl5w-uCLdzMMofzZaLQ'
-        ```
+## Step 5 - Create Application and Subscribe to the API
 
-    === "Sample Response"
-        ```
-        [
-            {
-                "id": "1234123",
-                "name": "Mrs. Heily Feyers",
-                "department": "IT"
-            },
-            {
-                "id": "23451234",
-                "name": "Mr. Brendon MacSmith",
-                "department": "Sales"
-            },
-            {
-                "id": "34561234",
-                "name": "Mr. Peter Queenslander",
-                "department": "IT"
-            },
-            {
-                "id": "45671243",
-                "name": "Miss. Liza MacAdams",
-                "department": "Finance"
-            }
-        ]
-        ```
-    === "Request Format"
-        ```
-        curl --location 'https://<host>:9095/<basePath>/3.14/employee' \
-        --header 'Host: <host>' \
-        --header 'Authorization: bearer <access-token>'
-        ```
+1. Login to the Developer Portal[API Developer Portal](https://am.wso2.com/devportal) of the WSO2 API Manager.
+2. Click on the `Applications` tab and then use `ADD NEW APPLICATION` option.
+3. Provide the information as given below and click `Save`.
+
+     <html>
+        <table>
+        <th>Field</th><th>Value</th>
+        <tr><td>Application Name</td><td>EmpolyeeServiceApp</td></tr>
+        <tr><td>Per Token Quota</td><td>10PerMin</td></tr>
+        <tr><td>Description</td><td>Petstore Application</td></tr>
+        </table>
+     </html>
+
+4. Click **Subscriptions** to subscribe to the created SwaggerPetstore API.
+5. Click **Production Keys** or **Sandbox Keys** based on the environment for which you need to generate keys.
+   Let's assume that you are working in a production environment. Therefore, click **Production Keys**.
+5. Click **Generate Keys** to create an application Access Token with relevant scopes.
+6. To verify the Application and Subscription creation in the APK Gateway, execute the following command. You will see the status of the deployed application as follows once completed.
+
+    ```bash
+    kubectl get subscriptions
+    kubectl get applications
+    ```
+
+### Set JWKS URL
+
+1. Login to Admin Portal
+2. Click on the `Key Managers` tab.
+3. Click on the `Edit` button of the `Resident Key Manager` key manager.
+4. Set the `JWKS URL` as `https://apim-wso2am-cp-1-service:9443/oauth2/jwks` and Save.
+
+## Step 6 - Invoke the API
+
+1. Use the following command to invoke the API using the access token generated in the previous step.
+
+    ```bash
+    curl -X GET "https://default.gw.wso2.com:9095/RW1wbG95ZWVTZXJ2aWNlQVBJMy4xNA/3.14/employee" -H "Authorization: Bearer <access-token>"
+    ```
 
 You will now be able to see a successful response with the details of the Employees from the mock backend that we used for this guide.
 
-!!!Note
-    To invoke the APIs, we need a valid access token issued by an identity provider (IdP). APK supports third-party IdPs such as Asgardeo and Auth0. Refer [Configure IDP](../../setup/identity-platform/idp/idp-overview/).
-
-If you encounter any issues during the installation process, don't worry! We've compiled a list of frequently asked questions (FAQs) to help you troubleshoot common problems. Please refer to the <a href="{{base_path}}/en/latest/about-apk/FAQs/">FAQs</a> section in this guide for step-by-step solutions to common installation issues.
