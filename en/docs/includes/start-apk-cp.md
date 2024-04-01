@@ -22,7 +22,7 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
 
     === "Mac Command"
         ```
-        helm install apim wso2apim/wso2am-cp --version 4.3.0-alpha -f https://github.com/wso2/apk/blob/main/helm-charts/sample/apim/cp/apk-cp/arm-values.yaml -n apk
+        helm install apim wso2apim/wso2am-cp --version 4.3.0-alpha -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/sample/apim/cp/apk-cp/arm-values.yaml -n apk
         ```
     === "AMD Command"
         ```
