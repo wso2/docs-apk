@@ -122,17 +122,11 @@ Now you can verify the deployment by executing the following command. You will s
 
 {!control-plane/api-management/control-plane-create-application-and-subscription.md!}
 
-### Set JWKS URL
-
-1. Login to Admin Portal
-2. Click on the `Key Managers` tab.
-3. Click on the `Edit` button of the `Resident Key Manager` key manager.
-4. Set the `JWKS URL` as `https://apim-wso2am-cp-1-service:9443/oauth2/jwks` and Save.
 
 ## Step 3 - Invoke the API
 
-1. Use the following command to invoke the API using the access token generated in the previous step.
+Use the following command to invoke the API using the access token generated in the previous step.
 
-    ```bash
+```bash
     curl -X GET "https://default.gw.wso2.com:9095/petstore/1.0.0/pet/findByStatus?status=available" -H "Authorization: Bearer <access-token>"
-    ```
+```

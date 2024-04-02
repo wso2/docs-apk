@@ -10,15 +10,13 @@
    | Version  | 1.0.0                               |
    | Endpoint | https://petstore3.swagger.io/api/v3 |
 
-5. Click **Portal Configurations** and click **Subscriptions** to navigate to the Business Plans page.
-6. Select **Gold** and **Silver** as the Business Plans and click **Save**.
-7. Navigate to the Deploy section and click Deployments.
-8. Click Deploy New Revision.
-9. Optionally, provide a description for the revision.
-10. Select the APK Gateways in which you want to deploy the API and click Deploy.
-11. Navigate to **Life Cycle** tab. Then click **Publish** to publish the API.
-12. To verify the API deployment in the APK Gateway, execute the following command. You will see the status of the deployed apis as follows once completed.
+5. Navigate to the Deploy section and click Deployments. 
+6. Click Deploy New Revision. 
+7. Optionally, provide a description for the revision. 
+8. Select the APK Gateways in which you want to deploy the API and click Deploy. 
+9. Navigate to **Life Cycle** tab. Then click **Publish** to publish the API. 
+10. To verify the API deployment in the APK Gateway, execute the following command. You will see the status of the deployed apis as follows once completed.
 
-   ```bash
+```bash
    kubectl get apis
-   ```
+```
