@@ -90,7 +90,7 @@ var docSetUrl = window.location.origin + '/' + docSetLang;
 var request = new XMLHttpRequest();
 
 request.open('GET', docSetUrl +
-             'https://apk.docs.wso2.com/en/versions/assets/versions.json', true);
+             'versions/assets/versions.json', true);
 
 request.onload = function() {
   if (request.status >= 200 && request.status < 400) {
