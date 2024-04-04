@@ -9,7 +9,9 @@
     ```yaml
     analytics:
       enabled: true
-      type: "ELK"
+      publishers:
+      - enabled: true
+        type: "elk"
     ```
 
     !!! Note
@@ -18,11 +20,27 @@
         ```yaml
         analytics:
           enabled: true
-          type: "ELK"
-          logLevel: "INFO"
+          publishers:
+          - enabled: true
+            type: "elk"
+            logLevel: "INFO"
         ```
 
-3. Redeploy the helm chart with the changes in `values.yaml`.
+You can also set multiple publishers for analytics as follows.
+    ```yaml
+    analytics:
+      enabled: true
+      publishers:
+        - enabled: true
+          configProperties:
+            auth.api.token: <on-prem-key>
+            auth.api.url: "https://analytics-event-auth.choreo.dev/auth/v1"
+          type: "default"
+        - enabled: true
+          type: "elk"
+    ```
+
+1. Redeploy the helm chart with the changes in `values.yaml`.
 
 ## Step 2 - Setup Elasticsearch and Kibana
 
@@ -42,7 +60,7 @@ For forwarding Kubernetes logs to Elasticsearch, you have the option to use any 
 
 1. Deploy some sample APIs to APK and invoke endpoints.
 2. Go to Kibana UI and search for logs
-3. Under Logs > Stream section you will be able to see a lot of logs from all the pods. To view the analytics logs search for 'apimatrics'
+3. Under Logs > Stream section you will be able to see a lot of logs from all the pods. To view the analytics logs search for 'apimMetrics'
 
 [![Kibana logs](../../assets/img/analytics/kibana-logs-view.png)](../../assets/img/analytics/kibana-logs-view.png)
 
