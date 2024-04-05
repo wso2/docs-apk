@@ -4,6 +4,11 @@ Similar to the approach for [REST APIs](../rest/create-rest-api-using-crs.md), t
 - GQLRoute CR
 - Backend CR
 
+For this guide, you can create a sample backend for the GraphQL API using the following command.
+```
+kubectl apply -f https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/gql-sample-backend.yaml -n <namespace>
+```
+
 #### API CR 
 
 In the following CR, we have defined the GraphQL API giving the name, context, and version information for the API. We have also referred to `GQLRoute` resource in `spec.production.routeRefs[0]` path which we create in the next step.
@@ -70,6 +75,13 @@ spec:
   basePath: ""
   protocol: "http"
 ```
+
+This Backend CR points to the backend that can be created using the following command. Replace <namespace> with the relevant name of the namespace.
+
+```
+kubectl apply -f https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/gql-sample-backend.yaml -n <namespace>
+```
+
 The `host` and `port` fields should point to your GraphQL backend.
 If your backend is a Kubernetes-native `Service`, then derive the following value according to your `Service` and use it as the `host`. 
 
