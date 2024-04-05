@@ -1,13 +1,10 @@
-# Configure Analytics for Choreo Insights
+# Configure Analytics for Moesif
 
-## Step 1 - Generate On-prem Key
+## Step 1 - Get Collector Application Id
 
-1. Sign in to [Choreo](https://console.choreo.dev/login/).
+1. Sign up for [Moesif](https://www.moesif.com/).
 
-2. Go to `Settings > On-prem Keys` and click on `Generate Key` button.
-
-3. Copy the generated on-prem key.
-
+2. During the sign up process, you will receive a Collector Application Id for your configured application. Copy this value and keep it saved.
 
 ## Step 2 - Configure APK
 
@@ -18,10 +15,9 @@
       enabled: true
       publishers:
       - enabled: true
+        type: "moesif"
         configProperties:
-          auth.api.token: <on-prem-key>
-          auth.api.url: "https://analytics-event-auth.choreo.dev/auth/v1"
-        type: "default"
+          moesifToken: <collector-application-id>
     ```
 
 You can also set multiple publishers for analytics as follows.
@@ -46,12 +42,10 @@ You can also set multiple publishers for analytics as follows.
 
 1. After setting up the enforcer, invoke a few requests (success and failure) for a deployed API.
 
-2. Go to [Choreo Insights](https://console.choreo.dev/insights) and select the correct environment to view the analytics data.
+2. Go to your Moesif dashboard and you will be able to view your analytics reports.
 
-Following are some of the graphs generated in the Choreo Insights.
+The following is an overview of the graphs generated in the Moesif Dashboards.
 
-[![Choreo Insights Overview](../../assets/img/analytics/choreo-insights-overview.png)](../../assets/img/analytics/choreo-insights-overview.png)
-
-[![Choreo Insights Latency](../../assets/img/analytics/choreo-insights-latency.png)](../../assets/img/analytics/choreo-insights-latency.png)
+[![Moesif Dashboards Overview](../../assets/img/analytics/moesif-dashboards-overview.png)](../../assets/img/analytics/moesif-dashboards-overview.png)
 
 
