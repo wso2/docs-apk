@@ -1,6 +1,12 @@
 
 Follow the instructions below to deploy APK Data Service (DS) servers and the Cloud Native Postgres(CloudNativePG) in the Kubernetes cluster.
 
+### Create Kubernetes namespace
+
+``` 
+kubectl create ns apk
+```
+
 
 ### Setup WSO2 API Manager Control Plane 4.3.0
 
