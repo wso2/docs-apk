@@ -39,18 +39,8 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
         helm install <chart-name> <repository-name>/wso2am-cp --version <verison-of-APIM> -f <path-to-values.yaml-file>
         ```
 
-4. Install NGINX Ingress Controller using the following command. Please refer to the [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/deploy/) for more information.
+4. Install NGINX Ingress Controller using the following command. Please refer to the [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/deploy/#local-development-clusters) documentation for more information.
 
-    ```console
-    helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-    helm install nginx-ingress ingress-nginx/ingress-nginx
-    ```
-
-Or you are using minikube you can use the following command to enable the ingress controller.
-
-    ```console
-    minikube addons enable ingress
-    ```
 
 ### Setup WSO2 APK Dataplane 1.1.0
 
