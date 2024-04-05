@@ -1,6 +1,12 @@
 # Quick Start Guide
 This section is a step-by-step guide to creating, deploying, and invoking an API using the WSO2 APK with APIM Control Plane.
 
+### Create Kubernetes namespace
+
+``` 
+kubectl create ns apk
+```
+
 ## Step 1 - Setup APIM Control Plane with APK
 
 There are 3 components which you need to setup to get the APK working with APIM. They are,

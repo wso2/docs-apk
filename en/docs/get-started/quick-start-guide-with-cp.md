@@ -49,7 +49,7 @@ Apart from the above API definition file, we also need an `apk-conf` file that d
 
     === "Sample Request"
         ```
-        curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.1.0/apis/generate-configuration' \
+        curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.1.0/apis/generate-k8s-resources?organization=carbon.super' \
         --header 'Host: api.am.wso2.com' \
         --form 'definition=@"/Users/user/EmployeeServiceDefinition.json"'
         ```
