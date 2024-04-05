@@ -12,10 +12,25 @@ Following steps describe how to generate an APK configuration file.
     
     You can start by providing your API schema file to the Configuration Service in  APK. This service generates an APK configuration file that includes important API metadata, rate limiting details, security settings, and other necessary information. To generate the APK configuration file corresponding to your API Schema, use the following command that invokes the configuration service. You can assign the values according to the table below.
     
+    The definition can be provided as a local file or as a URL containing a definition file.
+
+    1. As a local file
     ```
     curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.0.0/apis/generate-configuration' \
     --header 'Host: api.am.wso2.com' \
     --form 'definition=@"/Users/user/EmployeeServiceDefinition.json"'
+    ```
+
+    2. As a URL
+
+    The following URLs contains a valid sample definitions that you can use.
+
+    OpenAPI Specification for REST API:
+    ```
+    curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.0.0/apis/generate-configuration' \
+    --header 'Host: api.am.wso2.com' \
+    ---form 'url="https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/definitions/EmployeeServiceDefinition.json"' \
+    --form 'apiType="REST"'
     ```
     
     The sample output of the generate APK Configuration (apk-conf) file will be as follows
