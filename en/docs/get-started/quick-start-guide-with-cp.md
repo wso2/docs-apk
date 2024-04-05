@@ -22,6 +22,7 @@ Install the [prerequisites](../../setup/prerequisites) that are required to run 
     | --------- | ------------------- |
     | 127.0.0.1 | api.am.wso2.com     |
     | 127.0.0.1 | idp.am.wso2.com     |
+    | 127.0.0.1 | default.gw.wso2.com     |
     | 127.0.0.1 | carbon.super.gw.wso2.com |
 
 !!! info "(Optional) To access the deployment through your local machine"
