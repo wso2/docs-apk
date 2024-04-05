@@ -38,6 +38,10 @@ You can also set multiple publishers for analytics as follows.
           type: "default"
         - enabled: true
           type: "elk"
+        - enabled: true
+          type: "moesif"
+          configProperties:
+            moesifToken: <collector-application-id>
     ```
 
 1. Redeploy the helm chart with the changes in `values.yaml`.

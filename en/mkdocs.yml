@@ -224,6 +224,7 @@ nav:
         - Configure Analytics: 
             - Choreo Insights: setup/analytics/configure-analytics-for-choreo-insights.md
             - ELK Stack: setup/analytics/configure-analytics-for-elk-stack.md
+            - Moesif: setup/analytics/configure-analytics-for-moesif.md
         - Configure Listeners:
             - Configure Gateway Listeners: setup/listeners/configure-gateway-listeners.md
         - Configure Logs:
