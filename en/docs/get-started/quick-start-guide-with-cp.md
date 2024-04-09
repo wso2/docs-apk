@@ -30,11 +30,11 @@ Install the [prerequisites](../../setup/prerequisites) that are required to run 
 
     1. Identify the `gateway-service` external IP address.
         ```console
-        kubectl get svc | grep gateway-service
+        kubectl get svc -n apk | grep gateway-service
         ```
     2. Port forward router service to localhost.
         ```console
-        kubectl port-forward svc/apk-wso2-apk-gateway-service 9095:9095
+        kubectl port-forward svc/apk-wso2-apk-gateway-service 9095:9095 -n apk
         ```
 
 ### Generate APK configuration file from the OpenAPI definition
@@ -52,7 +52,7 @@ Apart from the above API definition file, we also need an `apk-conf` file that d
         ```
         curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.1.0/apis/generate-configuration' \
         --header 'Host: api.am.wso2.com' \
-        --form 'definition=@"/Users/user/EmployeeServiceDefinition.json"'
+        --form 'definition=@"/Users/user/EmployeeServiceDefinition.json"' > EmployeeServiceDefinition.json
         ```
 
     === "Sample Response"
@@ -128,7 +128,7 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
 3. Once you have generated your K8s artifacts, the next step is to apply them to  the Kubernetes API server.
 
         ```
-        kubectl apply -f <path_to_extracted_zip_file>
+        kubectl apply -n apk -f <path_to_extracted_zip_file>
         ```
 
 4. Execute the command below. You will be able to see that the `EmployeeServiceAPI` is successfully deployed as shown in the image.
@@ -136,7 +136,7 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
 
     === "Command"
         ```
-        kubectl get apis
+        kubectl get apis -n apk
         ```
 
     [![Deployed API](../assets/img/get-started/deployed-api.png)](../assets/img/get-started/deployed-api.png)
@@ -148,13 +148,13 @@ The endpoint "http://employee-service:80" provided in the above files points to 
 We have provided the file containing this sample backend [here](../assets/files/get-started/employee-service-backend.yaml). Download it and create the backend service using the following command.
 
 ```
-kubectl apply -f ./employee-service-backend.yaml
+kubectl apply -f ./employee-service-backend.yaml -n apk
 ```
 
 Wait for this pod to spin up. You can check its status using the following command.
 
 ```
-kubectl get pods
+kubectl get pods -n apk
 ```
 
 ## Step 4 - Manage API From Control Plane
@@ -191,15 +191,15 @@ kubectl get pods
         </table>
      </html>
 
-4. Click **Subscriptions** to subscribe to the created SwaggerPetstore API.
+4. Click **Subscriptions** to subscribe to the created EmployeeServiceAPI.
 5. Click **Production Keys** or **Sandbox Keys** based on the environment for which you need to generate keys.
    Let's assume that you are working in a production environment. Therefore, click **Production Keys**.
 5. Click **Generate Keys** to create an application Access Token with relevant scopes.
 6. To verify the Application and Subscription creation in the APK Gateway, execute the following command. You will see the status of the deployed application as follows once completed.
 
     ```bash
-    kubectl get subscriptions
-    kubectl get applications
+    kubectl get subscriptions -n apk
+    kubectl get applications -n apk
     ```
 
 ## Step 6 - Invoke the API
@@ -207,7 +207,7 @@ kubectl get pods
 1. Use the following command to invoke the API using the access token generated in the previous step.
 
     ```bash
-    curl -X GET "https://carbon.super.gw.wso2.com:9095/RW1wbG95ZWVTZXJ2aWNlQVBJMy4xNA/3.14/employee" -H "Authorization: Bearer <access-token>"
+    curl -X GET "https://carbon.super.gw.wso2.com:9095/RW1wbG95ZWVTZXJ2aWNlQVBJMy4xNA/3.14/employee" -H "Authorization: Bearer <access-token>" -k
     ```
 
 You will now be able to see a successful response with the details of the Employees from the mock backend that we used for this guide.
