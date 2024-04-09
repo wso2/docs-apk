@@ -7,6 +7,17 @@ This section is a step-by-step guide to creating, deploying, and invoking an API
 kubectl create ns apk
 ```
 
+### Configure the hosts file
+
+Add a hostname mapping to the ```/etc/hosts``` file as follows.
+
+   | IP        | Domain name     |
+       | --------- | --------------- |
+   | 127.0.0.1 | api.am.wso2.com |
+   | 127.0.0.1 | am.wso2.com     |
+   | 127.0.0.1 | idp.am.wso2.com |
+   | 127.0.0.1 | default.gw.wso2.com |
+
 ## Step 1 - Setup APIM Control Plane with APK
 
 There are 3 components which you need to setup to get the APK working with APIM. They are,

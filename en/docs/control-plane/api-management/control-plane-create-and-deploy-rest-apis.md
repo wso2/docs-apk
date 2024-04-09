@@ -1,4 +1,4 @@
-1. Login to the Publisher Console [API Publisher](https://am.wso2.com/publisher) of the WSO2 API Manager.
+1. Login to the Publisher Console ([https://am.wso2.com/publisher](https://am.wso2.com/publisher)) of the WSO2 API Manager.
 2. Click on the `REST API` button and then use `Import Open API` option.
 3. Provide the OpenAPI definition of the API and click `Next`. Select OpenAPI URL and provide `https://petstore3.swagger.io/api/v3/openapi.json` as the URL. Click Next.
 4. Edit the information as given below and click Create.
