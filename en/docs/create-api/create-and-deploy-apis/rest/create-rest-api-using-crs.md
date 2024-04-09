@@ -29,6 +29,7 @@ spec:
   apiType: REST
   apiVersion: 1.0.0
   basePath: /http-bin-api/1.0.0
+  organization: default
   production:
   - httpRouteRefs:
     - prod-http-route-http-bin-api
@@ -52,7 +53,7 @@ spec:
   parentRefs:
     - group: gateway.networking.k8s.io
       kind: Gateway
-      name: default
+      name: wso2-apk-default
       sectionName: httpslistener
   rules:
   - backendRefs:
@@ -62,13 +63,7 @@ spec:
     matches:
     - path:
         type: PathPrefix
-        value: /http-bin-api/1.0.0
-    filters:
-      - type: URLRewrite
-        urlRewrite:
-          path:
-            type: ReplacePrefixMatch
-            replacePrefixMatch: /
+        value: /
 ```
 
 Here, we have used `http-bin.gw.wso2.com` as the virtual hostname for this API. The `spec.parentRefs[0]` parameter defines the Gateway to which this `HTTPRoute` is deployed. We have defined a single rule with a `PathPrefix` match type, and the `URLRewrite` filter with `ReplacePrefixMatch` to rewrite the API context prefix so that only the remainder of the path is sent to the actual backend.
