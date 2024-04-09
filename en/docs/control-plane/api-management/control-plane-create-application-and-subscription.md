@@ -1,4 +1,4 @@
-1. Login to the Developer Portal [API Developer Portal](https://am.wso2.com/devportal) of the WSO2 API Manager.
+1. Login to the Developer Portal ([https://am.wso2.com/devportal](https://am.wso2.com/devportal)) of the WSO2 API Manager.
 2. Click on the `Applications` tab and then use `ADD NEW APPLICATION` option.
 3. Provide the information as given below and click `Save`.
 

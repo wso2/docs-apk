@@ -18,11 +18,12 @@ Install the [prerequisites](../../setup/prerequisites) that are required to run 
 1. Save and download the sample [EmployeeServiceDefinition.json](../assets/files/get-started/EmployeeServiceDefinition.json) file. This is the OAS definition of the API that we are going to deploy in APK.
 2. Add a hostname mapping to the ```/etc/hosts``` file as follows.
 
-    | IP        | Domain name         |
-    | --------- | ------------------- |
-    | 127.0.0.1 | api.am.wso2.com     |
-    | 127.0.0.1 | idp.am.wso2.com     |
-    | 127.0.0.1 | default.gw.wso2.com     |
+    | IP        | Domain name     |
+    | --------- | --------------- |
+    | 127.0.0.1 | api.am.wso2.com |
+    | 127.0.0.1 | am.wso2.com     |
+    | 127.0.0.1 | idp.am.wso2.com |
+    | 127.0.0.1 | default.gw.wso2.com |
     | 127.0.0.1 | carbon.super.gw.wso2.com |
 
 !!! info "(Optional) To access the deployment through your local machine"
@@ -158,7 +159,7 @@ kubectl get pods
 
 ## Step 4 - Manage API From Control Plane
 
-1. Login to the Publisher Console [API Publisher](https://am.wso2.com/publisher) of the WSO2 API Manager.
+1. Login to the Publisher Console ([https://am.wso2.com/publisher](https://am.wso2.com/publisher)) of the WSO2 API Manager.
 
     you can see the deploy EmployeeService API as below.
 
@@ -177,7 +178,7 @@ kubectl get pods
 
 ## Step 5 - Create Application and Subscribe to the API
 
-1. Login to the Developer Portal[API Developer Portal](https://am.wso2.com/devportal) of the WSO2 API Manager.
+1. Login to the Developer Portal ([https://am.wso2.com/devportal](https://am.wso2.com/devportal)) of the WSO2 API Manager.
 2. Click on the `Applications` tab and then use `ADD NEW APPLICATION` option.
 3. Provide the information as given below and click `Save`.
 
