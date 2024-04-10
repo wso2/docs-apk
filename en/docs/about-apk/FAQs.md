@@ -131,7 +131,39 @@ If you see `ImagePullBackOff` error or the image is still in the pulling stage, 
     kubectl delete <kind> <name> -n <namespace>
     ```
 
+### 6. Why is my installation failing with an "ensure CRDs are installed first" error?
 
+If you are seeing errors similar to the ones below:
+
+```plaintext
+ensure CRDs are installed first, resource mapping not found for name: "apk-wso2-apk-dcr-api" namespace: "default" from "": no matches for kind "API" in version "dp.wso2.com/v1alpha2"
+```
+
+It is likely due to a limitation in Helm when installing the Custom Resource Definitions (CRDs). To resolve this, follow the steps below.
+
+Step 1: Obtain the CRDs from the chart
+
+First, obtain the Custom Resource Definitions (CRDs) for the specific version of APK you want to install. Replace `<version>` with the actual version number of the APK you are installing.
+
+```bash
+helm show crds wso2apk/apk-helm --version 1.1.0 > apk-crds.yaml
+```
+
+Step 2: Apply the CRDs manually
+
+Next, apply the CRDs using the following command.
+
+```bash
+kubectl apply -f apk-crds.yaml
+```
+
+Step 3: Reinstall APK
+
+Finally, reinstall APK using the Helm installation command as provided in the relevant quick start guide.
+
+```bash
+helm install apk wso2apk/apk-helm --version 1.1.0
+```
 
 ## Functionality
 
@@ -149,7 +181,7 @@ Refer to the [CRD catalog](../catalogs/kubernetes-crds.md) for details on the CR
 ## Security
 
 ### 1. What are the different methods available for API authentication?
-Currently, APK supports only OAuth 2.0 for API authentication.
+Currently, APK supports OAuth 2.0 and mutualSSL for API authentication.
 
 ### 2. Can I use a custom authorization header?
 Yes, a custom authorization header can be used. Refer to the [Use custom bearer header name](..//develop-and-deploy-api/security/authentication/enable-api-security/oauth2.md) for instructions to configure this.
