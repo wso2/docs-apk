@@ -32,16 +32,13 @@ You can also set multiple publishers for analytics as follows.
       enabled: true
       publishers:
         - enabled: true
-          configProperties:
-            auth.api.token: <on-prem-key>
-            auth.api.url: "https://analytics-event-auth.choreo.dev/auth/v1"
           type: "default"
+          secretName: <choreo-secret-name>
         - enabled: true
           type: "elk"
         - enabled: true
-        type: "moesif"
-        configProperties:
-          moesifToken: <collector-application-id>
+          type: "moesif"
+          secretName: <moesif-secret-name>
     ```
 
 1. Redeploy the helm chart with the changes in `values.yaml`.
