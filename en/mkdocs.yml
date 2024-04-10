@@ -189,8 +189,8 @@ nav:
                     - CORS: control-plane/api-management/control-plane-cors.md
             - Add APK Gateway: control-plane/api-management/control-plane-add-apk-gateway.md
             - Create Application and Subscribe: control-plane/api-management/control-plane-create-application-and-subscription.md
-        - Security: control-plane/control-plane-security.md
-        - Troubleshooting: control-plane/control-plane-troubleshooting.md
+        # - Security: control-plane/control-plane-security.md
+        # - Troubleshooting: control-plane/control-plane-troubleshooting.md
     - Catalogs:
         - CRD Catalog: 
             - Overview - CRD Catalog: catalogs/kubernetes-crds.md
