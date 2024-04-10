@@ -52,7 +52,7 @@ Apart from the above API definition file, we also need an `apk-conf` file that d
         ```
         curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.1.0/apis/generate-configuration' \
         --header 'Host: api.am.wso2.com' \
-        --form 'definition=@"/Users/user/EmployeeServiceDefinition.json"' > EmployeeServiceDefinition.json
+        --form 'definition=@"/Users/user/EmployeeServiceDefinition.json"' > EmployeeService.apk-conf
         ```
 
     === "Sample Response"
