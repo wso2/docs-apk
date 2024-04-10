@@ -64,7 +64,7 @@ When increasing concurrent users for given payload size, APK consumes steady gro
 
 ## Response time percentiles vs. concurrent users
 
-Below graphs show 90th, 95th, and 99th Response Time percentiles for 0ms backend delay. This is useful to measure the percentage of requests that exceeded the response time value for a given percentile. A percentile can also tell the percentage of requests completed below the particular response time value.
+Below graphs show 90th, 95th and 99th Response Time percentiles for 0ms backend delay. This is useful to measure the percentage of requests that exceeded the response time value for a given percentile. A percentile can also tell the percentage of requests completed below the particular response time value.
 
 [![Percentiles 1 CPU](../../assets/img/performance-test-results/percentile-1-cpu.png)](../../assets/img/performance-test-results/percentile-1-cpu.png)
 
