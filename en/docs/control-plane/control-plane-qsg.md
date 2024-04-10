@@ -117,7 +117,7 @@ Now you can verify the deployment by executing the following command. You will s
 
 === "Command"
     ```
-    kubectl get pods
+    kubectl get pods -n apk
     ```
 
 ## Step 2 - Create and Deploy the API
