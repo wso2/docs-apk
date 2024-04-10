@@ -18,5 +18,5 @@
 10. To verify the API deployment in the APK Gateway, execute the following command. You will see the status of the deployed apis as follows once completed.
 
 ```bash
-   kubectl get apis
+   kubectl get apis -n apk
 ```
