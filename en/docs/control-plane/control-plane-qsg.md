@@ -136,5 +136,5 @@ Now you can verify the deployment by executing the following command. You will s
 Use the following command to invoke the API using the access token generated in the previous step.
 
 ```bash
-    curl -X GET "https://default.gw.wso2.com:9095/petstore/1.0.0/pet/findByStatus?status=available" -H "Authorization: Bearer <access-token>"
+    curl -X GET "https://default.gw.wso2.com:9095/petstore/1.0.0/pet/findByStatus?status=available" -H "Authorization: Bearer <access-token>" -k
 ```
