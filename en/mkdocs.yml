@@ -182,11 +182,11 @@ nav:
                 - Create APIs:
                   - Create REST APIs: control-plane/api-management/control-plane-create-and-deploy-rest-apis.md
                   - Create GraphQL APIs: control-plane/api-management/control-plane-create-and-deploy-graphql-apis.md
-                - Manage Endpoints: control-plane/api-management/control-plane-manage-endpoints.md
-                - API Policies:
-                    - Overview: control-plane/api-management/control-plane-api-policies.md
-                    - Interceptor Service: control-plane/api-management/control-plane-interceptor-service.md
-                    - CORS: control-plane/api-management/control-plane-cors.md
+                # - Manage Endpoints: control-plane/api-management/control-plane-manage-endpoints.md
+                # - API Policies:
+                #     - Overview: control-plane/api-management/control-plane-api-policies.md
+                #     - Interceptor Service: control-plane/api-management/control-plane-interceptor-service.md
+                #     - CORS: control-plane/api-management/control-plane-cors.md
             - Add APK Gateway: control-plane/api-management/control-plane-add-apk-gateway.md
             - Create Application and Subscribe: control-plane/api-management/control-plane-create-application-and-subscription.md
         # - Security: control-plane/control-plane-security.md
