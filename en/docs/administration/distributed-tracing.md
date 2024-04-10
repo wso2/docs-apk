@@ -167,7 +167,7 @@ To set up distributed tracing, start by following the instructions outlined in [
 
 When using **Jaeger** for tracing, the format is same as for **Zipkin** to publish spans from APK. Therefore, the tracer type is configured as `zipkin`. Follow these steps to configure APK with Jaeger.
 
-1. Update the `values.yaml`'s `wso2.apk.dp.gatewayRuntime` section with the following values
+1. Update the `values.yaml`'s `wso2.apk.dp.gatewayRuntime` section with the following values:
 
     ```yaml
     tracing: 
