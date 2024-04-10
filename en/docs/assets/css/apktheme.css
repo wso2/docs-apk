@@ -269,6 +269,6 @@ header>.md-grid {
 /* End of custom dropdown specific styles */
 
 /* The code block below hides the dropdown. Remove it after the next release. */
-.mb-tabs__dropdown{
+/* .mb-tabs__dropdown{
     display: none;
-}
+} */
