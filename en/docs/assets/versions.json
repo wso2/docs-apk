@@ -1,14 +1,13 @@
 {
   "1.1.0": "1.1.0",
   "current": "1.1.0",
-  "latest": "1.1.0",
   "list": [
     "1.1.0",
     "1.0.0"
    ],
   "all": {
     "1.1.0":{
-        "doc": "latest",
+        "doc": "1.1.0",
         "notes": "1.1.0/about-apk/about-this-release"
     },
     "1.0.0":{
