@@ -18,6 +18,6 @@
 6. To verify the Application and Subscription creation in the APK Gateway, execute the following command. You will see the status of the deployed application as follows once completed.
 
     ```bash
-    kubectl get subscriptions
-    kubectl get applications
+    kubectl get subscriptions -n apk
+    kubectl get applications -n apk
     ```
