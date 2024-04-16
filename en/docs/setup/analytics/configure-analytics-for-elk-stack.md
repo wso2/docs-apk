@@ -7,38 +7,41 @@
 2. Set following config under `wso2.apk.dp.gatewayRuntime` section to enable analytics.
 
     ```yaml
-    analytics:
-      enabled: true
-      publishers:
-      - enabled: true
-        type: "elk"
+      gatewayRuntime:
+        analytics:
+          enabled: true
+          publishers:
+          - enabled: true
+            type: "elk"
     ```
 
     !!! Note
         Optionally, `logLevel`. By default, this config is set to `INFO`.
 
         ```yaml
-        analytics:
-          enabled: true
-          publishers:
-          - enabled: true
-            type: "elk"
-            logLevel: "INFO"
+          gatewayRuntime:
+            analytics:
+              enabled: true
+              publishers:
+              - enabled: true
+                type: "elk"
+                logLevel: "INFO"
         ```
 
 You can also set multiple publishers for analytics as follows.
     ```yaml
-    analytics:
-      enabled: true
-      publishers:
-        - enabled: true
-          type: "default"
-          secretName: <choreo-secret-name>
-        - enabled: true
-          type: "elk"
-        - enabled: true
-          type: "moesif"
-          secretName: <moesif-secret-name>
+      gatewayRuntime:
+        analytics:
+          enabled: true
+          publishers:
+            - enabled: true
+              type: "default"
+              secretName: <choreo-secret-name>
+            - enabled: true
+              type: "elk"
+            - enabled: true
+              type: "moesif"
+              secretName: <moesif-secret-name>
     ```
 
 1. Redeploy the helm chart with the changes in `values.yaml`.
