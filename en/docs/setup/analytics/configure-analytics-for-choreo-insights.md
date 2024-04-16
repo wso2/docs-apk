@@ -23,32 +23,52 @@
         ```
 
 2. Follow the instructions outlined in [Customize Configurations](../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file, which you will then use to tailor the analytics configurations to your specific needs. 
-3. Open the `values.yaml` file. Replace <secret-name> with the name of the secret you created in the previous step and add this section under the gatewayRuntime section in the values.yaml file.
-    ```yaml
+3. Replace ```secret-name``` in the following configuration with the name of the secret you created in the previous step.
+```yaml
+analytics:
+ enabled: true
+ publishers:
+ - enabled: true
+   type: "default"
+   secretName: <secret-name>
+```
+
+4. Open the `values.yaml` file, and add the above configuration to the gatewayRuntime section under dp. Your values.yaml file should have a structure as follows.
+```yaml
+wso2:
+  ...
+  apk:
+    ...
+    dp:
+      ...
       gatewayRuntime:
         analytics:
-        enabled: true
-        publishers:
+          enabled: true
+          publishers:
           - enabled: true
             type: "default"
             secretName: <secret-name>
-    ```
+```
+Then redeploy the helm chart with the changes in `values.yaml`.
 
-You can also set multiple publishers for analytics as follows.
-    ```yaml
-      gatewayRuntime:
-        analytics:
-        enabled: true
-        publishers:
-          - enabled: true
-            type: "default"
-            secretName: <choreo-secret-name>
-          - enabled: true
-            type: "elk"
-          - enabled: true
-            type: "moesif"
-            secretName: <moesif-secret-name>
-    ```
+### Optional - Adding Multiple Publishers
+
+You can also set multiple publishers for analytics as follows. Replace ```choreo-secret-name``` and ```moesif-secret-name``` with the appropriate values.
+
+```yaml
+gatewayRuntime:
+  analytics:
+    enabled: true
+    publishers:
+      - enabled: true
+        type: "default"
+        secretName: <choreo-secret-name>
+      - enabled: true
+        type: "elk"
+      - enabled: true
+        type: "moesif"
+        secretName: <moesif-secret-name>
+```
 
 ## Step 3 - View Analytics Data
 
