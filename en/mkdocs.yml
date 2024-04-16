@@ -87,7 +87,7 @@ nav:
     - API Management:
         - Develop and Deploy API:
            - Overview: create-api/create-api-overview.md
-           - Create and deploy APIs:
+           - Create and Deploy APIs:
                 - K8s Native API Development: 
                     - Rest APIs: create-api/create-and-deploy-apis/rest/create-rest-api-using-crs.md
                     - GraphQL APIs: create-api/create-and-deploy-apis/graphql/create-graphql-api-using-crs.md
@@ -232,7 +232,10 @@ nav:
         - Install: setup/install.md
         - Migration: setup/migration.md
         - Customize Configurations: setup/Customize-Configurations.md
+        - Production Deployment Guidelines: setup/production-deployment-guideline.md
         - Configure HPA for gateway: setup/configure-hpa.md
+        - Deploy in OpenShift: setup/deploy-in-openshift.md
+
 #        - Organization: setup/organizations.md
        #- Deploy:
        #    - Deployment Patterns: get-started/dummy.md
@@ -266,8 +269,6 @@ nav:
             - Router: administration/configurations/configure-logs-router.md
         - Configure Distributed Tracing: administration/distributed-tracing.md
         - Configure Prometheus Metric Support: administration/prometheus-metric-support.md
-        - Deploy in OpenShift: setup/deploy-in-openshift.md
-        - Production Deployment guidelines: administration/production-deployment-guideline.md
         - Deployment patterns: administration/deployment-patterns.md
     - About APK:
         - What is APK?: about-apk/what-is-apk.md
