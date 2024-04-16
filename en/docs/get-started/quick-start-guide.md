@@ -13,7 +13,23 @@ Install the [prerequisites](../../setup/prerequisites) that are required to run 
 
 {!includes/start-apk.md!}
 
-## Step 2 - Create and Deploy the API
+## Step 2 - Create the Backend
+
+For this guide, we will be using a backend deployed in a Kubernetes service. Prior to invoking the API, you will need to have this backend up.
+
+You can create the sample backend with the following command.
+
+```
+kubectl apply -f https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/qsg-sample-backend.yaml
+```
+
+Wait for this pod to spin up. You can check its status using the following command.
+
+```
+kubectl get pods
+```
+
+## Step 3 - Create and Deploy the API
 
 1. Save and download the sample [EmployeeServiceDefinition.json](../assets/files/get-started/EmployeeServiceDefinition.json) file. This is the OAS definition of the API that we are going to deploy in APK.
 2. Add a hostname mapping to the ```/etc/hosts``` file as follows.
@@ -208,22 +224,6 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
         ```
 
     [![Deployed API](../assets/img/get-started/deployed-api.png)](../assets/img/get-started/deployed-api.png)
-
-## Step 3 - Create the Backend
-
-The endpoint "http://employee-service:80" provided in the above files points to a backend deployed on a kubernetes service. Prior to invoking the API, you will need to have this backend up. 
-
-You can create the sample backend with the following command.
-
-```
-kubectl apply -f https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/qsg-sample-backend.yaml
-```
-
-Wait for this pod to spin up. You can check its status using the following command.
-
-```
-kubectl get pods
-```
 
 ## Step 4 - Invoke the API
 
