@@ -1,12 +1,11 @@
-# APK Deployment Patterns
+# APK Dataplane Deployment Patterns
 
-This document outlines the recommended deployment patterns for the WSO2 APK. There are two primary deployment patterns for APK
+This document outlines the recommended deployment patterns for the WSO2 APK Dataplane. There are two primary deployment patterns for APK Dataplane
 
-* Dataplane per Kubernetes cluster
-* Dataplane per Kubernetes namespace
+* [Data Plane per Kubernetes cluster](#data-plane-per-kubernetes-cluster)
+* [Data Plane per Kubernetes namespace](#data-plane-per-kubernetes-namespace)
 
-
-## Dataplane per Kubernetes cluster
+## Data Plane per Kubernetes cluster
 
 ### Overview
 
@@ -14,7 +13,7 @@ In this approach, each environment (dev, prod, etc..) has its own dedicated Kube
 
 ### Architecture diagram
 
-[![dataplane-per-k8-cluster](../assets/img/deployment-patterns/APK_Dataplane_per_Cluster.png)](../assets/img/deployment-patterns/APK_Dataplane_per_Cluster.png)
+[![dataplane-per-k8-cluster](../../assets/img/deployment-patterns/APK_Dataplane_per_Cluster.png)](../../assets/img/deployment-patterns/APK_Dataplane_per_Cluster.png)
 
 ### Advantages
 
@@ -61,7 +60,7 @@ Wso2:
 This approach is recommended for Production and UAT environments
 
 
-## Dataplane per Kubernetes Namespace
+## Data Plane per Kubernetes namespace
 
 ### Overview
 
@@ -69,7 +68,7 @@ In this approach, multiple environments (dev, prod, etc..) share the same Kubern
 
 ### Architecture diagram
 
-[![dataplane-per-k8-namespace](../assets/img/deployment-patterns/APK_Dataplane_per_NS.png)](../assets/img/deployment-patterns/APK_Dataplane_per_NS.png)
+[![dataplane-per-k8-namespace](../../assets/img/deployment-patterns/APK_Dataplane_per_NS.png)](../../assets/img/deployment-patterns/APK_Dataplane_per_NS.png)
 
 ### Advantages
 
