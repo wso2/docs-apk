@@ -168,8 +168,11 @@ nav:
     #       - API Categorization: manage-apis/api-categorization.md
     #       - API Monetization: manage-apis/api-monetization.md
     - Control Plane:
-        - Overview: control-plane/overview.md
-        - Quick Start Guide: control-plane/control-plane-qsg.md
+        - APK Control Plane:
+              - Overview: control-plane/overview.md
+        - APK as a Gateway in API Manager:
+              - Overview: control-plane/apk-as-gateway-in-apim-overview.md
+              - Quick Start Guide: control-plane/apk-as-gateway-in-apim-qsg.md
         - Advanced Configuration:
             - API Manager Control Plane: control-plane/apim-deploy.md
             - APK Data Plane: control-plane/apk-deploy.md
