@@ -6,7 +6,7 @@ WSO2 APK can be configured through `values.yaml` file.  Please refer to [Customi
 
 ## Choose the correct deployment pattern
 
-Please refer this [document](deployment-patterns.md) on how to choose the correct pattern for you environment.
+Please refer this [document](deployment/deployment-patterns-overview.md) on how to choose the correct pattern for you
 
 ## Change the hostnames and vhosts
 

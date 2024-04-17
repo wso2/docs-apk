@@ -230,6 +230,11 @@ nav:
     - Setup: 
         - Prerequisites: setup/prerequisites.md
         - Install: setup/install.md
+        - Deployment Patterns:
+              - Overview: setup/deployment/deployment-patterns-overview.md
+              - APK Data Plane: setup/deployment/apk-data-plane-deployment-patterns.md
+              - APK Data Plane with API Manager Control Plane: setup/deployment/apk-with-apim-cp-deployment-patterns.md
+              - APK as a Gateway in API Manager: setup/deployment/apk-as-gateway-in-apim-deployment-patterns.md
         - Migration: setup/migration.md
         - Customize Configurations: setup/Customize-Configurations.md
         - Production Deployment Guidelines: setup/production-deployment-guideline.md
@@ -269,7 +274,6 @@ nav:
             - Router: administration/configurations/configure-logs-router.md
         - Configure Distributed Tracing: administration/distributed-tracing.md
         - Configure Prometheus Metric Support: administration/prometheus-metric-support.md
-        - Deployment patterns: administration/deployment-patterns.md
     - About APK:
         - What is APK?: about-apk/what-is-apk.md
         - About This Release: about-apk/about-this-release.md
