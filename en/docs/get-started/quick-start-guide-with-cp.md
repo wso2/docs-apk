@@ -97,7 +97,7 @@ Apart from the above API definition file, we also need an `apk-conf` file that d
 2. You will get the apk-conf file content as the response. Save this content into a file named `EmployeeService.apk-conf`.
 
 !!! Important
-    We recommend installing the [APK Config Language Support Visual Studio Code (VS Code) extension](../create-api/create-and-deploy-apis/apk-conf-lang-support.md) to edit the APK Configuration file.
+    We recommend installing the [APK Config Language Support Visual Studio Code (VS Code) extension]({{base_path}}/en/latest/api-management-overview/apk-conf-lang-support/) to edit the APK Configuration file.
 
 
 ### Deploy the API in APK DataPlane
