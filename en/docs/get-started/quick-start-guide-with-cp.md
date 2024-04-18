@@ -7,7 +7,7 @@ This section is a step-by-step guide to creating, deploying, and invoking an API
 Install the [prerequisites](../../setup/prerequisites) that are required to run the WSO2 API Platform For Kubernetes.
 
 !!!NOTE
-    If you have already installed the pre-release version of the APK into your cluster please remove the installation by following the steps specified in <a href="{{base_path}}/en/latest/about-apk/FAQs/#q2-how-to-uninstall-apk-from-my-cluster">FAQs</a> section.
+    If you have already installed the pre-release version of the APK into your cluster please remove the installation by following the steps specified in [Uninstall APK](../setup/uninstall.md).
 
 ## Step 1 - Setup WSO2 API Platform For Kubernetes With Control Plane
 
@@ -18,12 +18,12 @@ Install the [prerequisites](../../setup/prerequisites) that are required to run 
 1. Save and download the sample [EmployeeServiceDefinition.json](../assets/files/get-started/EmployeeServiceDefinition.json) file. This is the OAS definition of the API that we are going to deploy in APK.
 2. Add a hostname mapping to the ```/etc/hosts``` file as follows.
 
-    | IP        | Domain name     |
-    | --------- | --------------- |
-    | 127.0.0.1 | api.am.wso2.com |
-    | 127.0.0.1 | am.wso2.com     |
-    | 127.0.0.1 | idp.am.wso2.com |
-    | 127.0.0.1 | default.gw.wso2.com |
+    | IP        | Domain name              |
+    | --------- | ------------------------ |
+    | 127.0.0.1 | api.am.wso2.com          |
+    | 127.0.0.1 | am.wso2.com              |
+    | 127.0.0.1 | idp.am.wso2.com          |
+    | 127.0.0.1 | default.gw.wso2.com      |
     | 127.0.0.1 | carbon.super.gw.wso2.com |
 
 !!! info "(Optional) To access the deployment through your local machine"
