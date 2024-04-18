@@ -96,6 +96,7 @@ nav:
                 - Via CRs: create-api/create-and-deploy-apis/rest/create-rest-api-using-crs.md
             - GraphQL APIs: 
                 - Via CRs: create-api/create-and-deploy-apis/graphql/create-graphql-api-using-crs.md
+                - Via REST API: create-api/create-and-deploy-apis/graphql/create-graphql-api-using-rest-api.md
                 # todo(amali) add rest of the links
         - Undeploy API: 
             - Via REST API: undeploy/direct-undeploy.md
