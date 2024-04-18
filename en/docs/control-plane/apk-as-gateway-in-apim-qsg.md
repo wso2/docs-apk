@@ -70,14 +70,18 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
    
 3. Install the APK components and start WSO2 API Platform For Kubernetes. Consider ```apk``` as the ```<chart-name>``` for this guide. As the ```--version``` of this command, use the version of the release you used in point 1 above. It will take a few minutes for the deployment to complete.
 
-    === "Command"
-        ```
-        helm install apk wso2apk/apk-helm --version 1.1.0 -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/apk/cp-enabled-values.yaml -n apk
-        ``` 
-    === "Format"
-        ```
-        helm install <chart-name> <repository-name>/apk-helm --version <verison-of-APK> -f <path-to-values.yaml-file>
-        ```
+!!!NOTE
+    If you already have an installation of the APK in your cluster, please remove the installation by following the steps specified in the [Uninstall APK](../setup/uninstall.md) section.
+
+
+=== "Command"
+     ```
+     helm install apk wso2apk/apk-helm --version 1.1.0 -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/apk/cp-enabled-values.yaml -n apk
+     ``` 
+=== "Format"
+     ```
+     helm install <chart-name> <repository-name>/apk-helm --version <verison-of-APK> -f <path-to-values.yaml-file>
+     ```
 
 !!! Note
     Please refer to the [Advance Configuration for APK](../control-plane/apk-deploy.md) for more information.

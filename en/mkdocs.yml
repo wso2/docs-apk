@@ -234,7 +234,8 @@ nav:
     #    - Helm Catalog: catalogs/config-catalog.md
     - Setup: 
         - Prerequisites: setup/prerequisites.md
-        - Install: setup/install.md
+        - Install APK: setup/install.md
+        - Uninstall APK: setup/uninstall.md
         - Deployment Patterns:
               - Overview: setup/deployment/deployment-patterns-overview.md
               - APK Data Plane: setup/deployment/apk-data-plane-deployment-patterns.md
