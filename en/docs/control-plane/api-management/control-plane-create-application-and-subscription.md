@@ -21,3 +21,8 @@
     kubectl get subscriptions -n apk
     kubectl get applications -n apk
     ```
+
+!!! Important If you are expecting a high scale of subscriptions and applications in your deployment
+      The database storage option is offered in APK for deployments with a high number of subscriptions and applications, especially for enterprise use cases. Because, by default, subscription and application-related data are stored as CRs (Custom Resources) in etcd. However, as the number of subscriptions and applications increases, it can lead to overutilization of etcd memory, subsequently degrading the performance of your API gateway. This degradation can impact the deployment, undeployment, and update times ultimately affecting the reliability of applications and subscriptions.
+      
+      By opting for the database option offered in APK for deployments with high numbers of subscriptions and applications, you can mitigate issues related to etcd storage, such as memory overutilization and performance degradation. This ensures smoother deployment, undeployment, and update processes, ultimately enhancing the reliability of your applications and subscriptions. For further information and assistance, please contact our sales team [https://wso2.com/contact/?ref=consulting](https://wso2.com/contact/?ref=consulting).

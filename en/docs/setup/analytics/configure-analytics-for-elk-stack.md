@@ -2,46 +2,69 @@
 
 ## Step 1 - Setup APK
 
-1. Start by following the instructions outlined in [Customize Configurations](../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file, which you will then use to tailor the analytics configurations to your specific needs. Open `values.yaml` file.
+1. Start by following the instructions outlined in [Customize Configurations](../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file.
+2. Open the `values.yaml` file, and add the above configuration to the gatewayRuntime section under dp.
 
-2. Set following config under `wso2.apk.dp.gatewayRuntime` section to enable analytics.
+```yaml
+gatewayRuntime:
+  analytics:
+    enabled: true
+    publishers:
+    - enabled: true
+      type: "elk"
+```
+
+!!! Note
+    Optionally, `logLevel` can be configured for ELK. By default, this config is set to `INFO`.
 
     ```yaml
-    analytics:
-      enabled: true
-      publishers:
-      - enabled: true
-        type: "elk"
+    gatewayRuntime:
+      analytics:
+        enabled: true
+        publishers:
+        - enabled: true
+          type: "elk"
+          logLevel: "INFO"
     ```
 
-    !!! Note
-        Optionally, `logLevel`. By default, this config is set to `INFO`.
+Your values.yaml file will have a structure as follows.
 
-        ```yaml
+```yaml
+wso2:
+  ...
+  apk:
+    ...
+    dp:
+      ...
+      gatewayRuntime:
         analytics:
           enabled: true
           publishers:
           - enabled: true
             type: "elk"
-            logLevel: "INFO"
-        ```
+```
 
-You can also set multiple publishers for analytics as follows.
-    ```yaml
-    analytics:
-      enabled: true
-      publishers:
-        - enabled: true
-          type: "default"
-          secretName: <choreo-secret-name>
-        - enabled: true
-          type: "elk"
-        - enabled: true
-          type: "moesif"
-          secretName: <moesif-secret-name>
-    ```
+Then redeploy the helm chart with the changes in `values.yaml`.
 
-1. Redeploy the helm chart with the changes in `values.yaml`.
+### Optional - Adding Multiple Publishers
+
+You can also set multiple publishers for analytics as follows. Replace ```choreo-secret-name``` and ```moesif-secret-name``` with the appropriate values.
+
+```yaml
+ gatewayRuntime:
+   analytics:
+     enabled: true
+     publishers:
+       - enabled: true
+         type: "default"
+         secretName: <choreo-secret-name>
+       - enabled: true
+         type: "elk"
+       - enabled: true
+         type: "moesif"
+         secretName: <moesif-secret-name>
+```
+
 
 ## Step 2 - Setup Elasticsearch and Kibana
 

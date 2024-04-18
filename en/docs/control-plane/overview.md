@@ -1,4 +1,4 @@
-# Control Plane
+# APK Control Plane
 
 ## Overview
 
@@ -11,7 +11,7 @@ APK Only supports REST API and GraphQL API creation for now.
 
 Following diagram depicts the architecture of how the WSO2 APIM Control Plane connects with WSO2 APK Gateway using APIM-APK Agent.
 
-[![Architecture](../assets/img/control-plane/apk-cp-overview.png)](../assets/img/control-plane/apk-cp-overview.png)
+[![Architecture](../assets/img/deployment-patterns/APK_DP_TO_CP_K8s.png)](../assets/img/deployment-patterns/APK_DP_TO_CP_K8s.png)
 
 ## APIM APK Agent
 
@@ -32,6 +32,6 @@ The APIM APK Agent is a component that connects the WSO2 API Manager (APIM) cont
 
 ## Next Steps
 
-You can refer the [Setup](../control-plane/control-plane-deployment.md) regards to configuring API Manager Control Plane with APK Gateway using APIM-APK Agent.
+You can refer the [Quick Start Guide](../get-started/quick-start-guide-with-cp.md) regards to trying out API Manager Control Plane with APK Gateway using APIM-APK Agent.
 
     

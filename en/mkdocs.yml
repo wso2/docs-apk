@@ -87,7 +87,7 @@ nav:
     - API Management:
         - Develop and Deploy API:
            - Overview: create-api/create-api-overview.md
-           - Create and deploy APIs:
+           - Create and Deploy APIs:
                 - K8s Native API Development: 
                     - Rest APIs: create-api/create-and-deploy-apis/rest/create-rest-api-using-crs.md
                     - GraphQL APIs: create-api/create-and-deploy-apis/graphql/create-graphql-api-using-crs.md
@@ -168,8 +168,11 @@ nav:
     #       - API Categorization: manage-apis/api-categorization.md
     #       - API Monetization: manage-apis/api-monetization.md
     - Control Plane:
-        - Overview: control-plane/overview.md
-        - Quick Start Guide: control-plane/control-plane-qsg.md
+        - APK Control Plane:
+              - Overview: control-plane/overview.md
+        - APK as a Gateway in API Manager:
+              - Overview: control-plane/apk-as-gateway-in-apim-overview.md
+              - Quick Start Guide: control-plane/apk-as-gateway-in-apim-qsg.md
         - Advanced Configuration:
             - API Manager Control Plane: control-plane/apim-deploy.md
             - APK Data Plane: control-plane/apk-deploy.md
@@ -230,9 +233,17 @@ nav:
     - Setup: 
         - Prerequisites: setup/prerequisites.md
         - Install: setup/install.md
+        - Deployment Patterns:
+              - Overview: setup/deployment/deployment-patterns-overview.md
+              - APK Data Plane: setup/deployment/apk-data-plane-deployment-patterns.md
+              - APK Data Plane with API Manager Control Plane: setup/deployment/apk-with-apim-cp-deployment-patterns.md
+              - APK as a Gateway in API Manager: setup/deployment/apk-as-gateway-in-apim-deployment-patterns.md
         - Migration: setup/migration.md
         - Customize Configurations: setup/Customize-Configurations.md
+        - Production Deployment Guidelines: setup/production-deployment-guideline.md
         - Configure HPA for gateway: setup/configure-hpa.md
+        - Deploy in OpenShift: setup/deploy-in-openshift.md
+
 #        - Organization: setup/organizations.md
        #- Deploy:
        #    - Deployment Patterns: get-started/dummy.md
@@ -266,9 +277,6 @@ nav:
             - Router: administration/configurations/configure-logs-router.md
         - Configure Distributed Tracing: administration/distributed-tracing.md
         - Configure Prometheus Metric Support: administration/prometheus-metric-support.md
-        - Deploy in OpenShift: setup/deploy-in-openshift.md
-        - Production Deployment guidelines: administration/production-deployment-guideline.md
-        - Deployment patterns: administration/deployment-patterns.md
     - About APK:
         - What is APK?: about-apk/what-is-apk.md
         - About This Release: about-apk/about-this-release.md

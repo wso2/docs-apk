@@ -19,12 +19,20 @@ Here are the requirements for the package manager to be used with this project:
 
 ### Kubernetes Resource Requirements
 
-Here are the minimum resource requirements for the Kubernetes cluster to run this project:
+Here are the minimum resource requirements for the Kubernetes cluster to run APK Data Plane:
 
 | Resource  | Minimum Requirement |
 |-----------|----------------------|
 | CPU       | 4 Cores             |
 | Memory    | 6 GB                |
+| Storage   | 15 GB               |
+
+Here are the minimum resource requirements for the Kubernetes cluster to run APK Data Plane with APIM Control Plane:
+
+| Resource  | Minimum Requirement |
+|-----------|---------------------|
+| CPU       | 6 Cores             |
+| Memory    | 8 GB                |
 | Storage   | 15 GB               |
 
 ### Manage Kubernetes Services
