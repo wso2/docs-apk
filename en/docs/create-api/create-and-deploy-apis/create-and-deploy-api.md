@@ -8,7 +8,7 @@ By invoking the Configuration Service, you can generate Kubernetes artifacts spe
 You can generate K8s resources as a zip file from config-deployer service and apply it to the deployment through a CI/CD pipeline using kubectl.
 
 ```
-curl --location 'https://api.am.wso2.com:9095/api/configurator/1.0.0/apis/generate-k8s-resources' \
+curl --location 'https://api.am.wso2.com:9095/api/configurator/1.1.0/apis/generate-k8s-resources' \
 --header 'Content-Type: multipart/form-data' \
 --header 'Accept: application/zip' \
 --form 'apkConfiguration=@"/Users/user/EmployeeService.apk-conf"' \

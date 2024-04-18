@@ -21,7 +21,7 @@ Follow the instructions below to design a GraphQL API.
     === "Sample Request"
 
         ```
-        curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.0.0/apis/generate-configuration' \
+        curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.1.0/apis/generate-configuration' \
         --header 'Host: api.am.wso2.com' \
         --form 'definition=@"/Users/user/StarWarsAPI.graphql"'
         --form 'apiType="GRAPHQL"' \
@@ -92,7 +92,7 @@ Follow the instructions below to design a GraphQL API.
     === "Request Format"
 
       ```
-      curl --location 'https://<host>:9095/api/configurator/1.0.0/apis/generate-configuration' \
+      curl --location 'https://<host>:9095/api/configurator/1.1.0/apis/generate-configuration' \
       --header 'Host: <host>' \
       --form 'apiType="<api-type>"' \
       --form 'definition=@"<path/to/StarWarsAPI.graphql>"'
