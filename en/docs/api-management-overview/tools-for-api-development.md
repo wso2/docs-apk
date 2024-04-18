@@ -10,7 +10,7 @@ APK offers a suite of developer tools to streamline the API development process 
 
 - <b>APK Config language support VSCode Plugin</b>
     
-    VSCode plugin provides an intuitive interface for writing APK Conf files, reducing the learning curve for developers. For more details, refer to the section on [Enhance Configuration with APK Config Language Support](./apk-conf-lang-support.md)
+    VSCode plugin provides an intuitive interface for writing APK Conf files, reducing the learning curve for developers. For more details, refer to the section on [Enhance Configuration with APK Config Language Support]({{base_path}}/en/latest/create-api/create-and-deploy-apis/apk-conf-lang-support)
 
 - <b>Config Generator</b>
 
@@ -26,12 +26,12 @@ APK offers a suite of developer tools to streamline the API development process 
 Learn how to efficiently create and deploy APIs using our developer-friendly tools and resources. 
 These sections will guide you through the entire process, from API creation to deployment, then un-deployment ensuring you can easily bring your APIs to life.
 
-- Step 1 - [Generate APK Configuration File](../generate-apk-conf) 
-- Step 2 (optional) - Create or Update Configuration with [APK Config Language Support via VSCode Plugin](../apk-conf-lang-support).
+- Step 1 - [Generate APK Configuration File]({{base_path}}/en/latest/create-api/create-and-deploy-apis/generate-apk-conf/) 
+- Step 2 (optional) - Create or Update Configuration with [APK Config Language Support via VSCode Plugin]({{base_path}}/en/latest/create-api/create-and-deploy-apis/apk-conf-lang-support).
 - Step 3 - Generate Kubernetes Custom Resources(CRs) and Deploy API by applying CRs to Kubernetes Cluster
 
-    - Option 1 - [Generate K8s custom resources using config generator tool and Deploy the API using Kubernetes Client](../create-and-deploy-api)
-    - Option 2 - [Deploy API using APK Config Deployer tool](../direct-deploy)
+    - Option 1 - [Generate K8s custom resources using config generator tool and Deploy the API using Kubernetes Client]({{base_path}}/en/latest/create-api/create-and-deploy-apis/create-and-deploy-api)
+    - Option 2 - [Deploy API using APK Config Deployer tool]({{base_path}}/en/latest/create-api/create-and-deploy-apis/direct-deploy)
 
-- Step 5 - [Undeploy API](../direct-undeploy)
+- Step 5 - [Undeploy API]({{base_path}}/en/latest/create-api/create-and-deploy-apis/direct-undeploy)
 
