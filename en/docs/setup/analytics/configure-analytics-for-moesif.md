@@ -8,45 +8,64 @@
 
 ## Step 2 - Configure APK
 
-1. Create a secret containing the Moesif Collector Application ID using the following command. Replace the <moesif-collector-application-id> will your Collector Application ID.
+1. Create a secret containing the Moesif Collector Application ID using the following command. Replace the ```moesif-collector-application-id``` with your Collector Application ID.
+    
     === "Sample Command"
-
         ```bash
         kubectl create secret generic moesif-secret --from-literal=moesifToken='<moesif-collector-application-id>' -n apk
         ```
     === "Command Format"
-
         ```bash
         kubectl create secret generic <secret-name> --from-literal=moesifToken='<moesif-collector-application-id>' -n <namespace>
         ```
 
-2. Follow the instructions outlined in [Customize Configurations](../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file, which you will then use to tailor the analytics configurations to your specific needs. Open the `values.yaml` file. Set the following config under `wso2.apk.dp.gatewayRuntime` section and apply helm chart.
+2. Follow the instructions outlined in [Customize Configurations](../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file.
+3. Replace ```secret-name``` in the following configuration with the name of the secret you created in the previous step.
+```yaml
+analytics:
+ enabled: true
+ publishers:
+ - enabled: true
+   type: "moesif"
+   secretName: <secret-name>
+```
+4. Open the `values.yaml` file, and add the above configuration to the gatewayRuntime section under dp. Your values.yaml file should have a structure as follows.
+```yaml
+wso2:
+  ...
+  apk:
+    ...
+    dp:
+      ...
+      gatewayRuntime:
+        analytics:
+          enabled: true
+          publishers:
+          - enabled: true
+            type: "moesif"
+            secretName: <secret-name>
+```
 
-Replace <secret-name> with the name of the secret containing the moesif token you created in the previous step.
+Then redeploy the helm chart with the changes in `values.yaml`.
 
-    ```yaml
-    analytics:
-      enabled: true
-      publishers:
+### Optional - Adding Multiple Publishers
+
+You can also set multiple publishers for analytics as follows. Replace ```choreo-secret-name``` and ```moesif-secret-name``` with the appropriate values.
+
+```yaml
+gatewayRuntime:
+  analytics:
+    enabled: true
+    publishers:
+      - enabled: true
+        type: "default"
+        secretName: <choreo-secret-name>
+      - enabled: true
+        type: "elk"
       - enabled: true
         type: "moesif"
-        secretName: <secret-name>
-    ```
-
-You can also set multiple publishers for analytics as follows.
-    ```yaml
-    analytics:
-      enabled: true
-      publishers:
-        - enabled: true
-          type: "default"
-          secretName: <choreo-secret-name>
-        - enabled: true
-          type: "elk"
-        - enabled: true
-          type: "moesif"
-          secretName: <moesif-secret-name>
-    ```
+        secretName: <moesif-secret-name>
+```
 
 ## Step 3 - View Analytics Data
 
