@@ -289,11 +289,55 @@ spec:
     - port: 9090
       targetPort: 9090
       nodePort: 30000
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: prometheus
+  namespace: prometheus
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: prometheus
+rules:
+  - apiGroups: [""]
+    resources:
+      - nodes
+      - services
+      - endpoints
+      - pods
+    verbs: ["get", "list", "watch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: prometheus
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: prometheus
+subjects:
+  - kind: ServiceAccount
+    name: prometheus
+    namespace: prometheus
 ```
+
+These resources can be applied using 
+
+```
+kubectl create ns prometheus
+kubectl apply -f . -n prometheus
+```
+
+You can name the namespace whatever you wish. Ensure that you replace the value in the above yaml files, particularly in the `ServiceAccount`, `ClusterRole` and `ClusterRoleBinding` files.
+
+!!!NOTE
+    These yaml definitions are to only be used for testing purposes, especially the `ServiceAccount`, `ClusterRole` and `ClusterRoleBinding` definitions. This is because the permissions given here are very broad. For production environments, make sure to only grant permissions that are absolutely necessary for Prometheus to function.
 
 Then run the following command.
 ```
-kubectl port-forward -n <namespace> svc/prometheus-service 9090:9090
+kubectl port-forward -n prometheus svc/prometheus-service 9090:9090
 ```
 You can then view the Prometheus dashboard at http://localhost:9090.
 You can proceed to set up Grafana by following the steps detailed [here.](#step-2---set-up-grafana)
@@ -345,9 +389,6 @@ Similar configurations should be added for all of the components you wish to exp
 
 
 ** Note that the Config Deployer Service and IDP Domain Service both have two ports exposed for both Ballerina and JVM metrics.
-
-!!! Note
-    Configure the prometheus service with the required level of permissions on Kubernetes.
 
 The sample file under [this section](#quick-start) contains a working prometheus.yml file. Feel free to customize these configurations further by following [the documentation.](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kubernetes_sd_config)
 
