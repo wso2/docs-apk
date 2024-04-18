@@ -1,8 +1,6 @@
 
 In APK, you can deploy APIs by using Kubernetes resources, if you prefer a Kubernetes-native experience. However, APK offers a suite of developer tools to streamline the API development process and use these tools to create and deploy APIs.
 
-- [Kubernetes Native API Creation flow](../create-and-deploy-apis/create-api-using-cr) - WSO2 APK support for the developer flow with direct Custom Resource (CR) creation, in alignment with the Kubernetes Gateway API specification.This method requires manually defining the API by creating YAML files for Kubernetes resources such as APIs, HTTPRoutes, Deployments, Services, ..etc, giving you complete control over the deployment but requiring some knowledge of Kubernetes.
+- [Via CRs](../create-and-deploy-apis/create-api-using-cr) - WSO2 APK supports enhance Kubernative Native API Management via Kubernetes Custom Resources(CRs), adhering to the Kubernetes Gateway API specification.This method requires manually defining the API by creating YAML files for Kubernetes resources such as APIs, HTTPRoutes, Deployments, Services, ..etc, giving you complete control over the deployment. If you are comfortable working directly with Kubernetes and have access to the dataplane Kubernetes cluster, you can follow these guidelines.
 
-- [Enhanced API Development flow](../create-and-deploy-apis/tools-for-api-development) - WSO2 APK provides a set of REST APIs and tools to streamline the API development process. These APIs/tools are designed for API developers to create APIs, mock APIs, and test APIs and deploying APIs to a Kubernetes cluster.
-
-
+- [Via REST API](../create-and-deploy-apis/tools-for-api-development) - WSO2 APK provides a set of REST APIs and tools to streamline the API development process. These APIs/tools are designed for API developers to create APIs, mock APIs, and test APIs and deploying APIs to a Kubernetes cluster. This flow will help you to create APIs without the need to manually create Kubernetes resources. If you are looking for a more streamlined API development experience, you can follow these guidelines.

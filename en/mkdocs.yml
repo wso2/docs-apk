@@ -85,26 +85,28 @@ nav:
         #    - Test API: develop-and-deploy-api/test-api.md
         #    - Publish Your API: manage-apis/publish-your-api.md
     - API Management:
+        - Overview - API Management in APK Dataplane:
+            - Overview: create-api/create-api-overview.md
+            - Via REST API: create-api/create-and-deploy-apis/tools-for-api-development.md
+            - Via CRs:  api-management-overview/create-api-using-crs.md
         - Develop and Deploy API:
-           - Overview: create-api/create-api-overview.md
-           - Create and Deploy APIs:
-                - K8s Native API Development: 
-                    - Rest APIs: create-api/create-and-deploy-apis/rest/create-rest-api-using-crs.md
-                    - GraphQL APIs: create-api/create-and-deploy-apis/graphql/create-graphql-api-using-crs.md
-                - Enhanced API Development:
-                    - Overview: create-api/create-and-deploy-apis/tools-for-api-development.md
-                    - Create and Deploy API using APK Tools:
-                        - Generate APK Configuration file: create-api/create-and-deploy-apis/generate-apk-conf.md
-                        - Generate K8s custom resources and Deploy: create-api/create-and-deploy-apis/create-and-deploy-api.md
-                        - Direct Deploy into K8s Server: create-api/create-and-deploy-apis/direct-deploy.md
-                        - Undeploy API: create-api/create-and-deploy-apis/direct-undeploy.md
-                        - APK Config Language Support Plugin: create-api/create-and-deploy-apis/apk-conf-lang-support.md
+            - Rest APIs: 
+                - Via REST API: 
+                    - Generate API Configuration file: create-api/create-and-deploy-apis/generate-api-conf.md
+                    - Generate K8s custom resources and Deploy: create-api/create-and-deploy-apis/create-and-deploy-api.md
+                    - Direct Deploy into K8s Server: create-api/create-and-deploy-apis/direct-deploy.md
+                    - Undeploy API: create-api/create-and-deploy-apis/direct-undeploy.md
+                    - API Config Language Support Plugin: create-api/create-and-deploy-apis/api-conf-lang-support.md
+                - Via CRs: create-api/create-and-deploy-apis/rest/create-rest-api-using-crs.md
+            - GraphQL APIs: 
+                - Via CRs: create-api/create-and-deploy-apis/graphql/create-graphql-api-using-crs.md
+                # todo(amali) add rest of the links
         - Manage Endpoint:
             - Define Endpoint: develop-and-deploy-api/endpoints/prod-sand-endpoints.md
             - Manage Certificate: create-api/manage-service-endpoint/manage-certificate.md
             - Manage Security:
                 - Via REST API: create-api/manage-service-endpoint/manage-security-via-rest-api.md
-                - Via CR: create-api/manage-service-endpoint/manage-security-via-crs.md
+                - Via CRs: create-api/manage-service-endpoint/manage-security-via-crs.md
             - Manage Resiliency:
                 - Timeout: create-api/manage-service-endpoint/manage-resiliency-timeout.md
                 - Retry Policy: create-api/manage-service-endpoint/manage-resiliency-retry-policy.md
@@ -114,13 +116,13 @@ nav:
             - Interceptor Service: 
                 - Overview: create-api/create-and-attach-api-policies/interceptors/interceptors-overview.md
                 - Via REST API: create-api/create-and-attach-api-policies/interceptors/interceptors-via-rest-api.md
-                - Via CR: create-api/create-and-attach-api-policies/interceptors/interceptors-via-crs.md
+                - Via CRs: create-api/create-and-attach-api-policies/interceptors/interceptors-via-crs.md
             - Backend JWT Token Manipulation:
                 - Via REST API: create-api/create-and-attach-api-policies/backend-jwt-token-manipulation/backend-jwt-token-manipulation-via-rest-api.md
-                - Via CR: create-api/create-and-attach-api-policies/backend-jwt-token-manipulation/backend-jwt-token-manipulation-via-crs.md
+                - Via CRs: create-api/create-and-attach-api-policies/backend-jwt-token-manipulation/backend-jwt-token-manipulation-via-crs.md
             - CORS:
                 - Via REST API: create-api/create-and-attach-api-policies/cors/enable-cors-via-rest-api.md
-                - Via CR: create-api/create-and-attach-api-policies/cors/enable-cors-via-crs.md
+                - Via CRs: create-api/create-and-attach-api-policies/cors/enable-cors-via-crs.md
         - Rate Limiting:
             - Overview: create-api/rate-limiting/rate-limiting-policy-overview.md
             - Simple Rate Limiting:
