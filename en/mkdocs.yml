@@ -86,17 +86,17 @@ nav:
         #    - Publish Your API: manage-apis/publish-your-api.md
     - API Management:
         - Overview - API Management in APK Dataplane:
-            - Overview: create-api/create-api-overview.md
-            - Via REST API: create-api/create-and-deploy-apis/tools-for-api-development.md
+            - Overview: api-management-overview/create-api-overview.md
+            - Via REST API: api-management-overview/tools-for-api-development.md
             - Via CRs:  api-management-overview/create-api-using-crs.md
         - Develop and Deploy API:
             - Rest APIs: 
                 - Via REST API: 
-                    - Generate API Configuration file: create-api/create-and-deploy-apis/generate-api-conf.md
+                    - Generate API Configuration file: create-api/create-and-deploy-apis/generate-apk-conf.md
                     - Generate K8s custom resources and Deploy: create-api/create-and-deploy-apis/create-and-deploy-api.md
                     - Direct Deploy into K8s Server: create-api/create-and-deploy-apis/direct-deploy.md
                     - Undeploy API: create-api/create-and-deploy-apis/direct-undeploy.md
-                    - API Config Language Support Plugin: create-api/create-and-deploy-apis/api-conf-lang-support.md
+                    - API Config Language Support Plugin: create-api/create-and-deploy-apis/apk-conf-lang-support.md
                 - Via CRs: create-api/create-and-deploy-apis/rest/create-rest-api-using-crs.md
             - GraphQL APIs: 
                 - Via CRs: create-api/create-and-deploy-apis/graphql/create-graphql-api-using-crs.md
