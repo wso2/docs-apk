@@ -58,4 +58,4 @@ You can generate K8s resources as a zip file from config-deployer service and ap
 
 ### Step 5 - Undeploy API
 
-{!templates/apk-conf-undeploy.md!}
+{!includes/apk-conf-undeploy.md!}

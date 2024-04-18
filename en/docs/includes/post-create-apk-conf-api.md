@@ -5,8 +5,8 @@ Once you have crafted your APK Configuration File, you have two convenient optio
 
 ### Option 1 - Deploy API using APK Config Deployer tool
 
-{!templates/direct-deploy.md!}
+{!includes/direct-deploy.md!}
 
 ### Option 2 - Generate K8s CRs using config generator tool and Deploy the API using Kubernetes Client
 
-{!templates/apk-conf-cr-deploy.md!}
+{!includes/apk-conf-cr-deploy.md!}
