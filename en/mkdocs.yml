@@ -198,7 +198,8 @@ nav:
     #    - Helm Catalog: catalogs/config-catalog.md
     - Setup: 
         - Prerequisites: setup/prerequisites.md
-        - Install: setup/install.md
+        - Install APK: setup/install.md
+        - Uninstall APK: setup/uninstall.md
         - Migration: setup/migration.md
         - Customize Configurations: setup/Customize-Configurations.md
 #        - Organization: setup/organizations.md

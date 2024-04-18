@@ -7,7 +7,7 @@ This section is a step-by-step guide to creating, deploying, and invoking an API
 Install the [prerequisites](../../setup/prerequisites) that are required to run the WSO2 API Platform For Kubernetes.
 
 !!!NOTE
-    If you have already installed the pre-release version of the APK into your cluster please remove the installation by following the steps specified in <a href="{{base_path}}/en/latest/about-apk/FAQs/#q2-how-to-uninstall-apk-from-my-cluster">FAQs</a> section.
+    If you already have an installation of the APK in your cluster, please remove the installation by following the steps specified in the [Uninstall APK](../setup/uninstall.md) section.
 
 ## Step 1 - Start WSO2 API Platform For Kubernetes
 
