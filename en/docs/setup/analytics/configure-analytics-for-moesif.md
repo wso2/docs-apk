@@ -9,18 +9,17 @@
 ## Step 2 - Configure APK
 
 1. Create a secret containing the Moesif Collector Application ID using the following command. Replace the <moesif-collector-application-id> will your Collector Application ID.
-    === "Sample Command"
 
-        ```bash
-        kubectl create secret generic moesif-secret --from-literal=moesifToken='<moesif-collector-application-id>' -n apk
-        ```
-    === "Command Format"
+=== "Sample Command"
+     ```bash
+     kubectl create secret generic moesif-secret --from-literal=moesifToken='<moesif-collector-application-id>' -n apk
+     ```
+=== "Command Format"
+     ```bash
+     kubectl create secret generic <secret-name> --from-literal=moesifToken='<moesif-collector-application-id>' -n <namespace>
+     ```
 
-        ```bash
-        kubectl create secret generic <secret-name> --from-literal=moesifToken='<moesif-collector-application-id>' -n <namespace>
-        ```
-
-2. Follow the instructions outlined in [Customize Configurations](../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file, which you will then use to tailor the analytics configurations to your specific needs. Open the `values.yaml` file. Set the following config under `wso2.apk.dp.gatewayRuntime` section and apply helm chart.
+1. Follow the instructions outlined in [Customize Configurations](../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file, which you will then use to tailor the analytics configurations to your specific needs. Open the `values.yaml` file. Set the following config under `wso2.apk.dp.gatewayRuntime` section and apply helm chart.
 
 Replace <secret-name> with the name of the secret containing the moesif token you created in the previous step.
 
