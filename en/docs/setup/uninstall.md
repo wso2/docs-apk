@@ -1,4 +1,28 @@
-# Uninstall APK
+# Uninstall APK Components
+
+## Uninstall APK
+
+### Check Status of Current Installation
+
+To view details about your existing APK installation, use the following command.
+
+```
+helm list -A
+```
+
+This will give you an output similar to the following.
+[![Helm List Output](../assets/img/setup/apk-helm-list-output.png)](../assets/img/setup/apk-helm-list-output.png)
+
+This will give you information regarding your existing APK helm installation. 
+For this guide, `chart-name` is the `NAME` of the installation, and the `namespace` is the `NAMESPACE` of the installation
+The version of your installation is the 3 digit suffix in the `CHART` field.
+
+For example, in the above image, the values are as follows.
+- chart-name: apk
+- namespace: apk
+- version: 1.1.0
+
+### Instructions for Uninstalling APK
 
 To completely remove APK from your Kubernetes cluster, follow the steps given below.
 
@@ -26,11 +50,11 @@ To completely remove APK from your Kubernetes cluster, follow the steps given be
 
 3. Then delete the CRDs using the following command.
 
-    ```
-    kubectl delete -f crds.yaml
-    ```
+```
+kubectl delete -f crds.yaml
+```
 
-4. You will then have to delete the validating and mutating webhook configurations using the following command.
+1. You will then have to delete the validating and mutating webhook configurations using the following command.
 
 ```
 kubectl delete mutatingwebhookconfigurations.admissionregistration.k8s.io -n apk --all
@@ -38,3 +62,38 @@ kubectl delete validatingwebhookconfigurations.admissionregistration.k8s.io -n a
 ```
 
 This will clear the APK installation from your Kubernetes cluster.
+
+## Uninstall APIM APK Agent
+
+### Check Status of Current Installation
+
+To view details about your APIM APK Agent installation, use the following command.
+
+```
+helm list -A
+```
+
+This will give you an output similar to the following.
+[![Helm List Output](../assets/img/setup/apim-apk-agent-helm-list-output.png)](../assets/img/setup/apim-apk-agent-helm-list-output.png)
+
+This will give you information regarding your Agent helm installation. 
+For this guide, `chart-name` is the `NAME` of the installation, and the `namespace` is the `NAMESPACE` of the installation
+The version of your installation is the 3 digit suffix in the `CHART` field.
+
+For example, in the above image, the values are as follows.
+- chart-name: apim-apk-agent
+- namespace: apk
+- version: 1.1.0
+
+### Instructions for Uninstalling APIM APK Agent
+
+To remove the APIM APK Agent from your Kubernetes cluster, apply the following command.
+
+=== "Command"
+     ```
+     helm uninstall apim-apk-agent -n apk
+     ```
+=== "Format"
+     ```
+     helm uninstall <chart-name> -n <namespace>
+     ```
