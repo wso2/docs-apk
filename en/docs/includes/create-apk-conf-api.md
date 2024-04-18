@@ -24,10 +24,9 @@ Save and download the sample [EmployeeServiceDefinition.json](https://raw.github
 
 ## Step 3. Generate APK configuration file.
     
-You can start by providing your API schema file to the Configuration Service in  APK. This service generates an APK configuration file that includes important API metadata, rate limiting details, security settings, and other necessary information to generate the APK configuration file corresponding to your API Schema.
+This service generates an APK configuration file by providing your 3.x OpenAPI specification file. APK configuration file includes important API metadata, rate limiting details, security settings, and other necessary information about your API.
 
-Here, the definition can point to either an OpenAPI Specification file.
-The definition can be provided as a local file or as a URL containing a definition file.
+The OpenAPI specification file can be provided as a local file or as a URL containing a definition file.
 
 1. As a local file
 
@@ -72,14 +71,13 @@ operations:
     scopes: []
 ```
 
-## Step 5. Save the content to a file with the extension .apk-conf. 
+## Step 5. Save the response to a file with the extension .apk-conf. 
 
-For example, EmployeeService.apk-conf.
-
-!!! note
-    For production scenarios, it is recommended to commit the configuration to a source control system such as GitHub. This enables controlled and automated deployments through pipelines, ensuring a structured and controlled release process.
+For example, you can save under the name, EmployeeService.apk-conf.
 
 ## Step 6. Update the APK configuration file.
+
+Review the content inside the apk-conf file and update it with additional API configurations as needed, such as rate limits, CORS configurations, etc.
 
 !!! note
     To optimize the configuration process, APK presents a VS Code plugin designed to offer syntax highlighting and intelligent suggestions. This plugin simplifies the incorporation of rate limitations, new resources, and security configurations into your API. Adapt the contents of the APK Configuration file as needed. For further details, refer to the section on [Enhance Configuration with APK Config Language Support]({{base_path}}/en/latest/create-api/create-and-deploy-apis/apk-conf-lang-support/)
