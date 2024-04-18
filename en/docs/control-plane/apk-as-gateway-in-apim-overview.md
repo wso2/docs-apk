@@ -1,4 +1,4 @@
-# Control Plane
+# APK as Gateway in API Manager
 
 ## Overview
 
