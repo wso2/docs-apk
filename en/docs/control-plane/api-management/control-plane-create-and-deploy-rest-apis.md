@@ -1,22 +1,18 @@
-1. Login to the Publisher Console ([https://am.wso2.com/publisher](https://am.wso2.com/publisher)) of the WSO2 API Manager.
-2. Click on the `REST API` button and then use `Import Open API` option.
-3. Provide the OpenAPI definition of the API and click `Next`. Select OpenAPI URL and provide `https://petstore3.swagger.io/api/v3/openapi.json` as the URL. Click Next.
-4. Edit the information as given below and click Create.
 
-   | Field    | Sample value                        |
-      |----------|-------------------------------------|
-   | Name     | SwaggerPetstore                     |
-   | Context  | /petstore                           |
-   | Version  | 1.0.0                               |
-   | Endpoint | https://petstore3.swagger.io/api/v3 |
+1. Follow the same guide to create a REST API as in the [REST API Creation Guide](../../../create-api/create-and-deploy-apis/rest/create-rest-api-using-rest-api/).
+2. Update the organization of the generated CRs to match the super tenant organization name in the WSO2 API Manager or You can generate K8s resources by setting the organization as a zip file from config-deployer service using below command.
 
-5. Navigate to the Deploy section and click Deployments. 
-6. Click Deploy New Revision. 
-7. Optionally, provide a description for the revision. 
-8. Select the APK Gateways in which you want to deploy the API and click Deploy. 
-9. Navigate to **Life Cycle** tab. Then click **Publish** to publish the API. 
-10. To verify the API deployment in the APK Gateway, execute the following command. You will see the status of the deployed apis as follows once completed.
+=== "Sample Request"
+   ```
+   curl --location 'https://api.am.wso2.com:9095/api/configurator/1.1.0/apis/generate-k8s-resources?organization=carbon.super' \
+   --header 'Content-Type: multipart/form-data' \
+   --header 'Accept: application/zip' \
+   --form 'apkConfiguration=@"/Users/user/EmployeeService.apk-conf"' \
+   --form 'definitionFile=@"/Users/user/EmployeeServiceDefinition.json"' \
+   -k --output ./api-crds.zip
+   ```
+3. Deploy the generated K8s artifacts to the Kubernetes API server.
 
-```bash
-   kubectl get apis -n apk
-```
+   ```
+   kubectl apply -n apk -f <path_to_extracted_zip_file>
+   ```
