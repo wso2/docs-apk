@@ -17,23 +17,31 @@ API Management is the process of creating, publishing, and managing APIs in a se
 
 #### Create and Manage APIs
 
-##### REST APIs: Create REST APIs through the API Publisher.
-  - Transport Level Security: Secure APIs using transport level security. HTTPS and Mutual SSL are supported.
-  - Application Level Security: Secure APIs using application level security. Basic Auth, OAuth, and JWT are supported.
-  - API Level and Resource Level Rate Limiting, Security, and Monitoring can be configured for APIs.
-  - Mediation: Mediate requests and responses through the Interceptor Service Support.
+##### REST APIs: Create REST APIs through the Config Deployer.
+  - Transport Level Security: Secure APIs using transport level security. HTTPS and Mutual SSL are supported. (Mutual SSL is not visible in the Publisher Portal)
+  - Application Level Security: Secure APIs using application level security. Basic Auth, OAuth2, API Key and JWT are supported.
+  - Endpoint: REST Production Endpoint is supported.
+  - Scope: Scope based access control is supported.
+  - API Level and Resource Level Rate Limiting can be configured for APIs.(Not visible in the Publisher Portal)
+  - Mediation: Mediate requests and responses through the Interceptor Service Support.(Not visible in the Publisher Portal)
+  - Backend JWT: Backend JWT is supported.(Not visible in the Publisher Portal)
   - API Documentation: Document APIs through the API Publisher.
   - API Deployment: Deploy APIs through the API Publisher.
   - API Testing: Test APIs through the API Publisher.
   - API Lifecycle Management: Manage the lifecycle of APIs through the API Publisher.
-##### GraphQL APIs: Create GraphQL APIs through the API Publisher.
-  - Transport Level Security: Secure APIs using transport level security. HTTPS and Mutual SSL are supported.
-  - Application Level Security: Secure APIs using application level security. Basic Auth, OAuth, and JWT are supported.
-  - API Level and Resource Level Rate Limiting, Security, and Monitoring can be configured for APIs.
+  - API Versioning: API Versioning and Default Versioning is supported.
+
+##### GraphQL APIs: Create GraphQL APIs through the Config Deployer.
+  - Transport Level Security: Secure APIs using transport level security. HTTPS and Mutual SSL are supported. (Mutual SSL is not visible in the Publisher Portal)
+  - Application Level Security: Secure APIs using application level security. Basic Auth, OAuth2, API Key and JWT are supported.
+  - Endpoint: GraphQL Production Endpoint is supported.
+  - Scope: Scope based access control is supported.
+  - API Level and Resource Level Rate Limiting can be configured for APIs.(Not visible in the Publisher Portal)
   - API Deployment: Deploy APIs through the API Publisher.
   - API Documentation: Document APIs through the API Publisher.
   - API Testing: Test APIs through the API Publisher.
   - API Lifecycle Management: Manage the lifecycle of APIs through the API Publisher.
+  - API Versioning: API Versioning and Default Versioning is supported.
 
 #### Application Management
 
@@ -68,9 +76,9 @@ Integration with WSO2 APK Gateway is the process of integrating with the APK Gat
 
 ## Unsupported Features
 
+- Endpoint: Sandbox endpoint is not supported.
 - Application level rate limiting: Application level throttling is not supported.
 - Subscription level rate limiting: Subscription level throttling is not supported.
-- API Keys: API Keys generation and invocation API using API Keys are not supported.
 - SOAP APIs: SOAP APIs are not supported.
 - SOAP to REST API conversion: SOAP to REST API conversion is not supported.
 - Webhooks/WebSub: Webhooks/WebSub are not supported.
@@ -89,6 +97,4 @@ Integration with WSO2 APK Gateway is the process of integrating with the APK Gat
 
 ## Partially Supported Features
 
-- API level rate limiting: API level rate limiting is partially supported. API level rate limit(Advance Policies) count and count unit are supported while Conditional Ratelimiting such as IP based, Header based, Query parameter based and JWT  Claim based are not supported.
 - Lifecycle Management: API Lifecycle Management is partially supported. API Lifecycle Management is supported for creating, publishing, and retiring APIs. However, API Blocking is not supported for APK Gateways.
-- Backend JWT: Backend JWT is partially supported. Custom Header, Token TTL and Hashing Algorithm is supported while Custom Claims are not supported.
