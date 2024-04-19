@@ -30,6 +30,9 @@ These sections will guide you through the entire process, from API creation to d
 
 Generating an APK Configuration file is a crucial step in setting up your API using APK enhanced tools within the WSO2 APK ecosystem. This file contains essential API metadata, security settings, rate limiting details, and other vital information. 
 
+!!! note
+    For production scenarios, it is recommended to commit the configuration to a source control system such as GitHub. This enables controlled and automated deployments through pipelines, ensuring a structured and controlled release process.
+
 ### Step 2 (optional) - Create or Update Configuration
 
 To streamline the configuration process, APK offers the `APK Config Language Support` Visual Studio Code (VS Code) extension. This dynamic extension simplifies customization by offering syntax highlighting, auto-completion, validation and error checking for your APK configuration YAML files.
@@ -58,4 +61,4 @@ You can generate K8s resources as a zip file from config-deployer service and ap
 
 ### Step 5 - Undeploy API
 
-{!templates/apk-conf-undeploy.md!}
+{!includes/apk-conf-undeploy.md!}
