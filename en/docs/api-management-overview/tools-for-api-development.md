@@ -41,14 +41,14 @@ By incorporating the `APK Config Language Support` extension, you can enhance yo
 
 ### Step 3 - Generate Kubernetes Custom Resources(CRs) and Deploy API by applying CRs to Kubernetes Cluster
 
-- Option 1 - Deploy API using APK Config Deployer tool 
+#### Option 1 - Deploy API using APK Config Deployer tool 
 
 The Config Deployer streamlines the API deployment process by generating and applying CRs in a single step. With this option, you can use the Config Deployer to automatically generate the necessary CR configurations for your APIs and apply the generated CRs directly to your Kubernetes API server for rapid deployment. You can deploy the API directly into APK using API Schema definition and APK configuration file using the REST API.
 
 !!! note
     To optimize the configuration process, APK presents a VS Code plugin designed to offer syntax highlighting and intelligent suggestions. This plugin simplifies the incorporation of rate limitations, new resources, and security configurations into your API. Adapt the contents of the APK Configuration file as needed. For further details, refer to the section on [Enhance Configuration with APK Config Language Support]({{base_path}}/en/latest/create-api/create-and-deploy-apis/apk-conf-lang-support/)
 
-- Option 2 - Generate K8s custom resources using config generator tool and Deploy the API using Kubernetes Client
+#### Option 2 - Generate K8s custom resources using config generator tool and Deploy the API using Kubernetes Client
 
 The Config Generator simplifies the process of generating the required Custom Resources (CRs) for your APIs. You can use this tool to automatically create CRs based on your API specifications or APK Configuration file. Once the CRs are generated, you have the flexibility to:
 
@@ -58,6 +58,8 @@ The Config Generator simplifies the process of generating the required Custom Re
 By invoking the Configuration Service, you can generate Kubernetes artifacts specifically tailored for APIs. These artifacts can be applied to a Kubernetes cluster using standard command-line tools like kubectl. However, in production scenarios, direct execution of kubectl commands on the runtime may not be feasible. In such cases, pipeline jobs play a vital role, where the generated artifacts are applied to the runtime through automated processes.
 
 You can generate K8s resources as a zip file from config-deployer service and apply it to the deployment through a CI/CD pipeline using kubectl.
+
+You can follow steps and samples mentioned in [Deploy a REST API via APK REST API]({{base_path}}/en/latest/create-api/create-and-deploy-apis/rest/create-rest-api-using-rest-api/) to test out the above flows.
 
 ### Step 5 - Undeploy API
 
