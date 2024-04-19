@@ -29,7 +29,7 @@ In this approach, both APK Dataplane and APIM are in a single kubernetes cluster
 
 By default, WSO2 APK is configured to support the Data Plane Only Pattern. You can follow the below steps to do the deployment using this pattern. 
 
-{!control-plane/start-apk-cp-to-dp-k8s.md!}
+{!control-plane/apk-as-gateway-in-apim/start-apk-cp-to-dp-k8s.md!}
 
 
 This approach is recommended for all Production, Dev, Test, and UAT environments. Here a seperate kubernetes cluster is required for each environment.
@@ -60,7 +60,7 @@ In this approach, APK Dataplane is deployed in a kubernetes cluster and APIM in 
 
 By default, WSO2 APK is configured to support the Data Plane Only Pattern. You can follow the below steps to do the deployment using this pattern.
 
-{!control-plane/start-apk-cp-to-dp-vms.md!}
+{!control-plane/apk-as-gateway-in-apim/start-apk-cp-to-dp-vms.md!}
 
 
 This approach is recommended for all Production, Dev, Test, and UAT environments. Here a seperate kubernetes cluster and a VM server is required for each environment.

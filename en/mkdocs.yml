@@ -171,28 +171,29 @@ nav:
     - Control Plane:
         - APK Control Plane:
               - Overview: control-plane/overview.md
+              - API Management:
+                    - Overview: control-plane/api-management/control-plane-api-management-overview.md
+                    - Develop and Deploy API:
+                        - Create REST APIs: control-plane/api-management/control-plane-create-and-deploy-rest-apis.md
+                        - Create GraphQL APIs: control-plane/api-management/control-plane-create-and-deploy-graphql-apis.md
+                    - Add APK Gateway: control-plane/api-management/control-plane-add-apk-gateway.md
+                    - Create Application and Subscribe: control-plane/api-management/control-plane-create-application-and-subscription.md
         - APK as a Gateway in API Manager:
-              - Overview: control-plane/apk-as-gateway-in-apim-overview.md
-              - Quick Start Guide: control-plane/apk-as-gateway-in-apim-qsg.md
+              - Overview: control-plane/apk-as-gateway-in-apim/apk-as-gateway-in-apim-overview.md
+              - Quick Start Guide: control-plane/apk-as-gateway-in-apim/apk-as-gateway-in-apim-qsg.md
+              - API Management:
+                  - Overview: control-plane/apk-as-gateway-in-apim/api-management/control-plane-api-management-overview.md
+                  - Develop and Deploy API:
+                      - Create REST APIs: control-plane/apk-as-gateway-in-apim/api-management/control-plane-create-and-deploy-rest-apis.md
+                      - Create GraphQL APIs: control-plane/apk-as-gateway-in-apim/api-management/control-plane-create-and-deploy-graphql-apis.md
+                  - Add APK Gateway: control-plane/apk-as-gateway-in-apim/api-management/control-plane-add-apk-gateway.md
+                  - Create Application and Subscribe: control-plane/apk-as-gateway-in-apim/api-management/control-plane-create-application-and-subscription.md
         - Advanced Configuration:
             - API Manager Control Plane: control-plane/apim-deploy.md
             - APK Data Plane: control-plane/apk-deploy.md
             - APIM APK Agent: 
                 - Deployment: control-plane/apim-apk-agent-deploy.md
                 - Prometheus Configuration: control-plane/apim-apk-agent-prometheus.md
-        - API Management: 
-            - Overview: control-plane/api-management/control-plane-operations.md
-            - Develop and Deploy API:
-                - Create APIs:
-                  - Create REST APIs: control-plane/api-management/control-plane-create-and-deploy-rest-apis.md
-                  - Create GraphQL APIs: control-plane/api-management/control-plane-create-and-deploy-graphql-apis.md
-                # - Manage Endpoints: control-plane/api-management/control-plane-manage-endpoints.md
-                # - API Policies:
-                #     - Overview: control-plane/api-management/control-plane-api-policies.md
-                #     - Interceptor Service: control-plane/api-management/control-plane-interceptor-service.md
-                #     - CORS: control-plane/api-management/control-plane-cors.md
-            - Add APK Gateway: control-plane/api-management/control-plane-add-apk-gateway.md
-            - Create Application and Subscribe: control-plane/api-management/control-plane-create-application-and-subscription.md
         # - Security: control-plane/control-plane-security.md
         # - Troubleshooting: control-plane/control-plane-troubleshooting.md
     - Catalogs:

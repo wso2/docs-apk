@@ -52,7 +52,7 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
 4. Install NGINX Ingress Controller. Please refer to the [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/deploy/#local-development-clusters) documentation for more information.
 
 !!! Note
-    Please refer to the [Advance Configuration for APIM](../control-plane/apim-deploy.md) for more information.
+    Please refer to the [Advance Configuration for APIM](../apim-deploy.md) for more information.
 
 ### Setup WSO2 APK Dataplane 1.1.0
 
@@ -71,7 +71,7 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
 3. Install the APK components and start WSO2 API Platform For Kubernetes. Consider ```apk``` as the ```<chart-name>``` for this guide. As the ```--version``` of this command, use the version of the release you used in point 1 above. It will take a few minutes for the deployment to complete.
 
 !!!NOTE
-    If you already have an installation of the APK in your cluster, please remove the installation by following the steps specified in the [Uninstall APK](../setup/uninstall.md) section.
+    If you already have an installation of the APK in your cluster, please remove the installation by following the steps specified in the [Uninstall APK](../../setup/uninstall.md) section.
 
 
 === "Command"
@@ -84,7 +84,7 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
      ```
 
 !!! Note
-    Please refer to the [Advance Configuration for APK](../control-plane/apk-deploy.md) for more information.
+    Please refer to the [Advance Configuration for APK](../apk-deploy.md) for more information.
 
 
 ### Setup WSO2 APIM-APK Agent 1.1.0
@@ -113,7 +113,7 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
         ```
 
 !!! Note
-    Please refer to the [Advance Configuration for agent](../control-plane/apim-apk-agent-deploy.md) for more information.
+    Please refer to the [Advance Configuration for agent](../apim-apk-agent-deploy.md) for more information.
 
 ### Verify the deployment
 
