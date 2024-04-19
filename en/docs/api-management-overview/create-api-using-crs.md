@@ -1,5 +1,3 @@
 We support API management through a set of Custom Resources (CRs) that adhere to Kubernetes Gateway Specification. See [APK Kubernetes CRD Catalog]({{base_path}}/en/latest/catalogs/kubernetes-crds) for more information.
 
-Additionally, our REST API flow can generate a set of CRs based on the API definitions provided through OpenAPI Specifications, Service Description Languages (SDLs), and APK configuration files. This flow is designed to streamline the API development process and reduce the manual effort required to create basic API related CRs. Follow steps mentions in [Generate APK Configuration File]({{base_path}}/en/latest/generate-apk-conf) to generate APK configuration files.
-
-<!-- todo(amali) update the apk conf generator link -->
+Additionally, our REST API flow can generate a set of CRs based on the API definitions provided through OpenAPI Specifications, Service Description Languages (SDLs), and APK configuration files. This flow is designed to streamline the API development process and reduce the manual effort required to create basic API related CRs. Follow steps mentions in [Generate APK Configuration File]({{base_path}}/en/latest/api-management-overview/tools-for-api-development/#option-2-generate-k8s-custom-resources-using-config-generator-tool-and-deploy-the-api-using-kubernetes-client) to generate APK configuration files.
