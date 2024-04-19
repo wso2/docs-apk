@@ -97,10 +97,9 @@ nav:
             - GraphQL APIs: 
                 - Via CRs: create-api/create-and-deploy-apis/graphql/create-graphql-api-using-crs.md
                 - Via REST API: create-api/create-and-deploy-apis/graphql/create-graphql-api-using-rest-api.md
-                # todo(amali) add rest of the links
         - Undeploy API: 
-            - Via REST API: undeploy/direct-undeploy.md
-            #todo(amali) add the CRs link
+            - Via REST API: undeploy/undeploy-rest-api.md
+            - Via CRs: undeploy/undeploy-crs.md
         - Manage Endpoint:
             - Define Endpoint: develop-and-deploy-api/endpoints/prod-sand-endpoints.md
             - Manage Certificate: create-api/manage-service-endpoint/manage-certificate.md
