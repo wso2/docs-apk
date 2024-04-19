@@ -21,19 +21,23 @@ API Management is the process of creating, publishing, and managing APIs in a se
   - Transport Level Security: Secure APIs using transport level security. HTTPS and Mutual SSL are supported.
   - Application Level Security: Secure APIs using application level security. Basic Auth, OAuth, and JWT are supported.
   - API Level and Resource Level Rate Limiting, Security, and Monitoring can be configured for APIs.
+  - Scope: Scope based access control is supported.
   - Mediation: Mediate requests and responses through the Interceptor Service Support.
   - API Documentation: Document APIs through the API Publisher.
   - API Deployment: Deploy APIs through the API Publisher.
   - API Testing: Test APIs through the API Publisher.
   - API Lifecycle Management: Manage the lifecycle of APIs through the API Publisher.
+  - API Versioning: API Versioning and Default Versioning is supported.
 ##### GraphQL APIs: Create GraphQL APIs through the API Publisher.
   - Transport Level Security: Secure APIs using transport level security. HTTPS and Mutual SSL are supported.
   - Application Level Security: Secure APIs using application level security. Basic Auth, OAuth, and JWT are supported.
+  - Scope: Scope based access control is supported.
   - API Level and Resource Level Rate Limiting, Security, and Monitoring can be configured for APIs.
   - API Deployment: Deploy APIs through the API Publisher.
   - API Documentation: Document APIs through the API Publisher.
   - API Testing: Test APIs through the API Publisher.
   - API Lifecycle Management: Manage the lifecycle of APIs through the API Publisher.
+  - API Versioning: API Versioning and Default Versioning is supported.
 
 #### Application Management
 
