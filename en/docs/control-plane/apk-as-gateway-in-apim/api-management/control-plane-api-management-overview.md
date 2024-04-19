@@ -72,6 +72,7 @@ Integration with WSO2 APK Gateway is the process of integrating with the APK Gat
 
 ## Unsupported Features
 
+- Tenancy: Tenancy is not supported. Only super tenant is supported.
 - Application level rate limiting: Application level throttling is not supported.
 - Subscription level rate limiting: Subscription level throttling is not supported.
 - API Keys: API Keys generation and invocation API using API Keys are not supported.
