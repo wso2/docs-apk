@@ -136,6 +136,7 @@ nav:
         - API Versions:
             - Create an API Version: develop-and-deploy-api/api-versions/create-an-api-versions.md
             - Default Version: develop-and-deploy-api/api-versions/default-version.md
+            - Semantic Versioning Based Intelligent Routing: develop-and-deploy-api/api-versions/semver-based-intelligent-routing.md
             #- Backward Compatibility: develop-and-deploy-api/api-versions/backward-compatibility.md
         - API Properties: develop-and-deploy-api/api-properties/api-properties.md
         - API Scopes: develop-and-deploy-api/api-scopes/api-scopes.md
