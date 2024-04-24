@@ -31,7 +31,7 @@ APK supports OpenShift, which is a Kubernetes distribution with additional featu
 
     === "Format"
         ```
-        helm install <chart-name> <repository-name>/apk-helm --version <verison-of-APK> 
+        helm install <chart-name> <repository-name>/apk-helm --version <version-of-APK> 
         ```
 	
     === "Command"

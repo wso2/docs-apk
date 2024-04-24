@@ -29,6 +29,6 @@ To customize configurations in the Helm deployment, you need to create and modif
 
     === "Format"
 		```
-		helm install <chart-name> <repository-name>/apk-helm --version <verison-of-APK> -f <path-to-values.yaml-file>
+		helm install <chart-name> <repository-name>/apk-helm --version <version-of-APK> -f <path-to-values.yaml-file>
 		```
 	
