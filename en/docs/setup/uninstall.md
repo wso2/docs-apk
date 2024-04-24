@@ -1,5 +1,7 @@
 # Uninstall APK Components
 
+**NOTE**: Uninstalling APK and any other components from the cluster involves deleting APK related data, configurations and CRDs from the cluster. Ensure that you back up any important data or configurations before proceeding with the rest of this guide.
+
 ## Uninstall APK
 
 ### Check Status of Current Installation
@@ -18,6 +20,7 @@ For this guide, `chart-name` is the `NAME` of the installation, and the `namespa
 The version of your installation is the 3 digit suffix in the `CHART` field.
 
 For example, in the above image, the values are as follows.
+
 - chart-name: apk
 - namespace: apk
 - version: 1.1.0
@@ -81,6 +84,7 @@ For this guide, `chart-name` is the `NAME` of the installation, and the `namespa
 The version of your installation is the 3 digit suffix in the `CHART` field.
 
 For example, in the above image, the values are as follows.
+
 - chart-name: apim-apk-agent
 - namespace: apk
 - version: 1.1.0
