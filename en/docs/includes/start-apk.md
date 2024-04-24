@@ -24,7 +24,7 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
 
 === "Format"
     ```
-    helm install <chart-name> <repository-name>/apk-helm --version <verison-of-APK>
+    helm install <chart-name> <repository-name>/apk-helm --version <version-of-APK>
     ```
 
 !!!Optional
@@ -36,7 +36,7 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
         
     === "Format"
         ```
-        helm install <chart-name> <repository-name>/apk-helm --version <verison-of-APK> -f <path-to-values.yaml-file>
+        helm install <chart-name> <repository-name>/apk-helm --version <version-of-APK> -f <path-to-values.yaml-file>
         ```
 
 ### Verify the deployment
