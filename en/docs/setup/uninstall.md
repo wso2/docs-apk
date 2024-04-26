@@ -1,5 +1,7 @@
 # Uninstall APK
 
+**NOTE**: Uninstalling APK from the cluster involves deleting all APK related data, configurations and CRDs from the cluster. Ensure that you back up any important data or configurations before proceeding with the rest of this guide.
+
 To completely remove APK from your Kubernetes cluster, follow the steps given below.
 
 1. Apply the following command.
@@ -26,8 +28,8 @@ To completely remove APK from your Kubernetes cluster, follow the steps given be
 
 3. Then delete the CRDs using the following command.
 
-    ```
-    kubectl delete -f crds.yaml
-    ```
+ ```
+ kubectl delete -f crds.yaml
+ ```
 
 This will clear the APK installation from your Kubernetes cluster.
