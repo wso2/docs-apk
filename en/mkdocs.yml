@@ -97,6 +97,9 @@ nav:
             - GraphQL APIs: 
                 - Via CRs: create-api/create-and-deploy-apis/graphql/create-graphql-api-using-crs.md
                 - Via REST API: create-api/create-and-deploy-apis/graphql/create-graphql-api-using-rest-api.md
+            - gRPC APIs: 
+                - Via CRs: create-api/create-and-deploy-apis/grpc/create-grpc-api-using-crs.md
+                - Via REST API: create-api/create-and-deploy-apis/grpc/create-grpc-api-using-rest-api.md
         - Undeploy API: 
             - Via REST API: undeploy/undeploy-rest-api.md
             - Via CRs: undeploy/undeploy-crs.md
@@ -204,6 +207,7 @@ nav:
             - APIPolicy: catalogs/crds/apipolicy_types.md
             - HTTPRoute: catalogs/samples/http-route.md
             - GraphQL Route: catalogs/crds/gql_routes_types.md
+            - gRPC Route: catalogs/samples/grpc-route.md
             - Authentication: catalogs/crds/authentication_types.md
             - Backend: catalogs/crds/backend_types.md
             - BackendJWT: catalogs/crds/backendjwt_types.md
