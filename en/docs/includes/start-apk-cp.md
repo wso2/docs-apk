@@ -32,7 +32,7 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
         ```
     === "Format"
         ```
-        helm install <chart-name> <repository-name>/wso2am-cp --version <verison-of-APIM> -f <path-to-values.yaml-file>
+        helm install <chart-name> <repository-name>/wso2am-cp --version <version-of-APIM> -f <path-to-values.yaml-file>
         ```
 
 4. Install NGINX Ingress Controller using the following command. Please refer to the [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/deploy/#local-development-clusters) documentation for more information.
@@ -60,7 +60,7 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
         ``` 
     === "Format"
         ```
-        helm install <chart-name> <repository-name>/apk-helm --version <verison-of-APK> -f <path-to-values.yaml-file>
+        helm install <chart-name> <repository-name>/apk-helm --version <version-of-APK> -f <path-to-values.yaml-file>
         ```
 
 
@@ -86,7 +86,7 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
         ```
     === "Format"
         ```
-        helm install <chart-name> <repository-name>/apim-apk-agent --version <verison-of-APK-Agent> -f <path-to-values.yaml-file>
+        helm install <chart-name> <repository-name>/apim-apk-agent --version <version-of-APK-Agent> -f <path-to-values.yaml-file>
         ```
 
 

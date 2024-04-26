@@ -33,7 +33,7 @@ Follow the instructions below to deploy the APIM APK Agent.
     ```
 === "Format"
     ```
-    helm install <chart-name> <repository-name>/apk-agent-helm --version <verison-of-APK-Agent>
+    helm install <chart-name> <repository-name>/apk-agent-helm --version <version-of-APK-Agent>
     ```
 
 !!! Optional
@@ -45,5 +45,5 @@ To commence the installation while making use of the customization capabilities 
     ```
 === "Format"
     ```
-    helm install <chart-name> <repository-name>/apk-agent-helm --version <verison-of-APK-Agent> -f <path-to-values.yaml-file>
+    helm install <chart-name> <repository-name>/apk-agent-helm --version <version-of-APK-Agent> -f <path-to-values.yaml-file>
     ```

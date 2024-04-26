@@ -10,7 +10,7 @@ kubectl create ns apk
 Add a hostname mapping to the ```/etc/hosts``` file as follows.
 
 | IP        | Domain name         |
-   | --------- | ------------------- |
+| --------- | ------------------- |
 | 127.0.0.1 | api.am.wso2.com     |
 | 127.0.0.1 | am.wso2.com         |
 | 127.0.0.1 | idp.am.wso2.com     |
@@ -46,7 +46,7 @@ Setup WSO2 API Manager 4.3.0 in VM.
         ```
     === "Format"
         ```
-        helm install <chart-name> <repository-name>/apk-helm --version <verison-of-APK> -f <path-to-values.yaml-file>
+        helm install <chart-name> <repository-name>/apk-helm --version <version-of-APK> -f <path-to-values.yaml-file>
         ```
 
 !!! Note
@@ -84,7 +84,7 @@ Setup WSO2 API Manager 4.3.0 in VM.
         ```
     === "Format"
         ```
-        helm install <chart-name> <repository-name>/apim-apk-agent --version <verison-of-APK-Agent> -f <path-to-values.yaml-file>
+        helm install <chart-name> <repository-name>/apim-apk-agent --version <version-of-APK-Agent> -f <path-to-values.yaml-file>
         ```
 
 #### Verify the deployment
