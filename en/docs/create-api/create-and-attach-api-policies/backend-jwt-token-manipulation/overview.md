@@ -1,0 +1,16 @@
+# Passing End User Attributes to the Backend
+
+There can be scenarios where a backend service needs to make different decisions or respond with different data, depending on the application end-user that consumes an API. To achieve this, the backend service needs to have access to the respective end-user's data at the time an API call takes place.
+
+This can be facilitated by the Gateway by sending the end user attributes that are defined in the respective user store, in a JWT via an HTTP header, to the backend service when the API call is being forwarded.
+
+The backend JSON Web Token (JWT) contains the claims that are transferred between two parties, such as the end-user and the backend. A claim is an attribute of the user that is mapped to the underlying user store. A set of claims is referred to as a dialect.
+
+If you enable backend JWT generation in the Gateway, each API request will carry a digitally signed JWT, which is in the following format to the backend service.
+
+`{token header}.{claims list}.{signature}`
+
+You can configure backend JWT in two ways.
+
+1. [Using the APK Conf file](./backend-jwt-token-manipulation-via-rest-api.md).
+2. [Using CRs](./backend-jwt-token-manipulation-via-crs.md).
