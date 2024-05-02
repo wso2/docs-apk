@@ -114,6 +114,7 @@ nav:
                 - Via REST API: create-api/create-and-attach-api-policies/interceptors/interceptors-via-rest-api.md
                 - Via CR: create-api/create-and-attach-api-policies/interceptors/interceptors-via-crs.md
             - Backend JWT Token Manipulation:
+                - Overview: create-api/create-and-attach-api-policies/backend-jwt-token-manipulation/overview.md
                 - Via REST API: create-api/create-and-attach-api-policies/backend-jwt-token-manipulation/backend-jwt-token-manipulation-via-rest-api.md
                 - Via CR: create-api/create-and-attach-api-policies/backend-jwt-token-manipulation/backend-jwt-token-manipulation-via-crs.md
             - CORS:
