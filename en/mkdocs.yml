@@ -95,8 +95,8 @@ nav:
                 - Via REST API: create-api/create-and-deploy-apis/rest/create-rest-api-using-rest-api.md
                 - Via CRs: create-api/create-and-deploy-apis/rest/create-rest-api-using-crs.md
             - GraphQL APIs: 
-                - Via CRs: create-api/create-and-deploy-apis/graphql/create-graphql-api-using-crs.md
                 - Via REST API: create-api/create-and-deploy-apis/graphql/create-graphql-api-using-rest-api.md
+                - Via CRs: create-api/create-and-deploy-apis/graphql/create-graphql-api-using-crs.md
         - Undeploy API: 
             - Via REST API: undeploy/undeploy-rest-api.md
             - Via CRs: undeploy/undeploy-crs.md
@@ -117,6 +117,7 @@ nav:
                 - Via REST API: create-api/create-and-attach-api-policies/interceptors/interceptors-via-rest-api.md
                 - Via CRs: create-api/create-and-attach-api-policies/interceptors/interceptors-via-crs.md
             - Backend JWT Token Manipulation:
+                - Overview: create-api/create-and-attach-api-policies/backend-jwt-token-manipulation/overview.md
                 - Via REST API: create-api/create-and-attach-api-policies/backend-jwt-token-manipulation/backend-jwt-token-manipulation-via-rest-api.md
                 - Via CRs: create-api/create-and-attach-api-policies/backend-jwt-token-manipulation/backend-jwt-token-manipulation-via-crs.md
             - CORS:
