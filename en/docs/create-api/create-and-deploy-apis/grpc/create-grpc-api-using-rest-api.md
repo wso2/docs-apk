@@ -35,14 +35,12 @@ Follow the instructions below to design a gRPC API.
         ```
         curl --location 'https://<host>:9095/api/configurator/1.1.0/apis/generate-configuration' \
         --header 'Host: <host>' \
-        --form 'apiType="GRPC"' \
         --form 'definition=@"<path/to/Student.proto>"'
         ```
     === "Sample Request"
         ```
         curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.1.0/apis/generate-configuration' \
         --header 'Host: api.am.wso2.com' \
-        --form 'apiType="GRPC"' \
         --form 'definition=@"/Users/user/Student.proto"'
         ```
     === "Sample Response"
