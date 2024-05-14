@@ -91,7 +91,7 @@ Here, we have added a property named `definitionPath` with the new value `/docs`
 
 ## Deploy APK configuration
 
-Refer [Create an API](../../get-started/quick-start-guide.md) to deploy the API using APK configuration.
+Refer [Create an API](../../get-started/quick-start-guide.md#deploy-the-api-in-apk) to deploy the API using APK configuration.
 
 ## Access Custom API Definition Endpoint
 

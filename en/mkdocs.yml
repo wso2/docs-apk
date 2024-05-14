@@ -95,8 +95,8 @@ nav:
                 - Via REST API: create-api/create-and-deploy-apis/rest/create-rest-api-using-rest-api.md
                 - Via CRs: create-api/create-and-deploy-apis/rest/create-rest-api-using-crs.md
             - GraphQL APIs: 
-                - Via CRs: create-api/create-and-deploy-apis/graphql/create-graphql-api-using-crs.md
                 - Via REST API: create-api/create-and-deploy-apis/graphql/create-graphql-api-using-rest-api.md
+                - Via CRs: create-api/create-and-deploy-apis/graphql/create-graphql-api-using-crs.md
             - gRPC APIs: 
                 - Via CRs: create-api/create-and-deploy-apis/grpc/create-grpc-api-using-crs.md
                 - Via REST API: create-api/create-and-deploy-apis/grpc/create-grpc-api-using-rest-api.md
@@ -120,6 +120,7 @@ nav:
                 - Via REST API: create-api/create-and-attach-api-policies/interceptors/interceptors-via-rest-api.md
                 - Via CRs: create-api/create-and-attach-api-policies/interceptors/interceptors-via-crs.md
             - Backend JWT Token Manipulation:
+                - Overview: create-api/create-and-attach-api-policies/backend-jwt-token-manipulation/overview.md
                 - Via REST API: create-api/create-and-attach-api-policies/backend-jwt-token-manipulation/backend-jwt-token-manipulation-via-rest-api.md
                 - Via CRs: create-api/create-and-attach-api-policies/backend-jwt-token-manipulation/backend-jwt-token-manipulation-via-crs.md
             - CORS:
@@ -239,7 +240,8 @@ nav:
     #    - Helm Catalog: catalogs/config-catalog.md
     - Setup: 
         - Prerequisites: setup/prerequisites.md
-        - Install: setup/install.md
+        - Install Dataplane: setup/install.md
+        - Install Control plane with Dataplane: setup/install-with-cp.md
         - Uninstall: setup/uninstall.md
         - Deployment Patterns:
               - Overview: setup/deployment/deployment-patterns-overview.md

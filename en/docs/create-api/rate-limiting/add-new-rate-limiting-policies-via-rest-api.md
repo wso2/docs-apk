@@ -193,7 +193,7 @@ Sample content after the modification is shown below.
 
 ### Generate an access token to deploy API.
 
-To invoke the system APIs to deploy your own API, we need a valid access token issued by an identity provider (IdP). Follow the ["Generate Access Token"](../../develop-and-deploy-api/security/generate-access-token.md) documentation to generate an access token.
+To invoke the system APIs to deploy your own API, we need a valid access token issued by an identity provider (IdP). Follow the [Generate Access Token](../../develop-and-deploy-api/security/generate-access-token.md) documentation to generate an access token.
 
 ### Deploy the API with API level rate limit policy.
 
@@ -201,12 +201,12 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the updat
 
 Use the values provided in the table below in the body of your request.
 
-   |    Field        | Value                                 |
-       |---------------------------------------|---------------------------------------------|
-   | apkConfiguration       | `EmployeeServiceV2.apk-conf` file     |
+   | Field            | Value                                 |
+   | ---------------- | ------------------------------------- |
+   | apkConfiguration | `EmployeeServiceV2.apk-conf` file     |
    | definitionFile   | `EmployeeServiceDefinition.json` file |
 
-1.  Set the access token in the Authorization header as a bearer token. This is the access token received by following the steps under ["Generate an access token to invoke APIs"](#generate-an-access-token-to-invoke-apis) section above.
+1.  Set the access token in the Authorization header as a bearer token. This is the access token received by following the steps under ["Generate an access token to invoke APIs"](../../get-started/quick-start-guide.md#generate-an-access-token-to-invoke-apis) section.
 2.  Execute the API deployment request. You will receive a successful response with an Id for the API.
 
     === "Request"
@@ -365,12 +365,12 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the updat
 
 Use the values provided in the table below in the body of your request.
 
-   |    Field        | Value                                 |
-       |---------------------------------------|---------------------------------------------|
-   | apkConfiguration       | `EmployeeServiceV3.apk-conf` file     |
+   | Field            | Value                                 |
+   | ---------------- | ------------------------------------- |
+   | apkConfiguration | `EmployeeServiceV3.apk-conf` file     |
    | definitionFile   | `EmployeeServiceDefinition.json` file |
 
-1.  Set the access token in the Authorization header as a bearer token. This is the access token received by following the steps under ["Generate an access token to invoke APIs"](#generate-an-access-token-to-invoke-apis) section above.
+1.  Set the access token in the Authorization header as a bearer token. This is the access token received by following the steps under ["Generate an access token to invoke APIs"](../../get-started/quick-start-guide.md#generate-an-access-token-to-invoke-apis) section.
 2.  Execute the API deployment request. You will receive a successful response with an Id for the API.
 
     === "Request"

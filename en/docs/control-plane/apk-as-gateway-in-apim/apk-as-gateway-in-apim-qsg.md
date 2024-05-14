@@ -128,11 +128,11 @@ Now you can verify the deployment by executing the following command. You will s
 
 ### Create Deploy and Publish the API
 
-{!control-plane/api-management/control-plane-create-and-deploy-rest-apis.md!}
+{!control-plane/apk-as-gateway-in-apim/api-management/control-plane-create-and-deploy-rest-apis.md!}
 
 ### Create Application and Subscribe to the API
 
-{!control-plane/api-management/control-plane-create-application-and-subscription.md!}
+{!control-plane/apk-as-gateway-in-apim/api-management/control-plane-create-application-and-subscription.md!}
 
 
 ## Step 3 - Invoke the API
