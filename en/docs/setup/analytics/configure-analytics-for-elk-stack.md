@@ -3,31 +3,8 @@
 ## Step 1 - Setup APK
 
 1. Start by following the instructions outlined in [Customize Configurations](../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file.
-2. Open the `values.yaml` file, and add the above configuration to the gatewayRuntime section under dp.
-
-```yaml
-gatewayRuntime:
-  analytics:
-    enabled: true
-    publishers:
-    - enabled: true
-      type: "elk"
-```
-
-!!! Note
-    Optionally, `logLevel` can be configured for ELK. By default, this config is set to `INFO`.
-
-    ```yaml
-    gatewayRuntime:
-      analytics:
-        enabled: true
-        publishers:
-        - enabled: true
-          type: "elk"
-          logLevel: "INFO"
-    ```
-
-Your values.yaml file will have a structure as follows.
+   
+2. Open the `values.yaml` file, and add the above configuration to the `gatewayRuntime` section under `dp`. Your values.yaml file should have a structure as follows:
 
 ```yaml
 wso2:
@@ -44,11 +21,23 @@ wso2:
             type: "elk"
 ```
 
-Then redeploy the helm chart with the changes in `values.yaml`.
+!!! Note
+    Optionally, `logLevel` can be configured for ELK. By default, this config is set to `INFO`.
+
+    ```yaml
+      analytics:
+        enabled: true
+        publishers:
+        - enabled: true
+          type: "elk"
+          logLevel: "INFO"
+    ```
+
+3. Redeploy the helm chart with the changes in `values.yaml`.
 
 ### Optional - Adding Multiple Publishers
 
-You can also set multiple publishers for analytics as follows. Replace ```choreo-secret-name``` and ```moesif-secret-name``` with the appropriate values.
+You can also set multiple publishers for analytics as follows. Replace `choreo-secret-name` and `moesif-secret-name` with the appropriate values.
 
 ```yaml
  gatewayRuntime:
@@ -65,7 +54,6 @@ You can also set multiple publishers for analytics as follows. Replace ```choreo
          secretName: <moesif-secret-name>
 ```
 
-
 ## Step 2 - Setup Elasticsearch and Kibana
 
 To configure Elasticsearch and Kibana on your Kubernetes cluster, you can refer to the [official guide](https://www.elastic.co/guide/en/cloud-on-k8s/current/k8s-stack-helm-chart.html) provided by Elastic. The guide includes instructions on deploying the necessary Helm charts for Elasticsearch and Kibana.
@@ -81,15 +69,21 @@ helm repo add elastic https://helm.elastic.co
 helm repo update
 helm install elasticsearch elastic/elasticsearch
 ```
+
 2. Wait for the pods to spin up. You can view them using the following command.
+   
 ```bash
 kubectl get pods
 ```
+
 3. Once the pods all have spun up, you can get the elasticsearch credentials using the following command.
+   
 ```bash
 kubectl get secrets --namespace=default elasticsearch-master-credentials -ojsonpath='{.data.password}' | base64 -d
 ```
+
 4. Port-forward the Elasticsearch service using the following command.
+   
 ```bash
 kubectl port-forward svc/elasticsearch-master 9200
 ```
@@ -101,11 +95,15 @@ kubectl port-forward svc/elasticsearch-master 9200
 ```bash
 helm install kibana elastic/kibana 
 ```
+
 2. Wait for the pods to spin up. You can view them using the following command.
+
 ```bash
 kubectl get pods
 ```
+
 3. Port-forward the Kibana service using the following command.
+
 ```bash
 kubectl port-forward deployment/kibana-kibana 5601
 ```
@@ -122,10 +120,13 @@ For forwarding Kubernetes logs to Elasticsearch, you have the option to use any 
 ## Step 4 - Invoke requests and view analytics logs in Kibana UI
 
 1. Deploy some sample APIs to APK and invoke endpoints.
+   
 2. Go to Kibana UI and search for logs. The UI can be accessed at `http://localhost:5601`. The password to log in can be obtained using the following command.
+   
 ```bash
 kubectl get secrets --namespace=default elasticsearch-master-credentials -ojsonpath='{.data.password}' | base64 -d
 ```
+
 The default username is `elastic`.
 
 3. Under Logs > Stream section you will be able to see a lot of logs from all the pods. To view the analytics logs search for 'apimMetrics'

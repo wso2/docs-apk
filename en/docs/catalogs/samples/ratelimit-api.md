@@ -1,6 +1,6 @@
 ### RateLimitPolicy for API
 
-The following defines a rate limiting policy at the API-level.
+The following defines a Rate Limiting policy at the API-level.
 
 ```
 apiVersion: dp.wso2.com/v1alpha1

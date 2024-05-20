@@ -153,7 +153,7 @@ The following are the configurations that you need when defining Rate Limiting P
               </tr>
               <tr>
                 <td><code>unit</code></td>
-                <td>Defines the measurement unit used to define Rate Limits.<br><b>Possible Values</b>: <code>Minutes</code>, <code>Hours</code>, <code>Days</code><br><b>Example</b>:<br> If <code>unit</code> is Minutes, then how many API requests are allowed per Minute.</td>
+                <td>Specifies the measurement unit used to define Rate Limits.<br><b>Possible Values</b>: <code>Minutes</code>, <code>Hours</code>, <code>Days</code><br><b>Example</b>:<br> If <code>unit</code> is Minutes, then how many API requests are allowed per Minute.</td>
               </tr>
             </tbody>
           </table>

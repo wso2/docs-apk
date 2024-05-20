@@ -33,7 +33,8 @@ analytics:
    secretName: <secret-name>
 ```
 
-4. Open the `values.yaml` file, and add the above configuration to the gatewayRuntime section under dp. Your values.yaml file should have a structure as follows.
+4. Open the `values.yaml` file, and add the above configuration to the `gatewayRuntime` section under `dp`. Your values.yaml file should have a structure as follows:
+   
 ```yaml
 wso2:
   ...

@@ -20,7 +20,9 @@
         ```
 
 2. Follow the instructions outlined in [Customize Configurations](../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file.
+   
 3. Replace ```secret-name``` in the following configuration with the name of the secret you created in the previous step.
+
 ```yaml
 analytics:
  enabled: true
@@ -29,7 +31,9 @@ analytics:
    type: "moesif"
    secretName: <secret-name>
 ```
-4. Open the `values.yaml` file, and add the above configuration to the gatewayRuntime section under dp. Your values.yaml file should have a structure as follows.
+
+4. Open the `values.yaml` file, and add the above configuration to the `gatewayRuntime` section under `dp`. Your values.yaml file should have a structure as follows:
+   
 ```yaml
 wso2:
   ...
@@ -45,12 +49,11 @@ wso2:
             type: "moesif"
             secretName: <secret-name>
 ```
-
-Then redeploy the helm chart with the changes in `values.yaml`.
+5. Then redeploy the helm chart with the changes in `values.yaml`.
 
 ### Optional - Adding Multiple Publishers
 
-You can also set multiple publishers for analytics as follows. Replace ```choreo-secret-name``` and ```moesif-secret-name``` with the appropriate values.
+You can also set multiple publishers for analytics as follows. Replace `choreo-secret-name` and `moesif-secret-name` with the appropriate values.
 
 ```yaml
 gatewayRuntime:
@@ -66,7 +69,6 @@ gatewayRuntime:
         type: "moesif"
         secretName: <moesif-secret-name>
 ```
-
 ## Step 3 - View Analytics Data
 
 1. After setting up the enforcer, invoke a few requests (success and failure) for a deployed API.

@@ -26,4 +26,4 @@ spec:
   organization: apk-org
 ```
 
-Refer [Manage API]({{base_path}}/en/latest/create-api/create-and-deploy-apis/rest/create-rest-api-using-crs/) for more information on how to configure API.
+Refer [Manage API]({{base_path}}/en/latest/create-api/create-and-deploy-apis/rest/create-rest-api-using-crs/) for more information on how to configure APIs.
