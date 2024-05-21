@@ -19,9 +19,7 @@
                 string
             </td>
             <td>
-                <code>
-dp.wso2.com/v1alpha1
-</code>
+                <code>dp.wso2.com/v1alpha1</code>
             </td>
         </tr>
         <tr>
