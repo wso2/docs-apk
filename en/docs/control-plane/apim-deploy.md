@@ -1,4 +1,39 @@
-### Configuring APK for  Existing API Manager Control Plane
+## Configuring API Manager Control Plane
+
+API Manager can be configured in both ways.
+
+  1. API Manager as the control plane for APK
+  2. APK as a gateway to API Manager 
+
+### API Manager as the control plane for APK
+
+These are additional configuration to values.yaml file to provide control plane related configs to API Manager.
+
+        ``` toml
+        configurations:
+            gatewayType: "APK"
+
+        publisher:
+            enablePortalConfigurationOnlyMode: true
+
+        gateway:
+        # -- APIM Gateway environments
+            environments:
+                - name: "Default"
+                type: "hybrid"
+                provider: "wso2"
+                gatewayType: "APK"
+                displayInApiConsole: true
+                description: "This is a hybrid gateway that handles both production and sandbox token traffic."
+                showAsTokenEndpointUrl: true
+                serviceName: "wso2am-gateway-service"
+                servicePort: 9443
+                wsHostname: "websocket.wso2.com"
+                httpHostname: "carbon.super.gw.wso2.com:9095"
+                websubHostname: "websub.wso2.com"
+        ```
+
+### APK as a gateway to API Manager 
 
 1.  Configure supported gateway types in API Manager.
 
