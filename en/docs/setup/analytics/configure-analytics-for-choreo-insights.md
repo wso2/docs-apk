@@ -23,7 +23,7 @@
         ```
 
 2. Follow the instructions outlined in [Customize Configurations](../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file, which you will then use to tailor the analytics configurations to your specific needs. 
-3. Replace ```secret-name``` in the following configuration with the name of the secret you created in the previous step.
+3. Replace `secret-name` in the following configuration with the name of the secret you created in the previous step.
 ```yaml
 analytics:
  enabled: true
@@ -54,7 +54,7 @@ Then redeploy the helm chart with the changes in `values.yaml`.
 
 ### Optional - Adding Multiple Publishers
 
-You can also set multiple publishers for analytics as follows. Replace ```choreo-secret-name``` and ```moesif-secret-name``` with the appropriate values.
+You can also set multiple publishers for analytics as follows. Replace `choreo-secret-name` and `moesif-secret-name` with the appropriate values.
 
 ```yaml
 gatewayRuntime:
