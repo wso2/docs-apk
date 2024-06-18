@@ -39,7 +39,7 @@ Install the [prerequisites](../../setup/prerequisites) that are required to run 
 
 ### Generate APK configuration file from the OpenAPI definition
 
-Apart from the above API definition file, we also need an `apk-conf` file that defines the configurations and metadata for this API. We have a configuration service that can be used to generate this apk-conf file when the OpenAPI definition is provided. 
+Apart from the above API definition file, we also need an `apk-conf` file that defines the configurations and metadata for this API. We have a configuration service that can be used to generate this apk-conf file when the OpenAPI definition is provided.
 
 
 1. Execute the following request to generate the APK configuration. Use the values provided in the table below in the body of your request. 
