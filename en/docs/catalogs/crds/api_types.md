@@ -23,9 +23,7 @@
                 string
             </td>
             <td>
-                <code>
-dp.wso2.com/v1alpha2
-</code>
+                <code>dp.wso2.com/v1alpha2</code>
             </td>
         </tr>
         <tr>
@@ -458,37 +456,6 @@ dp.wso2.com/v1alpha2
         </tr>
     </tbody>
 </table>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>status</code></br>
-                <em>
-                    <a href="#dp.wso2.com/v1alpha2.APIStatus">
-                        APIStatus
-                    </a>
-                </em>
-            </td>
-            <td>
-            </td>
-        </tr>
-    </tbody>
-</table>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>status</code></br>
-                <em>
-                    <a href="#dp.wso2.com/v1alpha2.APIStatus">
-                        APIStatus
-                    </a>
-                </em>
-            </td>
-            <td>
-            </td>
-        </tr>
-    </tbody>
 </table>
 
 <h3 id="dp.wso2.com/v1alpha2.DeploymentStatus">DeploymentStatus

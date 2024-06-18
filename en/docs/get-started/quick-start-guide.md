@@ -214,9 +214,7 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
         --form 'definitionFile=@"path/to/EmployeeServiceDefinition.json"'
         ```
 
-
 4. Execute the command below. You will be able to see that the `EmployeeServiceAPI` is successfully deployed as shown in the image.
-
 
     === "Command"
         ```
