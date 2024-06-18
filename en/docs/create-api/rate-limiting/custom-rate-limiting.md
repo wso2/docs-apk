@@ -85,4 +85,4 @@ For example, when user "Bob" invokes a request at gateway, then the request inte
 
 When the user "Bob" consumes his user level limit of four requests per minute, then he can consume another four requests using Admin quota. Note that the quota is reduced from both rate limit keys `org_key` and `user_key` for a request invoked by a user. Therefore, "Bob" can consume a count in between zero and twenty per minute. This count can be zero, since some other users in the "Admin" group might also have consumed twenty requests in a minute.
 
-For reference, a sample interceptor service with custom rate limiting policy CRs and interceptor policy CRs can be found here: [sample-interceptor-service](https://github.com/wso2/apk/tree/main/samples/custom-ratelimit-interceptor-service)
+For reference, a sample interceptor service with custom Rate Limiting policy CRs and interceptor policy CRs can be found here: [sample-interceptor-service](https://github.com/wso2/apk/tree/main/samples/custom-ratelimit-interceptor-service)

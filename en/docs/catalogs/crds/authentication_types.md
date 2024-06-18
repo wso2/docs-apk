@@ -20,9 +20,7 @@
                 string
             </td>
             <td>
-                <code>
-dp.wso2.com/v1alpha1
-</code>
+                <code>dp.wso2.com/v1alpha1</code>
             </td>
         </tr>
         <tr>
@@ -198,8 +196,8 @@ dp.wso2.com/v1alpha1
                 </em>
             </td>
             <td>
-                <pre><code>In is to specify how the APIKey is passed to the request
-</code></pre>
+                <p>In is to specify how the APIKey is passed to the request
+</p>
             </td>
         </tr>
         <tr>

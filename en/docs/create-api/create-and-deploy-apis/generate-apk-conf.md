@@ -10,7 +10,7 @@ Following steps describe how to generate an APK configuration file.
 
 3. Generate APK configuration file.
     
-    You can start by providing your API schema file to the Configuration Service in  APK. This service generates an APK configuration file that includes important API metadata, rate limiting details, security settings, and other necessary information. To generate the APK configuration file corresponding to your API Schema, use the following command that invokes the configuration service. You can assign the values according to the table below.
+    You can start by providing your API schema file to the Configuration Service in  APK. This service generates an APK configuration file that includes important API metadata, Rate Limiting details, security settings, and other necessary information. To generate the APK configuration file corresponding to your API Schema, use the following command that invokes the configuration service. You can assign the values according to the table below.
     
     The definition can be provided as a local file or as a URL containing a definition file.
 

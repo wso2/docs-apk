@@ -3,22 +3,20 @@
 ## Step 1 - Setup APK
 
 1. Start by following the instructions outlined in [Customize Configurations](../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file.
-2. Open the `values.yaml` file, and add the above configuration to the gatewayRuntime section under dp.
+2. Open the `values.yaml` file and set the following configuration under the `wso2.apk.dp.gatewayRuntime` section.
 
 ```yaml
-gatewayRuntime:
-  analytics:
-    enabled: true
-    publishers:
-    - enabled: true
-      type: "elk"
+analytics:
+  enabled: true
+  publishers:
+  - enabled: true
+    type: "elk"
 ```
 
 !!! Note
     Optionally, `logLevel` can be configured for ELK. By default, this config is set to `INFO`.
 
     ```yaml
-    gatewayRuntime:
       analytics:
         enabled: true
         publishers:
@@ -27,7 +25,7 @@ gatewayRuntime:
           logLevel: "INFO"
     ```
 
-Your values.yaml file will have a structure as follows.
+Now the structure of your values.yaml file will be as follows:
 
 ```yaml
 wso2:
@@ -44,27 +42,27 @@ wso2:
             type: "elk"
 ```
 
-Then redeploy the helm chart with the changes in `values.yaml`.
+3. Redeploy the helm chart with the changes in `values.yaml`.
 
 ### Optional - Adding Multiple Publishers
 
 You can also set multiple publishers for analytics as follows.
-    ```yaml
-    analytics:
-      enabled: true
-      publishers:
-        - enabled: true
-          configProperties:
-            auth.api.token: <on-prem-key>
-            auth.api.url: "https://analytics-event-auth.choreo.dev/auth/v1"
-          type: "default"
-        - enabled: true
-          type: "elk"
-        - enabled: true
-          type: "moesif"
-          configProperties:
-            moesifToken: <collector-application-id>
-    ```
+```yaml
+analytics:
+  enabled: true
+  publishers:
+    - enabled: true
+      configProperties:
+        auth.api.token: <on-prem-key>
+        auth.api.url: "https://analytics-event-auth.choreo.dev/auth/v1"
+      type: "default"
+    - enabled: true
+      type: "elk"
+    - enabled: true
+      type: "moesif"
+      configProperties:
+        moesifToken: <collector-application-id>
+```
 
 
 ## Step 2 - Setup Elasticsearch and Kibana

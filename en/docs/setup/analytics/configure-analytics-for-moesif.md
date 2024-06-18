@@ -8,35 +8,40 @@
 
 ## Step 2 - Configure APK
 
-1. Follow the instructions outlined in [Customize Configurations](../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file, which you will then use to tailor the analytics configurations to your specific needs. Open the `values.yaml` file. Set the following config under `wso2.apk.dp.gatewayRuntime` section and apply helm chart.
+1. Follow the instructions outlined in [Customize Configurations](../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file. 
+2. Open the `values.yaml` file and set the following configuration under the `wso2.apk.dp.gatewayRuntime` section.
 
-    ```yaml
-    analytics:
-      enabled: true
-      publishers:
-      - enabled: true
-        type: "moesif"
-        configProperties:
-          moesifToken: <collector-application-id>
-    ```
+```yaml
+analytics:
+  enabled: true
+  publishers:
+  - enabled: true
+    type: "moesif"
+    configProperties:
+      moesifToken: <collector-application-id>
+```
+
+3. Redeploy the helm chart with the changes in `values.yaml`.
+
+### Optional - Adding Multiple Publishers
 
 You can also set multiple publishers for analytics as follows.
-    ```yaml
-    analytics:
-      enabled: true
-      publishers:
-        - enabled: true
-          configProperties:
-            auth.api.token: <on-prem-key>
-            auth.api.url: "https://analytics-event-auth.choreo.dev/auth/v1"
-          type: "default"
-        - enabled: true
-          type: "elk"
-        - enabled: true
-          type: "moesif"
-          configProperties:
-            moesifToken: <collector-application-id>
-    ```
+```yaml
+analytics:
+  enabled: true
+  publishers:
+    - enabled: true
+      configProperties:
+        auth.api.token: <on-prem-key>
+        auth.api.url: "https://analytics-event-auth.choreo.dev/auth/v1"
+      type: "default"
+    - enabled: true
+      type: "elk"
+    - enabled: true
+      type: "moesif"
+      configProperties:
+        moesifToken: <collector-application-id>
+```
 
 ## Step 3 - View Analytics Data
 
