@@ -1,7 +1,11 @@
 <p>
-<p>Package v1alpha1 contains the API Schema definitions for WSO2 APK.</p>
+<p>Package v1alpha2 contains the API Schema definitions for WSO2 APK.</p>
 </p>
+
+
 ## API
+
+
 <p>
 <p>API is the Schema for the apis API</p>
 </p>
@@ -19,9 +23,7 @@
                 string
             </td>
             <td>
-                <code>
-dp.wso2.com/v1alpha1
-</code>
+                <code>dp.wso2.com/v1alpha2</code>
             </td>
         </tr>
         <tr>
@@ -49,7 +51,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>spec</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.APISpec">
+                    <a href="#dp.wso2.com/v1alpha2.APISpec">
                         APISpec
                     </a>
                 </em>
@@ -121,7 +123,7 @@ dp.wso2.com/v1alpha1
                         <td>
                             <code>production</code></br>
                             <em>
-                                <a href="#dp.wso2.com/v1alpha1.EnvConfig">
+                                <a href="#dp.wso2.com/v1alpha2.EnvConfig">
                                     []EnvConfig
                                 </a>
                             </em>
@@ -139,7 +141,7 @@ dp.wso2.com/v1alpha1
                         <td>
                             <code>sandbox</code></br>
                             <em>
-                                <a href="#dp.wso2.com/v1alpha1.EnvConfig">
+                                <a href="#dp.wso2.com/v1alpha2.EnvConfig">
                                     []EnvConfig
                                 </a>
                             </em>
@@ -206,7 +208,7 @@ dp.wso2.com/v1alpha1
                         <td>
                             <code>apiProperties</code></br>
                             <em>
-                                <a href="#dp.wso2.com/v1alpha1.Property">
+                                <a href="#dp.wso2.com/v1alpha2.Property">
                                     []Property
                                 </a>
                             </em>
@@ -216,29 +218,26 @@ dp.wso2.com/v1alpha1
                             <p>APIProperties denotes the custom properties of the API.</p>
                         </td>
                     </tr>
+                    <tr>
+                        <td>
+                            <code>environment</code></br>
+                            <em>
+                                string
+                            </em>
+                        </td>
+                        <td>
+                            <em>(Optional)</em>
+                            <p>Environment denotes the environment of the API.</p>
+                        </td>
+                    </tr>
                 </table>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>status</code></br>
-                <em>
-                    <a href="#dp.wso2.com/v1alpha1.APIStatus">
-                        APIStatus
-                    </a>
-                </em>
-            </td>
-            <td>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<h3 id="dp.wso2.com/v1alpha1.APISpec">APISpec
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.APISpec" title="Permanent link">¶</a>
+
+<h3 id="dp.wso2.com/v1alpha2.APISpec">APISpec
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.APISpec" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.API">API</a>)
+    <a href="#dp.wso2.com/v1alpha2.API">API</a>)
 </p>
 <p>
 <p>APISpec defines the desired state of API</p>
@@ -314,7 +313,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>production</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.EnvConfig">
+                    <a href="#dp.wso2.com/v1alpha2.EnvConfig">
                         []EnvConfig
                     </a>
                 </em>
@@ -332,7 +331,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>sandbox</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.EnvConfig">
+                    <a href="#dp.wso2.com/v1alpha2.EnvConfig">
                         []EnvConfig
                     </a>
                 </em>
@@ -399,7 +398,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>apiProperties</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.Property">
+                    <a href="#dp.wso2.com/v1alpha2.Property">
                         []Property
                     </a>
                 </em>
@@ -409,14 +408,26 @@ dp.wso2.com/v1alpha1
                 <p>APIProperties denotes the custom properties of the API.</p>
             </td>
         </tr>
+        <tr>
+            <td>
+                <code>environment</code></br>
+                <em>
+                    string
+                </em>
+            </td>
+            <td>
+                <em>(Optional)</em>
+                <p>Environment denotes the environment of the API.</p>
+            </td>
+        </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.APIStatus">APIStatus
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.APIStatus" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha2.APIStatus">APIStatus
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.APIStatus" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.API">API</a>)
+    <a href="#dp.wso2.com/v1alpha2.API">API</a>)
 </p>
 <p>
 <p>APIStatus defines the observed state of API</p>
@@ -433,7 +444,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>deploymentStatus</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.DeploymentStatus">
+                    <a href="#dp.wso2.com/v1alpha2.DeploymentStatus">
                         DeploymentStatus
                     </a>
                 </em>
@@ -445,12 +456,14 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.DeploymentStatus">DeploymentStatus
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.DeploymentStatus" title="Permanent link">¶</a>
+</table>
+
+<h3 id="dp.wso2.com/v1alpha2.DeploymentStatus">DeploymentStatus
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.DeploymentStatus" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.APIStatus">APIStatus</a>)
+    <a href="#dp.wso2.com/v1alpha2.APIStatus">APIStatus</a>)
 </p>
 <p>
 <p>DeploymentStatus contains the status of the API deployment</p>
@@ -526,12 +539,13 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.EnvConfig">EnvConfig
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.EnvConfig" title="Permanent link">¶</a>
+
+<h3 id="dp.wso2.com/v1alpha2.EnvConfig">EnvConfig
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.EnvConfig" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.APISpec">APISpec</a>)
+    <a href="#dp.wso2.com/v1alpha2.APISpec">APISpec</a>)
 </p>
 <p>
 <p>EnvConfig contains the environment specific configuration</p>
@@ -557,12 +571,13 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.Property">Property
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.Property" title="Permanent link">¶</a>
+
+<h3 id="dp.wso2.com/v1alpha2.Property">Property
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.Property" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.APISpec">APISpec</a>)
+    <a href="#dp.wso2.com/v1alpha2.APISpec">APISpec</a>)
 </p>
 <p>
 <p>Property holds key value pair of APIProperties</p>

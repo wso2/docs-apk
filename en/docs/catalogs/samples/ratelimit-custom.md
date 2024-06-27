@@ -1,6 +1,6 @@
 ### Custom Rate Limit Policy
 
-The following defines a custom rate limiting policy.
+The following defines a custom Rate Limiting policy.
 
 ```
 apiVersion: dp.wso2.com/v1alpha1

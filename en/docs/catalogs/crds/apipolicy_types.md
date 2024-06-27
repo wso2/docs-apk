@@ -1,5 +1,5 @@
 <p>
-<p>Package v1alpha1 contains the API Schema definitions for WSO2 APK.</p>
+<p>Package v1alpha2 contains the API Schema definitions for WSO2 APK.</p>
 </p>
 ## API Policy
 
@@ -20,9 +20,7 @@
                 string
             </td>
             <td>
-                <code>
-dp.wso2.com/v1alpha1
-</code>
+                <code>dp.wso2.com/v1alpha2</code>
             </td>
         </tr>
         <tr>
@@ -50,7 +48,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>spec</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.APIPolicySpec">
+                    <a href="#dp.wso2.com/v1alpha2.APIPolicySpec">
                         APIPolicySpec
                     </a>
                 </em>
@@ -63,7 +61,7 @@ dp.wso2.com/v1alpha1
                         <td>
                             <code>default</code></br>
                             <em>
-                                <a href="#dp.wso2.com/v1alpha1.PolicySpec">
+                                <a href="#dp.wso2.com/v1alpha2.PolicySpec">
                                     PolicySpec
                                 </a>
                             </em>
@@ -75,7 +73,7 @@ dp.wso2.com/v1alpha1
                         <td>
                             <code>override</code></br>
                             <em>
-                                <a href="#dp.wso2.com/v1alpha1.PolicySpec">
+                                <a href="#dp.wso2.com/v1alpha2.PolicySpec">
                                     PolicySpec
                                 </a>
                             </em>
@@ -100,7 +98,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>status</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.APIPolicyStatus">
+                    <a href="#dp.wso2.com/v1alpha2.APIPolicyStatus">
                         APIPolicyStatus
                     </a>
                 </em>
@@ -110,12 +108,13 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.APIPolicySpec">APIPolicySpec
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.APIPolicySpec" title="Permanent link">¶</a>
+
+<h3 id="dp.wso2.com/v1alpha2.APIPolicySpec">APIPolicySpec
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.APIPolicySpec" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.APIPolicy">APIPolicy</a>)
+    <a href="#dp.wso2.com/v1alpha2.APIPolicy">APIPolicy</a>)
 </p>
 <p>
 <p>APIPolicySpec defines the desired state of APIPolicy</p>
@@ -132,7 +131,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>default</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.PolicySpec">
+                    <a href="#dp.wso2.com/v1alpha2.PolicySpec">
                         PolicySpec
                     </a>
                 </em>
@@ -144,7 +143,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>override</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.PolicySpec">
+                    <a href="#dp.wso2.com/v1alpha2.PolicySpec">
                         PolicySpec
                     </a>
                 </em>
@@ -164,22 +163,23 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.APIPolicyStatus">APIPolicyStatus
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.APIPolicyStatus" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha2.APIPolicyStatus">APIPolicyStatus
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.APIPolicyStatus" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.APIPolicy">APIPolicy</a>)
+    <a href="#dp.wso2.com/v1alpha2.APIPolicy">APIPolicy</a>)
 </p>
 <p>
 <p>APIPolicyStatus defines the observed state of APIPolicy</p>
 </p>
-<h3 id="dp.wso2.com/v1alpha1.BackendJWTToken">BackendJWTToken
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.BackendJWTToken" title="Permanent link">¶</a>
+
+<h3 id="dp.wso2.com/v1alpha2.BackendJWTToken">BackendJWTToken
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.BackendJWTToken" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.PolicySpec">PolicySpec</a>)
+    <a href="#dp.wso2.com/v1alpha2.PolicySpec">PolicySpec</a>)
 </p>
 <p>
 <p>BackendJWTToken holds backend JWT token information</p>
@@ -205,12 +205,13 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.CORSPolicy">CORSPolicy
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.CORSPolicy" title="Permanent link">¶</a>
+
+<h3 id="dp.wso2.com/v1alpha2.CORSPolicy">CORSPolicy
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.CORSPolicy" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.PolicySpec">PolicySpec</a>)
+    <a href="#dp.wso2.com/v1alpha2.PolicySpec">PolicySpec</a>)
 </p>
 <p>
 <p>CORSPolicy holds CORS policy information</p>
@@ -303,12 +304,13 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.InterceptorReference">InterceptorReference
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.InterceptorReference" title="Permanent link">¶</a>
+
+<h3 id="dp.wso2.com/v1alpha2.InterceptorReference">InterceptorReference
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.InterceptorReference" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.PolicySpec">PolicySpec</a>)
+    <a href="#dp.wso2.com/v1alpha2.PolicySpec">PolicySpec</a>)
 </p>
 <p>
 <p>InterceptorReference holds InterceptorService reference using name and namespace</p>
@@ -334,12 +336,12 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.PolicySpec">PolicySpec
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.PolicySpec" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha2.PolicySpec">PolicySpec
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.PolicySpec" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.APIPolicySpec">APIPolicySpec</a>)
+    <a href="#dp.wso2.com/v1alpha2.APIPolicySpec">APIPolicySpec</a>)
 </p>
 <p>
 <p>PolicySpec contains API policies</p>
@@ -356,7 +358,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>requestInterceptors</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.InterceptorReference">
+                    <a href="#dp.wso2.com/v1alpha2.InterceptorReference">
                         []InterceptorReference
                     </a>
                 </em>
@@ -371,7 +373,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>responseInterceptors</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.InterceptorReference">
+                    <a href="#dp.wso2.com/v1alpha2.InterceptorReference">
                         []InterceptorReference
                     </a>
                 </em>
@@ -386,7 +388,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>backendJwtPolicy</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.BackendJWTToken">
+                    <a href="#dp.wso2.com/v1alpha2.BackendJWTToken">
                         BackendJWTToken
                     </a>
                 </em>
@@ -399,13 +401,25 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>cORSPolicy</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.CORSPolicy">
+                    <a href="#dp.wso2.com/v1alpha2.CORSPolicy">
                         CORSPolicy
                     </a>
                 </em>
             </td>
             <td>
                 <p>CORS policy to be applied to the API.</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>subscriptionValidation</code></br>
+                <em>
+                    bool
+                </em>
+            </td>
+            <td>
+                <em>(Optional)</em>
+                <p>SubscriptionValidation denotes whether subscription validation is enabled for the API</p>
             </td>
         </tr>
     </tbody>

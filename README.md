@@ -126,4 +126,4 @@ pip3.10 install --upgrade setuptools
 ##### Tabs are not rendering properly.
 Follow the new syntax. https://squidfunk.github.io/mkdocs-material/reference/content-tabs/?h=tabs#usage
 
-When the tabs are suppose to render as child element of numbered list, fixing the indentation will fix most of the issues. The default space for indentation is 4 spaces.
+When the tabs are supposed to render as child elements of a numbered list, fixing the indentation will fix most of the issues. The default space for indentation is 4 spaces.

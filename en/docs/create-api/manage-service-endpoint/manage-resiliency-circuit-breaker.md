@@ -93,8 +93,11 @@ operations:
     secured: true
     scopes: []
 ```
-You can then deploy this API by following the steps in [Create an API](../../get-started/quick-start-guide.md) documentation.
+
+You can then deploy this API by following the steps in the [Deploy the API in APK](../../get-started/quick-start-guide.md#deploy-the-api-in-apk) documentation.
+
 ## Via CRs
+
 **Step 1 - Define the CRs**
 
 Define the Backend resource for the API as below.

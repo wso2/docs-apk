@@ -2,7 +2,7 @@
 
 The following is a sample CR for adding authentication to an API.
 ```
-apiVersion: "dp.wso2.com/v1alpha1"
+apiVersion: "dp.wso2.com/v1alpha2"
 kind: "Authentication"
 metadata:
   name: http-bin-authentication
@@ -13,7 +13,11 @@ spec:
         header: "Authorization"
         sendTokenToUpstream: true
         disabled: false
-      apiKey: []
+      mtls:
+        required: optional
+        configMapRefs:
+          - name: mtls-test-configmap
+            key: tls.crt
     disabled: false
   targetRef:
     group: "gateway.networking.k8s.io"

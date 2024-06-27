@@ -42,7 +42,7 @@ spec:
       </tr>
       <tr>
         <td style="white-space: nowrap;"><code>targetRef</code></td>
-        <td>Determines the references of resource to apply the API policy.</td>
+        <td>Determines the resource references to which the APIPolicy will be applied.</td>
         <td></td>
       </tr>
     </tbody>

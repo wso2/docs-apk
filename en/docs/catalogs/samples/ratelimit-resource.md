@@ -1,6 +1,6 @@
 ### Rate Limit for Resource
 
-The following defines a rate limiting policy at the Resource (HTTPRoute) level.
+The following defines a Rate Limiting policy at the Resource (HTTPRoute) level.
 
 ```
 apiVersion: dp.wso2.com/v1alpha1

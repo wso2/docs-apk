@@ -11,18 +11,65 @@
 
 ## Step 2 - Configure APK
 
-1. Follow the instructions outlined in [Customize Configurations](../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file, which you will then use to tailor the analytics configurations to your specific needs. Open the `values.yaml` file. Set following config under `wso2.apk.dp.gatewayRuntime` section and apply helm chart.
+1. Create a secret containing the Choreo Auth URL and the Choreo token using the following command. Replace the ```choreo-on-prem-key``` value with your on-prem key generated in Step 1.
 
-    ```yaml
-    analytics:
-      enabled: true
-      publisher:
+    === "Sample Command"
+        ```bash
+        kubectl create secret generic choreo-analytics-secret --from-literal=authToken='<choreo-on-prem-key>' --from-literal=authURL='https://analytics-event-auth.choreo.dev/auth/v1' -n apk
+        ```
+    === "Command Format"
+        ```bash
+        kubectl create secret generic <secret-name> --from-literal=authToken='<choreo-on-prem-key>' --from-literal=authURL='https://analytics-event-auth.choreo.dev/auth/v1' -n <namespace>
+        ```
+
+2. Follow the instructions outlined in [Customize Configurations](../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file, which you will then use to tailor the analytics configurations to your specific needs. 
+3. Replace ```secret-name``` in the following configuration with the name of the secret you created in the previous step.
+```yaml
+analytics:
+ enabled: true
+ publishers:
+ - enabled: true
+   type: "default"
+   secretName: <secret-name>
+```
+
+4. Open the `values.yaml` file, and add the above configuration to the `gatewayRuntime` section under `dp`. Your values.yaml file should have a structure as follows:
+   
+```yaml
+wso2:
+  ...
+  apk:
+    ...
+    dp:
+      ...
+      gatewayRuntime:
+        analytics:
+          enabled: true
+          publishers:
+          - enabled: true
+            type: "default"
+            secretName: <secret-name>
+```
+Then redeploy the helm chart with the changes in `values.yaml`.
+
+### Optional - Adding Multiple Publishers
+
+You can also set multiple publishers for analytics as follows. Replace ```choreo-secret-name``` and ```moesif-secret-name``` with the appropriate values.
+
+```yaml
+gatewayRuntime:
+  analytics:
+    enabled: true
+    publishers:
       - enabled: true
-        properties:
-          auth.api.token: <on-prem-key>
-          auth.api.url: https://analytics-event-auth.choreo.dev/auth/v1
-        type: default
-    ```
+        type: "default"
+        secretName: <choreo-secret-name>
+      - enabled: true
+        type: "elk"
+      - enabled: true
+        type: "moesif"
+        secretName: <moesif-secret-name>
+```
 
 ## Step 3 - View Analytics Data
 

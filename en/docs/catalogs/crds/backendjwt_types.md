@@ -1,6 +1,7 @@
 <p>
 <p>Package v1alpha1 contains the API Schema definitions for WSO2 APK.</p>
 </p>
+
 ## Backend JWT
 
 <p>
@@ -14,24 +15,6 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>
-                <code>apiVersion</code></br>
-                string
-            </td>
-            <td>
-                <code>
-dp.wso2.com/v1alpha1
-</code>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>kind</code></br>
-                string
-            </td>
-            <td><code>BackendJWT</code></td>
-        </tr>
         <tr>
             <td>
                 <code>metadata</code></br>

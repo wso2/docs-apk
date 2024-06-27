@@ -7,13 +7,29 @@ This section is a step-by-step guide to creating, deploying, and invoking an API
 Install the [prerequisites](../../setup/prerequisites) that are required to run the WSO2 API Platform For Kubernetes.
 
 !!!NOTE
-    If you have already installed the pre-release version of the APK into your cluster please remove the installation by following the steps specified in <a href="{{base_path}}/en/latest/about-apk/FAQs/#q2-how-to-uninstall-apk-from-my-cluster">FAQs</a> section.
+    If you already have an installation of the APK in your cluster, please remove the installation by following the steps specified in the [Uninstall APK](../setup/uninstall.md) section.
 
 ## Step 1 - Start WSO2 API Platform For Kubernetes
 
 {!includes/start-apk.md!}
 
-## Step 2 - Create and Deploy the API
+## Step 2 - Create the Backend
+
+For this guide, we will be using a backend deployed in a Kubernetes service. Prior to invoking the API, you will need to have this backend up.
+
+You can create the sample backend with the following command.
+
+```
+kubectl apply -f https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/qsg-sample-backend.yaml
+```
+
+Wait for this pod to spin up. You can check its status using the following command.
+
+```
+kubectl get pods
+```
+
+## Step 3 - Create and Deploy the API
 
 1. Save and download the sample [EmployeeServiceDefinition.json](../assets/files/get-started/EmployeeServiceDefinition.json) file. This is the OAS definition of the API that we are going to deploy in APK.
 2. Add a hostname mapping to the ```/etc/hosts``` file as follows.
@@ -48,7 +64,7 @@ Apart from the above API definition file, we also need an `apk-conf` file that d
 
     === "Sample Request"
         ```
-        curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.0.0/apis/generate-configuration' \
+        curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.1.0/apis/generate-configuration' \
         --header 'Host: api.am.wso2.com' \
         --form 'definition=@"/Users/user/EmployeeServiceDefinition.json"'
         ```
@@ -85,7 +101,7 @@ Apart from the above API definition file, we also need an `apk-conf` file that d
 
     === "Request Format"
         ```
-        curl --location 'https://<host>:9095/api/configurator/1.0.0/apis/generate-configuration' \
+        curl --location 'https://<host>:9095/api/configurator/1.1.0/apis/generate-configuration' \
         --header 'Host: <host>' \
         --form 'apiType="<api-type>"' \
         --form 'definition=@"<path/to/EmployeeServiceDefinition.json>"'
@@ -95,7 +111,7 @@ Apart from the above API definition file, we also need an `apk-conf` file that d
 2. You will get the apk-conf file content as the response. Save this content into a file named `EmployeeService.apk-conf`.
 
 !!! Important
-    We recommend installing the [APK Config Language Support Visual Studio Code (VS Code) extension](../create-api/create-and-deploy-apis/apk-conf-lang-support.md) to edit the APK Configuration file.
+    We recommend installing the [APK Config Language Support Visual Studio Code (VS Code) extension]({{base_path}}/en/latest/api-management-overview/apk-conf-lang-support/) to edit the APK Configuration file.
 
 
 ### Generate an access token to invoke APIs
@@ -113,7 +129,8 @@ To invoke the system APIs such as for deploying, we need a valid access token is
         --header 'Host: idp.am.wso2.com' \
         --header 'Authorization: Basic NDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyOjRmYmQ2MmVjLWE5MmUtMTFlZC1hZmExLTAyNDJhYzEyMDAwMg==' \
         --header 'Content-Type: application/x-www-form-urlencoded' \
-        --data-urlencode 'grant_type=client_credentials'
+        --data-urlencode 'grant_type=client_credentials' \
+        --data-urlencode 'scope=apk:api_create'
         ```
 
     === "Sample Response"
@@ -151,7 +168,7 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
 
     === "Sample Request"
         ```
-        curl -k --location 'https://api.am.wso2.com:9095/api/deployer/1.0.0/apis/deploy' \
+        curl -k --location 'https://api.am.wso2.com:9095/api/deployer/1.1.0/apis/deploy' \
         --header 'Host: api.am.wso2.com' \
         --header 'Authorization: bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiZXhwIjoxNjg4MTMxNDQ0LCAibmJmIjoxNjg4MTI3ODQ0LCAiaWF0IjoxNjg4MTI3ODQ0LCAianRpIjoiMDFlZTE3NDEtMDA0Ni0xOGE2LWFhMjEtYmQwYTk4ZjYzNzkwIiwgImNsaWVudElkIjoiNDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyIiwgInNjb3BlIjoiZGVmYXVsdCJ9.RfKQq2fUZKZFAyjimvsPD3cOzaVWazabmq7b1iKYacqIdNjkvO9CQmu7qdtrVNDmdZ_gHhWLXiGhN4UTSCXv_n1ArDnxTLFBroRS8dxuFBZoD9Mpj10vYFSDDhUfFqjgMqtpr30TpDMfee1wkqB6K757ZSjgCDa0hAbv555GkLdZtRsSgR3xWcxPBsIozqAMFDCWoUCbgTQuA5OiEhhpVco2zv4XLq2sz--VRoBieO12C69KnGRmoLuPtvOayInvrnV96Tbt9fR0fLS2l1nvAdFzVou0SIf9rMZLnURLVQQYE64GR14m-cFRYdUI9vTsFHZBl5w-uCLdzMMofzZaLQ' \
         --form 'apkConfiguration=@"/Users/user/EmployeeService.apk-conf"' \
@@ -190,16 +207,14 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
         ```
     === "Request Format"
         ```
-        curl --location 'https://<host>:9095/api/deployer/1.0.0/apis/deploy' \
+        curl --location 'https://<host>:9095/api/deployer/1.1.0/apis/deploy' \
         --header 'Host: <host>' \
         --header 'Authorization: bearer <access-token>' \
         --form 'apkConfiguration=@"path/to/EmployeeService.apk-conf"' \
         --form 'definitionFile=@"path/to/EmployeeServiceDefinition.json"'
         ```
 
-
 4. Execute the command below. You will be able to see that the `EmployeeServiceAPI` is successfully deployed as shown in the image.
-
 
     === "Command"
         ```
@@ -207,22 +222,6 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
         ```
 
     [![Deployed API](../assets/img/get-started/deployed-api.png)](../assets/img/get-started/deployed-api.png)
-
-## Step 3 - Create the Backend
-
-The endpoint "http://employee-service:80" provided in the above files points to a backend deployed on a kubernetes service. Prior to invoking the API, you will need to have this backend up. 
-
-We have provided the file containing this sample backend [here](../assets/files/get-started/employee-service-backend.yaml). Download it and create the backend service using the following command.
-
-```
-kubectl apply -f ./employee-service-backend.yaml
-```
-
-Wait for this pod to spin up. You can check its status using the following command.
-
-```
-kubectl get pods
-```
 
 ## Step 4 - Invoke the API
 

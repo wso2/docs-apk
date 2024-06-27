@@ -184,7 +184,7 @@ Create an `HTTPRoute` resource referring to the above `Backend`.
 
 Refer [Step 3](https://apk.docs.wso2.com/en/latest/get-started/quick-start-guide/#step-3-invoke-the-api) in QSG to see how to invoke the API.
 
-In this try out we will use [httpbin service's](https://httpbin.org/)  `/get` resource to test the backend security. It echoes back the request details including all the headers. Therefore if the backend security was correctly configured, you should see the ehader `"Authorization": "Basic YWRtaW4KOmFkbWluCg==",` in the received response. 
+In this try out we will use [httpbin service's](https://httpbin.org/)  `/get` resource to test the backend security. It echoes back the request details including all the headers. Therefore if the backend security was correctly configured, you should see the header `"Authorization": "Basic YWRtaW4KOmFkbWluCg==",` in the received response. 
 
 ```
     {

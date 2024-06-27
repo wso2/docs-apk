@@ -15,7 +15,7 @@
 # under the License.
 
 # Project information
-site_name: APK Documentation 1.0.0
+site_name: APK Documentation 1.1.0
 site_description: Documentation for WSO2 API Platform for Kubernetes
 site_author: WSO2
 site_url: https://apk.docs.wso2.com/en/latest/
@@ -23,8 +23,8 @@ site_url: https://apk.docs.wso2.com/en/latest/
 # Repository
 repo_name: wso2/apk
 repo_url: https://github.com/wso2/apk
-# Change the edit_url later when 1.0.0 is released
-edit_uri: https://github.com/wso2/docs-apk/edit/main/en/docs/
+# Change the edit_url with every new release
+edit_uri: https://github.com/wso2/docs-apk/edit/1.1.0/en/docs/
 dev_addr: localhost:8000
 
 # Copyright
@@ -74,6 +74,7 @@ nav:
     - Get Started:
         #- Get Started - Overview: get-started/get-started-overview.md
         - Quick Start: get-started/quick-start-guide.md
+        - Quick Start With Control Plane: get-started/quick-start-guide-with-cp.md
         #- Basic Flow:
         #    - Overview: restapi/overview.md
         #    - Create an API: restapi/create-api.md
@@ -84,24 +85,27 @@ nav:
         #    - Test API: develop-and-deploy-api/test-api.md
         #    - Publish Your API: manage-apis/publish-your-api.md
     - API Management:
+        - Overview - API Management in APK Dataplane:
+            - Overview: api-management-overview/create-api-overview.md
+            - Via REST API: api-management-overview/tools-for-api-development.md
+            - Via CRs:  api-management-overview/create-api-using-crs.md
+            - APK Config Language Support Plugin: api-management-overview/apk-conf-lang-support.md
         - Develop and Deploy API:
-           - Overview: create-api/create-api-overview.md
-           - Create and deploy APIs:
-                - K8s Native API Development: create-api/create-and-deploy-apis/create-api-using-cr.md
-                - Enhanced API Development:
-                    - Overview: create-api/create-and-deploy-apis/tools-for-api-development.md
-                    - Create and Deploy API using APK Tools:
-                        - Generate APK Configuration file: create-api/create-and-deploy-apis/generate-apk-conf.md
-                        - Generate K8s custom resources and Deploy: create-api/create-and-deploy-apis/create-and-deploy-api.md
-                        - Direct Deploy into K8s Server: create-api/create-and-deploy-apis/direct-deploy.md
-                        - Undeploy API: create-api/create-and-deploy-apis/direct-undeploy.md
-                        - APK Config Language Support Plugin: create-api/create-and-deploy-apis/apk-conf-lang-support.md
+            - Rest APIs: 
+                - Via REST API: create-api/create-and-deploy-apis/rest/create-rest-api-using-rest-api.md
+                - Via CRs: create-api/create-and-deploy-apis/rest/create-rest-api-using-crs.md
+            - GraphQL APIs: 
+                - Via REST API: create-api/create-and-deploy-apis/graphql/create-graphql-api-using-rest-api.md
+                - Via CRs: create-api/create-and-deploy-apis/graphql/create-graphql-api-using-crs.md
+        - Undeploy API: 
+            - Via REST API: undeploy/undeploy-rest-api.md
+            - Via CRs: undeploy/undeploy-crs.md
         - Manage Endpoint:
             - Define Endpoint: develop-and-deploy-api/endpoints/prod-sand-endpoints.md
             - Manage Certificate: create-api/manage-service-endpoint/manage-certificate.md
             - Manage Security:
                 - Via REST API: create-api/manage-service-endpoint/manage-security-via-rest-api.md
-                - Via CR: create-api/manage-service-endpoint/manage-security-via-crs.md
+                - Via CRs: create-api/manage-service-endpoint/manage-security-via-crs.md
             - Manage Resiliency:
                 - Timeout: create-api/manage-service-endpoint/manage-resiliency-timeout.md
                 - Retry Policy: create-api/manage-service-endpoint/manage-resiliency-retry-policy.md
@@ -111,13 +115,14 @@ nav:
             - Interceptor Service: 
                 - Overview: create-api/create-and-attach-api-policies/interceptors/interceptors-overview.md
                 - Via REST API: create-api/create-and-attach-api-policies/interceptors/interceptors-via-rest-api.md
-                - Via CR: create-api/create-and-attach-api-policies/interceptors/interceptors-via-crs.md
+                - Via CRs: create-api/create-and-attach-api-policies/interceptors/interceptors-via-crs.md
             - Backend JWT Token Manipulation:
+                - Overview: create-api/create-and-attach-api-policies/backend-jwt-token-manipulation/overview.md
                 - Via REST API: create-api/create-and-attach-api-policies/backend-jwt-token-manipulation/backend-jwt-token-manipulation-via-rest-api.md
-                - Via CR: create-api/create-and-attach-api-policies/backend-jwt-token-manipulation/backend-jwt-token-manipulation-via-crs.md
+                - Via CRs: create-api/create-and-attach-api-policies/backend-jwt-token-manipulation/backend-jwt-token-manipulation-via-crs.md
             - CORS:
                 - Via REST API: create-api/create-and-attach-api-policies/cors/enable-cors-via-rest-api.md
-                - Via CR: create-api/create-and-attach-api-policies/cors/enable-cors-via-crs.md
+                - Via CRs: create-api/create-and-attach-api-policies/cors/enable-cors-via-crs.md
         - Rate Limiting:
             - Overview: create-api/rate-limiting/rate-limiting-policy-overview.md
             - Simple Rate Limiting:
@@ -129,9 +134,11 @@ nav:
             - Authentication:
                 - Enable API Security:
                     - OAuth2: develop-and-deploy-api/security/authentication/enable-api-security/oauth2.md
+                    - Mutual SSL: develop-and-deploy-api/security/authentication/enable-api-security/mtls.md
         - API Versions:
             - Create an API Version: develop-and-deploy-api/api-versions/create-an-api-versions.md
             - Default Version: develop-and-deploy-api/api-versions/default-version.md
+            - Semantic Versioning Based Intelligent Routing: develop-and-deploy-api/api-versions/semver-based-intelligent-routing.md
             #- Backward Compatibility: develop-and-deploy-api/api-versions/backward-compatibility.md
         - API Properties: develop-and-deploy-api/api-properties/api-properties.md
         - API Scopes: develop-and-deploy-api/api-scopes/api-scopes.md
@@ -163,15 +170,44 @@ nav:
     #           - Comment on API: manage-apis/community-engagement/comment-on-api.md
     #       - API Categorization: manage-apis/api-categorization.md
     #       - API Monetization: manage-apis/api-monetization.md
+    - Control Plane:
+        - APK Control Plane:
+              - Overview: control-plane/overview.md
+              - API Management:
+                    - Overview: control-plane/api-management/control-plane-api-management-overview.md
+                    - Develop and Deploy API:
+                        - Create REST APIs: control-plane/api-management/control-plane-create-and-deploy-rest-apis.md
+                        - Create GraphQL APIs: control-plane/api-management/control-plane-create-and-deploy-graphql-apis.md
+                    - Add APK Gateway: control-plane/api-management/control-plane-add-apk-gateway.md
+                    - Create Application and Subscribe: control-plane/api-management/control-plane-create-application-and-subscription.md
+        - APK as a Gateway in API Manager:
+              - Overview: control-plane/apk-as-gateway-in-apim/apk-as-gateway-in-apim-overview.md
+              - Quick Start Guide: control-plane/apk-as-gateway-in-apim/apk-as-gateway-in-apim-qsg.md
+              - API Management:
+                  - Overview: control-plane/apk-as-gateway-in-apim/api-management/control-plane-api-management-overview.md
+                  - Develop and Deploy API:
+                      - Create REST APIs: control-plane/apk-as-gateway-in-apim/api-management/control-plane-create-and-deploy-rest-apis.md
+                      - Create GraphQL APIs: control-plane/apk-as-gateway-in-apim/api-management/control-plane-create-and-deploy-graphql-apis.md
+                  - Add APK Gateway: control-plane/apk-as-gateway-in-apim/api-management/control-plane-add-apk-gateway.md
+                  - Create Application and Subscribe: control-plane/apk-as-gateway-in-apim/api-management/control-plane-create-application-and-subscription.md
+        - Advanced Configuration:
+            - API Manager Control Plane: control-plane/apim-deploy.md
+            - APK Data Plane: control-plane/apk-deploy.md
+            - APIM APK Agent: 
+                - Deployment: control-plane/apim-apk-agent-deploy.md
+                - Prometheus Configuration: control-plane/apim-apk-agent-prometheus.md
+        # - Security: control-plane/control-plane-security.md
+        # - Troubleshooting: control-plane/control-plane-troubleshooting.md
     - Catalogs:
         - CRD Catalog: 
             - Overview - CRD Catalog: catalogs/kubernetes-crds.md
             - API: catalogs/crds/api_types.md
+            - APIPolicy: catalogs/crds/apipolicy_types.md
             - HTTPRoute: catalogs/samples/http-route.md
+            - GraphQL Route: catalogs/crds/gql_routes_types.md
             - Authentication: catalogs/crds/authentication_types.md
             - Backend: catalogs/crds/backend_types.md
             - BackendJWT: catalogs/crds/backendjwt_types.md
-            - APIPolicy: catalogs/crds/apipolicy_types.md
             - Interceptor Service: catalogs/crds/interceptorservice_types.md
                 # - Overview: catalogs/api-policy.md
                 # - CORS: catalogs/cors.md
@@ -180,6 +216,9 @@ nav:
             # - Resolved JWT Issuer: catalogs/crds/resolvedJWTIssuer.md
             - Scope: catalogs/crds/scope_types.md
             - Token Issuer: catalogs/crds/tokenIssuer_types.md
+            - Subscription: catalogs/crds/subscription_types.md
+            - Application: catalogs/crds/application_types.md
+            - Application Mapping: catalogs/crds/application_mapping_types.md
                 # - Overview: catalogs/rate-limit-policy.md
                 # - API Level: catalogs/ratelimit-api.md
                 # - Resource Level: catalogs/ratelimit-resource.md
@@ -197,10 +236,21 @@ nav:
     #    - Helm Catalog: catalogs/config-catalog.md
     - Setup: 
         - Prerequisites: setup/prerequisites.md
-        - Install: setup/install.md
+        - Install Dataplane: setup/install.md
+        - Install Control plane with Dataplane: setup/install-with-cp.md
+        - Uninstall: setup/uninstall.md
+        - Deployment Patterns:
+              - Overview: setup/deployment/deployment-patterns-overview.md
+              - APK Data Plane: setup/deployment/apk-data-plane-deployment-patterns.md
+              - APK Data Plane with API Manager Control Plane: setup/deployment/apk-with-apim-cp-deployment-patterns.md
+              - APK as a Gateway in API Manager: setup/deployment/apk-as-gateway-in-apim-deployment-patterns.md
         - Migration: setup/migration.md
         - Customize Configurations: setup/Customize-Configurations.md
+        - Production Deployment Guidelines: setup/production-deployment-guideline.md
         - Configure HPA for gateway: setup/configure-hpa.md
+        - Deploy in OpenShift: setup/deploy-in-openshift.md
+        - Multi-environment Deployment on Gateway: setup/multi-env-deployment-on-apk.md
+
 #        - Organization: setup/organizations.md
        #- Deploy:
        #    - Deployment Patterns: get-started/dummy.md
@@ -224,6 +274,7 @@ nav:
         - Configure Analytics: 
             - Choreo Insights: setup/analytics/configure-analytics-for-choreo-insights.md
             - ELK Stack: setup/analytics/configure-analytics-for-elk-stack.md
+            - Moesif: setup/analytics/configure-analytics-for-moesif.md
         - Configure Listeners:
             - Configure Gateway Listeners: setup/listeners/configure-gateway-listeners.md
         - Configure Logs:
@@ -232,9 +283,7 @@ nav:
             - Enforcer: administration/configurations/configure-logs-enforcer.md
             - Router: administration/configurations/configure-logs-router.md
         - Configure Distributed Tracing: administration/distributed-tracing.md
-        - Deploy in OpenShift: setup/deploy-in-openshift.md
-        - Production Deployment guidelines: administration/production-deployment-guideline.md
-        - Deployment patterns: administration/deployment-patterns.md
+        - Configure Prometheus Metric Support: administration/prometheus-metric-support.md
     - About APK:
         - What is APK?: about-apk/what-is-apk.md
         - About This Release: about-apk/about-this-release.md
@@ -375,7 +424,7 @@ extra:
           link: https://twitter.com/wso2
         - type: linkedin
           link: https://www.linkedin.com/company/wso2
-    site_version: 1.0.0
+    site_version: 1.1.0
     # base_path: http://localhost:8000
     base_path: https://apk.docs.wso2.com
     envoy_path: https://www.envoyproxy.io/docs/envoy/v1.20.0
