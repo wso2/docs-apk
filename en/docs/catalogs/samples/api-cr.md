@@ -26,4 +26,4 @@ spec:
   organization: apk-org
 ```
 
-Refer [Manage API](../../../api-management-overview/create-api-overview/) for more information on how to configure APIs.
+Refer [Manage API]({{base_path}}/api-management-overview/create-api-overview/) for more information on how to configure APIs.
