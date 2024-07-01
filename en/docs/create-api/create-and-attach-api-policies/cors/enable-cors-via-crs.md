@@ -79,8 +79,8 @@ Follow the instructions below to add CORS configurations to an API via CRs:
 
 !!! note "Before you begin"
     
-    - Install the [prerequisites](../../../setup/prerequisites) that are required to run WSO2 APK.
-    - [Start WSO2 APK](../../../get-started/quick-start-guide/#step-1-start-wso2-apk).
+    - Install the [prerequisites](../../../../setup/prerequisites) that are required to run WSO2 APK.
+    - [Start WSO2 APK](../../../../get-started/quick-start-guide/#step-1-start-wso2-apk).
 
 **Step 1 - Define the CRs**
 

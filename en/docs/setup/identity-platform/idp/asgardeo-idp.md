@@ -8,7 +8,7 @@ Follow the instructions below to use Asgardeo as the Identity Provider (IdP) to 
 
 ## Step 2 - Create a Sub-Organization.
 
-[Create a sub-organization in Asgardeo](https://wso2.com/asgardeo/docs/guides/organization-management/manage-b2b-organizations/manage-suborganizations/) within the organization that you created.
+[Create a sub-organization in Asgardeo](https://wso2.com/asgardeo/docs/guides/organization-management/manage-organizations/#build-an-organizational-hierarchy) within the organization that you created.
 
 ## Step 3 - Create a user
 
@@ -22,7 +22,7 @@ Follow the instructions below to use Asgardeo as the Identity Provider (IdP) to 
 
     All the IDP related configurations are listed under **Service Endpoints**.
 
-4. [Share application with sub-organizations](https://wso2.com/asgardeo/docs/guides/organization-management/manage-b2b-organizations/share-applications/).
+4. [Share application with sub-organizations](https://wso2.com/asgardeo/docs/guides/organization-management/share-applications/).
 
 ## Step 5 - Add a new token issuer for the IDP
 

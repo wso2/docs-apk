@@ -183,7 +183,7 @@ When using **Jaeger** for tracing, the format is same as for **Zipkin** to publi
     ``` 
 
 2. Follow the [quick start]({{base_path}}/en/latest/get-started/quick-start-guide/) guide and invoke backend.
-3. Open Jaeger UI to view the traces. Navigate to <http://jaeger.example.com>
+3. Open Jaeger UI to view the traces. Navigate to `http://jaeger.example.com`
 
 You will be able to browse through the request traces and expand each trace to view complete trace details.
 
@@ -209,7 +209,7 @@ Follow these steps to configure WSO2 APK with Zipkin.
     ``` 
     
 2. Follow the [quick start]({{base_path}}/en/latest/get-started/quick-start-guide/) guide and invoke backend.
-3. Invoke the newly create API and open Zipkin UI to view the traces. Navigate to <http://zipkin.example.com> 
+3. Invoke the newly create API and open Zipkin UI to view the traces. Navigate to `http://zipkin.example.com`
 4. Filter traces by `tagQuery=otel.library.name=APK` query.
 
 You will be able to see all traces. Detailed trace view will look like below.
@@ -284,7 +284,7 @@ You will be able to see all traces. Detailed trace view will look like below.
     ``` 
 
 2. Follow the [quick start]({{base_path}}/en/latest/get-started/quick-start-guide/) guide and invoke backend.
-3. Open Jaeger UI to view the traces. Navigate to <http://CLUSTER_IP:16686> 
+3. Open Jaeger UI to view the traces. Navigate to `http://CLUSTER_IP:16686`
 
 You will be able to browse through the request traces and expand each trace to view complete trace details.
 

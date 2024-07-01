@@ -10,7 +10,7 @@ APK offers a suite of developer tools to streamline the API development process 
 
 - <b>APK Config language support VSCode Plugin</b>
     
-    VSCode plugin provides an intuitive interface for writing APK Conf files, reducing the learning curve for developers. For more details, refer to the section on [Enhance Configuration with APK Config Language Support]({{base_path}}/en/latest/create-api/create-and-deploy-apis/apk-conf-lang-support)
+    VSCode plugin provides an intuitive interface for writing APK Conf files, reducing the learning curve for developers. For more details, refer to the section on [Enhance Configuration with APK Config Language Support](../../api-management-overview/apk-conf-lang-support/)
 
 - <b>Config Generator</b>
 
@@ -46,7 +46,7 @@ By incorporating the `APK Config Language Support` extension, you can enhance yo
 The Config Deployer streamlines the API deployment process by generating and applying CRs in a single step. With this option, you can use the Config Deployer to automatically generate the necessary CR configurations for your APIs and apply the generated CRs directly to your Kubernetes API server for rapid deployment. You can deploy the API directly into APK using API Schema definition and APK configuration file using the REST API.
 
 !!! note
-    To optimize the configuration process, APK presents a VS Code plugin designed to offer syntax highlighting and intelligent suggestions. This plugin simplifies the incorporation of rate limitations, new resources, and security configurations into your API. Adapt the contents of the APK Configuration file as needed. For further details, refer to the section on [Enhance Configuration with APK Config Language Support]({{base_path}}/en/latest/create-api/create-and-deploy-apis/apk-conf-lang-support/)
+    To optimize the configuration process, APK presents a VS Code plugin designed to offer syntax highlighting and intelligent suggestions. This plugin simplifies the incorporation of rate limitations, new resources, and security configurations into your API. Adapt the contents of the APK Configuration file as needed. For further details, refer to the section on [Enhance Configuration with APK Config Language Support](../../api-management-overview/apk-conf-lang-support/)
 
 #### Option 2 - Generate K8s custom resources using config generator tool and Deploy the API using Kubernetes Client
 
