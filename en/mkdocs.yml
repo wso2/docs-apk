@@ -123,6 +123,16 @@ nav:
             - CORS:
                 - Via REST API: create-api/create-and-attach-api-policies/cors/enable-cors-via-rest-api.md
                 - Via CRs: create-api/create-and-attach-api-policies/cors/enable-cors-via-crs.md
+            - Header Modification:
+                - Via REST API: create-api/create-and-attach-api-policies/header-modifier-filters/header-modifier-via-rest-api.md
+                - Via CRs: create-api/create-and-attach-api-policies/header-modifier-filters/header-modifier-via-crs.md
+            - Request Mirroring:
+                - Overview: create-api/create-and-attach-api-policies/mirror-request-filters/overview.md
+                - Via REST API: create-api/create-and-attach-api-policies/mirror-request-filters/mirror-request-via-rest-api.md
+                - Via CRs: create-api/create-and-attach-api-policies/mirror-request-filters/mirror-request-via-crs.md
+            - Request Redirection:
+                - Via REST API: create-api/create-and-attach-api-policies/redirect-request-filters/redirect-request-via-rest-api.md
+                - Via CRs: create-api/create-and-attach-api-policies/redirect-request-filters/redirect-request-via-crs.md
         - Rate Limiting:
             - Overview: create-api/rate-limiting/rate-limiting-policy-overview.md
             - Simple Rate Limiting:

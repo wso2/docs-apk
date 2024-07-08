@@ -6,7 +6,7 @@ This functionality enables the addition, modification, and removal of request an
 
 Here, you can follow the steps in [Develop and Deploy a REST API via CRs](../../create-and-deploy-apis/rest/create-rest-api-using-crs.md) documentation and create the CRs to deploy an API from scratch. 
 
-Alternatively, you can generate the CRs for a given apk-conf file using the steps as detailed in [this section](../../../api-management-overview/create-api-using-crs.md)
+Alternatively, you can generate the CRs for a given apk-conf file using the steps as detailed in [this section]({{base_path}}/en/latest/api-management-overview/tools-for-api-development/#option-2-generate-k8s-custom-resources-using-config-generator-tool-and-deploy-the-api-using-kubernetes-client)
 
 ### Step 2 - Add the header modification filters to the HTTPRoute CR
 
@@ -77,7 +77,10 @@ spec:
 Sample configurations for each of them have been provided under the [Sample Configurations](#sample-configurations) section.
 
 ### Step 3 - Deploy the API in APK
-You can deploy the CRs using `kubectl apply -f . -n <namespace>`
+You can deploy the API using the following command. Replace <namespace> with the correct namespace.
+```
+kubectl apply -f . -n <namespace>
+```
 
 ### Sample Configurations
 

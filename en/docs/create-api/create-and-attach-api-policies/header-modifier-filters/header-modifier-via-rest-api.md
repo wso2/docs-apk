@@ -63,6 +63,7 @@ operations:
     secured: true
     scopes: []
 ```
+
 Similarly, you can do the following to both request and response headers.
 1. Add headers
 2. Update existing headers
@@ -74,7 +75,7 @@ Sample configurations for each of them have been provided under the [Sample Conf
 
 Refer to the [Deploy the API in APK](../../../get-started/quick-start-guide.md#deploy-the-api-in-apk) to deploy the API using APK configuration.
 
-### Step 4 - Generate an Acess Token
+### Step 4 - Generate an access token
 
 Follow the [Generate Access Token](../../../develop-and-deploy-api/security/generate-access-token.md) documentation to generate an access token.
 
@@ -90,25 +91,24 @@ curl --location 'https://default.gw.wso2.com:9095/employees/1.0/employee' \
 
 Since this guide uses the [httpbin service](https://httpbin.org/anything) which echoes the request and all of its headers, when you invoke the API, you will see the header "Test-Request-Header" with the value "Test-Value".
 
-
 ### Sample Configurations
 
-#### Request Header Modification
+#### Operation Level Request Header Modification
 
 ##### 1. Add Request Header
 
 ```
 - target: "/employee"
- verb: "GET"
- secured: false
- scopes: []
- operationPolicies:
-   request:
-     - policyName: AddHeader
-       policyVersion: v1
-       parameters:
-         headerName: "Header-Name"
-         headerValue: "Header-Value"
+  verb: "GET"
+  secured: false
+  scopes: []
+  operationPolicies:
+    request:
+      - policyName: AddHeader
+        policyVersion: v1
+        parameters:
+          headerName: "Header-Name"
+          headerValue: "Header-Value"
 ```
 
 ##### 2. Update Request Header
@@ -142,7 +142,7 @@ Since this guide uses the [httpbin service](https://httpbin.org/anything) which 
           headerName: "Header-Name"
 ```
 
-#### Response Header Modification
+#### Operation Level Response Header Modification
 
 ##### 1. Add Response Header
 
@@ -189,4 +189,102 @@ Since this guide uses the [httpbin service](https://httpbin.org/anything) which 
         policyVersion: v1
         parameters:
           headerName: "Header-Name"
+```
+#### API Level Request Header Modification
+
+##### 1. Add Request Header
+
+```
+- target: "/employee"
+  verb: "GET"
+  secured: false
+  scopes: []
+apiPolicies:
+  request:
+    - policyName: AddHeader
+      policyVersion: v1
+      parameters:
+        headerName: "Header-Name"
+        headerValue: "Header-Value"
+```
+
+##### 2. Update Request Header
+
+```
+- target: "/employee"
+  verb: "GET"
+  secured: false
+  scopes: []
+apiPolicies:
+  request:
+    - policyName: SetHeader
+      policyVersion: v1
+      parameters:
+        headerName: "Header-Name"
+        headerValue: "Header-Value"
+```
+
+##### 3. Remove Request Header
+
+```
+- target: "/employee"
+  verb: "GET"
+  secured: false
+  scopes: []
+apiPolicies:
+  request:
+    - policyName: SetHeader
+      policyVersion: v1
+      parameters:
+        headerName: "Header-Name"
+        
+```
+
+#### API Level Response Header Modification
+
+##### 1. Add Response Header
+
+```
+- target: "/employee"
+  verb: "GET"
+  secured: false
+  scopes: []
+apiPolicies:
+  response:
+    - policyName: AddHeader
+      policyVersion: v1
+      parameters:
+        headerName: "Header-Name"
+        headerValue: "Header-Value"
+```
+
+##### 2. Update Response Header
+
+```
+- target: "/employee"
+  verb: "GET"
+  secured: false
+  scopes: []
+apiPolicies:
+  response:
+    - policyName: SetHeader
+      policyVersion: v1
+      parameters:
+        headerName: "Header-Name"
+        headerValue: "Header-Value"
+```
+
+##### 3. Remove Response Header
+
+```
+- target: "/employee"
+  verb: "GET"
+  secured: false
+  scopes: []
+apiPolicies:
+  response:
+    - policyName: SetHeader
+      policyVersion: v1
+      parameters:
+        headerName: "Header-Name"
 ```
