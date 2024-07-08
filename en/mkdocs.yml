@@ -124,6 +124,7 @@ nav:
                 - Via REST API: create-api/create-and-attach-api-policies/cors/enable-cors-via-rest-api.md
                 - Via CRs: create-api/create-and-attach-api-policies/cors/enable-cors-via-crs.md
             - Header Modification:
+                - Overview: create-api/create-and-attach-api-policies/header-modifier-filters/overview.md
                 - Via REST API: create-api/create-and-attach-api-policies/header-modifier-filters/header-modifier-via-rest-api.md
                 - Via CRs: create-api/create-and-attach-api-policies/header-modifier-filters/header-modifier-via-crs.md
             - Request Mirroring:
