@@ -239,6 +239,7 @@ nav:
     - Setup: 
         - Prerequisites: setup/prerequisites.md
         - Install Dataplane: setup/install.md
+        - Install Dataplane(Enterprise): setup/enterprise-install.md
         - Install Control plane with Dataplane: setup/install-with-cp.md
         - Uninstall: setup/uninstall.md
         - Deployment Patterns:

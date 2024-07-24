@@ -3,6 +3,9 @@
 This section provides a step-by-step guide to creating, deploying, and invoking an API using the WSO2 API Platform for Kubernetes integrated with the Control Plane. It also covers how to create an API from the data plane using CR and APIs.
 
 !!!NOTE
+    If you need to setup APK 1.1.0 Enterprise version follow the steps specified in the [Install APK Enterprise](../setup/enterprise-install.md) section.
+
+!!!NOTE
     If you follow this apporach you can not create API from Portal UI. If you need that apporach go to [Portal-Driven Design First](../quick-start-guide-as-gateway) section.
 
 ## Before you begin...
