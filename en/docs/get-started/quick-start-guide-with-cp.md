@@ -6,7 +6,7 @@ This section provides a step-by-step guide to creating, deploying, and invoking 
     If you need to setup APK 1.1.0 Enterprise version follow the steps specified in the [Install APK Enterprise](../setup/enterprise-install.md) section.
 
 !!!NOTE
-    If you follow this apporach you can not create API from Portal UI. If you need that apporach go to [Portal-Driven Design First](../quick-start-guide-as-gateway) section.
+    If you follow this approach you can not create API from Portal UI. If you need that apporach go to [Portal-Driven Design First](../quick-start-guide-as-gateway) section.
 
 ## Before you begin...
 
