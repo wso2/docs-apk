@@ -12,6 +12,7 @@ The catalogs of the CRDs, including examples and the configuration definitions, 
 
 - [API](../../catalogs/crds/api_types)
 - [HTTPRoute](../../catalogs/samples/http-route)
+- [GRPCRoute](../../catalogs/samples/grpc-route)
 - [Authentication](../../catalogs/crds/authentication_types)
 - [Backend](../../catalogs/crds/backend_types)
 - [BackendJWT](../../catalogs/crds/backendjwt_types)
