@@ -3,7 +3,10 @@
 This section is a step-by-step guide to creating, deploying, and invoking an API using the WSO2 APK with APIM Control Plane. It also covers portal-driven development, including creating an API from the UI.
 
 !!!NOTE
-    If you need to setup APK 1.1.0 Enterprise version follow the steps specified in the [Install APK Enterprise](../setup/enterprise-install.md) section.
+    If you need to setup APK 1.1.0 Enterprise version follow the steps specified in the [Install APK Enterprise](../setup/enterprise-apk-install) section.
+
+!!!NOTE
+    If you need to setup APIM APK Agent 1.1.0 Enterprise version follow the steps specified in the [Install APIM APK Agent Enterprise](../setup/enterprise-apim-apk-agent-install.md) section.
 
 ## Before you begin...
 
