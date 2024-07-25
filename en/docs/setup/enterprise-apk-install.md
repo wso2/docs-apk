@@ -1,4 +1,4 @@
-# Install with Enterprise Helm Chart
+# Install APK with Enterprise Helm Chart
 
 ## Before you begin...
 

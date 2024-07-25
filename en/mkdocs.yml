@@ -239,8 +239,10 @@ nav:
     - Setup: 
         - Prerequisites: setup/prerequisites.md
         - Install Dataplane: setup/install.md
-        - Install Dataplane(Enterprise): setup/enterprise-install.md
         - Install Control plane with Dataplane: setup/install-with-cp.md
+        - Install Enterprise Products:
+              - Install APK Dataplane: setup/enterprise-apk-install.md
+              - Install APIM APK Agent: setup/enterprise-apim-apk-agent-install.md
         - Uninstall: setup/uninstall.md
         - Deployment Patterns:
               - Overview: setup/deployment/deployment-patterns-overview.md
