@@ -112,7 +112,8 @@ corsConfiguration:
     - "*"
 ```
 
-   Sample APK configuration content after the modification is shown below.
+Sample APK configuration content after the modification is shown below.
+
 ```
 name: "EmployeeServiceAPI"
 basePath: "/test"
