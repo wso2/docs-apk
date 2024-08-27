@@ -4,11 +4,16 @@ The WSO2 API Platform for Kubernetes, integrated with Prometheus, enhances Kuber
 
 ## Configure Prometheus Metrics
 
-To enable metrics, simply make the metrics.enabled field true under the helm-charts/values.yaml file as shown.
+To enable metrics, make the metrics.enabled field true and provide the following statsd configuration in the helm-charts/values.yaml file as shown.
 
 ```
 metrics:
   enabled: true
+  statsd:
+    image:
+      repository: prom/statsd-exporter
+      tag: v0.26.0
+    imagePullPolicy: IfNotPresent
 ```
 
 All configurations related to metrics are as follows. The use of each configuration is described in the table below.
@@ -20,14 +25,8 @@ metrics:
   statsd:
     image:
       repository: prom/statsd-exporter
-       tag: v0.26.0
+      tag: v0.26.0
     imagePullPolicy: IfNotPresent
-    resources:
-       limits:
-          memory: 128Mi
-        requests:
-          cpu: 0.1
-           memory: 64Mi
 ```
 
 | Prometheus Configuration         | Description                                                                                                                                                                                     |
@@ -284,11 +283,10 @@ metadata:
 spec:
   selector:
     app: prometheus-server
-  type: NodePort
+  type: ClusterIP
   ports:
     - port: 9090
       targetPort: 9090
-      nodePort: 30000
 ---
 apiVersion: v1
 kind: ServiceAccount
