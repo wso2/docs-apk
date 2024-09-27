@@ -25,7 +25,7 @@ metrics:
   statsd:
     image:
       repository: prom/statsd-exporter
-       tag: v0.26.0
+      tag: v0.26.0
     imagePullPolicy: IfNotPresent
 ```
 

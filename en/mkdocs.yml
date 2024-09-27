@@ -74,8 +74,10 @@ nav:
     - Get Started:
         #- Get Started - Overview: get-started/get-started-overview.md
         - Quick Start: get-started/quick-start-guide.md
-        - Quick Start With Control Plane: get-started/quick-start-guide-with-cp.md
-        #- Basic Flow:
+        - Quick Start With Control Plane: 
+           - Developer-Driven Design First: get-started/quick-start-guide-with-cp.md
+           - Portal-Driven Design First: get-started/quick-start-guide-as-gateway.md
+        # - Basic Flow:
         #    - Overview: restapi/overview.md
         #    - Create an API: restapi/create-api.md
         #    - Discover Services: restapi/discover-your-services.md
@@ -249,6 +251,9 @@ nav:
         - Prerequisites: setup/prerequisites.md
         - Install Dataplane: setup/install.md
         - Install Control plane with Dataplane: setup/install-with-cp.md
+        - Install Enterprise Products:
+              - Install APK Dataplane: setup/enterprise-apk-install.md
+              - Install APIM APK Agent: setup/enterprise-apim-apk-agent-install.md
         - Uninstall: setup/uninstall.md
         - Deployment Patterns:
               - Overview: setup/deployment/deployment-patterns-overview.md

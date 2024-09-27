@@ -2,6 +2,9 @@
 
 This section is a step-by-step guide to creating, deploying, and invoking an API using the WSO2 API Platform For Kubernetes.
 
+!!!NOTE
+    To set up the APK as an enterprise version, please follow the steps specified in the [Install APK Enterprise](../setup/enterprise-apk-install.md) section.
+
 ## Before you begin...
 
 Install the [prerequisites](../../setup/prerequisites) that are required to run the WSO2 API Platform For Kubernetes.
