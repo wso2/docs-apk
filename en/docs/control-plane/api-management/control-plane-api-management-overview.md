@@ -19,7 +19,7 @@ API Management is the process of creating, publishing, and managing APIs in a se
 
 ##### REST APIs: Create REST APIs through the Config Deployer.
   - Transport Level Security: Secure APIs using transport level security. HTTPS and Mutual SSL are supported. (Mutual SSL is not visible in the Publisher Portal)
-  - Application Level Security: Secure APIs using application level security. Basic Auth, OAuth2, API Key and JWT are supported.
+  - Application Level Security: Secure APIs using application level security. OAuth2 and JWT are supported.
   - Endpoint: REST Production Endpoint is supported.
   - Scope: Scope based access control is supported.
   - API Level and Resource Level Rate Limiting can be configured for APIs.(Not visible in the Publisher Portal)
@@ -33,7 +33,7 @@ API Management is the process of creating, publishing, and managing APIs in a se
 
 ##### GraphQL APIs: Create GraphQL APIs through the Config Deployer.
   - Transport Level Security: Secure APIs using transport level security. HTTPS and Mutual SSL are supported. (Mutual SSL is not visible in the Publisher Portal)
-  - Application Level Security: Secure APIs using application level security. Basic Auth, OAuth2, API Key and JWT are supported.
+  - Application Level Security: Secure APIs using application level security. OAuth2 and JWT are supported.
   - Endpoint: GraphQL Production Endpoint is supported.
   - Scope: Scope based access control is supported.
   - API Level and Resource Level Rate Limiting can be configured for APIs.(Not visible in the Publisher Portal)
@@ -78,6 +78,7 @@ Integration with WSO2 APK Gateway is the process of integrating with the APK Gat
 
 - Tenancy: Tenancy is not supported. Only super tenant is supported.
 - Endpoint: Sandbox endpoint is not supported.
+- Application level security: Basic and API Key Authentication is not supported.
 - Application level rate limiting: Application level throttling is not supported.
 - Subscription level rate limiting: Subscription level throttling is not supported.
 - SOAP APIs: SOAP APIs are not supported.
