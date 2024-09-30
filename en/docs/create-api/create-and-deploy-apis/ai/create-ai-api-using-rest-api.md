@@ -106,6 +106,16 @@ endpointConfigurations:
         in: "Header"
         apiKeyNameKey: "api-key"
         apiKeyValueKey: "apiKey"
+    aiRatelimit: 
+      enabled: true
+      token:
+        promptLimit: 5000
+        completionLimit: 10000
+        totalLimit: 15000
+        unit: Minute
+      request:
+        requestLimit: 6000
+        unit: Minute
 operations:
 - target: "/completions"
   verb: "POST"
