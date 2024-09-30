@@ -305,8 +305,9 @@ nav:
         - Configure Distributed Tracing: administration/distributed-tracing.md
         - Configure Prometheus Metric Support: administration/prometheus-metric-support.md
         - Configure AI Providers:
-              - Overview: administration/aiproviders/configure-ai-providers-overview.md
-              - Custom AI Provider: administration/aiproviders/configure-ai-providers-customai.md
+            - Overview: administration/aiproviders/configure-ai-providers-overview.md
+            - Custom AI Provider: administration/aiproviders/configure-ai-providers-customai.md
+        - Configure AI Ratelimit policies: administration/airatelimitpolicy/configure-ai-ratelimit-policies-overview.md
     - About APK:
         - What is APK?: about-apk/what-is-apk.md
         - About This Release: about-apk/about-this-release.md

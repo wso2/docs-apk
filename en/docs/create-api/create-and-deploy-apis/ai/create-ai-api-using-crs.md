@@ -13,6 +13,7 @@ Let's create an AI API with following steps:
 - [Create Backend CR](#create-backend-cr)
 - [Create APIPolicy CR](#create-apipolicy-cr)
 - [Create Secret CR](#create-secret-cr)
+- [Create AIRatelimitPolicy CR](#create-airatelimitpolicy-cr) (Optional)
 
 These sample CRs are created for an AI API using the Azure OpenAI service. You can modify these CRs according to any other LLM Provider as per your requirements.
 
@@ -215,6 +216,33 @@ metadata:
 type: Opaque
 data:
   apiKey: base64_encoded_api_key
+```
+
+## Create AIRatelimitPolicy CR
+
+The following AIRatelimitPolicy CR defines the token-based rate limit to be applied to the AI API. This is optional and should only be configured if token-based rate limiting is required for your AI requests.
+
+```
+apiVersion: dp.wso2.com/v1alpha3
+kind: AIRateLimitPolicy
+metadata:
+  name: llm-backend-rl
+  namespace: apk
+spec:
+  override:
+    organization: default
+    tokenCount:
+      unit: Minute
+      requestTokenCount: 5000
+      responseTokenCount: 10000
+      totalTokenCount: 15000
+    requestCount:
+      requestsPerUnit: 6000
+      unit: Minute
+  targetRef:
+    kind: Backend
+    name: backend-33eb53282e93f5fd3f26935311af727d58bd42c3-api
+    group: gateway.networking.k8s.io
 ```
 
 Once you have designed your APIs using these essential CRs, the next step is to apply them to the Kubernetes API server. APK will process and deploy your APIs seamlessly, taking full advantage of the Kubernetes infrastructure.
