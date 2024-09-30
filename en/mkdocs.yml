@@ -99,6 +99,10 @@ nav:
             - GraphQL APIs: 
                 - Via REST API: create-api/create-and-deploy-apis/graphql/create-graphql-api-using-rest-api.md
                 - Via CRs: create-api/create-and-deploy-apis/graphql/create-graphql-api-using-crs.md
+            - AI APIs:
+                - Overview: create-api/create-and-deploy-apis/ai/ai-api-overview.md
+                - Via REST API: create-api/create-and-deploy-apis/ai/create-ai-api-using-rest-api.md
+                - Via CRs: create-api/create-and-deploy-apis/ai/create-ai-api-using-crs.md
         - Undeploy API: 
             - Via REST API: undeploy/undeploy-rest-api.md
             - Via CRs: undeploy/undeploy-crs.md
@@ -300,6 +304,9 @@ nav:
             - Router: administration/configurations/configure-logs-router.md
         - Configure Distributed Tracing: administration/distributed-tracing.md
         - Configure Prometheus Metric Support: administration/prometheus-metric-support.md
+        - Configure AI Providers:
+              - Overview: administration/aiproviders/configure-ai-providers-overview.md
+              - Custom AI Provider: administration/aiproviders/configure-ai-providers-customai.md
     - About APK:
         - What is APK?: about-apk/what-is-apk.md
         - About This Release: about-apk/about-this-release.md
