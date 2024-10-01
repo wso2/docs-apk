@@ -16,7 +16,7 @@ Add a hostname mapping to the ```/etc/hosts``` file as follows.
 | 127.0.0.1 | idp.am.wso2.com     |
 | 127.0.0.1 | default.gw.wso2.com |
 
-#### Setup WSO2 API Manager Control Plane 4.3.0
+#### Setup WSO2 API Manager Control Plane 4.4.0
 
 Setup WSO2 API Manager 4.3.0 in VM.
 
@@ -42,7 +42,7 @@ Setup WSO2 API Manager 4.3.0 in VM.
 
     === "Command"
         ```
-        helm install apk wso2apk/apk-helm --version 1.2.0-alpha -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/apk/values.yaml -n apk
+        helm install apk wso2apk/apk-helm --version 1.2.0-alpha -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/apk/1.2.0-values.yaml -n apk
         ```
     === "Format"
         ```

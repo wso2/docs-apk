@@ -16,7 +16,7 @@ Add a hostname mapping to the ```/etc/hosts``` file as follows.
 | 127.0.0.1 | idp.am.wso2.com     |
 | 127.0.0.1 | default.gw.wso2.com |
 
-#### Setup WSO2 API Manager Control Plane 4.3.0
+#### Setup WSO2 API Manager Control Plane 4.4.0
 
 Setup WSO2 API Manager 4.3.0 in VM.
 
