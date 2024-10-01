@@ -146,7 +146,7 @@ Step 1: Obtain the CRDs from the chart
 First, obtain the Custom Resource Definitions (CRDs) for the specific version of APK you want to install. Replace `<version>` with the actual version number of the APK you are installing.
 
 ```bash
-helm show crds wso2apk/apk-helm --version 1.1.0 > apk-crds.yaml
+helm show crds wso2apk/apk-helm --version 1.2.0-alpha > apk-crds.yaml
 ```
 
 Step 2: Apply the CRDs manually
@@ -162,7 +162,7 @@ Step 3: Reinstall APK
 Finally, reinstall APK using the Helm installation command as provided in the relevant quick start guide.
 
 ```bash
-helm install apk wso2apk/apk-helm --version 1.1.0
+helm install apk wso2apk/apk-helm --version 1.2.0-alpha
 ```
 
 ## Functionality

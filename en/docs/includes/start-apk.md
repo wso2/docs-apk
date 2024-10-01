@@ -6,7 +6,7 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
 1. Create a new helm repository with the latest apk release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apk``` for this guide.
 
     ```console
-    helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.1.0
+    helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.2.0-alpha
     ```
 
 2. Execute the following command to update the helm repositories.
@@ -19,7 +19,7 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
 
 === "Command"
     ```
-    helm install apk wso2apk/apk-helm --version 1.1.0
+    helm install apk wso2apk/apk-helm --version 1.2.0-alpha
     ```
 
 === "Format"

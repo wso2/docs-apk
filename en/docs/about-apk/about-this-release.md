@@ -2,7 +2,7 @@
 
 APK is WSO2's cloud native API management platform. APK is designed to help you build, deploy, and manage APIs in a cloud environment. Our platform is built on top of a microservices architecture and uses containerization technologies to ensure scalability and flexibility. With features like automatic failover and load balancing, our APK platform is designed to be highly available and able to handle large numbers of API requests without performance degradation. We've also added support for continuous delivery and deployment, so you can quickly and easily push updates to your API services.
 
-**WSO2 APK 1.1.0** is the latest **WSO2 APK release** and is the successor of **WSO2 APK 1.0.0**.
+**WSO2 APK 1.2.0** is the latest **WSO2 APK release** and is the successor of **WSO2 APK 1.1.0**.
 
 ## New features
 
@@ -45,15 +45,15 @@ APK is WSO2's cloud native API management platform. APK is designed to help you 
 
 ## Compatible WSO2 product versions
 
-- WSO2 APK 1.1.0 is compatible with WSO2 API Manager 4.3.0([APIM](https://apim.docs.wso2.com/en/latest/)).
+- WSO2 APK 1.2.0 is compatible with WSO2 API Manager 4.4.0([APIM](https://apim.docs.wso2.com/en/latest/)).
 
 ## Fixed issues
 
-- For all the fixed issues in WSO2 APK 1.1.0, go to [APK](https://github.com/wso2/apk/issues?q=is%3Aissue+is%3Aclosed+closed%3A2023-09-18..2024-04-10+)
+- For all the fixed issues in WSO2 APK 1.2.0, go to [APK](https://github.com/wso2/apk/issues?q=is%3Aissue+is%3Aclosed+closed%3A2023-09-18..2024-04-10+)
 
 ## Known issues
 
-- For all the known issues in WSO2 APK 1.1.0, go to [APK](https://github.com/wso2/apk/issues?q=is%3Aopen+is%3Aissue)
+- For all the known issues in WSO2 APK 1.2.0, go to [APK](https://github.com/wso2/apk/issues?q=is%3Aopen+is%3Aissue)
 
 ## Release Notes
 
