@@ -53,7 +53,7 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
 
     === "Command"
         ```
-        helm install apim wso2apim/wso2am-cp --version 4.4.0 -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/apim/cp/values.yaml -n apk
+        helm install apim wso2apim/wso2am-cp --version 4.4.0 -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/apim/cp/4.4.0-values.yaml -n apk
         ```
     === "Format"
         ```
