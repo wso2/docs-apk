@@ -4,8 +4,8 @@
 
 ### Prerequisites
 - API Manager 4.3 (Please refer APIM [installation guide](https://apim.docs.wso2.com/en/latest/install-and-setup/install/installation-prerequisites/) for more information)
-- APK 1.1.0 (Please refer APK [installation guide](https://apk.docs.wso2.com/en/latest/install-and-setup/installation-prerequisites/) for more information)
-- APIM-APK Agent 1.1.0 (Please refer APIM-APK Agent [installation guide](https://apk.docs.wso2.com/en/latest/install-and-setup/install/installation-prerequisites/) for more information)
+- APK 1.2.0 (Please refer APK [installation guide](https://apk.docs.wso2.com/en/latest/install-and-setup/installation-prerequisites/) for more information)
+- APIM-APK Agent 1.2.0 (Please refer APIM-APK Agent [installation guide](https://apk.docs.wso2.com/en/latest/install-and-setup/install/installation-prerequisites/) for more information)
 
 #### Resources Requirements
 - RAM: 10GB
