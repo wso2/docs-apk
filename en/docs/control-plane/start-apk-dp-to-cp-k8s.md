@@ -16,14 +16,14 @@ Add a hostname mapping to the ```/etc/hosts``` file as follows.
 | 127.0.0.1 | idp.am.wso2.com     |
 | 127.0.0.1 | default.gw.wso2.com |
 
-#### Setup WSO2 API Manager Control Plane 4.3.0
+#### Setup WSO2 API Manager Control Plane 4.4.0
 
 Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
 
 1. Create a new helm repository with the latest apim release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apim```.
 
     ```console
-    helm repo add wso2apim https://github.com/wso2/helm-apim/releases/download/cp-4.3.0
+    helm repo add wso2apim https://github.com/wso2/helm-apim/releases/download/cp-4.4.0-alpha
     ```
 
 2. Execute the following command to update the helm repositories.
@@ -36,7 +36,7 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
 
     === "Command"
         ```
-        helm install apim wso2apim/wso2am-cp --version 4.3.0 -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/apim/cp/apk-cp/values.yaml -n apk
+        helm install apim wso2apim/wso2am-cp --version 4.4.0 -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/apim/cp/apk-cp/4.4.0-values.yaml -n apk
         ```
     === "Format"
         ```
@@ -66,7 +66,7 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
 
     === "Command"
         ```
-        helm install apk wso2apk/apk-helm --version 1.2.0-alpha -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/apk/values.yaml -n apk
+        helm install apk wso2apk/apk-helm --version 1.2.0-alpha -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/apk/1.2.0-values.yaml -n apk
         ```
     === "Format"
         ```
