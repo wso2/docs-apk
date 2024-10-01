@@ -45,11 +45,11 @@ Install the [prerequisites](../../setup/prerequisites) that are required to run 
 
 === "Command"
     ```
-    helm install apim-apk-agent wso2/apim-apk-agent --version 1.2.0-alpha --set image.tag="1.1.0.0-arm64" --set wso2.subscription.imagePullSecrets="apk-registry-secret"
+    helm install apim-apk-agent wso2/apim-apk-agent --version 1.2.0-alpha --set image.tag="1.2.0.0-arm64" --set wso2.subscription.imagePullSecrets="apk-registry-secret"
     ```
 === "Format"
     ```
-    helm install <chart-name> <repository-name>/apim-apk-agent --version <version-of-APK> --set image.tag="1.1.0.0-arm64" --set wso2.subscription.imagePullSecrets=<secret-name>
+    helm install <chart-name> <repository-name>/apim-apk-agent --version <version-of-APK> --set image.tag="1.2.0.0-arm64" --set wso2.subscription.imagePullSecrets=<secret-name>
     ```
 
 !!! Optional
