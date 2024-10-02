@@ -6,11 +6,11 @@ This section provides a step-by-step guide to creating, deploying, and invoking 
     To set up the APK as an enterprise version, please follow the steps specified in both the [Install APK Enterprise](../setup/enterprise-apk-install) and [Install APIM APK Agent Enterprise](../setup/enterprise-apim-apk-agent-install.md) sections.
 
 !!!NOTE
-    If you follow this approach you can not create API from Portal UI. If you need that apporach go to [Portal-Driven Design First](../quick-start-guide-as-gateway) section.
+    If you follow this approach, **you cannot create APIs from Portal UI**. If you need that approach, go to [Portal-Driven Design First](../quick-start-guide-as-gateway) section.
 
 ## Before you begin...
 
-Install the [prerequisites](../../setup/prerequisites) that are required to run the WSO2 API Platform For Kubernetes.
+Install the [prerequisites](../../setup/prerequisites) that are required to run the WSO2 API Platform for Kubernetes.
 
 !!!NOTE
     If you already have an installation of the APK in your cluster, please remove the installation by following the steps specified in the [Uninstall APK](../setup/uninstall.md) section.
