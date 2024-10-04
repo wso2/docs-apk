@@ -115,7 +115,7 @@ rules:
    filters:
      - type: "RequestHeaderModifier"
        requestHeaderModifier:
-         add:
+         set:
            - name: "Set-Request-Header"
              value: "Set-Value"
 ```
@@ -132,7 +132,7 @@ rules:
    filters:
      - type: "RequestHeaderModifier"
        requestHeaderModifier:
-         add:
+         remove:
            - name: "Add-Request-Header"
              value: "Added-Value"
 ```
@@ -168,7 +168,7 @@ rules:
    filters:
      - type: "ResponseHeaderModifier"
        requestHeaderModifier:
-         add:
+         set:
            - name: "Set-Request-Header"
              value: "Set-Value"
 ```
@@ -185,7 +185,7 @@ rules:
    filters:
      - type: "ResponseHeaderModifier"
        requestHeaderModifier:
-         add:
+         remove:
            - name: "Add-Request-Header"
              value: "Added-Value"
 ```
