@@ -136,7 +136,7 @@ Since this guide uses the [httpbin service](https://httpbin.org/anything) which 
   scopes: []
   operationPolicies:
     request:
-      - policyName: SetHeader
+      - policyName: RemoveHeader
         policyVersion: v1
         parameters:
           headerName: "Header-Name"
@@ -185,7 +185,7 @@ Since this guide uses the [httpbin service](https://httpbin.org/anything) which 
   scopes: []
   operationPolicies:
     response:
-      - policyName: SetHeader
+      - policyName: RemoveHeader
         policyVersion: v1
         parameters:
           headerName: "Header-Name"
@@ -233,7 +233,7 @@ apiPolicies:
   scopes: []
 apiPolicies:
   request:
-    - policyName: SetHeader
+    - policyName: RemoveHeader
       policyVersion: v1
       parameters:
         headerName: "Header-Name"
@@ -283,7 +283,7 @@ apiPolicies:
   scopes: []
 apiPolicies:
   response:
-    - policyName: SetHeader
+    - policyName: RemoveHeader
       policyVersion: v1
       parameters:
         headerName: "Header-Name"
