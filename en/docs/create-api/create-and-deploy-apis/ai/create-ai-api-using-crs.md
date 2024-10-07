@@ -13,7 +13,7 @@ Let's create an AI API with following steps:
 - [Create Backend CR](#create-backend-cr)
 - [Create APIPolicy CR](#create-apipolicy-cr)
 - [Create Secret CR](#create-secret-cr)
-- [Create AIRatelimitPolicy CR](#create-airatelimitpolicy-cr) (Optional)
+- [Create AIRatelimitPolicy CR](#create-airatelimitpolicy-cr)
 
 These sample CRs are created for an AI API using the Azure OpenAI service. You can modify these CRs according to any other LLM Provider as per your requirements.
 
@@ -159,7 +159,7 @@ Here, we have used `default.gw.wso2.com` as the virtual hostname for this API. T
 
 ## Create Backend CR
 
-In the above created HTTPRoute resource we have reffered to a `Backend` resource in `spec.rules[0].backendRefs[0]` path. That `Backend` should be created as below:
+In the above created HTTPRoute resource we have referred to a `Backend` resource in `spec.rules[0].backendRefs[0]` path. That `Backend` should be created as below:
 
 ```
 apiVersion: "dp.wso2.com/v1alpha2"
