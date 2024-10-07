@@ -203,6 +203,9 @@ nav:
         - Uninstall APK: setup/uninstall.md
         - Migration: setup/migration.md
         - Customize Configurations: setup/Customize-Configurations.md
+        - CI/CD: 
+            - CI/CD for APIs - Overview: setup/cicd/overview.md
+            - Building a GitOps Workflow for APIs With WSO2 APK: setup/cicd/building-a-pipeline.md
 #        - Organization: setup/organizations.md
        #- Deploy:
        #    - Deployment Patterns: get-started/dummy.md
