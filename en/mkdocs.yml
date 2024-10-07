@@ -249,6 +249,9 @@ nav:
               - APK Data Plane: setup/deployment/apk-data-plane-deployment-patterns.md
               - APK Data Plane with API Manager Control Plane: setup/deployment/apk-with-apim-cp-deployment-patterns.md
               - APK as a Gateway in API Manager: setup/deployment/apk-as-gateway-in-apim-deployment-patterns.md
+        - CI/CD: 
+            - CI/CD for APIs - Overview: setup/cicd/overview.md
+            - Building a GitOps Workflow for APIs With WSO2 APK: setup/cicd/building-a-pipeline.md
         - Migration: setup/migration.md
         - Customize Configurations: setup/Customize-Configurations.md
         - Production Deployment Guidelines: setup/production-deployment-guideline.md
