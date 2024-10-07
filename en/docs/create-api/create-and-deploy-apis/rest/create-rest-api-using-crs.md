@@ -70,7 +70,7 @@ Here, we have used `http-bin.gw.wso2.com` as the virtual hostname for this API. 
 
 ## Create Backend CR
 
-In the above created HTTPRoute resource we have reffered to a `Backend` resource in `spec.rules[0].backendRefs[0]` path. That `Backend` should be created as below:
+In the above created HTTPRoute resource we have referred to a `Backend` resource in `spec.rules[0].backendRefs[0]` path. That `Backend` should be created as below:
 
 ```
 apiVersion: dp.wso2.com/v1alpha1
