@@ -137,19 +137,19 @@ Your apk-conf file will now be as follows.
 
 To deploy the API, we need a valid access token issued by an identity provider (IdP). Follow the ["Generate Access Token"](../../../develop-and-deploy-api/security/generate-access-token.md) documentation to generate an access token.
 
-After generating the token, you can deploy the gRPC API with the command
+After generating the token, you can deploy the gRPC API with the following command.
 
 === "Sample Request"
-    ```
+    ```bash
     curl -k --location 'https://api.am.wso2.com:9095/api/deployer/1.1.0/apis/deploy' \
     --header 'Host: api.am.wso2.com' \
-    --header 'Authorization: bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiZXhwIjoxNjg4MTMxNDQ0LCAibmJmIjoxNjg4MTI3ODQ0LCAiaWF0IjoxNjg4MTI3ODQ0LCAianRpIjoiMDFlZTE3NDEtMDA0Ni0xOGE2LWFhMjEtYmQwYTk4ZjYzNzkwIiwgImNsaWVudElkIjoiNDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyIiwgInNjb3BlIjoiZGVmYXVsdCJ9.RfKQq2fUZKZFAyjimvsPD3cOzaVWazabmq7b1iKYacqIdNjkvO9CQmu7qdtrVNDmdZ_gHhWLXiGhN4UTSCXv_n1ArDnxTLFBroRS8dxuFBZoD9Mpj10vYFSDDhUfFqjgMqtpr30TpDMfee1wkqB6K757ZSjgCDa0hAbv555GkLdZtRsSgR3xWcxPBsIozqAMFDCWoUCbgTQuA5OiEhhpVco2zv4XLq2sz--VRoBieO12C69KnGRmoLuPtvOayInvrnV96Tbt9fR0fLS2l1nvAdFzVou0SIf9rMZLnURLVQQYE64GR14m-cFRYdUI9vTsFHZBl5w-uCLdzMMofzZaLQ' \
+    --header 'Authorization: bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9' \
     --form 'apkConfiguration=@"path/to/apk-conf-file.apk-conf"' \
     --form 'definition=@"<path/to/zip-file-containing-proto-definitions.zip>"'
     ```
 === "Request Format"
     ```
-    curl --location 'https://<host>:9095/api/deployer/1.1.0/apis/deploy' \
+    curl -k --location 'https://<host>:9095/api/deployer/1.1.0/apis/deploy' \
     --header 'Host: <host>' \
     --header 'Authorization: bearer <access-token>' \
     --form 'apkConfiguration=@"path/to/apk-conf-file.apk-conf"' \
@@ -157,7 +157,7 @@ After generating the token, you can deploy the gRPC API with the command
     ```
 === "Sample Response"
     ```yaml
-    name: "32398767b3b64a7ba1c6aabcd042df4fbd42502a"
+    name: "OrderServiceAPI"
     basePath: "/grpcapi"
     version: "v1"
     type: "GRPC"
