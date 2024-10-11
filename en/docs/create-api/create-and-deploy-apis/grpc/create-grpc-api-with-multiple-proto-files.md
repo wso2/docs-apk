@@ -1,15 +1,15 @@
-# Creating a gRPC API with a single proto file
+# Creating a gRPC API with multiple proto files
 
-This guide will walk you through the process of creating and deploying a gRPC API using the WSO2 APK REST API. We will use the Student Service API as an example in this guide.
+This guide will walk you through deploying a GRPC API that has multiple .proto files for its API definition. For this, we will use the Order Service API. You can download the zip file containing the various proto files from the link given below.
 
-## Sample Backend for Student Service API
+Order API: [OrderDefinition.zip](../../../assets/files/get-started/OrderDefinition.zip)
 
-We will use a sample API called the Student Service API, which has a single .proto file as its definition. If you wish to deploy an API with multiple .proto files, you can refer to [this guide](./create-grpc-api-with-multiple-proto-files.md)
+## Sample Backend for Order Service API
 
-We will use the sample Student Service backend for this guide, which can be created using the following command.
+We will use the sample Order Service backend for this guide, which can be created using the following command. Let's create it in the same namespace we deployed the APK in.
 
 ```
-kubectl apply -f https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/student-sample-backend.yaml -n <namespace>
+kubectl apply -f https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/order-sample-backend.yaml -n <namespace>
 ```
 
 You can check the status of the pods by using 
@@ -17,65 +17,61 @@ You can check the status of the pods by using
 kubectl get pods -n <namespace>
 ```
 
-## Creating and deploying a gRPC API
+## Creating and deploying the API
 
-The following steps are a quickstart guide on deploying a GRPC API that has a single .proto file as its API definition. 
-
-If you wish to deploy a GRPC API that has multiple .proto files, you can follow [this guide.](./create-grpc-api-with-multiple-proto-files.md)
+The following steps are a quickstart guide on deploying a GRPC API that has multiple .proto file as its API definition. 
 
 ### Step 1 - Obtain the proto files for the given API
 
 Save and download the following files.
 
-Student API: [Student.proto](../../../assets/files/get-started/Student.proto)
+Order API: [OrderDefinition.zip](../../../assets/files/get-started/OrderDefinition.zip)
 
 ### Step 2 - Generate the APK configuration
 
 Execute the following request to generate the APK configuration. Use the values provided in the table below in the body of your request. 
 
-| Field      | Value                                                          |
-| ---------- | -------------------------------------------------------------- |
-| definition | The proto file that was downloaded at the beginning of Step 1. |
+| Field      | Value                                                        |
+| ---------- | ------------------------------------------------------------ |
+| definition | The zip file that was downloaded at the beginning of Step 1. |
 
-Student Service API:
 === "Sample Request"
     ```
     curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.1.0/apis/generate-configuration' \
     --header 'Host: api.am.wso2.com' \
     --form 'apiType="GRPC"' \
-    --form 'definition=@"/Users/user/Student.proto"'
+    --form 'definition=@"/Users/user/OrderDefinition.zip"'
     ```
 === "Request Format"
     ```
     curl --location 'https://<host>:9095/api/configurator/1.1.0/apis/generate-configuration' \
     --header 'Host: <host>' \
     --form 'apiType="GRPC"' \
-    --form 'definition=@"<path/to/definition.proto>"'
+    --form 'definition=@"<path/to/zip-file-containing-proto-definitions.zip>"'
     ```
 === "Sample Response"
     ```yaml
-    ---
-    name: "6a254687f3229c35dd0189aac7f7fc4b6228e97a"
-    basePath: "/org.apk"
+    name: "32398767b3b64a7ba1c6aabcd042df4fbd42502a"
+    basePath: "/grpcapi"
     version: "v1"
     type: "GRPC"
     defaultVersion: false
     subscriptionValidation: false
     operations:
-    - target: "student_service.StudentService"
-      verb: "GetStudent"
+    - target: "order.OrderService"
+      verb: "CreateOrder"
       secured: true
       scopes: []
-    - target: "student_service.StudentService"
-      verb: "GetStudentStream"
+    - target: "order.OrderService"
+      verb: "ServeOrder"
       secured: true
       scopes: []
-    - target: "student_service.StudentService"
-      verb: "SendStudentStream"
+    - target: "payment.PaymentService"
+      verb: "ProcessPayment"
       secured: true
       scopes: []
-    - target: "student_service.StudentService"
-      verb: "SendAndGetStudentStream"
+    - target: "user.UserService"
+      verb: "GetUser"
       secured: true
       scopes: []
     ```
@@ -84,13 +80,14 @@ You will get the apk-conf file content as the response, as seen in the above sam
 
 !!! note
     - The .proto file has the `package` string, which is used to get the basepath and version of the API.
-    - The structure of the package string should be `package <basepath>.<version>.<service-name>`
+    - The structure of the package string should be `package <basepath>.<version>.<package-name>`
     - The basepath and version are autogenerated from the contents of the proto file. If you modify it in the API, ensure that you also **modify it in the .proto file prior to generating any code from it**. 
-    - For example, in the Student Service API,
-        - Package name: `student_service`
-        - Basepath: `/org.apk`
-        - Version: `v1`
-        - Therefore, the package name in the proto file should `org.apk.v1.student_service`.
+    - For an API that has multiple proto files for its definition, each proto file must have **the same basepath and version in each proto file.** The service name can vary.
+    - For example, in the Order Service API,
+        - Package names: `order`, `payment` and `user` 
+        - Basepath: `/grpcapi`
+        - Version: `v1`. 
+        - Therefore, the package string in the proto files should be `grpcapi.v1.<package_name>`. Here, it is 
 
 ### Step 3 - Updating the APK-Conf file
 
@@ -99,16 +96,16 @@ Let's add the endpoint configurations section to the file as follows.
 ```
 endpointConfigurations:
     production:
-        endpoint: "http://student-backend:6565"
+        endpoint: "http://order-backend-service:6566"
 ```
 
-The URL"http://student-backend:6565" points to the backend we deployed in [the previous section.](#sample-backend-for-student-service-api)
+The URL "http://order-backend-service:6566" points to the backend we deployed in [the previous section.](#sample-backend-for-order-service-api)
 
-Let's also rename the API from the autogenerated string to "StudentServiceAPI".
+Let's also rename the API from the autogenerated string to "OrderServiceAPI".
 
 Your apk-conf file will now be as follows.
 ```yaml
-    name: "StudentServiceAPI"
+    name: "OrderServiceAPI"
     basePath: "/grpcapi"
     version: "v1"
     type: "GRPC"
@@ -116,7 +113,7 @@ Your apk-conf file will now be as follows.
     subscriptionValidation: false
     endpointConfigurations:
         production:
-            endpoint: "http://student-backend:6565"
+            endpoint: "http://order-backend-service:6566"
     operations:
     - target: "order.OrderService"
       verb: "CreateOrder"
@@ -147,8 +144,8 @@ After generating the token, you can deploy the gRPC API with the command
     curl -k --location 'https://api.am.wso2.com:9095/api/deployer/1.1.0/apis/deploy' \
     --header 'Host: api.am.wso2.com' \
     --header 'Authorization: bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiZXhwIjoxNjg4MTMxNDQ0LCAibmJmIjoxNjg4MTI3ODQ0LCAiaWF0IjoxNjg4MTI3ODQ0LCAianRpIjoiMDFlZTE3NDEtMDA0Ni0xOGE2LWFhMjEtYmQwYTk4ZjYzNzkwIiwgImNsaWVudElkIjoiNDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyIiwgInNjb3BlIjoiZGVmYXVsdCJ9.RfKQq2fUZKZFAyjimvsPD3cOzaVWazabmq7b1iKYacqIdNjkvO9CQmu7qdtrVNDmdZ_gHhWLXiGhN4UTSCXv_n1ArDnxTLFBroRS8dxuFBZoD9Mpj10vYFSDDhUfFqjgMqtpr30TpDMfee1wkqB6K757ZSjgCDa0hAbv555GkLdZtRsSgR3xWcxPBsIozqAMFDCWoUCbgTQuA5OiEhhpVco2zv4XLq2sz--VRoBieO12C69KnGRmoLuPtvOayInvrnV96Tbt9fR0fLS2l1nvAdFzVou0SIf9rMZLnURLVQQYE64GR14m-cFRYdUI9vTsFHZBl5w-uCLdzMMofzZaLQ' \
-    --form 'apkConfiguration=@"path/to/apk-conf-file"' \
-    --form 'definitionFile=@"path/to/proto-definition"'
+    --form 'apkConfiguration=@"path/to/apk-conf-file.apk-conf"' \
+   --form 'definition=@"<path/to/zip-file-containing-proto-definitions.zip>"'
     ```
 === "Request Format"
     ```
@@ -156,49 +153,46 @@ After generating the token, you can deploy the gRPC API with the command
     --header 'Host: <host>' \
     --header 'Authorization: bearer <access-token>' \
     --form 'apkConfiguration=@"path/to/apk-conf-file.apk-conf"' \
-    --form 'definitionFile=@"path/to/proto-definition.proto"'
+    --form 'definition=@"<path/to/zip-file-containing-proto-definitions.zip>"'
     ```
 === "Sample Response"
-    ```
-    ---
-    name: "StudentServiceAPI"
-    basePath: "/org.apk"
+    ```yaml
+    name: "32398767b3b64a7ba1c6aabcd042df4fbd42502a"
+    basePath: "/grpcapi"
     version: "v1"
     type: "GRPC"
-    id: "student-api"
-    endpointConfigurations:
-        production:
-            endpoint: "http://student-backend:6565"
     defaultVersion: false
     subscriptionValidation: false
+    endpointConfigurations:
+        production:
+            endpoint: "http://order-backend-service:6566"
     operations:
-    - target: "student_service.StudentService"
-      verb: "GetStudent"
+    - target: "order.OrderService"
+      verb: "CreateOrder"
       secured: true
       scopes: []
-    - target: "student_service.StudentService"
-      verb: "GetStudentStream"
+    - target: "order.OrderService"
+      verb: "ServeOrder"
       secured: true
       scopes: []
-    - target: "student_service.StudentService"
-      verb: "SendStudentStream"
+    - target: "payment.PaymentService"
+      verb: "ProcessPayment"
       secured: true
       scopes: []
-    - target: "student_service.StudentService"
-      verb: "SendAndGetStudentStream"
+    - target: "user.UserService"
+      verb: "GetUser"
       secured: true
       scopes: []
     ```
 
 Execute the command below. You will be able to see that the API is successfully deployed.
-
 ```
 kubectl get apis -n <namespace>
 ```
 
 ## Invoking a gRPC API
 
-You will need a gRPC backend in order to invoke the API and get a correct response. A sample backend for both the Student Service and Order Service APIs have been provided under [this section.](#sample-backend-for-grpc)
+You will need a gRPC backend in order to invoke the API and get a correct response. A sample backend for the Order Service APIs has been provided under [this section.](#sample-backend-for-grpc)
 
 Once your gRPC API has been deployed, you can invoke it either via Postman, a custom client, or the `grpcurl` command-line tool. You can download the grpcurl tool from [here](https://github.com/fullstorydev/grpcurl). Code for custom clients can be [generated](https://grpc.io/docs/) by providing the modified proto file to the Protocol buffer Compiler.
 
@@ -220,6 +214,34 @@ Student Service API:
     ```
     grpcurl -insecure \
     -import-path <path-to-folder-containing-proto-file> \
+    -proto <proto-file-name> \
+    -d '{"argument": value}' \
+    -H 'Authorization: Bearer <Access-Token>' \
+    default.gw.wso2.com:9095 <complete-service-and-method-name>
+    ```
+
+Order Service API:
+=== "Request Format"
+    ```
+    grpcurl -insecure -proto <path to proto files> -d '{"argument": value}' default.gw.wso2.com:9095 <complete-service-and-method-name>
+    ```
+=== "Sample Request"
+    ```
+    grpcurl -insecure \
+    -import-path /Users/User/proto-files\
+    -proto common.proto \
+    -proto user.proto \
+    -proto payment.proto \
+    -proto order.proto \
+    -d '{"id": 1}' \
+    -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWI' \
+    default.gw.wso2.com:9095 grpcapi.v1.order.OrderService/CreateOrder
+    ```
+=== "Request Format"
+    ```
+    grpcurl -insecure \
+    -import-path <path-to-folder-containing-proto-file> \
+    -proto <proto-file-name> \
     -proto <proto-file-name> \
     -d '{"argument": value}' \
     -H 'Authorization: Bearer <Access-Token>' \
