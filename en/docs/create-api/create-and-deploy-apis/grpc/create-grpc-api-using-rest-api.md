@@ -35,7 +35,7 @@ If you want to deploy an API with the API definition in multiple proto files, zi
 
 Save and download the following files.
 
-Student API: [Student.proto](../../../assets/files/get-started/student.proto)
+Student API: [Student.proto](../../../assets/files/get-started/Student.proto)
 
 Order API: [OrderDefinition.zip](../../../assets/files/get-started/OrderDefinition.zip)
 
@@ -50,8 +50,9 @@ Execute the following request to generate the APK configuration. Use the values 
 Student Service API:
 === "Sample Request"
     ```
-    curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.1.0/apis/generate-configuration' \
+    curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.2.0/apis/generate-configuration' \
     --header 'Host: api.am.wso2.com' \
+    --form 'apiType="GRPC"' \
     --form 'definition=@"/Users/user/Student.proto"'
     ```
 === "Request Format"
@@ -72,28 +73,29 @@ Student Service API:
     subscriptionValidation: false
     operations:
     - target: "student_service.StudentService"
-        verb: "GetStudent"
-        secured: true
-        scopes: []
+      verb: "GetStudent"
+      secured: true
+      scopes: []
     - target: "student_service.StudentService"
-        verb: "GetStudentStream"
-        secured: true
-        scopes: []
+      verb: "GetStudentStream"
+      secured: true
+      scopes: []
     - target: "student_service.StudentService"
-        verb: "SendStudentStream"
-        secured: true
-        scopes: []
+      verb: "SendStudentStream"
+      secured: true
+      scopes: []
     - target: "student_service.StudentService"
-        verb: "SendAndGetStudentStream"
-        secured: true
-        scopes: []
+      verb: "SendAndGetStudentStream"
+      secured: true
+      scopes: []
     ```
 
 Order Service API:
 === "Sample Request"
     ```
-    curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.1.0/apis/generate-configuration' \
+    curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.2.0/apis/generate-configuration' \
     --header 'Host: api.am.wso2.com' \
+    --form 'apiType="GRPC"' \
     --form 'definition=@"/Users/user/OrderDefinition.zip"'
     ```
 === "Request Format"
@@ -101,7 +103,7 @@ Order Service API:
     curl --location 'https://<host>:9095/api/configurator/1.1.0/apis/generate-configuration' \
     --header 'Host: <host>' \
     --form 'apiType="GRPC"' \
-    --form 'definition=@"<path/to/definition>"'
+    --form 'definition=@"<path/to/zip-file-containing-proto-definitions.zip>"'
     ```
 === "Sample Response"
     ```yaml
@@ -130,7 +132,7 @@ Order Service API:
       scopes: []
     ```
 
-You will get the apk-conf file content as the response, as seen in the above sample response. Save this content into a file with the `.apk-conf` file extension. You will need to fill in the name and endpoint configuration fields before deploying the API. 
+You will get the apk-conf file content as the response, as seen in the above sample response. Save this content into a file with the `.apk-conf` file extension. **You will need to fill in the name and endpoint configuration fields before deploying the API.**
 
 !!! note
     - The .proto file has the `package` string, which is used to get the basepath and version of the API.
@@ -173,39 +175,39 @@ After generating the token, you can deploy the gRPC API with the command
 === "Sample Response"
     ```
     ---
-    name: "6a254687f3229c35dd0189aac7f7fc4b6228e97a"
+    name: "StudentAPI"
     basePath: "/org.apk"
     version: "v1"
     type: "GRPC"
     id: "student-api"
     endpointConfigurations:
-    production:
-        endpoint: "http://student-backend:6565"
+        production:
+            endpoint: "http://student-backend:6565"
     defaultVersion: false
     subscriptionValidation: false
     operations:
     - target: "student_service.StudentService"
-    verb: "GetStudent"
-    secured: true
-    scopes: []
+      verb: "GetStudent"
+      secured: true
+      scopes: []
     - target: "student_service.StudentService"
-    verb: "GetStudentStream"
-    secured: true
-    scopes: []
+      verb: "GetStudentStream"
+      secured: true
+      scopes: []
     - target: "student_service.StudentService"
-    verb: "SendStudentStream"
-    secured: true
-    scopes: []
+      verb: "SendStudentStream"
+      secured: true
+      scopes: []
     - target: "student_service.StudentService"
-    verb: "SendAndGetStudentStream"
-    secured: true
-    scopes: []
+      verb: "SendAndGetStudentStream"
+      secured: true
+      scopes: []
     ```
 
 Execute the command below. You will be able to see that the API is successfully deployed.
 
 ```
-kubectl get apis
+kubectl get apis -n <namespace>
 ```
 
 ## Invoking a gRPC API
@@ -214,26 +216,54 @@ You will need a gRPC backend in order to invoke the API and get a correct respon
 
 Once your gRPC API has been deployed, you can invoke it either via Postman, a custom client, or the `grpcurl` command-line tool. You can download the grpcurl tool from [here](https://github.com/fullstorydev/grpcurl). Code for custom clients can be [generated](https://grpc.io/docs/) by providing the modified proto file to the Protocol buffer Compiler.
 
+If you are using grpcurl, you can view the various flags needed for sending requests [here](https://github.com/fullstorydev/grpcurl)
+
 A sample gRPC call is provided below.
 
 Student Service API:
 === "Sample Request"
     ```
-    grpcurl -insecure -proto /Users/user/Student.proto -d '{"id": 1}' default.gw.wso2.com:9095 grpc.base.path.v1.student_service.StudentService/GetStudent
+    grpcurl -insecure \
+    -import-path /Users/User/proto-files\
+    -proto student.proto \
+    -d '{"id": 1}' \
+    -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWI' \
+    default.gw.wso2.com:9095 org.apk.v1.student_service.StudentService/GetStudent
     ```
 === "Request Format"
     ```
-    grpcurl -insecure -proto <path to proto file> -d '{"argument": value}' default.gw.wso2.com:9095 <complete-service-and-method-name>
+    grpcurl -insecure \
+    -import-path <path-to-folder-containing-proto-file> \
+    -proto <proto-file-name> \
+    -d '{"argument": value}' \
+    -H 'Authorization: Bearer <Access-Token>' \
+    default.gw.wso2.com:9095 <complete-service-and-method-name>
     ```
 
 Order Service API:
-=== "Sample Request"
-    ```
-    grpcurl -insecure -proto /Users/user/order.proto -proto /Users/user/payment.proto -proto \
-    /Users/user/common.proto -proto /Users/user/user.proto -d '{"id": 1}' \
-    default.gw.wso2.com:9095 grpc.base.path.v1.student_service.StudentService/GetStudent
-    ```
 === "Request Format"
     ```
     grpcurl -insecure -proto <path to proto files> -d '{"argument": value}' default.gw.wso2.com:9095 <complete-service-and-method-name>
+    ```
+=== "Sample Request"
+    ```
+    grpcurl -insecure \
+    -import-path /Users/User/proto-files\
+    -proto common.proto \
+    -proto user.proto \
+    -proto payment.proto \
+    -proto order.proto \
+    -d '{"id": 1}' \
+    -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWI' \
+    default.gw.wso2.com:9095 grpcapi.v1.order.OrderService/CreateOrder
+    ```
+=== "Request Format"
+    ```
+    grpcurl -insecure \
+    -import-path <path-to-folder-containing-proto-file> \
+    -proto <proto-file-name> \
+    -proto <proto-file-name> \
+    -d '{"argument": value}' \
+    -H 'Authorization: Bearer <Access-Token>' \
+    default.gw.wso2.com:9095 <complete-service-and-method-name>
     ```
