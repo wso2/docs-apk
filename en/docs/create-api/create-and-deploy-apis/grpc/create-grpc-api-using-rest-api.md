@@ -141,7 +141,7 @@ Your apk-conf file will now be as follows.
 
 To deploy the API, we need a valid access token issued by an identity provider (IdP). Follow the ["Generate Access Token"](../../../develop-and-deploy-api/security/generate-access-token.md) documentation to generate an access token.
 
-After generating the token, you can deploy the gRPC API with the command
+After generating the token, you can deploy the gRPC API with the following command.
 
 === "Sample Request"
     ```
