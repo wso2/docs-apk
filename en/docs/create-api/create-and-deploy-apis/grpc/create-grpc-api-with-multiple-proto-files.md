@@ -145,7 +145,7 @@ After generating the token, you can deploy the gRPC API with the command
     --header 'Host: api.am.wso2.com' \
     --header 'Authorization: bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiZXhwIjoxNjg4MTMxNDQ0LCAibmJmIjoxNjg4MTI3ODQ0LCAiaWF0IjoxNjg4MTI3ODQ0LCAianRpIjoiMDFlZTE3NDEtMDA0Ni0xOGE2LWFhMjEtYmQwYTk4ZjYzNzkwIiwgImNsaWVudElkIjoiNDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyIiwgInNjb3BlIjoiZGVmYXVsdCJ9.RfKQq2fUZKZFAyjimvsPD3cOzaVWazabmq7b1iKYacqIdNjkvO9CQmu7qdtrVNDmdZ_gHhWLXiGhN4UTSCXv_n1ArDnxTLFBroRS8dxuFBZoD9Mpj10vYFSDDhUfFqjgMqtpr30TpDMfee1wkqB6K757ZSjgCDa0hAbv555GkLdZtRsSgR3xWcxPBsIozqAMFDCWoUCbgTQuA5OiEhhpVco2zv4XLq2sz--VRoBieO12C69KnGRmoLuPtvOayInvrnV96Tbt9fR0fLS2l1nvAdFzVou0SIf9rMZLnURLVQQYE64GR14m-cFRYdUI9vTsFHZBl5w-uCLdzMMofzZaLQ' \
     --form 'apkConfiguration=@"path/to/apk-conf-file.apk-conf"' \
-   --form 'definition=@"<path/to/zip-file-containing-proto-definitions.zip>"'
+    --form 'definition=@"<path/to/zip-file-containing-proto-definitions.zip>"'
     ```
 === "Request Format"
     ```
@@ -200,49 +200,24 @@ If you are using grpcurl, you can view the various flags needed for sending requ
 
 A sample gRPC call is provided below.
 
-Student Service API:
 === "Sample Request"
     ```
     grpcurl -insecure \
-    -import-path /Users/User/proto-files\
-    -proto student.proto \
-    -d '{"id": 1}' \
-    -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWI' \
-    default.gw.wso2.com:9095 org.apk.v1.student_service.StudentService/GetStudent
-    ```
-=== "Request Format"
-    ```
-    grpcurl -insecure \
-    -import-path <path-to-folder-containing-proto-file> \
-    -proto <proto-file-name> \
-    -d '{"argument": value}' \
-    -H 'Authorization: Bearer <Access-Token>' \
-    default.gw.wso2.com:9095 <complete-service-and-method-name>
-    ```
-
-Order Service API:
-=== "Request Format"
-    ```
-    grpcurl -insecure -proto <path to proto files> -d '{"argument": value}' default.gw.wso2.com:9095 <complete-service-and-method-name>
-    ```
-=== "Sample Request"
-    ```
-    grpcurl -insecure \
-    -import-path /Users/User/proto-files\
+    -import-path /Users/User/proto-files \
     -proto common.proto \
     -proto user.proto \
     -proto payment.proto \
     -proto order.proto \
-    -d '{"id": 1}' \
+    -d '{"id": "1"}' \
     -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWI' \
-    default.gw.wso2.com:9095 grpcapi.v1.order.OrderService/CreateOrder
+    default.gw.wso2.com:9095 grpcapi.v1.user.UserService/GetUser
     ```
 === "Request Format"
     ```
     grpcurl -insecure \
-    -import-path <path-to-folder-containing-proto-file> \
-    -proto <proto-file-name> \
-    -proto <proto-file-name> \
+    -import-path <path/to/proto/files> \
+    -proto <file-1.proto> \
+    -proto <file-2.proto> \
     -d '{"argument": value}' \
     -H 'Authorization: Bearer <Access-Token>' \
     default.gw.wso2.com:9095 <complete-service-and-method-name>
