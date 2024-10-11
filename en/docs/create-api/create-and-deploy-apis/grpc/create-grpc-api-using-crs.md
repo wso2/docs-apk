@@ -1,3 +1,5 @@
+This guide shows you how to create a GRPC API using Kubernetes Custom Resources.
+
 Similar to the approach for [REST APIs](../rest/create-rest-api-using-crs.md), this approach requires three CRs.
 
 - API CR
@@ -13,7 +15,7 @@ The GRPC definition file used for this guide is available at [this link](../../.
 
 !!! note
     - This guide uses the Student Service API, which has a single proto file for its definition. 
-    - You can also use the [Order Service API](../../../assets/files/get-started/OrderDefinition.zip), which has multiple proto files. The backend for this API can be found at [https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/order-sample-backend.yaml](https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/order-sample-backend.yaml).
+    - You can also use the [Order Service API](../../../assets/files/get-started/OrderDefinition.zip), which has **multiple proto files**. The backend for this API can be found at [https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/order-sample-backend.yaml](https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/order-sample-backend.yaml).
 
 #### API CR 
 
@@ -32,22 +34,9 @@ spec:
   basePath: "/org.apk.v1"
   organization: "default"
   isDefaultVersion: false
-  definitionFileRef: "student-service-api-definition"
   production:
   - routeRefs:
     - "student-service-api-route"
-```
-
-You have to provide the GraphQL SDL file as a ConfigMap and refer to it in the `definitionFileRef` field. Your sdl content should be gzipped before mapping it to definition key in a config file. The following is a sample ConfigMap that you can use to create the SDL ConfigMap of the sample graphQL backend used in this guide.
-
-```yaml
-
-kind: "ConfigMap"
-apiVersion: "v1"
-metadata:
-  name: "grpc-basic-api-definition"
-binaryData:
-  definition: "H4sIAAAAAAAA5WRu27DMAxFd30FkSlZDCQejQ6ZutcfYAg2Y6ixKVWkjBZBj3yI21ebpBJFO69hwTJPyT6G95g4bwVmy4ypZwu97pGsL5OtNsn3TphCRWSFIy+MyVGk3ViLMGn7nTRhkaMa7DYmQY5wsSH6Lm0nJmx0Ty2bz6VkI9SPn0PCsC7Et5RJmU5vR/4FZBlBR4leGL4E9hZYlzB4ZjdxXPxqNt5CA86/MPKkapr2G3mhcF62Jaqu/meIefHVEelWmTut34dH5ZpSNINmCpeJM0eekfUYI5dDNVAuu0vuM5+8+NJNxFwAoO6PZ9JAgAA"
 ```
 
 #### GRPCRoute CR 
@@ -86,7 +75,6 @@ spec:
     kind: "Gateway"
     name: "wso2-apk-default"
     sectionName: "httpslistener"
-
 ```
 
 #### Backend CR 
