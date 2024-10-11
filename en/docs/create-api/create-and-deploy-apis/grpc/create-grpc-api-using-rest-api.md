@@ -35,7 +35,7 @@ If you want to deploy an API with the API definition in multiple proto files, zi
 
 Save and download the following files.
 
-Student API: [Student.proto](../../../assets/files/get-started/Student.proto)
+Student API: [Student.proto](../../../assets/files/get-started/student.proto)
 
 Order API: [OrderDefinition.zip](../../../assets/files/get-started/OrderDefinition.zip)
 
