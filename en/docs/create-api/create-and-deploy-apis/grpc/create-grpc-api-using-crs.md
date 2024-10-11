@@ -6,7 +6,7 @@ Similar to the approach for [REST APIs](../rest/create-rest-api-using-crs.md), t
 - GRPCRoute CR
 - Backend CR
 
-For this guide, you can create a sample backend for the GraphQL API using the following command.
+For this guide, you can create a sample backend for the GRPC API using the following command.
 ```
 kubectl apply -f https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/student-sample-backend.yaml -n <namespace>
 ```
@@ -19,7 +19,7 @@ The GRPC definition file used for this guide is available at [this link](https:/
 
 #### API CR 
 
-In the following CR, we have defined the GraphQL API giving the name, context, and version information for the API. We have also referred to `GQLRoute` resource in `spec.production.routeRefs[0]` path which we create in the next step.
+In the following CR, we have defined the GRPC API giving the name, context, and version information for the API. We have also referred to `GRPCRoute` resource in `spec.production.routeRefs[0]` path which we create in the next step.
 
 ```yaml
 ---
