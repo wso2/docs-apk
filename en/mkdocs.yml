@@ -239,6 +239,8 @@ nav:
             - Subscription: catalogs/crds/subscription_types.md
             - Application: catalogs/crds/application_types.md
             - Application Mapping: catalogs/crds/application_mapping_types.md
+            - AI Provider: catalogs/crds/aiprovider_types.md
+            - AI Rate Limit Policy: catalogs/crds/airatelimitpolicy_types.md
                 # - Overview: catalogs/rate-limit-policy.md
                 # - API Level: catalogs/ratelimit-api.md
                 # - Resource Level: catalogs/ratelimit-resource.md
