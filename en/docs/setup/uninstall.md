@@ -57,13 +57,6 @@ To completely remove APK from your Kubernetes cluster, follow the steps given be
 kubectl delete -f crds.yaml
 ```
 
-4. You will then have to delete the validating and mutating webhook configurations using the following command.
-
-```
-kubectl delete mutatingwebhookconfigurations.admissionregistration.k8s.io -n apk --all
-kubectl delete validatingwebhookconfigurations.admissionregistration.k8s.io -n apk --all
-```
-
 This will clear the APK installation from your Kubernetes cluster.
 
 ## Uninstall APIM APK Agent
