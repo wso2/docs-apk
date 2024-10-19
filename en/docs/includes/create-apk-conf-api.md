@@ -31,7 +31,7 @@ The OpenAPI specification file can be provided as a local file or as a URL conta
 1. As a local file
 
 ```bash
-curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.1.0/apis/generate-configuration' \
+curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.2.0/apis/generate-configuration' \
 --header 'Host: api.am.wso2.com' \
 --form 'definition=@"/Users/user/EmployeeServiceDefinition.json"'
 ```
@@ -43,7 +43,7 @@ The following URLs contain valid sample definitions that you can use.
 OpenAPI Specification for REST API:
 
 ```bash
-curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.1.0/apis/generate-configuration' \
+curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.2.0/apis/generate-configuration' \
 --header 'Host: api.am.wso2.com' \
 ---form 'url="https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/definitions/EmployeeServiceDefinition.json"' \
 --form 'apiType="REST"'

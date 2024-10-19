@@ -19,7 +19,7 @@ The OpenAPI specification file can be provided as a local file or as a URL conta
 1. As a local file
 
 ```bash
-curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.1.0/apis/generate-configuration' \
+curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.2.0/apis/generate-configuration' \
 --header 'Host: api.am.wso2.com' \
 --form 'definition=@"/Users/user/azure_api.yaml"'
 ```
@@ -168,7 +168,7 @@ Once you have crafted your APK Configuration File, you have two convenient optio
 You can deploy the API directly into APK using API Schema definition and APK configuration file using the command below.
 
 ```
-curl --location 'https://api.am.wso2.com:9095/api/deployer/1.1.0/apis/deploy' \
+curl --location 'https://api.am.wso2.com:9095/api/deployer/1.2.0/apis/deploy' \
 --header 'Content-Type: multipart/form-data' \
 --header 'Accept: application/yaml' \
 --header 'Authorization: Bearer <Access Token From IDP>' \
@@ -181,7 +181,7 @@ curl --location 'https://api.am.wso2.com:9095/api/deployer/1.1.0/apis/deploy' \
 You can generate K8s resources as a zip file from config-deployer service.
 
 ```
-curl --location 'https://api.am.wso2.com:9095/api/configurator/1.1.0/apis/generate-k8s-resources' \
+curl --location 'https://api.am.wso2.com:9095/api/configurator/1.2.0/apis/generate-k8s-resources' \
 --header 'Content-Type: multipart/form-data' \
 --header 'Accept: application/zip' \
 --form 'apkConfiguration=@"/Users/user/azure.apk-conf"' \
