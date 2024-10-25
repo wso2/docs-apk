@@ -2,7 +2,7 @@ To commence the installation while making use of the customization capabilities 
 
     === "Command"
         ```
-        helm install apk wso2apk/apk-helm --version 1.2.0-beta -f values.yaml
+        helm install apk wso2apk/apk-helm --version 1.2.0-rc -f values.yaml
         ```
     === "Format"
         ```
@@ -13,7 +13,7 @@ To commence the installation while making use of the customization capabilities 
 
     === "Command"
         ```
-        helm upgrade apk wso2apk/apk-helm --version 1.2.0-beta -f values.yaml --no-hooks
+        helm upgrade apk wso2apk/apk-helm --version 1.2.0-rc -f values.yaml --no-hooks
         ```
     === "Format"
         ```
