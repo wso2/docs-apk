@@ -4,5 +4,5 @@ gRPC is a modern open source high performance Remote Procedure Call (RPC) framew
 
 You can use proto files to design a gRPC API in WSO2 APK, similar to developing REST APIs using OpenAPI Specifications (a.k.a. Swagger Definitions). WSO2 APK supports the creation of gRPC APIs with any number of .proto files as the API definition in two ways.
 
-1. Via REST API 
-2. Via CRs
+1. [Via REST API](create-grpc-api-using-rest-api.md)
+2. [Via CRs](create-grpc-api-using-crs.md)

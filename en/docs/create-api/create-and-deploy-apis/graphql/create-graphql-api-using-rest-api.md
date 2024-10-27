@@ -42,8 +42,8 @@ Follow the instructions below to design a GraphQL API.
         ```
         curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.2.0/apis/generate-configuration' \
         --header 'Host: api.am.wso2.com' \
-        --form 'definition=@"/Users/user/StarWarsAPI.graphql"'
-        --form 'apiType="GRAPHQL"' \
+        --form 'definition=@"/Users/user/StarWarsAPI.graphql"' \
+        --form 'apiType="GRAPHQL"' 
         ```
     === "Sample Response"
         ```yaml
@@ -106,9 +106,71 @@ Follow the instructions below to design a GraphQL API.
 
 3. You will get the apk-conf file content as the response, as seen in the above sample response. Save this content into a file named `StarWars.apk-conf`. You will need to fill in the name, basePath, version and endpoint configuration fields before deploying the API.
 
-5. To invoke the system APIs such as for deploying, we need a valid access token issued by an identity provider (IdP). Follow the ["Generate Access Token"](../../../develop-and-deploy-api/security/generate-access-token.md) documentation to generate an access token.
+    === "Sample APK Configuration"
+    ```yaml
+    name: "Starwars API"
+    basePath: "/starwars"
+    version: "1.0.0"
+    type: "GRAPHQL"
+    defaultVersion: false
+    subscriptionValidation: false
+    endpointConfigurations:
+      production:
+        endpoint: "http://graphql-faker-service:9002/graphql"
+    operations:
+    - target: "hero"
+      verb: "QUERY"
+      secured: true
+      scopes: []
+    - target: "reviews"
+      verb: "QUERY"
+      secured: true
+      scopes: []
+    - target: "search"
+      verb: "QUERY"
+      secured: true
+      scopes: []
+    - target: "character"
+      verb: "QUERY"
+      secured: true
+      scopes: []
+    - target: "droid"
+      verb: "QUERY"
+      secured: true
+      scopes: []
+    - target: "human"
+      verb: "QUERY"
+      secured: true
+      scopes: []
+    - target: "allHumans"
+      verb: "QUERY"
+      secured: true
+      scopes: []
+    - target: "allDroids"
+      verb: "QUERY"
+      secured: true
+      scopes: []
+    - target: "allCharacters"
+      verb: "QUERY"
+      secured: true
+      scopes: []
+    - target: "starship"
+      verb: "QUERY"
+      secured: true
+      scopes: []
+    - target: "createReview"
+      verb: "MUTATION"
+      secured: true
+      scopes: []
+    - target: "reviewAdded"
+      verb: "SUBSCRIPTION"
+      secured: true
+      scopes: []
+    ```
 
-6. After generating the token, you can deploy the GraphQL API with the command
+4. To invoke the system APIs such as for deploying, we need a valid access token issued by an identity provider (IdP). Follow the ["Generate Access Token"](../../../develop-and-deploy-api/security/generate-access-token.md) documentation to generate an access token.
+
+5. After generating the token, you can deploy the GraphQL API with the command
 
     === "Request Format"
         ```
@@ -135,6 +197,9 @@ Follow the instructions below to design a GraphQL API.
         type: "GRAPHQL"
         defaultVersion: false
         subscriptionValidation: false
+        endpointConfigurations:
+          production:
+            endpoint: "http://graphql-faker-service:9002/graphql"
         operations:
         - target: "hero"
           verb: "QUERY"
@@ -186,7 +251,7 @@ Follow the instructions below to design a GraphQL API.
           scopes: []
         ```
 
-7. Execute the command below. You will be able to see that the `StarWars` API is successfully deployed.
+6. Execute the command below. You will be able to see that the `StarWars` API is successfully deployed.
     
     === "Command"
         ```
@@ -206,11 +271,11 @@ A sample GraphQL call is provided below.
 
 === "Sample Request"
 ```
-curl --location 'https://default.gw.wso2.com:9095/starwars/3.14' \
+curl --location 'https://default.gw.wso2.com:9095/starwars/1.0.0' \
 --header 'Host: default.gw.wso2.com' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <access-token>' \
---data '{"query":"query hero ($episode: Episode) {\n    hero (episode: $episode) {\n        id\n        name\n        appearsIn\n    }\n}","variables":{"episode":1}}'
+--data '{"query":"query hero ($episode: Episode) {\n    hero (episode: $episode) {\n        id\n        name\n        appearsIn\n    }\n}","variables":{"episode":"NEWHOPE"}}' -k
 ```
 
 !!! note
