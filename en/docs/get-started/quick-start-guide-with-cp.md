@@ -131,13 +131,13 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
         -k --output ./api-crds.zip
         ```
 
-3. Once you have generated your K8s artifacts, the next step is to apply them to  the Kubernetes API server.
+4. Once you have generated your K8s artifacts, the next step is to apply them to  the Kubernetes API server.
 
-        ```
-        kubectl apply -n apk -f <path_to_extracted_zip_file>
-        ```
+    ```
+    kubectl apply -n apk -f <path_to_extracted_zip_file>
+    ```
 
-4. Execute the command below. You will be able to see that the `EmployeeServiceAPI` is successfully deployed as shown in the image.
+5. Execute the command below. You will be able to see that the `EmployeeServiceAPI` is successfully deployed as shown in the image.
 
 
     === "Command"
