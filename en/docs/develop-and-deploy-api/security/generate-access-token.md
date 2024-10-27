@@ -16,7 +16,7 @@ Execute the following request to generate the access token. Use the base64 encod
        --header 'Host: <host>' \
        --header 'Authorization: Basic <Base64Encoded(clientId:clientSecret)>' \
        --header 'Content-Type: application/x-www-form-urlencoded' \
-       --data-urlencode 'grant_type=client_credentials'
+       --data-urlencode 'grant_type=client_credentials' \
        --data-urlencode 'scope=apk:api_create'
     ```
 
@@ -27,7 +27,8 @@ Execute the following request to generate the access token. Use the base64 encod
        --header 'Host: idp.am.wso2.com' \
        --header 'Authorization: Basic NDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyOjRmYmQ2MmVjLWE5MmUtMTFlZC1hZmExLTAyNDJhYzEyMDAwMg==' \
        --header 'Content-Type: application/x-www-form-urlencoded' \
-       --data-urlencode 'grant_type=client_credentials'
+       --data-urlencode 'grant_type=client_credentials' \
+       --data-urlencode 'scope=apk:api_create'
     ```
 
 === "Sample Response"

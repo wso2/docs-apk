@@ -141,7 +141,7 @@ Your apk-conf file will now be as follows.
 
 To deploy the API, we need a valid access token issued by an identity provider (IdP). Follow the ["Generate Access Token"](../../../develop-and-deploy-api/security/generate-access-token.md) documentation to generate an access token.
 
-After generating the token, you can deploy the gRPC API with the command
+After generating the token, you can deploy the gRPC API with the following command.
 
 === "Sample Request"
     ```
@@ -153,7 +153,7 @@ After generating the token, you can deploy the gRPC API with the command
     ```
 === "Request Format"
     ```
-    curl --location 'https://<host>:9095/api/deployer/1.2.0/apis/deploy' \
+    curl -k --location 'https://<host>:9095/api/deployer/1.2.0/apis/deploy' \
     --header 'Host: <host>' \
     --header 'Authorization: bearer <access-token>' \
     --form 'apkConfiguration=@"path/to/apk-conf-file.apk-conf"' \
@@ -212,7 +212,7 @@ Student Service API:
     ```
     grpcurl -insecure \
     -import-path /Users/User/proto-files\
-    -proto student.proto \
+    -proto Student.proto \
     -d '{"id": 1}' \
     -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWI' \
     default.gw.wso2.com:9095 org.apk.v1.student_service.StudentService/GetStudent
