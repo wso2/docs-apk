@@ -1,121 +1,14 @@
 <p>
-<p>Package v1alpha1 contains the API Schema definitions for WSO2 APK.</p>
+<p>Package v1alpha3 contains the API Schema definitions for WSO2 APK.</p>
 </p>
-## Rate Limit Policy
-
-<p>
-<p>RateLimitPolicy is the Schema for the ratelimitpolicies API</p>
-</p>
-<table>
-    <thead>
-        <tr>
-            <th>Field</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-                <code>apiVersion</code></br>
-                string
-            </td>
-            <td>
-                <code>
-dp.wso2.com/v1alpha1
-</code>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>kind</code></br>
-                string
-            </td>
-            <td><code>RateLimitPolicy</code></td>
-        </tr>
-        <tr>
-            <td>
-                <code>metadata</code></br>
-                <em>
-                    <a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#objectmeta-v1-meta">
-                        Kubernetes meta/v1.ObjectMeta
-                    </a>
-                </em>
-            </td>
-            <td>
-                Refer to the Kubernetes API documentation for the fields of the
-                <code>metadata</code> field.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>spec</code></br>
-                <em>
-                    <a href="#dp.wso2.com/v1alpha1.RateLimitPolicySpec">
-                        RateLimitPolicySpec
-                    </a>
-                </em>
-            </td>
-            <td>
-                <br />
-                <br />
-                <table>
-                    <tr>
-                        <td>
-                            <code>default</code></br>
-                            <em>
-                                <a href="#dp.wso2.com/v1alpha1.RateLimitAPIPolicy">
-                                    RateLimitAPIPolicy
-                                </a>
-                            </em>
-                        </td>
-                        <td>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <code>override</code></br>
-                            <em>
-                                <a href="#dp.wso2.com/v1alpha1.RateLimitAPIPolicy">
-                                    RateLimitAPIPolicy
-                                </a>
-                            </em>
-                        </td>
-                        <td>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <code>targetRef</code></br>
-                            <em>
-                                sigs.k8s.io/gateway-api/apis/v1alpha2.PolicyTargetReference
-                            </em>
-                        </td>
-                        <td>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>status</code></br>
-                <em>
-                    <a href="#dp.wso2.com/v1alpha1.RateLimitPolicyStatus">
-                        RateLimitPolicyStatus
-                    </a>
-                </em>
-            </td>
-            <td>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<h3 id="dp.wso2.com/v1alpha1.APIRateLimitPolicy">APIRateLimitPolicy
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.APIRateLimitPolicy" title="Permanent link">¶</a>
+Resource Types:
+<ul></ul>
+<h3 id="dp.wso2.com/v1alpha3.APIRateLimitPolicy">APIRateLimitPolicy
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha3.APIRateLimitPolicy" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.RateLimitAPIPolicy">RateLimitAPIPolicy</a>)
+    <a href="#dp.wso2.com/v1alpha3.RateLimitAPIPolicy">RateLimitAPIPolicy</a>)
 </p>
 <p>
 <p>APIRateLimitPolicy defines the desired state of APIPolicy</p>
@@ -152,12 +45,52 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.CustomRateLimitPolicy">CustomRateLimitPolicy
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.CustomRateLimitPolicy" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha3.BurstControl">BurstControl
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha3.BurstControl" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.RateLimitAPIPolicy">RateLimitAPIPolicy</a>)
+    <a href="#dp.wso2.com/v1alpha3.SubscriptionRateLimitPolicy">SubscriptionRateLimitPolicy</a>)
+</p>
+<p>
+<p>BurstControl defines the rule for token count quota.</p>
+</p>
+<table>
+    <thead>
+        <tr>
+            <th>Field</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <code>requestsPerUnit</code></br>
+                <em>
+                    uint32
+                </em>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>unit</code></br>
+                <em>
+                    string
+                </em>
+            </td>
+            <td>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h3 id="dp.wso2.com/v1alpha3.CustomRateLimitPolicy">CustomRateLimitPolicy
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha3.CustomRateLimitPolicy" title="Permanent link">¶</a>
+</h3>
+<p>
+    (<em>Appears on:</em>
+    <a href="#dp.wso2.com/v1alpha3.RateLimitAPIPolicy">RateLimitAPIPolicy</a>)
 </p>
 <p>
 <p>CustomRateLimitPolicy defines the desired state of CustomPolicy</p>
@@ -228,12 +161,12 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.RateLimitAPIPolicy">RateLimitAPIPolicy
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.RateLimitAPIPolicy" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha3.RateLimitAPIPolicy">RateLimitAPIPolicy
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha3.RateLimitAPIPolicy" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.RateLimitPolicySpec">RateLimitPolicySpec</a>)
+    <a href="#dp.wso2.com/v1alpha3.RateLimitPolicySpec">RateLimitPolicySpec</a>)
 </p>
 <p>
 <p>RateLimitAPIPolicy defines the desired state of Policy</p>
@@ -250,7 +183,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>api</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.APIRateLimitPolicy">
+                    <a href="#dp.wso2.com/v1alpha3.APIRateLimitPolicy">
                         APIRateLimitPolicy
                     </a>
                 </em>
@@ -262,9 +195,23 @@ dp.wso2.com/v1alpha1
         </tr>
         <tr>
             <td>
+                <code>subscription</code></br>
+                <em>
+                    <a href="#dp.wso2.com/v1alpha3.SubscriptionRateLimitPolicy">
+                        SubscriptionRateLimitPolicy
+                    </a>
+                </em>
+            </td>
+            <td>
+                <em>(Optional)</em>
+                <p>Subscription level ratelimit policy</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
                 <code>custom</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.CustomRateLimitPolicy">
+                    <a href="#dp.wso2.com/v1alpha3.CustomRateLimitPolicy">
                         CustomRateLimitPolicy
                     </a>
                 </em>
@@ -276,12 +223,104 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.RateLimitPolicySpec">RateLimitPolicySpec
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.RateLimitPolicySpec" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha3.RateLimitPolicy">RateLimitPolicy
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha3.RateLimitPolicy" title="Permanent link">¶</a>
+</h3>
+<p>
+<p>RateLimitPolicy is the Schema for the ratelimitpolicies API</p>
+</p>
+<table>
+    <thead>
+        <tr>
+            <th>Field</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <code>metadata</code></br>
+                <em>
+                    <a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#objectmeta-v1-meta">
+                        Kubernetes meta/v1.ObjectMeta
+                    </a>
+                </em>
+            </td>
+            <td>
+                Refer to the Kubernetes API documentation for the fields of the
+                <code>metadata</code> field.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>spec</code></br>
+                <em>
+                    <a href="#dp.wso2.com/v1alpha3.RateLimitPolicySpec">
+                        RateLimitPolicySpec
+                    </a>
+                </em>
+            </td>
+            <td>
+                <br />
+                <br />
+                <table>
+                    <tr>
+                        <td>
+                            <code>default</code></br>
+                            <em>
+                                <a href="#dp.wso2.com/v1alpha3.RateLimitAPIPolicy">
+                                    RateLimitAPIPolicy
+                                </a>
+                            </em>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>override</code></br>
+                            <em>
+                                <a href="#dp.wso2.com/v1alpha3.RateLimitAPIPolicy">
+                                    RateLimitAPIPolicy
+                                </a>
+                            </em>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>targetRef</code></br>
+                            <em>
+                                sigs.k8s.io/gateway-api/apis/v1alpha2.PolicyTargetReference
+                            </em>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>status</code></br>
+                <em>
+                    <a href="#dp.wso2.com/v1alpha3.RateLimitPolicyStatus">
+                        RateLimitPolicyStatus
+                    </a>
+                </em>
+            </td>
+            <td>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h3 id="dp.wso2.com/v1alpha3.RateLimitPolicySpec">RateLimitPolicySpec
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha3.RateLimitPolicySpec" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.RateLimitPolicy">RateLimitPolicy</a>)
+    <a href="#dp.wso2.com/v1alpha3.RateLimitPolicy">RateLimitPolicy</a>)
 </p>
 <p>
 <p>RateLimitPolicySpec defines the desired state of RateLimitPolicy</p>
@@ -298,7 +337,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>default</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.RateLimitAPIPolicy">
+                    <a href="#dp.wso2.com/v1alpha3.RateLimitAPIPolicy">
                         RateLimitAPIPolicy
                     </a>
                 </em>
@@ -310,7 +349,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>override</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.RateLimitAPIPolicy">
+                    <a href="#dp.wso2.com/v1alpha3.RateLimitAPIPolicy">
                         RateLimitAPIPolicy
                     </a>
                 </em>
@@ -330,16 +369,120 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.RateLimitPolicyStatus">RateLimitPolicyStatus
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.RateLimitPolicyStatus" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha3.RateLimitPolicyStatus">RateLimitPolicyStatus
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha3.RateLimitPolicyStatus" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.RateLimitPolicy">RateLimitPolicy</a>)
+    <a href="#dp.wso2.com/v1alpha3.RateLimitPolicy">RateLimitPolicy</a>)
 </p>
 <p>
 <p>RateLimitPolicyStatus defines the observed state of RateLimitPolicy</p>
 </p>
+<h3 id="dp.wso2.com/v1alpha3.RequestCount">RequestCount
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha3.RequestCount" title="Permanent link">¶</a>
+</h3>
+<p>
+    (<em>Appears on:</em>
+    <a href="#dp.wso2.com/v1alpha3.SubscriptionRateLimitPolicy">SubscriptionRateLimitPolicy</a>)
+</p>
+<p>
+<p>RequestCount defines the rule for request count quota.</p>
+</p>
+<table>
+    <thead>
+        <tr>
+            <th>Field</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <code>requestsPerUnit</code></br>
+                <em>
+                    uint32
+                </em>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>unit</code></br>
+                <em>
+                    string
+                </em>
+            </td>
+            <td>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h3 id="dp.wso2.com/v1alpha3.SubscriptionRateLimitPolicy">SubscriptionRateLimitPolicy
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha3.SubscriptionRateLimitPolicy" title="Permanent link">¶</a>
+</h3>
+<p>
+    (<em>Appears on:</em>
+    <a href="#dp.wso2.com/v1alpha3.RateLimitAPIPolicy">RateLimitAPIPolicy</a>)
+</p>
+<p>
+<p>SubscriptionRateLimitPolicy defines the subscription-level rate limiting policy.</p>
+</p>
+<table>
+    <thead>
+        <tr>
+            <th>Field</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <code>stopOnQuotaReach</code></br>
+                <em>
+                    bool
+                </em>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>organization</code></br>
+                <em>
+                    string
+                </em>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>requestCount</code></br>
+                <em>
+                    <a href="#dp.wso2.com/v1alpha3.RequestCount">
+                        RequestCount
+                    </a>
+                </em>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>burstControl</code></br>
+                <em>
+                    <a href="#dp.wso2.com/v1alpha3.BurstControl">
+                        BurstControl
+                    </a>
+                </em>
+            </td>
+            <td>
+            </td>
+        </tr>
+    </tbody>
+</table>
 <hr />
 <p><em>
         Generated with <code>gen-crd-api-reference-docs</code>.
