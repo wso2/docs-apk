@@ -23,7 +23,7 @@ For example, in the above image, the values are as follows.
 
 - chart-name: apk
 - namespace: apk
-- version: 1.2.0-rc
+- version: 1.2.0-rc2
 
 ### Instructions for Uninstalling APK
 
@@ -44,7 +44,7 @@ To completely remove APK from your Kubernetes cluster, follow the steps given be
 
 === "Command"
      ```
-     helm show crds wso2apk/apk-helm --version 1.2.0-rc > crds.yaml
+     helm show crds wso2apk/apk-helm --version 1.2.0-rc2 > crds.yaml
      ```
 === "Format"
      ```
@@ -80,7 +80,7 @@ For example, in the above image, the values are as follows.
 
 - chart-name: apim-apk-agent
 - namespace: apk
-- version: 1.2.0-rc
+- version: 1.2.0-rc2
 
 ### Instructions for Uninstalling APIM APK Agent
 
