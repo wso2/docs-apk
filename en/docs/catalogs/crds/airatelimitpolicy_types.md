@@ -1,55 +1,3 @@
-<h3 id="dp.wso2.com/v1alpha3.AIRateLimit">AIRateLimit
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha3.AIRateLimit" title="Permanent link">¶</a>
-</h3>
-<p>
-    (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha3.AIRateLimitPolicySpec">AIRateLimitPolicySpec</a>)
-</p>
-<p>
-<p>AIRateLimit defines the AI ratelimit configuration</p>
-</p>
-<table>
-    <thead>
-        <tr>
-            <th>Field</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-                <code>organization</code></br>
-                <em>
-                    string
-                </em>
-            </td>
-            <td>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>tokenCount</code></br>
-                <em>
-                    <a href="#dp.wso2.com/v1alpha3.TokenCount">
-                        TokenCount
-                    </a>
-                </em>
-            </td>
-            <td>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <code>requestCount</code></br>
-                <em>
-                    invalid type
-                </em>
-            </td>
-            <td>
-            </td>
-        </tr>
-    </tbody>
-</table>
 <h3 id="dp.wso2.com/v1alpha3.AIRateLimitPolicy">AIRateLimitPolicy
     <a class="headerlink" href="#dp.wso2.com%2fv1alpha3.AIRateLimitPolicy" title="Permanent link">¶</a>
 </h3>
@@ -196,16 +144,60 @@
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha3.AIRateLimitPolicyStatus">AIRateLimitPolicyStatus
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha3.AIRateLimitPolicyStatus" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha3.AIRateLimit">AIRateLimit
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha3.AIRateLimit" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha3.AIRateLimitPolicy">AIRateLimitPolicy</a>)
+    <a href="#dp.wso2.com/v1alpha3.AIRateLimitPolicySpec">AIRateLimitPolicySpec</a>)
 </p>
 <p>
-<p>AIRateLimitPolicyStatus defines the observed state of AIRateLimitPolicy</p>
+<p>AIRateLimit defines the AI ratelimit configuration</p>
 </p>
+<table>
+    <thead>
+        <tr>
+            <th>Field</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <code>organization</code></br>
+                <em>
+                    string
+                </em>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>tokenCount</code></br>
+                <em>
+                    <a href="#dp.wso2.com/v1alpha3.TokenCount">
+                        TokenCount
+                    </a>
+                </em>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>requestCount</code></br>
+                <em>
+                    <a href="#dp.wso2.com/v1alpha3.RequestCount">
+                        RequestCount
+                    </a>
+                </em>
+            </td>
+            <td>
+            </td>
+        </tr>
+    </tbody>
+</table>
 <h3 id="dp.wso2.com/v1alpha3.TokenCount">TokenCount
     <a class="headerlink" href="#dp.wso2.com%2fv1alpha3.TokenCount" title="Permanent link">¶</a>
 </h3>
@@ -277,6 +269,59 @@
         </tr>
     </tbody>
 </table>
+<h3 id="dp.wso2.com/v1alpha3.RequestCount">RequestCount
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha3.RequestCount" title="Permanent link">¶</a>
+</h3>
+<p>
+    (<em>Appears on:</em>
+    <a href="#dp.wso2.com/v1alpha3.AIRateLimit">AIRateLimit</a>)
+</p>
+<p>
+<p>TokenCount defines the Token based ratelimit configuration</p>
+</p>
+<table>
+    <thead>
+        <tr>
+            <th>Field</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <code>unit</code></br>
+                <em>
+                    string
+                </em>
+            </td>
+            <td>
+                <p>Unit is the unit of the requestsPerUnit</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>requestsPerUnit</code></br>
+                <em>
+                    uint32
+                </em>
+            </td>
+            <td>
+                <p>RequestsPerUnit specifies the maximum number of requests allowed
+                    within a given unit of time.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h3 id="dp.wso2.com/v1alpha3.AIRateLimitPolicyStatus">AIRateLimitPolicyStatus
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha3.AIRateLimitPolicyStatus" title="Permanent link">¶</a>
+</h3>
+<p>
+    (<em>Appears on:</em>
+    <a href="#dp.wso2.com/v1alpha3.AIRateLimitPolicy">AIRateLimitPolicy</a>)
+</p>
+<p>
+<p>AIRateLimitPolicyStatus defines the observed state of AIRateLimitPolicy</p>
+</p>
 <hr />
 <p><em>
         Generated with <code>gen-crd-api-reference-docs</code>.

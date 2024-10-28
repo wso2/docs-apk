@@ -141,6 +141,7 @@ Resource Types:
                 </em>
             </td>
             <td>
+                <p>Name of the AI provider</p>
             </td>
         </tr>
         <tr>
@@ -151,6 +152,7 @@ Resource Types:
                 </em>
             </td>
             <td>
+                <p>AI provider version</p>
             </td>
         </tr>
         <tr>
@@ -161,6 +163,7 @@ Resource Types:
                 </em>
             </td>
             <td>
+                <p>Organization the AI Provider belongs to.</p>
             </td>
         </tr>
         <tr>
@@ -173,6 +176,7 @@ Resource Types:
                 </em>
             </td>
             <td>
+                <p>Contains configuration about, from where the model related values are coming.</p>
             </td>
         </tr>
         <tr>
@@ -185,20 +189,12 @@ Resource Types:
                 </em>
             </td>
             <td>
+                <p>Contains configuration about, from where token count related info coming.</p>
             </td>
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha3.AIProviderStatus">AIProviderStatus
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha3.AIProviderStatus" title="Permanent link">¶</a>
-</h3>
-<p>
-    (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha3.AIProvider">AIProvider</a>)
-</p>
-<p>
-<p>AIProviderStatus defines the observed state of AIProvider</p>
-</p>
+
 <h3 id="dp.wso2.com/v1alpha3.RateLimitFields">RateLimitFields
     <a class="headerlink" href="#dp.wso2.com%2fv1alpha3.RateLimitFields" title="Permanent link">¶</a>
 </h3>
@@ -227,6 +223,7 @@ Resource Types:
                 </em>
             </td>
             <td>
+                <p>Token count of the promt in the AI request.</p>
             </td>
         </tr>
         <tr>
@@ -239,6 +236,7 @@ Resource Types:
                 </em>
             </td>
             <td>
+                <p>Token count of the response in the AI request.</p>
             </td>
         </tr>
         <tr>
@@ -251,6 +249,7 @@ Resource Types:
                 </em>
             </td>
             <td>
+                <p>Total token count of both promt and completion in a AI request response flow.</p>
             </td>
         </tr>
     </tbody>
@@ -282,6 +281,7 @@ Resource Types:
                 </em>
             </td>
             <td>
+                <p>In which part of the response the data comes in. (Header|Body)</p>
             </td>
         </tr>
         <tr>
@@ -292,10 +292,21 @@ Resource Types:
                 </em>
             </td>
             <td>
+                <p>If In is Header, name of the header. If the In is body, json path of the value.</p>
             </td>
         </tr>
     </tbody>
 </table>
+<h3 id="dp.wso2.com/v1alpha3.AIProviderStatus">AIProviderStatus
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha3.AIProviderStatus" title="Permanent link">¶</a>
+</h3>
+<p>
+    (<em>Appears on:</em>
+    <a href="#dp.wso2.com/v1alpha3.AIProvider">AIProvider</a>)
+</p>
+<p>
+<p>AIProviderStatus defines the observed state of AIProvider</p>
+</p>
 <hr />
 <p><em>
         Generated with <code>gen-crd-api-reference-docs</code>.
