@@ -1,6 +1,6 @@
 # API Management Overview
 
-In this section, a comprehensive detail of API Management Capabilites offered by WSO2 APK utilizing WSO2 API Manager Control Plane is provided.
+In this section, a comprehensive detail of API Management Capabilities offered by WSO2 APK utilizing WSO2 API Manager Control Plane is provided.
 
 ## Supported Features
 
@@ -35,6 +35,17 @@ API Management is the process of creating, publishing, and managing APIs in a se
   - Transport Level Security: Secure APIs using transport level security. HTTPS and Mutual SSL are supported. (Mutual SSL is not visible in the Publisher Portal)
   - Application Level Security: Secure APIs using application level security. OAuth2 and JWT are supported.
   - Endpoint: GraphQL Production Endpoint is supported.
+  - Scope: Scope based access control is supported.
+  - API Level and Resource Level Rate Limiting can be configured for APIs.(Not visible in the Publisher Portal)
+  - API Deployment: Deploy APIs through the API Publisher.
+  - API Documentation: Document APIs through the API Publisher.
+  - API Testing: Test APIs through the API Publisher.
+  - API Lifecycle Management: Manage the lifecycle of APIs through the API Publisher.
+  - API Versioning: API Versioning and Default Versioning is supported.
+
+##### AI APIs: Create AI APIs through the Config Deployer.
+  - Application Level Security: Secure APIs using application level security. OAuth2, API Key and JWT are supported.
+  - Endpoint: AI Production Endpoint with API Key Backend Security is supported.
   - Scope: Scope based access control is supported.
   - API Level and Resource Level Rate Limiting can be configured for APIs.(Not visible in the Publisher Portal)
   - API Deployment: Deploy APIs through the API Publisher.
@@ -78,9 +89,8 @@ Integration with WSO2 APK Gateway is the process of integrating with the APK Gat
 
 - Tenancy: Tenancy is not supported. Only super tenant is supported.
 - Endpoint: Sandbox endpoint is not supported.
-- Application level security: Basic and API Key Authentication is not supported.
+- Application level security: Basic Authentication is not supported.
 - Application level rate limiting: Application level throttling is not supported.
-- Subscription level rate limiting: Subscription level throttling is not supported.
 - SOAP APIs: SOAP APIs are not supported.
 - SOAP to REST API conversion: SOAP to REST API conversion is not supported.
 - Webhooks/WebSub: Webhooks/WebSub are not supported.
