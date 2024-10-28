@@ -11,7 +11,7 @@
             </div>
             <div class="download-btn-wrapper">
                  <h2>Download</h2>
-                <a href="https://github.com/wso2/apk/releases/tag/1.2.0-rc">
+                <a href="https://github.com/wso2/apk/releases/tag/1.2.0-rc2">
                     <i class="fa-solid fa-file-arrow-down"></i>
                 </a>
             </div>
