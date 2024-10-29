@@ -71,6 +71,18 @@
                         <td>
                         </td>
                     </tr>
+                    <tr>
+                        <td>
+                            <code>ratelimitRef</code></br>
+                            <em>
+                                <a href="#dp.wso2.com/v1alpha2.RatelimitRef">
+                                    RatelimitRef
+                                </a>
+                            </em>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
                 </table>
             </td>
         </tr>
@@ -189,6 +201,49 @@
             </td>
             <td>
             Version of the API associated with the subscription
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="dp.wso2.com/v1alpha2.RatelimitRef">API
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.RatelimitRef" title="Permanent link">¶</a>
+</h3>
+<p>
+    (<em>Appears on:</em>
+    <a href="#dp.wso2.com/v1alpha2.SubscriptionSpec">SubscriptionSpec</a>)
+</p>
+<p>
+<p>RatelimitRef defines the RatelimitPolicy or AIRatelimitpolicy associated with the subscription</p>
+</p>
+<table>
+    <thead>
+        <tr>
+            <th>Field</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <code>name</code></br>
+                <em>
+                    string
+                </em>
+            </td>
+            <td>
+            Name of the RatelimitPolicy|AIRatelimitPolicy associated with the subscription
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>level</code></br>
+                <em>
+                    string
+                </em>
+            </td>
+            <td>
+            Whether the policy should be applied to application or subscription level(NOT SUPPORTED YET. Currently subscription level is the default.)
             </td>
         </tr>
     </tbody>
