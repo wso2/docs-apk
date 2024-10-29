@@ -1,5 +1,5 @@
 <p>
-<p>Package v1alpha1 contains the API Schema definitions for WSO2 APK.</p>
+<p>Package v1alpha2 contains the API Schema definitions for WSO2 APK.</p>
 </p>
 ## Backend
 
@@ -21,7 +21,7 @@
             </td>
             <td>
                 <code>
-dp.wso2.com/v1alpha1
+dp.wso2.com/v1alpha2
 </code>
             </td>
         </tr>
@@ -50,7 +50,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>spec</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.BackendSpec">
+                    <a href="#dp.wso2.com/v1alpha2.BackendSpec">
                         BackendSpec
                     </a>
                 </em>
@@ -63,7 +63,7 @@ dp.wso2.com/v1alpha1
                         <td>
                             <code>services</code></br>
                             <em>
-                                <a href="#dp.wso2.com/v1alpha1.Service">
+                                <a href="#dp.wso2.com/v1alpha2.Service">
                                     []Service
                                 </a>
                             </em>
@@ -76,7 +76,7 @@ dp.wso2.com/v1alpha1
                         <td>
                             <code>protocol</code></br>
                             <em>
-                                <a href="#dp.wso2.com/v1alpha1.BackendProtocolType">
+                                <a href="#dp.wso2.com/v1alpha2.BackendProtocolType">
                                     BackendProtocolType
                                 </a>
                             </em>
@@ -102,7 +102,7 @@ dp.wso2.com/v1alpha1
                         <td>
                             <code>tls</code></br>
                             <em>
-                                <a href="#dp.wso2.com/v1alpha1.TLSConfig">
+                                <a href="#dp.wso2.com/v1alpha2.TLSConfig">
                                     TLSConfig
                                 </a>
                             </em>
@@ -115,7 +115,7 @@ dp.wso2.com/v1alpha1
                         <td>
                             <code>security</code></br>
                             <em>
-                                <a href="#dp.wso2.com/v1alpha1.SecurityConfig">
+                                <a href="#dp.wso2.com/v1alpha2.SecurityConfig">
                                     SecurityConfig
                                 </a>
                             </em>
@@ -128,7 +128,7 @@ dp.wso2.com/v1alpha1
                         <td>
                             <code>circuitBreaker</code></br>
                             <em>
-                                <a href="#dp.wso2.com/v1alpha1.CircuitBreaker">
+                                <a href="#dp.wso2.com/v1alpha2.CircuitBreaker">
                                     CircuitBreaker
                                 </a>
                             </em>
@@ -141,7 +141,7 @@ dp.wso2.com/v1alpha1
                         <td>
                             <code>timeout</code></br>
                             <em>
-                                <a href="#dp.wso2.com/v1alpha1.Timeout">
+                                <a href="#dp.wso2.com/v1alpha2.Timeout">
                                     Timeout
                                 </a>
                             </em>
@@ -154,7 +154,7 @@ dp.wso2.com/v1alpha1
                         <td>
                             <code>retry</code></br>
                             <em>
-                                <a href="#dp.wso2.com/v1alpha1.RetryConfig">
+                                <a href="#dp.wso2.com/v1alpha2.RetryConfig">
                                     RetryConfig
                                 </a>
                             </em>
@@ -167,7 +167,7 @@ dp.wso2.com/v1alpha1
                         <td>
                             <code>healthCheck</code></br>
                             <em>
-                                <a href="#dp.wso2.com/v1alpha1.HealthCheck">
+                                <a href="#dp.wso2.com/v1alpha2.HealthCheck">
                                     HealthCheck
                                 </a>
                             </em>
@@ -183,7 +183,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>status</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.BackendStatus">
+                    <a href="#dp.wso2.com/v1alpha2.BackendStatus">
                         BackendStatus
                     </a>
                 </em>
@@ -193,13 +193,13 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.BackendProtocolType">BackendProtocolType
-    (<code>string</code> alias)</p><a class="headerlink" href="#dp.wso2.com%2fv1alpha1.BackendProtocolType"
+<h3 id="dp.wso2.com/v1alpha2.BackendProtocolType">BackendProtocolType
+    (<code>string</code> alias)</p><a class="headerlink" href="#dp.wso2.com%2fv1alpha2.BackendProtocolType"
         title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.BackendSpec">BackendSpec</a>)
+    <a href="#dp.wso2.com/v1alpha2.BackendSpec">BackendSpec</a>)
 </p>
 <p>
 <p>BackendProtocolType defines the backend protocol type.</p>
@@ -246,12 +246,12 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.BackendSpec">BackendSpec
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.BackendSpec" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha2.BackendSpec">BackendSpec
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.BackendSpec" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.Backend">Backend</a>)
+    <a href="#dp.wso2.com/v1alpha2.Backend">Backend</a>)
 </p>
 <p>
 <p>BackendSpec defines the desired state of Backend</p>
@@ -268,7 +268,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>services</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.Service">
+                    <a href="#dp.wso2.com/v1alpha2.Service">
                         []Service
                     </a>
                 </em>
@@ -281,7 +281,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>protocol</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.BackendProtocolType">
+                    <a href="#dp.wso2.com/v1alpha2.BackendProtocolType">
                         BackendProtocolType
                     </a>
                 </em>
@@ -307,7 +307,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>tls</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.TLSConfig">
+                    <a href="#dp.wso2.com/v1alpha2.TLSConfig">
                         TLSConfig
                     </a>
                 </em>
@@ -320,7 +320,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>security</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.SecurityConfig">
+                    <a href="#dp.wso2.com/v1alpha2.SecurityConfig">
                         SecurityConfig
                     </a>
                 </em>
@@ -333,7 +333,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>circuitBreaker</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.CircuitBreaker">
+                    <a href="#dp.wso2.com/v1alpha2.CircuitBreaker">
                         CircuitBreaker
                     </a>
                 </em>
@@ -346,7 +346,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>timeout</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.Timeout">
+                    <a href="#dp.wso2.com/v1alpha2.Timeout">
                         Timeout
                     </a>
                 </em>
@@ -359,7 +359,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>retry</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.RetryConfig">
+                    <a href="#dp.wso2.com/v1alpha2.RetryConfig">
                         RetryConfig
                     </a>
                 </em>
@@ -372,7 +372,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>healthCheck</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.HealthCheck">
+                    <a href="#dp.wso2.com/v1alpha2.HealthCheck">
                         HealthCheck
                     </a>
                 </em>
@@ -383,22 +383,22 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.BackendStatus">BackendStatus
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.BackendStatus" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha2.BackendStatus">BackendStatus
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.BackendStatus" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.Backend">Backend</a>)
+    <a href="#dp.wso2.com/v1alpha2.Backend">Backend</a>)
 </p>
 <p>
 <p>BackendStatus defines the observed state of Backend</p>
 </p>
-<h3 id="dp.wso2.com/v1alpha1.BasicSecurityConfig">BasicSecurityConfig
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.BasicSecurityConfig" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha2.BasicSecurityConfig">BasicSecurityConfig
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.BasicSecurityConfig" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.SecurityConfig">SecurityConfig</a>)
+    <a href="#dp.wso2.com/v1alpha2.SecurityConfig">SecurityConfig</a>)
 </p>
 <p>
 <p>BasicSecurityConfig defines basic security configurations</p>
@@ -415,7 +415,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>secretRef</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.SecretRef">
+                    <a href="#dp.wso2.com/v1alpha2.SecretRef">
                         SecretRef
                     </a>
                 </em>
@@ -426,12 +426,112 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.CircuitBreaker">CircuitBreaker
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.CircuitBreaker" title="Permanent link">¶</a>
+
+<h3 id="dp.wso2.com/v1alpha2.APIKeySecurityConfig">APIKeySecurityConfig
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.APIKeySecurityConfig" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.BackendSpec">BackendSpec</a>)
+    <a href="#dp.wso2.com/v1alpha2.SecurityConfig">SecurityConfig</a>)
+</p>
+<p>
+<p>APIKeySecurityConfig defines API key security configurations</p>
+</p>
+<table>
+    <thead>
+        <tr>
+            <th>Field</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <code>in</code></br>
+                <em>
+                    string
+                </em>
+            </td>
+            <td>
+                <p>In is to specify how the APIKey is passed to the request</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>name</code></br>
+                <em>
+                    string
+                </em>
+            </td>
+            <td>
+                <p>Name is the name of the header or query parameter to be used</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>valueFrom</code></br>
+                <em>
+                    <a href="#dp.wso2.com/v1alpha2.ValueRef">
+                        ValueRef
+                    </a>
+                </em>
+            </td>
+            <td>
+                <p>ValueRef to value</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="dp.wso2.com/v1alpha2.ValueRef">ValueRef
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.ValueRef" title="Permanent link">¶</a>
+</h3>
+<p>
+    (<em>Appears on:</em>
+    <a href="#dp.wso2.com/v1alpha2.APIKeySecurityConfig">APIKeySecurityConfig</a>)
+</p>
+<p>
+<p>ValueRef to value</p>
+</p>
+<table>
+    <thead>
+        <tr>
+            <th>Field</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <code>name</code></br>
+                <em>
+                    string
+                </em>
+            </td>
+            <td>
+                <p>Name of the secret</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>valueKey</code></br>
+                <em>
+                    string
+                </em>
+            </td>
+            <td>
+                <p>Field Key of the APIKey</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="dp.wso2.com/v1alpha2.CircuitBreaker">CircuitBreaker
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.CircuitBreaker" title="Permanent link">¶</a>
+</h3>
+<p>
+    (<em>Appears on:</em>
+    <a href="#dp.wso2.com/v1alpha2.BackendSpec">BackendSpec</a>)
 </p>
 <p>
 <p>CircuitBreaker defines the circuit breaker configurations</p>
@@ -509,12 +609,12 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.HealthCheck">HealthCheck
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.HealthCheck" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha2.HealthCheck">HealthCheck
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.HealthCheck" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.BackendSpec">BackendSpec</a>)
+    <a href="#dp.wso2.com/v1alpha2.BackendSpec">BackendSpec</a>)
 </p>
 <p>
 <p>HealthCheck defines the health check configurations</p>
@@ -581,12 +681,12 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.RefConfig">RefConfig
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.RefConfig" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha2.RefConfig">RefConfig
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.RefConfig" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.TLSConfig">TLSConfig</a>)
+    <a href="#dp.wso2.com/v1alpha2.TLSConfig">TLSConfig</a>)
 </p>
 <p>
 <p>RefConfig holds a config for a secret or a configmap</p>
@@ -623,12 +723,12 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.RetryConfig">RetryConfig
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.RetryConfig" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha2.RetryConfig">RetryConfig
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.RetryConfig" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.BackendSpec">BackendSpec</a>)
+    <a href="#dp.wso2.com/v1alpha2.BackendSpec">BackendSpec</a>)
 </p>
 <p>
 <p>RetryConfig defines retry configurations</p>
@@ -681,12 +781,12 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.SecretRef">SecretRef
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.SecretRef" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha2.SecretRef">SecretRef
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.SecretRef" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.BasicSecurityConfig">BasicSecurityConfig</a>)
+    <a href="#dp.wso2.com/v1alpha2.BasicSecurityConfig">BasicSecurityConfig</a>)
 </p>
 <p>
 <p>SecretRef to credentials</p>
@@ -734,12 +834,12 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.SecurityConfig">SecurityConfig
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.SecurityConfig" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha2.SecurityConfig">SecurityConfig
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.SecurityConfig" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.BackendSpec">BackendSpec</a>)
+    <a href="#dp.wso2.com/v1alpha2.BackendSpec">BackendSpec</a>)
 </p>
 <p>
 <p>SecurityConfig defines enpoint security configurations</p>
@@ -756,7 +856,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>basic</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.BasicSecurityConfig">
+                    <a href="#dp.wso2.com/v1alpha2.BasicSecurityConfig">
                         BasicSecurityConfig
                     </a>
                 </em>
@@ -765,14 +865,27 @@ dp.wso2.com/v1alpha1
                 <p>Basic security configuration</p>
             </td>
         </tr>
+        <tr>
+            <td>
+                <code>apiKey</code></br>
+                <em>
+                    <a href="#dp.wso2.com/v1alpha2.APIKeySecurityConfig">
+                        APIKeySecurityConfig
+                    </a>
+                </em>
+            </td>
+            <td>
+                <p>API key security configuration</p>
+            </td>
+        </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.Service">Service
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.Service" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha2.Service">Service
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.Service" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.BackendSpec">BackendSpec</a>)
+    <a href="#dp.wso2.com/v1alpha2.BackendSpec">BackendSpec</a>)
 </p>
 <p>
 <p>Service holds host and port information for the service</p>
@@ -809,12 +922,12 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.TLSConfig">TLSConfig
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.TLSConfig" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha2.TLSConfig">TLSConfig
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.TLSConfig" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.BackendSpec">BackendSpec</a>)
+    <a href="#dp.wso2.com/v1alpha2.BackendSpec">BackendSpec</a>)
 </p>
 <p>
 <p>TLSConfig defines enpoint TLS configurations</p>
@@ -842,7 +955,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>secretRef</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.RefConfig">
+                    <a href="#dp.wso2.com/v1alpha2.RefConfig">
                         RefConfig
                     </a>
                 </em>
@@ -855,7 +968,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>configMapRef</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha1.RefConfig">
+                    <a href="#dp.wso2.com/v1alpha2.RefConfig">
                         RefConfig
                     </a>
                 </em>
@@ -878,12 +991,12 @@ dp.wso2.com/v1alpha1
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha1.Timeout">Timeout
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha1.Timeout" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha2.Timeout">Timeout
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.Timeout" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha1.BackendSpec">BackendSpec</a>)
+    <a href="#dp.wso2.com/v1alpha2.BackendSpec">BackendSpec</a>)
 </p>
 <p>
 <p>Timeout defines the timeout configurations</p>

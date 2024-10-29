@@ -225,6 +225,7 @@ nav:
             - APIPolicy: catalogs/crds/apipolicy_types.md
             - HTTPRoute: catalogs/samples/http-route.md
             - GraphQL Route: catalogs/crds/gql_routes_types.md
+            - GRPCRoute: catalogs/samples/grpc-route.md
             - Authentication: catalogs/crds/authentication_types.md
             - Backend: catalogs/crds/backend_types.md
             - BackendJWT: catalogs/crds/backendjwt_types.md
