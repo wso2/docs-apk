@@ -6,42 +6,29 @@ APK is WSO2's cloud native API management platform. APK is designed to help you 
 
 ## New features
 
-??? note "APK Control Plane support"
+??? note "AI API Gateway"
 
-    - API Manager 4.3.0 as the control plane for APK - The WSO2 API Platform for Kubernetes (APK) introduces a feature that allows developers to directly create APIs within the APK data plane, enhancing the development workflow. Once created, these APIs are accessible in the Control Plane (API Publisher) for further refinement by API product managers, who can add documentation, configure settings, and manage lifecycle stages. Finally, the APIs are published to the developer portal, ready for consumer use. While product managers oversee the API's presentation and manageability, API developers focus on the technical aspect of gateway deployment.
-    - APK as a gateway to API Manager 4.3.0 - The APK gateway functions as a separate gateway environment within the API Manager, allowing users to adhere to their familiar API development process. When it's time to publish the API, the publisher can choose whether to deploy it to the APK gateway or the traditional API Manager gateway. This flexibility enables simultaneous management of both the cloud-native Kubernetes data plane and the API Manager data plane. Consequently, users can leverage the advantages of a Kubernetes-native cloud gateway while still managing their APIs through the familiar API Publisher interface.
+    The latest WSO2 APK release introduces robust support for full lifecycle management for AI services as APIs, ensuring security and efficiency.
 
-??? note "Enhanced API Authentication Support"
+??? note "gRPC API Support"
 
-    The latest release enhances API security with Mutual SSL Authentication support, introducing two-way SSL authentication to strengthen your API ecosystem. This feature ensures heightened security and trust in API interactions with back end service by mandating mutual authentication between gateway and backend server, significantly bolstering data protection and trustworthiness in your API exchanges.
+    The latest release enables developers to build microservices architectures with gRPC support, including authentication, analytics, and rate limiting.
 
-??? note "Extended GraphQL Capabilities"
+??? note "Support for Gateway API supported filters for HTTPRoutes"
 
-    The latest WSO2 APK release introduces robust support for GraphQL, enabling precise data querying and mutation operations in APIs. This feature simplifies development, enhances efficiency, allowing developers and consumers to interact with services more flexibly and effectively. By adopting GraphQL, users gain targeted data access, optimizing the API's responsiveness and adaptability in various application scenarios.
+    The latest WSO2 APK release introduces new filters for managing HTTP traffic, including URL rewriting, request mirroring, redirection, and header manipulation
 
-??? note "Advanced Monitoring Capabilities with Prometheus"
+??? note "Subscription Rate Limit Support"
 
-    This release introduces Prometheus integration for advanced monitoring within the APK data plane. This enhancement offers detailed insights into API performance and usage, enabling effective troubleshooting and real-time analytics. Users benefit from streamlined monitoring and improved visibility, ensuring robust API reliability and optimized performance.
+    This release introduces robust support to enforce usage quotas and limits for API consumers based on subscribed tiers.
 
-??? note "API subscription and Application support in DataPlane"
+??? note "API Key Guard"
 
-    This feature introduces API subscription and application support within the Data Plane, elevating API consumer interactions with APIs. This upgrade allows subscription management and control, enhancing user engagement and providing a more organized and efficient way to handle API access and subscriptions directly within the Data Plane.
+    This feature enables secure API access management with easy-to-use API keys.
 
-??? note "Gateway environment support (to support virtual environment)"
+??? note "Conformance-Ready API Gateway"
 
-    APK brings in gateway environment support, allowing for more flexible API deployment and management in virtual settings. This enhancement facilitates cost effective API handling across varied infrastructural setups, streamlining deployment processes and enabling scalability.
-
-??? note "Gateway Specific Global Level Policies"
-
-    In WSO2 API Manager, managing Global Level Policies within the gateway infrastructure is made easier. This streamlines policy handling, eliminating the need for administrators to manually create XML-type policy files. This feature facilitates a user-friendly approach to handling policies, eliminates the requirement for manual XML creation and placement in specific directories, and enhances control by providing a clear interface for creating, deploying, and undeploying policies, offering administrators better control over policy management.
-
-??? note "Semantic API versioning support for APIs"
-
-    This feature allows users to implement a structured versioning strategy, ensuring orderly API updates and compatibility management.
-
-??? note "API Analytics enhancement to work with Moesif analytics out of the box"
-
-    Integrate Moesif analytics to unlock actionable insights into your API's performance and usage patterns. This integration equips you with the intelligence to refine your API strategies, improving service quality based on real user data, and ultimately driving better business decisions to foster growth and user satisfaction.
+    The latest WSO2 APK release improves compliance with the Kubernetes Gateway API specification for better interoperability.
 
 ## Compatible WSO2 product versions
 
@@ -49,7 +36,7 @@ APK is WSO2's cloud native API management platform. APK is designed to help you 
 
 ## Fixed issues
 
-- For all the fixed issues in WSO2 APK 1.2.0, go to [APK](https://github.com/wso2/apk/issues?q=is%3Aissue+is%3Aclosed+closed%3A2023-09-18..2024-04-10+)
+- For all the fixed issues in WSO2 APK 1.2.0, go to [APK](https://github.com/wso2/apk/issues?q=is%3Aissue+is%3Aclosed+closed%3A2024-04-10..2024-10-29+)
 
 ## Known issues
 
