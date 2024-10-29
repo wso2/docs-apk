@@ -13,4 +13,7 @@ spec:
   api:
     name: AppSubTestAPI
     version: ^1.*|^v1$
+  ratelimitRef:
+    name : llm-backend-rl-subs
+    level: subscription
 ```

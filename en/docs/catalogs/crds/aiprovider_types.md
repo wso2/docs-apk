@@ -311,3 +311,5 @@ Resource Types:
 <p><em>
         Generated with <code>gen-crd-api-reference-docs</code>.
     </em></p>
+
+{!catalogs/samples/aiprovider.md!}
