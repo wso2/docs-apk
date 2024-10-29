@@ -61,9 +61,9 @@ Apart from the above API definition file, we also need an `apk-conf` file that d
 
 1. Execute the following request to generate the APK configuration. Use the values provided in the table below in the body of your request. 
 
-    | Field      | Value                                                                                                                     |
-    | ---------- | ------------------------------------------------------------------------------------------------------------------------- |
-    | definition | `EmployeeServiceDefinition.json` file that was downloaded at the beginning of [Step 2](#step-2-create-and-deploy-the-api) |
+    | Field      | Value                                                                                                                        |
+    | ---------- |------------------------------------------------------------------------------------------------------------------------------|
+    | definition | `EmployeeServiceDefinition.json` file that was downloaded at the beginning of [Step 3](#step-3-create-and-deploy-the-api) |
 
     === "Sample Request"
         ```
