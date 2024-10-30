@@ -10,7 +10,19 @@ You can use the following sample OpenAPI Specification (OAS) definition for the 
 
 Save and download the selected sample file. This is the OAS definition of the AI API that we are going to deploy in APK.
 
-## Step 2. Generate APK configuration file.
+## Step 2. Obtain the API Key and Endpoint from the LLM Service Provider
+
+You need to obtain the API Key and Endpoint from the LLM Service Provider to configure the API in APK. The API Key is used to authenticate the API requests and the Endpoint is the URL where the API requests are sent.
+
+Refer the following quick start guides to obtain the API Key and Endpoint from the LLM Service Provider.
+
+- [OpenAI Quick Start Guide](https://beta.openai.com/docs/quickstart)
+- [Azure OpenAI Quick Start Guide](https://learn.microsoft.com/en-us/azure/ai-services/openai/chatgpt-quickstart)
+- [Mistral AI Quick Start Guide](https://console.mistral.ai)
+
+For this use case, we will use the Azure OpenAI service and will use the API Key and the Endpoint obtained from the Azure Open AI Service. 
+
+## Step 3. Generate APK configuration file.
 
 This service generates an APK configuration file by providing your OAS file. APK configuration file includes important API metadata, rate limiting details, security settings, and other necessary information about your API.
 
@@ -71,7 +83,7 @@ You will get the apk-conf file content as the response, as seen in the above sam
 !!! note 
     You will need to fill in the AI Provider and Endpoint Configuration fields such as endpoint and security, before deploying the API.
 
-## Step 3. Update the APK configuration file.
+## Step 4. Update the APK configuration file.
 
 Review the content inside the apk-conf file and update it with additional API configurations as needed, such as configuring AI Provider, LLM Service URl in the Endpoint Configuration, Secret which stores the API key provided from LLM Service and rate limits, CORS configurations, etc.
 
@@ -137,7 +149,26 @@ operations:
 !!! note
     To optimize the configuration process, APK presents a VS Code plugin designed to offer syntax highlighting and intelligent suggestions. This plugin simplifies the incorporation of rate limitations, new resources, and security configurations into your API. Adapt the contents of the APK Configuration file as needed. For further details, refer to the section on [Enhance Configuration with APK Config Language Support](../../../../api-management-overview/apk-conf-lang-support/)
 
-## Step 4. Create Secret CR to store LLM Service API Key
+!!! note
+    The 'ai provider' field should be replaced with the actual AI Provider name and API Version.
+    Refer the following table for the AI Provider name and API Version.
+    
+    | AI Provider              | API Version |
+    |--------------------------|-------------|
+    | AzureAI                  | 2024-06-01  |
+    | ai-provider-open-ai      | v1          |
+    | ai-provider-mistral-ai   | v1          |
+
+!!! note
+    - The `endpoint` and `deployment-id` in the `endpoint` field should be replaced with the actual values provided by the LLM Service Provider.
+    - The `secretName` in the `securityType` field should be replaced with the actual Secret name which holds the API Key provided by the LLM Service Provider.
+    - The `apiKey` in the `apiKeyValueKey` field should be replaced with the Secrets data Key which holds the actual API Key provided by the LLM Service Provider.
+    - The `api-key` in the `apiKeyNameKey` field should be replaced with the actual API Key Header name provided by the LLM Service Provider.
+
+!!! note
+    - The `promptLimit`, `completionLimit`, `totalLimit`, `requestLimit` and `unit` in the `aiRatelimit` field should be replaced with the actual rate limit values which you need to restrict this API for this particular Endpoint.
+
+## Step 5. Create Secret CR to store LLM Service API Key
 
 Create a secret containing the API Key of the LLM Service Provider using the following command. Replace the ```api key of LLM Service``` value with your API Key generated for LLM Service Provider.
 
@@ -150,7 +181,7 @@ Create a secret containing the API Key of the LLM Service Provider using the fol
         kubectl create secret generic azure-ai-secret --from-literal=apiKey='<<api key of LLM Service>>' --namespace=<<namespace>>
     ```
 
-## Step 5. Deploy the API to a Kubernetes cluster.
+## Step 6. Deploy the API to a Kubernetes cluster.
 
 Once you have crafted your APK Configuration File, you have two convenient options for deploying them. Choose the deployment option that best suits your development workflow. Whether you prefer the customization capabilities of the Config Generator and CI/CD pipeline or the simplicity and speed of the Config Deployer, APK empowers you with flexible and efficient API deployment methods in the Kubernetes ecosystem.
 
@@ -255,7 +286,7 @@ Once you have generated your K8s artifacts, the next step is to apply them to th
 kubectl apply -f <path_to_extracted_zip_file>
 ```
 
-## Step 6. Verify the API Invocation
+## Step 7. Verify the API Invocation
 
 [Generate an Access Token](../../../develop-and-deploy-api/security/generate-access-token.md) and invoke the API using the following command:
 
