@@ -45,7 +45,7 @@ Follow the instructions below to use Asgardeo as the Identity Provider (IdP) to 
         apiVersion: dp.wso2.com/v1alpha1
         kind: TokenIssuer
         metadata:
-          name: auth0-idp-issuer
+          name: asgardeo-system-idp-issuer
         spec:
           claimMappings:
           - localClaim: x-wso2-organization
@@ -69,7 +69,7 @@ Follow the instructions below to use Asgardeo as the Identity Provider (IdP) to 
         apiVersion: dp.wso2.com/v1alpha1
         kind: TokenIssuer
         metadata:
-          name: auth0-idp-issuer
+          name: asgardeo-org-idp-issuer
         spec:
           claimMappings:
           - localClaim: x-wso2-organization
