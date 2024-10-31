@@ -2,5 +2,5 @@
 template: templates/redoc.html
 ---
 
-<redoc spec-url='https://raw.githubusercontent.com/wso2/apk/main/runtime/config-deployer-service/ballerina/resources/artifact-generator-api.yaml'></redoc>
+<redoc spec-url='https://raw.githubusercontent.com/wso2/docs-apk/refs/heads/1.0.0/en/docs/catalogs/config-generator-catalogs/artifact-generator-api.yaml'></redoc>
 <script src="https://cdn.jsdelivr.net/npm/redoc@next/bundles/redoc.standalone.js"> </script>
