@@ -45,7 +45,7 @@ Install the [prerequisites](../../setup/prerequisites) that are required to run 
 
 === "Command"
     ```
-    helm install apk wso2/apk-helm --version 1.2.0 --set wso2.subscription.imagePullSecrets="apk-registry-secret" -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/enterprise/arm64.yaml
+    helm install apk wso2/apk-helm --version 1.2.0 --set wso2.subscription.imagePullSecrets="apk-registry-secret" -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/enterprise/1.2.0-arm64.yaml
     ```
 === "Format"
     ```
