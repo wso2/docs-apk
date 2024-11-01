@@ -12,9 +12,9 @@ To successfully deploy WSO2 APK in your environment, it's essential to meet cert
 
 Here are the requirements for the package manager to be used with this project:
 
-| Package Manager | Version        |
-|-----------------|----------------|
-| Helm            | 3.10.0 - 3.12.0|
+| Package Manager | Version         |
+|-----------------|-----------------|
+| Helm            | 3.10.0 - 3.16.1 |
 
 
 ### Kubernetes Resource Requirements
@@ -41,9 +41,9 @@ Here are the supported manage Kubernetes services:
 
 | Platform     | Cluster Version |
 |--------------|-----------------|
-| EKS          | 1.27 - 1.29.4   |
-| GKE          | 1.27.3 - 1.29.4 |
-| AKS          | 1.27   - 1.29.4 |
+| EKS          | 1.27 - 1.30.3   |
+| GKE          | 1.27.3 - 1.30.3 |
+| AKS          | 1.27   - 1.30.3 |
 
 
 ### Kubernetes Distributions
@@ -51,22 +51,22 @@ Here are the supported manage Kubernetes services:
 Here are the supported Kubernetes distributions:
 
 | Software Application | Cluster Version | Software Version |
-|----------------------|----------------|------------------|
-| Minikube             | 1.26.3 - 1.29.4 | 1.30.1 - 1.31.1  |
-| Rancher              | 1.27.2 - 1.29.4 | 1.9.1 - 1.13.1   |
-| Kind                 | 1.26.3 - 1.29.4 | 1.25.3           |
-| Openshift            | 4.13.3         | 2.23.0+ddcfe8    | 
+|----------------------|-----------------|------------------|
+| Minikube             | 1.26.3 - 1.30.3 | 1.30.1 - 1.34.0  |
+| Rancher              | 1.27.2 - 1.30.3 | 1.9.1 - 1.30.3   |
+| Kind                 | 1.26.3 - 1.30.3 | 0.24.0           |
+| Openshift            | 1.28            | 4.15             | 
 
 ### Other Dependencies
 
 Here are the required dependencies and their versions:
 
-| Dependency         | Version       |
-|--------------------|---------------|
-| Docker Engine      | 23.0.2 or above |
-| Redis              | 17.8.0        |
-| Cert-manager       | 1.10.1        |
-| **PostgreSQL         | 11.9.6        |
+| Dependency    | Version         |
+|---------------|-----------------|
+| Docker Engine | 26.1.5 or above |
+| Redis         | 20.1.7          |
+| Cert-manager  | v1.16.0         |
+| **PostgreSQL  | 15.5.24         |
 
 These dependencies are automatically installed when you deploy the Helm chart using the `helm install` command and the chart provides the ability to integrate external services.
 
