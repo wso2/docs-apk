@@ -6,7 +6,7 @@ info:
     This document specifies a **RESTful API** for WSO2 **APK** - **Runtime Component**.
   version: 1.2.0
 servers:
-  - url: https://api.am.wso2.com/apk/1.2.0
+  - url: https://api.am.wso2.com:9095/api/configurator/1.2.0
 paths:
   /apis/generate-configuration:
     post:
