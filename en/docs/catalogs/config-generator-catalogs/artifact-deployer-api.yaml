@@ -6,7 +6,7 @@ info:
     This API is used to generate K8s resources for an API.
   version: 1.2.0
 servers:
-  - url: https://api.am.wso2.com/apk/1.2.0
+  - url: https://api.am.wso2.com:9095/api/deployer/1.2.0
 paths:
   /apis/deploy:
     post:
