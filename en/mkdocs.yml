@@ -251,15 +251,15 @@ nav:
                 # - API Level: catalogs/ratelimit-api.md
                 # - Resource Level: catalogs/ratelimit-resource.md
                 # - Custom: catalogs/ratelimit-custom.md
-        - API Catalog:
-            - Overview - API Catalog: catalogs/api-catalog.md
+        - Product API Catalog:
+            - Overview - Product API Catalog: catalogs/api-catalog.md
 #            - Back Office APIs: catalogs/api-reference-back-office.md
             - Config Deployer APIs: catalogs/api-reference-config-deployer.md
             - Config Generator APIs: catalogs/api-reference-config-generator.md
 #            - Developer Portal APIs: catalogs/api-reference-developer-portal.md
 #            - Admin APIs: catalogs/api-reference-admin.md
         - Helm Configuration Catalog: catalogs/config-catalog.md
-        - API Configuration Catalog: catalogs/apk-conf.md
+        - APK Conf Catalog: catalogs/apk-conf.md
     #   - CLI Catalog: catalogs/cli-reference.md
     #    - Helm Catalog: catalogs/config-catalog.md
     - Setup: 
