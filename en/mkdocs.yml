@@ -18,7 +18,7 @@
 site_name: APK Documentation 1.1.0
 site_description: Documentation for WSO2 API Platform for Kubernetes
 site_author: WSO2
-site_url: https://apk.docs.wso2.com/en/latest/
+site_url: https://apk.docs.wso2.com/en/1.1.0/
 
 # Repository
 repo_name: wso2/apk
