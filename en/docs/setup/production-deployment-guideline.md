@@ -2,7 +2,7 @@
 
 This document provide the steps for APK production deployment.
 
-WSO2 APK can be configured through `values.yaml` file.  Please refer to [Customize Configurations](../setup/Customize-Configurations.md) for information on how to use a customized values file for APK deployment. When deploying WSO2 APK in a production environment, we strongly recommend following these guidelines. 
+WSO2 APK can be configured through `values.yaml` file.  Please refer to [Customize Configurations](../setup/customize-configurations.md) for information on how to use a customized values file for APK deployment. When deploying WSO2 APK in a production environment, we strongly recommend following these guidelines. 
 
 ## Choose the correct deployment pattern
 

@@ -2,7 +2,7 @@
 
 This is the resource where you define resources of your API. This GRPCRoute is linked to the API by referring to this resource name from the API resource.
 
-Refer the [Kubernetes Gateway API documentation](https://gateway-api.sigs.k8s.io/reference/spec/#gateway.networking.k8s.io%2fv1.GRPCRoute) for more information on how to configure HTTPRoute.
+Refer the [Kubernetes Gateway API documentation](https://gateway-api.sigs.k8s.io/reference/spec/#gateway.networking.k8s.io%2fv1.GRPCRoute) for more information on how to configure GRPCRoute.
 ```
 apiVersion: gateway.networking.k8s.io/v1
 kind: GRPCRoute
