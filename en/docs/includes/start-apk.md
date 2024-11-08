@@ -1,5 +1,5 @@
 
-Follow the instructions below to deploy APK Data Service (DS) servers and the Cloud Native Postgres(CloudNativePG) in the Kubernetes cluster.
+Follow the instructions below to deploy APK in the Kubernetes cluster.
 
 ### Install APK
 
@@ -44,6 +44,6 @@ Now you can verify the deployment by executing the following command. You will s
 
     !!! Important
         Except for the `gateway-apim-admission` and `gateway-apim-admission-patch`, all other pods should transition to the running state.
-        If they have not, please refer the <a href="{{base_path}}/en/{{site_version}}/about-apk/FAQs#Installation-and-Deployment" target="_blank">prerequisites</a>  to troubleshoot the problem.
+        If they have not, please refer the <a href="../../about-apk/FAQs#Installation-and-Deployment" target="_blank">FAQs</a>  to troubleshoot the problem.
 
 

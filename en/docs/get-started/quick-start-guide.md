@@ -7,10 +7,10 @@ This section is a step-by-step guide to creating, deploying, and invoking an API
 
 ## Before you begin...
 
-Install the <a href="{{base_path}}/en/{{site_version}}/setup/prerequisites" target="_blank">prerequisites</a> that are required to run the WSO2 API Platform For Kubernetes.
+Install the <a href="../../setup/prerequisites" target="_blank">prerequisites</a> that are required to run the WSO2 API Platform For Kubernetes.
 
 !!!NOTE
-    If you already have an installation of the APK in your cluster, please remove the installation by following the steps specified in the <a href="{{base_path}}/en/{{site_version}}/setup/uninstall" target="_blank">Uninstall APK</a> section.
+    If you already have an installation of the APK in your cluster, please remove the installation by following the steps specified in the <a href="../../setup/uninstall" target="_blank">Uninstall APK</a> section.
 
 ## Step 1 - Start WSO2 API Platform For Kubernetes
 
@@ -280,8 +280,7 @@ You will now be able to see a successful response with the details of the Employ
 !!!Note
     To invoke the APIs, we need a valid access token issued by an identity provider (IdP). APK supports third-party IdPs such as Asgardeo and Auth0. Refer <a href="{{base_path}}/en/latest/setup/identity-platform/idp/idp-overview/" target="_blank">Configure IDP</a>.
 
-If you encounter any issues during the installation process, don't worry! We've compiled a list of frequently asked questions (FAQs) to help you troubleshoot common problems. Please refer to the <a href="{{base_path}}/en/latest/about-apk/FAQs#installation-and-deployment" target="_blank">FAQs</a> section in this guide for step-by-step solutions to common installation issues.
-
+If you encounter any issues during the installation process, don't worry! We've compiled a list of frequently asked questions (FAQs) to help you troubleshoot common problems. Please refer to the <a href="{{base_path}}/en/{{site_version}}/about-apk/FAQs#installation-and-deployment" target="_blank">FAQs</a> section in this guide for step-by-step solutions to common installation issues.
 
 <script>
   function downloadFile(event) {
