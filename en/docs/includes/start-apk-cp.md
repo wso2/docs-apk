@@ -1,5 +1,5 @@
 
-Follow the instructions below to deploy APK Data Service (DS) servers and the Cloud Native Postgres(CloudNativePG) in the Kubernetes cluster.
+Follow the instructions below to deploy APK in the Kubernetes cluster.
 
 ### Create Kubernetes namespace
 
