@@ -37,7 +37,7 @@ Follow the instructions below to deploy the APIM APK Agent.
     ```
 
 !!! Optional
-To commence the installation while making use of the customization capabilities inherent in the `values.yaml` file, follow the subsequent command format. Instructions in [Customize Configurations](../setup/Customize-Configurations.md) will guide you through the process of acquiring the `values.yaml` file.
+To commence the installation while making use of the customization capabilities inherent in the `values.yaml` file, follow the subsequent command format. Instructions in [Customize Configurations](../setup/customize-configurations.md) will guide you through the process of acquiring the `values.yaml` file.
 
 === "Command"
     ```

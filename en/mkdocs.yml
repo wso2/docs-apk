@@ -265,7 +265,7 @@ nav:
     - Setup: 
         - Prerequisites: setup/prerequisites.md
         - Install Dataplane: setup/install.md
-        - Install Control plane with Dataplane: setup/install-with-cp.md
+        - Install Control Plane with Dataplane: setup/install-with-cp.md
         - Install Enterprise Products:
               - Install APK Dataplane: setup/enterprise-apk-install.md
               - Install APIM APK Agent: setup/enterprise-apim-apk-agent-install.md
@@ -279,7 +279,7 @@ nav:
             - CI/CD for APIs - Overview: setup/cicd/overview.md
             - Building a GitOps Workflow for APIs With WSO2 APK: setup/cicd/building-a-pipeline.md
         - Migration: setup/migration.md
-        - Customize Configurations: setup/Customize-Configurations.md
+        - Customize Configurations: setup/customize-configurations.md
         - Production Deployment Guidelines: setup/production-deployment-guideline.md
         - Configure HPA for gateway: setup/configure-hpa.md
         - Deploy in OpenShift: setup/deploy-in-openshift.md
@@ -376,8 +376,7 @@ nav:
         #- Report Bugs: get-started/dummy.md # Brief description and links to Git links for doc issues and product issues
         - Training and Certification: https://wso2.com/training/
         - Resources: https://wso2.com/library/
-    - FAQ:
-        - FAQs: about-apk/FAQs.md
+    - FAQs: about-apk/FAQs.md
 
 # Extensions
 markdown_extensions:

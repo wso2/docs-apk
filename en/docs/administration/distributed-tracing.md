@@ -11,7 +11,7 @@ Supported distributed tracing systems,
 
 ## Configure Distributed Tracing
 
-To set up distributed tracing, start by following the instructions outlined in [Customize Configurations](../setup/Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file, which you will then use to tailor the tracing configurations to your specific needs.
+To set up distributed tracing, start by following the instructions outlined in [Customize Configurations](../setup/customize-configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file, which you will then use to tailor the tracing configurations to your specific needs.
 
 !!! note
     If you are trying out tracing capabilities of APK and do not have an actual deployment of Jaeger or Zipkin, you can start APK together with Jaeger/Zipkin by applying  the below kubernetes artifacts to your cluster.

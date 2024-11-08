@@ -7,10 +7,10 @@ This section is a step-by-step guide to creating, deploying, and invoking an API
 
 ## Before you begin...
 
-Install the [prerequisites](../../setup/prerequisites) that are required to run the WSO2 API Platform For Kubernetes.
+Install the <a href="../../setup/prerequisites" target="_blank">prerequisites</a> that are required to run the WSO2 API Platform For Kubernetes.
 
 !!!NOTE
-    If you already have an installation of the APK in your cluster, please remove the installation by following the steps specified in the [Uninstall APK](../setup/uninstall.md) section.
+    If you already have an installation of the APK in your cluster, please remove the installation by following the steps specified in the <a href="../../setup/uninstall" target="_blank">Uninstall APK</a> section.
 
 ## Step 1 - Start WSO2 API Platform For Kubernetes
 
@@ -34,7 +34,9 @@ kubectl get pods
 
 ## Step 3 - Create and Deploy the API
 
-1. Save and download the sample [EmployeeServiceDefinition.json](../assets/files/get-started/EmployeeServiceDefinition.json) file. This is the OAS definition of the API that we are going to deploy in APK.
+1. Save and download the sample 
+<a href="https://raw.githubusercontent.com/wso2/docs-apk/refs/heads/1.2.0/en/docs/assets/files/get-started/EmployeeServiceDefinition.json" 
+   target="_blank"  onclick="downloadFile(event)">EmployeeServiceDefinition.json</a> <script src="download.js"></script> file. This is the OAS definition of the API that we are going to deploy in APK.
 2. Add a hostname mapping to the ```/etc/hosts``` file as follows.
 
     | IP        | Domain name         |
@@ -61,8 +63,8 @@ Apart from the above API definition file, we also need an `apk-conf` file that d
 
 1. Execute the following request to generate the APK configuration. Use the values provided in the table below in the body of your request. 
 
-    | Field      | Value                                                                                                                        |
-    | ---------- |------------------------------------------------------------------------------------------------------------------------------|
+    | Field      | Value                                                                                                                     |
+    | ---------- | ------------------------------------------------------------------------------------------------------------------------- |
     | definition | `EmployeeServiceDefinition.json` file that was downloaded at the beginning of [Step 3](#step-3-create-and-deploy-the-api) |
 
     === "Sample Request"
@@ -114,7 +116,7 @@ Apart from the above API definition file, we also need an `apk-conf` file that d
 2. You will get the apk-conf file content as the response. Save this content into a file named `EmployeeService.apk-conf`.
 
 !!! Important
-    We recommend installing the [APK Config Language Support Visual Studio Code (VS Code) extension]({{base_path}}/en/latest/api-management-overview/apk-conf-lang-support/) to edit the APK Configuration file.
+    We recommend installing the <a href="{{base_path}}/en/{{site_version}}/api-management-overview/apk-conf-lang-support/" target="_blank">APK Config Language Support Visual Studio Code (VS Code) extension</a> to edit the APK Configuration file.
 
 
 ### Generate an access token to invoke APIs
@@ -276,6 +278,24 @@ Now the API is ready to be invoked. Let’s get the list of Employees by invokin
 You will now be able to see a successful response with the details of the Employees from the mock backend that we used for this guide.
 
 !!!Note
-    To invoke the APIs, we need a valid access token issued by an identity provider (IdP). APK supports third-party IdPs such as Asgardeo and Auth0. Refer [Configure IDP](../../setup/identity-platform/idp/idp-overview/).
+    To invoke the APIs, we need a valid access token issued by an identity provider (IdP). APK supports third-party IdPs such as Asgardeo and Auth0. Refer <a href="{{base_path}}/en/latest/setup/identity-platform/idp/idp-overview/" target="_blank">Configure IDP</a>.
 
-If you encounter any issues during the installation process, don't worry! We've compiled a list of frequently asked questions (FAQs) to help you troubleshoot common problems. Please refer to the <a href="{{base_path}}/en/latest/about-apk/FAQs/">FAQs</a> section in this guide for step-by-step solutions to common installation issues.
+If you encounter any issues during the installation process, don't worry! We've compiled a list of frequently asked questions (FAQs) to help you troubleshoot common problems. Please refer to the <a href="{{base_path}}/en/{{site_version}}/about-apk/FAQs#installation-and-deployment" target="_blank">FAQs</a> section in this guide for step-by-step solutions to common installation issues.
+
+<script>
+  function downloadFile(event) {
+    event.preventDefault();
+    const url = event.target.href;
+    const fileName = "EmployeeServiceDefinition.json";
+    fetch(url)
+      .then(response => response.blob())
+      .then(blob => {
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = fileName;
+        link.click();
+        URL.revokeObjectURL(link.href);
+      })
+      .catch(console.error);
+  }
+</script> 
