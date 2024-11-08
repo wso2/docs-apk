@@ -19,7 +19,7 @@
         kubectl create secret generic <secret-name> --from-literal=moesifToken='<moesif-collector-application-id>' -n <namespace>
         ```
 
-2. Follow the instructions outlined in [Customize Configurations](../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file.
+2. Follow the instructions outlined in [Customize Configurations](../customize-configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file.
    
 3. Replace ```secret-name``` in the following configuration with the name of the secret you created in the previous step.
 
