@@ -6,7 +6,6 @@ To customize configurations in the Helm deployment, you need to have the `values
 
     ```
     git clone https://github.com/wso2/apk.git
-
     ```
 
     This will create a local copy of the entire repository on your machine. You can then navigate to the `helm-charts` directory and locate the `values.yaml` file.
