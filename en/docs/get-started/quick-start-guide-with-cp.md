@@ -71,7 +71,7 @@ Apart from the above API definition file, we also need an `apk-conf` file that d
         defaultVersion: false
         endpointConfigurations:
             production:
-                endpoint: "http://employee-service:80"
+                endpoint: "http://employee-service:8080"
         operations:
         - target: "/employee"
             verb: "GET"
@@ -149,7 +149,7 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
 
 ## Step 3 - Create the Backend
 
-The endpoint "http://employee-service:80" provided in the above files points to a backend deployed on a kubernetes service. Prior to invoking the API, you will need to have this backend up. 
+The endpoint "http://employee-service:8080" provided in the above files points to a backend deployed on a kubernetes service. Prior to invoking the API, you will need to have this backend up. 
 
 We have provided the file containing this sample backend [here](../assets/files/get-started/employee-service-backend.yaml). Download it and create the backend service using the following command.
 
