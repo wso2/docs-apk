@@ -1,15 +1,15 @@
-1. Save and download the sample [StarWarsAPI.graphql](../../../assets/files/get-started/StarWarsAPI.graphql) file. This is the GraphQL SDL of the API that we will be using.
+1. Download and save the sample [StarWarsAPI.graphql](../../../assets/files/get-started/StarWarsAPI.graphql) file. This is the GraphQL SDL of the API that we will be using.
 2. Login to the Publisher Console [API Publisher](https://am.wso2.com/publisher) of the WSO2 API Manager.
 3. Under the GraphQL option, use `Import GraphQL SDL` option.
 4. Provide the GraphQL definition of the API that was downloaded in step 1 and click `Next`. 
 5. Provide the following information.
 
-   | Field    | Sample value                                |
-   |----------|---------------------------------------------|
-   | Name     | StarWarsAPI                                 |
-   | Context  | /starwars                                   |
-   | Version  | 1.0.0                                       |
-   | Endpoint | http://graphql-faker-service:9002/graphql   |
+   | Field    | Sample value                              |
+   | -------- | ----------------------------------------- |
+   | Name     | StarWarsAPI                               |
+   | Context  | /starwars                                 |
+   | Version  | 1.0.0                                     |
+   | Endpoint | http://graphql-faker-service:9002/graphql |
 
 6. Select the APK Gateway and click Create.
 7. Navigate to the Deploy section and click Deployments.

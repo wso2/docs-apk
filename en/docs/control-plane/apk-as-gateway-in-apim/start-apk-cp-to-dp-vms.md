@@ -21,7 +21,7 @@ Add a hostname mapping to the ```/etc/hosts``` file as follows.
 Setup WSO2 API Manager 4.3.0 in VM.
 
 1. Refer to the [APIM Deployment Guide](https://apim.docs.wso2.com/en/latest/install-and-setup/install/installation-options/#2-dockerdocker-compose) to deploy the APIM 4.3.0 in a VM.
-2. Change the configurations in the ```deployment.toml``` file in the APIM 4.3.0 VM refer to the [Advance Configuration for APIM](../../../control-plane/apim-deploy/) for more information.
+2. Change the configurations in the ```deployment.toml``` file in the APIM 4.4.0 VM refer to the [Advanced Configuration for APIM](../../../control-plane/apim-deploy/) for more information.
 
 
 #### Setup WSO2 APK Dataplane 1.2.0
