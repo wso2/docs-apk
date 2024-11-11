@@ -12,7 +12,7 @@
         }
     ],
     "paths": {
-        "/employee": {
+        "/employees": {
             "get": {
                 "tags": [
                     "employee-controller"

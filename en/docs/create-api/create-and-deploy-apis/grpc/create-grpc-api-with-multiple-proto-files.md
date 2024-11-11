@@ -23,7 +23,7 @@ The following steps are a quickstart guide on deploying a GRPC API that has mult
 
 ### Step 1 - Obtain the proto files for the given API
 
-Save and download the following files.
+Download and save the following files.
 
 Order API: [OrderDefinition.zip](../../../assets/files/get-started/OrderDefinition.zip)
 

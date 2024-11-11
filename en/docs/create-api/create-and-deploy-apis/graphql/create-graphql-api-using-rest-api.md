@@ -23,7 +23,7 @@ kubectl get pods -n <namespace>
 
 Follow the instructions below to design a GraphQL API.
 
-1. Save and download the sample [StarWarsAPI.graphql](../../../assets/files/get-started/StarWarsAPI.graphql) file. This is the GraphQL SDL of the API that we are going to deploy in APK.
+1. Download and save the sample [StarWarsAPI.graphql](../../../assets/files/get-started/StarWarsAPI.graphql) file. This is the GraphQL SDL of the API that we are going to deploy in APK.
 
 2. Execute the following request to generate the APK configuration. Use the values provided in the table below in the body of your request. 
 

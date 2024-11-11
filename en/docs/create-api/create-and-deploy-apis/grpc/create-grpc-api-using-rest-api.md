@@ -25,7 +25,7 @@ If you wish to deploy a GRPC API that has multiple .proto files, you can follow 
 
 ### Step 1 - Obtain the proto files for the given API
 
-Save and download the following file as Student.proto.
+Download and save the following file as Student.proto.
 
 Student API: [Student.proto](https://raw.githubusercontent.com/wso2/docs-apk/refs/heads/1.2.0/en/docs/assets/files/get-started/student.proto)
 
