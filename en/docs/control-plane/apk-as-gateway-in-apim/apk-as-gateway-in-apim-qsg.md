@@ -53,7 +53,7 @@ Setup WSO2 API Manager 4.4.0 in K8s cluster using Helm Charts.
 
 
 !!! Note
-    Please refer to the [Advance Configuration for APIM](../apim-deploy.md) for more information.
+    Please refer to the [Advanced Configuration for APIM](../apim-deploy.md) for more information.
 
 ### Setup WSO2 APK Dataplane 1.2.0
 
@@ -85,7 +85,7 @@ Setup WSO2 API Manager 4.4.0 in K8s cluster using Helm Charts.
      ```
 
 !!! Note
-    Please refer to the [Advance Configuration for APK](../apk-deploy.md) for more information.
+    Please refer to the <a href="../../control-plane/apk-deploy" target="_blank">Advanced Configuration for APK</a> for more information.
 
 
 ### Setup WSO2 APIM-APK Agent 1.2.0
@@ -114,7 +114,7 @@ Setup WSO2 API Manager 4.4.0 in K8s cluster using Helm Charts.
         ```
 
 !!! Note
-    Please refer to the [Advance Configuration for agent](../apim-apk-agent-deploy.md) for more information.
+    Please refer to the [Advanced Configuration for agent](../apim-apk-agent-deploy.md) for more information.
 
 ### Verify the deployment
 

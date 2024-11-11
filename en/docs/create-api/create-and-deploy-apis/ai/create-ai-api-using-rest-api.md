@@ -8,7 +8,7 @@ You can use the following sample OpenAPI Specification (OAS) definition for the 
 - [Azure OpenAI OAS Definition](https://raw.githubusercontent.com/wso2/apk/refs/heads/main/samples/llm-providers-oas-definitions/azure/azure_api.yaml)
 - [Mistral AI OAS Definition](https://raw.githubusercontent.com/wso2/apk/refs/heads/main/samples/llm-providers-oas-definitions/mistral/mistral_api.yaml)
 
-Save and download the selected sample file. This is the OAS definition of the AI API that we are going to deploy in APK.
+Download and save the selected sample file. This is the OAS definition of the AI API that we are going to deploy in APK.
 
 ## Step 2. Obtain the API Key and Endpoint from the LLM Service Provider
 
@@ -153,11 +153,11 @@ operations:
     The 'ai provider' field should be replaced with the actual AI Provider name and API Version.
     Refer the following table for the AI Provider name and API Version.
     
-    | AI Provider              | API Version |
-    |--------------------------|-------------|
-    | AzureAI                  | 2024-06-01  |
-    | ai-provider-open-ai      | v1          |
-    | ai-provider-mistral-ai   | v1          |
+    | AI Provider            | API Version |
+    | ---------------------- | ----------- |
+    | AzureAI                | 2024-06-01  |
+    | ai-provider-open-ai    | v1          |
+    | ai-provider-mistral-ai | v1          |
 
 !!! note
     - The `endpoint` and `deployment-id` in the `endpoint` field should be replaced with the actual values provided by the LLM Service Provider.

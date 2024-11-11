@@ -14,7 +14,7 @@ To enable the Router access logs, update the `values.yaml`'s `wso2.apk.dp.gatewa
       enable: true
 ``` 
 
-For the Advance Configuration, you can configure Router access logs by using the following configs. Router access logs related configurations are in the `log_config.toml` file, which is located in ConfigMap file located in the following file in the APK helm chart.
+For the advanced configurations, you can configure Router access logs by using the following configs. Router access logs related configurations are in the `log_config.toml` file, which is located in ConfigMap file located in the following file in the APK helm chart.
 
 ```yaml
 apk/helm-charts/templates/data-plane/gateway-components/log-conf.yaml
@@ -308,7 +308,7 @@ To enable the wire logs, update the `values.yaml`'s `wso2.apk.dp.gatewayRuntime.
       enable: true
 ``` 
 
-For the Advance Configurations, configure the wire logs, using the following configuration in the `log_config.toml` file, which is located in ConfigMap file located in the following file in the APK helm chart.
+For the advanced configurations, configure the wire logs, using the following configuration in the `log_config.toml` file, which is located in ConfigMap file located in the following file in the APK helm chart.
 
 ```yaml
 apk/helm-charts/templates/data-plane/gateway-components/log-conf.yaml
