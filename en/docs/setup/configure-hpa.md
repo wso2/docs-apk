@@ -4,7 +4,7 @@ When the traffic to your pods increase, the deployment may need to scale horizon
 
 To configure HPA for gateway, follow these steps.
 
-1. Obtain the `values.yaml` file for your deployment by following the instructions in [Customize Configurations](../setup/customize-configurations.md).
+1. Obtain the `values.yaml` file for your deployment by following the instructions in [Customize Configurations](../setup/Customize-Configurations.md).
 2. Update the following configuration with your required values.
 ```
 autoscaling:

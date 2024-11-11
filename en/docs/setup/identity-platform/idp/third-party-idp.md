@@ -116,7 +116,7 @@ This includes setting the application's settings, such as the application name a
 
           ## Step 6 - Update the Helm Chart
 
-          1. Follow the instructions outlined in [Customize Configurations](../../customize-configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file. Open the `values.yaml` file.
+          1. Follow the instructions outlined in [Customize Configurations](../../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file. Open the `values.yaml` file.
           2. Update the IDP related configurations in the `idp` section.
 
                ```yaml
