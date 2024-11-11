@@ -61,7 +61,7 @@ endpointConfigurations:
     production:
         endpoint: "http://employee-service:80"
 operations:
-- target: "/employee"
+- target: "/employees"
     verb: "GET"
     secured: true
     scopes: []

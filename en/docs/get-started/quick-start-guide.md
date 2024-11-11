@@ -193,22 +193,22 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
             production:
                 endpoint: "http://employee-service:80"
         operations:
+        - target: "/employees"
+          verb: "GET"
+          secured: true
+          scopes: []
         - target: "/employee"
-            verb: "GET"
-            secured: true
-            scopes: []
-        - target: "/employee"
-            verb: "POST"
-            secured: true
-            scopes: []
+          verb: "POST"
+          secured: true
+          scopes: []
         - target: "/employee/{employeeId}"
-            verb: "PUT"
-            secured: true
-            scopes: []
+          verb: "PUT"
+          secured: true
+          scopes: []
         - target: "/employee/{employeeId}"
-            verb: "DELETE"
-            secured: true
-            scopes: []
+          verb: "DELETE"
+          secured: true
+          scopes: []
         ```
     === "Request Format"
         ```

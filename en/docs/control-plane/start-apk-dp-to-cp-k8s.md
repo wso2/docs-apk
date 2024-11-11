@@ -43,10 +43,10 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
         helm install <chart-name> <repository-name>/wso2am-cp --version <version-of-APIM> -f <path-to-values.yaml-file>
         ```
 
-4. Install NGINX Ingress Controller. Please refer to the [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/deploy/#local-development-clusters) documentation for more information.
+4. Install NGINX Ingress Controller. Please refer to the <a href="https://kubernetes.github.io/ingress-nginx/deploy/#local-development-clusters" target="_blank">NGINX Ingress Controller</a> documentation for more information.
 
 !!! Note
-    Please refer to the [Advance Configuration for APIM](../../../control-plane/apim-deploy/) for more information.
+    Please refer to the <a href="../../control-plane/apim-deploy/" target="_blank">Advanced Configuration for APIM</a> for more information.
 
 #### Setup WSO2 APK Dataplane 1.1.0
 
@@ -99,7 +99,7 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
     ```
 
 !!! Note
-    Please refer to the [Advance Configuration for APK](../../../control-plane/apk-deploy) for more information.
+    Please refer to the <a href="../../control-plane/apk-deploy/" target="_blank">Advanced Configuration for APK</a> for more information.
 
 
 #### Setup WSO2 APIM-APK Agent 1.1.0
@@ -128,7 +128,7 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
         ```
 
 !!! Note
-    Please refer to the [Advance Configuration for agent](../../../control-plane/apim-apk-agent-deploy) for more information.
+    Please refer to the <a href="../../control-plane/apim-apk-agent-deploy/" target="_blank">Advanced Configuration for Agent</a> for more information.
 
 #### Verify the deployment
 

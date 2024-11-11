@@ -56,7 +56,7 @@ type: "REST"
 defaultVersion: true
 endpointConfigurations:
   production:
-    endpoint: "http://backend-service.ns:443"
+    endpoint: "http://employee-service:8080"
     resiliency:
       retryPolicy:
         count: 3
@@ -66,7 +66,7 @@ endpointConfigurations:
           - 501
           - 502
 operations:
-  - target: "/employee"
+  - target: "/employees"
     verb: "GET"
     secured: true
     scopes: []

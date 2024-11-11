@@ -7,7 +7,6 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
 kubectl create ns apk
 ```
 
-
 ### Setup WSO2 API Manager Control Plane 4.3.0
 
 Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
@@ -35,8 +34,7 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
         helm install <chart-name> <repository-name>/wso2am-cp --version <version-of-APIM> -f <path-to-values.yaml-file>
         ```
 
-4. Install NGINX Ingress Controller using the following command. Please refer to the [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/deploy/#local-development-clusters) documentation for more information.
-
+4. Install NGINX Ingress Controller. Please refer to the <a href="https://kubernetes.github.io/ingress-nginx/deploy/#local-development-clusters" target="_blank">NGINX Ingress Controller</a> documentation for more information.
 
 ### Setup WSO2 APK Dataplane 1.1.0
 
@@ -89,13 +87,12 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
         helm install <chart-name> <repository-name>/apim-apk-agent --version <version-of-APK-Agent> -f <path-to-values.yaml-file>
         ```
 
-
 ### Verify the deployment
 
 Now you can verify the deployment by executing the following command. You will see the status of the pods of APK dataplane and APIM Control plane as follows once completed.
 
 === "Command"
     ```
-    kubectl get pods
+    kubectl get pods -n apk
     ```
     [![Pod Status](../assets/img/get-started/cp-podstatus.png)](../assets/img/get-started/cp-podstatus.png)
