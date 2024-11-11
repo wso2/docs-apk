@@ -1,15 +1,8 @@
 # Prerequisites
 
-To successfully deploy WSO2 APK in your environment, you’ll need a Kubernetes cluster, a Kubernetes client (`kubectl`), and Helm for package management. Below, we outline the supported versions of each tool to ensure compatibility with APK.
+To successfully deploy WSO2 APK in your environment, you’ll need a Kubernetes cluster, a Kubernetes client (`kubectl`), and Helm for package management. Additionally, your environment must meet specific requirements across managed Kubernetes services, resource allocations, and supported Kubernetes distributions. Each section below outlines these requirements for a successful deployment.
 
-## 1. Set up a Kubernetes Cluster
-
-Refer to the <a href="https://kubernetes.io/docs/setup" target="_blank">Kubernetes documentation</a> to set up a Kubernetes cluster.
-
-### Kubernetes Requirements
-
-To deploy WSO2 APK, your environment must meet specific requirements across managed Kubernetes services, resource allocations, and supported Kubernetes distributions. Each section below outlines these requirements for a successful deployment.
-
+### Supported Versions
 #### Managed Kubernetes Services
 
 WSO2 APK supports several managed Kubernetes services. To ensure compatibility, verify that your service’s Kubernetes version falls within the specified range.
@@ -31,7 +24,15 @@ WSO2 APK is compatible with a variety of Kubernetes distributions. Check the com
 | Kind                 | 1.26.3 - 1.29.4 | 1.25.3           |
 | Openshift            | 4.13.3          | 2.23.0+ddcfe8    |
 
-#### Resource Requirements
+#### Helm
+
+Below is the version requirement for Helm to be compatible with WSO2 APK 1.1.0.
+
+| Package Manager | Version         |
+| --------------- | --------------- |
+| Helm            | 3.10.0 - 3.12.0 |
+
+### Resource Requirements
 
 We recommend the following minimum resource requirements for running WSO2 APK on a Kubernetes cluster. These requirements are based on whether you are deploying the APK Data Plane only or with the APIM Control Plane as well.
 
@@ -51,21 +52,22 @@ We recommend the following minimum resource requirements for running WSO2 APK on
 | Memory   | 8 GB                |
 | Storage  | 15 GB               |
 
-## 2. Install the Kubernetes Client (`kubectl`)
+### Steps to Follow
+#### 1. Set up a Kubernetes Cluster
+
+Refer to the <a href="https://kubernetes.io/docs/setup" target="_blank">Kubernetes documentation</a> to set up a Kubernetes cluster.
+
+#### 2. Install the Kubernetes Client (`kubectl`)
 
 Refer to the <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/" target="_blank">Kubernetes documentation</a> to install the `kubectl` client.
 
-## 3. Install Helm
+#### 3. Install Helm
 
-Refer to the <a href="https://helm.sh/docs/intro/install/" target="_blank">Helm documentation</a> to install Helm. Below is the version requirement for Helm to be compatible with WSO2 APK.
-
-| Package Manager | Version         |
-| --------------- | --------------- |
-| Helm            | 3.10.0 - 3.12.0 |
+Refer to the <a href="https://helm.sh/docs/intro/install/" target="_blank">Helm documentation</a> to install Helm. 
 
 ### Additional Dependencies
 
-In addition to Kubernetes and Helm, WSO2 APK requires several other dependencies. **Redis, Cert-manager, and PostgreSQL are automatically handled during APK installation**, so you don’t need to configure these manually. 
+In addition to Kubernetes and Helm, WSO2 APK requires several other dependencies. **Redis, Cert-manager, and PostgreSQL are automatically handled during APK installation**. 
 
 | Dependency    | Version         | Notes                                                                                            |
 | ------------- | --------------- | ------------------------------------------------------------------------------------------------ |

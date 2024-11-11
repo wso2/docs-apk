@@ -34,7 +34,7 @@ kubectl get pods
 
 ## Step 3 - Create and Deploy the API
 
-1. Save and download the sample 
+1. Download and save the sample 
 <a href="https://raw.githubusercontent.com/wso2/docs-apk/refs/heads/1.1.0/en/docs/assets/files/get-started/EmployeeServiceDefinition.json" 
    target="_blank"  onclick="downloadFile(event)">EmployeeServiceDefinition.json</a> <script src="download.js"></script> file. This is the OAS definition of the API that we are going to deploy in APK.
 2. Add a hostname mapping to the ```/etc/hosts``` file as follows.
@@ -84,9 +84,9 @@ Apart from the above API definition file, we also need an `apk-conf` file that d
         defaultVersion: false
         endpointConfigurations:
             production:
-                endpoint: "http://employee-service:80"
+                endpoint: "http://employee-service:8080"
         operations:
-        - target: "/employee"
+        - target: "/employees"
             verb: "GET"
             secured: true
             scopes: []
@@ -191,7 +191,7 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
         defaultVersion: false
         endpointConfigurations:
             production:
-                endpoint: "http://employee-service:80"
+                endpoint: "http://employee-service:8080"
         operations:
         - target: "/employees"
           verb: "GET"

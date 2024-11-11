@@ -21,7 +21,7 @@ Install the <a href="../../setup/prerequisites" target="_blank">prerequisites</a
 
 ## Step 2 - Create and Deploy the API From Dataplane
 
-1. Save and download the sample 
+1. Download and save the sample 
 <a href="https://raw.githubusercontent.com/wso2/docs-apk/refs/heads/1.2.0/en/docs/assets/files/get-started/EmployeeServiceDefinition.json" 
    target="_blank"  onclick="downloadFile(event)">EmployeeServiceDefinition.json</a> file. This is the OAS definition of the API that we are going to deploy in APK.
 2. Add a hostname mapping to the ```/etc/hosts``` file as follows.
@@ -49,7 +49,6 @@ Install the <a href="../../setup/prerequisites" target="_blank">prerequisites</a
 
 Apart from the above API definition file, we also need an `apk-conf` file that defines the configurations and metadata for this API. We have a configuration service that can be used to generate this apk-conf file when the OpenAPI definition is provided.
 
-
 1. Execute the following request to generate the APK configuration. Use the values provided in the table below in the body of your request. 
 
     | Field      | Value                                                                                                                     |
@@ -73,7 +72,7 @@ Apart from the above API definition file, we also need an `apk-conf` file that d
         defaultVersion: false
         endpointConfigurations:
             production:
-                endpoint: "http://employee-service:80"
+                endpoint: "http://employee-service:8080"
         operations:
         - target: "/employees"
           verb: "GET"
@@ -180,7 +179,7 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
 
 ## Step 3 - Create the Backend
 
-The endpoint "http://employee-service:80" provided in the above files points to a backend deployed on a kubernetes service. Prior to invoking the API, you will need to have this backend up. 
+The endpoint "http://employee-service:8080" provided in the above files points to a backend deployed on a kubernetes service. Prior to invoking the API, you will need to have this backend up. 
 
 We have provided the file containing this sample backend [here](https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/qsg-sample-backend.yaml). You can create the backend service using the following command.
 

@@ -346,8 +346,7 @@ nav:
         #- Report Bugs: get-started/dummy.md # Brief description and links to Git links for doc issues and product issues
         - Training and Certification: https://wso2.com/training/
         - Resources: https://wso2.com/library/
-    - FAQ:
-        - FAQs: about-apk/FAQs.md
+    - FAQs: about-apk/FAQs.md
 
 # Extensions
 markdown_extensions:

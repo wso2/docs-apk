@@ -75,9 +75,9 @@ Sample content before the modification is shown below.
   defaultVersion: false
   endpointConfigurations:
     production:
-      endpoint: "http://employee-service:80"
+      endpoint: "http://employee-service:8080"
   operations:
-    - target: "/employee"
+    - target: "/employees"
       verb: "GET"
       secured: true
       scopes: []
@@ -123,7 +123,7 @@ endpointConfigurations:
   production:
     endpoint: "http://employee-service:8080"
 operations:
-  - target: "/employee"
+  - target: "/employees"
     verb: "GET"
     secured: true
     scopes: []

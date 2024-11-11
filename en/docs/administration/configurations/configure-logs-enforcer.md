@@ -4,7 +4,7 @@ As the Enforcer component is implemented in Java, we are using the `log4j2` fram
 
 ## Configuring Log4j2 Properties
 
-To configure log4j2 properties, update the `values.yaml`'s `wso2.apk.dp.gatewayRuntime.deployment.enforcer.logging` section with the following values. Instructions in [Customize Configurations](../../setup/customize-configurations.md) will guide you through the process of acquiring the `values.yaml` file.
+To configure log4j2 properties, update the `values.yaml`'s `wso2.apk.dp.gatewayRuntime.deployment.enforcer.logging` section with the following values. Instructions in [Customize Configurations](../../setup/Customize-Configurations.md) will guide you through the process of acquiring the `values.yaml` file.
 
 ```yaml
 logging:

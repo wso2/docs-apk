@@ -25,8 +25,7 @@ Refer to the <a href="{{base_path}}/en/{{site_version}}/setup/prerequisites#prer
 
 ### 2. I want to customize some configurations in my Helm deployment. How can I do this?
 
-Refer to the <a href="{{base_path}}/en/{{site_version}}/setup/customize-configurations#customize-configurations" target="_blank">customize configurations</a> section for this information.
-
+Refer to the <a href="../../setup/Customize-Configurations" target="_blank">customize configurations</a> section for this information.
 
 ### 3. What are the Kubernetes distributions supported by WSO2 APK?
 
