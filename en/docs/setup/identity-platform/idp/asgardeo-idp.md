@@ -31,13 +31,13 @@ Follow the instructions below to use Asgardeo as the Identity Provider (IdP) to 
 
 2. Create two file named `idp-system-token-issuer.yaml` and `idp-org-token-issuer.yaml` add the following content to it.
 
-    | **Parameter** | **Description** |
-    |---------------|-----------------|
-    | `issuer:` | The IdP's issuer URL. |
-    | `jwksEndpoint:` |  The URL of the IdP's JSON Web Key Set (JWKS) endpoint.  |
-    | `usernameClaim:` |  The claim in the IdP's token that represents the user's username.  |
-    | `organizationClaim:` |  The claim in the IdP's token that represents the user's organization, This should always be `orgId`.   |
-    | `organization:` |  The organization of IDP. To invoke system APIs, this should be `apk-system`. To invoke particular organizaiton's APIs, this should be organization claim value.  |
+    | **Parameter**        | **Description**                                                                                                                                                 |
+    | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | `issuer:`            | The IdP's issuer URL.                                                                                                                                           |
+    | `jwksEndpoint:`      | The URL of the IdP's JSON Web Key Set (JWKS) endpoint.                                                                                                          |
+    | `usernameClaim:`     | The claim in the IdP's token that represents the user's username.                                                                                               |
+    | `organizationClaim:` | The claim in the IdP's token that represents the user's organization, This should always be `orgId`.                                                            |
+    | `organization:`      | The organization of IDP. To invoke system APIs, this should be `apk-system`. To invoke particular organizaiton's APIs, this should be organization claim value. |
 
 
     === "For System APIs"
@@ -107,7 +107,7 @@ Follow the instructions below to use Asgardeo as the Identity Provider (IdP) to 
 
         ## Step 5 - Update the Helm Chart
 
-        1. Follow the instructions outlined in [Customize Configurations](../../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file. Open the `values.yaml` file.
+        1. Follow the instructions outlined in [Customize Configurations](../../customize-configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file. Open the `values.yaml` file.
         2. Update the IDP related configurations in the `idp` section.
         3. Create a K8s Secret with retrieved `clientId` and `clientSecret` from Step 4 with name `apk-idp-secret`.
               ```

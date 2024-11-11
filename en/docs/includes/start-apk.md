@@ -43,6 +43,7 @@ Now you can verify the deployment by executing the following command. You will s
     [![Pod Status](../assets/img/get-started/pod-status.png)](../assets/img/get-started/podstatus.png)
 
     !!! Important
-        If pods are not transitioning to running state, please follow the steps in the [FAQs](../../about-apk/FAQs/#q3-why-are-pods-not-transitioning-to-the-running-state-for-a-long-time) to troubleshoot the problem.
+        Except for the `gateway-apim-admission` and `gateway-apim-admission-patch`, all other pods should transition to the running state.
+        If they have not, please refer the <a href="{{base_path}}/en/{{site_version}}/about-apk/FAQs#Installation-and-Deployment" target="_blank">prerequisites</a>  to troubleshoot the problem.
 
 

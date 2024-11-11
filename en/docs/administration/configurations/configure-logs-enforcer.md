@@ -4,7 +4,7 @@ As the Enforcer component is implemented in Java, we are using the `log4j2` fram
 
 ## Configuring Log4j2 Properties
 
-To configure log4j2 properties, update the `values.yaml`'s `wso2.apk.dp.gatewayRuntime.deployment.enforcer.logging` section with the following values. Instructions in [Customize Configurations](../../setup/Customize-Configurations.md) will guide you through the process of acquiring the `values.yaml` file.
+To configure log4j2 properties, update the `values.yaml`'s `wso2.apk.dp.gatewayRuntime.deployment.enforcer.logging` section with the following values. Instructions in [Customize Configurations](../../setup/customize-configurations.md) will guide you through the process of acquiring the `values.yaml` file.
 
 ```yaml
 logging:
@@ -36,15 +36,15 @@ appender.ENFORCER_LOGFILE.filter.threshold.level = DEBUG
 
 Listed below are the log levels that can be configured:
 
-| **Level** | **Description**                                                                                                                                                                                                                                                                     |
-|-------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| OFF   | The highest possible log level. This is intended for disabling logging.                                                                                                                                                                                                         |
-| FATAL | Indicates server errors that cause premature termination. These logs are expected to be immediately visible on the command line that you used for starting the server.                                                                                                          |
-| ERROR | Indicates other runtime errors or unexpected conditions. These logs are expected to be immediately visible on the command line that you used for starting the server.                                                                                                           |
-| WARN  | Indicates the use of deprecated APIs, poor use of API, possible errors, and other runtime situations that are undesirable or unexpected but not necessarily wrong. These logs are expected to be immediately visible on the command line that you used for starting the server. |
-| INFO  | Indicates important runtime events, such as server startup/shutdown. These logs are expected to be immediately visible on the command line that you used for starting the server . It is recommended to keep these logs to a minimum.                                           |
-| DEBUG | Provides detailed information on the flow through the system. This information is expected to be written to logs only. Generally, most lines logged by your application should be written as DEBUG logs.                                                                        |
-| TRACE | Provides additional details on the behavior of events and services. This information is expected to be written to logs only.                                       |
+| **Level** | **Description**                                                                                                                                                                                                                                                                 |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| OFF       | The highest possible log level. This is intended for disabling logging.                                                                                                                                                                                                         |
+| FATAL     | Indicates server errors that cause premature termination. These logs are expected to be immediately visible on the command line that you used for starting the server.                                                                                                          |
+| ERROR     | Indicates other runtime errors or unexpected conditions. These logs are expected to be immediately visible on the command line that you used for starting the server.                                                                                                           |
+| WARN      | Indicates the use of deprecated APIs, poor use of API, possible errors, and other runtime situations that are undesirable or unexpected but not necessarily wrong. These logs are expected to be immediately visible on the command line that you used for starting the server. |
+| INFO      | Indicates important runtime events, such as server startup/shutdown. These logs are expected to be immediately visible on the command line that you used for starting the server . It is recommended to keep these logs to a minimum.                                           |
+| DEBUG     | Provides detailed information on the flow through the system. This information is expected to be written to logs only. Generally, most lines logged by your application should be written as DEBUG logs.                                                                        |
+| TRACE     | Provides additional details on the behavior of events and services. This information is expected to be written to logs only.                                                                                                                                                    |
 
 ### Setting the Threshold
 

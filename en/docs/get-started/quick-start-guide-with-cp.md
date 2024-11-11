@@ -165,9 +165,7 @@ kubectl get pods -n apk
 
 ## Step 4 - Manage API From Control Plane
 
-1. Login to the Publisher Console ([https://am.wso2.com/publisher](https://am.wso2.com/publisher)) of the WSO2 API Manager.
-
-    you can see the deploy EmployeeService API as below.
+1. Login to the Publisher Console ([https://am.wso2.com/publisher](https://am.wso2.com/publisher)) of the WSO2 API Manager. You can see the deployed EmployeeService API as below.
 
     [![ControlPlane API](../assets/img/control-plane/cp-overview.png)](../assets/img/control-plane/cp-overview.png)
 
