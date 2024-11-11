@@ -11,7 +11,7 @@ Here, you can follow the steps in [Create an API](../../../get-started/quick-sta
 A sample request redirection configuration is given below.
 
 ```
-- target: "/employee"
+- target: "/employees"
   verb: "GET"
   secured: false
   scopes: []
@@ -39,7 +39,7 @@ endpointConfigurations:
     production:
         endpoint: https://httpbin.org/anything
 operations:
-- target: "/employee"
+- target: "/employees"
   verb: "GET"
   secured: false
   scopes: []
