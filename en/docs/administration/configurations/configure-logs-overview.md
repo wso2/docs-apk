@@ -15,7 +15,7 @@ Both these files are located in the same ConfigMap file located in the following
 apk/helm-charts/templates/data-plane/gateway-components/log-conf.yaml
 ```
 
-These configurations can be set using the `values.yaml` file. Instructions in [Customize Configurations](../../setup/customize-configurations.md) will guide you through the process of acquiring the `values.yaml` file. Follow each section to configure the logs for each of the components.
+These configurations can be set using the `values.yaml` file. Instructions in [Customize Configurations](../../setup/Customize-Configurations.md) will guide you through the process of acquiring the `values.yaml` file. Follow each section to configure the logs for each of the components.
 
 ## Error Codes in Logs 
 

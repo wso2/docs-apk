@@ -21,16 +21,15 @@ APK is primarily meant for anyone who wants API management in the Kubernetes dom
 
 ### 1. What are the minimum requirements needed to run WSO2 APK?
 
-Refer to the <a href="{{base_path}}/en/{{site_version}}/setup/prerequisites#prerequisites" target="_blank">prerequisites</a> section for this information.
+Refer to the <a href="../../setup/prerequisites#prerequisites" target="_blank">prerequisites</a> section for this information.
 
 ### 2. I want to customize some configurations in my Helm deployment. How can I do this?
 
-Refer to the <a href="{{base_path}}/en/{{site_version}}/setup/customize-configurations#customize-configurations" target="_blank">customize configurations</a> section for this information.
-
+Refer to the <a href="../../setup/Customize-Configurations" target="_blank">customize configurations</a> section for this information.
 
 ### 3. What are the Kubernetes distributions supported by WSO2 APK?
 
-Minikube, Rancher, Kind and Openshift are supported. For more information about the supported versions, please refer to the <a href="{{base_path}}/en/{{site_version}}/setup/prerequisites#kubernetes-distributions" target="_blank">supported Kubernetes distributions</a> section.
+Minikube, Rancher, Kind and Openshift are supported. For more information about the supported versions, please refer to the <a href="../../setup/prerequisites#kubernetes-distributions" target="_blank">supported Kubernetes distributions</a> section.
 
 ### 4. Why are pods not transitioning to the running state for a long time?
 
@@ -175,13 +174,13 @@ Currently, WSO2 APK supports REST APIs, GraphQL APIs and gRPC APIs.
 
 Yes, you can. 
 
-Refer to the <a href="{{base_path}}/en/{{site_version}}/create-api/create-and-attach-api-policies/interceptors/interceptors-overview" target="_blank">Interceptors documentation</a> for information on how to configure an Interceptor service.
+Refer to the <a href="../../create-api/create-and-attach-api-policies/interceptors/interceptors-overview" target="_blank">Interceptors documentation</a> for information on how to configure an Interceptor service.
 
-Alternatively, you can refer to <a href="{{base_path}}/en/{{site_version}}/create-api/create-and-attach-api-policies/header-modifier-filters/overview" target="_blank">Header modification filters</a> for header modification support.
+Alternatively, you can refer to <a href="../../create-api/create-and-attach-api-policies/header-modifier-filters/overview" target="_blank">Header modification filters</a> for header modification support.
 
 ### 3. What are the CRDs used in WSO2 APK?
 
-Refer to the <a href="{{base_path}}/en/{{site_version}}/catalogs/kubernetes-crds" target="_blank">CRD catalog</a> for details on the CRDs used in the APK, including examples and the configuration definitions.
+Refer to the <a href="../../catalogs/kubernetes-crds" target="_blank">CRD catalog</a> for details on the CRDs used in the APK, including examples and the configuration definitions.
 
 ## Security
 
@@ -189,7 +188,7 @@ Refer to the <a href="{{base_path}}/en/{{site_version}}/catalogs/kubernetes-crds
 Currently, APK supports OAuth 2.0 and mutualSSL for API authentication.
 
 ### 2. Can I use a custom authorization header?
-Yes, a custom authorization header can be used. Refer to the [Use custom bearer header name](..//develop-and-deploy-api/security/authentication/enable-api-security/oauth2.md) for instructions to configure this.
+Yes, a custom authorization header can be used. Refer to the <a href="../../develop-and-deploy-api/security/authentication/enable-api-security/oauth2" target="_blank">Use custom bearer header name</a> for instructions to configure this.
 
 ## Troubleshooting
 
