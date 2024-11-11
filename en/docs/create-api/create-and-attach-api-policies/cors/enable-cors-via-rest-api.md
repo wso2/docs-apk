@@ -122,7 +122,7 @@ type: "REST"
 defaultVersion: true
 endpointConfigurations:
   production:
-    endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
+    endpoint: "http://employee-service:8080"
 operations:
   - target: "/employee"
     verb: "GET"
