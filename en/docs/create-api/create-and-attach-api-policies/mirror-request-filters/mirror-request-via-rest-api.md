@@ -12,7 +12,7 @@ A sample request mirror configuration is given below.
 For this guide, it's best to use a webhook.site URL for both the production and request mirroring endpoints to view the duplicate requests. Replace the `WEBHOOK_URL` with a relevant webhook url from the site `https://webhook.site`. Ensure that you keep this webpage open to view the incoming requests.
 
 ```
-  - target: "/employee"
+  - target: "/employees"
     verb: "GET"
     secured: false
     scopes: []
@@ -40,7 +40,7 @@ endpointConfigurations:
     production:
         endpoint: `WEBHOOK_URL`
 operations:
-- target: "/employee"
+- target: "/employees"
   verb: "GET"
   secured: false
   scopes: []
