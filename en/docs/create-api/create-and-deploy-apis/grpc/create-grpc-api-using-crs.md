@@ -1,6 +1,6 @@
 This guide shows you how to create a GRPC API using Kubernetes Custom Resources.
 
-Similar to the approach for [REST APIs](../rest/create-rest-api-using-crs.md), this approach requires three CRs.
+Similar to the approach for <a href="../../rest/create-rest-api-using-crs" target="_blank">REST APIs</a>, this approach requires three CRs.
 
 - API CR
 - GRPCRoute CR
