@@ -12,8 +12,8 @@ AI APIs can be created for the following popular LLM providers:
 
 With the AI API, you can create and manage API instances using two primary methods:
 
-- [Create AI API using REST API](create-ai-api-using-rest-api.md): Allows programmatic access for seamless integration with existing workflows or CI/CD pipelines.
-- [Create AI API using Custom Resources (CRs)](create-ai-api-using-crs.md): Use Kubernetes Custom Resources to manage the lifecycle of your AI APIs in a declarative manner, ideal for Kubernetes-native environments.
+- <a href="../../ai/create-ai-api-using-rest-api" target="_blank">Create AI API using REST API</a>: Allows programmatic access for seamless integration with existing workflows or CI/CD pipelines.
+- <a href="../../ai/create-ai-api-using-crs" target="_blank">Create AI API using Custom Resources (CRs)</a>: Use Kubernetes Custom Resources to manage the lifecycle of your AI APIs in a declarative manner, ideal for Kubernetes-native environments.
 
 For detailed instructions on onboarding additional LLM providers, including custom or specialized models, refer to the following section [LLM Providers](../../../administration/aiproviders/configure-ai-providers-overview.md). 
 These will guide you through configurations, security settings, and best practices to enhance the integration of third-party or proprietary LLMs.

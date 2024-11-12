@@ -148,9 +148,9 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
     | apkConfiguration | `EmployeeService.apk-conf` file       | :material-check: |
     | definitionFile   | `EmployeeServiceDefinition.json` file | :material-check: |
 
-2. Set the access token in the Authorization header as a bearer token. This is the access token received by following the steps under the <a href="./quick-start-guide.md#generate-an-access-token-to-invoke-apis" target="_blank">Generate an access token to invoke APIs</a> section above.
+2. Set the access token in the Authorization header as a bearer token. This is the access token received by following the steps under the <a href="../quick-start-guide#generate-an-access-token-to-invoke-apis" target="_blank">Generate an access token to invoke APIs section</a> above.
 
-3. You can generate K8s resources as a zip file from config-deployer service using below command.
+3. You can generate the Kubernetes custom resources as a zip file from the config-deployer service using the following command.
 
     === "Sample Request"
         ```
@@ -160,6 +160,16 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
         --form 'apkConfiguration=@"/Users/user/EmployeeService.apk-conf"' \
         --form 'definitionFile=@"/Users/user/EmployeeServiceDefinition.json"' \
         -k --output ./api-crds.zip
+        ```
+
+    === "Request Format"
+        ```
+        curl --location 'https://<host>:9095/api/configurator/1.2.0/apis/generate-k8s-resources?organization=carbon.super' \
+        --header 'Content-Type: multipart/form-data' \
+        --header 'Accept: application/zip' \
+        --form 'apkConfiguration=@"<path/to/apk-conf-file.apk-conf>"' \
+        --form 'definitionFile=@"<path/to/definition-file.json>"' \
+        -k --output <path/and/name-for-generated-zip-file.zip>
         ```
 
 4. Once you have generated your K8s artifacts, the next step is to apply them to  the Kubernetes API server.

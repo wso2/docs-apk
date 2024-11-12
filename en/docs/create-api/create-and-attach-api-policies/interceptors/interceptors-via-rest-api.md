@@ -1,6 +1,6 @@
 ## Before you begin
 
-- You can use the below sample `apk-conf` file to create an API. For reference follow [Quick Start Guide](../../../get-started/quick-start-guide.md) documentation.
+- You can use the below sample `apk-conf` file to create an API. For reference, follow the <a href="../../../../get-started/quick-start-guide" target="_blank">Quick Start Guide</a> documentation.
 
 ```yaml
 name: "Interceptor API"

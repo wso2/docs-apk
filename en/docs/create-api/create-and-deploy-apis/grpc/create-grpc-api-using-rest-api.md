@@ -4,7 +4,7 @@ This guide will walk you through the process of creating and deploying a gRPC AP
 
 ## Sample Backend for Student Service API
 
-We will use a sample API called the Student Service API, which has a single .proto file as its definition. If you wish to deploy an API with multiple .proto files, you can refer to [this guide](./create-grpc-api-with-multiple-proto-files.md)
+We will use a sample API called the Student Service API, which has a single .proto file as its definition. If you wish to deploy an API with multiple .proto files, you can refer to <a href="../create-grpc-api-with-multiple-proto-files" target="_blank">this guide</a>.
 
 We will use the sample Student Service backend for this guide, which can be created using the following command.
 
@@ -21,7 +21,7 @@ kubectl get pods -n <namespace>
 
 The following steps are a quickstart guide on deploying a GRPC API that has a single .proto file as its API definition. 
 
-If you wish to deploy a GRPC API that has multiple .proto files, you can follow [this guide.](./create-grpc-api-with-multiple-proto-files.md)
+If you wish to deploy an API with multiple .proto files, you can refer to <a href="../create-grpc-api-with-multiple-proto-files" target="_blank">this guide</a>.
 
 ### Step 1 - Obtain the proto files for the given API
 
@@ -139,7 +139,7 @@ Your apk-conf file will now be as follows.
 
 ### Step 4 - Deploy the API
 
-To deploy the API, we need a valid access token issued by an identity provider (IdP). Follow the ["Generate Access Token"](../../../develop-and-deploy-api/security/generate-access-token.md) documentation to generate an access token.
+To deploy the API, we need a valid access token issued by an identity provider (IdP). Follow the <a href="../../../../develop-and-deploy-api/security/generate-access-token" target="_blank">Generate Access Token</a> documentation to generate an access token.
 
 After generating the token, you can deploy the gRPC API with the following command.
 
@@ -199,11 +199,11 @@ kubectl get apis -n <namespace>
 
 ## Invoking a gRPC API
 
-You will need a gRPC backend in order to invoke the API and get a correct response. A sample backend for both the Student Service and Order Service APIs have been provided under [this section.](#sample-backend-for-grpc)
+You will need a gRPC backend in order to invoke the API and get a correct response. A sample backend for both the Student Service and Order Service APIs have been provided under [this section.](#sample-backend-for-student-service-api)
 
-Once your gRPC API has been deployed, you can invoke it either via Postman, a custom client, or the `grpcurl` command-line tool. You can download the grpcurl tool from [here](https://github.com/fullstorydev/grpcurl). Code for custom clients can be [generated](https://grpc.io/docs/) by providing the modified proto file to the Protocol buffer Compiler.
+Once your gRPC API has been deployed, you can invoke it either via Postman, a custom client, or the `grpcurl` command-line tool. You can download the grpcurl tool from <a href="https://github.com/fullstorydev/grpcurl" target="_blank">here</a>. Code for custom clients can be <a href="https://grpc.io/docs/" target="_blank">generated</a> by providing the modified proto file to the Protocol buffer Compiler.
 
-If you are using grpcurl, you can view the various flags needed for sending requests [here](https://github.com/fullstorydev/grpcurl)
+If you are using grpcurl, you can view the various flags needed for sending requests <a href="https://github.com/fullstorydev/grpcurl" target="_blank">here</a>.
 
 A sample gRPC call is provided below.
 

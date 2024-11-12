@@ -1,5 +1,4 @@
-Similar to the approach for [REST APIs](../rest/create-rest-api-using-crs.md), this approach requires several CRs as mentioned below.
-
+This approach requires five CRs.
 - API CR
 - HTTPRoute CR
 - Backend CR
@@ -14,12 +13,14 @@ Let's create an AI API with following steps:
 - [Create APIPolicy CR](#create-apipolicy-cr)
 - [Create Secret CR](#create-secret-cr)
 - [Create AIRatelimitPolicy CR](#create-airatelimitpolicy-cr)
+- [Deploy the CRs](#deploy-the-crs)
+- [Verify the API Invocation](#verify-the-api-invocation)
 
 These sample CRs are created for an AI API using the Azure OpenAI service. You can modify these CRs according to any other LLM Provider as per your requirements.
 
 ## Create API CR 
 
-In the following CR, we have defined a REST API giving the name, context, and version information for the API. We have also referred to `HTTPRoute` resource in `spec.production.httpRouteRefs[0]` path which we create in the next step.
+In the following CR, we have defined a REST API giving the name, context, and version information for the API. We have also referred to the `HTTPRoute` resource in `spec.production.httpRouteRefs[0]` path which we create in the next step.
 
 ```
 apiVersion: dp.wso2.com/v1alpha3
@@ -254,7 +255,7 @@ kubectl apply -f <path_to_CR_files> -n apk
 
 ## Verify the API Invocation
 
-[Generate an Access Token](../../../develop-and-deploy-api/security/generate-access-token.md) and invoke the API using the following command:
+<a href="../../../../develop-and-deploy-api/security/generate-access-token" target="_blank">Generate an access token</a> and invoke the API using the following command:
 
 === "Sample Request"
     ```

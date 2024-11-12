@@ -2,7 +2,7 @@
 
 To invoke the system APIs such as for deploying, we need a valid access token issued by an identity provider (IdP). While APK supports third party IdPs such as Asgardeo and Auth0, it supports an inbuilt non-production identity provider as well, which is only meant for testing purposes. We are going to use the non-production inbuilt IdP for this guide.
 
-Execute the following request to generate the access token. Use the base64 encoded value of the colon separated client Id and client secret provided in the table below in the Authorization header of the request. We will be using the client credentials grant type to generate the token.
+Execute the following request to generate the access token. Use the base64 encoded value of the colon separated client Id and client secret (clientID:clientSecret) provided in the table below in the Authorization header of the request. We will be using the client credentials grant type to generate the token.
 
 | Field         | Value                                |
 | ------------- | ------------------------------------ |

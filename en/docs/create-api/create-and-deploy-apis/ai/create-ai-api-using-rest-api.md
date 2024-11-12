@@ -4,9 +4,9 @@ Follow the instructions below to create a AI API using the APK deployer REST API
 
 You can use the following sample OpenAPI Specification (OAS) definition for the OpenAI service.
 
-- [OpenAI OAS Definition](https://raw.githubusercontent.com/wso2/apk/refs/heads/main/samples/llm-providers-oas-definitions/openai/openai_api.yaml)
-- [Azure OpenAI OAS Definition](https://raw.githubusercontent.com/wso2/apk/refs/heads/main/samples/llm-providers-oas-definitions/azure/azure_api.yaml)
-- [Mistral AI OAS Definition](https://raw.githubusercontent.com/wso2/apk/refs/heads/main/samples/llm-providers-oas-definitions/mistral/mistral_api.yaml)
+- <a href="https://raw.githubusercontent.com/wso2/apk/refs/heads/main/samples/llm-providers-oas-definitions/openai/openai_api.yaml" target="_blank">OpenAI OAS Definition</a>
+- <a href="https://raw.githubusercontent.com/wso2/apk/refs/heads/main/samples/llm-providers-oas-definitions/azure/azure_api.yaml" target="_blank">Azure OpenAI OAS Definition</a>
+- <a href="https://raw.githubusercontent.com/wso2/apk/refs/heads/main/samples/llm-providers-oas-definitions/mistral/mistral_api.yaml" target="_blank">Mistral AI OAS Definition</a>
 
 Download and save the selected sample file. This is the OAS definition of the AI API that we are going to deploy in APK.
 
@@ -16,9 +16,9 @@ You need to obtain the API Key and Endpoint from the LLM Service Provider to con
 
 Refer the following quick start guides to obtain the API Key and Endpoint from the LLM Service Provider.
 
-- [OpenAI Quick Start Guide](https://beta.openai.com/docs/quickstart)
-- [Azure OpenAI Quick Start Guide](https://learn.microsoft.com/en-us/azure/ai-services/openai/chatgpt-quickstart)
-- [Mistral AI Quick Start Guide](https://console.mistral.ai)
+- <a href="https://beta.openai.com/docs/quickstart" target="_blank">OpenAI Quick Start Guide</a>
+- <a href="https://learn.microsoft.com/en-us/azure/ai-services/openai/chatgpt-quickstart" target="_blank">Azure OpenAI Quick Start Guide</a>
+- <a href="https://console.mistral.ai" target="_blank">Mistral AI Quick Start Guide</a>
 
 For this use case, we will use the Azure OpenAI service and will use the API Key and the Endpoint obtained from the Azure Open AI Service. 
 
@@ -147,7 +147,7 @@ operations:
 ```
 
 !!! note
-    To optimize the configuration process, APK presents a VS Code plugin designed to offer syntax highlighting and intelligent suggestions. This plugin simplifies the incorporation of rate limitations, new resources, and security configurations into your API. Adapt the contents of the APK Configuration file as needed. For further details, refer to the section on [Enhance Configuration with APK Config Language Support](../../../../api-management-overview/apk-conf-lang-support/)
+    To optimize the configuration process, APK presents a VS Code plugin designed to offer syntax highlighting and intelligent suggestions. This plugin simplifies the incorporation of rate limitations, new resources, and security configurations into your API. Adapt the contents of the APK Configuration file as needed. For further details, refer to the section on <a href="../../../../api-management-overview/apk-conf-lang-support" target="_blank">Enhance Configuration with APK Config Language Support</a>.
 
 !!! note
     The 'ai provider' field should be replaced with the actual AI Provider name and API Version.
@@ -187,7 +187,7 @@ Once you have crafted your APK Configuration File, you have two convenient optio
 
 ### Option 1 - Deploy API using APK Config Deployer tool
 
-To deploy the API, we need a valid access token issued by an identity provider (IdP). Follow the ["Generate Access Token"](../../../develop-and-deploy-api/security/generate-access-token.md) documentation to generate an access token.
+To deploy the API, we need a valid access token issued by an identity provider (IdP). Follow the <a href="../../../../develop-and-deploy-api/security/generate-access-token" target="_blank">Generate Access Token</a> documentation to generate an access token.
 
 After generating the token, you can deploy the API directly into APK using API Schema definition and APK configuration file using the command below.
 
@@ -288,7 +288,7 @@ kubectl apply -f <path_to_extracted_zip_file>
 
 ## Step 7. Verify the API Invocation
 
-[Generate an Access Token](../../../develop-and-deploy-api/security/generate-access-token.md) and invoke the API using the following command:
+<a href="../../../../develop-and-deploy-api/security/generate-access-token" target="_blank">Generate an access token</a> and invoke the API using the following command:
 
 === "Sample Request"
     ```
