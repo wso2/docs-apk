@@ -263,9 +263,10 @@ Follow the instructions below to design a GraphQL API.
 
 You will need a GraphQL backend in order to invoke the API and get a correct response. A sample backend for the GraphQL Star Wars API has been provided under [this section.](#sample-backend-for-graphql)
 
-Once your GraphQL API has been deployed, you can invoke it. The endpoint of the API would be <apk-gateway-url>/<api-basepath>. 
+Once your GraphQL API has been deployed, you can invoke it. The endpoint of the API would be /`<apk-gateway-host>`/`<api-basepath>`. 
 
-For the above API, the base path is "/starwars/1.0.0", so the API URL would be <apk-gateway-url>/starwars/1.0.0.
+For the above API, the base path is `/starwars/1.0.0`, and if the gateway host is `default.gw.wso2.com` so the API URL would be 
+`/default.gw.wso2.com/starwars/1.0.0`.
 
 A sample GraphQL call is provided below.
 

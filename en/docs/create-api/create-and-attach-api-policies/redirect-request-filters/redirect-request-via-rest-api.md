@@ -4,7 +4,36 @@ Request redirection allows you to send clients to a different URL. This can be u
 
 ### Step 1 - Get the API configuration
 
-Here, you can follow the steps in [Create an API](../../../get-started/quick-start-guide.md) documentation and save this content into a file named `EmployeeService.apk-conf`. You can use this apk-conf file for the rest of this guide.
+Save the following content into a file named `EmployeeService.apk-conf`. You can use this apk-conf file for the rest of this guide.
+
+```
+id: "redirect-request-api"
+name: "EmployeeServiceAPI"
+basePath: "/employee"
+version: "1.0"
+type: "REST"
+defaultVersion: false
+endpointConfigurations:
+    production:
+        endpoint: https://httpbin.org/anything
+operations:
+- target: "/employees"
+  verb: "GET"
+  secured: false
+  scopes: []
+- target: "/employee"
+    verb: "POST"
+    secured: true
+    scopes: []
+- target: "/employee/{employeeId}"
+    verb: "PUT"
+    secured: true
+    scopes: []
+- target: "/employee/{employeeId}"
+    verb: "DELETE"
+    secured: true
+    scopes: []
+```
 
 ### Step 2 - Add the request redirection policy to the apk-conf file
 
@@ -65,11 +94,11 @@ operations:
 ```
 ### Step 3 - Deploy the API in APK
 
-Refer to the [Deploy the API in APK](../../../get-started/quick-start-guide.md#deploy-the-api-in-apk) to deploy the API using APK configuration.
+Refer to the <a href="../../../../get-started/quick-start-guide#deploy-the-api-in-apk" target="_blank">Deploy the API</a> to deploy the API using APK configuration.
 
 ### Step 4 - Generate an access token
 
-Follow the [Generate Access Token](../../../develop-and-deploy-api/security/generate-access-token.md) documentation to generate an access token.
+Follow the <a href="../../../../develop-and-deploy-api/security/generate-access-token" target="_blank">Generate Access Token</a> documentation to generate an access token.
 
 ### Step 5 - Invoke the API
 

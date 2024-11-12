@@ -1,4 +1,4 @@
-Similar to the approach for [REST APIs](../rest/create-rest-api-using-crs.md), this approach requires three CRs.
+Similar to the approach for <a href="../../rest/create-rest-api-using-crs" target="_blank">REST APIs</a>, this approach requires three CRs.
 
 - API CR
 - GQLRoute CR
@@ -9,7 +9,7 @@ For this guide, you can create a sample backend for the GraphQL API using the fo
 kubectl apply -f https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/gql-sample-backend.yaml -n <namespace>
 ```
 
-The GraphQL definition file used for this guide is available at https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/definitions/StarWars.graphql.
+The GraphQL definition file used for this guide is available at <a href="https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/definitions/StarWars.graphql" target="_blank">https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/definitions/StarWars.graphql</a>.
 
 #### API CR 
 

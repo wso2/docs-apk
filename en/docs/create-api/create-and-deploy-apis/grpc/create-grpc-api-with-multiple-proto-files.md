@@ -87,7 +87,7 @@ You will get the apk-conf file content as the response, as seen in the above sam
         - Package names: `order`, `payment` and `user` 
         - Basepath: `/grpcapi`
         - Version: `v1`. 
-        - Therefore, the package string in the proto files should be `grpcapi.v1.<package_name>`. Here, it is 
+        - Therefore, the package string in the proto files should be `grpcapi.v1.<package_name>`. Here, it is `grpcapi.v1.order`, `grpcapiv1.payment` and `grpcapi.v1.user`.
 
 ### Step 3 - Updating the APK-Conf file
 
@@ -135,7 +135,7 @@ Your apk-conf file will now be as follows.
 
 ### Step 4 - Deploy the API
 
-To deploy the API, we need a valid access token issued by an identity provider (IdP). Follow the ["Generate Access Token"](../../../develop-and-deploy-api/security/generate-access-token.md) documentation to generate an access token.
+To deploy the API, we need a valid access token issued by an identity provider (IdP). Follow the <a href="../../../../develop-and-deploy-api/security/generate-access-token" target="_blank">Generate Access Token</a> documentation to generate an access 
 
 After generating the token, you can deploy the gRPC API with the following command.
 
@@ -192,11 +192,11 @@ kubectl get apis -n <namespace>
 
 ## Invoking a gRPC API
 
-You will need a gRPC backend in order to invoke the API and get a correct response. A sample backend for the Order Service APIs has been provided under [this section.](#sample-backend-for-grpc)
+You will need a gRPC backend in order to invoke the API and get a correct response. A sample backend for the Order Service APIs has been provided under [this section.](#sample-backend-for-order-service-api)
 
-Once your gRPC API has been deployed, you can invoke it either via Postman, a custom client, or the `grpcurl` command-line tool. You can download the grpcurl tool from [here](https://github.com/fullstorydev/grpcurl). Code for custom clients can be [generated](https://grpc.io/docs/) by providing the modified proto file to the Protocol buffer Compiler.
+Once your gRPC API has been deployed, you can invoke it either via Postman, a custom client, or the `grpcurl` command-line tool. You can download the grpcurl tool from <a href="https://github.com/fullstorydev/grpcurl" target="_blank">here</a>. Code for custom clients can be <a href="https://grpc.io/docs/" target="_blank">generated</a> by providing the modified proto file to the Protocol buffer Compiler.
 
-If you are using grpcurl, you can view the various flags needed for sending requests [here](https://github.com/fullstorydev/grpcurl)
+If you are using grpcurl, you can view the various flags needed for sending requests <a href="https://github.com/fullstorydev/grpcurl" target="_blank">here</a>.
 
 A sample gRPC call is provided below.
 
