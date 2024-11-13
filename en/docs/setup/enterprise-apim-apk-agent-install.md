@@ -2,7 +2,7 @@
 
 ## Before you begin...
 
-Install the [prerequisites](../../setup/prerequisites) that are required to run WSO2 API Platform For Kubernetes.
+Install the <a href="../../setup/prerequisites" target="_blank">prerequisites</a> that are required to run WSO2 APK.
 
 ## Start WSO2 API Platform For Kubernetes Enterprise Version
 

@@ -4,7 +4,7 @@ API Definition Endpoint is a way to retrieve the openapi definition. By default,
 
 ## Before you begin
 
-You can use the apk-conf file which is created in [Create an API](../../get-started/quick-start-guide.md) documentation and save this content into a file named `EmployeeServiceEndpoints.apk-conf`.
+You can use the apk-conf file which is created in <a href="../../../get-started/quick-start-guide" target="_blank">Create an API</a> documentation and save this content into a file named `EmployeeServiceEndpoints.apk-conf`.
 
 Sample content before the modification is shown below.
 
@@ -37,23 +37,25 @@ Sample content before the modification is shown below.
    ```
 ## Default API Definition Endpoint
 
-By default, the API Definition Endpoint is available at the following path and you can execute following command to retrieve the Open API Definition for a particular API.
+By default, the API Definition Endpoint is available at the path https://{host}:9095/{basepath}/{api-version}/api-definition 
 
-=== "Request"
-    ```
-        curl --location 'https://<host>:9095/test/3.14/api-definition' \
-        --header 'Host: <host>' \
-        --header 'Authorization: bearer <access-token>'
-    ```
+You can execute following command to retrieve the Open API Definition for a particular API.
+
 === "Sample Request"
     ```
         curl -k --location 'https://default.gw.wso2.com:9095/test/3.14/api-definition' \
         --header 'Host: default.gw.wso2.com' \
         --header 'Authorization: bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiZXhwIjoxNjg4MTMxNDQ0LCAibmJmIjoxNjg4MTI3ODQ0LCAiaWF0IjoxNjg4MTI3ODQ0LCAianRpIjoiMDFlZTE3NDEtMDA0Ni0xOGE2LWFhMjEtYmQwYTk4ZjYzNzkwIiwgImNsaWVudElkIjoiNDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyIiwgInNjb3BlIjoiZGVmYXVsdCJ9.RfKQq2fUZKZFAyjimvsPD3cOzaVWazabmq7b1iKYacqIdNjkvO9CQmu7qdtrVNDmdZ_gHhWLXiGhN4UTSCXv_n1ArDnxTLFBroRS8dxuFBZoD9Mpj10vYFSDDhUfFqjgMqtpr30TpDMfee1wkqB6K757ZSjgCDa0hAbv555GkLdZtRsSgR3xWcxPBsIozqAMFDCWoUCbgTQuA5OiEhhpVco2zv4XLq2sz--VRoBieO12C69KnGRmoLuPtvOayInvrnV96Tbt9fR0fLS2l1nvAdFzVou0SIf9rMZLnURLVQQYE64GR14m-cFRYdUI9vTsFHZBl5w-uCLdzMMofzZaLQ'
     ```
+=== "Request Format"
+    ```
+        curl --location 'https://<host>:9095/<basepath>/<api-version>/api-definition' \
+        --header 'Host: <host>' \
+        --header 'Authorization: bearer <access-token>'
+    ```
 
 !!!NOTE
-    In a default API, the default API Definition Endpoint is also available at the following path: `https://<host>:9095/test/api-definition`
+    In a default API, the default API Definition Endpoint is also available at the following path: `https://<host>:9095/<basepath>/api-definition`
 
 ## Customize API Definition Endpoint
 

@@ -11,7 +11,7 @@ Supported distributed tracing systems,
 
 ## Configure Distributed Tracing
 
-To set up distributed tracing, start by following the instructions outlined in [Customize Configurations](../setup/Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file, which you will then use to tailor the tracing configurations to your specific needs.
+To set up distributed tracing, start by following the instructions outlined in <a href="../../setup/Customize-Configurations" target="_blank">Customize Configurations</a>. These instructions will guide you through the process of acquiring the `values.yaml` file, which you will then use to tailor the tracing configurations to your specific needs.
 
 !!! note
     If you are trying out tracing capabilities of APK and do not have an actual deployment of Jaeger or Zipkin, you can start APK together with Jaeger/Zipkin by applying  the below kubernetes artifacts to your cluster.
@@ -182,7 +182,7 @@ When using **Jaeger** for tracing, the format is same as for **Zipkin** to publi
         maxPathLength: "256"
     ``` 
 
-2. Follow the [quick start]({{base_path}}/en/latest/get-started/quick-start-guide/) guide and invoke backend.
+2. Follow the <a href="../../get-started/quick-start-guide" target="_blank">quick start guide</a> and invoke backend.
 3. Open Jaeger UI to view the traces. Navigate to `http://jaeger.example.com`
 
 You will be able to browse through the request traces and expand each trace to view complete trace details.
@@ -208,7 +208,7 @@ Follow these steps to configure WSO2 APK with Zipkin.
         maxPathLength: "256"
     ``` 
     
-2. Follow the [quick start]({{base_path}}/en/latest/get-started/quick-start-guide/) guide and invoke backend.
+2. Follow the <a href="../../get-started/quick-start-guide" target="_blank">quick start guide</a> and invoke backend.
 3. Invoke the newly create API and open Zipkin UI to view the traces. Navigate to `http://zipkin.example.com`
 4. Filter traces by `tagQuery=otel.library.name=APK` query.
 
@@ -253,11 +253,11 @@ Follow these steps to configure WSO2 APK with Azure Application Insights.
             maximumTracesPerSecond: "2"
         ``` 
 
-3. Follow the [quick start]({{base_path}}/en/latest/get-started/quick-start-guide/) guide and invoke backend.
-4. Now open "Azure Application Insights" Trasaction search window and select `Dependency` for `Event types` filter  
+3. Follow the <a href="../../get-started/quick-start-guide" target="_blank">quick start guide</a> and invoke backend.
+4. Now open "Azure Application Insights" Transaction search window and select `Dependency` for `Event types` filter  
     [![Azure Trace Filter](../assets/img/distributed-tracing/trace-azure-filter.png)](../assets/img/distributed-tracing/trace-azure-filter.png)
 
-You will be able to see all traces. Detailed trace view will look like below.
+You will be able to see all traces. The detailed trace view will look like the following image.
 
 [![Azure Trace](../assets/img/distributed-tracing/trace-azure.png)](../assets/img/distributed-tracing/trace-azure.png)
 
@@ -267,7 +267,7 @@ You will be able to see all traces. Detailed trace view will look like below.
 
 #### Configure APK to publish OTLP traces to a Jaeger backend
 
-1. The kubernetes artifacts you have applied at the beginning already contain the required configuration for APK to publish OTLP traces. Add the following configuration to `values.yaml`'s `wso2.apk.dp.gatewayRuntime` section.
+1. The Kubernetes artifacts you have applied at the beginning already contains the required configuration for APK to publish OTLP traces. Add the following configuration to `values.yaml`'s `wso2.apk.dp.gatewayRuntime` section.
 
     ```yaml
     tracing: 
@@ -283,7 +283,7 @@ You will be able to see all traces. Detailed trace view will look like below.
         connectionTimeout: "20"
     ``` 
 
-2. Follow the [quick start]({{base_path}}/en/latest/get-started/quick-start-guide/) guide and invoke backend.
+2. Follow the <a href="../../get-started/quick-start-guide" target="_blank">quick start guide</a> and invoke backend.
 3. Open Jaeger UI to view the traces. Navigate to `http://CLUSTER_IP:16686`
 
 You will be able to browse through the request traces and expand each trace to view complete trace details.
@@ -324,7 +324,7 @@ You will be able to browse through the request traces and expand each trace to v
         connectionTimeout: "20"
     ``` 
 
-3. Follow the [quick start]({{base_path}}/en/latest/get-started/quick-start-guide/) guide and invoke backend.
+3. Follow the <a href="../../get-started/quick-start-guide" target="_blank">quick start guide</a> and invoke backend.
 4. Go to New Relic Tracing dashboard to view the traces.
 
 You will be able to browse through the request traces and expand each trace to view complete trace details.
