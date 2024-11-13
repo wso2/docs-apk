@@ -1,11 +1,12 @@
 This approach requires five CRs.
+
 - API CR
 - HTTPRoute CR
 - Backend CR
 - APIPolicy CR
 - Secret CR
 
-Let's create an AI API with following steps:
+Let's create an AI API with the following steps:
 
 - [Create API CR](#create-api-cr)
 - [Create HTTPRoute CR](#create-httproute-cr)

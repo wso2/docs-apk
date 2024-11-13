@@ -2,7 +2,7 @@
 
 !!! Tip
     
-    To get familiar with the concept of Rate Limiting, see [Rate Limiting Overview](./rate-limiting-policy-overview.md).
+    To get familiar with the concept of Rate Limiting, see <a href="../../../create-api/rate-limiting/rate-limiting-policy-overview" target="_blank">Rate Limiting Overview</a>.
 
 You need to define the API Policies as separate Custom Resources (CRs) when creating an API using the Kubernetes Command Line Interface (kubctl). Let's get familiar with the [API-level](#api-level) and [Operation-level](#operation-level) configurations and the [configurations definitions](#configuration-definitions) that you will use to add Rate Limiting Policies..
 
@@ -90,7 +90,7 @@ The following are the configurations that you need when defining Rate Limiting P
         </table>
   </tr>
   <tr>
-    <td><code><a href="#spec">spec<a/></code></td>
+    <td><code><a href="#spec">spec</a></code></td>
     <td>This defines the configuration related to the Rate Limiting Policy. </br>The configuration will vary based on whether you are creating an API-Level or Operation-Level Rate Limiting Policy.</td>
   </tr>
 </tbody>
@@ -201,8 +201,8 @@ Follow the instructions below to add an API-level Rate Limiting Policy to an API
 
 !!! note "Before you begin"
     
-    - Install the [prerequisites](../../../setup/prerequisites) that are required to run WSO2 APK.
-    - [Start WSO2 APK](../../../get-started/quick-start-guide/#step-1-start-wso2-apk).
+    - Install the <a href="../../../setup/prerequisites" target="_blank">prerequisites</a> that are required to run WSO2 APK.
+    - <a href="../../../get-started/quick-start-guide" target="_blank">Start WSO2 APK</a>.
 
 **Step 1 - Define the CRs**
 
@@ -241,8 +241,8 @@ Follow the instructions below to add an Operation-level Rate Limiting Policy to 
 
 !!! note "Before you begin"
     
-    - Install the [prerequisites](../../../setup/prerequisites) that are required to run WSO2 APK.
-    - [Start WSO2 APK](../../../get-started/quick-start-guide/#step-1-start-wso2-apk).
+    - Install the <a href="../../../setup/prerequisites" target="_blank">prerequisites</a> that are required to run WSO2 APK.
+    - <a href="../../../get-started/quick-start-guide" target="_blank">Start WSO2 APK</a>.
 
 **Step 1 - Define the CRs**
 

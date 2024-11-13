@@ -168,7 +168,7 @@ Follow the instructions below to design a GraphQL API.
       scopes: []
     ```
 
-4. To invoke the system APIs such as for deploying, we need a valid access token issued by an identity provider (IdP). Follow the ["Generate Access Token"](../../../develop-and-deploy-api/security/generate-access-token.md) documentation to generate an access token.
+4. To deploy the API, we need a valid access token issued by an identity provider (IdP). Follow the <a href="../../../../develop-and-deploy-api/security/generate-access-token" target="_blank">Generate Access Token</a> documentation to generate an access token.
 
 5. After generating the token, you can deploy the GraphQL API with the command
 

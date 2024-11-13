@@ -4,26 +4,26 @@ Follow the instructions below to use Asgardeo as the Identity Provider (IdP) to 
 
 ## Step 1 - Create root Organization
 
-[Create an organization in Asgardeo](https://wso2.com/asgardeo/docs/guides/organization-management/manage-organizations/#create-a-new-organization).
+<a href="https://wso2.com/asgardeo/docs/guides/organization-management/manage-organizations/#create-a-new-organization" target="_blank">Create an organization in Asgardeo</a> 
 
 ## Step 2 - Create a Sub-Organization.
 
-[Create a sub-organization in Asgardeo](https://wso2.com/asgardeo/docs/guides/organization-management/manage-organizations/#build-an-organizational-hierarchy) within the organization that you created.
+<a href="https://wso2.com/asgardeo/docs/guides/organization-management/manage-organizations/#build-an-organizational-hierarchy" target="_blank">Create a sub organization in Asgardeo</a> within the organization that you created.
 
 ## Step 3 - Create a user
 
-[Create a user within the sub-organization](https://wso2.com/asgardeo/docs/guides/users/manage-customers/#onboard-a-user) that you created.
+<a href="https://wso2.com/asgardeo/docs/guides/users/manage-customers/#onboard-a-user" target="_blank">Create a user </a> within the sub-organization that you created.
 
 ## Step 4 - Create an application
 
-1. [Create an application](https://wso2.com/asgardeo/docs/guides/applications/register-oidc-web-app/#register-the-app) within the main organization that you created in Step 1.
+1. <a href="https://wso2.com/asgardeo/docs/guides/applications/register-oidc-web-app/#register-the-app" target="_blank">Create an application </a> within the main organization that you created in Step 1.
 2. Click on the newly created application.
 3. Click on the **Info** tab to view the IDP related configurations.
 
     All the IDP related configurations are listed under **Service Endpoints**.
 
-4. [Share application with sub-organizations](https://wso2.com/asgardeo/docs/guides/organization-management/share-applications/).
-
+4. <a href="https://wso2.com/asgardeo/docs/guides/organization-management/share-applications/" target="_blank">Share the application with sub-organizations </a>
+  
 ## Step 5 - Add a new token issuer for the IDP
 
 1. Access the endpoints that correspond to the application, which is available in the asgradeo portal.
@@ -107,7 +107,7 @@ Follow the instructions below to use Asgardeo as the Identity Provider (IdP) to 
 
         ## Step 5 - Update the Helm Chart
 
-        1. Follow the instructions outlined in [Customize Configurations](../../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file. Open the `values.yaml` file.
+        1. Follow the instructions outlined in the <a href="../../../Customize-Configurations" target="_blank">customize configurations documentation</a>. These instructions will guide you through the process of acquiring the `values.yaml` file. Open the `values.yaml` file.
         2. Update the IDP related configurations in the `idp` section.
         3. Create a K8s Secret with retrieved `clientId` and `clientSecret` from Step 4 with name `apk-idp-secret`.
               ```
