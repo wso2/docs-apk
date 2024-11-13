@@ -11,5 +11,5 @@ In addition to protecting the API, Rate Limiting can also help organizations man
 Overall, Rate Limiting is a crucial feature in API management that helps to ensure the availability, reliability, and security of APIs while also managing costs and maintaining fair access for all clients.
 
 ## What's Next?
-- [Learn to add Rate Limiting Policies using the REST API Interface](../../create-api/rate-limiting/add-new-rate-limiting-policies-via-rest-api.md)
-- [Learn to add Rate Limiting Policies using a Custom Resource (CR)](../../create-api/rate-limiting/add-new-rate-limiting-policies-via-crs.md)
+- <a href="../../../create-api/rate-limiting/add-new-rate-limiting-policies-via-rest-api" target="_blank">Learn to add Rate Limiting Policies using the REST API Interface</a> 
+- <a href="../../../create-api/rate-limiting/add-new-rate-limiting-policies-via-crs" target="_blank">Learn to add Rate Limiting Policies using a Custom Resource (CR)</a> 

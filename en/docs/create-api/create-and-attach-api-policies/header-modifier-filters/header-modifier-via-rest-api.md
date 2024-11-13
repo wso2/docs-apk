@@ -94,6 +94,7 @@ operations:
 ```
 
 Similarly, you can do the following to both request and response headers.
+
 1. Add headers
 2. Update existing headers
 3. Remove headers
@@ -118,7 +119,7 @@ curl --location 'https://default.gw.wso2.com:9095/employees/1.0/employee' \
 --header 'Authorization: Bearer <accessToken>
 ```
 
-Since this guide uses the [httpbin service](https://httpbin.org/anything) which echoes the request and all of its headers, when you invoke the API, you will see the header "Test-Request-Header" with the value "Test-Value".
+Since this guide uses the <a href="https://httpbin.org/anything" target="_blank">httpbin service</a> which echoes the request and all of its headers, when you invoke the API, you will see the header "Test-Request-Header" with the value "Test-Value".
 
 ### Sample Configurations
 

@@ -159,7 +159,7 @@ nav:
                     - OAuth2: develop-and-deploy-api/security/authentication/enable-api-security/oauth2.md
                     - Mutual SSL: develop-and-deploy-api/security/authentication/enable-api-security/mtls.md
         - API Versions:
-            - Create an API Version: develop-and-deploy-api/api-versions/create-an-api-versions.md
+            - Create an API Version: develop-and-deploy-api/api-versions/create-an-api-version.md
             - Default Version: develop-and-deploy-api/api-versions/default-version.md
             - Semantic Versioning Based Intelligent Routing: develop-and-deploy-api/api-versions/semver-based-intelligent-routing.md
             #- Backward Compatibility: develop-and-deploy-api/api-versions/backward-compatibility.md

@@ -11,11 +11,11 @@ This section is a step-by-step guide to add or configure existing listeners the 
 
 ## Before you begin...
 
-Install the [prerequisites](../prerequisites.md) that are required to run WSO2 API Platform For Kubernetes.
+Install the <a href="../../../setup/prerequisites" target="_blank">prerequisites</a> that are required to run WSO2 APK.
 
 ## Step 1 - Start WSO2 API Platform For Kubernetes
 
-[Start the APK deployment ](../../get-started/quick-start-guide.md).
+<a href="../../../get-started/quick-start-guide" target="_blank">Start the APK deployment</a>.
 
 ## Step 2 - Adding a new listener
 
