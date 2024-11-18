@@ -29,7 +29,7 @@ rateLimit:
     defaultVersion: false
     endpointConfigurations:
       production:
-        endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
+        endpoint: "http://employee-service:8080"
     operations:
       - target: "/employee"
         verb: "GET"
@@ -63,7 +63,7 @@ rateLimit:
     defaultVersion: false
     endpointConfigurations:
       production:
-        endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
+        endpoint: "http://employee-service:8080"
     operations:
       - target: "/employee"
         verb: "GET"
@@ -128,7 +128,7 @@ Sample content before the modification is shown below.
   defaultVersion: false
   endpointConfigurations:
     production:
-      endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
+      endpoint: "http://employee-service:8080"
   operations:
     - target: "/employee"
       verb: "GET"
@@ -171,7 +171,7 @@ Sample content after the modification is shown below.
     unit: "Minute"
   endpointConfigurations:
     production:
-      endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
+      endpoint: "http://employee-service:8080"
   operations:
   - target: "/employee"
     verb: "GET"
@@ -244,7 +244,7 @@ Use the values provided in the table below in the body of your request.
           unit: "Minute"
         endpointConfigurations:
           production:
-            endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
+            endpoint: "http://employee-service:8080"
         operations:
         - target: "/employee"
           verb: "GET"
@@ -292,7 +292,7 @@ Sample content before the modification is shown below.
   defaultVersion: false
   endpointConfigurations:
     production:
-      endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
+      endpoint: "http://employee-service:8080"
   operations:
     - target: "/employee"
       verb: "GET"
@@ -332,7 +332,7 @@ Sample content after the modification is shown below.
   defaultVersion: false
   endpointConfigurations:
     production:
-      endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
+      endpoint: "http://employee-service:8080"
   operations:
   - target: "/employee"
     verb: "GET"
@@ -405,7 +405,7 @@ Use the values provided in the table below in the body of your request.
         defaultVersion: false
         endpointConfigurations:
           production:
-            endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
+            endpoint: "http://employee-service:8080"
         operations:
         - target: "/employee"
           verb: "GET"
