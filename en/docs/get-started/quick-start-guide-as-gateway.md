@@ -7,10 +7,10 @@ This section is a step-by-step guide to creating, deploying, and invoking an API
 
 ## Before you begin...
 
-Install the [prerequisites](../../setup/prerequisites) that are required to run the WSO2 API Platform For Kubernetes.
+Install the <a href="../../setup/prerequisites" target="_blank">prerequisites</a> that are required to run the WSO2 API Platform for Kubernetes.
 
 !!!NOTE
-    If you already have an installation of the APK in your cluster, please remove the installation by following the steps specified in the [Uninstall APK](../setup/uninstall.md) section.
+    If you already have an installation of the APK in your cluster, please remove the installation by following the steps specified in the <a href="../../setup/uninstall" target="_blank">Uninstall APK</a> section.
 
 ### Create Kubernetes namespace
 
@@ -60,10 +60,10 @@ Setup WSO2 API Manager 4.3.0 in K8s cluster using Helm Charts.
         helm install <chart-name> <repository-name>/wso2am-cp --version <version-of-APIM> -f <path-to-values.yaml-file>
         ```
 
-4. Install NGINX Ingress Controller. Please refer to the [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/deploy/#local-development-clusters) documentation for more information.
+4. Install NGINX Ingress Controller. Please refer to the <a href="https://kubernetes.github.io/ingress-nginx/deploy/#local-development-clusters" target="_blank">NGINX Ingress Controller</a> documentation for more information.
 
 !!! Note
-    Please refer to the [Advance Configuration for APIM](../apim-deploy.md) for more information.
+    Please refer to the <a href="../../control-plane/apim-deploy/" target="_blank">Advanced Configuration for APIM</a> for more information.
 
 ### Setup WSO2 APK Dataplane 1.1.0
 

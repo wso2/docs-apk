@@ -72,7 +72,7 @@ type: "REST"
 defaultVersion: true
 endpointConfigurations:
   production:
-    endpoint: "https://httpbin.org"
+    endpoint: "http://employee-service:8080"
     endpointSecurity:
       enabled: true
       securityType:
@@ -80,7 +80,7 @@ endpointConfigurations:
         userNameKey: "username"
         passwordKey: "password"
 operations:
-  - target: "/employee"
+  - target: "/employees"
     verb: "GET"
     secured: true
     scopes: []

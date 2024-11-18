@@ -40,13 +40,13 @@ This includes setting the application's settings, such as the application name a
 
 2. Create two file named `idp-system-token-issuer.yaml` and `idp-org-token-issuer.yaml` add the following content to it.
 
-    | **Parameter** | **Description** |
-    |---------------|-----------------|
-    | `issuer:` | The IdP's issuer URL. |
-    | `jwksEndpoint:` |  The URL of the IdP's JSON Web Key Set (JWKS) endpoint.  |
-    | `usernameClaim:` |  The claim in the IdP's token that represents the user's username.  |
-    | `organizationClaim:` |  The claim in the IdP's token that represents the user's organization.   |
-    | `organization:` |  The organization of IDP. To invoke system APIs, this should be `apk-system`. To invoke particular organizaiton's APIs, this should be organization claim value.  |
+    | **Parameter**        | **Description**                                                                                                                                                 |
+    | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | `issuer:`            | The IdP's issuer URL.                                                                                                                                           |
+    | `jwksEndpoint:`      | The URL of the IdP's JSON Web Key Set (JWKS) endpoint.                                                                                                          |
+    | `usernameClaim:`     | The claim in the IdP's token that represents the user's username.                                                                                               |
+    | `organizationClaim:` | The claim in the IdP's token that represents the user's organization.                                                                                           |
+    | `organization:`      | The organization of IDP. To invoke system APIs, this should be `apk-system`. To invoke particular organizaiton's APIs, this should be organization claim value. |
 
 
     === "For System APIs"
@@ -133,12 +133,12 @@ This includes setting the application's settings, such as the application name a
 
           The Idp section should include the following parameters:
 
-          | **Parameter** | **Description** |
-          |---------------|-----------------|
-          | `issuer:` | The IdP's issuer URL. |
-          | `jwksEndpoint:` |  The URL of the IdP's JSON Web Key Set (JWKS) endpoint.  |
-          | `usernameClaim:` |  The claim in the IdP's token that represents the user's username.  |
-          | `organizationClaim:` |  The claim in the IdP's token that represents the user's organization, if applicable.  |
+          | **Parameter**        | **Description**                                                                      |
+          | -------------------- | ------------------------------------------------------------------------------------ |
+          | `issuer:`            | The IdP's issuer URL.                                                                |
+          | `jwksEndpoint:`      | The URL of the IdP's JSON Web Key Set (JWKS) endpoint.                               |
+          | `usernameClaim:`     | The claim in the IdP's token that represents the user's username.                    |
+          | `organizationClaim:` | The claim in the IdP's token that represents the user's organization, if applicable. |
 
 ## Step 7 - Start WSO2 APK
 

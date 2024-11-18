@@ -21,15 +21,15 @@ APK is primarily meant for anyone who wants API management in the Kubernetes dom
 
 ### 1. What are the minimum requirements needed to run WSO2 APK?
 
-Refer to the [prerequisites](../setup/prerequisites.md) section for this information.
+Refer to the <a href="{{base_path}}/en/{{site_version}}/setup/prerequisites#prerequisites" target="_blank">prerequisites</a> section for this information.
 
 ### 2. I want to customize some configurations in my Helm deployment. How can I do this?
 
-Refer to the [customize configurations](../setup/Customize-Configurations.md) section for this information.
+Refer to the <a href="../../setup/Customize-Configurations" target="_blank">customize configurations</a> section for this information.
 
 ### 3. What are the Kubernetes distributions supported by WSO2 APK?
 
-Minikube, Rancher, Kind and Openshift are supported. For more information about the supported versions, please refer to the [supported Kubernetes distributions](../setup/prerequisites.md#kubernetes-distributions) section.
+Minikube, Rancher, Kind and Openshift are supported. For more information about the supported versions, please refer to the <a href="{{base_path}}/en/{{site_version}}/setup/prerequisites#kubernetes-distributions" target="_blank">supported Kubernetes distributions</a> section.
 
 ### 4. Why are pods not transitioning to the running state for a long time?
 
@@ -93,8 +93,8 @@ If you see `ImagePullBackOff` error or the image is still in the pulling stage, 
 
 4. Delete all the APK related CRDs.
    ```
-   curl -L -o apk.tar.gz "https://github.com/wso2/apk/archive/refs/tags/1.0.0.tar.gz" && tar -zxvf apk.tar.gz
-   cd apk-1.0.0/helm-charts/crds
+   curl -L -o apk.tar.gz "https://github.com/wso2/apk/archive/refs/tags/1.1.0.tar.gz" && tar -zxvf apk.tar.gz
+   cd apk-1.1.0/helm-charts/crds
    kubectl delete -f .
    ```
 
@@ -168,15 +168,19 @@ helm install apk wso2apk/apk-helm --version 1.1.0
 ## Functionality
 
 ### 1. What are the API types supported by WSO2 APK?
-Currently, WSO2 APK only supports REST APIs.
+Currently, WSO2 APK supports REST APIs, GraphQL APIs and gRPC APIs.
 
 ### 2. Can I perform API request/response transformations?
 
-Yes, you can. Refer to the [Interceptors](../create-api/create-and-attach-api-policies/api-policies-overview.md) for information on how to configure this.
+Yes, you can. 
+
+Refer to the <a href="{{base_path}}/en/{{site_version}}/create-api/create-and-attach-api-policies/interceptors/interceptors-overview" target="_blank">Interceptors documentation</a> for information on how to configure an Interceptor service.
+
+Alternatively, you can refer to <a href="{{base_path}}/en/{{site_version}}/create-api/create-and-attach-api-policies/header-modifier-filters/overview" target="_blank">Header modification filters</a> for header modification support.
 
 ### 3. What are the CRDs used in WSO2 APK?
 
-Refer to the [CRD catalog](../catalogs/kubernetes-crds.md) for details on the CRDs used in the APK, including examples and the configuration definitions.
+Refer to the <a href="{{base_path}}/en/{{site_version}}/catalogs/kubernetes-crds" target="_blank">CRD catalog</a> for details on the CRDs used in the APK, including examples and the configuration definitions.
 
 ## Security
 
@@ -207,15 +211,15 @@ It is likely due to a limitation in Helm when updating Custom Resource Definitio
     === "Command"
 
         ```
-        curl -L -o apk.tar.gz "https://github.com/wso2/apk/archive/refs/tags/1.0.0.tar.gz" && tar -zxvf apk.tar.gz
+        curl -L -o apk.tar.gz "https://github.com/wso2/apk/archive/refs/tags/1.1.0.tar.gz" && tar -zxvf apk.tar.gz
         ```
 
-2.  Go to the apk-1.0.0/helm-charts/crds folder and apply the CRDs manually.
+2.  Go to the apk-1.1.0/helm-charts/crds folder and apply the CRDs manually.
 
     === "Command"
 
         ```
-        cd apk-1.0.0/helm-charts/crds
+        cd apk-1.1.0/helm-charts/crds
         kubectl apply -f .
         ```
 
