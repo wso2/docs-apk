@@ -40,7 +40,7 @@ When you have attached an Interceptor `APIPolicy` like above example to your `AP
 ![Interceptors]({{base_path}}/en/latest/assets/img/api-management/api-policies/interceptors/interceptors-light.png#only-light)
 ![Interceptors]({{base_path}}/en/latest/assets/img/api-management/api-policies/interceptors/interceptors-dark.png#only-dark)
 
-If you are an API developer, you can write a custom request/response interceptor microservice in any programming language of your choice by following [the Interceptor OpenAPI Definition](https://github.com/wso2/apk/blob/main/developer/resources/interceptor-service-open-api-v1.yaml). Then you can configure the following spec fields in the `APIPolicy` CR to wire your interceptor serivce with the `API`.
+If you are an API developer, you can write a custom request/response interceptor microservice in any programming language of your choice by following <a href="https://github.com/wso2/apk/blob/main/developer/resources/interceptor-service-open-api-v1.yaml" target="_blank">the Interceptor OpenAPI Definition</a>. Then you can configure the following spec fields in the `APIPolicy` CR to wire your interceptor serivce with the `API`.
 
 <table>
 <thead>
@@ -87,11 +87,11 @@ When you want the policy only to be defined in a single level, then defining the
 
 Configuring an interceptor requires the following two steps.
 
-1. [Implement an interceptor microservice adhering to the Interceptor OpenAPI Definition](https://apim.docs.wso2.com/en/latest/deploy-and-publish/deploy-on-gateway/choreo-connect/message-transformation/interceptor-microservice/interceptor-microservice/)
+1. <a href="https://apim.docs.wso2.com/en/latest/deploy-and-publish/deploy-on-gateway/choreo-connect/message-transformation/interceptor-microservice/interceptor-microservice/" target="_blank">Implement an interceptor microservice adhering to the Interceptor OpenAPI Definition</a>
 
-2. For reference, a sample interceptor service for data conversion between application/json and application/xml data types with interceptor policy CRs can be found here: [request-response-mediation-interceptors](https://github.com/wso2/apk/tree/main/samples/request-response-mediation-interceptors)
+2. For reference, a sample interceptor service for data conversion between application/json and application/xml data types with interceptor policy CRs can be found here: <a href="https://github.com/wso2/apk/tree/main/samples/request-response-mediation-interceptors" target="_blank">request-response-mediation-interceptors</a>
 
 3. Create `APIPolicy` with interceptor configuration and attach it to your `API`.
     
-    - [Attach Interceptor APIPolicy via REST API](../interceptors-via-rest-api)
-    - [Attach Interceptor APIPolicy via CR](../interceptors-via-crs)
+    - <a href="../interceptors-via-rest-api" target="_blank">Attach Interceptor APIPolicy via REST API</a>
+    - <a href="../interceptors-via-crs" target="_blank">Attach Interceptor APIPolicy via CR</a>

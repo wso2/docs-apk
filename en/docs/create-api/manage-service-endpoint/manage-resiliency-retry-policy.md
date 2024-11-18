@@ -84,7 +84,7 @@ operations:
     scopes: []
 ```
 
-You can then deploy this API by following the steps in the [Deploy the API in APK](../../get-started/quick-start-guide.md#deploy-the-api-in-apk) documentation.
+You can then deploy this API by following the steps in the <a href="../../../get-started/quick-start-guide#deploy-the-api-in-apk" target="_blank">Deploy the API in APK</a> documentation.
 
 ## Via CRs
 
@@ -110,7 +110,7 @@ spec:
     port: 443
 ```
 
-For more information, see [x-envoy-max-retries](https://www.envoyproxy.io/docs/envoy/v1.24.1/configuration/http/http_filters/router_filter#config-http-filters-router-x-envoy-max-retries) in the official Envoy documentation.
+For more information, see <a href="https://www.envoyproxy.io/docs/envoy/v1.24.1/configuration/http/http_filters/router_filter#config-http-filters-router-x-envoy-max-retries" target="_blank">x-envoy-max-retries</a> in the official Envoy documentation.
 
 **Step 2 - Apply the CRs**
 

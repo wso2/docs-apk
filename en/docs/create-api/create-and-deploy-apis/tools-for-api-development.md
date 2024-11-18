@@ -7,7 +7,7 @@ APK offers a suite of developer tools to streamline the API development process 
 
 - <b>APK Config language support VSCode Plugin</b>
     
-    VSCode plugin provides an intuitive interface for writing APK Conf files, reducing the learning curve for developers. For more details, refer to the section on [Enhance Configuration with APK Config Language Support](./apk-conf-lang-support.md)
+    VSCode plugin provides an intuitive interface for writing APK Conf files, reducing the learning curve for developers. For more details, refer to the section on <a href="../apk-conf-lang-support" target="_blank">Enhance Configuration with APK Config Language Support</a>
 
 - <b>Config Generator</b>
 

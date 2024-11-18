@@ -1,6 +1,6 @@
 ## Before you begin
 
-- You can use the below sample `apk-conf` file to create an API. For reference follow [Quick Start Guide](../../../get-started/quick-start-guide.md) documentation.
+- You can use the below sample `apk-conf` file to create an API. For reference follow <a href="../../../../get-started/quick-start-guide" target="_blank">Quick Start Guide</a> documentation.
 
 ```yaml
 name: "Interceptor API"
@@ -317,4 +317,4 @@ The following are the configurations that you need when attaching API Policies t
 
 ## Deploy APK configuration
 
-Refer [Quick Start Guide](../../../get-started/quick-start-guide.md)  to deploy the API using APK configuration.
+Refer <a href="../../../../get-started/quick-start-guide" target="_blank">Quick Start Guide</a>  to deploy the API using APK configuration.

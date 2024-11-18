@@ -2,7 +2,7 @@
 
 !!! Tip
     
-    To get familiar with the concept of Rate Limiting, see [Rate Limiting Overview](./rate-limiting-policy-overview.md).
+    To get familiar with the concept of Rate Limiting, see <a href="../rate-limiting-policy-overview" target="_blank">Rate Limiting Overview</a>.
 
 You need to define the Rate Limiting Policies in the API payload when creating an API using the REST API Interface. You can define either API-level or Operation-level Rate Limiting Policies. Let's get familiar with the [API-level](#api-level) and [Operation-level (Resource-Level)](#operation-level-resource-level-rate-limiting) configurations and also the [configuration definitions](#configuration-definitions).
 
@@ -111,12 +111,12 @@ Follow the instructions below to add an API-level Rate Limiting Policy to an API
 
 !!! note "Before you begin"
     
-    - Install the [prerequisites](../../../setup/prerequisites) that are required to run WSO2 APK.
-    - [Start WSO2 APK](../../../get-started/quick-start-guide/#step-1-start-wso2-apk).
+    - Install the <a href="../../../setup/prerequisites" target="_blank">prerequisites</a> that are required to run WSO2 APK.
+    - <a href="../../../get-started/quick-start-guide/#step-1-start-wso2-apk" target="_blank">Start WSO2 APK</a>.
 
 ### Retrieve existing API configuration.
 
-Here, you can use the apk-conf file which is created in [Create an API](../../get-started/quick-start-guide.md) documentation and save this content into a file named `EmployeeServiceV2.apk-conf`.
+Here, you can use the apk-conf file which is created in <a href="../../../get-started/quick-start-guide" target="_blank">Create an API</a> documentation and save this content into a file named `EmployeeServiceV2.apk-conf`.
 
 Sample content before the modification is shown below.
 
@@ -193,7 +193,7 @@ Sample content after the modification is shown below.
 
 ### Generate an access token to deploy API.
 
-To invoke the system APIs such as for deploying, we need a valid access token issued by an identity provider (IdP). Follow the ["Generate Access Token"](../../develop-and-deploy-api/security/generate-access-token.md) documentation to generate an access token.
+To invoke the system APIs such as for deploying, we need a valid access token issued by an identity provider (IdP). Follow the <a href="../../../develop-and-deploy-api/security/generate-access-token" target="_blank">"Generate Access Token"</a> documentation to generate an access token.
 
 ### Deploy the API with API level rate limit policy.
 
@@ -206,7 +206,7 @@ Use the values provided in the table below in the body of your request.
    | apkConfiguration | `EmployeeServiceV2.apk-conf` file     |
    | definitionFile   | `EmployeeServiceDefinition.json` file |
 
-1.  Set the access token in the Authorization header as a bearer token. This is the access token received by following the steps under ["Generate an access token to invoke APIs"](../../get-started/quick-start-guide.md#generate-an-access-token-to-invoke-apis) section.
+1.  Set the access token in the Authorization header as a bearer token. This is the access token received by following the steps under <a href="../../../get-started/quick-start-guide#generate-an-access-token-to-invoke-apis" target="_blank">"Generate an access token to invoke APIs"</a> section.
 2.  Execute the API deployment request. You will receive a successful response with an Id for the API.
 
     === "Request"
@@ -275,12 +275,12 @@ Follow the instructions below to add an Resource-level Rate Limiting Policy to a
 
 !!! note "Before you begin"
     
-    - Install the [prerequisites](../../../setup/prerequisites) that are required to run WSO2 APK.
-    - [Start WSO2 APK](../../../get-started/quick-start-guide/#step-1-start-wso2-apk).
+    - Install the <a href="../../../setup/prerequisites" target="_blank">prerequisites</a> that are required to run WSO2 APK.
+    - <a href="../../../get-started/quick-start-guide/#step-1-start-wso2-apk" target="_blank">Start WSO2 APK</a>.
 
 ### Retrieve existing API configuration.
 
-Here, you can use the apk-conf file which is created in [Create an API](../../get-started/quick-start-guide.md) documentation and save this content into a file named `EmployeeServiceV3.apk-conf`.
+Here, you can use the apk-conf file which is created in <a href="../../../get-started/quick-start-guide" target="_blank">Create an API</a> documentation and save this content into a file named `EmployeeServiceV3.apk-conf`.
 
 Sample content before the modification is shown below.
 
@@ -357,7 +357,7 @@ Sample content after the modification is shown below.
 
 ### Generate an access token to deploy API.
 
-To invoke the system APIs such as for deploying, we need a valid access token issued by an identity provider (IdP). Follow the ["Generate Access Token"](../../develop-and-deploy-api/security/generate-access-token.md) documentation to generate an access token.
+To invoke the system APIs such as for deploying, we need a valid access token issued by an identity provider (IdP). Follow the <a href="../../../develop-and-deploy-api/security/generate-access-token" target="_blank">"Generate Access Token"</a> documentation to generate an access token.
 
 ### Deploy the API with resource level rate limit policy.
 
@@ -370,7 +370,7 @@ Use the values provided in the table below in the body of your request.
    | apkConfiguration | `EmployeeServiceV3.apk-conf` file     |
    | definitionFile   | `EmployeeServiceDefinition.json` file |
 
-1.  Set the access token in the Authorization header as a bearer token. This is the access token received by following the steps under ["Generate an access token to invoke APIs"](../../get-started/quick-start-guide.md#generate-an-access-token-to-invoke-apis) section.
+1.  Set the access token in the Authorization header as a bearer token. This is the access token received by following the steps under <a href="../../../get-started/quick-start-guide#generate-an-access-token-to-invoke-apis" target="_blank">"Generate an access token to invoke APIs"</a> section.
 2.  Execute the API deployment request. You will receive a successful response with an Id for the API.
 
     === "Request"

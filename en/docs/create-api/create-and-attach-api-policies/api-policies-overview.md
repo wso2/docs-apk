@@ -49,7 +49,8 @@ When you attach a policy at the API-level, it will be applied globally to all th
 
 ## What's Next?
 
-- [Learn to attach API Policies for Interceptor Services](./interceptors/interceptors-overview.md)
-- [Learn to attach API Policies for Backend JWT Token Manipulation](./backend-jwt-token-manipulation/overview.md)
-- [Learn to attach API Policies for CORS](./cors/enable-cors-via-rest-api.md)
+- <a href="../interceptors/interceptors-overview" target="_blank">Learn to attach API Policies for Interceptor Services</a>
+- <a href="../backend-jwt-token-manipulation/overview" target="_blank">Learn to attach API Policies for Backend JWT Token Manipulation</a>
+- <a href="../cors/enable-cors-via-rest-api" target="_blank">Learn to attach API Policies for CORS</a>
+
   

@@ -74,7 +74,7 @@ operations:
     scopes: []
 ```
 
-You can then deploy this API by following the steps in the [Deploy the API in APK](../../get-started/quick-start-guide.md#deploy-the-api-in-apk) documentation.
+You can then deploy this API by following the steps in the <a href="../../../get-started/quick-start-guide#deploy-the-api-in-apk" target="_blank">Deploy the API in APK</a> documentation.
 
 ## Via CRs
 
@@ -96,7 +96,7 @@ spec:
     port: 443
 ```
 
-For more in-depth information on how the above configurations affect the router, refer to the Timeouts in the official [Envoy documentation](https://www.envoyproxy.io/docs/envoy/v1.24.1/faq/configuration/timeouts).
+For more in-depth information on how the above configurations affect the router, refer to the Timeouts in the official <a href="https://www.envoyproxy.io/docs/envoy/v1.24.1/faq/configuration/timeouts" target="_blank">Envoy documentation</a>.
 
 
 **Step 2 - Apply the CRs**

@@ -57,7 +57,7 @@ Following steps describe how to generate an APK configuration file.
     ```
 
 4. Save the content to a file with extension .apk-conf. For example, EmployeeService.apk-conf.
-5. To optimize the configuration process, APK presents a VS Code plugin designed to offer syntax highlighting and intelligent suggestions. This plugin simplifies the incorporation of rate limitations, new resources, and security configurations into your API. Adapt the contents of the APK Configuration file as needed. For further details, refer to the section on [Enhance Configuration with APK Config Language Support](./apk-conf-lang-support.md)
+5. To optimize the configuration process, APK presents a VS Code plugin designed to offer syntax highlighting and intelligent suggestions. This plugin simplifies the incorporation of rate limitations, new resources, and security configurations into your API. Adapt the contents of the APK Configuration file as needed. For further details, refer to the section on <a href="../apk-conf-lang-support" target="_blank">Enhance Configuration with APK Config Language Support</a>
 
 
 !!!NOTE
