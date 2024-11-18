@@ -97,4 +97,4 @@ Below graphs show 90th, 95th, and 99th Response Time percentiles for 0ms backend
 
 [![Percentiles 2 CPUs](../../assets/img/performance-test-results/percentile-2-cpu.png)](../../assets/img/performance-test-results/percentile-2-cpu.png)
 
-Test scenario results in CSV format are available [here](https://raw.githubusercontent.com/wso2/apk/main/test/performance/benchmarks/cpus-2/summary.csv).
+Test scenario results in CSV format are available <a href="https://raw.githubusercontent.com/wso2/apk/main/test/performance/benchmarks/cpus-2/summary.csv" target="_blank">here</a>.

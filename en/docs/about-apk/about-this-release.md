@@ -32,20 +32,21 @@ APK is WSO2's cloud native API management platform. APK is designed to help you 
 
 ## Compatible WSO2 product versions
 
-- WSO2 APK 1.2.0 is compatible with WSO2 API Manager 4.4.0([APIM](https://apim.docs.wso2.com/en/latest/)).
+- WSO2 APK 1.2.0 is compatible with WSO2 API Manager 4.4.0 (<a href="https://apim.docs.wso2.com/en/latest/" target="_blank">APIM</a>).
 
 ## Fixed issues
 
-- For all the fixed issues in WSO2 APK 1.2.0, go to [APK](https://github.com/wso2/apk/issues?q=is%3Aissue+is%3Aclosed+closed%3A2024-04-10..2024-10-29+)
+- For all the fixed issues in WSO2 APK 1.2.0, go to <a href="https://github.com/wso2/apk/issues?q=is%3Aissue+is%3Aclosed+closed%3A2024-04-10..2024-10-29" target="_blank">APK</a>.
 
 ## Known issues
 
-- For all the known issues in WSO2 APK 1.2.0, go to [APK](https://github.com/wso2/apk/issues?q=is%3Aopen+is%3Aissue)
+- For all the known issues in WSO2 APK 1.2.0, go to <a href="https://github.com/wso2/apk/issues?q=is%3Aopen+is%3Aissue" target="_blank">APK</a>.
 
 ## Release Notes
 
-For more information on each of the APK releases, go to [Releases](https://github.com/wso2/apk/releases) on the APK product repository in GitHub.
+For more information on each of the APK releases, go to <a href="https://github.com/wso2/apk/releases" target="_blank">Releases</a> on the APK product repository in GitHub.
 
 ## Release Planning
 
-For more information about APK release planning and project management information, go to [APK Project Dashboard](https://github.com/orgs/wso2/projects/80/).
+For more information about APK release planning and project management information, go to <a href="https://github.com/orgs/wso2/projects/80/" target="_blank">APK Project Dashboard</a>.
+

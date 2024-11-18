@@ -16,7 +16,7 @@
 
 1.  Configure supported gateway types in API Manager.
 
-    Add following configuration to deployment.toml file to provide supported gateway types to API Manager. Here, need to provide the supported gateway types as `APK`.
+    Add the following configuration to the deployment.toml file to provide supported gateway types to API Manager. Here, need to provide the supported gateway types as `APK`.
 
 === "Both"
     ``` toml
@@ -31,7 +31,7 @@
 
 2. Change the default gateway environment if APK Only scenario.
 
-    Add following configuration to deployment.toml file to provide APK gateway as the default gateway environment to API Manager. Here, need to provide the default gateway type as `APK` and other relevant configurations.
+    Add the following configuration to the deployment.toml file to provide APK gateway as the default gateway environment to API Manager. Here, need to provide the default gateway type as `APK` and other relevant configurations.
 
     ``` toml
     [[apim.gateway.environment]]
@@ -65,9 +65,9 @@
 
 ### Configuring APK
 
-1. Configure Control Plane related configuration in Common Controller.
+1. Configure Control Plane related configuration in Common Controller
 
-Add following configuration to common-log-conf file to provide control plane related configs to common-controller. Here, need to provide the host of the APIM-APK Agent.
+Add the following configuration to the common-log-conf file to provide control plane related configs to common-controller. Here, the host of the APIM-APK Agent should be provided.
 
 ``` yaml
     [commoncontroller.controlplane]
@@ -76,9 +76,9 @@ Add following configuration to common-log-conf file to provide control plane rel
         skipSSLVerification = true
 ```
 
-2. Disable Hostname Verification for JWKS endpoint in APK Gateway.(Optional)
+2. Disable Hostname Verification for JWKS endpoint in APK Gateway (Optional)
 
-Add following configuration to disable SSL/hostname verification to JWKS validation call in enforcer in log-conf.yaml.
+Add the following configuration to disable SSL/hostname verification to JWKS validation call in enforcer in log-conf.yaml.
     
 ``` yaml
     [enforcer.client]
@@ -88,9 +88,9 @@ Add following configuration to disable SSL/hostname verification to JWKS validat
 
 ### Configuring APIM-APK Agent
 
-1. Configure Control Plane(APIM) related configuration in APIM-APK Agent.
+1. Configure Control Plane(APIM) related configuration in APIM-APK Agent
 
-Add following configuration to values.yaml file to provide control plane related configs to APIM-APK Agent. Here, need to provide the host of the APIM-APK Agent.
+Add the following configuration to the values.yaml file to provide control plane related configs to APIM-APK Agent. Here, the host of the APIM-APK Agent should be provided.
 
 ``` yaml
     controlPlane:
@@ -103,9 +103,9 @@ Add following configuration to values.yaml file to provide control plane related
       eventListeningEndpoints: amqp://admin:admin@apim-wso2am-cp-1-service.apk.svc.cluster.local:5672?retries='10'&connectdelay='30'
 ```
 
-2. Configure Dataplane(APK Gateway) related configuration in APIM-APK Agent.
+2. Configure Dataplane(APK Gateway) related configuration in APIM-APK Agent
 
-Add following configuration to values.yaml file to provide dataplane related configs to APIM-APK Agent. Here, need to provide the host of the APK Gateway.
+Add the following configuration to the values.yaml file to provide dataplane related configs to APIM-APK Agent. Here, the host of the APK Gateway should be provided.
 
 ``` yaml
     dataPlane:

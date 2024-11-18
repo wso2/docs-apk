@@ -4,7 +4,7 @@ As the Enforcer component is implemented in Java, we are using the `log4j2` fram
 
 ## Configuring Log4j2 Properties
 
-To configure log4j2 properties, update the `values.yaml`'s `wso2.apk.dp.gatewayRuntime.deployment.enforcer.logging` section with the following values. Instructions in [Customize Configurations](../../setup/Customize-Configurations.md) will guide you through the process of acquiring the `values.yaml` file.
+To configure log4j2 properties, update the `values.yaml`'s `wso2.apk.dp.gatewayRuntime.deployment.enforcer.logging` section with the following values. Instructions in the <a href="../../../setup/Customize-Configurations" target="_blank">customize configurations section</a> will guide you through the process of acquiring the `values.yaml` file.
 
 ```yaml
 logging:
@@ -72,10 +72,10 @@ This section shows you how to configure appenders individually. Log4j2 allows lo
 -   **ENFORCER_CONSOLE**: Logs to the console when the enforcer is running.
 
 !!! Info
-    These appenders are configured by default to use for destinations mentined above. If you want to modify any of the configurations related to that, you can modify them according to log configurations defined in [log4j2 documentation](https://logging.apache.org/log4j/2.x/manual/appenders.html#).
+    These appenders are configured by default to use for destinations mentioned above. If you want to modify any of the configurations related to that, you can modify them according to log configurations defined in <a href="https://logging.apache.org/log4j/2.x/manual/appenders.html#" target="_blank">log4j2 documentation</a>.
 
 !!! Note
-    If the output destination is in another environment (such as a cloud storage), you need to [use custom log appenders](#https://logging.apache.org/log4j/2.x/manual/appenders.html).
+    If the output destination is in another environment (such as a cloud storage), you need to <a href="https://logging.apache.org/log4j/2.x/manual/appenders.html" target="_blank">use custom log appenders</a>.
 
 ### Configuring Log4j2 Loggers
 
@@ -172,11 +172,11 @@ appender.<appender_name>.layout.pattern = [%d{DEFAULT}][%X{traceId}]%x %5p - {\%
 ```
 
 !!! Note
-    More details on this pattern specification can be find in the official [log4j2 documentation](https://logging.apache.org/log4j/2.x/manual/layouts.html#PatternLayout).
+    More details on this pattern specification can be find in the <a href="https://logging.apache.org/log4j/2.x/manual/layouts.html#PatternLayout" target="_blank">official log4j2 documentation</a>.
 
 ### JSON format
 
-The Enforcer can be configured to output logs in JSON format by setting the layout as `CustomJsonLayout` which is a customized implementation of log4j2's [AbstractStringLayout](https://logging.apache.org/log4j/2.x/log4j-core/apidocs/org/apache/logging/log4j/core/layout/AbstractStringLayout.html). You can set it using the following configuration.
+The Enforcer can be configured to output logs in JSON format by setting the layout as `CustomJsonLayout` which is a customized implementation of log4j2's <a href="https://logging.apache.org/log4j/2.x/log4j-core/apidocs/org/apache/logging/log4j/core/layout/AbstractStringLayout.html" target="_blank">AbstractStringLayout</a>. You can set it using the following configuration.
 
 
 ```properties

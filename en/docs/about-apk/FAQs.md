@@ -3,15 +3,15 @@
 ## About WSO2 APK
 ### 1. What is WSO2 APK?
 
-WSO2 API Platform for Kubernetes (APK) is WSO2's cloud native API management platform to help you build, deploy, and manage APIs in a cloud environment. It is designed to be highly available and able to handle large numbers of API requests without performance degradation, with features like rate limiting, automatic failover and load balancing. For more information, refer the [What is APK?](./what-is-apk.md) section. 
+WSO2 API Platform for Kubernetes (APK) is WSO2's cloud native API management platform to help you build, deploy, and manage APIs in a cloud environment. It is designed to be highly available and able to handle large numbers of API requests without performance degradation, with features like rate limiting, automatic failover, and load balancing. For more information, refer to the <a href="../../about-apk/what-is-apk" target="_blank">What is APK?</a> section.
 
 ### 2. What is the open source license of the APK?
 
-[Apache Software License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+<a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache Software License Version 2.0</a>
 
 ### 3. What are the technologies used in WSO2 APK?
 
-APK natively uses several Kubernetes features. Envoy is used for the API gateway implementation and Helm is used as a package manager. For more details, refer to the [Technologies Used](./architecture.md#technologies-used) section.
+APK natively uses several Kubernetes features. Envoy is used for the API gateway implementation and Helm is used as a package manager. For more details, refer to the <a href="../../about-apk/architecture#technologies-used" target="_blank">Technologies Used</a> section.
 
 ### 4. What are the advantages of APK over APIM?
 
