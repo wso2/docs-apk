@@ -1,15 +1,15 @@
 ## Configuring APK Data Plane
 
-Agent can be configured in both ways.
+The agent can be configured in the following ways.
 
   1. API Manager as the control plane for APK
   2. APK as a gateway to API Manager 
 
 ### API Manager as the control plane for APK
 
-1. APK realated Configurations.
+1. APK related configurations
 
-    Add following configuration to values.yaml file.
+    Add the following configuration to the values.yaml file.
 
     ``` yaml
        cp:
@@ -28,9 +28,9 @@ Agent can be configured in both ways.
 
 ### APK as a gateway to API Manager
 
-1. Configure Control Plane related configuration in Common Controller.
+1. Configure Control Plane related configuration in Common Controller
 
-    Add following configuration to common-log-conf file to provide control plane related configs to common-controller. Here, need to provide the host of the APIM-APK Agent.
+    Add the following configuration to the common-log-conf file to provide control plane related configs to common-controller. Here, the host of the APIM-APK Agent should be provided.
 
     ``` yaml
         [commoncontroller.controlplane]
@@ -41,7 +41,7 @@ Agent can be configured in both ways.
 
 2. Disable Hostname Verification for JWKS endpoint in APK Gateway.(Optional)
 
-    Add following configuration to disable SSL/hostname verification to JWKS validation call in enforcer in log-conf.yaml.
+    Add the following configuration to disable SSL/hostname verification to JWKS validation call in enforcer in log-conf.yaml.
     
     ``` yaml
         [enforcer.client]

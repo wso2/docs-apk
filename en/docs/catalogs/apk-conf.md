@@ -161,4 +161,4 @@ This document serves as a comprehensive guide, detailing all the parameters rele
 
 - The table above represents the JSON schema fields and their descriptions.
 - Additional details about each field and schema can be found in the JSON schema itself.
-- APK Config Language Support Visual Studio Code (VS Code) extension can be used to validate the apk-conf file.
+- The <a href="https://marketplace.visualstudio.com/items?itemName=WSO2.apk-config-language-support" target="_blank">APK Config Language Support Visual Studio Code (VS Code) extension</a> can be used to validate the apk-conf file.
