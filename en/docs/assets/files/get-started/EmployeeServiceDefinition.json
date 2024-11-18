@@ -43,7 +43,9 @@
                         }
                     }
                 }
-            },
+            }
+        },
+        "/employee": {
             "post": {
                 "tags": [
                     "employee-controller"

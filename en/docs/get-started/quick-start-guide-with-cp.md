@@ -21,9 +21,7 @@ Install the <a href="../../setup/prerequisites" target="_blank">prerequisites</a
 
 ## Step 2 - Create and Deploy the API From Dataplane
 
-1. Download and save the sample 
-<a href="https://raw.githubusercontent.com/wso2/docs-apk/refs/heads/1.2.0/en/docs/assets/files/get-started/EmployeeServiceDefinition.json" 
-   target="_blank"  onclick="downloadFile(event)">EmployeeServiceDefinition.json</a> file. This is the OAS definition of the API that we are going to deploy in APK.
+1. Download and save the sample <a href="../../assets/files/get-started/EmployeeServiceDefinition.json" target="_blank" download>EmployeeServiceDefinition.json</a> file. This is the OAS definition of the API that we are going to deploy in APK.
 2. Add a hostname mapping to the ```/etc/hosts``` file as follows.
 
     | IP        | Domain name              |
@@ -134,7 +132,7 @@ operations:
 ```
 
 !!! Important
-    We recommend installing the <a href="{{base_path}}/en/{{site_version}}/api-management-overview/apk-conf-lang-support/" target="_blank">APK Config Language Support Visual Studio Code (VS Code) extension</a> to edit the APK Configuration file.
+    We recommend installing the <a href="../../api-management-overview/apk-conf-lang-support/" target="_blank">APK Config Language Support Visual Studio Code (VS Code) extension</a> to edit the APK Configuration file.
 
 
 ### Deploy the API in APK DataPlane
@@ -258,21 +256,3 @@ kubectl get pods -n apk
     ```
 
 You will now be able to see a successful response with the details of the Employees from the mock backend that we used for this guide.
-
-<script>
-  function downloadFile(event) {
-    event.preventDefault();
-    const url = event.target.href;
-    const fileName = "EmployeeServiceDefinition.json";
-    fetch(url)
-      .then(response => response.blob())
-      .then(blob => {
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = fileName;
-        link.click();
-        URL.revokeObjectURL(link.href);
-      })
-      .catch(console.error);
-  }
-</script> 
