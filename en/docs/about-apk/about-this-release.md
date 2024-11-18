@@ -1,6 +1,14 @@
 # About this Release
 
-The APK release notes provide an overview of the latest updates, improvements, and bug fixes in the WSO2 APK platform. These release notes are a valuable resource for developers and organizations using the platform, as they can help them stay up-to-date on the latest features and fixes. With each release, WSO2 aims to improve the performance, reliability, and usability of the APK platform, while also introducing new functionality and addressing any issues reported by users. The release notes typically include a summary of the changes made, along with any important information about compatibility, installation, and configuration. By keeping up with the APK release notes, users can ensure that they are taking full advantage of the platform's capabilities and staying ahead of any potential issues.
+* APK is WSO2's cloud native API management platform. 
+
+* APK is designed to help you build, deploy, and manage APIs in a cloud environment. 
+
+* Our platform is built on top of a microservices architecture and uses containerization technologies to ensure scalability and flexibility. With features like automatic failover and load balancing, our APK platform is designed to be highly available and able to handle large numbers of API requests without performance degradation. 
+
+* We've also added support for continuous delivery and deployment, so you can quickly and easily push updates to your API services.
+
+* WSO2 APK 1.2.0 is the latest WSO2 APK release and is the successor of WSO2 APK 1.1.0.
 
 ## Release Notes
 
