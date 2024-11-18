@@ -263,7 +263,7 @@ You will be able to see all traces. The detailed trace view will look like the f
 
 ### OpenTelemetry protocol (OTLP)
 
- OTLP is a vendor agnostic protocol defined as a part of [OpenTelemetry](https://opentelemetry.io/) project to publish telemetry data to any telemetry backend that supports OTLP. Most of the open source and commercial telemetry backends have native OTLP support or provide OTLP support in the form of a separate distribution. Refer the [OpenTelemetry vendor support](https://opentelemetry.io/vendors/) documentation for more information.
+ OTLP is a vendor agnostic protocol defined as a part of [OpenTelemetry](https://opentelemetry.io/) project to publish telemetry data to any telemetry backend that supports OTLP. Most of the open source and commercial telemetry backends have native OTLP support or provide OTLP support in the form of a separate distribution. Refer the <a href="https://opentelemetry.io/vendors/" target="_blank">OpenTelemetry vendor support</a> documentation for more information.
 
 #### Configure APK to publish OTLP traces to a Jaeger backend
 

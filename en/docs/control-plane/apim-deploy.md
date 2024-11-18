@@ -37,7 +37,7 @@ gateway:
 
 1.  Configure supported gateway types in API Manager.
 
-    Add following configuration to deployment.toml file to provide supported gateway types to API Manager. Here, need to provide the supported gateway types as `APK`.
+    Add the following configuration to the deployment.toml file to provide supported gateway types to API Manager. Here, need to provide the supported gateway types as `APK`.
 
     === "Both"
         ``` toml
@@ -52,7 +52,7 @@ gateway:
 
 2. Change the default gateway environment if APK Only scenario.
 
-    Add following configuration to deployment.toml file to provide APK gateway as the default gateway environment to API Manager. Here, need to provide the default gateway type as `APK` and other relevant configurations.
+    Add the following configuration to the deployment.toml file to provide APK gateway as the default gateway environment to API Manager. Here, need to provide the default gateway type as `APK` and other relevant configurations.
 
     ``` toml
     [[apim.gateway.environment]]

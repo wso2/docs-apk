@@ -1,5 +1,5 @@
 
-1. Follow the same guide to create a GraphQL API as in the [GraphQL API Creation Guide](../../../create-api/create-and-deploy-apis/graphql/create-graphql-api-using-rest-api/).
+1. Follow the same guide to create a GraphQL API as in the <a href="../../../create-api/create-and-deploy-apis/graphql/create-graphql-api-using-rest-api" target="_blank">GraphQL API Creation Guide</a>.
 2. Update the organization of the generated CRs to match the super tenant organization name in the WSO2 API Manager or You can generate K8s resources by setting the organization as a zip file from config-deployer service using below command.
 
 === "Sample Request"
