@@ -11,7 +11,7 @@ Supported distributed tracing systems,
 
 ## Configure Distributed Tracing
 
-To set up distributed tracing, start by following the instructions outlined in [Customize Configurations](../setup/Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file, which you will then use to tailor the tracing configurations to your specific needs.
+To set up distributed tracing, start by following the instructions outlined in <a href="../../setup/Customize-Configurations" target="_blank">Customize Configurations</a>. These instructions will guide you through the process of acquiring the `values.yaml` file, which you will then use to tailor the tracing configurations to your specific needs.
 
 !!! note
     If you are trying out tracing capabilities of APK and do not have an actual deployment of Jaeger or Zipkin, you can start APK together with Jaeger/Zipkin by applying  the below kubernetes artifacts to your cluster.
@@ -182,8 +182,8 @@ When using **Jaeger** for tracing, the format is same as for **Zipkin** to publi
         maxPathLength: "256"
     ``` 
 
-2. Follow the [quick start]({{base_path}}/en/latest/get-started/quick-start-guide/) guide and invoke backend.
-3. Open Jaeger UI to view the traces. Navigate to <http://jaeger.example.com>
+2. Follow the <a href="{{base_path}}/en/latest/get-started/quick-start-guide" target="_blank">quick start</a> guide and invoke backend.
+3. Open Jaeger UI to view the traces. Navigate to <a href="http://jaeger.example.com" target=_blank>http://jaeger.example.com</a>
 
 You will be able to browse through the request traces and expand each trace to view complete trace details.
 
@@ -208,8 +208,8 @@ Follow these steps to configure WSO2 APK with Zipkin.
         maxPathLength: "256"
     ``` 
     
-2. Follow the [quick start]({{base_path}}/en/latest/get-started/quick-start-guide/) guide and invoke backend.
-3. Invoke the newly create API and open Zipkin UI to view the traces. Navigate to <http://zipkin.example.com> 
+2. Follow the <a href="{{base_path}}/en/latest/get-started/quick-start-guide" target="_blank">quick start</a> guide and invoke backend.
+3. Invoke the newly create API and open Zipkin UI to view the traces. Navigate to <a href="http://zipkin.example.com" target="_blank">http://zipkin.example.com</a> 
 4. Filter traces by `tagQuery=otel.library.name=APK` query.
 
 You will be able to see all traces. Detailed trace view will look like below.
@@ -253,7 +253,7 @@ Follow these steps to configure WSO2 APK with Azure Application Insights.
             maximumTracesPerSecond: "2"
         ``` 
 
-3. Follow the [quick start]({{base_path}}/en/latest/get-started/quick-start-guide/) guide and invoke backend.
+3. Follow the <a href="{{base_path}}/en/latest/get-started/quick-start-guide" target="_blank">quick start</a> guide and invoke backend.
 4. Now open "Azure Application Insights" Trasaction search window and select `Dependency` for `Event types` filter  
     [![Azure Trace Filter](../assets/img/distributed-tracing/trace-azure-filter.png)](../assets/img/distributed-tracing/trace-azure-filter.png)
 
@@ -263,7 +263,7 @@ You will be able to see all traces. Detailed trace view will look like below.
 
 ### OpenTelemetry protocol (OTLP)
 
- OTLP is a vendor agnostic protocol defined as a part of [OpenTelemetry](https://opentelemetry.io/) project to publish telemetry data to any telemetry backend that supports OTLP. Most of the open source and commercial telemetry backends have native OTLP support or provide OTLP support in the form of a separate distribution. Refer the [OpenTelemetry vendor support](https://opentelemetry.io/vendors/) documentation for more information.
+ OTLP is a vendor agnostic protocol defined as a part of <a href="https://opentelemetry.io" target="_blank">OpenTelemetry</a> project to publish telemetry data to any telemetry backend that supports OTLP. Most of the open source and commercial telemetry backends have native OTLP support or provide OTLP support in the form of a separate distribution. Refer the <a href="https://opentelemetry.io/vendors" target="_blank">OpenTelemetry vendor support</a> documentation for more information.
 
 #### Configure APK to publish OTLP traces to a Jaeger backend
 
@@ -283,14 +283,14 @@ You will be able to see all traces. Detailed trace view will look like below.
         connectionTimeout: "20"
     ``` 
 
-2. Follow the [quick start]({{base_path}}/en/latest/get-started/quick-start-guide/) guide and invoke backend.
-3. Open Jaeger UI to view the traces. Navigate to <http://CLUSTER_IP:16686> 
+2. Follow the <a href="{{base_path}}/en/latest/get-started/quick-start-guide" target="_blank">quick start</a> guide and invoke backend.
+3. Open Jaeger UI to view the traces. Navigate to <a href="http://CLUSTER_IP:16686" target="_blank">http://CLUSTER_IP:16686</a> 
 
 You will be able to browse through the request traces and expand each trace to view complete trace details.
 
 #### Configure APK to publish OTLP traces to New Relic OTLP gRPC collector
 
-1. Create an account in New Relic portal and generate a license key to publish traces. [New Relic OTLP guide](https://docs.newrelic.com/docs/more-integrations/open-source-telemetry-integrations/opentelemetry/opentelemetry-setup/)
+1. Create an account in New Relic portal and generate a license key to publish traces. <a href="https://docs.newrelic.com/docs/more-integrations/open-source-telemetry-integrations/opentelemetry/opentelemetry-setup" target="_blank">New Relic OTLP guide</a>
 2. Add the following configuration to`values.yaml`'s `wso2.apk.dp.gatewayRuntime` section
 
 === "Configuration"
@@ -324,7 +324,7 @@ You will be able to browse through the request traces and expand each trace to v
         connectionTimeout: "20"
     ``` 
 
-3. Follow the [quick start]({{base_path}}/en/latest/get-started/quick-start-guide/) guide and invoke backend.
+3. Follow the <a href="{{base_path}}/en/latest/get-started/quick-start-guide" target="_blank">quick start</a> guide and invoke backend.
 4. Go to New Relic Tracing dashboard to view the traces.
 
 You will be able to browse through the request traces and expand each trace to view complete trace details.

@@ -2,13 +2,13 @@
 
 ## Step 1 - Get Collector Application Id
 
-1. Sign up for [Moesif](https://www.moesif.com/).
+1. Sign up for <a href="https://www.moesif.com" target="_blank">Moesif</a>.
 
 2. During the sign up process, you will receive a Collector Application Id for your configured application. Copy this value and keep it saved.
 
 ## Step 2 - Configure APK
 
-1. Follow the instructions outlined in [Customize Configurations](../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file. 
+1. Follow the instructions outlined in <a href="../../Customize-Configurations" target="_blank">Customize Configurations</a>. These instructions will guide you through the process of acquiring the `values.yaml` file. 
 2. Open the `values.yaml` file and set the following configuration under the `wso2.apk.dp.gatewayRuntime` section.
 
 ```yaml

@@ -28,7 +28,7 @@ Follow the instructions below to deploy APK Data Service (DS) servers and the Cl
     ```
 
 !!!Optional
-    To commence the installation while making use of the customization capabilities inherent in the `values.yaml` file, follow the subsequent command format. Instructions in [Customize Configurations](../setup/Customize-Configurations.md) will guide you through the process of acquiring the `values.yaml` file.
+    To commence the installation while making use of the customization capabilities inherent in the `values.yaml` file, follow the subsequent command format. Instructions in <a href="../setup/Customize-Configurations" target="_blank">Customize Configurations</a> will guide you through the process of acquiring the `values.yaml` file.
     === "Command"
         ```
          helm install apk wso2apk/apk-helm --version 1.0.0 -f values.yaml
@@ -91,7 +91,7 @@ this in K8s.
 
     !!!Optional
     
-        To commence the installation while making use of the customization       capabilities inherent in the `values.yaml` file, follow the subsequent command format. Instructions in [Customize Configurations](../setup/Customize-Configurations.md) will guide you through the process of acquiring the `values.yaml` file.
+        To commence the installation while making use of the customization       capabilities inherent in the `values.yaml` file, follow the subsequent command format. Instructions in <a href="../../setup/Customize-Configurations" target="_blank">Customize Configurations</a> will guide you through the process of acquiring the `values.yaml` file.
         === "Command"
             ```
             helm install apk wso2apk/apk-helm --version 1.0.0 -set wso2.subscription.imagePullSecrets="apk-registry-secret" -f values.yaml
@@ -114,6 +114,6 @@ Now you can verify the deployment by executing the following command. You will s
     [![Pod Status](../assets/img/get-started/pod-status.png)](../assets/img/get-started/podstatus.png)
 
     !!! Important
-        If pods are not transitioning to running state, please follow the steps in the [FAQs](../../about-apk/FAQs/#q3-why-are-pods-not-transitioning-to-the-running-state-for-a-long-time) to troubleshoot the problem.
+        If pods are not transitioning to running state, please follow the steps in the  <a href="../../about-apk/FAQs/#q3-why-are-pods-not-transitioning-to-the-running-state-for-a-long-time" target="_blank">FAQs</a> to troubleshoot the problem.
 
 

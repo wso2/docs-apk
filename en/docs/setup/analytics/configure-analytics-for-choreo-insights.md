@@ -2,7 +2,7 @@
 
 ## Step 1 - Generate On-prem Key
 
-1. Sign in to [Choreo](https://console.choreo.dev/login/).
+1. Sign in to <a href="https://console.choreo.dev/login" target="_blank">Choreo</a>.
 
 2. Go to `Settings > On-prem Keys` and click on `Generate Key` button.
 
@@ -11,7 +11,7 @@
 
 ## Step 2 - Configure APK
 
-1. Follow the instructions outlined in [Customize Configurations](../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file. 
+1. Follow the instructions outlined in <a href="../../Customize-Configurations">Customize Configurations</a>. These instructions will guide you through the process of acquiring the `values.yaml` file. 
 2. Open the `values.yaml` file and set the following configuration under the `wso2.apk.dp.gatewayRuntime` section.
 
 ```yaml
@@ -51,7 +51,7 @@ analytics:
 
 1. After setting up the enforcer, invoke a few requests (success and failure) for a deployed API.
 
-2. Go to [Choreo Insights](https://console.choreo.dev/insights) and select the correct environment to view the analytics data.
+2. Go to <a href="https://console.choreo.dev/insights" target="_blank">Choreo Insights</a> and select the correct environment to view the analytics data.
 
 Following are some of the graphs generated in the Choreo Insights.
 

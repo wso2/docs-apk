@@ -2,7 +2,7 @@
 
 ## Step 1 - Setup APK
 
-1. Start by following the instructions outlined in [Customize Configurations](../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file.
+1. Start by following the instructions outlined in <a href="../../Customize-Configurations" target="_blank">Customize Configurations</a>. These instructions will guide you through the process of acquiring the `values.yaml` file.
 2. Open the `values.yaml` file and set the following configuration under the `wso2.apk.dp.gatewayRuntime` section.
 
 ```yaml
@@ -67,7 +67,7 @@ analytics:
 
 ## Step 2 - Setup Elasticsearch and Kibana
 
-To configure Elasticsearch and Kibana on your Kubernetes cluster, you can refer to the [official guide](https://www.elastic.co/guide/en/cloud-on-k8s/current/k8s-stack-helm-chart.html) provided by Elastic. The guide includes instructions on deploying the necessary Helm charts for Elasticsearch and Kibana.
+To configure Elasticsearch and Kibana on your Kubernetes cluster, you can refer to the <a href="https://www.elastic.co/guide/en/cloud-on-k8s/current/k8s-stack-helm-chart.html" target="_blank">official guide</a> provided by Elastic. The guide includes instructions on deploying the necessary Helm charts for Elasticsearch and Kibana.
 
 You can also install Elasticsearch and Kibana using the direct helm charts for each. The following is a sample setup that can be used to set up both. However, note that these are only for testing, and must be configured as necessary for a production environment.
 
@@ -113,9 +113,9 @@ kubectl port-forward svc/kibana-kibana 5601
 
 For forwarding Kubernetes logs to Elasticsearch, you have the option to use any logging agent that supports this functionality. Two commonly used options are Filebeat and FluentBit.
 
-   - Filebeat: If you choose Filebeat, you can set it up in your Kubernetes environment by following the [official guide](https://www.elastic.co/guide/en/beats/filebeat/current/running-on-kubernetes.html) provided by Elastic. Filebeat is a lightweight log shipper that is part of the Elastic Stack. It can be configured to collect logs from your Kubernetes pods and forward them to Elasticsearch.
+   - Filebeat: If you choose Filebeat, you can set it up in your Kubernetes environment by following the <a href="https://www.elastic.co/guide/en/beats/filebeat/current/running-on-kubernetes.html" target="_blank">official guide</a> provided by Elastic. Filebeat is a lightweight log shipper that is part of the Elastic Stack. It can be configured to collect logs from your Kubernetes pods and forward them to Elasticsearch.
 
-   - FluentBit: Alternatively, you can opt for FluentBit as your logging agent. FluentBit is an open-source and efficient log processor and forwarder. It is designed to work well with Kubernetes environments and can be used to collect and send logs to Elasticsearch. You can follow the [official guide](https://docs.fluentbit.io/manual/installation/kubernetes) to install FluentBit.
+   - FluentBit: Alternatively, you can opt for FluentBit as your logging agent. FluentBit is an open-source and efficient log processor and forwarder. It is designed to work well with Kubernetes environments and can be used to collect and send logs to Elasticsearch. You can follow the <a href="https://docs.fluentbit.io/manual/installation/kubernetes" target="_blank">official guide</a> to install FluentBit.
 
 
 ## Step 4 - Invoke requests and view analytics logs in Kibana UI

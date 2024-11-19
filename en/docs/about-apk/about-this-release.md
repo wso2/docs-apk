@@ -4,8 +4,8 @@ The APK release notes provide an overview of the latest updates, improvements, a
 
 ## Release Notes
 
-For more information on each of the APK releases, go to [Releases](https://github.com/wso2/apk/releases) on the APK product repository in GitHub.
+For more information on each of the APK releases, go to <a href="https://github.com/wso2/apk/releases" target="_blank">Releases</a> on the APK product repository in GitHub.
 
 ## Release Planning
 
-For more information about APK release planning and project management information, go to [APK Project Dashboard](https://github.com/orgs/wso2/projects/80/).
+For more information about APK release planning and project management information, go to <a href="https://github.com/orgs/wso2/projects/80" target="_blank">APK Project Dashboard</a>.

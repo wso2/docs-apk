@@ -65,7 +65,7 @@ sudo echo "EXTERNAL-IP stage.gw.wso2.com" >> /etc/hosts
 
 You can create your Kubernetes CRs using the following guide: <a href="https://apk.docs.wso2.com/en/latest/create-api/create-and-deploy-apis/rest/create-rest-api-using-rest-api/" target="_blank">https://apk.docs.wso2.com/en/latest/create-api/create-and-deploy-apis/rest/create-rest-api-using-rest-api/</a>
 
-You can also generate the yaml files using an apk-conf file and the corresponding API definition file, as described [here](../../api-management-overview/tools-for-api-development.md#option-2---generate-k8s-custom-resources-using-config-generator-tool-and-deploy-the-api-using-kubernetes-client)
+You can also generate the yaml files using an apk-conf file and the corresponding API definition file, as described <a href="../../../create-api/create-and-deploy-apis/create-and-deploy-api" target="_blank">here</a>
 
 Once you have your yaml files, you can commit them to the main branch, as in the <a href="https://github.com/sgayangi/APKGitOpsDemo" target="_blank">reference repository.</a>
 
@@ -129,16 +129,16 @@ The endpoints for the backends would then be:
 - Dev: http://backendservice.backend-dev.svc.cluster.local:9090
 - Stage: http://backendservice.backend-stage.svc.cluster.local:9090
 
-[Create Backend CR](../../create-api/create-and-deploy-apis/rest/create-rest-api-using-crs.md#create-backend-cr) describes how to get the URL of a backend deployed on a cluster.
+<a href="../../../create-api/create-and-deploy-apis/create-api-using-cr#create-backend-cr" target="_blank">Create Backend CR</a> describes how to get the URL of a backend deployed on a cluster.
 
 !!! note
-    The backends in the files provided use a custom Docker image that was pre-built. Feel free to use a test URL like [https://httpbin.org/anything](https://httpbin.org/anything) or another Docker image.
+    The backends in the files provided use a custom Docker image that was pre-built. Feel free to use a test URL like <a href="https://httpbin.org/anything" target="_blank">https://httpbin.org/anything</a> or another Docker image.
 
 #### Step 7 - Set up the Github workflow files
 
 This <a href="https://docs.github.com/en/actions/writing-workflows/quickstart" target="_blank">website</a> can give you a quickstart into writing your own Github workflow file.
 
-You can also view the sample workflow file at <a href="https://github.com/sgayangi/APKGitOpsDemo/blob/dev/.github/workflows/dev-release.yaml" target="_blank">[website](https://github.com/sgayangi/APKGitOpsDemo/blob/dev/.github/workflows/dev-release.yaml)</a> and <a href="https://github.com/sgayangi/APKGitOpsDemo/blob/stage/.github/workflows/stage-release.yaml" target="_blank">[website](https://github.com/sgayangi/APKGitOpsDemo/blob/stage/.github/workflows/stage-release.yaml)</a>
+You can also view the sample workflow file at <a href="https://github.com/sgayangi/APKGitOpsDemo/blob/dev/.github/workflows/dev-release.yaml" target="_blank">website</a> and <a href="https://github.com/sgayangi/APKGitOpsDemo/blob/stage/.github/workflows/stage-release.yaml" target="_blank">website</a>
 
 #### Step 8 - Trigger the workflow
 

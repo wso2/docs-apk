@@ -4,25 +4,25 @@ Follow the instructions below to use Auth0 as the Identity Provider (IdP) to aut
 
 ## Step 1 - Create an Organization
 
-[Create an organization in Auth0](https://auth0.com/docs/manage-users/organizations/configure-organizations/create-organizations).
+<a href="https://auth0.com/docs/manage-users/organizations/configure-organizations/create-organizations" target="_blank">Create an organization in Auth0</a>.
 
 For testing purposes let's create an organization named `org1`.
 
 ## Step 2 - Create a user
 
-If you have not created the user already, [create a user](https://auth0.com/docs/manage-users/user-accounts/create-users).
+If you have not created the user already, <a href="https://auth0.com/docs/manage-users/user-accounts/create-users" target="_blank">create a user</a>.
 
 ## Step 3 - Assign the user to the organization
 
-[Assign the member to the Organization](https://auth0.com/docs/manage-users/organizations/configure-organizations/assign-members), which you created in Step 1.
+<a href="https://auth0.com/docs/manage-users/organizations/configure-organizations/assign-members" target="_blank">Assign the member to the Organization</a>, which you created in Step 1.
 
 ## Step 4 - Enable a connection
 
-[Add a connection for your organization](https://auth0.com/docs/manage-users/organizations/configure-organizations/enable-connections) as Username-Password-Authentication.
+<a href="https://auth0.com/docs/manage-users/organizations/configure-organizations/enable-connections" target="_blank">Add a connection for your organization</a> as Username-Password-Authentication.
 
 ## Step 5 - Create an application
 
-1. [Create an application](https://auth0.com/docs/get-started/auth0-overview/create-applications).
+1. <a href="https://auth0.com/docs/get-started/auth0-overview/create-applications" target="_blank">Create an application</a>.
      
        Let's create an application as `My App`.
 
@@ -34,8 +34,8 @@ If you have not created the user already, [create a user](https://auth0.com/docs
 
 ## Step 6 - Update the Helm Chart
 
-1. [Access the endpoints that correspond to the application](https://auth0.com/docs/get-started/applications/application-settings#endpoints), which is available in the **Advanced Settings** section.
-2. Follow the instructions outlined in [Customize Configurations](../../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file. Open the `values.yaml` file.
+1. <a href="https://auth0.com/docs/get-started/applications/application-settings#endpoints" target="_blank">Access the endpoints that correspond to the application</a>, which is available in the **Advanced Settings** section.
+2. Follow the instructions outlined in <a href="../../../Customize-Configurations" target="_blank">Customize Configurations</a>. These instructions will guide you through the process of acquiring the `values.yaml` file. Open the `values.yaml` file.
 3. Update the IDP related configurations in the `idp` section.
 4. Create a K8s Secret with retrieved `clientId` and `clientSecret` from Step 4 with name `apk-idp-secret`.
 

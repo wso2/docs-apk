@@ -11,11 +11,11 @@ This section is a step-by-step guide to add or configure existing listeners the 
 
 ## Before you begin...
 
-Install the [prerequisites](../prerequisites.md) that are required to run WSO2 API Platform For Kubernetes.
+Install the <a href="../../prerequisites" target="_blank">prerequisites</a> that are required to run WSO2 API Platform For Kubernetes.
 
 ## Step 1 - Start WSO2 API Platform For Kubernetes
 
-[Start the APK deployment ](../../get-started/quick-start-guide.md).
+<a href="../../../get-started/quick-start-guide" target="_blank">Start the APK deployment</a>.
 
 ## Step 2 - Adding a new listener
 
@@ -52,7 +52,7 @@ Install the [prerequisites](../prerequisites.md) that are required to run WSO2 A
             namespace: apk
     ```
 
-You can configure the public certificate of that particular domain as a k8s secret and refer it in the gateway.yaml file under added listener. For more information on how to create a k8s secret, see [Creating a k8s secret](https://kubernetes.io/docs/concepts/configuration/secret/#creating-a-secret).
+You can configure the public certificate of that particular domain as a k8s secret and refer it in the gateway.yaml file under added listener. For more information on how to create a k8s secret, see <a href="https://kubernetes.io/docs/concepts/configuration/secret/#creating-a-secret" target="_blank">Creating a k8s secret</a>.
 
 ## Step 3 - Apply the changes
 
