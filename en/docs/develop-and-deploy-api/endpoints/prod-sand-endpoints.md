@@ -103,9 +103,9 @@ You can define different endpoint URLs for different resources. The following is
      scopes: []
      endpointConfigurations:
        production:
-         endpoint: "http://employee-service:8080"
-       sandbox:
          endpoint: "https://httpbin.org/anything"
+       sandbox:
+         endpoint: "http://employee-service:8080"
    - target: "/employee"
      verb: "POST"
      secured: true
