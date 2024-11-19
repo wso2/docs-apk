@@ -14,20 +14,24 @@ APK is an open-source platform for providing complete API Management capabilitie
 
 To support cloud native Kubernetes environments, the platform’s deployment consists of data plane components.
 
-**The Data Plane** is responsible for handling the runtime design, processing API requests, and applying API management quality of services. It’s designed to handle high volume, real-time data processing and includes functions for routing, rate limiting, and security. The APK runtime consists of three main sub-components: 
+**The Data Plane** is responsible for handling the runtime design, processing API requests, and applying API management quality of services.It’s designed to handle high volume, real-time data processing and includes functions for routing, rate limiting, and security. The APK runtime consists of three main sub-components: 
 - The Runtime Manager is responsible for configuring the runtime aspects of APIs, discovering Kubernetes services, and converting them into APIs.
 - The Management Client communicates with the management server (control plane) to push and pull updates and maintain connectivity between the data plane and the control plane.
 - The API Gateway has two main components. The Router intercepts incoming API traffic and applies quality of service such as authentication, authorization, and rate limiting. Meanwhile, the Enforcer enforces API management capabilities, such as security, rate limiting, analytics, validation, etc.
 - Redis and Envoy Rate Limiter components are deployed to manage and throttle traffic within the dataplane. These components effectively address the requirements for traffic management and enable fine-grained control of API traffic. By using these components, organizations can ensure that their APIs are protected from overuse, while also providing an optimized user experience.
 
-The dataplane components are primarily used by individuals who invoke APIs and make use of their functionality. When a user invokes an API, it first enters the router component, which serves as the main entry point. The router identifies resources and matched APIs and then connects with the enforcer to authenticate the API request. Rate limit policies and other API-level policies are then applied to the request.
+The dataplane components are primarily used by individuals who invoke APIs and make use of their functionality.
+When a user invokes an API, it first enters the router component, which serves as the main entry point. The router identifies resources and matched APIs and then connects with the enforcer to authenticate the API request. Rate limit policies and other API-level policies are then applied to the request.
 Once the gateway processing is complete, the request is passed to the backend service, and similarly, API policies can be executed in the response path as well. Since the dataplane is responsible for handling the majority of the load when users consume APIs, it is essential to plan carefully to ensure proper scaling of the deployment with load.
 
 
 # Deployment Architecture
-The APK product offers a highly flexible deployment architecture that is suitable for modern cloud native deployments. There are various deployment options available to users, including a multi-cluster deployment model, where each region has its own cluster running the APK dataplane, and these dataplanes are connected to a central control plane through a global network. This ensures high availability and disaster recovery scenarios, preventing an outage in one region from impacting the availability of the entire system.
+- The APK product offers a highly flexible deployment architecture that is suitable for modern cloud native deployments. 
+- There are various deployment options available to users, including a multi-cluster deployment model, where each region has its own cluster running the APK dataplane, and these dataplanes are connected to a central control plane through a global network.
+- This ensures high availability and disaster recovery scenarios, preventing an outage in one region from impacting the availability of the entire system.
 
-To support these deployment models, APK utilizes Kubernetes features such as node selectors, affinity, and anti-affinity rules, to schedule pods in the appropriate region. This approach provides organizations with the flexibility to deploy the APK platform across different data centers, clusters within the same data center, or different mega clouds, based on their requirements.
+- To support these deployment models, APK utilizes Kubernetes features such as node selectors, affinity, and anti-affinity rules, to schedule pods in the appropriate region. 
+- This approach provides organizations with the flexibility to deploy the APK platform across different data centers, clusters within the same data center, or different mega clouds, based on their requirements.
 
 Moreover, APK also provides a flexible solution for different departments or lines of business within an organization to have their own deployments. This can be achieved by using Kubernetes cluster or namespaces to create isolated environments for each department or line of business, with their API gateway instances and custom configurations. Each department can have its own set of resources, such as pods, services, and ingress controllers, that are managed independently of other clusters or namespaces. This approach allows for better control over resource allocation and access control, enabling each department or line of business to deploy and manage their APIs as per their preferences.
 
