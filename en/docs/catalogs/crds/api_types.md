@@ -33,7 +33,7 @@
             <td>
                 <code>metadata</code></br>
                 <em>
-                    <a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#objectmeta-v1-meta">
+                    <a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#objectmeta-v1-meta" target="_blank">
                         Kubernetes meta/v1.ObjectMeta
                     </a>
                 </em>
@@ -129,7 +129,7 @@
                             <p>Production contains a list of references to HttpRoutes
                                 of type HttpRoute.
                                 xref: <a
-                                    href="https://github.com/kubernetes-sigs/gateway-api/blob/main/apis/v1beta1/httproute_types.go">https://github.com/kubernetes-sigs/gateway-api/blob/main/apis/v1beta1/httproute_types.go</a>
+                                    href="https://github.com/kubernetes-sigs/gateway-api/blob/main/apis/v1beta1/httproute_types.go" target="_blank">https://github.com/kubernetes-sigs/gateway-api/blob/main/apis/v1beta1/httproute_types.go</a>
                             </p>
                         </td>
                     </tr>
@@ -147,7 +147,7 @@
                             <p>Sandbox contains a list of references to HttpRoutes
                                 of type HttpRoute.
                                 xref: <a
-                                    href="https://github.com/kubernetes-sigs/gateway-api/blob/main/apis/v1beta1/httproute_types.go">https://github.com/kubernetes-sigs/gateway-api/blob/main/apis/v1beta1/httproute_types.go</a>
+                                    href="https://github.com/kubernetes-sigs/gateway-api/blob/main/apis/v1beta1/httproute_types.go" target="_blank">https://github.com/kubernetes-sigs/gateway-api/blob/main/apis/v1beta1/httproute_types.go</a>
                             </p>
                         </td>
                     </tr>
@@ -322,7 +322,7 @@
                 <p>Production contains a list of references to HttpRoutes
                     of type HttpRoute.
                     xref: <a
-                        href="https://github.com/kubernetes-sigs/gateway-api/blob/main/apis/v1beta1/httproute_types.go">https://github.com/kubernetes-sigs/gateway-api/blob/main/apis/v1beta1/httproute_types.go</a>
+                        href="https://github.com/kubernetes-sigs/gateway-api/blob/main/apis/v1beta1/httproute_types.go" target="_blank">https://github.com/kubernetes-sigs/gateway-api/blob/main/apis/v1beta1/httproute_types.go</a>
                 </p>
             </td>
         </tr>
@@ -340,7 +340,7 @@
                 <p>Sandbox contains a list of references to HttpRoutes
                     of type HttpRoute.
                     xref: <a
-                        href="https://github.com/kubernetes-sigs/gateway-api/blob/main/apis/v1beta1/httproute_types.go">https://github.com/kubernetes-sigs/gateway-api/blob/main/apis/v1beta1/httproute_types.go</a>
+                        href="https://github.com/kubernetes-sigs/gateway-api/blob/main/apis/v1beta1/httproute_types.go" target="_blank">https://github.com/kubernetes-sigs/gateway-api/blob/main/apis/v1beta1/httproute_types.go</a>
                 </p>
             </td>
         </tr>
@@ -501,7 +501,7 @@
             <td>
                 <code>transitionTime</code></br>
                 <em>
-                    <a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#time-v1-meta">
+                    <a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#time-v1-meta" target="_blank">
                         Kubernetes meta/v1.Time
                     </a>
                 </em>

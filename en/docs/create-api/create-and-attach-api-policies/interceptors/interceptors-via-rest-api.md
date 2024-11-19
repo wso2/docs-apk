@@ -317,4 +317,4 @@ The following are the configurations that you need when attaching API Policies t
 
 ## Deploy APK configuration
 
-Refer <a href="../../../../get-started/quick-start-guide" target="_blank">Quick Start Guide</a>  to deploy the API using APK configuration.
+Refer <a href="../../../../get-started/quick-start-guide#deploy-the-api-in-apk" target="_blank">Quick Start Guide</a>  to deploy the API using APK configuration.

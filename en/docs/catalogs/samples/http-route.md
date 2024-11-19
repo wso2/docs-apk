@@ -2,7 +2,7 @@
 
 This is the resource where you define resources of your API. This HTTPRoute is linked to the API by referring to this resource name from the API resource.
 
-Refer the [Kubernetes Gateway API documentation](https://gateway-api.sigs.k8s.io/references/spec/#gateway.networking.k8s.io/v1beta1.HTTPRoute) for more information on how to configure HTTPRoute.
+Refer the <a href="https://gateway-api.sigs.k8s.io/references/spec/#gateway.networking.k8s.io/v1beta1.HTTPRoute" target="_blank">Kubernetes Gateway API documentation</a> for more information on how to configure HTTPRoute.
 ```
 apiVersion: gateway.networking.k8s.io/v1beta1
 kind: HTTPRoute
