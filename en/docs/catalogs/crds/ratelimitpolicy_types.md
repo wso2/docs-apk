@@ -36,7 +36,7 @@ dp.wso2.com/v1alpha1
             <td>
                 <code>metadata</code></br>
                 <em>
-                    <a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#objectmeta-v1-meta">
+                    <a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#objectmeta-v1-meta" target="_blank">
                         Kubernetes meta/v1.ObjectMeta
                     </a>
                 </em>
@@ -351,4 +351,4 @@ dp.wso2.com/v1alpha1
 {!catalogs/samples/ratelimit-resource.md!}
 {!catalogs/samples/ratelimit-custom.md!}
 
-Refer the [Rate Limit documentation](../../create-api/rate-limiting/rate-limiting-policy-overview.md) for more information on how to configure rate limit policies.
+Refer the <a href="../../../create-api/rate-limiting/rate-limiting-policy-overview" target="_blank">Rate Limit documentation</a> for more information on how to configure rate limit policies.

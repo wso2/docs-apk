@@ -12,5 +12,6 @@ If you enable backend JWT generation in the Gateway, each API request will carry
 
 You can configure backend JWT in two ways.
 
-1. [Using the APK Conf file](./backend-jwt-token-manipulation-via-rest-api.md).
-2. [Using CRs](./backend-jwt-token-manipulation-via-crs.md).
+1. <a href="../backend-jwt-token-manipulation-via-rest-api" target="_blank">Using the APK Conf file</a>
+2. <a href="../backend-jwt-token-manipulation-via-crs" target="_blank">Using CRs</a>
+

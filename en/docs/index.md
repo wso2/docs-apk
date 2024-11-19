@@ -23,20 +23,20 @@
     <div class="section02">
         <!--<h3>APK in a Nutshell</h3>-->
         <div class="linkWrapper">
-            <div class="linkSet2" onclick="location.href='get-started/quick-start-guide';">
-                <a href="get-started/quick-start-guide"><h3>Quick Start Guide</h3></a>
+            <div class="linkSet2" onclick="location.href='get-started/quick-start-guide', '_blank')">
+                <a href="get-started/quick-start-guide" target="_blank"><h3>Quick Start Guide</h3></a>
                 <p>
                     The Quick Start Guide for WSO2 API Platform for Kubernetes is a good starting point for developers and architects aiming to build innovative apps and services using APIs. It offers a comprehensive overview of APK platform installation, configuration, and API creation and publishing. The guide is user-friendly, featuring step-by-step instructions, making it ideal for beginners and those wanting to explore advanced features. It is an excellent foundation for building secure, scalable, and robust APIs, enhancing your overall API management capabilities. Get started with quick start guideline to take your API development to the next level.
                 </p>
             </div>
-            <div class="linkSet2 middle" onclick="location.href='about-apk/what-is-apk';">
-                <a href="about-apk/what-is-apk"><h3>What is APK?</h3></a>
+            <div class="linkSet2 middle" onclick="location.href='about-apk/what-is-apk', '_blank')">
+                <a href="about-apk/what-is-apk" target="_blank"><h3>What is APK?</h3></a>
                 <p>
                     WSO2 API Platform for Kubernetes (APK) provides a complete solution for API management, covering the entire API lifecycle from design and development to publishing and consumption. With its support for API gateway, developer portal, and marketplace capabilities, the platform offers a robust set of tools for managing APIs. Additionally, WSO2 APK includes key architectural features specifically designed for Kubernetes environments, making it easy to deploy and manage APIs in a cloud-native way.
                 </p>
             </div>
-            <div class="linkSet2 last" onclick="location.href='about-apk/architecture';">
-                <a href="about-apk/architecture"><h3>Architecture</h3></a>
+            <div class="linkSet2 last" onclick="location.href='about-apk/architecture', '_blank')">
+                <a href="about-apk/architecture" target="_blank"><h3>Architecture</h3></a>
                 <p>
                     WSO2 APK's microservices architecture is built on top of a containerized infrastructure, which enables rapid deployment and scalability in Kubernetes environments. The platform's architecture is composed of various components, including API Gateway, Developer Portal, Analytics, Key Manager, and Traffic Manager, all of which can be deployed independently or together to create a comprehensive API management solution. This modular approach allows organizations to choose only the components they need, reducing the platform's overall footprint while still providing enterprise-grade API management capabilities.
                 </p>

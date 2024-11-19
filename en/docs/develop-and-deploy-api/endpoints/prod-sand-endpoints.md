@@ -2,10 +2,10 @@
 
 ## Before you begin
 
-- [Create an API](../../get-started/quick-start-guide.md)
+- <a href="../../../get-started/quick-start-guide" target="_blank">Create an API</a>
 
 
-You can use the apk-conf file which is created in [Create an API](../../get-started/quick-start-guide.md) documentation and save this content into a file named `EmployeeServiceEndpoints.apk-conf`.
+You can use the apk-conf file which is created in <a href="../../../get-started/quick-start-guide">Create an API</a> documentation and save this content into a file named `EmployeeServiceEndpoints.apk-conf`.
 
 Sample content before the modification is shown below.
 

@@ -63,12 +63,12 @@ Given below are the details of the deployment that was used for the performance 
 
 All scripts used to run the performance tests and analyze results are in the following repositories.
 
-- [https://github.com/wso2/apk/tree/main/test/performance](https://github.com/wso2/apk/tree/main/test/performance)
+- <a href="https://github.com/wso2/apk/tree/main/test/performance" target="_blank">https://github.com/wso2/apk/tree/main/test/performance</a>
 
 
 ## Results
 
-[APK](https://wso2.com/api-platform-for-k8s/) is powered by the open source project called [Envoy Proxy](https://www.envoyproxy.io/). Envoy allows to change number of worker threads used for the computations. More details regarding the envoy `--concurrency` configuration are available in [here](https://www.envoyproxy.io/docs/envoy/latest/operations/cli#cmdoption-concurrency). Additionally, an explanation for the **Envoy Threading Model** includes [here](https://www.envoyproxy.io/docs/envoy/latest/operations/cli#cmdoption-concurrency).
+<a href="https://wso2.com/api-platform-for-k8s" target="_blank">APK</a> is powered by the open source project called <a href="https://www.envoyproxy.io" target="_blank">Envoy Proxy</a>. Envoy allows to change number of worker threads used for the computations. More details regarding the envoy `--concurrency` configuration are available in <a href="https://www.envoyproxy.io/docs/envoy/latest/operations/cli#cmdoption-concurrency" target="_blank">here</a>. Additionally, an explanation for the **Envoy Threading Model** includes <a href="https://www.envoyproxy.io/docs/envoy/latest/operations/cli#cmdoption-concurrency" target="_blank">here</a>.
 
 Since we used the `Standard F8s v2` instances (CPU count = 4) for the performance tests and to do a test result comparison, we executed the above-mentioned user counts and payload sizes considering two concurrency levels. We assigned below describing `CPU amount` and `concurrency count` to the Router when applying APK test deployments. In order to match the increased concurrency level, we increased the CPU allocation to the Router also. Below table lists the test scenarios explained in this documentation.
 
@@ -86,13 +86,13 @@ Since we used the `Standard F8s v2` instances (CPU count = 4) for the performanc
     <td>1</td>
     <td>1000 (1CPU)</td>
     <td>2</td>
-    <td><a href="{{base_path}}/en/latest/about-apk/performance-test-results/gateway-router-with-one-cpus/">Router with one CPU</a</td>
+    <td><a href="{{base_path}}/en/latest/about-apk/performance-test-results/gateway-router-with-one-cpus/" target="_blank">Router with one CPU</a</td>
   </tr>
   <tr>
     <td>2</td>
     <td>2000 (2CPU)</td>
     <td>2</td>
-    <td><a href="{{base_path}}/en/latest/about-apk/performance-test-results/gateway-router-with-two-cpus/">Router with two CPU</a</td>
+    <td><a href="{{base_path}}/en/latest/about-apk/performance-test-results/gateway-router-with-two-cpus/" target="_blank">Router with two CPU</a</td>
   </tr>
 </tbody>
 </table>

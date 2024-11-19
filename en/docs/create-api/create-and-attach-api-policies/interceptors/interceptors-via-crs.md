@@ -167,7 +167,7 @@ Here `interceptor-cert-secret` refers to a Kubernetes `Secret` resource which co
 
 !!! Tip
 
-    You can define CA certificate of interceptor service using three different ways. If you have the certificate on your hand use `certificateInline` to define it inline. Or you can use `secretRef` or `configMapRef` fields to read them from a `Secret` resource or a `ConfigMap` resource respectively. Check the [Manage Certificate](../../../manage-service-endpoint/manage-certificate/) section for more information.
+    You can define CA certificate of interceptor service using three different ways. If you have the certificate on your hand use `certificateInline` to define it inline. Or you can use `secretRef` or `configMapRef` fields to read them from a `Secret` resource or a `ConfigMap` resource respectively. Check the <a href="../../../manage-service-endpoint/manage-certificate" target="_blank">Manage Certificate</a> section for more information.
 
 ## Configuring API level Interceptors
 

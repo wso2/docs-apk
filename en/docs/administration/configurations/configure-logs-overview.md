@@ -15,7 +15,7 @@ Both these files are located in the same ConfigMap file located in the following
 apk/helm-charts/templates/data-plane/gateway-components/log-conf.yaml
 ```
 
-These configurations can be set using the `values.yaml` file. Instructions in [Customize Configurations](../../setup/Customize-Configurations.md) will guide you through the process of acquiring the `values.yaml` file. Follow each section to configure the logs for each of the components.
+These configurations can be set using the `values.yaml` file. Instructions in <a href="../../../setup/Customize-Configurations" target="_blank">Customize Configurations</a> will guide you through the process of acquiring the `values.yaml` file. Follow each section to configure the logs for each of the components.
 
 ## Error Codes in Logs 
 
@@ -29,21 +29,21 @@ In addition to these, the adapter and enforcer components have been defined with
 
 Here is a summary of topics that will be covered under this log configurations section.
 
-- [Adapter Log Configurations](../configure-logs-adapter/)
-    - [Adapter root level configurations](../configure-logs-adapter#adapter-root-level-configurations)
-    - [Adapter package level configurations](../configure-logs-adapter#adapter-package-level-configurations)
+- <a href="../configure-logs-adapter/" target="_blank">Adapter Log Configurations</a>
+  - <a href="../configure-logs-adapter#adapter-root-level-configurations" target="_blank">Adapter root level configurations</a>
+  - <a href="../configure-logs-adapter#adapter-package-level-configurations" target="_blank">Adapter package level configurations</a>
 
-- [Enforcer Log Configurations](../configure-logs-enforcer)
-    - [Configuring Log4j2 Properties](../configure-logs-enforcer/#configuring-log4j2-properties)
-        - [Setting the Log Level](../configure-logs-enforcer/#setting-the-log-level)
-        - [Setting the Threshold](../configure-logs-enforcer/#setting-the-threshold)
-        - [Configuring Log4j2 Appenders](../configure-logs-enforcer/#configuring-log4j2-appenders)
-        - [Configuring Log4j2 Loggers](../configure-logs-enforcer/#configuring-log4j2-loggers)
-    - [Enforcer Access Logs](../configure-logs-enforcer/#enforcer-access-logs)
-    - [Setting the log format](../configure-logs-enforcer/#setting-the-log-format)
-        - [Plain Text format](../configure-logs-enforcer/#plain-text-format)
-        - [JSON format](../configure-logs-enforcer/#json-format)
+- <a href="../configure-logs-enforcer" target="_blank">Enforcer Log Configurations</a>
+  - <a href="../configure-logs-enforcer/#configuring-log4j2-properties" target="_blank">Configuring Log4j2 Properties</a>
+    - <a href="../configure-logs-enforcer/#setting-the-log-level" target="_blank">Setting the Log Level</a>
+    - <a href="../configure-logs-enforcer/#setting-the-threshold" target="_blank">Setting the Threshold</a>
+    - <a href="../configure-logs-enforcer/#configuring-log4j2-appenders" target="_blank">Configuring Log4j2 Appenders</a>
+    - <a href="../configure-logs-enforcer/#configuring-log4j2-loggers" target="_blank">Configuring Log4j2 Loggers</a>
+  - <a href="../configure-logs-enforcer/#enforcer-access-logs" target="_blank">Enforcer Access Logs</a>
+  - <a href="../configure-logs-enforcer/#setting-the-log-format" target="_blank">Setting the log format</a>
+    - <a href="../configure-logs-enforcer/#plain-text-format" target="_blank">Plain Text format</a>
+    - <a href="../configure-logs-enforcer/#json-format" target="_blank">JSON format</a>
 
-- [Router Log Configurations](../configure-logs-router/#router-log-configurations)
-    - [Router Access Logging](../configure-logs-router/#router-access-logging)
-    - [Router Debug Logs](../configure-logs-router/#router-debug-logs)
+- <a href="../configure-logs-router/#router-log-configurations" target="_blank">Router Log Configurations</a>
+  - <a href="../configure-logs-router/#router-access-logging" target="_blank">Router Access Logging</a>
+  - <a href="../configure-logs-router/#router-debug-logs" target="_blank">Router Debug Logs</a>

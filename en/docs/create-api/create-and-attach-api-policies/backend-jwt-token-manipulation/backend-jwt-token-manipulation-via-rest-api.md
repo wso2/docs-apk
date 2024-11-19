@@ -2,11 +2,11 @@
 
 ### Before you begin
 
-- [Create an API](../../../get-started/quick-start-guide.md)
+- <a href="../../../../get-started/quick-start-guide" target="_blank">Create an API</a>
 
 ### Step 1 - Retrieve existing API configuration
 
-Here, you can use the apk-conf file which is created in [Create an API](../../../get-started/quick-start-guide.md) documentation and save this content into a file named `EmployeeService.apk-conf`.
+Here, you can use the apk-conf file which is created in <a href="../../../../get-started/quick-start-guide" target="_blank">Create an API</a> documentation and save this content into a file named `EmployeeService.apk-conf`.
 
 ### Step 2 - Add the API Policy for Backend JWT
 
@@ -70,11 +70,11 @@ apiPolicies:
 ```
 ### Step 3 - Deploy the API in APK
 
-Refer to the [Deploy the API in APK](../../../get-started/quick-start-guide.md#deploy-the-api-in-apk) to deploy the API using APK configuration.
+Refer to the <a href="../../../../get-started/quick-start-guide#deploy-the-api-in-apk" target="_blank">Deploy the API in APK</a> to deploy the API using APK configuration.
 
 ### Step 4 - Generate an Acess Token
 
-Follow the [Generate Access Token](../../../develop-and-deploy-api/security/generate-access-token.md) documentation to generate an access token.
+Follow the <a href="../../../../develop-and-deploy-api/security/generate-access-token" target="_blank">Generate Access Token</a> documentation to generate an access token.
 
 ### Step 5 - Invoke the API
 
@@ -86,7 +86,7 @@ curl --location 'https://default.gw.wso2.com:9095/backend-jwt/1.0/test' \
 --header 'Authorization: Bearer <accessToken>
 ```
 
-Since this guide uses the [httpbin service](https://httpbin.org/anything) which echoes the request and all of its headers, when you invoke the API, you will see a response similar to the following. The header "X-Jwt-Assertion" contains the JWT generated containing the claims.
+Since this guide uses the <a href="https://httpbin.org/anything" target="_blank">httpbin service</a> which echoes the request and all of its headers, when you invoke the API, you will see a response similar to the following. The header "X-Jwt-Assertion" contains the JWT generated containing the claims.
 
 ```
 "headers": {

@@ -4,12 +4,12 @@ This documentation explains how to make an API version the default version in WS
 
 ## Before you begin
 
-- [Create an API](../../get-started/quick-start-guide.md)
+- <a href="../../../get-started/quick-start-guide" target="_blank">Create an API</a>
 
 ## Using APK configuration
 
 ### Retrieve existing API configuration.
-Here, you can use the apk-conf file which is created in [Create an API](../../get-started/quick-start-guide.md) documentation and save this content into a file named `EmployeeServiceDefaultVersion.apk-conf`.
+Here, you can use the apk-conf file which is created in <a href="../../../get-started/quick-start-guide" target="_blank">Create an API</a> documentation and save this content into a file named `EmployeeServiceDefaultVersion.apk-conf`.
 
 Sample content before the modification is shown below.
    ```
@@ -87,7 +87,7 @@ Here, you can do any other related changes to the API configuration as well.
 
 ### Generate an access token to deploy and invoke an API
 
-To deploy and invoke the system APIs, we need a valid access token issued by an identity provider (IdP). Follow the ["Generate Access Token"](../../develop-and-deploy-api/security/generate-access-token.md) documentation to generate an access token.
+To deploy and invoke the system APIs, we need a valid access token issued by an identity provider (IdP). Follow the <a href="../../../develop-and-deploy-api/security/generate-access-token" target="_blank">"Generate Access Token"</a> documentation to generate an access token.
 
 
 ### Deploy the default version API.
@@ -96,10 +96,10 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the updat
 
 Use the values provided in the table below in the body of your request.
 
-   |    Field        | Value                                 | Required|
-   |---------------------------------------|---------------------------------------------|---------------------------------------------|
-   | apkConfiguration       | `EmployeeServiceDefaultVersion.apk-conf` file     |:material-check:|
-   | definitionFile   | `EmployeeServiceDefinition.json` file |:material-check:|
+   | Field            | Value                                         | Required         |
+   | ---------------- | --------------------------------------------- | ---------------- |
+   | apkConfiguration | `EmployeeServiceDefaultVersion.apk-conf` file | :material-check: |
+   | definitionFile   | `EmployeeServiceDefinition.json` file         | :material-check: |
 
 1.  Set the access token in the Authorization header as a bearer token. This is the access token received by following the steps under ["Generate an access token to deploy and invoke an API"](#generate-an-access-token-to-deploy-and-invoke-an-api) section above.
 2.  Execute the API deployment request. You will receive a successful response with an Id for the API.

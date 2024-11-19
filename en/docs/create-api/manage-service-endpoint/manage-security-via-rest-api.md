@@ -98,4 +98,4 @@ operations:
     scopes: []
 ```
 
-You can then deploy this API by following the steps in [Create an API](../../get-started/quick-start-guide.md) documentation.
+You can then deploy this API by following the steps in <a href="../../../get-started/quick-start-guide" target="_blank">Create an API</a> documentation.

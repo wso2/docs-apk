@@ -35,7 +35,7 @@ This includes setting the application's settings, such as the application name a
 
 ## Step 6 - Update the Helm Chart
 
-1. Follow the instructions outlined in [Customize Configurations](../../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file. Open the `values.yaml` file.
+1. Follow the instructions outlined in <a href="../../../Customize-Configurations" target="_blank">Customize Configurations</a>. These instructions will guide you through the process of acquiring the `values.yaml` file. Open the `values.yaml` file.
 2. Update the IDP related configurations in the `idp` section.
 
      ```yaml
@@ -52,12 +52,12 @@ This includes setting the application's settings, such as the application name a
 
 The Idp section should include the following parameters:
 
-| **Parameter** | **Description** |
-|---------------|-----------------|
-| `issuer:` | The IdP's issuer URL. |
-| `jwksEndpoint:` |  The URL of the IdP's JSON Web Key Set (JWKS) endpoint.  |
-| `usernameClaim:` |  The claim in the IdP's token that represents the user's username.  |
-| `organizationClaim:` |  The claim in the IdP's token that represents the user's organization, if applicable.  |
+| **Parameter**        | **Description**                                                                      |
+| -------------------- | ------------------------------------------------------------------------------------ |
+| `issuer:`            | The IdP's issuer URL.                                                                |
+| `jwksEndpoint:`      | The URL of the IdP's JSON Web Key Set (JWKS) endpoint.                               |
+| `usernameClaim:`     | The claim in the IdP's token that represents the user's username.                    |
+| `organizationClaim:` | The claim in the IdP's token that represents the user's organization, if applicable. |
 
 ## Step 7 - Start WSO2 APK
 

@@ -4,7 +4,7 @@ API Scopes are used to define the access level of an API resources. You can defi
 
 ## Before you begin
 
-You can use the apk-conf file which is created in [Create an API](../../get-started/quick-start-guide.md) documentation and save this content into a file named `EmployeeServiceEndpoints.apk-conf`.
+You can use the apk-conf file which is created in <a href="../../../get-started/quick-start-guide#generate-apk-configuration-file-from-the-openapi-definition" target="_blank">Create an API</a> documentation and save this content into a file named `EmployeeServiceEndpoints.apk-conf`.
 
 Sample content before the modification is shown below.
 
@@ -36,7 +36,7 @@ Sample content before the modification is shown below.
      scopes: []
    ```
 ## Invoke API using access token without API Scopes
-Refer [Invoke an API](../../get-started/quick-start-guide.md) to invoke the API.
+Refer <a href="../../../get-started/quick-start-guide#step-4-invoke-the-api" target="_blank">Invoke an API</a> to invoke the API.
 
 ## Adding API Scopes
 
@@ -73,19 +73,19 @@ Here, we have added a property named `scopes` with the value `wso2` for `/employ
 
 ## Deploy APK configuration
 
-Refer [Create an API](../../get-started/quick-start-guide.md) to deploy the API using APK configuration.
+Refer <a href="../../../get-started/quick-start-guide#deploy-the-api-in-apk" target="_blank">Create an API</a> to deploy the API using APK configuration.
 
 ## Invoke API using access token without API Scopes
-Refer [Invoke an API](../../get-started/quick-start-guide.md) to invoke the API. Now, you will receive a 403 Forbidden response as the access token does not have the required scope.
+Refer <a href="../../../get-started/quick-start-guide#step-4-invoke-the-api" target="_blank">Invoke an API</a> to invoke the API. Now, you will receive a 403 Forbidden response as the access token does not have the required scope.
 
 ## Invoke API using access token with API Scopes
 
 1. Execute the following request to generate the access token with scope. Use the base64 encoded value of the colon separated client Id and client secret provided in the table below in the Authorization header of the request. We will be using the client credentials grant type with scopes to generate the token.
 
-   |    Field        |                    Value                    |
-       |-----------------|---------------------------------------------|
-   | Client ID       | 45f1c5c8-a92e-11ed-afa1-0242ac120002        |
-   | Client Secret   | 4fbd62ec-a92e-11ed-afa1-0242ac120002        |
+   | Field         | Value                                |
+   | ------------- | ------------------------------------ |
+   | Client ID     | 45f1c5c8-a92e-11ed-afa1-0242ac120002 |
+   | Client Secret | 4fbd62ec-a92e-11ed-afa1-0242ac120002 |
 
 === "Request"
     ```

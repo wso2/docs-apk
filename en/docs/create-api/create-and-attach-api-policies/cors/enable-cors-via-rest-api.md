@@ -4,7 +4,7 @@ Cross-Origin Resource Sharing (CORS) is a mechanism that allows accessing restri
 
 ## Before you begin
 
-- [Create an API](../../../get-started/quick-start-guide.md)
+- <a href="../../../../get-started/quick-start-guide" target="_blank">Create an API</a>
 
 ### CORS configuration
 
@@ -59,12 +59,12 @@ Follow the instructions below to add CORS configurations to an API using the RES
 
 !!! note "Before you begin"
     
-    - Install the [prerequisites](../../../setup/prerequisites) that are required to run WSO2 APK.
-    - [Start WSO2 APK](../../../get-started/quick-start-guide/#step-1-start-wso2-apk).
+    - Install the <a href="../../../../setup/prerequisites" target="_blank">prerequisites</a> that are required to run WSO2 APK.
+    - <a href="../../../get-started/quick-start-guide/#step-1-start-wso2-apk" target="_blank">Start WSO2 APK</a>.
 
 ### Retrieve existing API configuration.
 
-Here, you can use the apk-conf file which is created in [Create an API](../../../get-started/quick-start-guide.md) documentation and save this content into a file named `EmployeeServiceCORS.apk-conf`.
+Here, you can use the apk-conf file which is created in <a href="../../../../get-started/quick-start-guide" target="_blank">Create an API</a> documentation and save this content into a file named `EmployeeServiceCORS.apk-conf`.
 
 Sample content before the modification is shown below.
   ```
