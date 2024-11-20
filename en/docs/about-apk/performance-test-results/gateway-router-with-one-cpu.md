@@ -27,9 +27,9 @@ The table below displays the resource allocations for the Gateway related compon
   </tr>
   <tr>
     <td>Router</td>
-    <td>500</td>
+    <td>600</td>
     <td>1000</td>
-    <td>500</td>
+    <td>600</td>
     <td>1000</td>
   </tr>
   <tr>
