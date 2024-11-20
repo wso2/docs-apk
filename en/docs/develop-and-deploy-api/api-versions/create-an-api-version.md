@@ -136,25 +136,25 @@ Use the values provided in the table below in the body of your request.
         type: "REST"
         defaultVersion: false
         endpointConfigurations:
-        production:
-        endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
+          production:
+            endpoint: "http://employee-service:8080"
         operations:
         - target: "/employee"
-        verb: "GET"
-        secured: true
-        scopes: []
+          verb: "GET"
+          secured: true
+          scopes: []
         - target: "/employee"
-        verb: "POST"
-        secured: true
-        scopes: []
+          verb: "POST"
+          secured: true
+          scopes: []
         - target: "/employee/{employeeId}"
-        verb: "PUT"
-        secured: true
-        scopes: []
+          verb: "PUT"
+          secured: true
+          scopes: []
         - target: "/employee/{employeeId}"
-        verb: "DELETE"
-        secured: true
-        scopes: []
+          verb: "DELETE"
+          secured: true
+          scopes: []
         ```
 
 By now, you have deployed the new version of the API. You can invoke the new version of the API using the access token generated in the previous step.
