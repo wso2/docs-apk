@@ -14,7 +14,6 @@ There are a few levels where a Policy attachment can happen in APK resources.
 
 Attaching a policy to a specific level is descibed under each policy.
 
-
 ## Policy Execution Order
 
 When you have multiple policies attached in different levels policies, you need to be aware of in which order they are executed in runtime. The following table describes the execution order. The top one is executed first, and the bottom one is executed last.
@@ -47,9 +46,27 @@ Keep in mind that you cannot attach an API policy at two separate levels simulta
 
 When you attach a policy at the API-level, it will be applied globally to all the operations that correspond to the API. However, when you attach a policy at an operation level, it will only be applicable locally to a specific operation.
 
+## Supported API Policies
+
+The following API policies are supported in APK.
+
+- Interceptor Services
+- Backend JWT 
+- CORS
+- Header Modification
+- Request Redirection
+- Request Mirroring
+
+For more complex requirements that go beyond default policies, consider using **interceptor services**. These services enable you to:
+
+- Implement custom logic for request and response processing.
+- Apply transformations, validations, or enhancements based on specific use cases.
+
 ## What's Next?
 
-- [Learn to attach API Policies for Interceptor Services](./interceptors/interceptors-overview.md)
-- [Learn to attach API Policies for Backend JWT Token Manipulation](./backend-jwt-token-manipulation/overview.md)
-- [Learn to attach API Policies for CORS](./cors/enable-cors-via-rest-api.md)
-  
+- [Learn to attach API Policies for Interceptor Services](./interceptors/interceptors-overview.md){:target="_blank"}
+- [Learn to attach API Policies for Backend JWT Token Manipulation](./backend-jwt-token-manipulation/overview.md){:target="_blank"}
+- [Learn to attach API Policies for CORS](./cors/enable-cors-via-rest-api.md){:target="_blank"}
+- [Learn to attach API Policies for Header Modification](./header-modifier-filters/overview.md){:target="_blank"}
+- [Learn to attach API Policies for Request Redirection](./redirect-request-filters/redirect-request-via-rest-api.md){:target="_blank"}
+- [Learn to attach API Policies for Request Mirroring](./mirror-request-filters/overview.md){:target="_blank"}
