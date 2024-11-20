@@ -20,7 +20,7 @@ Sample content before the modification is shown below.
    defaultVersion: false
    endpointConfigurations:
     production:
-      endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
+      endpoint: "http://employee-service:8080"
    operations:
    - target: "/employee"
      verb: "GET"
@@ -46,7 +46,6 @@ Sample content before the modification is shown below.
 It is mandatory to define at least one of the production endpoint or sandbox endpoint at the API level. Let's add different endpoints for sandbox and production.
 
 Update the APK configuration as the following to add different endpoints to sandbox and production endpoints. You can use your own endpoints. In this example, we have used two different mocky endpoints; these endpoints might not work when you test. 
-
 
    ```yaml
    name: "EmployeeServiceAPI"

@@ -1,4 +1,4 @@
-# Request Redirection via REST API
+# Request Redirection via CRs
 
 Request redirection allows you to send clients to a different URL. This can be useful for changing old URLs to new ones or directing traffic based on specific conditions. Request redirection can be configured via Kubernetes CRs as follows.
 
