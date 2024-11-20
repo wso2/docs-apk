@@ -8,7 +8,6 @@ By default, OAuth2 authentication is enabled for all the APIs. The default confi
 
 You can use the apk-conf file which is created in [Create an API](../../../../get-started/quick-start-guide.md) documentation and save this content into a file named `EmployeeServiceDisabledOAuth2.apk-conf`.
 
-
 Sample content before the modification is shown below.
 
    ```yaml
@@ -19,7 +18,7 @@ Sample content before the modification is shown below.
    defaultVersion: false
    endpointConfigurations:
       production:
-         endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
+         endpoint: "http://employee-service:8080"
    operations:
       - target: "/employee"
         verb: "GET"
@@ -60,7 +59,7 @@ Sample APK configuration content after the modification to disable OAuth2 is sho
    defaultVersion: false
    endpointConfigurations:
       production:
-         endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
+         endpoint: "http://employee-service:8080"
    operations:
       - target: "/employee"
         verb: "GET"
@@ -107,7 +106,7 @@ Sample APK configuration content after the modification to use a custom auth hea
    defaultVersion: false
    endpointConfigurations:
       production:
-         endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
+         endpoint: "http://employee-service:8080"
    operations:
       - target: "/employee"
         verb: "GET"
@@ -154,7 +153,7 @@ Sample APK configuration content after the modification to send the OAuth2 heade
    defaultVersion: false
    endpointConfigurations:
       production:
-         endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
+         endpoint: "http://employee-service:8080"
    operations:
       - target: "/employee"
         verb: "GET"
