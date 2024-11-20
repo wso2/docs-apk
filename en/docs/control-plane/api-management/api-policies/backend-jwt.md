@@ -14,7 +14,15 @@ If you enable backend JWT generation in the Gateway, each API request will carry
 
 When the request goes through the Gateway, the backend JWT is appended as a transport header to the outgoing message. The backend service fetches the JWT and retrieves the required information about the user, application, or token.
 
-You can configure backend JWT in two ways.
+To enable backend JWT for an API or an operation, you can add a policy as follows.
 
-1. <a href="../../backend-jwt-token-manipulation/backend-jwt-token-manipulation-via-rest-api" target="_blank">Using the APK Conf file</a>
-2. <a href="../../backend-jwt-token-manipulation/backend-jwt-token-manipulation-via-crs" target="_blank">Using CRs</a>
+[![Backend JWT](../../../assets/img/api-policies/backend-jwt.png)](../../../assets/img/api-policies/backend-jwt.png)
+
+The following values need to be added to the policy.
+
+| Field             | Description                                                                               |
+| ----------------- | ----------------------------------------------------------------------------------------- |
+| Encoding          | The encoding mechanism used to encode the Backend JWT.                                    |
+| Signing Algorithm | The signing algorithm used to sign the Backend JWT.                                       |
+| Header Name       | The name of the HTTP header to which the Backend JWT is attached and sent to the backend. |
+| Token TTL         | The expiry time of the Backend JWT.                                                       |

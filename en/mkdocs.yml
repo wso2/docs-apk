@@ -213,6 +213,16 @@ nav:
                       - Create REST APIs: control-plane/apk-as-gateway-in-apim/api-management/control-plane-create-and-deploy-rest-apis.md
                       - Create GraphQL APIs: control-plane/apk-as-gateway-in-apim/api-management/control-plane-create-and-deploy-graphql-apis.md
                       - Create AI APIs: control-plane/apk-as-gateway-in-apim/api-management/control-plane-create-and-deploy-ai-apis.md
+                  - Add API Policies: 
+                      - API Policies Overview: control-plane/api-management/api-policies/api-policies-overview.md
+                      - Attach Policies: control-plane/api-management/api-policies/attaching-api-policies.md
+                      - Default Policies: 
+                          - Add Specific Headers to Request/Response: control-plane/api-management/api-policies/add-header.md
+                          - Remove Specific Headers from Request/Response: control-plane/api-management/api-policies/remove-header.md
+                          - Message Transformation using Interceptor APIPolicy: control-plane/api-management/api-policies/interceptor-service.md
+                          - Request Mirroring: control-plane/api-management/api-policies/mirror-request.md
+                          - Request Redirection: control-plane/api-management/api-policies/redirect-request.md 
+                          - Backend JWT: control-plane/api-management/api-policies/backend-jwt.md 
                   - Add APK Gateway: control-plane/apk-as-gateway-in-apim/api-management/control-plane-add-apk-gateway.md
                   - Create Application and Subscribe: control-plane/apk-as-gateway-in-apim/api-management/control-plane-create-application-and-subscription.md
         - Advanced Configuration:
