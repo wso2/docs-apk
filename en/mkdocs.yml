@@ -340,6 +340,7 @@ nav:
             - Overview: about-apk/performance-test-results/overview.md
             - Gateway router with one CPU: about-apk/performance-test-results/gateway-router-with-one-cpu.md
             - Gateway router with two CPUs: about-apk/performance-test-results/gateway-router-with-two-cpus.md
+            - Multi Gateways with two CPUs with Rate Limiting: about-apk/performance-test-results/two-gateways-of-two-cpus-with-rate-limit.md
        #- Key Concepts:
        #    - Key Concept 1: about-apk/key-concepts/key-concept.md
        #    - Key Concept 2: about-apk/key-concepts/key-concept.md

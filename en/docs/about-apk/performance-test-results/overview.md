@@ -77,6 +77,7 @@ Since we used the `Standard F8s v2` instances (CPU count = 4) for the performanc
   <tr>
     <th>Test Scenario</th>
     <th>CPU allocation for the Router (m)</th>
+    <th>Replicas</th>
     <th>Router concurrency level</th>
     <th>Test results</th>
   </tr>
@@ -85,14 +86,23 @@ Since we used the `Standard F8s v2` instances (CPU count = 4) for the performanc
   <tr>
     <td>1</td>
     <td>1000 (1CPU)</td>
+    <td>1</td>
     <td>2</td>
     <td><a href="{{base_path}}/en/latest/about-apk/performance-test-results/gateway-router-with-one-cpu/">Router with one CPU</a</td>
   </tr>
   <tr>
     <td>2</td>
     <td>2000 (2CPU)</td>
+    <td>1</td>
     <td>2</td>
     <td><a href="{{base_path}}/en/latest/about-apk/performance-test-results/gateway-router-with-two-cpus/">Router with two CPU</a</td>
   </tr>
+  <tr>
+    <td>2</td>
+    <td>2000 (2CPU)</td>
+    <td>2</td>
+    <td>2</td>
+    <td><a href="{{base_path}}/en/latest/about-apk/performance-test-results/two-gateways-of-two-cpus-with-rate-limit/">Two Routers with two CPU with Rate Limit</a</td>
+   </tr>
 </tbody>
 </table>
