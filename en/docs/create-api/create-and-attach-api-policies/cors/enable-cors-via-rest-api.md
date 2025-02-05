@@ -2,10 +2,6 @@
 
 Cross-Origin Resource Sharing (CORS) is a mechanism that allows accessing restricted resources (i.e., fonts, images, scripts, videos, and iframes) from domains outside the domain from which the requesting resource originated. Browsers define the origin as a combination of Scheme (http://, https://), Host, and Port. By default, web browsers apply the same-origin policy to avoid interactions between different origins. CORS defines a way in which a browser and a server can interact to determine whether or not it is safe to allow the cross-origin requests. This document illustrate how to enable CORS for APIs via REST API. 
 
-## Before you begin
-
-- [Create an API](../../../../get-started/quick-start-guide)
-
 ### CORS configuration
 
 <table>
@@ -53,20 +49,10 @@ Cross-Origin Resource Sharing (CORS) is a mechanism that allows accessing restri
     </tbody>
 </table>
 
-## Create an API with CORS configurations
-
-Follow the instructions below to add CORS configurations to an API using the REST API Interface:
-
-!!! note "Before you begin"
-    
-    - Install the [prerequisites](../../../../setup/prerequisites) that are required to run WSO2 APK.
-    - [Start WSO2 APK](../../../../get-started/quick-start-guide/#step-1-start-wso2-apk).
-
 ### Retrieve existing API configuration.
 
-Here, you can use the apk-conf file which is created in [Create an API](../../../get-started/quick-start-guide.md) documentation and save this content into a file named `EmployeeServiceCORS.apk-conf`.
+Here, you can save the following content into a file named `EmployeeServiceCORS.apk-conf` to use for the rest of this guide.
 
-Sample content before the modification is shown below.
   ```
   name: "EmployeeServiceAPI"
   basePath: "/test"
@@ -75,9 +61,9 @@ Sample content before the modification is shown below.
   defaultVersion: false
   endpointConfigurations:
     production:
-      endpoint: "http://employee-service:80"
+      endpoint: "http://employee-service:8080"
   operations:
-    - target: "/employee"
+    - target: "/employees"
       verb: "GET"
       secured: true
       scopes: []
@@ -122,7 +108,7 @@ type: "REST"
 defaultVersion: true
 endpointConfigurations:
   production:
-    endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
+    endpoint: "http://employee-service:8080"
 operations:
   - target: "/employee"
     verb: "GET"

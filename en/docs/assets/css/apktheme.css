@@ -266,6 +266,14 @@ header>.md-grid {
     top: .6rem;
 }
 
+.beta-badge {
+    display: inline-block;
+    background: #ffd600;
+    font-size: 14px;
+    padding: 5px;
+    line-height: 1;
+ }
+
 /* End of custom dropdown specific styles */
 
 /* The code block below hides the dropdown. Remove it after the next release. */

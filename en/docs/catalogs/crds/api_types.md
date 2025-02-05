@@ -1,11 +1,15 @@
 <p>
-<p>Package v1alpha2 contains the API Schema definitions for WSO2 APK.</p>
+<p>Package v1alpha3 contains the API Schema definitions for WSO2 APK.</p>
 </p>
-
-
-## API
-
-
+Resource Types:
+<ul>
+    <li>
+        <a href="#dp.wso2.com/v1alpha3.API">API</a>
+    </li>
+</ul>
+<h3 id="dp.wso2.com/v1alpha3.API">API
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha3.API" title="Permanent link">¶</a>
+</h3>
 <p>
 <p>API is the Schema for the apis API</p>
 </p>
@@ -23,7 +27,9 @@
                 string
             </td>
             <td>
-                <code>dp.wso2.com/v1alpha2</code>
+                <code>
+dp.wso2.com/v1alpha3
+</code>
             </td>
         </tr>
         <tr>
@@ -51,7 +57,7 @@
             <td>
                 <code>spec</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha2.APISpec">
+                    <a href="#dp.wso2.com/v1alpha3.APISpec">
                         APISpec
                     </a>
                 </em>
@@ -104,7 +110,7 @@
                         </td>
                         <td>
                             <em>(Optional)</em>
-                            <p>DefinitionFileRef contains the OpenAPI 3 or Swagger
+                            <p>DefinitionFileRef contains the
                                 definition of the API in a ConfigMap.</p>
                         </td>
                     </tr>
@@ -123,7 +129,7 @@
                         <td>
                             <code>production</code></br>
                             <em>
-                                <a href="#dp.wso2.com/v1alpha2.EnvConfig">
+                                <a href="#dp.wso2.com/v1alpha3.EnvConfig">
                                     []EnvConfig
                                 </a>
                             </em>
@@ -141,7 +147,7 @@
                         <td>
                             <code>sandbox</code></br>
                             <em>
-                                <a href="#dp.wso2.com/v1alpha2.EnvConfig">
+                                <a href="#dp.wso2.com/v1alpha3.EnvConfig">
                                     []EnvConfig
                                 </a>
                             </em>
@@ -164,7 +170,7 @@
                         </td>
                         <td>
                             <p>APIType denotes the type of the API.
-                                Possible values could be REST, GraphQL, Async</p>
+                                Possible values could be REST, GraphQL, GRPC</p>
                         </td>
                     </tr>
                     <tr>
@@ -208,7 +214,7 @@
                         <td>
                             <code>apiProperties</code></br>
                             <em>
-                                <a href="#dp.wso2.com/v1alpha2.Property">
+                                <a href="#dp.wso2.com/v1alpha3.Property">
                                     []Property
                                 </a>
                             </em>
@@ -231,13 +237,28 @@
                         </td>
                     </tr>
                 </table>
-
-<h3 id="dp.wso2.com/v1alpha2.APISpec">APISpec
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.APISpec" title="Permanent link">¶</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>status</code></br>
+                <em>
+                    <a href="#dp.wso2.com/v1alpha3.APIStatus">
+                        APIStatus
+                    </a>
+                </em>
+            </td>
+            <td>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h3 id="dp.wso2.com/v1alpha3.APISpec">APISpec
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha3.APISpec" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha2.API">API</a>)
+    <a href="#dp.wso2.com/v1alpha3.API">API</a>)
 </p>
 <p>
 <p>APISpec defines the desired state of API</p>
@@ -294,7 +315,7 @@
             </td>
             <td>
                 <em>(Optional)</em>
-                <p>DefinitionFileRef contains the OpenAPI 3 or Swagger
+                <p>DefinitionFileRef contains the
                     definition of the API in a ConfigMap.</p>
             </td>
         </tr>
@@ -313,7 +334,7 @@
             <td>
                 <code>production</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha2.EnvConfig">
+                    <a href="#dp.wso2.com/v1alpha3.EnvConfig">
                         []EnvConfig
                     </a>
                 </em>
@@ -331,7 +352,7 @@
             <td>
                 <code>sandbox</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha2.EnvConfig">
+                    <a href="#dp.wso2.com/v1alpha3.EnvConfig">
                         []EnvConfig
                     </a>
                 </em>
@@ -354,7 +375,7 @@
             </td>
             <td>
                 <p>APIType denotes the type of the API.
-                    Possible values could be REST, GraphQL, Async</p>
+                    Possible values could be REST, GraphQL, GRPC</p>
             </td>
         </tr>
         <tr>
@@ -398,7 +419,7 @@
             <td>
                 <code>apiProperties</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha2.Property">
+                    <a href="#dp.wso2.com/v1alpha3.Property">
                         []Property
                     </a>
                 </em>
@@ -422,12 +443,12 @@
         </tr>
     </tbody>
 </table>
-<h3 id="dp.wso2.com/v1alpha2.APIStatus">APIStatus
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.APIStatus" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha3.APIStatus">APIStatus
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha3.APIStatus" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha2.API">API</a>)
+    <a href="#dp.wso2.com/v1alpha3.API">API</a>)
 </p>
 <p>
 <p>APIStatus defines the observed state of API</p>
@@ -444,7 +465,7 @@
             <td>
                 <code>deploymentStatus</code></br>
                 <em>
-                    <a href="#dp.wso2.com/v1alpha2.DeploymentStatus">
+                    <a href="#dp.wso2.com/v1alpha3.DeploymentStatus">
                         DeploymentStatus
                     </a>
                 </em>
@@ -456,14 +477,12 @@
         </tr>
     </tbody>
 </table>
-</table>
-
-<h3 id="dp.wso2.com/v1alpha2.DeploymentStatus">DeploymentStatus
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.DeploymentStatus" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha3.DeploymentStatus">DeploymentStatus
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha3.DeploymentStatus" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha2.APIStatus">APIStatus</a>)
+    <a href="#dp.wso2.com/v1alpha3.APIStatus">APIStatus</a>)
 </p>
 <p>
 <p>DeploymentStatus contains the status of the API deployment</p>
@@ -539,13 +558,12 @@
         </tr>
     </tbody>
 </table>
-
-<h3 id="dp.wso2.com/v1alpha2.EnvConfig">EnvConfig
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.EnvConfig" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha3.EnvConfig">EnvConfig
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha3.EnvConfig" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha2.APISpec">APISpec</a>)
+    <a href="#dp.wso2.com/v1alpha3.APISpec">APISpec</a>)
 </p>
 <p>
 <p>EnvConfig contains the environment specific configuration</p>
@@ -560,24 +578,23 @@
     <tbody>
         <tr>
             <td>
-                <code>httpRouteRefs</code></br>
+                <code>routeRefs</code></br>
                 <em>
                     []string
                 </em>
             </td>
             <td>
-                <p>HTTPRouteRefs denotes the environment of the API.</p>
+                <p>RouteRefs denotes the environment of the API.</p>
             </td>
         </tr>
     </tbody>
 </table>
-
-<h3 id="dp.wso2.com/v1alpha2.Property">Property
-    <a class="headerlink" href="#dp.wso2.com%2fv1alpha2.Property" title="Permanent link">¶</a>
+<h3 id="dp.wso2.com/v1alpha3.Property">Property
+    <a class="headerlink" href="#dp.wso2.com%2fv1alpha3.Property" title="Permanent link">¶</a>
 </h3>
 <p>
     (<em>Appears on:</em>
-    <a href="#dp.wso2.com/v1alpha2.APISpec">APISpec</a>)
+    <a href="#dp.wso2.com/v1alpha3.APISpec">APISpec</a>)
 </p>
 <p>
 <p>Property holds key value pair of APIProperties</p>

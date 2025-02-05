@@ -16,20 +16,20 @@ Add a hostname mapping to the ```/etc/hosts``` file as follows.
 | 127.0.0.1 | idp.am.wso2.com     |
 | 127.0.0.1 | default.gw.wso2.com |
 
-#### Setup WSO2 API Manager Control Plane 4.3.0
+#### Setup WSO2 API Manager Control Plane 4.4.0
 
 Setup WSO2 API Manager 4.3.0 in VM.
 
 1. Refer to the [APIM Deployment Guide](https://apim.docs.wso2.com/en/latest/install-and-setup/install/installation-options/#2-dockerdocker-compose) to deploy the APIM 4.3.0 in a VM.
-2. Change the configurations in the ```deployment.toml``` file in the APIM 4.3.0 VM refer to the [Advance Configuration for APIM](../../../control-plane/apim-deploy/) for more information.
+2. Change the configurations in the ```deployment.toml``` file in the APIM 4.4.0 VM refer to the [Advanced Configuration for APIM](../../../control-plane/apim-deploy/) for more information.
 
 
-#### Setup WSO2 APK Dataplane 1.1.0
+#### Setup WSO2 APK Dataplane 1.2.0
 
 1. Create a new helm repository with the latest apk release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apk```.
 
     ```console
-    helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.1.0
+    helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.2.0
     ```
 
 2. Execute the following command to update the helm repositories.
@@ -42,7 +42,7 @@ Setup WSO2 API Manager 4.3.0 in VM.
 
     === "Command"
         ```
-        helm install apk wso2apk/apk-helm --version 1.1.0 -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/apk/cp-enabled-values.yaml -n apk
+        helm install apk wso2apk/apk-helm --version 1.2.0 -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/apk/1.2.0-cp-enabled-values.yaml -n apk
         ```
     === "Format"
         ```
@@ -60,12 +60,12 @@ Setup WSO2 API Manager 4.3.0 in VM.
     Please refer to the [Advance Configuration for APK](../../../control-plane/apk-deploy) for more information.
 
 
-#### Setup WSO2 APIM-APK Agent 1.1.0
+#### Setup WSO2 APIM-APK Agent 1.2.0
 
 1. Create a new helm repository with the latest apim apk agent release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apkagent``` for this guide.
 
     ```console
-    helm repo add wso2apkagent https://github.com/wso2/product-apim-tooling/releases/download/1.1.0
+    helm repo add wso2apkagent https://github.com/wso2/product-apim-tooling/releases/download/1.2.0
     ```
 
 2. Execute the following command to update the helm repositories.
@@ -80,7 +80,7 @@ Setup WSO2 API Manager 4.3.0 in VM.
 
     === "Command"
         ```
-        helm install apim-apk-agent wso2apkagent/apim-apk-agent --version 1.1.0 -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/apim-apk-agent/values.yaml -n apk
+        helm install apim-apk-agent wso2apkagent/apim-apk-agent --version 1.2.0 -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/apim-apk-agent/1.2.0-values.yaml -n apk
         ```
     === "Format"
         ```

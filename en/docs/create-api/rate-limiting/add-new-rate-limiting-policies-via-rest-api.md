@@ -2,9 +2,9 @@
 
 !!! Tip
     
-    To get familiar with the concept of Rate Limiting, see [Rate Limiting Overview](./rate-limiting-policy-overview.md).
+    To get familiar with the concept of Rate Limiting, see <a href="../../../create-api/rate-limiting/rate-limiting-policy-overview" target="_blank">Rate Limiting Overview</a>.
 
-You need to define the Rate Limiting Policies in the API payload when creating an API using the REST API Interface. You can define either API-level or Operation-level Rate Limiting Policies. Let's get familiar with the [API-level](#api-level) and [Operation-level (Resource-Level)](#operation-level-resource-level-rate-limiting) configurations and the [configuration definitions](#configuration-definitions).
+You need to define the Rate Limiting Policies in the API payload when creating an API using the REST API Interface. You can define either API-level or Operation-level Rate Limiting Policies. Let's get familiar with the [API-level](#api-level-rate-limiting) and [Operation-level (Resource-Level)](#operation-level-resource-level-rate-limiting) configurations and the [configuration definitions](#configuration-definitions).
 
 ## API-Level Rate Limiting
 
@@ -29,9 +29,9 @@ rateLimit:
     defaultVersion: false
     endpointConfigurations:
       production:
-        endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
+        endpoint: "http://employee-service:8080"
     operations:
-      - target: "/employee"
+      - target: "/employees"
         verb: "GET"
         secured: true
         scopes: []
@@ -63,9 +63,9 @@ rateLimit:
     defaultVersion: false
     endpointConfigurations:
       production:
-        endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
+        endpoint: "http://employee-service:8080"
     operations:
-      - target: "/employee"
+      - target: "/employees"
         verb: "GET"
         secured: true
         scopes: []
@@ -111,14 +111,12 @@ Follow the instructions below to add an API-level Rate Limiting Policy to an API
 
 !!! note "Before you begin"
     
-    - Install the [prerequisites](../../../setup/prerequisites) that are required to run WSO2 APK.
-    - [Start WSO2 APK](../../../get-started/quick-start-guide/#step-1-start-wso2-apk).
+    - Install the <a href="../../../setup/prerequisites" target="_blank">prerequisites</a> that are required to run WSO2 APK.
+    - <a href="../../../get-started/quick-start-guide" target="_blank">Start WSO2 APK</a>.
 
 ### Retrieve existing API configuration.
 
-Here, you can use the apk-conf file which is created in [Create an API](../../get-started/quick-start-guide.md) documentation and save this content into a file named `EmployeeServiceV2.apk-conf`.
-
-Sample content before the modification is shown below.
+Here, you can use the following apk-conf file and save it into a file named `EmployeeServiceV2.apk-conf`.
 
   ```
   name: "EmployeeServiceAPI"
@@ -128,9 +126,9 @@ Sample content before the modification is shown below.
   defaultVersion: false
   endpointConfigurations:
     production:
-      endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
+      endpoint: "http://employee-service:8080"
   operations:
-    - target: "/employee"
+    - target: "/employees"
       verb: "GET"
       secured: true
       scopes: []
@@ -171,9 +169,9 @@ Sample content after the modification is shown below.
     unit: "Minute"
   endpointConfigurations:
     production:
-      endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
+      endpoint: "http://employee-service:8080"
   operations:
-  - target: "/employee"
+  - target: "/employees"
     verb: "GET"
     secured: true
     scopes: []
@@ -191,9 +189,9 @@ Sample content after the modification is shown below.
     scopes: []
   ```
 
-### Generate an access token to deploy API.
+### Generate an access token to deploy API
 
-To invoke the system APIs to deploy your own API, we need a valid access token issued by an identity provider (IdP). Follow the [Generate Access Token](../../develop-and-deploy-api/security/generate-access-token.md) documentation to generate an access token.
+To invoke the system APIs such as for deploying, we need a valid access token issued by an identity provider (IdP). Follow the <a href="../../../develop-and-deploy-api/security/generate-access-token" target="_blank">Generate Access Token</a> documentation to generate an access token.
 
 ### Deploy the API with API level rate limit policy.
 
@@ -206,13 +204,13 @@ Use the values provided in the table below in the body of your request.
    | apkConfiguration | `EmployeeServiceV2.apk-conf` file     |
    | definitionFile   | `EmployeeServiceDefinition.json` file |
 
-1.  Set the access token in the Authorization header as a bearer token. This is the access token received by following the steps under ["Generate an access token to invoke APIs"](../../get-started/quick-start-guide.md#generate-an-access-token-to-invoke-apis) section.
+1.  Set the access token in the Authorization header as a bearer token. This is the access token received by following the steps under the <a href="../../../develop-and-deploy-api/security/generate-access-token" target="_blank">Generate an Access Token</a> section.
 2.  Execute the API deployment request. You will receive a successful response with an Id for the API.
 
     === "Request"
 
         ```
-        curl --location 'https://<host>:9095/api/deployer/1.1.0/apis/deploy' \
+        curl --location 'https://<host>:9095/api/deployer/1.2.0/apis/deploy' \
         --header 'Host: <host>' \
         --header 'Authorization: bearer <access-token>' \
         --form 'apkConfiguration=@"path/to/EmployeeServiceV2.apk-conf"' \
@@ -222,7 +220,7 @@ Use the values provided in the table below in the body of your request.
     === "Sample Request"
 
         ```
-        curl -k --location 'https://api.am.wso2.com:9095/api/deployer/1.1.0/apis/deploy' \
+        curl -k --location 'https://api.am.wso2.com:9095/api/deployer/1.2.0/apis/deploy' \
         --header 'Host: api.am.wso2.com' \
         --header 'Authorization: bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiZXhwIjoxNjg4MTMxNDQ0LCAibmJmIjoxNjg4MTI3ODQ0LCAiaWF0IjoxNjg4MTI3ODQ0LCAianRpIjoiMDFlZTE3NDEtMDA0Ni0xOGE2LWFhMjEtYmQwYTk4ZjYzNzkwIiwgImNsaWVudElkIjoiNDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyIiwgInNjb3BlIjoiZGVmYXVsdCJ9.RfKQq2fUZKZFAyjimvsPD3cOzaVWazabmq7b1iKYacqIdNjkvO9CQmu7qdtrVNDmdZ_gHhWLXiGhN4UTSCXv_n1ArDnxTLFBroRS8dxuFBZoD9Mpj10vYFSDDhUfFqjgMqtpr30TpDMfee1wkqB6K757ZSjgCDa0hAbv555GkLdZtRsSgR3xWcxPBsIozqAMFDCWoUCbgTQuA5OiEhhpVco2zv4XLq2sz--VRoBieO12C69KnGRmoLuPtvOayInvrnV96Tbt9fR0fLS2l1nvAdFzVou0SIf9rMZLnURLVQQYE64GR14m-cFRYdUI9vTsFHZBl5w-uCLdzMMofzZaLQ' \
         --form 'apkConfiguration=@"/Users/user/EmployeeServiceV2.apk-conf"' \
@@ -244,9 +242,9 @@ Use the values provided in the table below in the body of your request.
           unit: "Minute"
         endpointConfigurations:
           production:
-            endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
+            endpoint: "http://employee-service:8080"
         operations:
-        - target: "/employee"
+        - target: "/employees"
           verb: "GET"
           secured: true
           scopes: []
@@ -275,8 +273,8 @@ Follow the instructions below to add an Resource-level Rate Limiting Policy to a
 
 !!! note "Before you begin"
     
-    - Install the [prerequisites](../../../setup/prerequisites) that are required to run WSO2 APK.
-    - [Start WSO2 APK](../../../get-started/quick-start-guide/#step-1-start-wso2-apk).
+    - Install the <a href="../../../setup/prerequisites" target="_blank">prerequisites</a> that are required to run WSO2 APK.
+    - <a href="../../../get-started/quick-start-guide" target="_blank">Start WSO2 APK</a>.
 
 ### Retrieve existing API configuration.
 
@@ -292,9 +290,9 @@ Sample content before the modification is shown below.
   defaultVersion: false
   endpointConfigurations:
     production:
-      endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
+      endpoint: "http://employee-service:8080"
   operations:
-    - target: "/employee"
+    - target: "/employees"
       verb: "GET"
       secured: true
       scopes: []
@@ -332,9 +330,9 @@ Sample content after the modification is shown below.
   defaultVersion: false
   endpointConfigurations:
     production:
-      endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
+      endpoint: "http://employee-service:8080"
   operations:
-  - target: "/employee"
+  - target: "/employees"
     verb: "GET"
     secured: true
     scopes: []
@@ -355,9 +353,9 @@ Sample content after the modification is shown below.
     scopes: []
   ```
 
-### Generate an access token to deploy API.
+### Generate an access token to deploy API
 
-To invoke the system APIs such as for deploying, we need a valid access token issued by an identity provider (IdP). Follow the ["Generate Access Token"](../../develop-and-deploy-api/security/generate-access-token.md) documentation to generate an access token.
+To invoke the system APIs such as for deploying, we need a valid access token issued by an identity provider (IdP). Follow the <a href="../../../develop-and-deploy-api/security/generate-access-token" target="_blank">Generate Access Token</a> documentation to generate an access token.
 
 ### Deploy the API with resource level rate limit policy.
 
@@ -370,13 +368,13 @@ Use the values provided in the table below in the body of your request.
    | apkConfiguration | `EmployeeServiceV3.apk-conf` file     |
    | definitionFile   | `EmployeeServiceDefinition.json` file |
 
-1.  Set the access token in the Authorization header as a bearer token. This is the access token received by following the steps under ["Generate an access token to invoke APIs"](../../get-started/quick-start-guide.md#generate-an-access-token-to-invoke-apis) section.
+1.  Set the access token in the Authorization header as a bearer token. This is the access token received by following the steps under the <a href="../../../develop-and-deploy-api/security/generate-access-token" target="_blank">Generate an Access Token</a> section.
 2.  Execute the API deployment request. You will receive a successful response with an Id for the API.
 
     === "Request"
 
         ```
-        curl --location 'https://<host>:9095/api/deployer/1.1.0/apis/deploy' \
+        curl --location 'https://<host>:9095/api/deployer/1.2.0/apis/deploy' \
         --header 'Host: <host>' \
         --header 'Authorization: bearer <access-token>' \
         --form 'apkConfiguration=@"path/to/EmployeeServiceV3.apk-conf"' \
@@ -386,7 +384,7 @@ Use the values provided in the table below in the body of your request.
     === "Sample Request"
 
         ```
-        curl -k --location 'https://api.am.wso2.com:9095/api/deployer/1.1.0/apis/deploy' \
+        curl -k --location 'https://api.am.wso2.com:9095/api/deployer/1.2.0/apis/deploy' \
         --header 'Host: api.am.wso2.com' \
         --header 'Authorization: bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiZXhwIjoxNjg4MTMxNDQ0LCAibmJmIjoxNjg4MTI3ODQ0LCAiaWF0IjoxNjg4MTI3ODQ0LCAianRpIjoiMDFlZTE3NDEtMDA0Ni0xOGE2LWFhMjEtYmQwYTk4ZjYzNzkwIiwgImNsaWVudElkIjoiNDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyIiwgInNjb3BlIjoiZGVmYXVsdCJ9.RfKQq2fUZKZFAyjimvsPD3cOzaVWazabmq7b1iKYacqIdNjkvO9CQmu7qdtrVNDmdZ_gHhWLXiGhN4UTSCXv_n1ArDnxTLFBroRS8dxuFBZoD9Mpj10vYFSDDhUfFqjgMqtpr30TpDMfee1wkqB6K757ZSjgCDa0hAbv555GkLdZtRsSgR3xWcxPBsIozqAMFDCWoUCbgTQuA5OiEhhpVco2zv4XLq2sz--VRoBieO12C69KnGRmoLuPtvOayInvrnV96Tbt9fR0fLS2l1nvAdFzVou0SIf9rMZLnURLVQQYE64GR14m-cFRYdUI9vTsFHZBl5w-uCLdzMMofzZaLQ' \
         --form 'apkConfiguration=@"/Users/user/EmployeeServiceV3.apk-conf"' \
@@ -405,9 +403,9 @@ Use the values provided in the table below in the body of your request.
         defaultVersion: false
         endpointConfigurations:
           production:
-            endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
+            endpoint: "http://employee-service:8080"
         operations:
-        - target: "/employee"
+        - target: "/employees"
           verb: "GET"
           secured: true
           scopes: []

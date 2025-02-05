@@ -2,11 +2,11 @@
 
 This document provide the steps for APK production deployment.
 
-WSO2 APK can be configured through `values.yaml` file.  Please refer to [Customize Configurations](../setup/Customize-Configurations.md) for information on how to use a customized values file for APK deployment. When deploying WSO2 APK in a production environment, we strongly recommend following these guidelines. 
+WSO2 APK can be configured through `values.yaml` file.  Please refer to the <a href="../../setup/Customize-Configurations" target="_blank">customize configurations section</a> for information on how to use a customized values file for APK deployment. When deploying WSO2 APK in a production environment, we strongly recommend following these guidelines. 
 
 ## Choose the correct deployment pattern
 
-Please refer this [document](deployment/deployment-patterns-overview.md) on how to choose the correct pattern for you
+Please refer this <a href="../../setup/deployment/deployment-patterns-overview" target="_blank">document</a>  on how to choose the correct pattern for you.
 
 ## Change the hostnames and vhosts
 
@@ -138,9 +138,9 @@ Servers and their `configs` location in the value.yaml are listed below.
 
 ## Remove default IdP
 
-APK comes with a default IdP which is not production-ready and is only to be used for testing purposes. Disable the default IDP and use a production-ready IDP solution. Please follow these guidelines to  [setup the production ready IDP](https://apk.docs.wso2.com/en/latest/setup/identity-platform/idp/idp-overview/)
+APK comes with a default IdP which is not production-ready and is only to be used for testing purposes. Disable the default IDP and use a production-ready IDP solution. Please follow these guidelines to <a href="../../setup/identity-platform/idp/idp-overview" target="_blank">setup the production ready IDP</a>.
 
-Disable the default IdP by changing the enabled value or idp to `false` in values.yaml.
+Additionally, disable the default IdP by changing the enabled value or idp to `false` in values.yaml.
 
 ```yaml
 wso2:
@@ -190,10 +190,8 @@ Then redeploy the helm chart with the changes in `values.yaml`.
 
 ## Configure Horizontal Pod Autoscaling (HPA)
 
-When the traffic to your pods increase, the deployment may need to scale horizontally. Kubernetes allows you to define the resource limits and policy in a way that the deployment can auto scale based on resource usage. You can check the [Kubernetes documentation](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) for more information on HPA.
+When the traffic to your pods increase, the deployment may need to scale horizontally. Kubernetes allows you to define the resource limits and policy in a way that the deployment can auto scale based on resource usage. You can check the <a href="https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/" target="_blank">Kubernetes documentation</a> for more information on HPA.
 
-To configure HPA for gateway, follow this [document.](./configure-hpa.md)
-
-
+To configure HPA for the gateway, follow this <a href="../../setup/configure-hpa" target="_blank">document</a>.
 
 In conclusion, following these guidelines is essential for a smooth and secure production deployment of WSO2 APK. By carefully selecting the deployment pattern, customizing hostnames and vhosts, configuring CA-validated public certificates, using a production-grade Redis and autoscaling your deployment to suit your needs, you can ensure a robust environment for your APIs. Additionally, disabling the default IDP and opting for a production-ready solution adds an extra layer of security. By adhering to these best practices, you'll be well-prepared to handle the demands of a production environment. If you have any further questions or need additional assistance, please don't hesitate to reach out to our support team. Happy deploying!

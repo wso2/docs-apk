@@ -3,11 +3,12 @@
 When working with APIs, it is important to have an effective API versioning mechanism. APK follows a versioning mechanism based on Semantic Versioning (SemVer) but only includes the major version and minor version with the prefix v. For example, v1.2.
 
 You can follow the approach given below when you version APIs:
+
 - Increment the major version when you make incompatible API changes.
 - Increment the minor version when you add functionality in a backward-compatible manner.
 
 !!! info "What is Semantic Versioning?"
-    Semantic Versioning (SemVer) is a specification that defines how to assign and increment version numbers for software products, including APIs. For more information, see [Semantic Versioning specification](https://semver.org/#semantic-versioning-specification-semver).
+    Semantic Versioning (SemVer) is a specification that defines how to assign and increment version numbers for software products, including APIs. For more information, refer the <a href="https://semver.org/#semantic-versioning-specification-semver" target="_blank">Semantic Versioning Specification</a>.
 
 In compliance with SemVer, changes that don't introduce breaking or additive modifications to the API are categorized as patch updates. However, from the perspective of API consumers, these changes should ideally not disrupt their API clients. Typically, API consumers are most concerned with major API version alterations, but there might be instances where minor version changes are communicated to them. Hence, API versions are only required to specify major and minor versions.
 
@@ -19,15 +20,15 @@ When the Intelligent Routing feature is enabled in APK:
 Consider a scenario where the following APIs are deployed with varying versions:
 
 | API Name              | API Version | API Context    |
-| --------------------- | ----------- |----------------|
-| Employee Service v1   | v1.0        | /emp-info/v1.0 | 
-| Employee Service v1.1 | v1.1        | /emp-info/v1.1 | 
+| --------------------- | ----------- | -------------- |
+| Employee Service v1   | v1.0        | /emp-info/v1.0 |
+| Employee Service v1.1 | v1.1        | /emp-info/v1.1 |
 
 The API invocations yield the subsequent responses:
 
 - https://default.gw.wso2.com:9095/emp-info/v1.0/employee   → Routed to Employee Service 1
 - https://default.gw.wso2.com:9095/emp-info/v1.1/employee   → Routed to Employee Service 2
-- https://default.gw.wso2.com:9095/emp-info/v1/employee     → Routed to the latest version of the  Employee Service, v1.1
+- https://default.gw.wso2.com:9095/emp-info/v1/employee     → Routed to the latest version of the Employee Service, v1.1
 
 
 ## Try Intelligent Routing in APK

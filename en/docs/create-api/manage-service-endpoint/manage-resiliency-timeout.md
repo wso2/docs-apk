@@ -50,13 +50,13 @@ type: "REST"
 defaultVersion: true
 endpointConfigurations:
   production:
-    endpoint: "http://backend-service.ns:443"
+    endpoint: "http://employee-service:8080"
     resiliency:
       timeout:
         downstreamRequestIdleTimeout: 45
         upstreamResponseTimeout: 10
 operations:
-  - target: "/employee"
+  - target: "/employees"
     verb: "GET"
     secured: true
     scopes: []

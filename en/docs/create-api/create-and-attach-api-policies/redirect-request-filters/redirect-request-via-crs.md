@@ -1,12 +1,12 @@
-# Request Redirection via REST API
+# Request Redirection via CRs
 
 Request redirection allows you to send clients to a different URL. This can be useful for changing old URLs to new ones or directing traffic based on specific conditions. Request redirection can be configured via Kubernetes CRs as follows.
 
 ### Step 1 - Get the CRs for the relevant API configuration
 
-Here, you can follow the steps in [Develop and Deploy a REST API via CRs](../../create-and-deploy-apis/rest/create-rest-api-using-crs.md) documentation and create the CRs to deploy an API from scratch. 
+Here, you can follow the steps in <a href="../../../../create-api/create-and-deploy-apis/rest/create-rest-api-using-crs" target="_blank">Develop and Deploy a REST API via CRs</a> documentation and create the CRs to deploy an API from scratch. 
 
-Alternatively, you can generate the CRs for a given apk-conf file using the steps as detailed in [this section]({{base_path}}/en/latest/api-management-overview/tools-for-api-development/#option-2-generate-k8s-custom-resources-using-config-generator-tool-and-deploy-the-api-using-kubernetes-client)
+Alternatively, you can generate the CRs for a given apk-conf file using the steps as detailed in <a href="../../../../api-management-overview/tools-for-api-development#option-2-generate-k8s-custom-resources-using-config-generator-tool-and-deploy-the-api-using-kubernetes-client" target="_blank">this section</a>.
 
 ### Step 2 - Add the request redirection filters to the HTTPRoute CR
 
