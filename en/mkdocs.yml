@@ -146,6 +146,10 @@ nav:
             - Request Redirection:
                 - Via REST API: create-api/create-and-attach-api-policies/redirect-request-filters/redirect-request-via-rest-api.md
                 - Via CRs: create-api/create-and-attach-api-policies/redirect-request-filters/redirect-request-via-crs.md
+            - Model Based Round Robin:
+                - Overview: create-api/create-and-attach-api-policies/model-based-round-robin/overview.md
+                - Via REST API: create-api/create-and-attach-api-policies/model-based-round-robin/model-based-round-robin-via-rest-api.md
+                - Via CRs: create-api/create-and-attach-api-policies/model-based-round-robin/model-based-round-robin-via-crs.md
         - Rate Limiting:
             - Overview: create-api/rate-limiting/rate-limiting-policy-overview.md
             - Simple Rate Limiting:
@@ -222,7 +226,8 @@ nav:
                           - Message Transformation using Interceptor APIPolicy: control-plane/api-management/api-policies/interceptor-service.md
                           - Request Mirroring: control-plane/api-management/api-policies/mirror-request.md
                           - Request Redirection: control-plane/api-management/api-policies/redirect-request.md 
-                          - Backend JWT: control-plane/api-management/api-policies/backend-jwt.md 
+                          - Backend JWT: control-plane/api-management/api-policies/backend-jwt.md
+                          - Model Based Round Robin: control-plane/api-management/api-policies/model-based-round-robin.md
                   - Add APK Gateway: control-plane/apk-as-gateway-in-apim/api-management/control-plane-add-apk-gateway.md
                   - Create Application and Subscribe: control-plane/apk-as-gateway-in-apim/api-management/control-plane-create-application-and-subscription.md
         - Advanced Configuration:
