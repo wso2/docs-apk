@@ -3,17 +3,17 @@
 This section provides a step-by-step guide to creating, deploying, and invoking an API using the WSO2 API Platform for Kubernetes integrated with the Control Plane. It also covers how to create an API from the data plane using CR and APIs.
 
 !!!NOTE
-    To set up the APK as an enterprise version, please follow the steps specified in both the [Install APK Enterprise](../setup/enterprise-apk-install) and [Install APIM APK Agent Enterprise](../setup/enterprise-apim-apk-agent-install.md) sections.
+    To set up the APK as an enterprise version, please follow the steps specified in both the <a href="../../setup/enterprise-apk-install" target="_blank">Install APK Enterprise</a> and <a href="../../setup/enterprise-apim-apk-agent-install" target="_blank">Install APIM APK Agent Enterprise</a>.
 
 !!!NOTE
-    If you follow this approach you can not create API from Portal UI. If you need that apporach go to [Portal-Driven Design First](../quick-start-guide-as-gateway) section.
+    If you follow this approach, **you cannot create APIs from Portal UI**. If you need that approach, go to <a href="../quick-start-guide-as-gateway" target="_blank">Portal-Driven Design First</a> section.
 
 ## Before you begin...
 
-Install the [prerequisites](../../setup/prerequisites) that are required to run the WSO2 API Platform For Kubernetes.
+Install the <a href="../../setup/prerequisites" target="_blank">prerequisites</a> that are required to run the WSO2 API Platform for Kubernetes.
 
 !!!NOTE
-    If you already have an installation of the APK in your cluster, please remove the installation by following the steps specified in the [Uninstall APK](../setup/uninstall.md) section.
+    If you already have an installation of the APK in your cluster, please remove the installation by following the steps specified in the <a href="../../setup/uninstall" target="_blank">Uninstall APK</a>  section.
 
 ## Step 1 - Setup WSO2 API Platform For Kubernetes With Control Plane
 
@@ -21,7 +21,7 @@ Install the [prerequisites](../../setup/prerequisites) that are required to run 
 
 ## Step 2 - Create and Deploy the API From Dataplane
 
-1. Save and download the sample [EmployeeServiceDefinition.json](../assets/files/get-started/EmployeeServiceDefinition.json) file. This is the OAS definition of the API that we are going to deploy in APK.
+1. Download and save the sample <a href="../../assets/files/get-started/EmployeeServiceDefinition.json" target="_blank" download>EmployeeServiceDefinition.json</a> file. This is the OAS definition of the API that we are going to deploy in APK.
 2. Add a hostname mapping to the ```/etc/hosts``` file as follows.
 
     | IP        | Domain name              |
@@ -56,7 +56,7 @@ Apart from the above API definition file, we also need an `apk-conf` file that d
 
     === "Sample Request"
         ```
-        curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.1.0/apis/generate-configuration' \
+        curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.2.0/apis/generate-configuration' \
         --header 'Host: api.am.wso2.com' \
         --form 'definition=@"/Users/user/EmployeeServiceDefinition.json"' > EmployeeService.apk-conf
         ```
@@ -71,39 +71,68 @@ Apart from the above API definition file, we also need an `apk-conf` file that d
         defaultVersion: false
         endpointConfigurations:
             production:
-                endpoint: "http://employee-service:80"
+                endpoint: "http://employee-service:8080"
         operations:
+        - target: "/employees"
+          verb: "GET"
+          secured: true
+          scopes: []
         - target: "/employee"
-            verb: "GET"
-            secured: true
-            scopes: []
-        - target: "/employee"
-            verb: "POST"
-            secured: true
-            scopes: []
+          verb: "POST"
+          secured: true
+          scopes: []
         - target: "/employee/{employeeId}"
-            verb: "PUT"
-            secured: true
-            scopes: []
+          verb: "PUT"
+          secured: true
+          scopes: []
         - target: "/employee/{employeeId}"
-            verb: "DELETE"
-            secured: true
-            scopes: []
+          verb: "DELETE"
+          secured: true
+          scopes: []
         ```
 
     === "Request Format"
         ```
-        curl --location 'https://<host>:9095/api/configurator/1.1.0/apis/generate-configuration' \
+        curl --location 'https://<host>:9095/api/configurator/1.2.0/apis/generate-configuration' \
         --header 'Host: <host>' \
         --form 'apiType="<api-type>"' \
         --form 'definition=@"<path/to/EmployeeServiceDefinition.json>"'
         ```
 
 
-2. You will get the apk-conf file content as the response. Save this content into a file named `EmployeeService.apk-conf`.
+2. You will get the apk-conf file content as the response. Save this content into a file named `EmployeeService.apk-conf`. You can edit these values as necessary. Let's change the basepath from the autogenerated value to "/employees-info". Your apk-conf file should now appear as follows.
+
+```
+---
+name: "EmployeeServiceAPI"
+basePath: "/employees-info"
+version: "3.14"
+type: "REST"
+defaultVersion: false
+endpointConfigurations:
+   production:
+       endpoint: "http://employee-service:8080"
+operations:
+- target: "/employees"
+  verb: "GET"
+  secured: true
+  scopes: []
+- target: "/employee"
+  verb: "POST"
+  secured: true
+  scopes: []
+- target: "/employee/{employeeId}"
+  verb: "PUT"
+  secured: true
+  scopes: []
+- target: "/employee/{employeeId}"
+  verb: "DELETE"
+  secured: true
+  scopes: []
+```
 
 !!! Important
-    We recommend installing the [APK Config Language Support Visual Studio Code (VS Code) extension]({{base_path}}/en/latest/api-management-overview/apk-conf-lang-support/) to edit the APK Configuration file.
+    We recommend installing the <a href="../../api-management-overview/apk-conf-lang-support/" target="_blank">APK Config Language Support Visual Studio Code (VS Code) extension</a> to edit the APK Configuration file.
 
 
 ### Deploy the API in APK DataPlane
@@ -117,13 +146,13 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
     | apkConfiguration | `EmployeeService.apk-conf` file       | :material-check: |
     | definitionFile   | `EmployeeServiceDefinition.json` file | :material-check: |
 
-2. Set the access token in the Authorization header as a bearer token. This is the access token received by following the steps under the ["Generate an access token to invoke APIs"](#generate-an-access-token-to-invoke-apis) section above.
+2. Set the access token in the Authorization header as a bearer token. This is the access token received by following the steps under the <a href="../quick-start-guide#generate-an-access-token-to-invoke-apis" target="_blank">Generate an access token to invoke APIs section</a> above.
 
-3. You can generate K8s resources as a zip file from config-deployer service using below command.
+3. You can generate the Kubernetes custom resources as a zip file from the config-deployer service using the following command.
 
     === "Sample Request"
         ```
-        curl --location 'https://api.am.wso2.com:9095/api/configurator/1.1.0/apis/generate-k8s-resources?organization=carbon.super' \
+        curl --location 'https://api.am.wso2.com:9095/api/configurator/1.2.0/apis/generate-k8s-resources?organization=carbon.super' \
         --header 'Content-Type: multipart/form-data' \
         --header 'Accept: application/zip' \
         --form 'apkConfiguration=@"/Users/user/EmployeeService.apk-conf"' \
@@ -131,13 +160,23 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
         -k --output ./api-crds.zip
         ```
 
-3. Once you have generated your K8s artifacts, the next step is to apply them to  the Kubernetes API server.
-
+    === "Request Format"
         ```
-        kubectl apply -n apk -f <path_to_extracted_zip_file>
+        curl --location 'https://<host>:9095/api/configurator/1.2.0/apis/generate-k8s-resources?organization=carbon.super' \
+        --header 'Content-Type: multipart/form-data' \
+        --header 'Accept: application/zip' \
+        --form 'apkConfiguration=@"<path/to/apk-conf-file.apk-conf>"' \
+        --form 'definitionFile=@"<path/to/definition-file.json>"' \
+        -k --output <path/and/name-for-generated-zip-file.zip>
         ```
 
-4. Execute the command below. You will be able to see that the `EmployeeServiceAPI` is successfully deployed as shown in the image.
+4. Once you have generated your K8s artifacts, the next step is to apply them to  the Kubernetes API server.
+
+    ```
+    kubectl apply -n apk -f <path_to_extracted_zip_file>
+    ```
+
+5. Execute the command below. You will be able to see that the `EmployeeServiceAPI` is successfully deployed as shown in the image.
 
 
     === "Command"
@@ -149,12 +188,12 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
 
 ## Step 3 - Create the Backend
 
-The endpoint "http://employee-service:80" provided in the above files points to a backend deployed on a kubernetes service. Prior to invoking the API, you will need to have this backend up. 
+The endpoint "http://employee-service:8080" provided in the above files points to a backend deployed on a kubernetes service. Prior to invoking the API, you will need to have this backend up. 
 
-We have provided the file containing this sample backend [here](../assets/files/get-started/employee-service-backend.yaml). Download it and create the backend service using the following command.
+We have provided the file containing this sample backend [here](https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/qsg-sample-backend.yaml). You can create the backend service using the following command.
 
 ```
-kubectl apply -f ./employee-service-backend.yaml -n apk
+kubectl apply -f https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/qsg-sample-backend.yaml -n apk
 ```
 
 Wait for this pod to spin up. You can check its status using the following command.
@@ -213,8 +252,7 @@ kubectl get pods -n apk
 1. Use the following command to invoke the API using the access token generated in the previous step.
 
     ```bash
-    curl -X GET "https://carbon.super.gw.wso2.com:9095/RW1wbG95ZWVTZXJ2aWNlQVBJMy4xNA/3.14/employee" -H "Authorization: Bearer <access-token>" -k
+    curl -X GET "https://carbon.super.gw.wso2.com:9095/employees-info/3.14/employees" -H "Authorization: Bearer <access-token>" -k
     ```
 
 You will now be able to see a successful response with the details of the Employees from the mock backend that we used for this guide.
-

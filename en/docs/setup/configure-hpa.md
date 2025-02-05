@@ -1,10 +1,10 @@
 # Configure Horizontal Pod Autoscaling(HPA) for gateway
 
-When the traffic to your pods increase, the deployment may need to scale horizontally. Kubernetes allows you to define the resource limits and policy in a way that the deployment can auto scale based on resource usage. You can check the [Kubernetes documentation](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) for more information on HPA.
+When the traffic to your pods increase, the deployment may need to scale horizontally. Kubernetes allows you to define the resource limits and policy in a way that the deployment can auto scale based on resource usage. You can check the <a href="https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/" target="_blank">Kubernetes documentation</a> for more information on HPA.
 
 To configure HPA for gateway, follow these steps.
 
-1. Obtain the `values.yaml` file for your deployment by following the instructions in [Customize Configurations](../setup/Customize-Configurations.md).
+1. Obtain the `values.yaml` file for your deployment by following the instructions in the <a href="../../setup/Customize-Configurations" target="_blank">customize configurations section</a>.
 2. Update the following configuration with your required values.
 ```
 autoscaling:
@@ -15,7 +15,7 @@ autoscaling:
   targetCPU: 80 # Target CPU utilization percentage for Gateway
 ```
 
-3. Place the modified configuration in your `values.yaml` file under `autoscaling` in the `dp` section, as shown below.
+1. Place the modified configuration in your `values.yaml` file under `autoscaling` in the `dp` section, as shown below.
 
 ```yaml
   wso2:

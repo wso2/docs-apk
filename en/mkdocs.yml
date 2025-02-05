@@ -15,7 +15,7 @@
 # under the License.
 
 # Project information
-site_name: APK Documentation 1.1.0
+site_name: APK Documentation 1.2.0
 site_description: Documentation for WSO2 API Platform for Kubernetes
 site_author: WSO2
 site_url: https://apk.docs.wso2.com/en/latest/
@@ -24,7 +24,7 @@ site_url: https://apk.docs.wso2.com/en/latest/
 repo_name: wso2/apk
 repo_url: https://github.com/wso2/apk
 # Change the edit_url with every new release
-edit_uri: https://github.com/wso2/docs-apk/edit/1.1.0/en/docs/
+edit_uri: https://github.com/wso2/docs-apk/edit/1.2.0/en/docs/
 dev_addr: localhost:8000
 
 # Copyright
@@ -99,6 +99,16 @@ nav:
             - GraphQL APIs: 
                 - Via REST API: create-api/create-and-deploy-apis/graphql/create-graphql-api-using-rest-api.md
                 - Via CRs: create-api/create-and-deploy-apis/graphql/create-graphql-api-using-crs.md
+            - AI APIs:
+                - Overview: create-api/create-and-deploy-apis/ai/ai-api-overview.md
+                - Via REST API: create-api/create-and-deploy-apis/ai/create-ai-api-using-rest-api.md
+                - Via CRs: create-api/create-and-deploy-apis/ai/create-ai-api-using-crs.md
+            - gRPC APIs: 
+                - Overview: create-api/create-and-deploy-apis/grpc/overview.md
+                - Via CRs: create-api/create-and-deploy-apis/grpc/create-grpc-api-using-crs.md
+                - Via REST API: 
+                    - API with one proto file: create-api/create-and-deploy-apis/grpc/create-grpc-api-using-rest-api.md
+                    - API with multiple proto files: create-api/create-and-deploy-apis/grpc/create-grpc-api-with-multiple-proto-files.md
         - Undeploy API: 
             - Via REST API: undeploy/undeploy-rest-api.md
             - Via CRs: undeploy/undeploy-crs.md
@@ -149,7 +159,7 @@ nav:
                     - OAuth2: develop-and-deploy-api/security/authentication/enable-api-security/oauth2.md
                     - Mutual SSL: develop-and-deploy-api/security/authentication/enable-api-security/mtls.md
         - API Versions:
-            - Create an API Version: develop-and-deploy-api/api-versions/create-an-api-versions.md
+            - Create an API Version: develop-and-deploy-api/api-versions/create-an-api-version.md
             - Default Version: develop-and-deploy-api/api-versions/default-version.md
             - Semantic Versioning Based Intelligent Routing: develop-and-deploy-api/api-versions/semver-based-intelligent-routing.md
             #- Backward Compatibility: develop-and-deploy-api/api-versions/backward-compatibility.md
@@ -191,6 +201,7 @@ nav:
                     - Develop and Deploy API:
                         - Create REST APIs: control-plane/api-management/control-plane-create-and-deploy-rest-apis.md
                         - Create GraphQL APIs: control-plane/api-management/control-plane-create-and-deploy-graphql-apis.md
+                        - Create AI APIs: control-plane/api-management/control-plane-create-and-deploy-ai-apis.md
                     - Add APK Gateway: control-plane/api-management/control-plane-add-apk-gateway.md
                     - Create Application and Subscribe: control-plane/api-management/control-plane-create-application-and-subscription.md
         - APK as a Gateway in API Manager:
@@ -201,6 +212,17 @@ nav:
                   - Develop and Deploy API:
                       - Create REST APIs: control-plane/apk-as-gateway-in-apim/api-management/control-plane-create-and-deploy-rest-apis.md
                       - Create GraphQL APIs: control-plane/apk-as-gateway-in-apim/api-management/control-plane-create-and-deploy-graphql-apis.md
+                      - Create AI APIs: control-plane/apk-as-gateway-in-apim/api-management/control-plane-create-and-deploy-ai-apis.md
+                  - Add API Policies: 
+                      - API Policies Overview: control-plane/api-management/api-policies/api-policies-overview.md
+                      - Attach Policies: control-plane/api-management/api-policies/attaching-api-policies.md
+                      - Default Policies: 
+                          - Add Specific Headers to Request/Response: control-plane/api-management/api-policies/add-header.md
+                          - Remove Specific Headers from Request/Response: control-plane/api-management/api-policies/remove-header.md
+                          - Message Transformation using Interceptor APIPolicy: control-plane/api-management/api-policies/interceptor-service.md
+                          - Request Mirroring: control-plane/api-management/api-policies/mirror-request.md
+                          - Request Redirection: control-plane/api-management/api-policies/redirect-request.md 
+                          - Backend JWT: control-plane/api-management/api-policies/backend-jwt.md 
                   - Add APK Gateway: control-plane/apk-as-gateway-in-apim/api-management/control-plane-add-apk-gateway.md
                   - Create Application and Subscribe: control-plane/apk-as-gateway-in-apim/api-management/control-plane-create-application-and-subscription.md
         - Advanced Configuration:
@@ -218,6 +240,7 @@ nav:
             - APIPolicy: catalogs/crds/apipolicy_types.md
             - HTTPRoute: catalogs/samples/http-route.md
             - GraphQL Route: catalogs/crds/gql_routes_types.md
+            - GRPCRoute: catalogs/samples/grpc-route.md
             - Authentication: catalogs/crds/authentication_types.md
             - Backend: catalogs/crds/backend_types.md
             - BackendJWT: catalogs/crds/backendjwt_types.md
@@ -232,25 +255,27 @@ nav:
             - Subscription: catalogs/crds/subscription_types.md
             - Application: catalogs/crds/application_types.md
             - Application Mapping: catalogs/crds/application_mapping_types.md
+            - AI Provider: catalogs/crds/aiprovider_types.md
+            - AI Rate Limit Policy: catalogs/crds/airatelimitpolicy_types.md
                 # - Overview: catalogs/rate-limit-policy.md
                 # - API Level: catalogs/ratelimit-api.md
                 # - Resource Level: catalogs/ratelimit-resource.md
                 # - Custom: catalogs/ratelimit-custom.md
-        - API Catalog:
-            - Overview - API Catalog: catalogs/api-catalog.md
+        - Product API Catalog:
+            - Overview - Product API Catalog: catalogs/api-catalog.md
 #            - Back Office APIs: catalogs/api-reference-back-office.md
             - Config Deployer APIs: catalogs/api-reference-config-deployer.md
             - Config Generator APIs: catalogs/api-reference-config-generator.md
 #            - Developer Portal APIs: catalogs/api-reference-developer-portal.md
 #            - Admin APIs: catalogs/api-reference-admin.md
         - Helm Configuration Catalog: catalogs/config-catalog.md
-        - API Configuration Catalog: catalogs/apk-conf.md
+        - APK Conf Catalog: catalogs/apk-conf.md
     #   - CLI Catalog: catalogs/cli-reference.md
     #    - Helm Catalog: catalogs/config-catalog.md
     - Setup: 
         - Prerequisites: setup/prerequisites.md
         - Install Dataplane: setup/install.md
-        - Install Control plane with Dataplane: setup/install-with-cp.md
+        - Install Control Plane with Dataplane: setup/install-with-cp.md
         - Install Enterprise Products:
               - Install APK Dataplane: setup/enterprise-apk-install.md
               - Install APIM APK Agent: setup/enterprise-apim-apk-agent-install.md
@@ -260,6 +285,9 @@ nav:
               - APK Data Plane: setup/deployment/apk-data-plane-deployment-patterns.md
               - APK Data Plane with API Manager Control Plane: setup/deployment/apk-with-apim-cp-deployment-patterns.md
               - APK as a Gateway in API Manager: setup/deployment/apk-as-gateway-in-apim-deployment-patterns.md
+        - CI/CD: 
+            - CI/CD for APIs - Overview: setup/cicd/overview.md
+            - Building a GitOps Workflow for APIs With WSO2 APK: setup/cicd/building-a-pipeline.md
         - Migration: setup/migration.md
         - Customize Configurations: setup/Customize-Configurations.md
         - Production Deployment Guidelines: setup/production-deployment-guideline.md
@@ -300,6 +328,10 @@ nav:
             - Router: administration/configurations/configure-logs-router.md
         - Configure Distributed Tracing: administration/distributed-tracing.md
         - Configure Prometheus Metric Support: administration/prometheus-metric-support.md
+        - Configure AI Providers:
+            - Overview: administration/aiproviders/configure-ai-providers-overview.md
+            - Custom AI Provider: administration/aiproviders/configure-ai-providers-customai.md
+        - Configure AI Ratelimit policies: administration/airatelimitpolicy/configure-ai-ratelimit-policies-overview.md
     - About APK:
         - What is APK?: about-apk/what-is-apk.md
         - About This Release: about-apk/about-this-release.md
@@ -308,6 +340,7 @@ nav:
             - Overview: about-apk/performance-test-results/overview.md
             - Gateway router with one CPU: about-apk/performance-test-results/gateway-router-with-one-cpu.md
             - Gateway router with two CPUs: about-apk/performance-test-results/gateway-router-with-two-cpus.md
+            - Multi Gateways with two CPUs with Rate Limiting: about-apk/performance-test-results/two-gateways-of-two-cpus-with-rate-limit.md
        #- Key Concepts:
        #    - Key Concept 1: about-apk/key-concepts/key-concept.md
        #    - Key Concept 2: about-apk/key-concepts/key-concept.md
@@ -354,8 +387,7 @@ nav:
         #- Report Bugs: get-started/dummy.md # Brief description and links to Git links for doc issues and product issues
         - Training and Certification: https://wso2.com/training/
         - Resources: https://wso2.com/library/
-    - FAQ:
-        - FAQs: about-apk/FAQs.md
+    - FAQs: about-apk/FAQs.md
 
 # Extensions
 markdown_extensions:
@@ -440,7 +472,7 @@ extra:
           link: https://twitter.com/wso2
         - type: linkedin
           link: https://www.linkedin.com/company/wso2
-    site_version: 1.1.0
+    site_version: 1.2.0
     # base_path: http://localhost:8000
     base_path: https://apk.docs.wso2.com
     envoy_path: https://www.envoyproxy.io/docs/envoy/v1.20.0

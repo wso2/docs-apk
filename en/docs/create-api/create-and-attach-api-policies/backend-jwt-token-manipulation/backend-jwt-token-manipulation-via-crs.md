@@ -1,6 +1,6 @@
 # Backend JWT Manipulation Policy via CRs
 
-You need to create an `APIPolicy` with referencing to a `BackendJWT` resource under `override` or `default` sections in `APIPolicy.spec`. Then you need to create the `BackendJWT` custom resource with required properties. This policy can be used on both the `SYSTEM_API` and non system APIs separately. To find more information about backend JWT generation, please refer to the [Passing End User Attributes to the Backend](https://apim.docs.wso2.com/en/latest/deploy-and-publish/deploy-on-gateway/choreo-connect/passing-enduser-attributes-to-the-backend-via-choreo-connect/#enabling-the-default-backend-jwt-generator).
+You need to create an `APIPolicy` with referencing to a `BackendJWT` resource under `override` or `default` sections in `APIPolicy.spec`. Then you need to create the `BackendJWT` custom resource with required properties. This policy can be used on both the system and non system APIs separately.
 
 ## Step 1 - Create the CRs
 

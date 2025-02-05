@@ -1,6 +1,6 @@
 # Adapter Log Configurations
 
-To configure Adapter logs, update the `values.yaml`'s `wso2.apk.dp.adapter.logging` section with the following values. Instructions in [Customize Configurations](../../setup/Customize-Configurations.md) will guide you through the process of acquiring the `values.yaml` file.
+To configure Adapter logs, update the `values.yaml`'s `wso2.apk.dp.adapter.logging` section with the following values. Instructions in the <a href="../../../setup/Customize-Configurations" target="_blank">customize configurations section</a> will guide you through the process of acquiring the `values.yaml` file.
 
 ```yaml
   logging:

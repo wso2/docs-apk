@@ -16,7 +16,7 @@ Follow the instructions below to deploy the APIM APK Agent.
 1. Create a new helm repository with the latest apim apk agent release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apk``` for this guide.
 
     ```console
-    helm repo add wso2apkagent https://github.com/wso2/product-apim-tooling/releases/download/1.1.0
+    helm repo add wso2apkagent https://github.com/wso2/product-apim-tooling/releases/download/1.2.0
     ```
 
 2. Execute the following command to update the helm repositories.
@@ -29,7 +29,7 @@ Follow the instructions below to deploy the APIM APK Agent.
 
 === "Command"
     ```
-    helm install apim-apk-agent wso2apkagent/apk-agent-helm --version 1.1.0
+    helm install apim-apk-agent wso2apkagent/apk-agent-helm --version 1.2.0
     ```
 === "Format"
     ```
@@ -37,11 +37,11 @@ Follow the instructions below to deploy the APIM APK Agent.
     ```
 
 !!! Optional
-To commence the installation while making use of the customization capabilities inherent in the `values.yaml` file, follow the subsequent command format. Instructions in [Customize Configurations](../setup/Customize-Configurations.md) will guide you through the process of acquiring the `values.yaml` file.
+To commence the installation while making use of the customization capabilities inherent in the `values.yaml` file, follow the subsequent command format. Instructions in the <a href="../../setup/Customize-Configurations" target="_blank">customize configurations section</a> will guide you through the process of acquiring the `values.yaml` file.
 
 === "Command"
     ```
-    helm install apk wso2apkagent/apk-agent-helm --version 1.1.0 -f values.yaml
+    helm install apk wso2apkagent/apk-agent-helm --version 1.2.0 -f values.yaml
     ```
 === "Format"
     ```

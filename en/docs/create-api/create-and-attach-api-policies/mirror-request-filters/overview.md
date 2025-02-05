@@ -6,5 +6,5 @@ The current implementation operates in a “fire and forget” manner, and only 
 
 Request mirroring can be done in one of two ways.
 
-1. Via REST API (using the APK-Conf file).
-2. Via CRs.
+1. [Via REST API (using the APK-Conf file)](./mirror-request-via-rest-api.md){:target="_blank"}.
+2. [Via CRs](./mirror-request-via-crs.md){:target="_blank"}.

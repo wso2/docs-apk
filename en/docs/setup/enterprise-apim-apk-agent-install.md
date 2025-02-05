@@ -2,7 +2,7 @@
 
 ## Before you begin...
 
-Install the [prerequisites](../../setup/prerequisites) that are required to run WSO2 API Platform For Kubernetes.
+Install the <a href="../../setup/prerequisites" target="_blank">prerequisites</a> that are required to run WSO2 APK.
 
 ## Start WSO2 API Platform For Kubernetes Enterprise Version
 
@@ -34,7 +34,7 @@ Install the [prerequisites](../../setup/prerequisites) that are required to run 
 
 === "Command"
     ```
-    helm install apim-apk-agent wso2/apim-apk-agent --version 1.1.0 --set wso2.subscription.imagePullSecrets="apk-registry-secret"
+    helm install apim-apk-agent wso2/apim-apk-agent --version 1.2.0 --set wso2.subscription.imagePullSecrets="apk-registry-secret"
     ```
 === "Format"
     ```
@@ -45,19 +45,19 @@ Install the [prerequisites](../../setup/prerequisites) that are required to run 
 
 === "Command"
     ```
-    helm install apim-apk-agent wso2/apim-apk-agent --version 1.1.0 --set image.tag="1.1.0.0-arm64" --set wso2.subscription.imagePullSecrets="apk-registry-secret"
+    helm install apim-apk-agent wso2/apim-apk-agent --version 1.2.0 --set image.tag="1.2.0.0-arm64" --set wso2.subscription.imagePullSecrets="apk-registry-secret"
     ```
 === "Format"
     ```
-    helm install <chart-name> <repository-name>/apim-apk-agent --version <version-of-APK> --set image.tag="1.1.0.0-arm64" --set wso2.subscription.imagePullSecrets=<secret-name>
+    helm install <chart-name> <repository-name>/apim-apk-agent --version <version-of-APK> --set image.tag="1.2.0.0-arm64" --set wso2.subscription.imagePullSecrets=<secret-name>
     ```
 
 !!! Optional
-    To commence the installation while making use of the customization capabilities inherent in the `values.yaml` file, follow the subsequent command format. Instructions in [Customize Configurations](../setup/Customize-Configurations.md) will guide you through the process of acquiring the `values.yaml` file.
+    To commence the installation while making use of the customization capabilities inherent in the `values.yaml` file, follow the subsequent command format. Instructions in the <a href="../../setup/Customize-Configurations" target="_blank">customize configurations section</a> will guide you through the process of acquiring the `values.yaml` file.
         
     === "Command"
          ```
-         helm install apim-apk-agent wso2/apim-apk-agent --version 1.1.0 -set wso2.subscription.imagePullSecrets="apk-registry-secret" -f values.yaml
+         helm install apim-apk-agent wso2/apim-apk-agent --version 1.2.0 -set wso2.subscription.imagePullSecrets="apk-registry-secret" -f values.yaml
          ```
     === "Format"
          ```
@@ -74,4 +74,4 @@ kubectl get pods
 ```
 
 !!! Important
-    If pods are not transitioning to running state, please follow the steps in the [FAQs](../../about-apk/FAQs/#q3-why-are-pods-not-transitioning-to-the-running-state-for-a-long-time) to troubleshoot the problem.
+    If the pods are not transitioning to the running state, please follow the steps in the <a href="../../about-apk/FAQs/#4-why-are-pods-not-transitioning-to-the-running-state-for-a-long-time" target="_blank">FAQs</a> to troubleshoot the problem.

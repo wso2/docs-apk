@@ -1,15 +1,15 @@
 ## Configuring APIM-APK Agent
 
-Agent can be configured in both ways.
+The agent can be configured in the following ways.
 
   1. API Manager as the control plane for APK
   2. APK as a gateway to API Manager 
 
 ### Common Configurations
 
-1. Configure Control Plane(APIM) related configuration in APIM-APK Agent.
+1. Configure Control Plane(APIM) related configuration in APIM-APK Agent
 
-    Add following configuration to values.yaml file to provide control plane related configs to APIM-APK Agent. Here, need to provide the host of the APIM-APK Agent.
+    Add the following configuration to the values.yaml file to provide control plane related configs to APIM-APK Agent. Here, the host of the APIM-APK Agent should be provided.
 
     ``` yaml
        controlPlane:
@@ -22,9 +22,9 @@ Agent can be configured in both ways.
          eventListeningEndpoints: amqp://admin:admin@apim-wso2am-cp-1-service.apk.svc.cluster.local:5672?retries='10'&connectdelay='30'
     ```
 
-   2. Configure Dataplane(APK Gateway) related configuration in APIM-APK Agent.
+   2. Configure Dataplane (APK Gateway) related configuration in APIM-APK Agent
 
-       Add following configuration to values.yaml file to provide dataplane related configs to APIM-APK Agent. Here, need to provide the host of the APK Gateway.
+       Add the following configuration to the values.yaml file to provide dataplane related configs to APIM-APK Agent. Here, the host of the APK Gateway should be provided.
 
        ``` yaml
        dataPlane:
@@ -35,7 +35,7 @@ Agent can be configured in both ways.
 
 ### API Manager as the control plane for APK
 
-1. Change the following configuration mode as below.
+1. Change the mode of the agent configuration as shown below.
 
     ``` yaml
        agent:
@@ -45,7 +45,7 @@ Agent can be configured in both ways.
 
 ### APK as a gateway to API Manager
 
-1. Change the following configuration mode as below.
+1. Change the mode of the agent configuration as shown below.
 
     ``` yaml
        agent:

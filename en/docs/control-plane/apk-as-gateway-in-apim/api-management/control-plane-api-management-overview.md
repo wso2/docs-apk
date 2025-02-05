@@ -1,6 +1,6 @@
 # API Management Overview
 
-In this section, a comprehensive detail of API Management Capabilites offered by WSO2 APK utilizing WSO2 API Manager Control Plane is provided.
+In this section, a comprehensive detail of API Management Capabilities offered by WSO2 APK utilizing WSO2 API Manager Control Plane is provided.
 
 ## Supported Features
 
@@ -10,6 +10,7 @@ In this section, a comprehensive detail of API Management Capabilites offered by
 - API Analytics: Gather and analyze data on API usage and performance.
 - API Marketplace: Provide a marketplace for discovering and consuming APIs.
 - Integration with WSO2 APK Gateway: Integrate with the APK Gateway for deploying APIs and managing traffic.
+- Tenancy: Multi-tenancy is supported.
 
 ### API Management
 
@@ -31,6 +32,17 @@ API Management is the process of creating, publishing, and managing APIs in a se
 ##### GraphQL APIs: Create GraphQL APIs through the API Publisher.
   - Transport Level Security: Secure APIs using transport level security. HTTPS and Mutual SSL are supported.
   - Application Level Security: Secure APIs using application level security. OAuth2 and JWT are supported.
+  - Scope: Scope based access control is supported.
+  - API Level and Resource Level Rate Limiting, Security, and Monitoring can be configured for APIs.
+  - API Deployment: Deploy APIs through the API Publisher.
+  - API Documentation: Document APIs through the API Publisher.
+  - API Testing: Test APIs through the API Publisher.
+  - API Lifecycle Management: Manage the lifecycle of APIs through the API Publisher.
+  - API Versioning: API Versioning and Default Versioning is supported.
+##### AI APIs: Create AI APIs through the API Publisher.
+  - Transport Level Security: Secure APIs using transport level security. HTTPS and Mutual SSL are supported.
+  - Application Level Security: Secure APIs using application level security. OAuth2, API Key and JWT are supported.
+  - Endpoint: AI Production Endpoint with API Key Backend Security is supported.
   - Scope: Scope based access control is supported.
   - API Level and Resource Level Rate Limiting, Security, and Monitoring can be configured for APIs.
   - API Deployment: Deploy APIs through the API Publisher.
@@ -72,11 +84,8 @@ Integration with WSO2 APK Gateway is the process of integrating with the APK Gat
 
 ## Unsupported Features
 
-- Tenancy: Tenancy is not supported. Only super tenant is supported.
-- Application level security: Basic and API Key Authentication is not supported.
+- Application level security: Basic Authentication is not supported.
 - Application level rate limiting: Application level throttling is not supported.
-- Subscription level rate limiting: Subscription level throttling is not supported.
-- API Keys: API Keys generation and invocation API using API Keys are not supported.
 - SOAP APIs: SOAP APIs are not supported.
 - SOAP to REST API conversion: SOAP to REST API conversion is not supported.
 - Webhooks/WebSub: Webhooks/WebSub are not supported.

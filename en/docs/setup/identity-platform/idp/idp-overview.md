@@ -7,10 +7,10 @@ Identity Providers, which are also referred to as IdPs, store and manage digital
 
 WSO2 APK integrates with IdPs to obtain a token to use the System APIs and also to login to the portal.
 
-- [Using a Non-production IdP](../non-production-idp)
+- <a href="../../idp/non-production-idp" target="_blank">Using a Non-Production IdP</a>  
 
-- [Using Asgardeo as an IdP](../asgardeo-idp)
+- <a href="../../idp/asgardeo-idp" target="_blank">Using Asgardeo as an IdP</a>  
 
-- [Using Auth0 as an IdP](../auth0-idp)
+- <a href="../../idp/auth0-idp" target="_blank">Using Auth0 as an IdP</a>  
 
-- [Using Any Third party IdP](../third-party-idp)
+- <a href="../../idp/third-party-idp" target="_blank">Using Any Third party IdP</a>  

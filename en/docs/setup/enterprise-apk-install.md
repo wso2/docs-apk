@@ -2,7 +2,7 @@
 
 ## Before you begin...
 
-Install the [prerequisites](../../setup/prerequisites) that are required to run WSO2 API Platform For Kubernetes.
+Install the <a href="../../setup/prerequisites" target="_blank">prerequisites</a> that are required to run WSO2 APK.
 
 ## Start WSO2 API Platform For Kubernetes Enterprise Version
 
@@ -34,7 +34,7 @@ Install the [prerequisites](../../setup/prerequisites) that are required to run 
 
 === "Command"
     ```
-    helm install apk wso2/apk-helm --version 1.1.0 --set wso2.subscription.imagePullSecrets="apk-registry-secret"
+    helm install apk wso2/apk-helm --version 1.2.0 --set wso2.subscription.imagePullSecrets="apk-registry-secret"
     ```
 === "Format"
     ```
@@ -45,7 +45,7 @@ Install the [prerequisites](../../setup/prerequisites) that are required to run 
 
 === "Command"
     ```
-    helm install apk wso2/apk-helm --version 1.1.0 --set wso2.subscription.imagePullSecrets="apk-registry-secret" -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/enterprise/arm64.yaml
+    helm install apk wso2/apk-helm --version 1.2.0 --set wso2.subscription.imagePullSecrets="apk-registry-secret" -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/enterprise/1.2.0-arm64.yaml
     ```
 === "Format"
     ```
@@ -53,11 +53,11 @@ Install the [prerequisites](../../setup/prerequisites) that are required to run 
     ```
 
 !!! Optional
-    To commence the installation while making use of the customization capabilities inherent in the `values.yaml` file, follow the subsequent command format. Instructions in [Customize Configurations](../setup/Customize-Configurations.md) will guide you through the process of acquiring the `values.yaml` file.
+    To commence the installation while making use of the customization capabilities inherent in the `values.yaml` file, follow the subsequent command format. Instructions in the <a href="../../setup/Customize-Configurations" target="_blank">customize configurations section</a> will guide you through the process of acquiring the `values.yaml` file.
         
     === "Command"
          ```
-         helm install apk wso2apk/apk-helm --version 1.1.0 -set wso2.subscription.imagePullSecrets="apk-registry-secret" -f values.yaml
+         helm install apk wso2apk/apk-helm --version 1.2.0 -set wso2.subscription.imagePullSecrets="apk-registry-secret" -f values.yaml
          ```
     === "Format"
          ```
@@ -76,4 +76,4 @@ kubectl get pods
 [![Pod Status](../assets/img/get-started/pod-status.png)](../assets/img/get-started/podstatus.png)
 
 !!! Important
-    If pods are not transitioning to running state, please follow the steps in the [FAQs](../../about-apk/FAQs/#q3-why-are-pods-not-transitioning-to-the-running-state-for-a-long-time) to troubleshoot the problem.
+    If the pods are not transitioning to the running state, please follow the steps in the <a href="../../about-apk/FAQs/#4-why-are-pods-not-transitioning-to-the-running-state-for-a-long-time" target="_blank">FAQs</a> to troubleshoot the problem.

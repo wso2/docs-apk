@@ -23,7 +23,7 @@ kubectl get pods -n <namespace>
 
 Follow the instructions below to design a GraphQL API.
 
-1. Save and download the sample [StarWarsAPI.graphql](../../../assets/files/get-started/StarWarsAPI.graphql) file. This is the GraphQL SDL of the API that we are going to deploy in APK.
+1. Download and save the sample [StarWarsAPI.graphql](../../../assets/files/get-started/StarWarsAPI.graphql) file. This is the GraphQL SDL of the API that we are going to deploy in APK.
 
 2. Execute the following request to generate the APK configuration. Use the values provided in the table below in the body of your request. 
 
@@ -33,17 +33,17 @@ Follow the instructions below to design a GraphQL API.
 
     === "Request Format"
         ```
-        curl --location 'https://<host>:9095/api/configurator/1.1.0/apis/generate-configuration' \
+        curl --location 'https://<host>:9095/api/configurator/1.2.0/apis/generate-configuration' \
         --header 'Host: <host>' \
         --form 'apiType="GRAPHQL"' \
         --form 'definition=@"<path/to/StarWarsAPI.graphql>"'
         ```
     === "Sample Request"
         ```
-        curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.1.0/apis/generate-configuration' \
+        curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.2.0/apis/generate-configuration' \
         --header 'Host: api.am.wso2.com' \
-        --form 'definition=@"/Users/user/StarWarsAPI.graphql"'
-        --form 'apiType="GRAPHQL"' \
+        --form 'definition=@"/Users/user/StarWarsAPI.graphql"' \
+        --form 'apiType="GRAPHQL"' 
         ```
     === "Sample Response"
         ```yaml
@@ -106,13 +106,75 @@ Follow the instructions below to design a GraphQL API.
 
 3. You will get the apk-conf file content as the response, as seen in the above sample response. Save this content into a file named `StarWars.apk-conf`. You will need to fill in the name, basePath, version and endpoint configuration fields before deploying the API.
 
-5. To invoke the system APIs such as for deploying, we need a valid access token issued by an identity provider (IdP). Follow the ["Generate Access Token"](../../../develop-and-deploy-api/security/generate-access-token.md) documentation to generate an access token.
+    === "Sample APK Configuration"
+    ```yaml
+    name: "Starwars API"
+    basePath: "/starwars"
+    version: "1.0.0"
+    type: "GRAPHQL"
+    defaultVersion: false
+    subscriptionValidation: false
+    endpointConfigurations:
+      production:
+        endpoint: "http://graphql-faker-service:9002/graphql"
+    operations:
+    - target: "hero"
+      verb: "QUERY"
+      secured: true
+      scopes: []
+    - target: "reviews"
+      verb: "QUERY"
+      secured: true
+      scopes: []
+    - target: "search"
+      verb: "QUERY"
+      secured: true
+      scopes: []
+    - target: "character"
+      verb: "QUERY"
+      secured: true
+      scopes: []
+    - target: "droid"
+      verb: "QUERY"
+      secured: true
+      scopes: []
+    - target: "human"
+      verb: "QUERY"
+      secured: true
+      scopes: []
+    - target: "allHumans"
+      verb: "QUERY"
+      secured: true
+      scopes: []
+    - target: "allDroids"
+      verb: "QUERY"
+      secured: true
+      scopes: []
+    - target: "allCharacters"
+      verb: "QUERY"
+      secured: true
+      scopes: []
+    - target: "starship"
+      verb: "QUERY"
+      secured: true
+      scopes: []
+    - target: "createReview"
+      verb: "MUTATION"
+      secured: true
+      scopes: []
+    - target: "reviewAdded"
+      verb: "SUBSCRIPTION"
+      secured: true
+      scopes: []
+    ```
 
-6. After generating the token, you can deploy the GraphQL API with the command
+4. To deploy the API, we need a valid access token issued by an identity provider (IdP). Follow the <a href="../../../../develop-and-deploy-api/security/generate-access-token" target="_blank">Generate Access Token</a> documentation to generate an access token.
+
+5. After generating the token, you can deploy the GraphQL API with the command
 
     === "Request Format"
         ```
-        curl --location 'https://<host>:9095/api/deployer/1.1.0/apis/deploy' \
+        curl --location 'https://<host>:9095/api/deployer/1.2.0/apis/deploy' \
         --header 'Host: <host>' \
         --header 'Authorization: bearer <access-token>' \
         --form 'apkConfiguration=@"path/to/StarWars.apk-conf"' \
@@ -120,7 +182,7 @@ Follow the instructions below to design a GraphQL API.
         ```
     === "Sample Request"
         ```
-        curl -k --location 'https://api.am.wso2.com:9095/api/deployer/1.1.0/apis/deploy' \
+        curl -k --location 'https://api.am.wso2.com:9095/api/deployer/1.2.0/apis/deploy' \
         --header 'Host: api.am.wso2.com' \
         --header 'Authorization: bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiZXhwIjoxNjg4MTMxNDQ0LCAibmJmIjoxNjg4MTI3ODQ0LCAiaWF0IjoxNjg4MTI3ODQ0LCAianRpIjoiMDFlZTE3NDEtMDA0Ni0xOGE2LWFhMjEtYmQwYTk4ZjYzNzkwIiwgImNsaWVudElkIjoiNDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyIiwgInNjb3BlIjoiZGVmYXVsdCJ9.RfKQq2fUZKZFAyjimvsPD3cOzaVWazabmq7b1iKYacqIdNjkvO9CQmu7qdtrVNDmdZ_gHhWLXiGhN4UTSCXv_n1ArDnxTLFBroRS8dxuFBZoD9Mpj10vYFSDDhUfFqjgMqtpr30TpDMfee1wkqB6K757ZSjgCDa0hAbv555GkLdZtRsSgR3xWcxPBsIozqAMFDCWoUCbgTQuA5OiEhhpVco2zv4XLq2sz--VRoBieO12C69KnGRmoLuPtvOayInvrnV96Tbt9fR0fLS2l1nvAdFzVou0SIf9rMZLnURLVQQYE64GR14m-cFRYdUI9vTsFHZBl5w-uCLdzMMofzZaLQ' \
         --form 'apkConfiguration=@"/Users/user/StarWars.apk-conf"' \
@@ -135,6 +197,9 @@ Follow the instructions below to design a GraphQL API.
         type: "GRAPHQL"
         defaultVersion: false
         subscriptionValidation: false
+        endpointConfigurations:
+          production:
+            endpoint: "http://graphql-faker-service:9002/graphql"
         operations:
         - target: "hero"
           verb: "QUERY"
@@ -186,7 +251,7 @@ Follow the instructions below to design a GraphQL API.
           scopes: []
         ```
 
-7. Execute the command below. You will be able to see that the `StarWars` API is successfully deployed.
+6. Execute the command below. You will be able to see that the `StarWars` API is successfully deployed.
     
     === "Command"
         ```
@@ -198,19 +263,20 @@ Follow the instructions below to design a GraphQL API.
 
 You will need a GraphQL backend in order to invoke the API and get a correct response. A sample backend for the GraphQL Star Wars API has been provided under [this section.](#sample-backend-for-graphql)
 
-Once your GraphQL API has been deployed, you can invoke it. The endpoint of the API would be <apk-gateway-url>/<api-basepath>. 
+Once your GraphQL API has been deployed, you can invoke it. The endpoint of the API would be /`<apk-gateway-host>`/`<api-basepath>`. 
 
-For the above API, the base path is "/starwars/1.0.0", so the API URL would be <apk-gateway-url>/starwars/1.0.0.
+For the above API, the base path is `/starwars/1.0.0`, and if the gateway host is `default.gw.wso2.com` so the API URL would be 
+`/default.gw.wso2.com/starwars/1.0.0`.
 
 A sample GraphQL call is provided below.
 
 === "Sample Request"
 ```
-curl --location 'https://default.gw.wso2.com:9095/starwars/3.14' \
+curl --location 'https://default.gw.wso2.com:9095/starwars/1.0.0' \
 --header 'Host: default.gw.wso2.com' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <access-token>' \
---data '{"query":"query hero ($episode: Episode) {\n    hero (episode: $episode) {\n        id\n        name\n        appearsIn\n    }\n}","variables":{"episode":1}}'
+--data '{"query":"query hero ($episode: Episode) {\n    hero (episode: $episode) {\n        id\n        name\n        appearsIn\n    }\n}","variables":{"episode":"NEWHOPE"}}' -k
 ```
 
 !!! note

@@ -3,15 +3,15 @@
 ## About WSO2 APK
 ### 1. What is WSO2 APK?
 
-WSO2 API Platform for Kubernetes (APK) is WSO2's cloud native API management platform to help you build, deploy, and manage APIs in a cloud environment. It is designed to be highly available and able to handle large numbers of API requests without performance degradation, with features like rate limiting, automatic failover and load balancing. For more information, refer the [What is APK?](./what-is-apk.md) section. 
+WSO2 API Platform for Kubernetes (APK) is WSO2's cloud native API management platform to help you build, deploy, and manage APIs in a cloud environment. It is designed to be highly available and able to handle large numbers of API requests without performance degradation, with features like rate limiting, automatic failover, and load balancing. For more information, refer to the <a href="../../about-apk/what-is-apk" target="_blank">What is APK?</a> section.
 
 ### 2. What is the open source license of the APK?
 
-[Apache Software License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+<a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache Software License Version 2.0</a>
 
 ### 3. What are the technologies used in WSO2 APK?
 
-APK natively uses several Kubernetes features. Envoy is used for the API gateway implementation and Helm is used as a package manager. For more details, refer to the [Technologies Used](./architecture.md#technologies-used) section.
+APK natively uses several Kubernetes features. Envoy is used for the API gateway implementation and Helm is used as a package manager. For more details, refer to the <a href="../../about-apk/architecture#technologies-used" target="_blank">Technologies Used</a> section.
 
 ### 4. What are the advantages of APK over APIM?
 
@@ -21,15 +21,15 @@ APK is primarily meant for anyone who wants API management in the Kubernetes dom
 
 ### 1. What are the minimum requirements needed to run WSO2 APK?
 
-Refer to the [prerequisites](../setup/prerequisites.md) section for this information.
+Refer to the <a href="../../setup/prerequisites#prerequisites" target="_blank">prerequisites</a> section for this information.
 
 ### 2. I want to customize some configurations in my Helm deployment. How can I do this?
 
-Refer to the [customize configurations](../setup/Customize-Configurations.md) section for this information.
+Refer to the <a href="../../setup/Customize-Configurations" target="_blank">customize configurations</a> section for this information.
 
 ### 3. What are the Kubernetes distributions supported by WSO2 APK?
 
-Minikube, Rancher, Kind and Openshift are supported. For more information about the supported versions, please refer to the [supported Kubernetes distributions](../setup/prerequisites.md#kubernetes-distributions) section.
+Minikube, Rancher, Kind and Openshift are supported. For more information about the supported versions, please refer to the <a href="../../setup/prerequisites#kubernetes-distributions" target="_blank">supported Kubernetes distributions</a> section.
 
 ### 4. Why are pods not transitioning to the running state for a long time?
 
@@ -93,8 +93,8 @@ If you see `ImagePullBackOff` error or the image is still in the pulling stage, 
 
 4. Delete all the APK related CRDs.
    ```
-   curl -L -o apk.tar.gz "https://github.com/wso2/apk/archive/refs/tags/1.0.0.tar.gz" && tar -zxvf apk.tar.gz
-   cd apk-1.0.0/helm-charts/crds
+   curl -L -o apk.tar.gz "https://github.com/wso2/apk/archive/refs/tags/1.2.0.tar.gz" && tar -zxvf apk.tar.gz
+   cd apk-1.2.0/helm-charts/crds
    kubectl delete -f .
    ```
 
@@ -146,7 +146,7 @@ Step 1: Obtain the CRDs from the chart
 First, obtain the Custom Resource Definitions (CRDs) for the specific version of APK you want to install. Replace `<version>` with the actual version number of the APK you are installing.
 
 ```bash
-helm show crds wso2apk/apk-helm --version 1.1.0 > apk-crds.yaml
+helm show crds wso2apk/apk-helm --version 1.2.0 > apk-crds.yaml
 ```
 
 Step 2: Apply the CRDs manually
@@ -162,21 +162,25 @@ Step 3: Reinstall APK
 Finally, reinstall APK using the Helm installation command as provided in the relevant quick start guide.
 
 ```bash
-helm install apk wso2apk/apk-helm --version 1.1.0
+helm install apk wso2apk/apk-helm --version 1.2.0
 ```
 
 ## Functionality
 
 ### 1. What are the API types supported by WSO2 APK?
-Currently, WSO2 APK only supports REST APIs.
+Currently, WSO2 APK supports REST APIs, GraphQL APIs and gRPC APIs.
 
 ### 2. Can I perform API request/response transformations?
 
-Yes, you can. Refer to the [Interceptors](../create-api/create-and-attach-api-policies/api-policies-overview.md) for information on how to configure this.
+Yes, you can. 
+
+Refer to the <a href="../../create-api/create-and-attach-api-policies/interceptors/interceptors-overview" target="_blank">Interceptors documentation</a> for information on how to configure an Interceptor service.
+
+Alternatively, you can refer to <a href="../../create-api/create-and-attach-api-policies/header-modifier-filters/overview" target="_blank">Header modification filters</a> for header modification support.
 
 ### 3. What are the CRDs used in WSO2 APK?
 
-Refer to the [CRD catalog](../catalogs/kubernetes-crds.md) for details on the CRDs used in the APK, including examples and the configuration definitions.
+Refer to the <a href="../../catalogs/kubernetes-crds" target="_blank">CRD catalog</a> for details on the CRDs used in the APK, including examples and the configuration definitions.
 
 ## Security
 
@@ -184,7 +188,7 @@ Refer to the [CRD catalog](../catalogs/kubernetes-crds.md) for details on the CR
 Currently, APK supports OAuth 2.0 and mutualSSL for API authentication.
 
 ### 2. Can I use a custom authorization header?
-Yes, a custom authorization header can be used. Refer to the [Use custom bearer header name](..//develop-and-deploy-api/security/authentication/enable-api-security/oauth2.md) for instructions to configure this.
+Yes, a custom authorization header can be used. Refer to the <a href="../../develop-and-deploy-api/security/authentication/enable-api-security/oauth2" target="_blank">Use custom bearer header name</a> for instructions to configure this.
 
 ## Troubleshooting
 
@@ -207,15 +211,15 @@ It is likely due to a limitation in Helm when updating Custom Resource Definitio
     === "Command"
 
         ```
-        curl -L -o apk.tar.gz "https://github.com/wso2/apk/archive/refs/tags/1.0.0.tar.gz" && tar -zxvf apk.tar.gz
+        curl -L -o apk.tar.gz "https://github.com/wso2/apk/archive/refs/tags/1.2.0.tar.gz" && tar -zxvf apk.tar.gz
         ```
 
-2.  Go to the apk-1.0.0/helm-charts/crds folder and apply the CRDs manually.
+2.  Go to the apk-1.2.0/helm-charts/crds folder and apply the CRDs manually.
 
     === "Command"
 
         ```
-        cd apk-1.0.0/helm-charts/crds
+        cd apk-1.2.0/helm-charts/crds
         kubectl apply -f .
         ```
 

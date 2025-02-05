@@ -1,8 +1,8 @@
-To commence the installation while making use of the customization capabilities inherent in the `values.yaml` file, follow the subsequent command format. Instructions in [Customize Configurations](../setup/Customize-Configurations.md) will guide you through the process of acquiring the `values.yaml` file.
+To commence the installation while making use of the customization capabilities inherent in the `values.yaml` file, follow the subsequent command format. Instructions in <a href="../../setup/Customize-Configurations" target="_blank">Customize Configurations</a> will guide you through the process of acquiring the `values.yaml` file.
 
     === "Command"
         ```
-        helm install apk wso2apk/apk-helm --version 1.1.0 -f values.yaml
+        helm install apk wso2apk/apk-helm --version 1.2.0 -f values.yaml
         ```
     === "Format"
         ```
@@ -13,7 +13,7 @@ To commence the installation while making use of the customization capabilities 
 
     === "Command"
         ```
-        helm upgrade apk wso2apk/apk-helm --version 1.1.0 -f values.yaml --no-hooks
+        helm upgrade apk wso2apk/apk-helm --version 1.2.0 -f values.yaml --no-hooks
         ```
     === "Format"
         ```

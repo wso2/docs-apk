@@ -9,35 +9,35 @@ API Manager can be configured in both ways.
 
 These are additional configuration to values.yaml file to provide control plane related configs to API Manager.
 
-        ``` toml
-        configurations:
-            gatewayType: "APK"
+``` 
+configurations:
+    gatewayType: "APK"
 
-        publisher:
-            enablePortalConfigurationOnlyMode: true
+publisher:
+    enablePortalConfigurationOnlyMode: true
 
-        gateway:
-        # -- APIM Gateway environments
-            environments:
-                - name: "Default"
-                type: "hybrid"
-                provider: "wso2"
-                gatewayType: "APK"
-                displayInApiConsole: true
-                description: "This is a hybrid gateway that handles both production and sandbox token traffic."
-                showAsTokenEndpointUrl: true
-                serviceName: "wso2am-gateway-service"
-                servicePort: 9443
-                wsHostname: "websocket.wso2.com"
-                httpHostname: "carbon.super.gw.wso2.com:9095"
-                websubHostname: "websub.wso2.com"
-        ```
+gateway:
+# -- APIM Gateway environments
+    environments:
+        - name: "Default"
+        type: "hybrid"
+        provider: "wso2"
+        gatewayType: "APK"
+        displayInApiConsole: true
+        description: "This is a hybrid gateway that handles both production and sandbox token traffic."
+        showAsTokenEndpointUrl: true
+        serviceName: "wso2am-gateway-service"
+        servicePort: 9443
+        wsHostname: "websocket.wso2.com"
+        httpHostname: "carbon.super.gw.wso2.com:9095"
+        websubHostname: "websub.wso2.com"
+```
 
 ### APK as a gateway to API Manager 
 
 1.  Configure supported gateway types in API Manager.
 
-    Add following configuration to deployment.toml file to provide supported gateway types to API Manager. Here, need to provide the supported gateway types as `APK`.
+    Add the following configuration to the deployment.toml file to provide supported gateway types to API Manager. Here, need to provide the supported gateway types as `APK`.
 
     === "Both"
         ``` toml
@@ -52,7 +52,7 @@ These are additional configuration to values.yaml file to provide control plane 
 
 2. Change the default gateway environment if APK Only scenario.
 
-    Add following configuration to deployment.toml file to provide APK gateway as the default gateway environment to API Manager. Here, need to provide the default gateway type as `APK` and other relevant configurations.
+    Add the following configuration to the deployment.toml file to provide APK gateway as the default gateway environment to API Manager. Here, need to provide the default gateway type as `APK` and other relevant configurations.
 
     ``` toml
     [[apim.gateway.environment]]

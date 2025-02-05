@@ -2,7 +2,7 @@
 
 ## Step 1 - Setup APK
 
-1. Start by following the instructions outlined in [Customize Configurations](../Customize-Configurations.md). These instructions will guide you through the process of acquiring the `values.yaml` file.
+1. Start by following the instructions outlined in the <a href="../../../setup/Customize-Configurations" target="_blank">customize configurations section</a>. These instructions will guide you through the process of acquiring the `values.yaml` file.
    
 2. Open the `values.yaml` file, and add the configuration given below to the `gatewayRuntime` section under `dp`. 
 ```yaml
