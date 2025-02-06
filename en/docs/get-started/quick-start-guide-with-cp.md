@@ -232,7 +232,7 @@ kubectl get pods -n apk
         <th>Field</th><th>Value</th>
         <tr><td>Application Name</td><td>EmpolyeeServiceApp</td></tr>
         <tr><td>Per Token Quota</td><td>10PerMin</td></tr>
-        <tr><td>Description</td><td>Petstore Application</td></tr>
+        <tr><td>Description</td><td>EmployeeService Application</td></tr>
         </table>
      </html>
 
