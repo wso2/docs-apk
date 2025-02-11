@@ -116,14 +116,23 @@ Setup WSO2 API Manager 4.4.0 in K8s cluster using Helm Charts.
 !!! Note
     Please refer to the <a href="../../../control-plane/apim-apk-agent-deploy" target="_blank">Advanced Configuration for Agent</a> for more information. 
 
+### Verify the deployment
+
+Now you can verify the deployment by executing the following command. You will see the status of the pods as follows once completed.
+
+=== "Command"
+    ```
+    kubectl get pods -n apk
+    ```
+
 !!! Note
-    Once the agent has been deployed, you will need to update the secret named `apim-apk-issuer-cert` with the following secret.
+    Once the agent has been deployed successfully, you will need to update the secret named `apim-apk-issuer-cert` with the following secret.
     ```
     apiVersion: v1
     kind: Secret
     metadata:
         name: apim-apk-issuer-cert
-        type: Opaque
+    type: Opaque
     data:
         wso2.crt: |
             LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURxVENDQXBHZ0F3SUJBZ0lFWnQrOThqQU5CZ2txaGtpRzl3MEJBUXNGQURCa01Rc3dDUVlEVlFRR0V3SlYKVXpFTE1Ba0dBMVVFQ0F3Q1EwRXhGakFVQmdOVkJBY01EVTF2ZFc1MFlXbHVJRlpwWlhjeERUQUxCZ05WQkFvTQpCRmRUVHpJeERUQUxCZ05WQkFzTUJGZFRUekl4RWpBUUJnTlZCQU1NQ1d4dlkyRnNhRzl6ZERBZUZ3MHlOREE1Ck1UQXdNek16TURaYUZ3MHlOakV5TVRRd016TXpNRFphTUdReEN6QUpCZ05WQkFZVEFsVlRNUXN3Q1FZRFZRUUkKREFKRFFURVdNQlFHQTFVRUJ3d05UVzkxYm5SaGFXNGdWbWxsZHpFTk1Bc0dBMVVFQ2d3RVYxTlBNakVOTUFzRwpBMVVFQ3d3RVYxTlBNakVTTUJBR0ExVUVBd3dKYkc5allXeG9iM04wTUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGCkFBT0NBUThBTUlJQkNnS0NBUUVBdUhzUGZMam1CWDJDS2hlMnhEUEZINWJsaXZhcG1PZUkrR2NEZUtKRE9TbmgKTnM1eG9lVStPUlFtVGlQMGdUQTNIYU9WM1prRHJyczZKbGhnMDJ6RmFzcnUwb1pXdExmcWpjTmVuK3c1cE9sVgpndmkyM1NwOUlRbTZsbmZWUGdJTzhwWmJqYStyVmRWNUpON1VYY3Vvb2RwbHlEYW5BT0o4WnNlOW5DK1A3SjlYClRpZmVTY3Jja3BtTmpvZ1BVZU1PYTIxZ2wrd25ZRE91b1ZBUEgrSWh4OS9KWnVFQlljT0FMVnI2azl3M0Z3dlMKOTJIWjhGc0xhUnZmNTI0eERnWDVsRHBnUmI2L3o4eHl1QmZTRHg3UEVXVUJ3N21tOTZSVGRzSlVnT1FKMFhiagpOR2Q5a0hhMzFWL0dSRjBqYVpGU0xmT1JEYWpVOGVOeE9XenY0MU1adXdJREFRQUJvMk13WVRBVUJnTlZIUkVFCkRUQUxnZ2xzYjJOaGJHaHZjM1F3SFFZRFZSME9CQllFRkNnSjNHSGtPdVdBL2YxcXFCcGlNNWgzWE9yc01CMEcKQTFVZEpRUVdNQlFHQ0NzR0FRVUZCd01CQmdnckJnRUZCUWNEQWpBTEJnTlZIUThFQkFNQ0JQQXdEUVlKS29aSQpodmNOQVFFTEJRQURnZ0VCQUJuaFhWYWJ2SmNQdXk1SWNiRzlqOS94d1pMNE1qNEt0NUtqeW5iMkNzWW9vMlhZCk1UNDdqS3VUZVAyQlBmT0twcTQrUllWUEUyQ1VPc3JRdkRqUUtzY2ZaNk5NbWtYL0x1aUlCTlFZdHhaRUJPbksKZVVrb2RINWlhY0ZXb1VYZ2RCU2lIbWloYzdNMWFBWDRhRDBBcWJLNjhidnpoQ2xkcXdCV0NlbUwrWmhxc0hjOQpmR3FqZW1HNC80bDdLUzVjb3I1aHcvbExIamd2bTZTQ1B4OVVSTFpvYVdTRFhBcWZtYVgrekZ3U1BHVi9IWG1yClhaSEpySDZPNUM2NUdGdzhxMnpuZUJwanJWOHM4MEQ0a3dZREhSbE1XVnFnV2NYZFg5bnhZaFV5UEVwQ2Y5THAKU3RhNWFRU04xbG9mVFpnRE1vdllIb1NnS09Xc1gyQnl4QWZSbndFPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
@@ -139,15 +148,6 @@ Setup WSO2 API Manager 4.4.0 in K8s cluster using Helm Charts.
         ```
         kubectl apply -f <filename.yaml> -n <namespace>
         ```
-
-### Verify the deployment
-
-Now you can verify the deployment by executing the following command. You will see the status of the pods as follows once completed.
-
-=== "Command"
-    ```
-    kubectl get pods -n apk
-    ```
 
 ## Step 2 - Create and Deploy the API
 
