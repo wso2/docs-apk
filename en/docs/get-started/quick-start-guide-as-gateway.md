@@ -124,7 +124,7 @@ Setup WSO2 API Manager 4.4.0 in K8s cluster using Helm Charts.
         ```
 
 !!! Note
-    Please refer to the <a href="../../control-plane/apim-apk-agent-deploy" target="_blank">Advanced Configuration for Agent</a> for more information.
+    Please refer to the <a href="../../control-plane/apim-apk-agent-deploy" target="_blank">Advanced Configuration for Agent</a> for more information. 
 
 ### Verify the deployment
 
