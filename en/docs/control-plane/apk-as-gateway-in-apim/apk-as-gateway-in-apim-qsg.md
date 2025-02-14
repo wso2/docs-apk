@@ -93,7 +93,7 @@ Setup WSO2 API Manager 4.4.0 in K8s cluster using Helm Charts.
 1. Create a new helm repository with the latest apim apk agent release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apkagent``` for this guide.
 
     ```console
-    helm repo add wso2apkagent https://github.com/wso2/product-apim-tooling/releases/download/1.2.0
+    helm repo add wso2apkagent https://github.com/wso2/product-apim-tooling/releases/download/1.3.0-alpha
     ```
 
 2. Execute the following command to update the helm repositories.
