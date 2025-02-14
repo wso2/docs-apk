@@ -108,7 +108,7 @@ Use the values provided in the table below in the body of your request.
     === "Request"
 
         ```
-        curl --location 'https://<host>:9095/api/deployer/1.2.0/apis/deploy' \
+        curl --location 'https://<host>:9095/api/deployer/1.3.0/apis/deploy' \
         --header 'Host: <host>' \
         --header 'Authorization: bearer <access-token>' \
         --form 'apkConfiguration=@"path/to/EmployeeService.apk-conf"' \
@@ -118,7 +118,7 @@ Use the values provided in the table below in the body of your request.
     === "Sample Request"
 
         ```
-        curl -k --location 'https://api.am.wso2.com:9095/api/deployer/1.2.0/apis/deploy' \
+        curl -k --location 'https://api.am.wso2.com:9095/api/deployer/1.3.0/apis/deploy' \
         --header 'Host: api.am.wso2.com' \
         --header 'Authorization: bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiZXhwIjoxNjg4MTMxNDQ0LCAibmJmIjoxNjg4MTI3ODQ0LCAiaWF0IjoxNjg4MTI3ODQ0LCAianRpIjoiMDFlZTE3NDEtMDA0Ni0xOGE2LWFhMjEtYmQwYTk4ZjYzNzkwIiwgImNsaWVudElkIjoiNDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyIiwgInNjb3BlIjoiZGVmYXVsdCJ9.RfKQq2fUZKZFAyjimvsPD3cOzaVWazabmq7b1iKYacqIdNjkvO9CQmu7qdtrVNDmdZ_gHhWLXiGhN4UTSCXv_n1ArDnxTLFBroRS8dxuFBZoD9Mpj10vYFSDDhUfFqjgMqtpr30TpDMfee1wkqB6K757ZSjgCDa0hAbv555GkLdZtRsSgR3xWcxPBsIozqAMFDCWoUCbgTQuA5OiEhhpVco2zv4XLq2sz--VRoBieO12C69KnGRmoLuPtvOayInvrnV96Tbt9fR0fLS2l1nvAdFzVou0SIf9rMZLnURLVQQYE64GR14m-cFRYdUI9vTsFHZBl5w-uCLdzMMofzZaLQ' \
         --form 'apkConfiguration=@"/Users/user/EmployeeService.apk-conf"' \

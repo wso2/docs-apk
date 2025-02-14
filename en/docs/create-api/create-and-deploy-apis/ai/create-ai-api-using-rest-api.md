@@ -30,13 +30,13 @@ The OpenAPI specification file can be provided as a local file or as a URL conta
 
 === "Sample Request"
     ```
-    curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.2.0/apis/generate-configuration' \
+    curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.3.0/apis/generate-configuration' \
     --header 'Host: api.am.wso2.com' \
     --form 'definition=@"/Users/user/azure_api.yaml"'
     ```
 === "Request Format"
     ```
-    curl --location 'https://<host>:9095/api/configurator/1.2.0/apis/generate-configuration' \
+    curl --location 'https://<host>:9095/api/configurator/1.3.0/apis/generate-configuration' \
     --header 'Host: <host>' \
     --form 'definition=@"<path/to/definition.yaml>"'
     ```
@@ -193,7 +193,7 @@ After generating the token, you can deploy the API directly into APK using API S
 
 === "Sample Request"
     ```
-    curl -k --location 'https://api.am.wso2.com:9095/api/deployer/1.2.0/apis/deploy' \
+    curl -k --location 'https://api.am.wso2.com:9095/api/deployer/1.3.0/apis/deploy' \
     --header 'Content-Type: multipart/form-data' \
     --header 'Accept: application/yaml' \
     --header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiYXVkIjoiYXVkMSIsICJleHAiOjE3MzAwMTQ0MjksICJuYmYiOjE3MzAwMTA4MjksICJpYXQiOjE3MzAwMTA4MjksICJqdGkiOiIwMWVmOTQyZC02Y2I0LTFjNDgtYmFmYS04Yzg5NGFlZWZkYzIiLCAiY2xpZW50SWQiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAic2NvcGUiOiJhcGs6YXBpX2NyZWF0ZSJ9.isgFKKbdmIApTpCcZEhn1aWpHPFs4ZRhEva9Hjj6WMQWtwlYYlcgBK_g08p1zA0HOxCOZuAsXBcEMLnJ9HzgBq0bWKegWwAt_oTHCvDu4yi4gNYR0TLPc_8goa6fXS-iLckrG22Csi7ODoj84agW6rwLEq4G62dVWt4dNMSSO91cy2HdYtVjcnbKxefVJ942uwJOqqL4HqDc4a-u1rHeLchvwn_b1ezZIyWHcZQFsY2PP3UBZ30t_5-08V3w2AbkVXvppYpHKNqg647MzdOChz66nF0va5FxmlTr71uY0Q4Gufv-tT6QENWX_GcYhDmdH4OQXTFt9jHgm8lcXxyK7g' \
@@ -202,7 +202,7 @@ After generating the token, you can deploy the API directly into APK using API S
     ```
 === "Request Format"
     ```
-    curl -k --location 'https://<host>:9095/api/deployer/1.2.0/apis/deploy' \
+    curl -k --location 'https://<host>:9095/api/deployer/1.3.0/apis/deploy' \
     --header 'Host: <host>' \
     --header 'Authorization: bearer <access-token>' \
     --form 'apkConfiguration=@"path/to/apk-conf-file.apk-conf"' \
@@ -272,7 +272,7 @@ After generating the token, you can deploy the API directly into APK using API S
 You can generate K8s resources as a zip file from config-deployer service.
 
 ```
-curl --location 'https://api.am.wso2.com:9095/api/configurator/1.2.0/apis/generate-k8s-resources' \
+curl --location 'https://api.am.wso2.com:9095/api/configurator/1.3.0/apis/generate-k8s-resources' \
 --header 'Content-Type: multipart/form-data' \
 --header 'Accept: application/zip' \
 --form 'apkConfiguration=@"/Users/user/azure.apk-conf"' \
