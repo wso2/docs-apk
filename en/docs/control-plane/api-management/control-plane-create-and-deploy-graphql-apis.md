@@ -4,7 +4,7 @@
 
 === "Sample Request"
    ```
-   curl --location 'https://api.am.wso2.com:9095/api/configurator/1.2.0/apis/generate-k8s-resources?organization=carbon.super' \
+   curl --location 'https://api.am.wso2.com:9095/api/configurator/1.3.0/apis/generate-k8s-resources?organization=carbon.super' \
    --header 'Content-Type: multipart/form-data' \
    --header 'Accept: application/zip' \
    --form 'apkConfiguration=@"path/to/StarWars.apk-conf"' \

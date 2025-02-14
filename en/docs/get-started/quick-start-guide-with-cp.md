@@ -56,7 +56,7 @@ Apart from the above API definition file, we also need an `apk-conf` file that d
 
     === "Sample Request"
         ```
-        curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.2.0/apis/generate-configuration' \
+        curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.3.0/apis/generate-configuration' \
         --header 'Host: api.am.wso2.com' \
         --form 'definition=@"/Users/user/EmployeeServiceDefinition.json"' > EmployeeService.apk-conf
         ```
@@ -93,7 +93,7 @@ Apart from the above API definition file, we also need an `apk-conf` file that d
 
     === "Request Format"
         ```
-        curl --location 'https://<host>:9095/api/configurator/1.2.0/apis/generate-configuration' \
+        curl --location 'https://<host>:9095/api/configurator/1.3.0/apis/generate-configuration' \
         --header 'Host: <host>' \
         --form 'apiType="<api-type>"' \
         --form 'definition=@"<path/to/EmployeeServiceDefinition.json>"'
@@ -152,7 +152,7 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
 
     === "Sample Request"
         ```
-        curl --location 'https://api.am.wso2.com:9095/api/configurator/1.2.0/apis/generate-k8s-resources?organization=carbon.super' \
+        curl --location 'https://api.am.wso2.com:9095/api/configurator/1.3.0/apis/generate-k8s-resources?organization=carbon.super' \
         --header 'Content-Type: multipart/form-data' \
         --header 'Accept: application/zip' \
         --form 'apkConfiguration=@"/Users/user/EmployeeService.apk-conf"' \
@@ -162,7 +162,7 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
 
     === "Request Format"
         ```
-        curl --location 'https://<host>:9095/api/configurator/1.2.0/apis/generate-k8s-resources?organization=carbon.super' \
+        curl --location 'https://<host>:9095/api/configurator/1.3.0/apis/generate-k8s-resources?organization=carbon.super' \
         --header 'Content-Type: multipart/form-data' \
         --header 'Accept: application/zip' \
         --form 'apkConfiguration=@"<path/to/apk-conf-file.apk-conf>"' \
