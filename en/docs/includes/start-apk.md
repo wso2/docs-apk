@@ -6,7 +6,7 @@ Follow the instructions below to deploy APK in the Kubernetes cluster.
 1. Create a new helm repository with the latest apk release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apk``` for this guide.
 
     ```console
-    helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.3.0
+    helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.3.0-alpha
     ```
 
 2. Execute the following command to update the helm repositories.
