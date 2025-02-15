@@ -22,7 +22,7 @@ Refer the following quick start guides to obtain the API Key and Endpoint from t
 
 For this use case, we will use the Azure OpenAI service and will use the API Key and the Endpoint obtained from the Azure Open AI Service. 
 
-## Step 3. Generate APK configuration file.
+## Step 3. Generate Kubernetes Gateway configuration file.
 
 This service generates an APK configuration file by providing your OAS file. APK configuration file includes important API metadata, rate limiting details, security settings, and other necessary information about your API.
 

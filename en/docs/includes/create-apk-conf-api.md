@@ -18,13 +18,13 @@ kubectl get pods
 
 ## Step 2. Generate an API schema file for your service. 
 
-You will need an OpenAPI Specification 3.x that describes the structure and behavior of your API. This file serves as the foundation for configuring your API and is essential for generating the APK Configuration file.
+You will need an OpenAPI Specification 3.x that describes the structure and behavior of your API. This file serves as the foundation for configuring your API and is essential for generating the Kubernetes Gateway Configuration file.
 
 Download and save the sample [EmployeeServiceDefinition.json](https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/definitions/EmployeeServiceDefinition.json) file. This is the OAS definition of the API that we are going to deploy in APK.
 
-## Step 3. Generate APK configuration file.
+## Step 3. Generate Kubernetes Gateway configuration file.
     
-This service generates an APK configuration file by providing your 3.x OpenAPI specification file. APK configuration file includes important API metadata, rate limiting details, security settings, and other necessary information about your API.
+This service generates an Kubernetes Gateway configuration file by providing your 3.x OpenAPI specification file. APK configuration file includes important API metadata, rate limiting details, security settings, and other necessary information about your API.
 
 The OpenAPI specification file can be provided as a local file or as a URL containing a definition file.
 

@@ -1,27 +1,27 @@
 # Developer-Driven Design First API Management 
 
-This section provides a step-by-step guide to creating, deploying, and invoking an API using the WSO2 API Platform for Kubernetes integrated with the Control Plane. It also covers how to create an API from the data plane using CR and APIs.
+This section provides a step-by-step guide to creating, deploying, and invoking an API using the WSO2 Kubernetes Gateway integrated with the Control Plane. It also covers how to create an API from the data plane using CR and APIs.
 
 !!!NOTE
-    To set up the APK as an enterprise version, please follow the steps specified in both the <a href="../../setup/enterprise-apk-install" target="_blank">Install APK Enterprise</a> and <a href="../../setup/enterprise-apim-apk-agent-install" target="_blank">Install APIM APK Agent Enterprise</a>.
+    To set up the Kubernetes Gateway as an enterprise version, please follow the steps specified in both the <a href="../../setup/enterprise-apk-install" target="_blank">Install WSO2 Kubernetes Gateway Enterprise</a> and <a href="../../setup/enterprise-apim-apk-agent-install" target="_blank">Install WSO2 Kubernetes Gateway Agent Enterprise</a>.
 
 !!!NOTE
     If you follow this approach, **you cannot create APIs from Portal UI**. If you need that approach, go to <a href="../quick-start-guide-as-gateway" target="_blank">Portal-Driven Design First</a> section.
 
 ## Before you begin...
 
-Install the <a href="../../setup/prerequisites" target="_blank">prerequisites</a> that are required to run the WSO2 API Platform for Kubernetes.
+Install the <a href="../../setup/prerequisites" target="_blank">prerequisites</a> that are required to run the WSO2 Kubernetes Gateway.
 
 !!!NOTE
-    If you already have an installation of the APK in your cluster, please remove the installation by following the steps specified in the <a href="../../setup/uninstall" target="_blank">Uninstall APK</a>  section.
+    If you already have an installation of the Kubernetes gateway in your cluster, please remove the installation by following the steps specified in the <a href="../../setup/uninstall" target="_blank">Uninstall Kubernetes Gateway</a>  section.
 
-## Step 1 - Setup WSO2 API Platform For Kubernetes With Control Plane
+## Step 1 - Setup WSO2 Kubernetes Gateway With Control Plane
 
 {!includes/start-apk-cp.md!}
 
 ## Step 2 - Create and Deploy the API From Dataplane
 
-1. Download and save the sample <a href="../../assets/files/get-started/EmployeeServiceDefinition.json" target="_blank" download>EmployeeServiceDefinition.json</a> file. This is the OAS definition of the API that we are going to deploy in APK.
+1. Download and save the sample <a href="../../assets/files/get-started/EmployeeServiceDefinition.json" target="_blank" download>EmployeeServiceDefinition.json</a> file. This is the OAS definition of the API that we are going to deploy in Kubernetes Gateway.
 2. Add a hostname mapping to the ```/etc/hosts``` file as follows.
 
     | IP        | Domain name              |
@@ -43,12 +43,12 @@ Install the <a href="../../setup/prerequisites" target="_blank">prerequisites</a
         kubectl port-forward svc/apk-wso2-apk-gateway-service 9095:9095 -n apk
         ```
 
-### Generate APK configuration file from the OpenAPI definition
+### Generate Kubernetes Gateway configuration file from the OpenAPI definition
 
 Apart from the above API definition file, we also need an `apk-conf` file that defines the configurations and metadata for this API. We have a configuration service that can be used to generate this apk-conf file when the OpenAPI definition is provided.
 
 
-1. Execute the following request to generate the APK configuration. Use the values provided in the table below in the body of your request. 
+1. Execute the following request to generate the Kubernetes Gateway API configuration. Use the values provided in the table below in the body of your request. 
 
     | Field      | Value                                                                                                                     |
     | ---------- | ------------------------------------------------------------------------------------------------------------------------- |
@@ -132,12 +132,12 @@ operations:
 ```
 
 !!! Important
-    We recommend installing the <a href="../../api-management-overview/apk-conf-lang-support/" target="_blank">APK Config Language Support Visual Studio Code (VS Code) extension</a> to edit the APK Configuration file.
+    We recommend installing the <a href="../../api-management-overview/apk-conf-lang-support/" target="_blank">Kubernetes Gateway Config Language Support Visual Studio Code (VS Code) extension</a> to edit the Kubernetes Gateway API Configuration file.
 
 
-### Deploy the API in APK DataPlane
+### Deploy the API in Kubernetes Gateway
 
-You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-conf file (`EmployeeService.apk-conf`) corresponding to the API. We can use these files to deploy the API in APK. 
+You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-conf file (`EmployeeService.apk-conf`) corresponding to the API. We can use these files to deploy the API in Kubernetes Gateway. 
 
 1. Use the values provided in the table below in the body of your request.
 
@@ -240,7 +240,7 @@ kubectl get pods -n apk
 5. Click **Production Keys** or **Sandbox Keys** based on the environment for which you need to generate keys.
    Let's assume that you are working in a production environment. Therefore, click **Production Keys**.
 5. Click **Generate Keys** to create an application Access Token with relevant scopes.
-6. To verify the Application and Subscription creation in the APK Gateway, execute the following command. You will see the status of the deployed application as follows once completed.
+6. To verify the Application and Subscription creation in the kubernetes gateway, execute the following command. You will see the status of the deployed application as follows once completed.
 
     ```bash
     kubectl get subscriptions -n apk

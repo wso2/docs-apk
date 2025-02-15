@@ -13,9 +13,9 @@
 5. Navigate to the Deploy section and click Deployments. 
 6. Click Deploy New Revision. 
 7. Optionally, provide a description for the revision. 
-8. Select the APK Gateways in which you want to deploy the API and click Deploy. 
+8. Select the Kubernetes Gateways in which you want to deploy the API and click Deploy. 
 9. Navigate to **Life Cycle** tab. Then click **Publish** to publish the API. 
-10. To verify the API deployment in the APK Gateway, execute the following command. You will see the status of the deployed apis as follows once completed.
+10. To verify the API deployment in the Kubernetes Gateway, execute the following command. You will see the status of the deployed apis as follows once completed.
 
 ```bash
    kubectl get apis -n apk

@@ -10,13 +10,13 @@
    | Version  | 0.0.2                               |
    | Endpoint | https://api.mistral.ai |
 
-5. Select the APK Gateway and click Create. 
+5. Select the Kubernetes Gateway and click Create. 
 6. Go to API Configurations, and click Endpoints. 
 7. Fill API Key for Production and Sandbox Endpoints and click save. 
 8. Navigate to the Deploy section and click Deployments. 
 9. Click Deploy New Revision. 
 10. Optionally, provide a description for the revision. 
-11. Select the APK Gateways in which you want to deploy the API and click Deploy. 
+11. Select the Kubernetes Gateways in which you want to deploy the API and click Deploy. 
 12. Navigate to **Life Cycle** tab. Then click **Publish** to publish the API. 
 13. To verify the API deployment in the APK Gateway, execute the following command. You will see the status of the deployed apis as follows once completed.
 

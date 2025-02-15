@@ -15,7 +15,7 @@
 5. Click **Production Keys** or **Sandbox Keys** based on the environment for which you need to generate keys.
    Let's assume that you are working in a production environment. Therefore, click **Production Keys**.
 5. Click **Generate Keys** to create an application Access Token with relevant scopes.
-6. To verify the Application and Subscription creation in the APK Gateway, execute the following command. You will see the status of the deployed application as follows once completed.
+6. To verify the Application and Subscription creation in the kubernetes gateway, execute the following command. You will see the status of the deployed application as follows once completed.
 
     ```bash
     kubectl get subscriptions -n apk

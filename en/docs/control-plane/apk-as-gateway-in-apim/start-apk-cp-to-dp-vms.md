@@ -62,7 +62,7 @@ Setup WSO2 API Manager 4.5.0 in VM.
 
 #### Setup WSO2 APIM-APK Agent 1.3.0
 
-1. Create a new helm repository with the latest apim apk agent release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apkagent``` for this guide.
+1. Create a new helm repository with the latest kubernetes gateway agent release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apkagent``` for this guide.
 
     ```console
     helm repo add wso2apkagent https://github.com/wso2/product-apim-tooling/releases/download/1.3.0-alpha

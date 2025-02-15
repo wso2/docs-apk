@@ -22,9 +22,9 @@ Add a hostname mapping to the ```/etc/hosts``` file as follows.
 
 There are 3 components which you need to setup to get the APK working with APIM. They are,
 
-### Setup WSO2 API Manager Control Plane 4.4.0
+### Setup WSO2 API Manager Control Plane 4.5.0
 
-Setup WSO2 API Manager 4.4.0 in K8s cluster using Helm Charts.
+Setup WSO2 API Manager 4.5.0 in K8s cluster using Helm Charts.
 
 1. Create a new helm repository with the latest apim release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apim```.
 
@@ -90,7 +90,7 @@ Setup WSO2 API Manager 4.4.0 in K8s cluster using Helm Charts.
 
 ### Setup WSO2 APIM-APK Agent 1.3.0 Alpha
 
-1. Create a new helm repository with the latest apim apk agent release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apkagent``` for this guide.
+1. Create a new helm repository with the latest kubernetes gateway agent release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apkagent``` for this guide.
 
     ```console
     helm repo add wso2apkagent https://github.com/wso2/product-apim-tooling/releases/download/1.3.0-alpha

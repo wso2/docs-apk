@@ -16,9 +16,9 @@ Add a hostname mapping to the ```/etc/hosts``` file as follows.
 | 127.0.0.1 | idp.am.wso2.com     |
 | 127.0.0.1 | default.gw.wso2.com |
 
-#### Setup WSO2 API Manager Control Plane 4.4.0
+#### Setup WSO2 API Manager Control Plane 4.5.0
 
-Setup WSO2 API Manager 4.4.0 in K8s cluster using Helm Charts.
+Setup WSO2 API Manager 4.5.0 in K8s cluster using Helm Charts.
 
 1. Create a new helm repository with the latest apim release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apim```.
 
@@ -48,7 +48,7 @@ Setup WSO2 API Manager 4.4.0 in K8s cluster using Helm Charts.
 !!! Note
     Please refer to the <a href="../../control-plane/apim-deploy/" target="_blank">Advanced Configuration for APIM</a> for more information.
 
-#### Setup WSO2 APK Dataplane 1.3.0-Alpha
+#### Setup WSO2 APK Dataplane 1.3.0 Alpha
 
 1. Create a new helm repository with the latest apk release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apk```.
 
@@ -102,9 +102,9 @@ Setup WSO2 API Manager 4.4.0 in K8s cluster using Helm Charts.
     Please refer to the <a href="../../control-plane/apim-deploy/" target="_blank">Advanced Configuration for APIM</a> for more information.
 
 
-#### Setup WSO2 APIM-APK Agent 1.3.0-Alpha
+#### Setup WSO2 APIM-APK Agent 1.3.0 Alpha
 
-1. Create a new helm repository with the latest apim apk agent release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apkagent``` for this guide.
+1. Create a new helm repository with the latest kubernetes gateway agent release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apkagent``` for this guide.
 
     ```console
     helm repo add wso2apkagent https://github.com/wso2/product-apim-tooling/releases/download/1.2.0
