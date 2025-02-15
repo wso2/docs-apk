@@ -11,13 +11,13 @@
    | Version  | 1.0.0                                     |
    | Endpoint | http://graphql-faker-service:9002/graphql |
 
-6. Select the APK Gateway and click Create.
+6. Select the Kubernetes Gateway and click Create.
 7. Navigate to the Deploy section and click Deployments.
 8. Click Deploy New Revision.
 9. Optionally, provide a description for the revision.
-10. Select the APK Gateways in which you want to deploy the API and click Deploy.
+10. Select the Kubernetes Gateways in which you want to deploy the API and click Deploy.
 11. Navigate to **Life Cycle** tab. Then click **Publish** to publish the API.
-12. To verify the API deployment in the APK Gateway, execute the following command. You will see the status of the deployed apis as follows once completed.
+12. To verify the API deployment in the Kubernetes Gateway, execute the following command. You will see the status of the deployed apis as follows once completed.
 
    ```bash
    kubectl get apis -n <namespace>

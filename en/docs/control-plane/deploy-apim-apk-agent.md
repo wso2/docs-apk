@@ -13,7 +13,7 @@ Follow the instructions below to deploy the APIM APK Agent.
 ## Deploy APIM APK Agent
 
 
-1. Create a new helm repository with the latest apim apk agent release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apk``` for this guide.
+1. Create a new helm repository with the latest kubernetes gateway agent release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apk``` for this guide.
 
     ```console
     helm repo add wso2apkagent https://github.com/wso2/product-apim-tooling/releases/download/1.2.0
