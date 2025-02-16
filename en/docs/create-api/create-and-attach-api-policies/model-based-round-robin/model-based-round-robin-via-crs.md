@@ -113,7 +113,7 @@ kubectl apply -f <path_to_CR_files> -n apk
     ```
     curl -X POST "https://<host>:9095/<basePath>/chat/completions" \
     -H "Content-Type: application/json" \
-    -H 'Authorization: bearer <access-token>' \
+    -H 'Authorization: Bearer <access-token>' \
     -d <data> -k     
     ```
 === "Sample Response"

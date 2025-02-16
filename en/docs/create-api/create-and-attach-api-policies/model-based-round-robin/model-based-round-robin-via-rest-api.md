@@ -152,7 +152,7 @@ Follow rest of the steps in the<a href="../../../../create-api/create-and-deploy
     ```
     curl -X POST "https://<host>:9095/<basePath>/chat/completions" \
     -H "Content-Type: application/json" \
-    -H 'Authorization: bearer <access-token>' \
+    -H 'Authorization: Bearer <access-token>' \
     -d <data> -k     
     ```
 === "Sample Response"
