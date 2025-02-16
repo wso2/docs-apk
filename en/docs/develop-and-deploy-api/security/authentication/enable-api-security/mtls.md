@@ -166,6 +166,6 @@ To invoke the API, you may use the following curl command structure.
   ```
   curl --location 'https://<host>:9095/test/3.14/employee' \
   --header 'Host: <host>' \
-  --header 'Authorization: bearer <access-token>'
+  --header 'Authorization: Bearer <access-token>'
   --header 'X-WSO2-CLIENT-CERTIFICATE: <certificate-content>'
   ```

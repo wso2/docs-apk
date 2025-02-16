@@ -87,7 +87,7 @@ The API invocations yield the subsequent responses:
         ```
         curl -k --location 'https://default.gw.wso2.com:9095/emp-info/v1.0/employee' \
         --header 'Host: default.gw.wso2.com' \
-        --header 'Authorization: bearer <REPLACE-ME(TOKEN)>'
+        --header 'Authorization: Bearer <REPLACE-ME(TOKEN)>'
         ```
 
     - Apart from the invocation URL mentioned above, you can also use the API context `/emp-info/v1` instead of `/emp-info/v1.0` to invoke the same API.
@@ -95,7 +95,7 @@ The API invocations yield the subsequent responses:
         ```
         curl -k --location 'https://default.gw.wso2.com:9095/emp-info/v1/employee' \
         --header 'Host: default.gw.wso2.com' \
-        --header 'Authorization: bearer <REPLACE-ME(TOKEN)>'
+        --header 'Authorization: Bearer <REPLACE-ME(TOKEN)>'
         ```
 
 4. Create Employee Service v1.1 API
@@ -111,7 +111,7 @@ The API invocations yield the subsequent responses:
         ```
         curl -k --location 'https://default.gw.wso2.com:9095/emp-info/v1.1/employee' \
         --header 'Host: default.gw.wso2.com' \
-        --header 'Authorization: bearer <REPLACE-ME(TOKEN)>'
+        --header 'Authorization: Bearer <REPLACE-ME(TOKEN)>'
         ```
 
     - Apart from the invocation URL mentioned above, you can also use the API context `/emp-info/v1` instead of `/emp-info/v1.1` to invoke the same API. In this scenario, /emp-info/v1 returns the latest changes from the Employee Service v1.1.
@@ -119,5 +119,5 @@ The API invocations yield the subsequent responses:
         ```
         curl -k --location 'https://default.gw.wso2.com:9095/emp-info/v1/employee' \
         --header 'Host: default.gw.wso2.com' \
-        --header 'Authorization: bearer <REPLACE-ME(TOKEN)>'
+        --header 'Authorization: Bearer <REPLACE-ME(TOKEN)>'
         ```
