@@ -87,7 +87,7 @@ The sample contains the following Resources required for weighted routing.
 
 Weight values for each of the endpoint routes can be configured in the HTTPRoute CR as shown in the sample HTTPRoute CR provided below.
 
-```
+```yaml
 apiVersion: "gateway.networking.k8s.io/v1beta1"
 kind: "HTTPRoute"
 metadata:
@@ -143,14 +143,14 @@ Once you have designed your API using these CRs, the next step is to apply them 
 
 Apply CRs to the Kubernetes API server using the kubectl.
 
+=== "Command"
+    ```command
+    kubectl apply -f "https://raw.githubusercontent.com/wso2/apk/refs/heads/main/developer/tryout/samples/sample-weighted-routing.yaml"
+    ```
+    
 === "Format"
     ```command
     kubectl apply -f <path-to-crs>
-    ```
-
-=== "Command"
-    ```command
-    kubectl apply -f https://raw.githubusercontent.com/wso2/apk/refs/heads/main/developer/tryout/samples/sample-weighted-routing.yaml
     ```
 
 ### Step 4 - Verify the API Invocation
@@ -160,18 +160,18 @@ Apply CRs to the Kubernetes API server using the kubectl.
 
 === "Sample Request"
     ```
-    curl -k  --location "https://default.gw.wso2.com:9095/backend-service/1.0/demo" 
-    --header "Host: default.gw.wso2.com" 
-    --header "Authorization: Bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiYXVkIjoiYXVkMSIsICJleHAiOjE3Mzk1MjU1OTUsICJuYmYiOjE3Mzk1MjE5OTUsICJpYXQiOjE3Mzk1MjE5OTUsICJqdGkiOiIwMWVmZWFhZS01NTZhLTExNzgtOTdiYi1lMDJmMjAzYzA4N2QiLCAiY2xpZW50SWQiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAic2NvcGUiOiJhcGs6YXBpX2NyZWF0ZSJ9.WUl6NICtrQbKib5wKJFRV4ekS2-Z1XTVGmU-J5_RZzFhIpVRzJtlgqcia9SGxV5Drgvq15B9u8odl07OWxGxoUfQuDwr5N63BKYP1oVn_zAghX9-16AAWP7iUEdh6OE4abeoI9PXGylgmUarwaLBQZXrHdBWkrVSiHmUuRn3W4jVkdqjjZ7f5XZBimfey2zO-Dm-z95gN3VnyOl46xB9U5LPgXqrjZrDnQrFuokhDEf0YhqTmPXjGv8Xk8kRPVmlqMSnTiOc0O0iMlFZwSMBksBiRQlKVgqB7h66mB5zRx1TWRcEJ5NCkMz101hz5YuGq_rKZiGc1Gq6Tncw3EcVQw"
+    curl -k --location "https://default.gw.wso2.com:9095/backend-service/1.0/demo" \
+    --header "Host: default.gw.wso2.com" \
+    --header "Authorization: Bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiYXVkIjoiYXVkMSIsICJleHAiOjE3Mzk1MjU1OTUsICJuYmYiOjE3Mzk1MjE5OTUsICJpYXQiOjE3Mzk1MjE5OTUsICJqdGkiOiIwMWVmZWFhZS01NTZhLTExNzgtOTdiYi1lMDJmMjAzYzA4N2QiLCAiY2xpZW50SWQiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAic2NvcGUiOiJhcGs6YXBpX2NyZWF0ZSJ9.WUl6NICtrQbKib5wKJFRV4ekS2-Z1XTVGmU-J5_RZzFhIpVRzJtlgqcia9SGxV5Drgvq15B9u8odl07OWxGxoUfQuDwr5N63BKYP1oVn_zAghX9-16AAWP7iUEdh6OE4abeoI9PXGylgmUarwaLBQZXrHdBWkrVSiHmUuRn3W4jVkdqjjZ7f5XZBimfey2zO-Dm-z95gN3VnyOl46xB9U5LPgXqrjZrDnQrFuokhDEf0YhqTmPXjGv8Xk8kRPVmlqMSnTiOc0O0iMlFZwSMBksBiRQlKVgqB7h66mB5zRx1TWRcEJ5NCkMz101hz5YuGq_rKZiGc1Gq6Tncw3EcVQw" \
     ```
 === "Request Format"
     ```
-    curl -k  --location "https://<host>:9095/backend-service/1.0/demo" \
-    -H "Host: default.gw.wso2.com" \
-    -H "Authorization: Bearer <access-token>" \
+    curl -k --location "https://<host>:9095/backend-service/1.0/demo" \
+    --header "Host: default.gw.wso2.com" \
+    --header "Authorization: Bearer <access-token>" \
     ```
 
-Once you invoke the above sample request multiple times, you can view one of the following sample responses coming from the different endpoints as per the configured weight. (In the sample responses, the `API_version` value is used solely for the purpose of distinguishing between the three backends and does not represent an actual API version in this scenario.)
+Once you invoke the above sample request, you will receive one of the following sample responses coming from one of the different endpoints as per the configured weight. (In the sample responses, the `API_version` value is used solely for the purpose of distinguishing between the three backends and does not represent an actual API version in this scenario.)
 
 === "Sample Response 1"
     ```JSON
@@ -199,4 +199,29 @@ Once you invoke the above sample request multiple times, you can view one of the
       "namespace":"Backend",
       "port":8081
     }
+    ```
+
+You can use the following script to verify the number of responses received from each endpoint of the route in this sample. The script invokes the request 100 times and provides a count of the number of responses from each endpoint.
+
+=== "Sample Request"
+    ```
+    for i in {1..100}; do curl -s -k --location "https://default.gw.wso2.com:9095/backend-service/1.0/demo" \
+    --header "Host: default.gw.wso2.com" \
+    --header "Authorization: Bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiYXVkIjoiYXVkMSIsICJleHAiOjE3Mzk1MjU1OTUsICJuYmYiOjE3Mzk1MjE5OTUsICJpYXQiOjE3Mzk1MjE5OTUsICJqdGkiOiIwMWVmZWFhZS01NTZhLTExNzgtOTdiYi1lMDJmMjAzYzA4N2QiLCAiY2xpZW50SWQiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAic2NvcGUiOiJhcGs6YXBpX2NyZWF0ZSJ9.WUl6NICtrQbKib5wKJFRV4ekS2-Z1XTVGmU-J5_RZzFhIpVRzJtlgqcia9SGxV5Drgvq15B9u8odl07OWxGxoUfQuDwr5N63BKYP1oVn_zAghX9-16AAWP7iUEdh6OE4abeoI9PXGylgmUarwaLBQZXrHdBWkrVSiHmUuRn3W4jVkdqjjZ7f5XZBimfey2zO-Dm-z95gN3VnyOl46xB9U5LPgXqrjZrDnQrFuokhDEf0YhqTmPXjGv8Xk8kRPVmlqMSnTiOc0O0iMlFZwSMBksBiRQlKVgqB7h66mB5zRx1TWRcEJ5NCkMz101hz5YuGq_rKZiGc1Gq6Tncw3EcVQw" \
+    | grep -oP '"API_version":"\K[0-9]\.[0-9]'; done | sort | uniq -c | awk '{gsub("\\.0","",$2); print $2 " -> " $1}'
+    ```
+
+=== "Sample Response"
+    ```
+    1 -> 31
+    2 -> 10
+    3 -> 59
+    ```
+
+=== "Request Format"
+    ```
+    for i in {1..100}; do curl -s -k --location "https://<host>:9095/backend-service/1.0/demo" \
+    --header "Host: default.gw.wso2.com" \
+    --header "Authorization: Bearer <access-token>" \
+    | grep -oP '"API_version":"\K[0-9]\.[0-9]'; done | sort | uniq -c | awk '{gsub("\\.0","",$2); print $2 " -> " $1}'
     ```
