@@ -519,39 +519,39 @@ Once you have successfully configured the datasource, you can proceed to the nex
 | internal_route_count            | Total number of internal routes.                                                                                      |
 
 ### Enforcer
-| Prometheus Metric                                              | Description                                                                                     |
-| -------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| jvm_info                                                       | Metadata about the JVM, such as version and vendor                                              |
-| process_start_time_seconds                                     | Timestamp when the JVM process started, in seconds since the epoch                              |
-| os_available_processors                                        | Number of available processors the JVM can use                                                  |
-| os_free_physical_memory_size                                   | Amount of free physical memory in bytes                                                         |
-| os_committed_virtual_memory_size                               | Amount of virtual memory that is guaranteed to be available to the running process              |
-| os_total_physical_memory_size                                  | Total amount of physical memory available on the system                                         |
-| os_system_load_average                                         | Represents the average number of processes in the system's execution queue over the last minute |
-| os_system_cpu_load                                             | Percentage of CPU usage by the entire system                                                    |
-| os_process_cpu_load                                            | Percentage of CPU usage by the JVM process                                                      |
-| jvm_memory_bytes_used                                          | Amount of used memory in the JVM heap/non-heap areas, in bytes                                  |
-| jvm_memory_bytes_committed                                     | Amount of memory committed for the JVM heap/non-heap areas, in bytes                            |
-| jvm_threads_current                                            | Current number of live threads in the JVM                                                       |
-| jvm_threads_daemon                                             | Number of live daemon threads in the JVM                                                        |
-| jvm_threads_deadlocked                                         | Number of threads that are currently deadlocked in the JVM                                      |
-| jvm_classes_currently_loaded                                   | Number of classes currently loaded in the JVM                                                   |
-| process_open_fds                                               | Number of open file descriptors by the JVM process.                                             |
-| jvm_gc_collection_seconds_sum                                  | Total time spent in garbage collection, in seconds                                              |
-| jvm_memory_pool_bytes_used                                     | Amount of used memory from various memory pools in the JVM, in bytes                            |
-| jvm_memory_pool_bytes_committed                                | Amount of memory committed for various memory pools in the JVM, in bytes.                       |
-| org_wso2_apk_enforcer_average_response_time_millis             | Average response time of the enforcer in milliseconds                                           |
-| org_wso2_apk_enforcer_request_count_total                      | Total number of requests processed by the enforcer                                              |
-| org_wso2_apk_enforcer_request_count_in_last_five_minute_window | Number of requests the enforcer processed in the last five minute window                        |
-| org_wso2_apk_enforcer_request_count_window_start_time_millis   | Start time of the current 5 minute window                                                       |
-| org_wso2_apk_enforcer_max_response_time_millis                 | Longest response time recorded by the enforcer in milliseconds                                  |
-| org_wso2_apk_enforcer_min_response_time_millis                 | Shortest response time recorded by the enforcer in milliseconds                                 |
-| org_wso2_apk_enforcer_thread_pool_core_size                    | Base number of threads in the enforcer's thread pool                                            |
-| org_wso2_apk_enforcer_thread_pool_max_size                     | Maximum number of threads allowed in the enforcer's thread pool                                 |
-| org_wso2_apk_enforcer_thread_pool_queue_size                   | Capacity of the enforcer's thread pool queue                                                    |
-| org_wso2_apk_enforcer_thread_pool_keep_alive_time              | Time a thread can be idle before being terminated in the enforcer's thread pool                 |
-| org_wso2_apk_enforcer_token_issuer_count                       | Number of token issuers                                                                         |
-| org_wso2_apk_enforcer_subscription_count                       | Number of subscriptions                                                                         |
+| Prometheus Metric               | Description                                                                                                           |
+| ------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| go_info                         | Metadata about the Go runtime version and environment.                                                                |
+| process_start_time_seconds      | Timestamp when the process started, in seconds since the epoch.                                                       |
+| os_available_cpu_total          | The number of CPUs available to the operating system.                                                                 |
+| os_free_physical_memory_bytes   | The amount of free physical memory in bytes.                                                                          |
+| os_total_virtual_memory_bytes   | Amount of total virtual memory in bytes.                                                                              |
+| os_used_virtual_memory_bytes    | Amount of used virtual memory in bytes.                                                                               |
+| os_system_load_average          | Represents the average number of processes in the system's execution queue over the last minute/5 minutes/15 minutes. |
+| os_system_cpu_load_percentage   | The percentage of CPU usage by the entire system.                                                                     |
+| go_memstats_sys_bytes           | Total memory obtained from the OS by the Go runtime.                                                                  |
+| go_memstats_mspan_inuse_bytes   | Memory used by mspan structures.                                                                                      |
+| go_memstats_mspan_sys_bytes     | Memory obtained from the OS for mspan structures.                                                                     |
+| go_memstats_mcache_inuse_bytes  | Memory used by mcache structures.                                                                                     |
+| go_memstats_mcache_sys_bytes    | Memory obtained from the OS for mcache structures.                                                                    |
+| go_memstats_buck_hash_sys_bytes | Memory used by profiling bucket hash table.                                                                           |
+| go_memstats_gc_sys_bytes        | Memory used for garbage collection system metadata.                                                                   |
+| go_memstats_other_sys_bytes     | Memory used for other system allocations.                                                                             |
+| go_memstats_heap_alloc_bytes    | Bytes allocated and still in use.                                                                                     |
+| go_memstats_heap_sys_bytes      | Total bytes obtained from the OS for the heap.                                                                        |
+| go_memstats_heap_idle_bytes     | Bytes in the heap that are idle.                                                                                      |
+| go_memstats_heap_inuse_bytes    | Bytes in the heap that are in use.                                                                                    |
+| go_memstats_heap_released_bytes | Bytes released to the OS.                                                                                             |
+| go_memstats_stack_inuse_bytes   | Bytes used by the stack.                                                                                              |
+| go_memstats_stack_sys_bytes     | Total bytes obtained from the OS for stack.                                                                           |
+| go_memstats_alloc_bytes_total   | Total bytes allocated, even if freed.                                                                                 |
+| go_memstats_mallocs_total       | Total number of allocations.                                                                                          |
+| go_memstats_frees_total         | Total number of deallocations.                                                                                        |
+| go_goroutines                   | Number of currently running goroutines.                                                                               |
+| go_gc_duration_seconds          | Duration of the last garbage collection in seconds.                                                                   |
+| process_open_fds                | Number of open file descriptors by the process.                                                                       |
+| token_issuer_count              | Total number of token issuers created                                                                                 |
+| subscription_count              | Total number of subscriptions created.                                                                                |
 
 ### Common Controller
 | Prometheus Metric               | Description                                                                                                          |
