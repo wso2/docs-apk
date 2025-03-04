@@ -1,10 +1,9 @@
-# Model Based Round Robin
+# Model-Based Round Robin
 
-The model-based round-robin policy routes requests to different LLM backends based on a specified AI model. 
-It follows a round-robin approach to distribute requests evenly among available backends. 
-Additionally, weighted values can be assigned to control the proportion of requests each backend receives.
+The model-based round-robin policy routes requests to multiple LLM backends based on a specified AI model. 
+It distributes requests in a round-robin fashion or according to assigned weights, controlling how many requests each backend receives.
 
-Model Based Round Robin can be done in one of two ways.
+You can configure model-based round-robin in either of the following ways:
 
 1. [Via REST API (using the APK-Conf file)](./model-based-round-robin-via-rest-api){:target="_blank"}.
 2. [Via CRs](./model-based-round-robin-via-crs){:target="_blank"}.
