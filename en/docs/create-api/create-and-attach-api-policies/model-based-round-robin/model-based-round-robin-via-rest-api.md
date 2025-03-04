@@ -1,10 +1,10 @@
-# Model based round robin via APK Conf
+# Model-Based Round Robin via APK Conf
 
-This functionality enables Model-based round-robin which can be used to route requests to different LLM backends with a specific AI model. This guide explains how to enable model based round robin via the APK-Conf file.
+This feature enables model-based round-robin routing, distributing requests among multiple LLM backends according to specified AI models. This guide explains how to configure model-based round robin using the APK-Conf file.
 
-### Step 1 - Add the request Model Based Round Robin policy to the apk-conf file
+### Step 1 – Add the Model-Based Round Robin Policy to the apk-conf File
 
-A sample Model Based Round Robin Policy configuration is given below.
+Below is a sample policy configuration for model-based round robin:
 
 ```
 apiPolicies:
@@ -35,7 +35,7 @@ apiPolicies:
             weight: 1
 ```
 
-This policy does the round robin based on the given weights and in between the configured models.
+This policy uses round-robin routing based on weights among the configured models.
 
 !!! note
     To optimize the configuration process, APK presents a VS Code plugin designed to offer syntax highlighting and intelligent suggestions. This plugin simplifies the incorporation of rate limitations, new resources, and security configurations into your API. Adapt the contents of the APK Configuration file as needed. For further details, refer to the section on <a href="../../../../api-management-overview/apk-conf-lang-support" target="_blank">Enhance Configuration with APK Config Language Support</a>.
@@ -48,7 +48,7 @@ This policy does the round robin based on the given weights and in between the c
     - The `endpoint` parameter specifies the endpoint of the model.
     - The `weight` parameter specifies the weight of the model.
 
-The complete apk-conf file with this configuration is given below.
+Below is a complete apk-conf file with this policy included:
 
 ```
 name: "chat-service-api-prod-sand"
@@ -112,22 +112,22 @@ apiPolicies:
             weight: 1
 ```
 
-### Step 2. Create Secret CR to store LLM Service API Key
+### Step 2 – Create the Secret CR to Store the LLM Service API Key
 
 Create a secret containing the API Key of the LLM Service Provider using the following command. Replace the ```api key of LLM Service``` value with your API Key generated for LLM Service Provider.
 
 === "Sample Command"
-```bash
-kubectl create secret generic open-ai-secret --from-literal=apiKey='xxxxxxxxxxxxxxxxxxx'
-```
+    ```bash
+    kubectl create secret generic open-ai-secret --from-literal=apiKey='xxxxxxxxxxxxxxxxxxx'
+    ```
 === "Command Format"
-```bash
-kubectl create secret generic open-ai-secret --from-literal=apiKey='<<api key of LLM Service>>' --namespace=<<namespace>>
-```
+    ```bash
+    kubectl create secret generic open-ai-secret --from-literal=apiKey='<<api key of LLM Service>>' --namespace=<<namespace>>
+    ```
 
-### Step 3 - Deploy the API in APK
+### Step 3 – Deploy the AI API in APK
 
-Follow rest of the steps in the<a href="../../../../create-api/create-and-deploy-apis/ai/create-ai-api-using-rest-api" target="_blank">Develop and Deploy a AI API via REST API</a> documentation to deploy the AI API using APK configuration.
+Follow the instructions in the <a href="../../../../create-api/create-and-deploy-apis/ai/create-ai-api-using-rest-api" target="_blank">Develop and Deploy an AI API via REST API</a> guide to deploy the API using the APK configuration.
 
 ### Step 4 - Verify the API Invocation
 
@@ -194,6 +194,6 @@ Follow rest of the steps in the<a href="../../../../create-api/create-and-deploy
     }
     ```
 
-Once you invoked the above request multiple time, you can view the response coming from different configured models.
+After making multiple requests, you will see responses coming from different configured models, confirming that model-based round-robin routing is working as intended.
 
 
