@@ -27,7 +27,7 @@ If you wish to deploy an API with multiple .proto files, you can refer to <a hre
 
 Download and save the following file as Student.proto.
 
-Student API: [Student.proto](https://raw.githubusercontent.com/wso2/docs-apk/refs/heads/1.2.0/en/docs/assets/files/get-started/student.proto)
+Student API: [Student.proto](https://raw.githubusercontent.com/wso2/docs-apk/refs/heads/1.3.0/en/docs/assets/files/get-started/student.proto)
 
 ### Step 2 - Generate the APK configuration
 

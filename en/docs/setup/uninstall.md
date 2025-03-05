@@ -24,7 +24,7 @@ For example, in the above image, the values are as follows.
 
 - chart-name: apk
 - namespace: apk
-- version: 1.2.0
+- version: 1.3.0
 
 ### Instructions for Uninstalling APK
 
@@ -90,7 +90,7 @@ For example, in the above image, the values are as follows.
 
 - chart-name: apim-apk-agent
 - namespace: apk
-- version: 1.2.0
+- version: 1.3.0
 
 ### Instructions for Uninstalling APIM APK Agent
 

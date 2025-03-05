@@ -11,7 +11,7 @@ For this guide, you can create a sample backend for the GRPC API using the follo
 kubectl apply -f https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/student-sample-backend.yaml -n <namespace>
 ```
 
-The GRPC definition file used for this guide is available at [this link](https://raw.githubusercontent.com/wso2/docs-apk/refs/heads/1.2.0/en/docs/assets/files/get-started/student.proto).
+The GRPC definition file used for this guide is available at [this link](https://raw.githubusercontent.com/wso2/docs-apk/refs/heads/1.3.0/en/docs/assets/files/get-started/student.proto).
 
 !!! note
     - This guide uses the Student Service API, which has a single proto file for its definition. 

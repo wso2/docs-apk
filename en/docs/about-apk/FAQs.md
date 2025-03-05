@@ -93,8 +93,8 @@ If you see `ImagePullBackOff` error or the image is still in the pulling stage, 
 
 4. Delete all the APK related CRDs.
    ```
-   curl -L -o apk.tar.gz "https://github.com/wso2/apk/archive/refs/tags/1.2.0.tar.gz" && tar -zxvf apk.tar.gz
-   cd apk-1.2.0/helm-charts/crds
+   curl -L -o apk.tar.gz "https://github.com/wso2/apk/archive/refs/tags/1.3.0.tar.gz" && tar -zxvf apk.tar.gz
+   cd apk-1.3.0/helm-charts/crds
    kubectl delete -f .
    ```
 
@@ -146,7 +146,7 @@ Step 1: Obtain the CRDs from the chart
 First, obtain the Custom Resource Definitions (CRDs) for the specific version of APK you want to install. Replace `<version>` with the actual version number of the APK you are installing.
 
 ```bash
-helm show crds wso2apk/apk-helm --version 1.2.0 > apk-crds.yaml
+helm show crds wso2apk/apk-helm --version 1.3.0 > apk-crds.yaml
 ```
 
 Step 2: Apply the CRDs manually
@@ -162,7 +162,7 @@ Step 3: Reinstall APK
 Finally, reinstall APK using the Helm installation command as provided in the relevant quick start guide.
 
 ```bash
-helm install apk wso2apk/apk-helm --version 1.2.0
+helm install apk wso2apk/apk-helm --version 1.3.0
 ```
 
 ## Functionality
@@ -211,15 +211,15 @@ It is likely due to a limitation in Helm when updating Custom Resource Definitio
     === "Command"
 
         ```
-        curl -L -o apk.tar.gz "https://github.com/wso2/apk/archive/refs/tags/1.2.0.tar.gz" && tar -zxvf apk.tar.gz
+        curl -L -o apk.tar.gz "https://github.com/wso2/apk/archive/refs/tags/1.3.0.tar.gz" && tar -zxvf apk.tar.gz
         ```
 
-2.  Go to the apk-1.2.0/helm-charts/crds folder and apply the CRDs manually.
+2.  Go to the apk-1.3.0/helm-charts/crds folder and apply the CRDs manually.
 
     === "Command"
 
         ```
-        cd apk-1.2.0/helm-charts/crds
+        cd apk-1.3.0/helm-charts/crds
         kubectl apply -f .
         ```
 

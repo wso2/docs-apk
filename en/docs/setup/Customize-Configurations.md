@@ -6,7 +6,7 @@ To customize configurations in the Helm deployment, you need to create and modif
 
     === "Command"
         ```
-        helm show values wso2apk/apk-helm --version 1.2.0  > values.yaml
+        helm show values wso2apk/apk-helm --version 1.3.0  > values.yaml
         ```
 
     === "Format"
@@ -24,7 +24,7 @@ To customize configurations in the Helm deployment, you need to create and modif
 
 	=== "Command"
 		```
-		helm install apk-test wso2apk/apk-helm --version 1.2.0 -f values.yaml
+		helm install apk-test wso2apk/apk-helm --version 1.3.0 -f values.yaml
 		```
 
     === "Format"
