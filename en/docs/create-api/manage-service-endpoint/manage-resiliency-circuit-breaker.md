@@ -48,8 +48,8 @@ When deploying APIs add the configurations to the `apk-conf` file as shown in th
 ```
 endpointConfigurations:
  production:
-  endpoint: "http://employee-service:8080"
-  resiliency:
+  - endpoint: "http://employee-service:8080"
+    resiliency:
       circuitBreaker:
         maxConnectionPools: 1000
         maxConnections: 1024
@@ -67,14 +67,14 @@ type: "REST"
 defaultVersion: true
 endpointConfigurations:
   production:
-    endpoint: "http://employee-service:8080"
-    resiliency:
-      circuitBreaker:
-        maxConnectionPools: 1000
-        maxConnections: 1024
-        maxPendingRequests: 35
-        maxRequests: 75
-        maxRetries: 3
+    - endpoint: "http://employee-service:8080"
+      resiliency:
+        circuitBreaker:
+          maxConnectionPools: 1000
+          maxConnections: 1024
+          maxPendingRequests: 35
+          maxRequests: 75
+          maxRetries: 3
 operations:
   - target: "/employees"
     verb: "GET"

@@ -16,7 +16,7 @@ Sample content before the modification is shown below.
    defaultVersion: false
    endpointConfigurations:
     production:
-      endpoint: "http://employee-service:8080"
+      - endpoint: "http://employee-service:8080"
    operations:
    - target: "/employees"
      verb: "GET"
@@ -49,7 +49,7 @@ Here, we have added a property named `enableStore` with the value `true`.
    defaultVersion: false
    endpointConfigurations:
      production:
-       endpoint: "http://employee-service:8080"
+       - endpoint: "http://employee-service:8080"
    operations:
      - target: "/employees"
        verb: "GET"

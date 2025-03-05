@@ -15,7 +15,7 @@ type: "REST"
 defaultVersion: false
 endpointConfigurations:
     production:
-        endpoint: "https://httpbin.org/anything"
+        - endpoint: "https://httpbin.org/anything"
 operations:
 - target: "/employees"
   verb: "GET"
@@ -66,7 +66,7 @@ type: "REST"
 defaultVersion: false
 endpointConfigurations:
     production:
-        endpoint: "https://httpbin.org/anything"
+        - endpoint: "https://httpbin.org/anything"
 operations:
 - target: "/employees"
   verb: "GET"

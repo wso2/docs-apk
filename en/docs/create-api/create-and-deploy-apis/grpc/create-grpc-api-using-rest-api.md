@@ -99,7 +99,7 @@ Let's add the endpoint configurations section to the file as follows.
 ```
 endpointConfigurations:
     production:
-        endpoint: "http://student-backend:6565"
+        - endpoint: "http://student-backend:6565"
 ```
 
 The URL"http://student-backend:6565" points to the backend we deployed in [the previous section.](#sample-backend-for-student-service-api)
@@ -115,7 +115,7 @@ Your apk-conf file will now be as follows.
     id: "student-api"
     endpointConfigurations:
         production:
-            endpoint: "http://student-backend:6565"
+            - endpoint: "http://student-backend:6565"
     defaultVersion: false
     subscriptionValidation: false
     operations:
@@ -169,7 +169,7 @@ After generating the token, you can deploy the gRPC API with the following comma
     id: "student-api"
     endpointConfigurations:
         production:
-            endpoint: "http://student-backend:6565"
+            - endpoint: "http://student-backend:6565"
     defaultVersion: false
     subscriptionValidation: false
     operations:
