@@ -29,7 +29,7 @@ rateLimit:
     defaultVersion: false
     endpointConfigurations:
       production:
-        endpoint: "http://employee-service:8080"
+        - endpoint: "http://employee-service:8080"
     operations:
       - target: "/employees"
         verb: "GET"
@@ -63,7 +63,7 @@ rateLimit:
     defaultVersion: false
     endpointConfigurations:
       production:
-        endpoint: "http://employee-service:8080"
+        - endpoint: "http://employee-service:8080"
     operations:
       - target: "/employees"
         verb: "GET"
@@ -126,7 +126,7 @@ Here, you can use the following apk-conf file and save it into a file named `Emp
   defaultVersion: false
   endpointConfigurations:
     production:
-      endpoint: "http://employee-service:8080"
+      - endpoint: "http://employee-service:8080"
   operations:
     - target: "/employees"
       verb: "GET"
@@ -169,7 +169,7 @@ Sample content after the modification is shown below.
     unit: "Minute"
   endpointConfigurations:
     production:
-      endpoint: "http://employee-service:8080"
+      - endpoint: "http://employee-service:8080"
   operations:
   - target: "/employees"
     verb: "GET"
@@ -242,7 +242,7 @@ Use the values provided in the table below in the body of your request.
           unit: "Minute"
         endpointConfigurations:
           production:
-            endpoint: "http://employee-service:8080"
+            - endpoint: "http://employee-service:8080"
         operations:
         - target: "/employees"
           verb: "GET"
@@ -290,7 +290,7 @@ Sample content before the modification is shown below.
   defaultVersion: false
   endpointConfigurations:
     production:
-      endpoint: "http://employee-service:8080"
+      - endpoint: "http://employee-service:8080"
   operations:
     - target: "/employees"
       verb: "GET"
@@ -330,7 +330,7 @@ Sample content after the modification is shown below.
   defaultVersion: false
   endpointConfigurations:
     production:
-      endpoint: "http://employee-service:8080"
+      - endpoint: "http://employee-service:8080"
   operations:
   - target: "/employees"
     verb: "GET"
@@ -403,7 +403,7 @@ Use the values provided in the table below in the body of your request.
         defaultVersion: false
         endpointConfigurations:
           production:
-            endpoint: "http://employee-service:8080"
+            - endpoint: "http://employee-service:8080"
         operations:
         - target: "/employees"
           verb: "GET"

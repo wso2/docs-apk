@@ -36,15 +36,15 @@ When deploying APIs add the configurations to the `apk-conf` file as shown in th
 ```
 endpointConfigurations:
  production:
-  endpoint: "http://backend-service:443"
-  resiliency:
-   retryPolicy:
-    count: 3
-    baseIntervalMillis: 200
-    statusCodes:
-    - 500
-    - 501
-    - 502
+  - endpoint: "http://backend-service:443"
+    resiliency:
+     retryPolicy:
+      count: 3
+      baseIntervalMillis: 200
+      statusCodes:
+        - 500
+        - 501
+        - 502
 ```
 An example `apk-conf` file with the above configurations is shown below.
 
@@ -56,15 +56,15 @@ type: "REST"
 defaultVersion: true
 endpointConfigurations:
   production:
-    endpoint: "http://employee-service:8080"
-    resiliency:
-      retryPolicy:
-        count: 3
-        baseIntervalMillis: 200
-        statusCodes:
-          - 500
-          - 501
-          - 502
+    - endpoint: "http://employee-service:8080"
+      resiliency:
+        retryPolicy:
+          count: 3
+          baseIntervalMillis: 200
+          statusCodes:
+            - 500
+            - 501
+            - 502
 operations:
   - target: "/employees"
     verb: "GET"

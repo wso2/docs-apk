@@ -20,7 +20,7 @@ type: "REST"
 defaultVersion: false
 endpointConfigurations:
     production:
-        endpoint: "http://employee-service:8080"
+        - endpoint: "http://employee-service:8080"
 operations:
 - target: "/employees
   verb: "GET"
@@ -63,7 +63,7 @@ type: "REST"
 defaultVersion: true
 endpointConfigurations:
     production:
-        endpoint: "http://employee-service:8080"
+        - endpoint: "http://employee-service:8080"
 operations:
 - target: "/employees
   verb: "GET"
@@ -133,7 +133,7 @@ Use the values provided in the table below in the body of your request.
         defaultVersion: true
         endpointConfigurations:
             production:
-                endpoint: "http://employee-service:8080"
+                - endpoint: "http://employee-service:8080"
         operations:
         - target: "/employees
           verb: "GET"

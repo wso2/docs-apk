@@ -33,8 +33,8 @@ When deploying APIs add the configurations to the `apk-conf` file as shown in th
 ```
 endpointConfigurations:
  production:
-  endpoint: "http://backend-service.ns:443"
-  resiliency:
+  - endpoint: "http://backend-service.ns:443"
+    resiliency:
       timeout:
         downstreamRequestIdleTimeout: 45
         upstreamResponseTimeout: 10
@@ -50,11 +50,11 @@ type: "REST"
 defaultVersion: true
 endpointConfigurations:
   production:
-    endpoint: "http://employee-service:8080"
-    resiliency:
-      timeout:
-        downstreamRequestIdleTimeout: 45
-        upstreamResponseTimeout: 10
+    - endpoint: "http://employee-service:8080"
+      resiliency:
+        timeout:
+          downstreamRequestIdleTimeout: 45
+          upstreamResponseTimeout: 10
 operations:
   - target: "/employees"
     verb: "GET"

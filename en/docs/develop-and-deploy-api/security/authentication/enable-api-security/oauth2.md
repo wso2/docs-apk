@@ -18,7 +18,7 @@ Sample content before the modification is shown below.
    defaultVersion: false
    endpointConfigurations:
       production:
-         endpoint: "http://employee-service:8080"
+         - endpoint: "http://employee-service:8080"
    operations:
       - target: "/employee"
         verb: "GET"
@@ -59,7 +59,7 @@ Sample APK configuration content after the modification to disable OAuth2 is sho
    defaultVersion: false
    endpointConfigurations:
       production:
-         endpoint: "http://employee-service:8080"
+         - endpoint: "http://employee-service:8080"
    operations:
       - target: "/employee"
         verb: "GET"
@@ -106,7 +106,7 @@ Sample APK configuration content after the modification to use a custom auth hea
    defaultVersion: false
    endpointConfigurations:
       production:
-         endpoint: "http://employee-service:8080"
+         - endpoint: "http://employee-service:8080"
    operations:
       - target: "/employee"
         verb: "GET"
@@ -153,7 +153,7 @@ Sample APK configuration content after the modification to send the OAuth2 heade
    defaultVersion: false
    endpointConfigurations:
       production:
-         endpoint: "http://employee-service:8080"
+         - endpoint: "http://employee-service:8080"
    operations:
       - target: "/employee"
         verb: "GET"

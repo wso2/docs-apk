@@ -21,7 +21,7 @@ defaultVersion: false
 id: "mtls-api"
 endpointConfigurations:
     production:
-        endpoint: "http://employee-service:8080"
+        - endpoint: "http://employee-service:8080"
 operations:
   - target: "/employee"
     verb: "GET"
@@ -92,7 +92,7 @@ defaultVersion: false
 id: "mtls-api"
 endpointConfigurations:
     production:
-        endpoint: "http://employee-service:8080"
+        - endpoint: "http://employee-service:8080"
 operations:
   - target: "/employee"
     verb: "GET"

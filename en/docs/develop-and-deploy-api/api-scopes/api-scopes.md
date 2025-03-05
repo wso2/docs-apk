@@ -16,7 +16,7 @@ Sample content before the modification is shown below.
    defaultVersion: false
    endpointConfigurations:
     production:
-      endpoint: "http://employee-service:8080"
+      - endpoint: "http://employee-service:8080"
    operations:
    - target: "/employees"
      verb: "GET"
@@ -53,7 +53,7 @@ Here, we have added a property named `scopes` with the value `wso2` for `/employ
    defaultVersion: false
    endpointConfigurations:
      production:
-       endpoint: "http://employee-service:8080"
+       - endpoint: "http://employee-service:8080"
    operations:
      - target: "/employees"
        verb: "GET"

@@ -61,7 +61,7 @@ Here, you can save the following content into a file named `EmployeeServiceCORS.
   defaultVersion: false
   endpointConfigurations:
     production:
-      endpoint: "http://employee-service:8080"
+      - endpoint: "http://employee-service:8080"
   operations:
     - target: "/employees"
       verb: "GET"
@@ -108,7 +108,7 @@ type: "REST"
 defaultVersion: true
 endpointConfigurations:
   production:
-    endpoint: "http://employee-service:8080"
+    - endpoint: "http://employee-service:8080"
 operations:
   - target: "/employee"
     verb: "GET"

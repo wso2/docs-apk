@@ -36,13 +36,13 @@ You can create a K8s secret using the following format including your username a
   ```
     endpointConfigurations:
       production:
-        endpoint: "https://httpbin.org"
-        endpointSecurity:
-          enabled: true
-          securityType:
-            secretName: "backend-creds"
-            userNameKey: "username"
-            passwordKey: "password"
+        - endpoint: "https://httpbin.org"
+          endpointSecurity:
+            enabled: true
+            securityType:
+              secretName: "backend-creds"
+              userNameKey: "username"
+              passwordKey: "password"
   ```
 
 #### Service Endpoints
@@ -50,16 +50,16 @@ You can create a K8s secret using the following format including your username a
   ```
     endpointConfigurations:
       production:
-        endpoint: "https://httpbin.org"
-          name: "backend-service"
-          port: 80
-          protocol: "http"
-        endpointSecurity:
-          enabled: true
-          securityType:
-            secretName: "backend-creds"
-            userNameKey: "username"
-            passwordKey: "password"
+        - endpoint: "https://httpbin.org"
+            name: "backend-service"
+            port: 80
+            protocol: "http"
+          endpointSecurity:
+            enabled: true
+            securityType:
+              secretName: "backend-creds"
+              userNameKey: "username"
+              passwordKey: "password"
   ```
 
 A sample `apk-conf` file with direct endpoints and basic authentication is shown below.
@@ -72,13 +72,13 @@ type: "REST"
 defaultVersion: true
 endpointConfigurations:
   production:
-    endpoint: "http://employee-service:8080"
-    endpointSecurity:
-      enabled: true
-      securityType:
-        secretName: "backend-creds"
-        userNameKey: "username"
-        passwordKey: "password"
+    - endpoint: "http://employee-service:8080"
+      endpointSecurity:
+        enabled: true
+        securityType:
+          secretName: "backend-creds"
+          userNameKey: "username"
+          passwordKey: "password"
 operations:
   - target: "/employees"
     verb: "GET"

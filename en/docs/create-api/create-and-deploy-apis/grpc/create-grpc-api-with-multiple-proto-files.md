@@ -96,7 +96,7 @@ Let's add the endpoint configurations section to the file as follows.
 ```
 endpointConfigurations:
     production:
-        endpoint: "http://order-backend:6566"
+        - endpoint: "http://order-backend:6566"
 ```
 
 The URL "http://order-backend:6566" points to the backend we deployed in [the previous section.](#sample-backend-for-order-service-api)
@@ -113,7 +113,7 @@ Your apk-conf file will now be as follows.
     subscriptionValidation: false
     endpointConfigurations:
         production:
-            endpoint: "http://order-backend:6566"
+            - endpoint: "http://order-backend:6566"
     operations:
     - target: "order.OrderService"
       verb: "CreateOrder"
@@ -165,7 +165,7 @@ After generating the token, you can deploy the gRPC API with the following comma
     subscriptionValidation: false
     endpointConfigurations:
         production:
-            endpoint: "http://order-backend:6566"
+            - endpoint: "http://order-backend:6566"
     operations:
     - target: "order.OrderService"
       verb: "CreateOrder"

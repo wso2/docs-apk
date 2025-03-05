@@ -10,7 +10,7 @@ type: "REST"
 defaultVersion: false
 endpointConfigurations:
  production:
-   endpoint: "http://backend-svc.ns:9082"
+   - endpoint: "http://backend-svc.ns:9082"
 operations:
 - target: "/books"
   verb: "POST"
@@ -36,7 +36,7 @@ type: "REST"
 defaultVersion: false
 endpointConfigurations:
  production:
-   endpoint: "http://backend-svc.ns:9082"
+   - endpoint: "http://backend-svc.ns:9082"
 operations:
 - target: "/books"
   verb: "POST"
@@ -147,7 +147,7 @@ type: "REST"
 defaultVersion: false
 endpointConfigurations:
  production:
-   endpoint: "http://backend-svc.interceptor:9082"
+   - endpoint: "http://backend-svc.interceptor:9082"
 operations:
 - target: "/books"
   verb: "POST"

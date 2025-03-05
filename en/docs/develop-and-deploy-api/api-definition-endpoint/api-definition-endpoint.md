@@ -16,7 +16,7 @@ Sample content before the modification is shown below.
    defaultVersion: false
    endpointConfigurations:
     production:
-      endpoint: "http://employee-service:8080"
+      - endpoint: "http://employee-service:8080"
    operations:
    - target: "/employees"
      verb: "GET"
@@ -71,7 +71,7 @@ Here, we have added a property named `definitionPath` with the new value `/docs`
    defaultVersion: false
    endpointConfigurations:
      production:
-       endpoint: "http://employee-service:8080"
+       - endpoint: "http://employee-service:8080"
    operations:
      - target: "/employees"
        verb: "GET"

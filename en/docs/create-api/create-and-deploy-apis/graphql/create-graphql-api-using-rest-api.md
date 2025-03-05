@@ -116,7 +116,7 @@ Follow the instructions below to design a GraphQL API.
     subscriptionValidation: false
     endpointConfigurations:
       production:
-        endpoint: "http://graphql-faker-service:9002/graphql"
+        - endpoint: "http://graphql-faker-service:9002/graphql"
     operations:
     - target: "hero"
       verb: "QUERY"
@@ -199,7 +199,7 @@ Follow the instructions below to design a GraphQL API.
         subscriptionValidation: false
         endpointConfigurations:
           production:
-            endpoint: "http://graphql-faker-service:9002/graphql"
+            - endpoint: "http://graphql-faker-service:9002/graphql"
         operations:
         - target: "hero"
           verb: "QUERY"

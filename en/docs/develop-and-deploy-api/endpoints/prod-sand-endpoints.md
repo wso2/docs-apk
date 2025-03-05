@@ -20,7 +20,7 @@ Sample content before the modification is shown below.
    defaultVersion: false
    endpointConfigurations:
     production:
-      endpoint: "http://employee-service:8080"
+      - endpoint: "http://employee-service:8080"
    operations:
    - target: "/employee"
      verb: "GET"
@@ -55,9 +55,9 @@ Update the APK configuration as the following to add different endpoints to sand
    defaultVersion: false
    endpointConfigurations:
     production:
-      endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
+      - endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
     sandbox:
-      endpoint: "https://run.mocky.io/v3/4bf0062b-042e-4adf-b8c9-7be0cf8745cb"
+      - endpoint: "https://run.mocky.io/v3/4bf0062b-042e-4adf-b8c9-7be0cf8745cb"
    operations:
    - target: "/employee"
      verb: "GET"
@@ -95,9 +95,9 @@ You can define different endpoint URLs for different resources. The following is
    defaultVersion: false
    endpointConfigurations:
     production:
-      endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
+      - endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
     sandbox:
-      endpoint: "https://run.mocky.io/v3/4bf0062b-042e-4adf-b8c9-7be0cf8745cb"
+      - endpoint: "https://run.mocky.io/v3/4bf0062b-042e-4adf-b8c9-7be0cf8745cb"
    operations:
    - target: "/employee"
      verb: "GET"
@@ -105,9 +105,9 @@ You can define different endpoint URLs for different resources. The following is
      scopes: []
      endpointConfigurations:
        production:
-         endpoint: "https://run.mocky.io/v3/4bf0062b-042e-4adf-b8c9-7be0cf8745cb"
+         - endpoint: "https://run.mocky.io/v3/4bf0062b-042e-4adf-b8c9-7be0cf8745cb"
        sandbox:
-         endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
+         - endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
    - target: "/employee"
      verb: "POST"
      secured: true

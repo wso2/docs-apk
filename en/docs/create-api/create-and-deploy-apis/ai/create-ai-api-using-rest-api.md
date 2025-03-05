@@ -50,7 +50,7 @@ The OpenAPI specification file can be provided as a local file or as a URL conta
     subscriptionValidation: false
     endpointConfigurations:
         production:
-            endpoint: "https://{endpoint}/openai"
+            - endpoint: "https://{endpoint}/openai"
     operations:
     - target: "/deployments/{deployment-id}/completions"
       verb: "POST"
@@ -101,24 +101,24 @@ aiProvider:
   apiVersion: "2021-06-01"
 endpointConfigurations:
   production:
-    endpoint: "https://{endpoint}/openai/deployments/{deployment-id}"
-    endpointSecurity:
-      enabled: true
-      securityType:
-        secretName: "azure-ai-secret"
-        in: "Header"
-        apiKeyNameKey: "api-key"
-        apiKeyValueKey: "apiKey"
-    aiRatelimit: 
-      enabled: true
-      token:
-        promptLimit: 5000
-        completionLimit: 10000
-        totalLimit: 15000
-        unit: Minute
-      request:
-        requestLimit: 6000
-        unit: Minute
+    - endpoint: "https://{endpoint}/openai/deployments/{deployment-id}"
+      endpointSecurity:
+        enabled: true
+        securityType:
+          secretName: "azure-ai-secret"
+          in: "Header"
+          apiKeyNameKey: "api-key"
+          apiKeyValueKey: "apiKey"
+      aiRatelimit: 
+        enabled: true
+        token:
+          promptLimit: 5000
+          completionLimit: 10000
+          totalLimit: 15000
+          unit: Minute
+        request:
+          requestLimit: 6000
+          unit: Minute
 operations:
 - target: "/completions"
   verb: "POST"
@@ -219,24 +219,24 @@ After generating the token, you can deploy the API directly into APK using API S
     subscriptionValidation: false
     endpointConfigurations:
       production:
-        endpoint: "https://xxxxx.openai.azure.com/openai/deployments/yyyyyy"
-        endpointSecurity:
-          enabled: true
-          securityType:
-            secretName: "azure-ai-secret"
-            in: "Header"
-            apiKeyNameKey: "api-key"
-            apiKeyValueKey: "apiKey"
-        aiRatelimit:
-          enabled: true
-          token:
-            promptLimit: 5000
-            completionLimit: 10000
-            totalLimit: 15000
-            unit: "Minute"
-          request:
-            requestLimit: 6000
-            unit: "Minute"
+        - endpoint: "https://xxxxx.openai.azure.com/openai/deployments/yyyyyy"
+          endpointSecurity:
+            enabled: true
+            securityType:
+              secretName: "azure-ai-secret"
+              in: "Header"
+              apiKeyNameKey: "api-key"
+              apiKeyValueKey: "apiKey"
+          aiRatelimit:
+            enabled: true
+            token:
+              promptLimit: 5000
+              completionLimit: 10000
+              totalLimit: 15000
+              unit: "Minute"
+            request:
+              requestLimit: 6000
+              unit: "Minute"
     aiProvider:
       name: "AzureAI"
       apiVersion: "2021-06-01"

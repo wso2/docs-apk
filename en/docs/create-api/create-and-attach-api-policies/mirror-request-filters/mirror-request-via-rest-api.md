@@ -15,7 +15,7 @@ type: "REST"
 defaultVersion: false
 endpointConfigurations:
   production:
-    endpoint: `WEBHOOK_URL`
+    - endpoint: `WEBHOOK_URL`
 operations:
 - target: "/employees"
   verb: "GET"
@@ -67,7 +67,7 @@ type: "REST"
 defaultVersion: false
 endpointConfigurations:
     production:
-        endpoint: `WEBHOOK_URL`
+        - endpoint: `WEBHOOK_URL`
 operations:
 - target: "/employees"
   verb: "GET"
