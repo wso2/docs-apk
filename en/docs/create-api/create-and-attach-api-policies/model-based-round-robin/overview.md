@@ -5,5 +5,5 @@ It distributes requests in a round-robin fashion or according to assigned weight
 
 You can configure model-based round-robin in either of the following ways:
 
-1. [Via REST API (using the APK-Conf file)](./model-based-round-robin-via-rest-api){:target="_blank"}.
-2. [Via CRs](./model-based-round-robin-via-crs){:target="_blank"}.
+1. [Via REST API (using the APK-Conf file)](../model-based-round-robin-via-rest-api){:target="_blank"}.
+2. [Via CRs](../model-based-round-robin-via-crs){:target="_blank"}.
