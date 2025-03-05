@@ -81,7 +81,7 @@ Apart from the above API definition file, we also need an `apk-conf` file that d
         defaultVersion: false
         endpointConfigurations:
             production:
-                endpoint: "http://employee-service:8080"
+                - endpoint: "http://employee-service:8080"
         operations:
         - target: "/employees
           verb: "GET"
@@ -120,7 +120,7 @@ type: "REST"
 defaultVersion: false
 endpointConfigurations:
    production:
-       endpoint: "http://employee-service:8080"
+       - endpoint: "http://employee-service:8080"
 operations:
 - target: "/employees"
    verb: "GET"
@@ -216,7 +216,7 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
         defaultVersion: false
         endpointConfigurations:
             production:
-                endpoint: "http://employee-service:8080"
+                - endpoint: "http://employee-service:8080"
         operations:
         - target: "/employees"
           verb: "GET"

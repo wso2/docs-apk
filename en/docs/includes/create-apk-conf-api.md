@@ -59,7 +59,7 @@ The OpenAPI specification file can be provided as a local file or as a URL conta
     defaultVersion: false
     endpointConfigurations:
         production:
-            endpoint: "http://employee-service:8080"
+            - endpoint: "http://employee-service:8080"
     operations:
     - target: "/employees"
       verb: "GET"
