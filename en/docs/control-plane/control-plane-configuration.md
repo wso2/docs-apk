@@ -3,9 +3,9 @@
 ## Configuring API Manager Control Plane with APK Gateway using APIM-APK Agent
 
 ### Prerequisites
-- API Manager 4.3 (Please refer APIM <a href="https://apim.docs.wso2.com/en/latest/install-and-setup/install/installation-prerequisites/" target="_blank">installation guide</a> for more information)
-- APK 1.2.0 (Please refer APK <a href="https://apk.docs.wso2.com/en/latest/install-and-setup/installation-prerequisites/" target="_blank">installation guide</a> for more information)
-- APIM-APK Agent 1.2.0 (Please refer APIM-APK Agent <a href="https://apk.docs.wso2.com/en/latest/install-and-setup/install/installation-prerequisites/" target="_blank">installation guide</a> for more information)
+- API Manager 4.5.0 (Please refer APIM <a href="https://apim.docs.wso2.com/en/latest/install-and-setup/install/installation-prerequisites/" target="_blank">installation guide</a> for more information)
+- APK 1.3.0 (Please refer APK <a href="https://apk.docs.wso2.com/en/latest/install-and-setup/installation-prerequisites/" target="_blank">installation guide</a> for more information)
+- APIM-APK Agent 1.3.0 (Please refer APIM-APK Agent <a href="https://apk.docs.wso2.com/en/latest/install-and-setup/install/installation-prerequisites/" target="_blank">installation guide</a> for more information)
 
 #### Resources Requirements
 - RAM: 10GB

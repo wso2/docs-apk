@@ -40,7 +40,7 @@ Setup WSO2 API Manager 4.5.0 in K8s cluster using Helm Charts.
 1. Create a new helm repository with the latest apim release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apim```.
 
     ```console
-    helm repo add wso2apim https://github.com/wso2/helm-apim/releases/download/cp-4.4.0
+    helm repo add wso2apim https://github.com/wso2/helm-apim/releases/download/acp-4.5.0-rc
     ```
 
 2. Execute the following command to update the helm repositories.
@@ -53,7 +53,7 @@ Setup WSO2 API Manager 4.5.0 in K8s cluster using Helm Charts.
 
     === "Command"
         ```
-        helm install apim wso2apim/wso2am-cp --version 4.4.0-1 -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/apim/cp/4.5.0-values.yaml -n apk
+        helm install apim wso2apim/wso2am-cp --version 4.5.0-rc -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/apim/cp/4.5.0-values.yaml -n apk
         ```
     === "Format"
         ```
@@ -65,12 +65,12 @@ Setup WSO2 API Manager 4.5.0 in K8s cluster using Helm Charts.
 !!! Note
     Please refer to the <a href="../../control-plane/apim-deploy/" target="_blank">Advanced Configuration for APIM</a> for more information.
 
-### Setup WSO2 Kuberenetes Gateway 1.3.0 Alpha
+### Setup WSO2 Kuberenetes Gateway 1.3.0
 
 1. Create a new helm repository with the latest kubernetes gateway release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apk```.
 
     ```console
-    helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.3.0-beta
+    helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.3.0-rc
     ```
 
 2. Execute the following command to update the helm repositories.
@@ -87,7 +87,7 @@ Setup WSO2 API Manager 4.5.0 in K8s cluster using Helm Charts.
 
 === "Command"
      ```
-     helm install apk wso2apk/apk-helm --version 1.3.0-beta -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/apk/1.3.0-cp-enabled-values.yaml -n apk
+     helm install apk wso2apk/apk-helm --version 1.3.0-rc -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/apk/1.3.0-cp-enabled-values.yaml -n apk
      ``` 
 === "Format"
      ```
@@ -98,12 +98,12 @@ Setup WSO2 API Manager 4.5.0 in K8s cluster using Helm Charts.
     Please refer to the <a href="../../control-plane/apk-deploy" target="_blank">Advanced Configuration for APK</a> for more information.
 
 
-### Setup WSO2 Kuberenetes Gateway Agent 1.3.0 Alpha
+### Setup WSO2 Kuberenetes Gateway Agent 1.3.0 
 
 1. Create a new helm repository with the latest kubernetes gateway agent release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apkagent``` for this guide.
 
     ```console
-    helm repo add wso2apkagent https://github.com/wso2/product-apim-tooling/releases/download/1.3.0-beta
+    helm repo add wso2apkagent https://github.com/wso2/product-apim-tooling/releases/download/1.3.0-rc
     ```
 
 2. Execute the following command to update the helm repositories.
@@ -116,7 +116,7 @@ Setup WSO2 API Manager 4.5.0 in K8s cluster using Helm Charts.
 
     === "Command"
         ```
-        helm install apim-apk-agent wso2apkagent/apim-apk-agent --version 1.3.0-beta -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/apim-apk-agent/1.3.0-values.yaml -n apk
+        helm install apim-apk-agent wso2apkagent/apim-apk-agent --version 1.3.0-rc -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/apim-apk-agent/1.3.0-values.yaml -n apk
         ```
     === "Format"
         ```

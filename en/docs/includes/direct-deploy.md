@@ -21,7 +21,7 @@ organization: "default"
 defaultVersion: false
 endpointConfigurations:
     production:
-        endpoint: "http://employee-service:8080"
+        - endpoint: "http://employee-service:8080"
 operations:
 - target: "/employee"
     verb: "GET"
