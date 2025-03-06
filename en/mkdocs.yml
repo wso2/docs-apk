@@ -298,6 +298,7 @@ nav:
         - Migration: setup/migration.md
         - Customize Configurations: setup/Customize-Configurations.md
         - Production Deployment Guidelines: setup/production-deployment-guideline.md
+        - Customize Cert-Manager: setup/cert-manager.md
         - Configure HPA for gateway: setup/configure-hpa.md
         - Deploy in OpenShift: setup/deploy-in-openshift.md
         - Multi-environment Deployment on Gateway: setup/multi-env-deployment-on-apk.md
