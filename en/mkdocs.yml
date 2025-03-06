@@ -123,6 +123,8 @@ nav:
                 - Retry Policy: create-api/manage-service-endpoint/manage-resiliency-retry-policy.md
                 - Circuit Breaker: create-api/manage-service-endpoint/manage-resiliency-circuit-breaker.md
             - Weighted Routing:
+                - Overview: create-api/weighted-routing/overview.md
+                - Via REST API: create-api/weighted-routing/weighted-routing-via-rest-api.md
                 - Via CRs: create-api/weighted-routing/weighted-routing-via-crs.md
         - API Policies: 
             - Overview: create-api/create-and-attach-api-policies/api-policies-overview.md

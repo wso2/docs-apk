@@ -1,27 +1,20 @@
-# Weighted Routing via CRs
+# Weighted Routing via APK Conf
 
-This feature enables Weighted Routing, allowing requests to be distributed across multiple backend endpoints based on predefined weight values. This guide explains how to configure Weighted Routing for an API using Kubernetes custom resources (CRs).
+This feature enables Weighted Routing, allowing requests to be distributed across multiple backend endpoints based on predefined weight values. This guide explains how to configure Weighted Routing for an API using the APK-Conf file.
 
-## Applying Weights to Backend Endpoints via CRs
+## Applying Weights to Backend Endpoints in APK-Conf
 
-The following is a sample code snippet of how weight values can be defined for `backendRefs` in a HTTPRoute Resource.
+The following is a sample code snippet on how weight values can be defined for `endpointConfigurations` in an APK-Conf file.
 
 ```yaml
-backendRefs:
-- group: "dp.wso2.com"
-  kind: "Backend"
-  name: "backend-1-api"
-  weight: 60
-
-- group: "dp.wso2.com"
-  kind: "Backend"
-  name: "backend-2-api"
-  weight: 10
-
-- group: "dp.wso2.com"  
-  kind: "Backend"
-  name: "backend-3-api"
-  weight: 20
+endpointConfigurations:
+  production:
+    - endpoint: "http://demo-api-1-service.backend.svc.cluster.local:81"
+      weight: 50
+    - endpoint: "http://demo-api-2-service.backend.svc.cluster.local:43"
+      weight: 10
+    - endpoint: "http://demo-api-3-service.backend.svc.cluster.local:8081"
+      weight: 40
 ```
 
 !!! tip "Important"
@@ -30,7 +23,7 @@ backendRefs:
     * The weight values have to be whole numbers.
     * A weight of '0' (Zero) means that no traffic will be sent to the particular endpoint.
 
-!!! info "Applying Equal Weights to Backend Endpoints via CRs"
+!!! info "Applying Equal Weights to Backend Endpoints in APK-Conf"
 
     To evenly distribute traffic among endpoints, you may assign equal weights to all endpoints. However, ensure that the weight values are not all set to "1". Instead, **use any other whole number greater than 1**. Refer example below for sample configurations.
 
@@ -38,138 +31,80 @@ backendRefs:
         
         !!! success inline "Correct"
             ```yaml
-            backendRefs:
-            - group: "dp.wso2.com"
-              kind: "Backend"
-              name: "backend-1-api"
-              weight: 2
-
-            - group: "dp.wso2.com"
-              kind: "Backend"
-              name: "backend-2-api"
-              weight: 2
-
-            - group: "dp.wso2.com"  
-              kind: "Backend"
-              name: "backend-3-api"
-              weight: 2
+            endpointConfigurations:
+            production:
+                - endpoint: "http://demo-api-1-service.backend.svc.cluster.local:81"
+                weight: 2
+                - endpoint: "http://demo-api-2-service.backend.svc.cluster.local:43"
+                weight: 2
+                - endpoint: "http://demo-api-3-service.backend.svc.cluster.local:8081"
+                weight: 2
             ```
         !!! success inline "Correct"
             ```yaml
-            backendRefs:
-            - group: "dp.wso2.com"
-              kind: "Backend"
-              name: "backend-1-api"
-              weight: 100
-
-            - group: "dp.wso2.com"
-              kind: "Backend"
-              name: "backend-2-api"
-              weight: 100
-
-            - group: "dp.wso2.com"  
-              kind: "Backend"
-              name: "backend-3-api"
-              weight: 100
+            endpointConfigurations:
+            production:
+                - endpoint: "http://demo-api-1-service.backend.svc.cluster.local:81"
+                weight: 100
+                - endpoint: "http://demo-api-2-service.backend.svc.cluster.local:43"
+                weight: 100
+                - endpoint: "http://demo-api-3-service.backend.svc.cluster.local:8081"
+                weight: 100
             ```
         !!! failure "Incorrect"
             ```yaml
-            backendRefs:
-            - group: "dp.wso2.com"
-              kind: "Backend"
-              name: "backend-1-api"
-              weight: 1
-
-            - group: "dp.wso2.com"
-              kind: "Backend"
-              name: "backend-2-api"
-              weight: 1
-
-            - group: "dp.wso2.com"  
-              kind: "Backend"
-              name: "backend-3-api"
-              weight: 1
+            endpointConfigurations:
+            production:
+                - endpoint: "http://demo-api-1-service.backend.svc.cluster.local:81"
+                weight: 1
+                - endpoint: "http://demo-api-2-service.backend.svc.cluster.local:43"
+                weight: 1
+                - endpoint: "http://demo-api-3-service.backend.svc.cluster.local:8081"
+                weight: 1
             ```
 
-## Create an API using CRs with Weighted Routing Across Multiple Endpoints
+## Create an API using APK-Conf with Weighted Routing Across Multiple Endpoints
 
-Follow the instructions below to configure weighted routing across multiple endpoints to an API via CRs:
+Follow the instructions below to configure weighted routing across multiple endpoints to an API via APK-Conf file:
 
 !!! note "Before you begin"
     
     - Install the <a href="../../../setup/prerequisites" target="_blank">prerequisites</a> that are required to run WSO2 APK.
     - <a href="../../../get-started/quick-start-guide" target="_blank">Start WSO2 APK</a>.
 
-### Step 1 - Define the CRs
+### Step 1 - Generate an APK-Conf file
+Create an `apk-conf` file by following the instructions in the <a href="../../../get-started/quick-start-guide/#step-3-create-and-deploy-the-api" target="_blank">Quick Start Guide</a>. Then, modify the generated file as described in the following steps to enable weighted routing.
 
-You can find the sample CRs provided <a href="https://github.com/wso2/apk/tree/main/developer/tryout/samples/sample-weighted-routing.yaml" target="_blank">here</a>.
+### Step 2 - Configure the Weights under the Endpoints in APK-Conf
 
-The sample contains the following Resources required for weighted routing.
-
-  * API CR.
-  * HTTPRoute CR.
-  * CRs that define the services for the API backend endpoints (Backend CRs).
-  * Configmap CR.
-
-The sample Backend endpoints which are used for Weighted Routing in this guide can be found <a href="https://github.com/wso2/apk/tree/main/developer/tryout/samples/sample-backend-weighted.yaml" target="_blank">here</a>.
-  
-
-### Step 2 - Configure Route Weights in the HTTPRoute CR
-
-Weight values for each of the endpoint routes can be configured in the HTTPRoute CR as shown in the sample HTTPRoute CR provided below.
+Below is a complete sample `apk-conf` file with Weighted Routing configured:
 
 ```yaml
-apiVersion: "gateway.networking.k8s.io/v1beta1"
-kind: "HTTPRoute"
-metadata:
-  name: "http-route"
-  labels:
-    api-name: "backend-service-api"
-    api-version: "1.0"
-spec:
-  hostnames:
-  - "default.gw.wso2.com"
-  rules:
-  - matches:
-    - path:
-        type: "RegularExpression"
-        value: "/demo"
-      method: "GET"
-    filters:
-    - type: "URLRewrite"
-      urlRewrite:
-        path:
-          type: "ReplaceFullPath"
-          replaceFullPath: "/demo"
-
-    backendRefs:
-    - group: "dp.wso2.com"
-      kind: "Backend"
-      name: "backend-1-api"
-      weight: 5
-
-    - group: "dp.wso2.com"
-      kind: "Backend"
-      name: "backend-2-api"
-      weight: 2
-
-    - group: "dp.wso2.com"  
-      kind: "Backend"
-      name: "backend-3-api"
-      weight: 3
-      
-  parentRefs:
-  - group: "gateway.networking.k8s.io"
-    kind: "Gateway"
-    name: "wso2-apk-default"
-    sectionName: "httpslistener"
+name: "BackendServiceAPI"
+basePath: "/backend-service"
+version: "1.0"
+type: "REST"
+defaultVersion: false
+endpointConfigurations:
+  production:
+    - endpoint: "http://demo-api-1-service.backend.svc.cluster.local:81"
+      weight: 50
+    - endpoint: "http://demo-api-2-service.backend.svc.cluster.local:43"
+      weight: 10
+    - endpoint: "http://demo-api-3-service.backend.svc.cluster.local:8081"
+      weight: 40
+operations:
+  - target: "/demo"
+    verb: "GET"
+    secured: true
+    scopes: []
 ```
 
-### Step 3 - Deploy the CRs
+Replace the contents of your `apk-conf` file with the provided sample configuration.
 
-Once you have designed your API using these CRs, the next step is to apply them to the Kubernetes API server. APK will process and deploy your API seamlessly, taking full advantage of the Kubernetes infrastructure.
+### Step 3 - Deploy the API
 
-#### 1. Deploy the Sample Backend CRs
+#### 1. Deploy the Sample Backend Endpoints
 
 !!!NOTE
         Ensure that a namespace named `backend` exists prior to deploying the sample backend resources provided in this guide to ensure their correct deployment.
@@ -186,19 +121,9 @@ Deploy the sample backend resources using the following command.
     kubectl apply -f <path-to-crs>
     ```
 
-#### 2. Apply the Sample API CRs
+#### 2. Deploy the API with APK-Conf
 
-Apply the CRs to the Kubernetes API server using the following command.
-
-=== "Command"
-    ```command
-    kubectl apply -f "https://raw.githubusercontent.com/wso2/apk/refs/heads/main/developer/tryout/samples/sample-weighted-routing.yaml"
-    ```
-    
-=== "Format"
-    ```command
-    kubectl apply -f <path-to-crs>
-    ```
+Deploy the API with APK-Conf file by following the steps in <a href="../../../get-started/quick-start-guide/#deploy-the-api-in-kubernetes-gateway" target="_blank">Deploy the API in Kubernetes Gateway</a>
 
 ### Step 4 - Verify the API Invocation
 
