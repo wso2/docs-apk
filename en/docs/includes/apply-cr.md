@@ -12,4 +12,4 @@ Apply CRs to the Kubernetes API server using the kubectl.
     ```
 
 !!! Note
-    - The APIs should be created in the APK deployment namespace.
+    - The APIs should be created in the Kubernetes Gateway deployment namespace.

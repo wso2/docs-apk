@@ -1,5 +1,5 @@
 # Install with Helm
 
-## Start WSO2 API Platform For Kubernetes with Control Plane
+## Start WSO2 Kubernetes Gateway with Control Plane
 
 {!includes/start-apk-cp.md!}

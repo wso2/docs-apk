@@ -1,13 +1,13 @@
-# Uninstall APK Components
+# Uninstall Kubernetes Gateway Components
 
 !!! Note
-    Uninstalling APK and any other components from the cluster involves deleting APK related data, configurations and CRDs from the cluster. Ensure that you back up any important data or configurations before proceeding with the rest of this guide.
+    Uninstalling Kubernetes Gateway and any other components from the cluster involves deleting Kubernetes Gateway related data, configurations and CRDs from the cluster. Ensure that you back up any important data or configurations before proceeding with the rest of this guide.
 
-## Uninstall APK
+## Uninstall Kubernetes Gateway
 
 ### Check Status of Current Installation
 
-To view details about your existing APK installation, use the following command.
+To view details about your existing Kubernetes Gateway installation, use the following command.
 
 ```
 helm list -A
@@ -16,7 +16,7 @@ helm list -A
 This will give you an output similar to the following.
 [![Helm List Output](../assets/img/setup/apk-helm-list-output.png)](../assets/img/setup/apk-helm-list-output.png)
 
-This will give you information regarding your existing APK helm installation. 
+This will give you information regarding your existing Kubernetes Gateway helm installation. 
 For this guide, `chart-name` is the `NAME` of the installation, and the `namespace` is the `NAMESPACE` of the installation
 The version of your installation is the 3 digit suffix in the `CHART` field.
 
@@ -26,9 +26,9 @@ For example, in the above image, the values are as follows.
 - namespace: apk
 - version: 1.3.0
 
-### Instructions for Uninstalling APK
+### Instructions for Uninstalling Kubernetes Gateway
 
-To completely remove APK from your Kubernetes cluster, follow the steps given below.
+To completely remove Kubernetes Gateway from your Kubernetes cluster, follow the steps given below.
 
 1. Apply the following command.
     
@@ -41,7 +41,7 @@ To completely remove APK from your Kubernetes cluster, follow the steps given be
         helm uninstall <chart-name> -n <namespace>
         ```
 
-2. You will have the APK specific related CRDs remaining in the cluster. You can delete the remaining CRDs using the command given below.
+2. You will have the Kubernetes Gateway specific related CRDs remaining in the cluster. You can delete the remaining CRDs using the command given below.
 
     === "Command"
          ```
@@ -67,13 +67,13 @@ To completely remove APK from your Kubernetes cluster, follow the steps given be
          kubectl delete crds <crd-names> 
          ```
 
-This will clear the APK installation from your Kubernetes cluster.
+This will clear the Kubernetes Gateway installation from your Kubernetes cluster.
 
-## Uninstall APIM APK Agent
+## Uninstall Kubernetes Gateway Agent
 
 ### Check Status of Current Installation
 
-To view details about your APIM APK Agent installation, use the following command.
+To view details about your Kubernetes Gateway Agent installation, use the following command.
 
 ```
 helm list -A
@@ -92,9 +92,9 @@ For example, in the above image, the values are as follows.
 - namespace: apk
 - version: 1.3.0
 
-### Instructions for Uninstalling APIM APK Agent
+### Instructions for Uninstalling Kubernetes Gateway Agent
 
-To remove the APIM APK Agent from your Kubernetes cluster, apply the following command.
+To remove the Kubernetes Gateway Agent from your Kubernetes cluster, apply the following command.
 
 === "Command"
      ```

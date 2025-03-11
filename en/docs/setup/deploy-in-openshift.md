@@ -1,6 +1,6 @@
 ## Deploy in OpenShift
 
-APK supports OpenShift, which is a Kubernetes distribution with additional features and functionalities provided by Red Hat. The deployment process in OpenShift is similar to Kubernetes, with a few adjustments. Below are the steps to deploy APK in an OpenShift cluster.
+Kubernetes Gateway supports OpenShift, which is a Kubernetes distribution with additional features and functionalities provided by Red Hat. The deployment process in OpenShift is similar to Kubernetes, with a few adjustments. Below are the steps to deploy Kubernetes Gateway in an OpenShift cluster.
 
 ### Prerequisites
 * Access to an OpenShift cluster.
@@ -9,7 +9,7 @@ APK supports OpenShift, which is a Kubernetes distribution with additional featu
 * Basic knowledge of using OpenShift and Helm.
 
 ### Deployment Steps
-1. Create a new helm repository with the latest apk release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apk``` for this guide.
+1. Create a new helm repository with the latest Kubernetes Gateway release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apk``` for this guide.
 
     === "Format"
         ```
@@ -27,7 +27,7 @@ APK supports OpenShift, which is a Kubernetes distribution with additional featu
       helm repo update
       ```
 
-3. Install the APK components and start WSO2 API Platform For Kubernetes. Consider ```apk-test``` as the ```<chart-name>``` for this guide. As the ```--version``` of this command, use the version of the release you used in point 1 above. It will take a few minutes for the deployment to complete.
+3. Install the Kubernetes Gateway components and start WSO2 API Platform For Kubernetes. Consider ```apk-test``` as the ```<chart-name>``` for this guide. As the ```--version``` of this command, use the version of the release you used in point 1 above. It will take a few minutes for the deployment to complete.
 
     === "Format"
         ```

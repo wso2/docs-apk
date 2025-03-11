@@ -1,6 +1,6 @@
 # API Management Overview
 
-In this section, a comprehensive detail of API Management Capabilities offered by WSO2 APK utilizing WSO2 API Manager Control Plane is provided.
+In this section, a comprehensive detail of API Management Capabilities offered by WSO2 Kubernetes Gateway utilizing WSO2 API Manager Control Plane is provided.
 
 ## Supported Features
 
@@ -9,7 +9,7 @@ In this section, a comprehensive detail of API Management Capabilities offered b
 - Subscription Management: Manage subscriptions to APIs by applications.
 - API Analytics: Gather and analyze data on API usage and performance.
 - API Marketplace: Provide a marketplace for discovering and consuming APIs.
-- Integration with WSO2 APK Gateway: Integrate with the APK Gateway for deploying APIs and managing traffic.
+- Integration with WSO2 Kubernetes Gateway: Integrate with the Kubernetes Gateway for deploying APIs and managing traffic.
 
 ### API Management
 
@@ -96,7 +96,7 @@ Integration with WSO2 APK Gateway is the process of integrating with the APK Gat
 - Webhooks/WebSub: Webhooks/WebSub are not supported.
 - SSE API: SSE API is not supported.
 - Load Balancing: Load Balancing is not supported.
-- Failover: Failover routing is not supported.
+- Fail over: Fail over routing is not supported.
 - XACML: XACML based authorization is not supported.
 - OPA: OPA based authorization is not supported.
 - Response Caching: Response Caching is not supported.
@@ -109,4 +109,4 @@ Integration with WSO2 APK Gateway is the process of integrating with the APK Gat
 
 ## Partially Supported Features
 
-- Lifecycle Management: API Lifecycle Management is partially supported. API Lifecycle Management is supported for creating, publishing, and retiring APIs. However, API Blocking is not supported for APK Gateways.
+- Lifecycle Management: API Lifecycle Management is partially supported. API Lifecycle Management is supported for creating, publishing, and retiring APIs. However, API Blocking is not supported for Kubernetes Gateway.

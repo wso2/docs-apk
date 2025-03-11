@@ -1,11 +1,11 @@
 # Prerequisites
 
-To successfully deploy WSO2 APK in your environment, you’ll need a Kubernetes cluster, a Kubernetes client (`kubectl`), and Helm for package management. Additionally, your environment must meet specific requirements across managed Kubernetes services, resource allocations, and supported Kubernetes distributions. Each section below outlines these requirements for a successful deployment.
+To successfully deploy WSO2 Kubernetes Gateway in your environment, you’ll need a Kubernetes cluster, a Kubernetes client (`kubectl`), and Helm for package management. Additionally, your environment must meet specific requirements across managed Kubernetes services, resource allocations, and supported Kubernetes distributions. Each section below outlines these requirements for a successful deployment.
 
 ### Supported Versions
 #### Managed Kubernetes Services
 
-WSO2 APK supports several managed Kubernetes services. To ensure compatibility, verify that your service’s Kubernetes version falls within the specified range.
+WSO2 Kubernetes Gateway supports several managed Kubernetes services. To ensure compatibility, verify that your service’s Kubernetes version falls within the specified range.
 
 | Platform | Cluster Version |
 | -------- | --------------- |
@@ -15,7 +15,7 @@ WSO2 APK supports several managed Kubernetes services. To ensure compatibility, 
 
 #### Kubernetes Distributions
 
-WSO2 APK is compatible with a variety of Kubernetes distributions. Check the compatible versions for each distribution below to ensure proper functionality.
+WSO2 Kubernetes Gateway is compatible with a variety of Kubernetes distributions. Check the compatible versions for each distribution below to ensure proper functionality.
 
 | Software Application | Cluster Version | Software Version |
 | -------------------- |-----------------|------------------|
@@ -26,7 +26,7 @@ WSO2 APK is compatible with a variety of Kubernetes distributions. Check the com
 
 #### Helm
 
-Below is the version requirement for Helm to be compatible with WSO2 APK.
+Below is the version requirement for Helm to be compatible with WSO2 Kubernetes Gateway.
 
 | Package Manager | Version         |
 | --------------- |-----------------|
@@ -34,9 +34,9 @@ Below is the version requirement for Helm to be compatible with WSO2 APK.
 
 ### Resource Requirements
 
-We recommend the following minimum resource requirements for running WSO2 APK on a Kubernetes cluster. These requirements are based on whether you are deploying the APK Data Plane only or with the APIM Control Plane as well.
+We recommend the following minimum resource requirements for running WSO2 Kubernetes Gateway on a Kubernetes cluster. These requirements are based on whether you are deploying the Kubernetes Gateway Data Plane only or with the APIM Control Plane as well.
 
-**Minimum requirements for APK Data Plane:**
+**Minimum requirements for Kubernetes Gateway Data Plane:**
 
 | Resource | Minimum Requirement |
 | -------- | ------------------- |
@@ -44,7 +44,7 @@ We recommend the following minimum resource requirements for running WSO2 APK on
 | Memory   | 6 GB                |
 | Storage  | 15 GB               |
 
-**Minimum requirements for APK Data Plane with APIM Control Plane:**
+**Minimum requirements for Kubernetes Gateway Data Plane with APIM Control Plane:**
 
 | Resource | Minimum Requirement |
 | -------- | ------------------- |
@@ -67,15 +67,15 @@ Refer to the <a href="https://helm.sh/docs/intro/install/" target="_blank">Helm 
 
 ### Additional Dependencies
 
-In addition to Kubernetes and Helm, WSO2 APK requires several other dependencies. **Redis, Cert-manager, and PostgreSQL are automatically handled during APK installation**. 
+In addition to Kubernetes and Helm, WSO2 Kubernetes Gateway requires several other dependencies. **Redis, Cert-manager, and PostgreSQL are automatically handled during Kubernetes Gateway installation**. 
 
 | Dependency    | Version         | Notes                                                                                            |
 | ------------- | --------------- | ------------------------------------------------------------------------------------------------ |
-| Docker Engine | 27.5.1 or above | Ensure compatibility with APK as Kubernetes clusters may have varying Docker versions installed. |
-| Redis         | 20.10.0          | Automatically installed with APK; no manual configuration required.                              |
-| Cert-manager  | v1.17.1         | Automatically installed with APK; no manual configuration required.                              |
-| PostgreSQL    | 16.4.14        | Automatically installed with APK; required only for non-production IdP configurations.           |
+| Docker Engine | 27.5.1 or above | Ensure compatibility with Kubernetes Gateway as Kubernetes clusters may have varying Docker versions installed. |
+| Redis         | 20.10.0          | Automatically installed with Kubernetes Gateway; no manual configuration required.                              |
+| Cert-manager  | v1.17.1         | Automatically installed with Kubernetes Gateway; no manual configuration required.                              |
+| PostgreSQL    | 16.4.14        | Automatically installed with Kubernetes Gateway; required only for non-production IdP configurations.           |
 
-**Note**: Docker version within the Kubernetes cluster may vary. To ensure compatibility with APK, confirm that your Docker version meets the minimum requirement listed above.
+**Note**: Docker version within the Kubernetes cluster may vary. To ensure compatibility with Kubernetes Gateway, confirm that your Docker version meets the minimum requirement listed above.
 
 **Note**: PostgreSQL is used in the Quick Start Guide for token generation from the non-production IdP.

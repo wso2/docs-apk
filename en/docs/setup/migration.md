@@ -1,6 +1,6 @@
-# Migrating from WSO2 API Manager to APK
+# Migrating from WSO2 API Manager to Kubernetes Gateway
 
-Migrating to WSO2 API Platform For Kubernetes (WSO2 APK) is supported from a few selected API Manager versions. The supported API-M versions are as follows:
+Migrating to WSO2 API Platform For Kubernetes (WSO2 Kubernetes Gateway) is supported from a few selected API Manager versions. The supported API-M versions are as follows:
 
 - WSO2 API-M 4.3.0
 
