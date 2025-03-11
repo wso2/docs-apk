@@ -1,4 +1,4 @@
-You can deploy the API directly into APK using API Schema definition and APK configuration file using the command below.
+You can deploy the API directly into Kubernetes Gateway using API Schema definition and Kubernetes Gateway configuration file using the command below.
 
 ```
 curl --location 'https://api.am.wso2.com:9095/api/deployer/1.3.0/apis/deploy' \

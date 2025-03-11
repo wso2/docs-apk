@@ -2,7 +2,7 @@ To customize configurations in the Helm deployment, you need to create and modif
 
 1. **Download `values.yaml` File:**
 
-    To obtain the `values.yaml` file, you can use the `helm show values` command. Replace `<repository-name>` with the actual repository name and `<version-of-APK>` with the desired version of the APK. Run the following command:
+    To obtain the `values.yaml` file, you can use the `helm show values` command. Replace `<repository-name>` with the actual repository name and `<version-of-APK>` with the desired version of the Kubernetes Gateway. Run the following command:
 
     === "Command"
         ```
@@ -18,9 +18,9 @@ To customize configurations in the Helm deployment, you need to create and modif
 
     Once you have the `values.yaml` file, you can modify the configuration parameters according to your requirements.
 
-3. **Deploy the APK with Customized Configuration:**
+3. **Deploy the Kubernetes Gateway with Customized Configuration:**
 
-    To deploy the APK using the customized configuration, use the `helm install` command. Replace `<chart-name>`, `<repository-name>`, `<version-of-APK>`, and `<path-to-values.yaml-file>` with appropriate values. Run the following command:
+    To deploy the Kubernetes Gateway using the customized configuration, use the `helm install` command. Replace `<chart-name>`, `<repository-name>`, `<version-of-APK>`, and `<path-to-values.yaml-file>` with appropriate values. Run the following command:
 
 	=== "Command"
 		```

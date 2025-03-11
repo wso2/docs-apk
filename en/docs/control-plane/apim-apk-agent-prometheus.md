@@ -1,6 +1,6 @@
-## Configuring Prometheus for APIM-APK Agent
+## Configuring Prometheus for Kubernetes Gateway Agent
 
-This document contains the steps to configure Prometheus for the APIM APK Agent. 
+This document contains the steps to configure Prometheus for the Kubernetes Gateway Agent. 
 
 To enable metrics, simply make the metrics.enabled field true under the helm-charts/values.yaml file as shown.
 

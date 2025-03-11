@@ -1,8 +1,8 @@
 To customize configurations in the Helm deployment, you need to have the `values.yaml` file. Follow one of the steps below to download the `values.yaml` file:
 
-1. Cloning the APK Repository
+1. Cloning the Kubernetes Gateway Repository
 
-    You can clone the APK GitHub repository using the following command.
+    You can clone the Kubernetes Gateway GitHub repository using the following command.
 
     ```
     git clone https://github.com/wso2/apk.git

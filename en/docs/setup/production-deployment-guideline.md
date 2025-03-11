@@ -1,8 +1,8 @@
 # Production Deployment Guidelines
 
-This document provide the steps for APK production deployment.
+This document provide the steps for Kubernetes Gateway production deployment.
 
-WSO2 APK can be configured through `values.yaml` file.  Please refer to the <a href="../../setup/Customize-Configurations" target="_blank">customize configurations section</a> for information on how to use a customized values file for APK deployment. When deploying WSO2 APK in a production environment, we strongly recommend following these guidelines. 
+WSO2 Kubernetes Gateway can be configured through `values.yaml` file.  Please refer to the <a href="../../setup/Customize-Configurations" target="_blank">customize configurations section</a> for information on how to use a customized values file for Kubernetes Gateway deployment. When deploying WSO2 Kubernetes Gateway in a production environment, we strongly recommend following these guidelines. 
 
 ## Choose the correct deployment pattern
 
@@ -10,17 +10,17 @@ Please refer this <a href="../../setup/deployment/deployment-patterns-overview" 
 
 ## Change the hostnames and vhosts
 
-By default, APK uses wso2.com for its hostnames and vhosts for the gateway. You need to change these values to your own domain, which you plan to use for production. The following values.yaml values should be modified:
+By default, Kubernetes Gateway uses wso2.com for its hostnames and vhosts for the gateway. You need to change these values to your own domain, which you plan to use for production. The following values.yaml values should be modified:
 
 | Configuration                           | Description                                                                                                                                                                                                 |
 | --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `wso2.apk.listener.hostname`            | This configuration is used to specify the hostname for listening to API requests related to the APK system. It should be set to your desired domain for production.                                         |
+| `wso2.apk.listener.hostname`            | This configuration is used to specify the hostname for listening to API requests related to the Kubernetes Gateway system. It should be set to your desired domain for production.                                         |
 | `wso2.apk.dp.gateway.listener.hostname` | This configuration is used to specify the hostname for listening to API requests made by users deploying their APIs. It should be set to your desired domain for production.                                |
 | `wso2.apk.dp.configdeployer.vhosts`     | This configuration is utilized by the Config Deployer Service to create API Custom Resources (CRs) in response to user API creation requests. It should be set to the appropriate value for production use. |
 
-By modifying these configurations, you can ensure that APK operates with the correct hostnames and vhosts for your production environment.
+By modifying these configurations, you can ensure that Kubernetes Gateway operates with the correct hostnames and vhosts for your production environment.
 
-For example if you want to deploy a production environment and you have a domain name example.com and you want to expose your API's through prod.gw.example.com and expose APK system APIs through prod.apk.example.com then
+For example if you want to deploy a production environment and you have a domain name example.com and you want to expose your API's through prod.gw.example.com and expose Kubernetes Gateway system APIs through prod.apk.example.com then
 
 - wso2.apk.listener.hostname: 'prod.apk.example.com'
 - wso2.apk.dp.gateway.listener.hostname: 'gw.example.com'
@@ -30,14 +30,14 @@ For further clarification on the keys, please refer to the description and defau
 
 ## Change certificates
 
-The default APK deployment uses a self-signed certificate for APK components. Default APK configuration installs [cert-manager](https://cert-manager.io/) in the cluster. 
+The default Kubernetes Gateway deployment uses a self-signed certificate for Kubernetes Gateway components. Default Kubernetes Gateway configuration installs [cert-manager](https://cert-manager.io/) in the cluster. 
 
-For a production environment, it is recommended to use CA-validated public certificates for internet-facing services. In APK, certificates are used for servers and listeners. Listeners are responsible for exposing services to the internet, while servers are not directly accessible from the internet. In a production environment, it's crucial to configure CA-validated `public` certificates for listeners. Non-public or self-signed certificates can be used for servers, as these server names are internal. Let's explore how to configure these certificates.
+For a production environment, it is recommended to use CA-validated public certificates for internet-facing services. In Kubernetes Gateway, certificates are used for servers and listeners. Listeners are responsible for exposing services to the internet, while servers are not directly accessible from the internet. In a production environment, it's crucial to configure CA-validated `public` certificates for listeners. Non-public or self-signed certificates can be used for servers, as these server names are internal. Let's explore how to configure these certificates.
 
 | Listeners               | Description and hostnames                                                                                                                                                                                   |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Gateway listener        | Listens for for API invocation requests. Hostname can be configures through values.yaml's `wso2.apk.dp.gateway.listener.dns`. Default value is ["*.gw.wso2.com","*.sandbox.gw.wso2.com","prod.gw.wso2.com"] |
-| APK system api listener | Listens for for APK system related requests(Ex: API creation rest request). Hostname can be configures through values.yaml's `wso2.apk.listener.hostname`. Default value is "api.am.wso2.com"               |
+| Kubernetes Gateway system api listener | Listens for for Kubernetes Gateway system related requests(Ex: API creation rest request). Hostname can be configures through values.yaml's `wso2.apk.listener.hostname`. Default value is "api.am.wso2.com"               |
 
 | Servers                  | Hostnames                                                                                                                                                          |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -50,7 +50,7 @@ For a production environment, it is recommended to use CA-validated public certi
 
 ### 1. Use cert manager
 
-By default, APK installs cert manager in your cluster and employs a SelfSigned issuer for certificate validations. To utilize cert manager for handling the certificates, you will need to create [Issuers](https://cert-manager.io/docs/configuration/). Choose the type of Issuer you are going to use for listeners and servers, and create the Issuers in accordance with the [cert-manager documentation](https://cert-manager.io/docs/configuration/) document. You will need to create two issuers: one for listeners and one for servers. 
+By default, Kubernetes Gateway installs cert manager in your cluster and employs a SelfSigned issuer for certificate validations. To utilize cert manager for handling the certificates, you will need to create [Issuers](https://cert-manager.io/docs/configuration/). Choose the type of Issuer you are going to use for listeners and servers, and create the Issuers in accordance with the [cert-manager documentation](https://cert-manager.io/docs/configuration/) document. You will need to create two issuers: one for listeners and one for servers. 
 
 Once created, update the values.yaml configuration as follows. This configuration is to be placed at the same indentation level as the `wso2` configuration in the values.yaml file.
 
@@ -76,7 +76,7 @@ For all the components(Listeners and servers) prepare the following required fil
 2. Private key associated with the TLS certificate(tls.key)
 3. Certificate Authority's (CA) root certificate(ca.crt)
 
-For each component create a secret in the same namespace as APK is deployed with the following key-value pairs:
+For each component create a secret in the same namespace as Kubernetes Gateway is deployed with the following key-value pairs:
 
 - tls.crt - Base64 encoded value of tls.crt file
 - tls.key - Base64 encoded value of tls.key file
@@ -103,7 +103,7 @@ wso2:
           secretName: <created-secret-name-for-gateway-listener>
 ```
 
-- To update the APK system listener certificates, update the following values.yaml configuration.
+- To update the Kubernetes Gateway system listener certificates, update the following values.yaml configuration.
 
 ```yaml
 wso2:
@@ -114,7 +114,7 @@ wso2:
       secretName: <created-secret-name-for-apk-system-listener>
 ```
 
-- To update the APK system servers certificates, update the following values.yaml config. The relevant location for each of these configs have been provided in the table below.
+- To update the Kubernetes Gateway system servers certificates, update the following values.yaml config. The relevant location for each of these configs have been provided in the table below.
 
 ```yaml
 configs:
@@ -138,7 +138,7 @@ Servers and their `configs` location in the value.yaml are listed below.
 
 ## Remove default IdP
 
-APK comes with a default IdP which is not production-ready and is only to be used for testing purposes. Disable the default IDP and use a production-ready IDP solution. Please follow these guidelines to <a href="../../setup/identity-platform/idp/idp-overview" target="_blank">setup the production ready IDP</a>.
+Kubernetes Gateway comes with a default IdP which is not production-ready and is only to be used for testing purposes. Disable the default IDP and use a production-ready IDP solution. Please follow these guidelines to <a href="../../setup/identity-platform/idp/idp-overview" target="_blank">setup the production ready IDP</a>.
 
 Additionally, disable the default IdP by changing the enabled value or idp to `false` in values.yaml.
 
@@ -153,7 +153,7 @@ wso2:
 
 ## Use a production grade Redis
 
-APK uses a built-in standalone Redis service which is not suitable for production usage. Please use a production grade Redis. You can update the following values to configure the Redis configuration in APK:
+Kubernetes Gateway uses a built-in standalone Redis service which is not suitable for production usage. Please use a production grade Redis. You can update the following values to configure the Redis configuration in Kubernetes Gateway:
 
 ```yaml
   redis:
@@ -194,4 +194,4 @@ When the traffic to your pods increase, the deployment may need to scale horizon
 
 To configure HPA for the gateway, follow this <a href="../../setup/configure-hpa" target="_blank">document</a>.
 
-In conclusion, following these guidelines is essential for a smooth and secure production deployment of WSO2 APK. By carefully selecting the deployment pattern, customizing hostnames and vhosts, configuring CA-validated public certificates, using a production-grade Redis and autoscaling your deployment to suit your needs, you can ensure a robust environment for your APIs. Additionally, disabling the default IDP and opting for a production-ready solution adds an extra layer of security. By adhering to these best practices, you'll be well-prepared to handle the demands of a production environment. If you have any further questions or need additional assistance, please don't hesitate to reach out to our support team. Happy deploying!
+In conclusion, following these guidelines is essential for a smooth and secure production deployment of WSO2 Kubernetes Gateway. By carefully selecting the deployment pattern, customizing hostnames and vhosts, configuring CA-validated public certificates, using a production-grade Redis and autoscaling your deployment to suit your needs, you can ensure a robust environment for your APIs. Additionally, disabling the default IDP and opting for a production-ready solution adds an extra layer of security. By adhering to these best practices, you'll be well-prepared to handle the demands of a production environment. If you have any further questions or need additional assistance, please don't hesitate to reach out to our support team. Happy deploying!

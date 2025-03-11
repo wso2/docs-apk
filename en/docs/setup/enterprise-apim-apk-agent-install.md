@@ -1,12 +1,12 @@
-# Install APIM APK Agent with Enterprise Helm Chart
+# Install Kubernetes Gateway Agent with Enterprise Helm Chart
 
 ## Before you begin...
 
-Install the <a href="../../setup/prerequisites" target="_blank">prerequisites</a> that are required to run WSO2 APK.
+Install the <a href="../../setup/prerequisites" target="_blank">prerequisites</a> that are required to run WSO2 Kubernetes Gateway.
 
-## Start WSO2 API Platform For Kubernetes Enterprise Version
+## Start WSO2 Kubernetes Gateway Enterprise Version
 
-1.  Create WSO2 APK image pull secrets with your WSO2 credentials as shown below and apply
+1.  Create WSO2 Kubernetes Gateway image pull secrets with your WSO2 credentials as shown below and apply
     this in K8s.
 
     ```console
@@ -16,7 +16,7 @@ Install the <a href="../../setup/prerequisites" target="_blank">prerequisites</a
     !!! Note
         If you don't have a WSO2 user account, we've created one and sent you the details. If you already have an account, just use your existing credentials.
 
-2. Add the WSO2 APK Helm repository.
+2. Add the WSO2 Kubernetes Gateway Helm repository.
 
     ```console
     helm repo add wso2 https://helm.wso2.com
@@ -28,7 +28,7 @@ Install the <a href="../../setup/prerequisites" target="_blank">prerequisites</a
       helm repo update
       ```
 
-4. Install the APIM APK Agent components and start WSO2 API Platform For Kubernetes. Consider ```apim-apk-agent``` as the ```<chart-name>``` for this guide. As the ```--version``` of this command, use the version of the release you used in point 1 above. It will take a few minutes for the deployment to complete.
+4. Install the Kubernetes Gateway Agent components and start WSO2 Kubernetes Gateway. Consider ```apim-apk-agent``` as the ```<chart-name>``` for this guide. As the ```--version``` of this command, use the version of the release you used in point 1 above. It will take a few minutes for the deployment to complete.
 
 #### Helm install for amd64
 

@@ -5,4 +5,4 @@ curl -L -X POST 'https://api.am.wso2.com:9095/api/deployer/1.3.0/apis/undeploy?a
 --header 'Authorization: Bearer <Access Token From IdP>'
 ```
 
-Once we invoke the above command, the API with the relevant API ID will be deleted and undeployed from the APK.
+Once we invoke the above command, the API with the relevant API ID will be deleted and undeployed from the Kubernetes Gateway.

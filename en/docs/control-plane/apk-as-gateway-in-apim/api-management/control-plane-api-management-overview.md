@@ -1,6 +1,6 @@
 # API Management Overview
 
-In this section, a comprehensive detail of API Management Capabilities offered by WSO2 APK utilizing WSO2 API Manager Control Plane is provided.
+In this section, a comprehensive detail of API Management Capabilities offered by WSO2 Kubernetes Gateway utilizing WSO2 API Manager Control Plane is provided.
 
 ## Supported Features
 
@@ -9,7 +9,7 @@ In this section, a comprehensive detail of API Management Capabilities offered b
 - Subscription Management: Manage subscriptions to APIs by applications.
 - API Analytics: Gather and analyze data on API usage and performance.
 - API Marketplace: Provide a marketplace for discovering and consuming APIs.
-- Integration with WSO2 APK Gateway: Integrate with the APK Gateway for deploying APIs and managing traffic.
+- Integration with WSO2 Kubernetes Gateway: Integrate with the Kubernetes Gateway for deploying APIs and managing traffic.
 - Tenancy: Multi-tenancy is supported.
 
 ### API Management
@@ -78,9 +78,9 @@ API Analytics is the process of gathering and analyzing data on API usage and pe
 
 API Marketplace is the process of providing a marketplace for discovering and consuming APIs. WSO2 API Manager Devportal  enables organizations to provide a marketplace for discovering and consuming APIs in a secure and scalable environment. This provides a platform for developers to discover, consume, and manage APIs.
 
-#### Integration with WSO2 APK Gateway
+#### Integration with WSO2 Kubernetes Gateway
 
-Integration with WSO2 APK Gateway is the process of integrating with the APK Gateway for deploying APIs and managing traffic. WSO2 API Manager Control Plane integrates with the APK Gateway for deploying APIs and managing traffic in a secure and scalable environment. This provides a platform for developers to deploy APIs and manage traffic.
+Integration with WSO2 Kubernetes Gateway is the process of integrating with the Kubernetes Gateway for deploying APIs and managing traffic. WSO2 API Manager Control Plane integrates with the APK Gateway for deploying APIs and managing traffic in a secure and scalable environment. This provides a platform for developers to deploy APIs and manage traffic.
 
 ## Unsupported Features
 
@@ -91,7 +91,7 @@ Integration with WSO2 APK Gateway is the process of integrating with the APK Gat
 - Webhooks/WebSub: Webhooks/WebSub are not supported.
 - SSE API: SSE API is not supported.
 - Load Balancing: Load Balancing is not supported.
-- Failover: Failover routing is not supported.
+- Fail over: Fail over routing is not supported.
 - XACML: XACML based authorization is not supported.
 - OPA: OPA based authorization is not supported.
 - Response Caching: Response Caching is not supported.
@@ -104,6 +104,6 @@ Integration with WSO2 APK Gateway is the process of integrating with the APK Gat
 
 ## Partially Supported Features
 
-- API level rate limiting: API level rate limiting is partially supported. API level rate limit(Advance Policies) count and count unit are supported while Conditional Ratelimiting such as IP based, Header based, Query parameter based and JWT  Claim based are not supported.
+- API level rate limiting: API level rate limiting is partially supported. API level rate limit(Advance Policies) count and count unit are supported while Conditional Rate limiting such as IP based, Header based, Query parameter based and JWT  Claim based are not supported.
 - Lifecycle Management: API Lifecycle Management is partially supported. API Lifecycle Management is supported for creating, publishing, and retiring APIs. However, API Blocking is not supported for APK Gateways.
 - Backend JWT: Backend JWT is partially supported. Custom Header, Token TTL and Hashing Algorithm is supported while Custom Claims are not supported.
