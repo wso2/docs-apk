@@ -9,19 +9,19 @@ WSO2 APK supports several managed Kubernetes services. To ensure compatibility, 
 
 | Platform | Cluster Version |
 | -------- | --------------- |
-| EKS      | 1.27 - 1.30.3   |
-| GKE      | 1.27.3 - 1.30.3 |
-| AKS      | 1.27 - 1.30.3   |
+| EKS      | 1.27 - 1.32.2   |
+| GKE      | 1.27.3 - 1.32.2 |
+| AKS      | 1.27 - 1.32.2   |
 
 #### Kubernetes Distributions
 
 WSO2 APK is compatible with a variety of Kubernetes distributions. Check the compatible versions for each distribution below to ensure proper functionality.
 
 | Software Application | Cluster Version | Software Version |
-| -------------------- | --------------- | ---------------- |
-| Minikube             | 1.26.3 - 1.30.3 | 1.30.1 - 1.34.0  |
-| Rancher              | 1.27.2 - 1.30.3 | 1.9.1 - 1.16.0   |
-| Kind                 | 1.26.3 - 1.30.3 | 0.24.0           |
+| -------------------- |-----------------|------------------|
+| Minikube             | 1.26.3 - 1.32.2 | 1.30.1 - 1.35.0  |
+| Rancher              | 1.27.2 - 1.32.2 | 1.9.1 - 1.18.0   |
+| Kind                 | 1.26.3 - 1.32.2 | 0.24.0           |
 | OpenShift            | 1.28            | 4.15             |
 
 #### Helm
@@ -29,8 +29,8 @@ WSO2 APK is compatible with a variety of Kubernetes distributions. Check the com
 Below is the version requirement for Helm to be compatible with WSO2 APK.
 
 | Package Manager | Version         |
-| --------------- | --------------- |
-| Helm            | 3.10.0 - 3.16.1 |
+| --------------- |-----------------|
+| Helm            | 3.10.0 - 3.17.1 |
 
 ### Resource Requirements
 
@@ -71,10 +71,10 @@ In addition to Kubernetes and Helm, WSO2 APK requires several other dependencies
 
 | Dependency    | Version         | Notes                                                                                            |
 | ------------- | --------------- | ------------------------------------------------------------------------------------------------ |
-| Docker Engine | 26.1.5 or above | Ensure compatibility with APK as Kubernetes clusters may have varying Docker versions installed. |
-| Redis         | 20.1.7          | Automatically installed with APK; no manual configuration required.                              |
-| Cert-manager  | v1.16.0         | Automatically installed with APK; no manual configuration required.                              |
-| PostgreSQL    | 15.5.24         | Automatically installed with APK; required only for non-production IdP configurations.           |
+| Docker Engine | 27.5.1 or above | Ensure compatibility with APK as Kubernetes clusters may have varying Docker versions installed. |
+| Redis         | 20.10.0          | Automatically installed with APK; no manual configuration required.                              |
+| Cert-manager  | v1.17.1         | Automatically installed with APK; no manual configuration required.                              |
+| PostgreSQL    | 16.4.14        | Automatically installed with APK; required only for non-production IdP configurations.           |
 
 **Note**: Docker version within the Kubernetes cluster may vary. To ensure compatibility with APK, confirm that your Docker version meets the minimum requirement listed above.
 
