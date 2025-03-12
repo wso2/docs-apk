@@ -87,11 +87,11 @@ nav:
         #    - Test API: develop-and-deploy-api/test-api.md
         #    - Publish Your API: manage-apis/publish-your-api.md
     - API Management:
-        - Overview - API Management in APK Dataplane:
+        - Overview - API Management in Kubernetes Gateway Dataplane:
             - Overview: api-management-overview/create-api-overview.md
             - Via REST API: api-management-overview/tools-for-api-development.md
             - Via CRs:  api-management-overview/create-api-using-crs.md
-            - APK Config Language Support Plugin: api-management-overview/apk-conf-lang-support.md
+            - Kubernetes Gateway Config Language Support Plugin: api-management-overview/apk-conf-lang-support.md
         - Develop and Deploy API:
             - Rest APIs: 
                 - Via REST API: create-api/create-and-deploy-apis/rest/create-rest-api-using-rest-api.md
@@ -202,7 +202,7 @@ nav:
     #       - API Categorization: manage-apis/api-categorization.md
     #       - API Monetization: manage-apis/api-monetization.md
     - Control Plane:
-        - APK Control Plane:
+        - Kubernetes Gateway Control Plane:
               - Overview: control-plane/overview.md
               - API Management:
                     - Overview: control-plane/api-management/control-plane-api-management-overview.md
@@ -210,9 +210,9 @@ nav:
                         - Create REST APIs: control-plane/api-management/control-plane-create-and-deploy-rest-apis.md
                         - Create GraphQL APIs: control-plane/api-management/control-plane-create-and-deploy-graphql-apis.md
                         - Create AI APIs: control-plane/api-management/control-plane-create-and-deploy-ai-apis.md
-                    - Add APK Gateway: control-plane/api-management/control-plane-add-apk-gateway.md
+                    - Add Kubernetes Gateway: control-plane/api-management/control-plane-add-apk-gateway.md
                     - Create Application and Subscribe: control-plane/api-management/control-plane-create-application-and-subscription.md
-        - APK as a Gateway in API Manager:
+        - Kubernetes Gateway as a Gateway in API Manager:
               - Overview: control-plane/apk-as-gateway-in-apim/apk-as-gateway-in-apim-overview.md
               - Quick Start Guide: control-plane/apk-as-gateway-in-apim/apk-as-gateway-in-apim-qsg.md
               - API Management:
@@ -232,12 +232,12 @@ nav:
                           - Request Redirection: control-plane/api-management/api-policies/redirect-request.md 
                           - Backend JWT: control-plane/api-management/api-policies/backend-jwt.md
                           - Model Based Round Robin: control-plane/api-management/api-policies/model-based-round-robin.md
-                  - Add APK Gateway: control-plane/apk-as-gateway-in-apim/api-management/control-plane-add-apk-gateway.md
+                  - Add Kubernetes Gateway: control-plane/apk-as-gateway-in-apim/api-management/control-plane-add-apk-gateway.md
                   - Create Application and Subscribe: control-plane/apk-as-gateway-in-apim/api-management/control-plane-create-application-and-subscription.md
         - Advanced Configuration:
             - API Manager Control Plane: control-plane/apim-deploy.md
-            - APK Data Plane: control-plane/apk-deploy.md
-            - APIM APK Agent: 
+            - Kubernetes Gateway Data Plane: control-plane/apk-deploy.md
+            - Kubernetes Gateway Agent:
                 - Deployment: control-plane/apim-apk-agent-deploy.md
                 - Prometheus Configuration: control-plane/apim-apk-agent-prometheus.md
         # - Security: control-plane/control-plane-security.md
@@ -278,7 +278,7 @@ nav:
 #            - Developer Portal APIs: catalogs/api-reference-developer-portal.md
 #            - Admin APIs: catalogs/api-reference-admin.md
         - Helm Configuration Catalog: catalogs/config-catalog.md
-        - APK Conf Catalog: catalogs/apk-conf.md
+        - Kubernetes Gateway Conf Catalog: catalogs/apk-conf.md
     #   - CLI Catalog: catalogs/cli-reference.md
     #    - Helm Catalog: catalogs/config-catalog.md
     - Setup: 
@@ -286,14 +286,14 @@ nav:
         - Install Dataplane: setup/install.md
         - Install Control Plane with Dataplane: setup/install-with-cp.md
         - Install Enterprise Products:
-              - Install APK Dataplane: setup/enterprise-apk-install.md
-              - Install APIM APK Agent: setup/enterprise-apim-apk-agent-install.md
+              - Install Kubernetes Gateway Data plane: setup/enterprise-apk-install.md
+              - Install Kubernetes Gateway Agent: setup/enterprise-apim-apk-agent-install.md
         - Uninstall: setup/uninstall.md
         - Deployment Patterns:
               - Overview: setup/deployment/deployment-patterns-overview.md
-              - APK Data Plane: setup/deployment/apk-data-plane-deployment-patterns.md
-              - APK Data Plane with API Manager Control Plane: setup/deployment/apk-with-apim-cp-deployment-patterns.md
-              - APK as a Gateway in API Manager: setup/deployment/apk-as-gateway-in-apim-deployment-patterns.md
+              - Kubernetes Gateway Data Plane: setup/deployment/apk-data-plane-deployment-patterns.md
+              - Kubernetes Gateway Data Plane with API Manager Control Plane: setup/deployment/apk-with-apim-cp-deployment-patterns.md
+              - Kubernetes Gateway as a Gateway in API Manager: setup/deployment/apk-as-gateway-in-apim-deployment-patterns.md
         - CI/CD: 
             - CI/CD for APIs - Overview: setup/cicd/overview.md
             - Building a GitOps Workflow for APIs With WSO2 APK: setup/cicd/building-a-pipeline.md
