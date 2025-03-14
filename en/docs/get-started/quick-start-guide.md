@@ -404,7 +404,7 @@ Run the following command (with the provided values) to generate your access tok
 !!!Important
     - <b> The provided credentials and tokens are only for non-production use. </b>
     - <b> The token expires after 3600 seconds (1 hour). </b>
-    - If you are using a third-party IdP, refer to the <a href="https://apk.docs.wso2.com/en/latest/api-management-overview/configure-idp/" target="_blank">Kubernetes Gateway Identity Provider Configuration Guide</a> for setup details.
+    - If you are using a third-party IdP, refer to the <a href="https://apk.docs.wso2.com/en/latest/setup/identity-platform/idp/idp-overview/" target="_blank">Kubernetes Gateway Identity Provider Configuration Guide</a> for setup details.
 
 Now that you have a valid access token, you can proceed to deploy and invoke APIs using Kubernetes Gateway.
 
