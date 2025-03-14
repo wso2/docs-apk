@@ -192,6 +192,39 @@ Yes, a custom authorization header can be used. Refer to the <a href="../../deve
 
 ## Troubleshooting
 
+### Troubleshooting Rancher Desktop & Kubernetes
+
+If you experience issues while setting up Kubernetes with Rancher Desktop, try the following solutions:
+
+#### <b>Problem</b>: kubectl config current-context returns "error: current-context is not set"
+
+<b>Fix</b>: Set Rancher Desktop as the active context:
+```bash
+kubectl config use-context rancher-desktop
+```
+
+If that doesn't work, check available contexts:
+```bash
+kubectl config get-contexts
+```
+
+If Rancher Desktop is missing, restart Rancher Desktop and try again.
+
+#### <b>Problem</b>: kubectl cluster-info shows "connection refused"
+
+<b>Fix</b>: Restart Rancher Desktop and ensure Kubernetes is enabled. Then, try:
+```bash
+kubectl config use-context rancher-desktop
+kubectl cluster-info
+```
+
+If that fails, reset the kubeConfig:
+```bash
+mv ~/.kube/config ~/.kube/config.bak
+```
+
+Then, restart Rancher Desktop and try again.
+
 ### 1. Why am I encountering 'Unknown field' errors during the installation process?
 
 If you are seeing errors similar to the ones below:
