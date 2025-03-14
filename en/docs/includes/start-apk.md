@@ -12,7 +12,7 @@ helm repo update
 
 Next, install the Kubernetes Gateway components to set up the necessary infrastructure to manage and deploy APIs within your Kubernetes cluster.
 
-Install the Kubernetes Gateway components and start the WSO2 API Platform For Kubernetes. Consider apk as the <chart-name> for this guide. 
+Install the Kubernetes Gateway components and start the WSO2 API Platform For Kubernetes. Consider <b>apk</b> as the <b><chart-name\></b> for this guide. 
 Use the version of the release you added in Step 1.
 
 ```
