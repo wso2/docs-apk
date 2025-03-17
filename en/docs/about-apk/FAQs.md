@@ -3,7 +3,7 @@
 ## About WSO2 Kubernetes Gateway
 ### 1. What is WSO2 Kubernetes Gateway?
 
-WSO2 Kubernetes Gateway (APK) is WSO2's cloud native API management platform to help you build, deploy, and manage APIs in a cloud environment. It is designed to be highly available and able to handle large numbers of API requests without performance degradation, with features like rate limiting, automatic failover, and load balancing. For more information, refer to the <a href="../../about-apk/what-is-apk" target="_blank">What is Kubernetes Gateway?</a> section.
+WSO2 Kubernetes Gateway is WSO2's cloud native API management platform to help you build, deploy, and manage APIs in a cloud environment. It is designed to be highly available and able to handle large numbers of API requests without performance degradation, with features like rate limiting, automatic failover, and load balancing. For more information, refer to the <a href="../../about-apk/what-is-apk" target="_blank">What is Kubernetes Gateway?</a> section.
 
 ### 2. What is the open source license of the Kubernetes Gateway?
 

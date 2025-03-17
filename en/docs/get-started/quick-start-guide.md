@@ -1,6 +1,6 @@
-# Deploying & Invoking a managed API on WSO2 Kubernetes Gateway (APK)
+# Deploying & Invoking a managed API on WSO2 Kubernetes Gateway
 
-This guide provides a <b>step-by-step</b> approach to installing, deploying, and invoking an API using the <b>WSO2 Kubernetes Gateway (APK)</b>.
+This guide provides a <b>step-by-step</b> approach to installing, deploying, and invoking an API using the <b>WSO2 Kubernetes Gateway </b>.
 
 ## Prerequisites
 
@@ -525,7 +525,7 @@ To invoke the API, replace <your-access-token> with your access token here as we
 
 Congratulations! You have successfully:
 
-- Set up your <b>Kubernetes environment</b> and deployed <b>WSO2 Kubernetes Gateway (APK)</b>.
+- Set up your <b>Kubernetes environment</b> and deployed <b>WSO2 Kubernetes Gateway</b>.
 - Deployed a <b>backend service</b> inside Kubernetes.
 - Configured and deployed a <b>managed API</b> for the backend service.
 - Generated an <b>access token</b> to authenticate API requests.
