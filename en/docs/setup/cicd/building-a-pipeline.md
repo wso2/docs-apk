@@ -15,6 +15,7 @@ Now, let's reimagine the previous scenario with the WSO2 APK and CI/CD.
 4. Once a PR with the new commits has been approved and merged, you can configure a workflow that automatically runs to seamlessly integrate these changes across your environments.
 
 ### Practical Guide
+
 - This example provides a practical setup guide for a GitOps pipeline to automate the deployment of the above mentioned Customer API.
 - APK will be installed in two namespaces - `apk-dev` and `apk-stage`, which serve as the two environments for the organization.
 - The primary API configuration files will be in the main branch of the Github repository.
