@@ -1,10 +1,10 @@
 # Configuration Catalog
 
-This document describes all the Helm related configuration parameters that are used in WSO2 APK.
+This document describes all the Helm related configuration parameters that are used in WSO2 Kubernetes Gateway.
 
 ![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.16.0](https://img.shields.io/badge/AppVersion-1.16.0-informational?style=flat-square)
 
-A Helm chart for APK components
+A Helm chart for Kubernetes Gateway components
 
 ## Requirements
 
