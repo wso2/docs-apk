@@ -22,6 +22,37 @@ operations:
   scopes: []
 ```
 
+- If your `Backend` is secured with a certificate, Apply a `ConfigMap` with the certificate content in the field `ca.crt`. You can use the below sample for reference.
+
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: interceptor-cert
+  namespace: apk
+data:
+  ca.crt: |
+    -----BEGIN CERTIFICATE-----
+    MIIC/TCCAeWgAwIBAgIUd4njv8ySPgo7t0F1e2aJEo9TpQ4wDQYJKoZIhvcNAQEL
+    BQAwDjEMMAoGA1UEAwwDYXBrMB4XDTIzMDMwOTA4MTYzNFoXDTMzMDMwNjA4MTYz
+    NFowDjEMMAoGA1UEAwwDYXBrMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKC
+    AQEA1G9BAcVa3aMemxERY+J8UmH/W8JpcEOtdeNX5YNihnNOXtlvhSzFzOPaK97P
+    r4IqGASbVNiR+1J6WEoi/b6ZJTx0q3YUn0YlQJrz7g20TdoGJjxGVWzn0EW4beHX
+    Gq60vXLf4t3mlLCLGIK3kJTWAoRzd74djV7+5v0Bm/6KBBAWcu5UbOD9KRpOsxGM
+    n3Z0103oAGViyq84QtFvhXVNWttDLe2jU/7o42ddaJozRL9z+1AepdoWPyJZIZqU
+    bXcGAk7idk7c/8dKMxwAm3CV/WvgWrVK5R+YTiGqRf5pd9WWCydEVQkNqCZgTPNy
+    BTRvHo52onPnT6ALtMI0mnWLtQIDAQABo1MwUTAdBgNVHQ4EFgQUzxcA8ceCF5t+
+    vPeOpYbi11CWjwcwHwYDVR0jBBgwFoAUzxcA8ceCF5t+vPeOpYbi11CWjwcwDwYD
+    VR0TAQH/BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAQEAFCKd5x8z64p1j9BnoSAl
+    JJuNz4uWjv/YK94B3s3KUkXOXjHuLuazkSss2UHFb+KeLd6vhimM5QqkFsUEMsnC
+    8RyBZP58kghcLzJld5Uiwlnr/RuOANvcv4eKSavwu5/ABXuMUQb/GvKtWPrr2VbJ
+    ULg3p7NGigXHHg84eVMA7oNX1Z5R2cS4ISklWXm5SpMPh+SNCgqwqhxRNYJ2J0EZ
+    qlp4ofQG3GJ72J+DRHlNujWEskP5IJjw6w8Q0zjXx26yelGe2+TM6BB7PpCN6kNU
+    zHo2k/575bu2iZztnYVmE74H1W3cXJ7c0q82uUFvdW+FlRtm+OPIiIGK74lFiZNB
+    OQ==
+    -----END CERTIFICATE-----
+```
+
 ## Adding API-level interceptors
 
 **Sample code snippets**
