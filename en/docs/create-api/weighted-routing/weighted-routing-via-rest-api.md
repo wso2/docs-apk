@@ -73,7 +73,7 @@ Follow the instructions below to configure weighted routing across multiple endp
     - <a href="../../../get-started/quick-start-guide" target="_blank">Start WSO2 APK</a>.
 
 ### Step 1 - Generate an APK-Conf file
-Create an `apk-conf` file by following the instructions in the <a href="../../../get-started/quick-start-guide/#step-3-create-and-deploy-the-api" target="_blank">Quick Start Guide</a>. Then, modify the generated file as described in the following steps to enable weighted routing.
+Create an `apk-conf` file by following the instructions in the <a href="../../../get-started/quick-start-guide/#step-3-configure-the-managed-api-for-the-backend-service" target="_blank">Quick Start Guide</a>. Then, modify the generated file as described in the following steps to enable weighted routing.
 
 ### Step 2 - Configure the Weights under the Endpoints in APK-Conf
 
@@ -113,33 +113,33 @@ Deploy the sample backend resources using the following command.
 
 === "Command"
     ```command
-    kubectl apply -f "https://raw.githubusercontent.com/wso2/apk/refs/heads/main/developer/tryout/samples/sample-backend-weighted.yaml"
+    kubectl apply -f 'https://raw.githubusercontent.com/wso2/apk/refs/heads/main/developer/tryout/samples/sample-backend-weighted.yaml'
     ```
     
 === "Format"
     ```command
-    kubectl apply -f <path-to-crs>
+    kubectl apply -f '<path-to-crs>'
     ```
 
 #### 2. Deploy the API with APK-Conf
 
-Deploy the API with APK-Conf file by following the steps in <a href="../../../get-started/quick-start-guide/#deploy-the-api-in-kubernetes-gateway" target="_blank">Deploy the API in Kubernetes Gateway</a>
+<a href="../../../get-started/quick-start-guide/#step-4-generate-access-token" target="_blank">Generate an access token</a> and deploy the API with APK-Conf file by following the steps in <a href="../../../get-started/quick-start-guide/#step-5-deploy-and-invoke-the-api" target="_blank">Deploy the API in Kubernetes Gateway</a>
 
 ### Step 4 - Verify the API Invocation
 
-<a href="../../../develop-and-deploy-api/security/generate-access-token" target="_blank">Generate an access token</a> and invoke the API using the following command:
+Invoke the API using the following command along with the access token generated in the previous step:
 
 === "Sample Request"
     ```
-    curl -k --location "https://default.gw.wso2.com:9095/backend-service/1.0/demo" \
-    --header "Host: default.gw.wso2.com" \
-    --header "Authorization: Bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiYXVkIjoiYXVkMSIsICJleHAiOjE3Mzk1MjU1OTUsICJuYmYiOjE3Mzk1MjE5OTUsICJpYXQiOjE3Mzk1MjE5OTUsICJqdGkiOiIwMWVmZWFhZS01NTZhLTExNzgtOTdiYi1lMDJmMjAzYzA4N2QiLCAiY2xpZW50SWQiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAic2NvcGUiOiJhcGs6YXBpX2NyZWF0ZSJ9.WUl6NICtrQbKib5wKJFRV4ekS2-Z1XTVGmU-J5_RZzFhIpVRzJtlgqcia9SGxV5Drgvq15B9u8odl07OWxGxoUfQuDwr5N63BKYP1oVn_zAghX9-16AAWP7iUEdh6OE4abeoI9PXGylgmUarwaLBQZXrHdBWkrVSiHmUuRn3W4jVkdqjjZ7f5XZBimfey2zO-Dm-z95gN3VnyOl46xB9U5LPgXqrjZrDnQrFuokhDEf0YhqTmPXjGv8Xk8kRPVmlqMSnTiOc0O0iMlFZwSMBksBiRQlKVgqB7h66mB5zRx1TWRcEJ5NCkMz101hz5YuGq_rKZiGc1Gq6Tncw3EcVQw"
+    curl -k --location 'https://default.gw.example.com:9095/backend-service/1.0/demo' \
+    --header 'Host: default.gw.example.com' \
+    --header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiYXVkIjoiYXVkMSIsICJleHAiOjE3Mzk1MjU1OTUsICJuYmYiOjE3Mzk1MjE5OTUsICJpYXQiOjE3Mzk1MjE5OTUsICJqdGkiOiIwMWVmZWFhZS01NTZhLTExNzgtOTdiYi1lMDJmMjAzYzA4N2QiLCAiY2xpZW50SWQiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAic2NvcGUiOiJhcGs6YXBpX2NyZWF0ZSJ9.WUl6NICtrQbKib5wKJFRV4ekS2-Z1XTVGmU-J5_RZzFhIpVRzJtlgqcia9SGxV5Drgvq15B9u8odl07OWxGxoUfQuDwr5N63BKYP1oVn_zAghX9-16AAWP7iUEdh6OE4abeoI9PXGylgmUarwaLBQZXrHdBWkrVSiHmUuRn3W4jVkdqjjZ7f5XZBimfey2zO-Dm-z95gN3VnyOl46xB9U5LPgXqrjZrDnQrFuokhDEf0YhqTmPXjGv8Xk8kRPVmlqMSnTiOc0O0iMlFZwSMBksBiRQlKVgqB7h66mB5zRx1TWRcEJ5NCkMz101hz5YuGq_rKZiGc1Gq6Tncw3EcVQw'
     ```
 === "Request Format"
     ```
-    curl -k --location "https://<host>:9095/backend-service/1.0/demo" \
-    --header "Host: default.gw.wso2.com" \
-    --header "Authorization: Bearer <access-token>"
+    curl -k --location 'https://<host>:9095/backend-service/1.0/demo' \
+    --header 'Host: default.gw.example.com' \
+    --header 'Authorization: Bearer <access-token>'
     ```
 
 Once you invoke the above sample request, you will receive one of the following sample responses coming from one of the different endpoints as per the configured weight. (In the sample responses, the `API_version` value is used solely for the purpose of distinguishing between the three backends and does not represent an actual API version in this scenario.)
@@ -176,23 +176,23 @@ You can use the following script to verify the number of responses received from
 
 === "Sample Request"
     ```
-    for i in {1..100}; do curl -s -k --location "https://default.gw.wso2.com:9095/backend-service/1.0/demo" \
-    --header "Host: default.gw.wso2.com" \
-    --header "Authorization: Bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiYXVkIjoiYXVkMSIsICJleHAiOjE3Mzk1MjU1OTUsICJuYmYiOjE3Mzk1MjE5OTUsICJpYXQiOjE3Mzk1MjE5OTUsICJqdGkiOiIwMWVmZWFhZS01NTZhLTExNzgtOTdiYi1lMDJmMjAzYzA4N2QiLCAiY2xpZW50SWQiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAic2NvcGUiOiJhcGs6YXBpX2NyZWF0ZSJ9.WUl6NICtrQbKib5wKJFRV4ekS2-Z1XTVGmU-J5_RZzFhIpVRzJtlgqcia9SGxV5Drgvq15B9u8odl07OWxGxoUfQuDwr5N63BKYP1oVn_zAghX9-16AAWP7iUEdh6OE4abeoI9PXGylgmUarwaLBQZXrHdBWkrVSiHmUuRn3W4jVkdqjjZ7f5XZBimfey2zO-Dm-z95gN3VnyOl46xB9U5LPgXqrjZrDnQrFuokhDEf0YhqTmPXjGv8Xk8kRPVmlqMSnTiOc0O0iMlFZwSMBksBiRQlKVgqB7h66mB5zRx1TWRcEJ5NCkMz101hz5YuGq_rKZiGc1Gq6Tncw3EcVQw" \
-    | grep -oP '"API_version":"\K[0-9]\.[0-9]'; done | sort | uniq -c | awk '{gsub("\\.0","",$2); print $2 " -> " $1}'
+    for i in {1..100}; do curl -s -k --location 'https://default.gw.example.com:9095/backend-service/1.0/demo' \
+    --header 'Host: default.gw.example.com' \
+    --header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiYXVkIjoiYXVkMSIsICJleHAiOjE3Mzk1MjU1OTUsICJuYmYiOjE3Mzk1MjE5OTUsICJpYXQiOjE3Mzk1MjE5OTUsICJqdGkiOiIwMWVmZWFhZS01NTZhLTExNzgtOTdiYi1lMDJmMjAzYzA4N2QiLCAiY2xpZW50SWQiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAic2NvcGUiOiJhcGs6YXBpX2NyZWF0ZSJ9.WUl6NICtrQbKib5wKJFRV4ekS2-Z1XTVGmU-J5_RZzFhIpVRzJtlgqcia9SGxV5Drgvq15B9u8odl07OWxGxoUfQuDwr5N63BKYP1oVn_zAghX9-16AAWP7iUEdh6OE4abeoI9PXGylgmUarwaLBQZXrHdBWkrVSiHmUuRn3W4jVkdqjjZ7f5XZBimfey2zO-Dm-z95gN3VnyOl46xB9U5LPgXqrjZrDnQrFuokhDEf0YhqTmPXjGv8Xk8kRPVmlqMSnTiOc0O0iMlFZwSMBksBiRQlKVgqB7h66mB5zRx1TWRcEJ5NCkMz101hz5YuGq_rKZiGc1Gq6Tncw3EcVQw' \
+    | grep -oP 'API_version":"\K[0-9]\.[0-9]'; done | sort | uniq -c | awk '{gsub("\\.0","",$2); print $2 " -> " $1}'
     ```
 
 === "Sample Response"
     ```
-    1 -> 31
+    1 -> 51
     2 -> 10
-    3 -> 59
+    3 -> 39
     ```
 
 === "Request Format"
     ```
-    for i in {1..100}; do curl -s -k --location "https://<host>:9095/backend-service/1.0/demo" \
-    --header "Host: default.gw.wso2.com" \
-    --header "Authorization: Bearer <access-token>" \
-    | grep -oP '"API_version":"\K[0-9]\.[0-9]'; done | sort | uniq -c | awk '{gsub("\\.0","",$2); print $2 " -> " $1}'
+    for i in {1..100}; do curl -s -k --location 'https://<host>:9095/backend-service/1.0/demo' \
+    --header 'Host: default.gw.example.com' \
+    --header 'Authorization: Bearer <access-token>' \
+    | grep -oP 'API_version":"\K[0-9]\.[0-9]'; done | sort | uniq -c | awk '{gsub("\\.0","",$2); print $2 " -> " $1}'
     ```
