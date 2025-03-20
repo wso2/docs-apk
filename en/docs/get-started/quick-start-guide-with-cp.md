@@ -146,9 +146,8 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
     | apkConfiguration | `EmployeeService.apk-conf` file       | :material-check: |
     | definitionFile   | `EmployeeServiceDefinition.json` file | :material-check: |
 
-2. Set the access token in the Authorization header as a bearer token. This is the access token received by following the steps under the <a href="../quick-start-guide#generate-an-access-token-to-invoke-apis" target="_blank">Generate an access token to invoke APIs section</a> above.
 
-3. You can generate the Kubernetes custom resources as a zip file from the config-deployer service using the following command.
+2. You can generate the Kubernetes custom resources as a zip file from the config-deployer service using the following command.
 
     === "Sample Request"
         ```
@@ -170,13 +169,13 @@ You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-c
         -k --output <path/and/name-for-generated-zip-file.zip>
         ```
 
-4. Once you have generated your K8s artifacts, the next step is to apply them to  the Kubernetes API server.
+3. Once you have generated your K8s artifacts, the next step is to apply them to  the Kubernetes API server.
 
     ```
     kubectl apply -n apk -f <path_to_extracted_zip_file>
     ```
 
-5. Execute the command below. You will be able to see that the `EmployeeServiceAPI` is successfully deployed as shown in the image.
+4. Execute the command below. You will be able to see that the `EmployeeServiceAPI` is successfully deployed as shown in the image.
 
 
     === "Command"
@@ -204,17 +203,17 @@ kubectl get pods -n apk
 
 ## Step 4 - Manage API From Control Plane
 
-1. Login to the Publisher Console ([https://am.wso2.com/publisher](https://am.wso2.com/publisher)) of the WSO2 API Manager.
+1. Login to the Publisher Console (<a href="https://am.wso2.com/publisher" target="_blank">https://am.wso2.com/publisher</a>) of the WSO2 API Manager.
 
     you can see the deploy EmployeeService API as below.
 
     [![ControlPlane API](../assets/img/control-plane/cp-overview.png)](../assets/img/control-plane/cp-overview.png)
 
-2. Once you click the API you will redirect to overciew page.
+2. Once you click the API you will be redirected to the overview page.
 
     [![ControlPlaneOverview API](../assets/img/control-plane/main-overview.png)](../assets/img/control-plane/main-overview.png)
 
-3. Now you can edit portal cnfigurations such as basic info, documentation etc.
+3. Now you can edit portal configurations such as basic info, documentation etc.
 
     [![ControlPlaneBasic API](../assets/img/control-plane/portal-conf.png)](../assets/img/control-plane/portal-conf.png)
 
@@ -223,7 +222,7 @@ kubectl get pods -n apk
 
 ## Step 5 - Create Application and Subscribe to the API
 
-1. Login to the Developer Portal ([https://am.wso2.com/devportal](https://am.wso2.com/devportal)) of the WSO2 API Manager.
+1. Login to the Developer Portal (<a href="https://am.wso2.com/devportal" target="_blank">https://am.wso2.com/devportal</a>) of the WSO2 API Manager.
 2. Click on the `Applications` tab and then use `ADD NEW APPLICATION` option.
 3. Provide the information as given below and click `Save`.
 
