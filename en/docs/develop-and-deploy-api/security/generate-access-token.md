@@ -23,8 +23,8 @@ Execute the following request to generate the access token. Use the base64 encod
 === "Sample Request"
 
     ```
-       curl -k --location 'https://idp.am.wso2.com:9095/oauth2/token' \
-       --header 'Host: idp.am.wso2.com' \
+       curl -k --location 'https://idp.example.com:9095/oauth2/token' \
+       --header 'Host: idp.example.com' \
        --header 'Authorization: Basic NDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyOjRmYmQ2MmVjLWE5MmUtMTFlZC1hZmExLTAyNDJhYzEyMDAwMg==' \
        --header 'Content-Type: application/x-www-form-urlencoded' \
        --data-urlencode 'grant_type=client_credentials' \
