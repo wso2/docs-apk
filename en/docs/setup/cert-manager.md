@@ -92,7 +92,7 @@ This configuration
 - creates the root certificate for the Issuer
 - refers to an Issuer for the certificate management instead of a ClusterIssuer
 
-## 5. Install APK
+## 6. Install APK
 
 Now, install APK using Helm with the modified values.yaml file.
 
@@ -105,7 +105,7 @@ Now, install APK using Helm with the modified values.yaml file.
     helm install <chart-name> <repository-name>/apk-helm --version <version-of-APK> -f <path-to-values.yaml-file> -n <namespace>
     ```
 
-## 5. Verify the Certificate Status
+## 7. Verify the Certificate Status
 
 Once APK is installed, check the certificates by running:
 === "Command"
