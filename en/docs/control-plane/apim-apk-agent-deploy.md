@@ -1,4 +1,4 @@
-## Configuring APIM-APK Agent
+## Configuring Kubernetes Gateway Agent
 
 The agent can be configured in the following ways.
 
@@ -7,9 +7,9 @@ The agent can be configured in the following ways.
 
 ### Common Configurations
 
-1. Configure Control Plane(APIM) related configuration in APIM-APK Agent
+1. Configure Control Plane(APIM) related configuration in Kubernetes Gateway Agent
 
-    Add the following configuration to the values.yaml file to provide control plane related configs to APIM-APK Agent. Here, the host of the APIM-APK Agent should be provided.
+    Add the following configuration to the values.yaml file to provide control plane related configs to Kubernetes Gateway Agent. Here, the host of the Kubernetes Gateway Agent should be provided.
 
     ``` yaml
        controlPlane:
@@ -22,9 +22,9 @@ The agent can be configured in the following ways.
          eventListeningEndpoints: amqp://admin:admin@apim-wso2am-cp-1-service.apk.svc.cluster.local:5672?retries='10'&connectdelay='30'
     ```
 
-   2. Configure Dataplane (APK Gateway) related configuration in APIM-APK Agent
+   2. Configure Dataplane (APK Gateway) related configuration in Kubernetes Gateway Agent
 
-       Add the following configuration to the values.yaml file to provide dataplane related configs to APIM-APK Agent. Here, the host of the APK Gateway should be provided.
+       Add the following configuration to the values.yaml file to provide dataplane related configs to Kubernetes Gateway Agent. Here, the host of the APK Gateway should be provided.
 
        ``` yaml
        dataPlane:

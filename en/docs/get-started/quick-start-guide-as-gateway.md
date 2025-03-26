@@ -1,16 +1,16 @@
 # Portal-Driven Design First API Management 
 
-This section is a step-by-step guide to creating, deploying, and invoking an API using the WSO2 Kuberenetes Gateway with APIM Control Plane. It also covers portal-driven development, including creating an API from the UI.
+This section is a step-by-step guide to creating, deploying, and invoking an API using the WSO2 Kubernetes Gateway with APIM Control Plane. It also covers portal-driven development, including creating an API from the UI.
 
 !!!NOTE
-    To set up the Kuberenetes Gateway as an enterprise version, please follow the steps specified in both the <a href="../../setup/enterprise-apk-install" target="_blank">Install Kuberenetes Gateway Enterprise</a> and <a href="../../setup/enterprise-apim-apk-agent-install" target="_blank">Install Kuberenetes Gateway Agent Enterprise</a>.
+    To set up the Kubernetes Gateway as an enterprise version, please follow the steps specified in both the <a href="../../setup/enterprise-apk-install" target="_blank">Install Kubernetes Gateway Enterprise</a> and <a href="../../setup/enterprise-apim-apk-agent-install" target="_blank">Install Kubernetes Gateway Agent Enterprise</a>.
 
 ## Before you begin...
 
 Install the <a href="../../setup/prerequisites" target="_blank">prerequisites</a> that are required to run the WSO2 API Platform for Kubernetes.
 
 !!!NOTE
-    If you already have an installation of the Kuberenetes Gateway in your cluster, please remove the installation by following the steps specified in the <a href="../../setup/uninstall" target="_blank">Uninstall Kuberenetes Gateway</a>  section.
+    If you already have an installation of the Kubernetes Gateway in your cluster, please remove the installation by following the steps specified in the <a href="../../setup/uninstall" target="_blank">Uninstall Kubernetes Gateway</a>  section.
 
 ### Create Kubernetes namespace
 
@@ -29,9 +29,9 @@ Add a hostname mapping to the ```/etc/hosts``` file as follows.
    | 127.0.0.1 | idp.am.wso2.com     |
    | 127.0.0.1 | default.gw.wso2.com |
 
-## Step 1 - Setup APIM Control Plane with Kuberenetes Gateway
+## Step 1 - Setup APIM Control Plane with Kubernetes Gateway
 
-There are 3 components which you need to setup to get the Kuberenetes Gateway working with APIM. They are,
+There are 3 components which you need to setup to get the Kubernetes Gateway working with APIM. They are,
 
 ### Setup WSO2 API Manager Control Plane 4.5.0
 
@@ -65,12 +65,12 @@ Setup WSO2 API Manager 4.5.0 in K8s cluster using Helm Charts.
 !!! Note
     Please refer to the <a href="../../control-plane/apim-deploy/" target="_blank">Advanced Configuration for APIM</a> for more information.
 
-### Setup WSO2 Kuberenetes Gateway 1.3.0
+### Setup WSO2 Kubernetes Gateway 1.3.0
 
 1. Create a new helm repository with the latest kubernetes gateway release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apk```.
 
     ```console
-    helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.3.0-rc
+    helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.3.0
     ```
 
 2. Execute the following command to update the helm repositories.
@@ -79,15 +79,15 @@ Setup WSO2 API Manager 4.5.0 in K8s cluster using Helm Charts.
     helm repo update
     ```
    
-3. Install the Kuberenetes Gateway components and start WSO2 API Platform For Kubernetes. Consider ```apk``` as the ```<chart-name>``` for this guide. As the ```--version``` of this command, use the version of the release you used in point 1 above. It will take a few minutes for the deployment to complete.
+3. Install the Kubernetes Gateway components and start WSO2 API Platform For Kubernetes. Consider ```apk``` as the ```<chart-name>``` for this guide. As the ```--version``` of this command, use the version of the release you used in point 1 above. It will take a few minutes for the deployment to complete.
 
 !!!NOTE
-    If you already have an installation of the Kuberenetes Gateway in your cluster, please remove the installation by following the steps specified in the <a href="../../setup/uninstall" target="_blank">Uninstall Kuberenetes Gateway</a> section.
+    If you already have an installation of the Kubernetes Gateway in your cluster, please remove the installation by following the steps specified in the <a href="../../setup/uninstall" target="_blank">Uninstall Kubernetes Gateway</a> section.
 
 
 === "Command"
      ```
-     helm install apk wso2apk/apk-helm --version 1.3.0-rc -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/apk/1.3.0-cp-enabled-values.yaml -n apk
+     helm install apk wso2apk/apk-helm --version 1.3.0 -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/apk/1.3.0-cp-enabled-values.yaml -n apk
      ``` 
 === "Format"
      ```
@@ -98,12 +98,12 @@ Setup WSO2 API Manager 4.5.0 in K8s cluster using Helm Charts.
     Please refer to the <a href="../../control-plane/apk-deploy" target="_blank">Advanced Configuration for APK</a> for more information.
 
 
-### Setup WSO2 Kuberenetes Gateway Agent 1.3.0 
+### Setup WSO2 Kubernetes Gateway Agent 1.3.0 
 
 1. Create a new helm repository with the latest kubernetes gateway agent release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apkagent``` for this guide.
 
     ```console
-    helm repo add wso2apkagent https://github.com/wso2/product-apim-tooling/releases/download/1.3.0-rc
+    helm repo add wso2apkagent https://github.com/wso2/product-apim-tooling/releases/download/1.3.0
     ```
 
 2. Execute the following command to update the helm repositories.
@@ -112,11 +112,11 @@ Setup WSO2 API Manager 4.5.0 in K8s cluster using Helm Charts.
     helm repo update
     ```
 
-3. Install the Kuberenetes Gateway Agent components and start WSO2 API Platform For Kubernetes. Consider ```apk``` as the ```<chart-name>``` for this guide. As the ```--version``` of this command, use the version of the release you used in point 1 above. It will take a few minutes for the deployment to complete.
+3. Install the Kubernetes Gateway Agent components and start WSO2 API Platform For Kubernetes. Consider ```apk``` as the ```<chart-name>``` for this guide. As the ```--version``` of this command, use the version of the release you used in point 1 above. It will take a few minutes for the deployment to complete.
 
     === "Command"
         ```
-        helm install apim-apk-agent wso2apkagent/apim-apk-agent --version 1.3.0-rc -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/apim-apk-agent/1.3.0-values.yaml -n apk
+        helm install apim-apk-agent wso2apkagent/apim-apk-agent --version 1.3.0 -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/apim-apk-agent/1.3.0-values.yaml -n apk
         ```
     === "Format"
         ```

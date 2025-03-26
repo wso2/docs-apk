@@ -34,6 +34,6 @@ autoscaling:
 
 This will enable the HPA for gateway and set the minimum and maximum number of replicas to 1 and 5 respectively. The target memory and CPU usage are set to 80% each.
 
-Sample APK deployment with HPA enabled for gateway-runtime-deployment will be as follows.
+Sample Kubernetes Gateway deployment with HPA enabled for gateway-runtime-deployment will be as follows.
 
 [![HPA](../assets/img/setup/hpa-deployment.png)](../assets/img/setup/hpa-deployment.png)

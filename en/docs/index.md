@@ -3,7 +3,7 @@
         <div class="leftContent">
             <div class="about-home">
                     <div>
-                        WSO2 Kubernetes Gateway(APK) is cloud native API management platform. WSO2 Kubernetes Gateway is designed to help you build, deploy, and manage APIs in a cloud environment. Our platform is built on top of a microservices architecture and uses containerization technologies to ensure scalability and flexibility. With features like automatic failover and load balancing, our Kubernetes Gateway platform is designed to be highly available and able to handle large numbers of API requests without performance degradation. We've also added support for continuous delivery and deployment, so you can quickly and easily push updates to your API services.
+                        WSO2 Kubernetes Gateway is cloud native API management platform. WSO2 Kubernetes Gateway is designed to help you build, deploy, and manage APIs in a cloud environment. Our platform is built on top of a microservices architecture and uses containerization technologies to ensure scalability and flexibility. With features like automatic failover and load balancing, our Kubernetes Gateway platform is designed to be highly available and able to handle large numbers of API requests without performance degradation. We've also added support for continuous delivery and deployment, so you can quickly and easily push updates to your API services.
                     </div>
                 <div>
                     <a href="https://wso2.com/blogs/thesource/announcing-wso2-api-platform-for-kubernetes/" class="banner-link"></a>
@@ -28,19 +28,19 @@
                     <h3>Quick Start Guide</h3>
                 </a>
                 <p>
-                    The Quick Start Guide for WSO2 Kubernetes Gateway(APK) is a good starting point for developers and architects aiming to build innovative apps and services using APIs. It offers a comprehensive overview of Kubernetes Gateway platform installation, configuration, and API creation and publishing. The guide is user-friendly, featuring step-by-step instructions, making it ideal for beginners and those wanting to explore advanced features. It is an excellent foundation for building secure, scalable, and robust APIs, enhancing your overall API management capabilities. Get started with quick start guideline to take your API development to the next level.
+                    The Quick Start Guide for WSO2 Kubernetes Gateway is a good starting point for developers and architects aiming to build innovative apps and services using APIs. It offers a comprehensive overview of Kubernetes Gateway platform installation, configuration, and API creation and publishing. The guide is user-friendly, featuring step-by-step instructions, making it ideal for beginners and those wanting to explore advanced features. It is an excellent foundation for building secure, scalable, and robust APIs, enhancing your overall API management capabilities. Get started with quick start guideline to take your API development to the next level.
                 </p>
             </div>
             <div class="linkSet2 middle" onclick="location.href='about-apk/what-is-apk', '_blank')">
                 <a href="{{base_path}}/en/{{site_version}}/about-apk/what-is-apk" target="_blank"><h3>What is WSO2 Kubernetes Gateway?</h3></a>
                 <p>
-                    WSO2 Kubernetes Gateway(APK) provides a complete solution for API management, covering the entire API lifecycle from design and development to publishing and consumption. With its support for API gateway, developer portal, and marketplace capabilities, the platform offers a robust set of tools for managing APIs. Additionally, WSO2 Kubernetes Gateway includes key architectural features specifically designed for Kubernetes environments, making it easy to deploy and manage APIs in a cloud-native way.
+                    WSO2 Kubernetes Gateway provides a complete solution for API management, covering the entire API lifecycle from design and development to publishing and consumption. With its support for API gateway, developer portal, and marketplace capabilities, the platform offers a robust set of tools for managing APIs. Additionally, WSO2 Kubernetes Gateway includes key architectural features specifically designed for Kubernetes environments, making it easy to deploy and manage APIs in a cloud-native way.
                 </p>
             </div>
             <div class="linkSet2 last" onclick="location.href='about-apk/architecture', '_blank')">
                 <a href="about-apk/architecture" target="_blank"><h3>Architecture</h3></a>
                 <p>
-                    WSO2 Kubernetes Gateway(APK) microservices architecture is built on top of a containerized infrastructure, which enables rapid deployment and scalability in Kubernetes environments. The platform's architecture is composed of various components, including API Gateway, Developer Portal, Analytics, Key Manager, and Traffic Manager, all of which can be deployed independently or together to create a comprehensive API management solution. This modular approach allows organizations to choose only the components they need, reducing the platform's overall footprint while still providing enterprise-grade API management capabilities.
+                    WSO2 Kubernetes Gateway microservices architecture is built on top of a containerized infrastructure, which enables rapid deployment and scalability in Kubernetes environments. The platform's architecture is composed of various components, including API Gateway, Developer Portal, Analytics, Key Manager, and Traffic Manager, all of which can be deployed independently or together to create a comprehensive API management solution. This modular approach allows organizations to choose only the components they need, reducing the platform's overall footprint while still providing enterprise-grade API management capabilities.
                 </p>
             </div>
         </div>

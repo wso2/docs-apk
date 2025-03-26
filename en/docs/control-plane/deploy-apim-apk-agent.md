@@ -1,6 +1,6 @@
-# Deploy APIM APK Agent
+# Deploy Kubernetes Gateway Agent
 
-Follow the instructions below to deploy the APIM APK Agent.
+Follow the instructions below to deploy the Kubernetes Gateway Agent.
 
 ## Prerequisites
  
@@ -10,7 +10,7 @@ Follow the instructions below to deploy the APIM APK Agent.
 - CPU: 1 Cores
 - Storage: 5GB
 
-## Deploy APIM APK Agent
+## Deploy Kubernetes Gateway Agent
 
 
 1. Create a new helm repository with the latest kubernetes gateway agent release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apk``` for this guide.

@@ -1,5 +1,5 @@
 
-APK allows users to configure multiple environments on a single gateway, in addition to the per-environment gateway setup. This flexibility enables a single runtime to support multiple environments. With APK, APIs from different environments can be deployed on a shared gateway runtime.
+Kubernetes Gateway allows users to configure multiple environments on a single gateway, in addition to the per-environment gateway setup. This flexibility enables a single runtime to support multiple environments. With Kubernetes Gateway, APIs from different environments can be deployed on a shared gateway runtime.
 
 ### API Creation
 
