@@ -123,7 +123,7 @@ Deploy the sample backend resources using the following command.
 
 #### 2. Deploy the API with APK-Conf
 
-<a href="../../../get-started/quick-start-guide/#step-4-generate-access-token" target="_blank">Generate an access token</a> and deploy the API with APK-Conf file by following the steps in <a href="../../../get-started/quick-start-guide/#step-5-deploy-and-invoke-the-api" target="_blank">Deploy the API in Kubernetes Gateway</a>
+<a href="../../../develop-and-deploy-api/security/generate-access-token" target="_blank">Generate an access token</a> and deploy the API with APK-Conf file by following the steps in <a href="../../../get-started/quick-start-guide/#step-5-deploy-and-invoke-the-api" target="_blank">Deploy the API in Kubernetes Gateway</a>
 
 ### Step 4 - Verify the API Invocation
 
