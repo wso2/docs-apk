@@ -32,13 +32,12 @@ spec:
   apiName: "Azure OpenAI Service API"
   apiType: "REST"
   apiVersion: "1.0.0"
-  basePath: "/QXp1cmUgT3BlbkFJIFNlcnZpY2UgQVBJMjAyNC0wNi0wMQ/1.0.0"
+  basePath: "/azure-open-ai/1.0.0"
   organization: "default"
   isDefaultVersion: false
-  definitionPath: "/docs"
   production:
   - routeRefs:
-    - "8bcdea77634e2d4c827a7ea88f8075c4dd538834-production-httproute-1"
+    - "production-httproute-1"
   apiProperties: []
 ```
 
@@ -47,17 +46,16 @@ spec:
 
 ## Create HTTPRoute CR
 
-This is the resource where you define resources of your API. This `HTTPRoute` is linked to the API by referring to this resource name from the `API` resource.
+This `HTTPRoute` resource is linked to the API by referring to this resource name from the `API` resource.
 
 ```
----
 apiVersion: "gateway.networking.k8s.io/v1beta1"
 kind: "HTTPRoute"
 metadata:
-  name: "8bcdea77634e2d4c827a7ea88f8075c4dd538834-production-httproute-1"
+  name: "production-httproute-1"
 spec:
   hostnames:
-  - "default.gw.wso2.com"
+  - "default.gw.example.com"
   rules:
   - matches:
     - path:
@@ -73,7 +71,7 @@ spec:
     backendRefs:
     - group: "dp.wso2.com"
       kind: "Backend"
-      name: "backend-33eb53282e93f5fd3f26935311af727d58bd42c3-api"
+      name: "backend-api"
   - matches:
     - path:
         type: "RegularExpression"
@@ -88,7 +86,7 @@ spec:
     backendRefs:
     - group: "dp.wso2.com"
       kind: "Backend"
-      name: "backend-33eb53282e93f5fd3f26935311af727d58bd42c3-api"
+      name: "backend-api"
   - matches:
     - path:
         type: "RegularExpression"
@@ -103,7 +101,7 @@ spec:
     backendRefs:
     - group: "dp.wso2.com"
       kind: "Backend"
-      name: "backend-33eb53282e93f5fd3f26935311af727d58bd42c3-api"
+      name: "backend-api"
   - matches:
     - path:
         type: "RegularExpression"
@@ -118,7 +116,7 @@ spec:
     backendRefs:
     - group: "dp.wso2.com"
       kind: "Backend"
-      name: "backend-33eb53282e93f5fd3f26935311af727d58bd42c3-api"
+      name: "backend-api"
   - matches:
     - path:
         type: "RegularExpression"
@@ -133,7 +131,7 @@ spec:
     backendRefs:
     - group: "dp.wso2.com"
       kind: "Backend"
-      name: "backend-33eb53282e93f5fd3f26935311af727d58bd42c3-api"
+      name: "backend-api"
   - matches:
     - path:
         type: "RegularExpression"
@@ -148,7 +146,7 @@ spec:
     backendRefs:
     - group: "dp.wso2.com"
       kind: "Backend"
-      name: "backend-33eb53282e93f5fd3f26935311af727d58bd42c3-api"
+      name: "backend-api"
   parentRefs:
   - group: "gateway.networking.k8s.io"
     kind: "Gateway"
@@ -157,7 +155,7 @@ spec:
 
 ```
 
-Here, we have used `default.gw.wso2.com` as the virtual hostname for this API. The `spec.parentRefs[0]` parameter defines the Gateway to which this `HTTPRoute` is deployed. We have defined a single rule with a `PathPrefix` match type, and the `URLRewrite` filter with `ReplacePrefixMatch` to rewrite the API context prefix so that only the remainder of the path is sent to the actual backend.
+Here, we have used `default.gw.example.com` as the virtual hostname for this API. The `spec.parentRefs[0]` parameter defines the Gateway to which this `HTTPRoute` is deployed. We have defined a single rule with a `PathPrefix` match type, and the `URLRewrite` filter with `ReplacePrefixMatch` to rewrite the API context prefix so that only the remainder of the path is sent to the actual backend.
 
 ## Create Backend CR
 
@@ -167,19 +165,19 @@ In the above created HTTPRoute resource we have referred to a `Backend` resource
 apiVersion: "dp.wso2.com/v1alpha2"
 kind: "Backend"
 metadata:
-  name: "backend-33eb53282e93f5fd3f26935311af727d58bd42c3-api"
+  name: "backend-api"
 spec:
   services:
-  - host: "xxxx.openai.azure.com"
+  - host: "{endpoint}.openai.azure.com"
     port: 443
-  basePath: "/openai/deployments/yyyyyy"
+  basePath: "/openai/deployments/{deployment-id}"
   protocol: "https"
   security:
     apiKey:
       in: "Header"
       name: "api-key"
       valueFrom: 
-        name: "mysecret"
+        name: "azure-ai-secret"
         valueKey: "apiKey"
 ```
 
@@ -193,32 +191,29 @@ The following CR defines the API policy for the API. In this CR, we have overrid
 apiVersion: dp.wso2.com/v1alpha3
 kind: APIPolicy
 metadata:
-  name: ai-provider-8bcdea77634e2d4c827a7ea88f8075c4dd538834-api-policy
-  namespace: apk
+  name: ai-provider-api-policy
 spec:
   override:
     aiProvider:
       name: "ai-provider-azure-ai"   
   targetRef:
-    group: gateway.networking.k8s.io
+    group: dp.wso2.com
     kind: API
-    name:  8bcdea77634e2d4c827a7ea88f8075c4dd538834
+    name:  azure-open-ai
 ```
 
 ## Create Secret CR
 
-The following CR defines the secret that contains the API key for the Azure AI provider.
+Create a secret containing the API Key of the LLM Service Provider using the following command. Replace the ```api key of LLM Service``` value with your API Key generated for LLM Service Provider.
 
-```
-apiVersion: v1
-kind: Secret
-metadata:
-  name: mysecret
-  namespace: apk
-type: Opaque
-data:
-  apiKey: base64_encoded_api_key
-```
+=== "Sample Command"
+    ```bash
+    kubectl create secret generic azure-ai-secret --from-literal=apiKey='xxxxxxxxxxxxxxxxxxx' 
+    ```
+=== "Command Format"
+    ```bash
+    kubectl create secret generic azure-ai-secret --from-literal=apiKey='<<api key of LLM Service>>' --namespace=<<namespace>>
+    ```
 
 ## Create AIRatelimitPolicy CR
 
@@ -229,7 +224,6 @@ apiVersion: dp.wso2.com/v1alpha3
 kind: AIRateLimitPolicy
 metadata:
   name: llm-backend-rl
-  namespace: apk
 spec:
   override:
     organization: default
@@ -242,16 +236,16 @@ spec:
       requestsPerUnit: 6000
       unit: Minute
   targetRef:
+    group: dp.wso2.com
     kind: Backend
-    name: backend-33eb53282e93f5fd3f26935311af727d58bd42c3-api
-    group: gateway.networking.k8s.io
+    name: backend-api
 ```
 
 ## Deploy the CRs
 Once you have designed your APIs using these essential CRs, the next step is to apply them to the Kubernetes API server. APK will process and deploy your APIs seamlessly, taking full advantage of the Kubernetes infrastructure.
 
 ```
-kubectl apply -f <path_to_CR_files> -n apk
+kubectl apply -f <path_to_CR_files>
 ```
 
 ## Verify the API Invocation
@@ -260,7 +254,7 @@ kubectl apply -f <path_to_CR_files> -n apk
 
 === "Sample Request"
     ```
-    curl -X POST "https://default.gw.wso2.com:9095/QXp1cmUgT3BlbkFJIFNlcnZpY2UgQVBJMjAyNC0wNi0wMQ/1.0.0/chat/completions?api-version=2024-06-01" \
+    curl -X POST "https://default.gw.example.com:9095/azure-open-ai/1.0.0/chat/completions?api-version=2024-06-01" \
     -H "Content-Type: application/json" \
     -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiYXVkIjoiYXVkMSIsICJleHAiOjE3MzAwMTU0NDIsICJuYmYiOjE3MzAwMTE4NDIsICJpYXQiOjE3MzAwMTE4NDIsICJqdGkiOiIwMWVmOTQyZi1jODgwLTE0ZDYtYTMzNC0yNTMyMDEzNzhkOWUiLCAiY2xpZW50SWQiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAic2NvcGUiOiJhcGs6YXBpX2NyZWF0ZSJ9.Lumx8tBDTNhwgfUHWwgiSQEwcjz6ZF-5f3UJfJlCNv7feAnIEsdGmb5sFw6wRQBZklSVsZYffj1uK7ManfSR6gfws-W1qo5itwYFixvkoOMU5HcxtVdTsYOl8CzN4u76hbbk_r7I3vov-2g4iMT2Lfu45g1u1sEj1JgjbpOnTZdZ2c2jWHal35idLSEBhULMElGPjce1uCwTS2zsEZQond1q3HvMouIJ58q2oGaD4qpcx-FTlbYKsBD5_h4v4U2PV3kGkxLzos4eXoeM88vbVhIew-z8NxZuxiuP3dS4AAIbHevkQgmueMdN6E0Y5xXoYbcTDVuB8dMYAuctof6b4A' \
     -d '{
