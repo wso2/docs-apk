@@ -81,7 +81,7 @@ spec:
     sectionName: "httpslistener"
 ```
 
-### ConfiMap CR
+### ConfigMap CR
 
 This resource contains the definition for the API found in <a href="https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/definitions/StarWars.graphql" target="_blank">StarWars.graphql</a> encoded in `Base64` format.
 
