@@ -18,7 +18,7 @@ WSO2 Kubernetes Gateway supports several managed Kubernetes services. To ensure 
 WSO2 Kubernetes Gateway is compatible with a variety of Kubernetes distributions. Check the compatible versions for each distribution below to ensure proper functionality.
 
 | Software Application | Cluster Version | Software Version |
-| -------------------- |-----------------|------------------|
+| -------------------- | --------------- | ---------------- |
 | Minikube             | 1.26.3 - 1.32.2 | 1.30.1 - 1.35.0  |
 | Rancher              | 1.27.2 - 1.32.2 | 1.9.1 - 1.18.0   |
 | Kind                 | 1.26.3 - 1.32.2 | 0.24.0           |
@@ -29,7 +29,7 @@ WSO2 Kubernetes Gateway is compatible with a variety of Kubernetes distributions
 Below is the version requirement for Helm to be compatible with WSO2 Kubernetes Gateway.
 
 | Package Manager | Version         |
-| --------------- |-----------------|
+| --------------- | --------------- |
 | Helm            | 3.10.0 - 3.17.1 |
 
 ### Resource Requirements
@@ -43,6 +43,18 @@ We recommend the following minimum resource requirements for running WSO2 Kubern
 | CPU      | 4 Cores             |
 | Memory   | 6 GB                |
 | Storage  | 15 GB               |
+
+**Minimum requirements per Component:**
+
+| Component                               | CPU Requests (m) | Memory Requests (Mi) |
+| --------------------------------------- | ---------------- | -------------------- |
+| **Adapter**                             | 50m              | 64Mi                 |
+| **Common Controller**                   | 50m              | 64Mi                 |
+| **Config Deployer Service**             | 200m             | 512Mi                |
+| **Gateway Runtime (Enforcer + Router)** | 50m              | 128Mi                |
+| **IdP Domain Service**                  | 200m             | 512Mi                |
+| **IdP UI**                              | 50m              | 64Mi                 |
+| **Rate Limiter**                        | 50m              | 64Mi                 |
 
 **Minimum requirements for Kubernetes Gateway Data Plane with APIM Control Plane:**
 
@@ -69,12 +81,12 @@ Refer to the <a href="https://helm.sh/docs/intro/install/" target="_blank">Helm 
 
 In addition to Kubernetes and Helm, WSO2 Kubernetes Gateway requires several other dependencies. **Redis, Cert-manager, and PostgreSQL are automatically handled during Kubernetes Gateway installation**. 
 
-| Dependency    | Version         | Notes                                                                                            |
-| ------------- | --------------- | ------------------------------------------------------------------------------------------------ |
+| Dependency    | Version         | Notes                                                                                                           |
+| ------------- | --------------- | --------------------------------------------------------------------------------------------------------------- |
 | Docker Engine | 27.5.1 or above | Ensure compatibility with Kubernetes Gateway as Kubernetes clusters may have varying Docker versions installed. |
-| Redis         | 20.10.0          | Automatically installed with Kubernetes Gateway; no manual configuration required.                              |
+| Redis         | 20.10.0         | Automatically installed with Kubernetes Gateway; no manual configuration required.                              |
 | Cert-manager  | v1.17.1         | Automatically installed with Kubernetes Gateway; no manual configuration required.                              |
-| PostgreSQL    | 16.4.14        | Automatically installed with Kubernetes Gateway; required only for non-production IdP configurations.           |
+| PostgreSQL    | 16.4.14         | Automatically installed with Kubernetes Gateway; required only for non-production IdP configurations.           |
 
 **Note**: Docker version within the Kubernetes cluster may vary. To ensure compatibility with Kubernetes Gateway, confirm that your Docker version meets the minimum requirement listed above.
 
