@@ -45,6 +45,17 @@ We recommend the following minimum resource requirements for running WSO2 Kubern
 | Storage  | 15 GB               |
 
 
+**Minimum requirements per Component:**
+
+| Component                               | CPU Requests (m) | Memory Requests (Mi) |
+| --------------------------------------- | ---------------- | -------------------- |
+| **Adapter**                             | 50m              | 64Mi                 |
+| **Common Controller**                   | 50m              | 64Mi                 |
+| **Config Deployer Service**             | 200m             | 512Mi                |
+| **Gateway Runtime (Enforcer + Router)** | 50m              | 128Mi                |
+| **IdP Domain Service**                  | 200m             | 512Mi                |
+| **IdP UI**                              | 50m              | 64Mi                 |
+| **Rate Limiter**                        | 50m              | 64Mi                 |
 
 **Minimum requirements for Kubernetes Gateway Data Plane with APIM Control Plane:**
 

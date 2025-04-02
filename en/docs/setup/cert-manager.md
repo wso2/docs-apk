@@ -107,6 +107,7 @@ Now, install APK using Helm with the modified values.yaml file.
 
 ## 7. Verify the Certificate Status
 
+
 Once APK is installed, check the certificates by running:
 === "Command"
     ```
