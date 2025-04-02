@@ -44,6 +44,7 @@ We recommend the following minimum resource requirements for running WSO2 Kubern
 | Memory   | 6 GB                |
 | Storage  | 15 GB               |
 
+
 **Minimum requirements per Component:**
 
 | Component                               | CPU Requests (m) | Memory Requests (Mi) |
