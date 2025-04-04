@@ -202,7 +202,7 @@ Apply the CRs to the Kubernetes API server using the following command.
 
 ### Step 4 - Verify the API Invocation
 
-<a href="../../../get-started/quick-start-guide/#step-4-generate-access-token" target="_blank">Generate an access token</a> and invoke the API using the following command:
+<a href="../../../develop-and-deploy-api/security/generate-access-token" target="_blank">Generate an access token</a> and invoke the API using the following command:
 
 === "Sample Request"
     ```
