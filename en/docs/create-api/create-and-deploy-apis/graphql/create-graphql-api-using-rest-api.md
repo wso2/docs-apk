@@ -40,8 +40,8 @@ Follow the instructions below to design a GraphQL API.
         ```
     === "Sample Request"
         ```
-        curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.3.0/apis/generate-configuration' \
-        --header 'Host: api.am.wso2.com' \
+        curl -k --location 'https://api.example.com:9095/api/configurator/1.3.0/apis/generate-configuration' \
+        --header 'Host: api.example.com' \
         --form 'definition=@"/Users/user/StarWarsAPI.graphql"' \
         --form 'apiType="GRAPHQL"' 
         ```
@@ -182,8 +182,8 @@ Follow the instructions below to design a GraphQL API.
         ```
     === "Sample Request"
         ```
-        curl -k --location 'https://api.am.wso2.com:9095/api/deployer/1.3.0/apis/deploy' \
-        --header 'Host: api.am.wso2.com' \
+        curl -k --location 'https://api.example.com:9095/api/deployer/1.3.0/apis/deploy' \
+        --header 'Host: api.example.com' \
         --header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiZXhwIjoxNjg4MTMxNDQ0LCAibmJmIjoxNjg4MTI3ODQ0LCAiaWF0IjoxNjg4MTI3ODQ0LCAianRpIjoiMDFlZTE3NDEtMDA0Ni0xOGE2LWFhMjEtYmQwYTk4ZjYzNzkwIiwgImNsaWVudElkIjoiNDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyIiwgInNjb3BlIjoiZGVmYXVsdCJ9.RfKQq2fUZKZFAyjimvsPD3cOzaVWazabmq7b1iKYacqIdNjkvO9CQmu7qdtrVNDmdZ_gHhWLXiGhN4UTSCXv_n1ArDnxTLFBroRS8dxuFBZoD9Mpj10vYFSDDhUfFqjgMqtpr30TpDMfee1wkqB6K757ZSjgCDa0hAbv555GkLdZtRsSgR3xWcxPBsIozqAMFDCWoUCbgTQuA5OiEhhpVco2zv4XLq2sz--VRoBieO12C69KnGRmoLuPtvOayInvrnV96Tbt9fR0fLS2l1nvAdFzVou0SIf9rMZLnURLVQQYE64GR14m-cFRYdUI9vTsFHZBl5w-uCLdzMMofzZaLQ' \
         --form 'apkConfiguration=@"/Users/user/StarWars.apk-conf"' \
         --form 'definitionFile=@"/Users/user/StarWarsAPI.graphql"'
@@ -265,15 +265,15 @@ You will need a GraphQL backend in order to invoke the API and get a correct res
 
 Once your GraphQL API has been deployed, you can invoke it. The endpoint of the API would be /`<apk-gateway-host>`/`<api-basepath>`. 
 
-For the above API, the base path is `/starwars/1.0.0`, and if the gateway host is `default.gw.wso2.com` so the API URL would be 
-`/default.gw.wso2.com/starwars/1.0.0`.
+For the above API, the base path is `/starwars/1.0.0`, and if the gateway host is `default.gw.example.com` so the API URL would be 
+`/default.gw.example.com/starwars/1.0.0`.
 
 A sample GraphQL call is provided below.
 
 === "Sample Request"
 ```
-curl --location 'https://default.gw.wso2.com:9095/starwars/1.0.0' \
---header 'Host: default.gw.wso2.com' \
+curl --location 'https://default.gw.example.com:9095/starwars/1.0.0' \
+--header 'Host: default.gw.example.com' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer <access-token>' \
 --data '{"query":"query hero ($episode: Episode) {\n    hero (episode: $episode) {\n        id\n        name\n        appearsIn\n    }\n}","variables":{"episode":"NEWHOPE"}}' -k
