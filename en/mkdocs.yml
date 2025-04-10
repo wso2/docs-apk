@@ -299,6 +299,7 @@ nav:
             - Building a GitOps Workflow for APIs With WSO2 APK: setup/cicd/building-a-pipeline.md
         - Migration: setup/migration.md
         - Customize Configurations: setup/Customize-Configurations.md
+        - Configure Ingress: setup/ingress.md
         - Production Deployment Guidelines: setup/production-deployment-guideline.md
         - Customize Cert-Manager: setup/cert-manager.md
         - Configure HPA for gateway: setup/configure-hpa.md
