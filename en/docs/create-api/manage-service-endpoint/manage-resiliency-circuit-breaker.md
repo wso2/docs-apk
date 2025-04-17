@@ -48,7 +48,7 @@ When deploying APIs add the configurations to the `apk-conf` file as shown in th
 ```
 endpointConfigurations:
  production:
-  - endpoint: "http://employee-service:8080"
+  - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
     resiliency:
       circuitBreaker:
         maxConnectionPools: 1000
@@ -60,36 +60,45 @@ endpointConfigurations:
 An example `apk-conf` file with the above configurations is shown below.
 
 ```
-name: "EmployeeServiceAPI"
-basePath: "/test"
-version: "4.0"
+name: "Sample API"
+basePath: "/sample-api"
+version: "0.1.0"
 type: "REST"
-defaultVersion: true
+defaultVersion: false
+subscriptionValidation: false
 endpointConfigurations:
-  production:
-    - endpoint: "http://employee-service:8080"
-      resiliency:
-        circuitBreaker:
-          maxConnectionPools: 1000
-          maxConnections: 1024
-          maxPendingRequests: 35
-          maxRequests: 75
-          maxRetries: 3
+ production:
+  - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
+    resiliency:
+      circuitBreaker:
+        maxConnectionPools: 1000
+        maxConnections: 1024
+        maxPendingRequests: 35
+        maxRequests: 75
+        maxRetries: 3
 operations:
-  - target: "/employees"
-    verb: "GET"
-    secured: true
-    scopes: []
-  - target: "/employee"
+  - target: "/ai/spelling"
     verb: "POST"
     secured: true
     scopes: []
-  - target: "/employee/{employeeId}"
-    verb: "PUT"
+  - target: "/base64/decode/{value}"
+    verb: "POST"
     secured: true
     scopes: []
-  - target: "/employee/{employeeId}"
-    verb: "DELETE"
+  - target: "/base64/encode/{value}"
+    verb: "POST"
+    secured: true
+    scopes: []
+  - target: "/ip"
+    verb: "GET"
+    secured: true
+    scopes: []
+  - target: "/user-agent"
+    verb: "GET"
+    secured: true
+    scopes: []
+  - target: "/uuid"
+    verb: "GET"
     secured: true
     scopes: []
 ```

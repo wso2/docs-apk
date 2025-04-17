@@ -20,7 +20,7 @@ kubectl get pods
 
 You will need an OpenAPI Specification 3.x that describes the structure and behavior of your API. This file serves as the foundation for configuring your API and is essential for generating the Kubernetes Gateway Configuration file.
 
-Download and save the sample [EmployeeServiceDefinition.json](https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/definitions/EmployeeServiceDefinition.json) file. This is the OAS definition of the API that we are going to deploy in Kubernetes Gateway.
+Download and save the sample [SampleAPIDefinition.json](https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/definitions/SampleAPIDefinition.json) file. This is the OAS definition of the API that we are going to deploy in Kubernetes Gateway.
 
 ## Step 3. Generate Kubernetes Gateway configuration file.
     
@@ -33,7 +33,7 @@ The OpenAPI specification file can be provided as a local file or as a URL conta
     ```bash
     curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.3.0/apis/generate-configuration' \
     --header 'Host: api.am.wso2.com' \
-    --form 'definition=@"/Users/user/EmployeeServiceDefinition.json"'
+    --form 'definition=@"/Users/user/SampleAPIDefinition.json"'
     ```
 
 2. As a URL
@@ -45,35 +45,51 @@ The OpenAPI specification file can be provided as a local file or as a URL conta
     ```bash
     curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.3.0/apis/generate-configuration' \
     --header 'Host: api.am.wso2.com' \
-    ---form 'url="https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/definitions/EmployeeServiceDefinition.json"' \
+    ---form 'url="https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/definitions/SampleAPIDefinition.json"' \
     --form 'apiType="REST"'
     ```
 
     The sample output of the generated Kubernetes Gateway Configuration (apk-conf) file will be as follows.
 
     ```yaml
-    name: "EmployeeServiceAPI"
-    basePath: ""
-    version: "3.14"
+    name: "Sample API"
+    basePath: "/sample-api"
+    version: "0.1.0"
     type: "REST"
     defaultVersion: false
     endpointConfigurations:
         production:
-            - endpoint: "http://employee-service:8080"
+          - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
     operations:
-    - target: "/employees"
-      verb: "GET"
-      secured: true
-      scopes: []
-    - target: "/employee"
-      verb: "POST"
-      secured: true
-      scopes: []
+      - target: "/ai/spelling"
+        verb: "POST"
+        secured: true
+        scopes: []
+      - target: "/base64/decode/{value}"
+        verb: "POST"
+        secured: true
+        scopes: []
+      - target: "/base64/encode/{value}"
+        verb: "POST"
+        secured: true
+        scopes: []
+      - target: "/ip"
+        verb: "GET"
+        secured: true
+        scopes: []
+      - target: "/user-agent"
+        verb: "GET"
+        secured: true
+        scopes: []
+      - target: "/uuid"
+        verb: "GET"
+        secured: true
+        scopes: []
     ```
 
 ## Step 5. Save the response to a file with the extension .apk-conf. 
 
-For example, you can save under the name EmployeeService.apk-conf.
+For example, you can save under the name SampleService.apk-conf.
 
 ## Step 6. Update the Kubernetes Gateway configuration file.
 

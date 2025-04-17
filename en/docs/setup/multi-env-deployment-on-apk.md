@@ -37,14 +37,14 @@ spec:
     - matches:
         - path:
             type: "RegularExpression"
-            value: "/employee"
+            value: "/uuid"
         method: "GET"
         filters:
         - type: "URLRewrite"
         urlRewrite:
             path:
                 type: "ReplaceFullPath"
-                replaceFullPath: "/employee"
+                replaceFullPath: "/uuid"
         backendRefs:
         - group: "dp.wso2.com"
         kind: "Backend"

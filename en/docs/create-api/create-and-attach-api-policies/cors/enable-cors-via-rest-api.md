@@ -51,34 +51,43 @@ Cross-Origin Resource Sharing (CORS) is a mechanism that allows accessing restri
 
 ### Retrieve existing API configuration.
 
-Here, you can save the following content into a file named `EmployeeServiceCORS.apk-conf` to use for the rest of this guide.
+Here, you can save the following content into a file named `SampleServiceCORS.apk-conf` to use for the rest of this guide.
 
   ```
-  name: "EmployeeServiceAPI"
-  basePath: "/test"
-  version: "3.14"
-  type: "REST"
-  defaultVersion: false
-  endpointConfigurations:
-    production:
-      - endpoint: "http://employee-service:8080"
-  operations:
-    - target: "/employees"
-      verb: "GET"
-      secured: true
-      scopes: []
-    - target: "/employee"
-      verb: "POST"
-      secured: true
-      scopes: []
-    - target: "/employee/{employeeId}"
-      verb: "PUT"
-      secured: true
-      scopes: []
-    - target: "/employee/{employeeId}"
-      verb: "DELETE"
-      secured: true
-      scopes: []
+name: "Sample API"
+basePath: "/sample-api"
+version: "0.1.0"
+type: "REST"
+defaultVersion: false
+subscriptionValidation: false
+endpointConfigurations:
+  production:
+    - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
+operations:
+  - target: "/ai/spelling"
+    verb: "POST"
+    secured: true
+    scopes: []
+  - target: "/base64/decode/{value}"
+    verb: "POST"
+    secured: true
+    scopes: []
+  - target: "/base64/encode/{value}"
+    verb: "POST"
+    secured: true
+    scopes: []
+  - target: "/ip"
+    verb: "GET"
+    secured: true
+    scopes: []
+  - target: "/user-agent"
+    verb: "GET"
+    secured: true
+    scopes: []
+  - target: "/uuid"
+    verb: "GET"
+    secured: true
+    scopes: []
   ```
 ### Update the API configuration with the CORS configurations
 
@@ -101,29 +110,38 @@ corsConfiguration:
 Sample APK configuration content after the modification is shown below.
 
 ```
-name: "EmployeeServiceAPI"
-basePath: "/test"
-version: "4.0"
+name: "Sample API"
+basePath: "/sample-api"
+version: "0.1.0"
 type: "REST"
-defaultVersion: true
+defaultVersion: false
+subscriptionValidation: false
 endpointConfigurations:
-  production:
-    - endpoint: "http://employee-service:8080"
+    production:
+      - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
 operations:
-  - target: "/employee"
-    verb: "GET"
-    secured: true
-    scopes: []
-  - target: "/employee"
+  - target: "/ai/spelling"
     verb: "POST"
     secured: true
     scopes: []
-  - target: "/employee/{employeeId}"
-    verb: "PUT"
+  - target: "/base64/decode/{value}"
+    verb: "POST"
     secured: true
     scopes: []
-  - target: "/employee/{employeeId}"
-    verb: "DELETE"
+  - target: "/base64/encode/{value}"
+    verb: "POST"
+    secured: true
+    scopes: []
+  - target: "/ip"
+    verb: "GET"
+    secured: true
+    scopes: []
+  - target: "/user-agent"
+    verb: "GET"
+    secured: true
+    scopes: []
+  - target: "/uuid"
+    verb: "GET"
     secured: true
     scopes: []
 corsConfiguration:
