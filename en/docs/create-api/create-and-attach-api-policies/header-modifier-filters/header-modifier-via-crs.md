@@ -50,14 +50,14 @@ spec:
     - matches:
         - path:
             type: "RegularExpression"
-            value: "/employee"
+            value: "/uuid"
           method: "GET"
       filters:
         - type: "URLRewrite"
           urlRewrite:
             path:
               type: "ReplaceFullPath"
-              replaceFullPath: "/employee"
+              replaceFullPath: "/uuid"
         - type: "RequestHeaderModifier"
           requestHeaderModifier:
             set:
@@ -93,7 +93,7 @@ rules:
  - matches:
      - path:
          type: "RegularExpression"
-         value: "/employee"
+         value: "/uuid"
        method: "GET"
    filters:
      - type: "RequestHeaderModifier"
@@ -110,7 +110,7 @@ rules:
  - matches:
      - path:
          type: "RegularExpression"
-         value: "/employee"
+         value: "/uuid"
        method: "GET"
    filters:
      - type: "RequestHeaderModifier"
@@ -127,7 +127,7 @@ rules:
  - matches:
      - path:
          type: "RegularExpression"
-         value: "/employee"
+         value: "/uuid"
        method: "GET"
    filters:
      - type: "RequestHeaderModifier"
@@ -146,7 +146,7 @@ rules:
  - matches:
      - path:
          type: "RegularExpression"
-         value: "/employee"
+         value: "/uuid"
        method: "GET"
    filters:
      - type: "ResponseHeaderModifier"
@@ -163,7 +163,7 @@ rules:
  - matches:
      - path:
          type: "RegularExpression"
-         value: "/employee"
+         value: "/uuid"
        method: "GET"
    filters:
      - type: "ResponseHeaderModifier"
@@ -180,7 +180,7 @@ rules:
  - matches:
      - path:
          type: "RegularExpression"
-         value: "/employee"
+         value: "/uuid"
        method: "GET"
    filters:
      - type: "ResponseHeaderModifier"

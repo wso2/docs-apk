@@ -8,27 +8,43 @@ The following section explains as to how the APIs in WSO2 APK can be secured usi
 
 - [Create an API](../../../../get-started/quick-start-guide.md)
 
-You can use the apk-conf file which is created in [Create an API](../../../../get-started/quick-start-guide.md) documentation and save this content into a file named `EmployeeServiceAPI.apk-conf`.
+You can use the apk-conf file which is created in [Create an API](../../../../get-started/quick-start-guide.md) documentation and save this content into a file named `SampleServiceAPI.apk-conf`.
 
 Sample content before the modification is shown below.
 
 ```yaml
-name: "EmployeeServiceAPI"
-basePath: "/employee"
-version: "3.14"
+id: "mtls-api"
+name: "Sample API"
+basePath: "/sample-api"
+version: "0.1.0"
 type: "REST"
 defaultVersion: false
-id: "mtls-api"
 endpointConfigurations:
     production:
-        - endpoint: "http://employee-service:8080"
+      - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
 operations:
-  - target: "/employee"
+  - target: "/ai/spelling"
+    verb: "POST"
+    secured: true
+    scopes: []
+  - target: "/base64/decode/{value}"
+    verb: "POST"
+    secured: true
+    scopes: []
+  - target: "/base64/encode/{value}"
+    verb: "POST"
+    secured: true
+    scopes: []
+  - target: "/ip"
     verb: "GET"
     secured: true
     scopes: []
-  - target: "/employee"
-    verb: "POST"
+  - target: "/user-agent"
+    verb: "GET"
+    secured: true
+    scopes: []
+  - target: "/uuid"
+    verb: "GET"
     secured: true
     scopes: []
 ```
@@ -84,22 +100,38 @@ authentication:
 Your final file would look like this.
 
 ```yaml
-name: "EmployeeServiceAPI"
-basePath: "/employee"
-version: "3.14"
+id: "mtls-api"
+name: "Sample API"
+basePath: "/sample-api"
+version: "0.1.0"
 type: "REST"
 defaultVersion: false
-id: "mtls-api"
 endpointConfigurations:
     production:
-        - endpoint: "http://employee-service:8080"
+      - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
 operations:
-  - target: "/employee"
+  - target: "/ai/spelling"
+    verb: "POST"
+    secured: true
+    scopes: []
+  - target: "/base64/decode/{value}"
+    verb: "POST"
+    secured: true
+    scopes: []
+  - target: "/base64/encode/{value}"
+    verb: "POST"
+    secured: true
+    scopes: []
+  - target: "/ip"
     verb: "GET"
     secured: true
     scopes: []
-  - target: "/employee"
-    verb: "POST"
+  - target: "/user-agent"
+    verb: "GET"
+    secured: true
+    scopes: []
+  - target: "/uuid"
+    verb: "GET"
     secured: true
     scopes: []
 authentication:
@@ -116,7 +148,7 @@ authentication:
     * optional - If a certificate is sent, authentication will fail if the certificate is not valid. 
     By default, mTLS is mandatory.
 
-3. Deploy the API.
+1. Deploy the API.
 
 ### 2. Applying mTLS using CRs
 
@@ -164,7 +196,7 @@ By default, the WSO2 APK retrieves the client certificate from the X-WSO2-CLIENT
 To invoke the API, you may use the following curl command structure.
 
   ```
-  curl --location 'https://<host>:9095/test/3.14/employee' \
+  curl --location 'https://<host>:9095/sample-api/0.1.0/uuid' \
   --header 'Host: <host>' \
   --header 'Authorization: Bearer <access-token>'
   --header 'X-WSO2-CLIENT-CERTIFICATE: <certificate-content>'

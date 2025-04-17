@@ -4,33 +4,42 @@ This functionality enables the addition, modification, and removal of request an
 
 ### Step 1 - Get the API configuration
 
-Save the following content into a file named `EmployeeService.apk-conf`. You can use this apk-conf file for the rest of this guide.
+Save the following content into a file named `SampleService.apk-conf`. You can use this apk-conf file for the rest of this guide.
 
 ```
 id: "header-modifier-api"
-name: "EmployeeServiceAPI"
-basePath: "/employees"
-version: "3.14"
+name: "Sample API"
+basePath: "/sample-api"
+version: "0.1.0"
 type: "REST"
 defaultVersion: false
+subscriptionValidation: false
 endpointConfigurations:
     production:
-        - endpoint: "https://httpbin.org/anything"
+      - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
 operations:
-- target: "/employees"
-  verb: "GET"
-  secured: false
-  scopes: []
-- target: "/employee"
+  - target: "/ai/spelling"
     verb: "POST"
     secured: true
     scopes: []
-- target: "/employee/{employeeId}"
-    verb: "PUT"
+  - target: "/base64/decode/{value}"
+    verb: "POST"
     secured: true
     scopes: []
-- target: "/employee/{employeeId}"
-    verb: "DELETE"
+  - target: "/base64/encode/{value}"
+    verb: "POST"
+    secured: true
+    scopes: []
+  - target: "/ip"
+    verb: "GET"
+    secured: true
+    scopes: []
+  - target: "/user-agent"
+    verb: "GET"
+    secured: true
+    scopes: []
+  - target: "/uuid"
+    verb: "GET"
     secured: true
     scopes: []
 ```
@@ -40,7 +49,7 @@ operations:
 A sample header modification configuration is given below.
 
 ```
-  - target: "/employee"
+  - target: "/uuid"
     verb: "GET"
     secured: false
     scopes: []
@@ -59,36 +68,45 @@ The complete apk-conf file with this configuration is given below.
 
 ```
 id: "header-modifier-api"
-name: "EmployeeServiceAPI"
-basePath: "/employees"
-version: "3.14"
+name: "Sample API"
+basePath: "/sample-api"
+version: "0.1.0"
 type: "REST"
 defaultVersion: false
+subscriptionValidation: false
 endpointConfigurations:
     production:
-        - endpoint: "https://httpbin.org/anything"
+      - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
 operations:
-- target: "/employees"
-  verb: "GET"
-  secured: false
-  scopes: []
-  operationPolicies:
-    request:
-      - policyName: AddHeader
-        policyVersion: v1
-        parameters:
-          headerName: "Test-Request-Header"
-          headerValue: "Test-Value"
-- target: "/employee"
+  - target: "/uuid"
+    verb: "GET"
+    secured: false
+    scopes: []
+    operationPolicies:
+      request:
+        - policyName: AddHeader
+          policyVersion: v1
+          parameters:
+            headerName: "Test-Request-Header"
+            headerValue: "Test-Value"
+  - target: "/ai/spelling"
     verb: "POST"
     secured: true
     scopes: []
-- target: "/employee/{employeeId}"
-    verb: "PUT"
+  - target: "/base64/decode/{value}"
+    verb: "POST"
     secured: true
     scopes: []
-- target: "/employee/{employeeId}"
-    verb: "DELETE"
+  - target: "/base64/encode/{value}"
+    verb: "POST"
+    secured: true
+    scopes: []
+  - target: "/ip"
+    verb: "GET"
+    secured: true
+    scopes: []
+  - target: "/user-agent"
+    verb: "GET"
     secured: true
     scopes: []
 ```
@@ -114,7 +132,7 @@ Follow the <a href="../../../../develop-and-deploy-api/security/generate-access-
 You can invoke the API using the following command.
 
 ```
-curl --location 'https://default.gw.wso2.com:9095/employees/1.0/employee' \
+curl --location 'https://default.gw.wso2.com:9095/sample-api/0.1.0/uuid' \
 --header 'Host: default.gw.wso2.com' \
 --header 'Authorization: Bearer <accessToken>
 ```
@@ -128,7 +146,7 @@ Since this guide uses the <a href="https://httpbin.org/anything" target="_blank"
 ##### 1. Add Request Header
 
 ```
-- target: "/employee"
+- target: "/uuid"
   verb: "GET"
   secured: false
   scopes: []
@@ -144,7 +162,7 @@ Since this guide uses the <a href="https://httpbin.org/anything" target="_blank"
 ##### 2. Update Request Header
 
 ```
-- target: "/employee"
+- target: "/uuid"
   verb: "GET"
   secured: false
   scopes: []
@@ -160,7 +178,7 @@ Since this guide uses the <a href="https://httpbin.org/anything" target="_blank"
 ##### 3. Remove Request Header
 
 ```
-- target: "/employee"
+- target: "/uuid"
   verb: "GET"
   secured: false
   scopes: []
@@ -177,7 +195,7 @@ Since this guide uses the <a href="https://httpbin.org/anything" target="_blank"
 ##### 1. Add Response Header
 
 ```
-- target: "/employee"
+- target: "/uuid"
   verb: "GET"
   secured: false
   scopes: []
@@ -193,7 +211,7 @@ Since this guide uses the <a href="https://httpbin.org/anything" target="_blank"
 ##### 2. Update Response Header
 
 ```
-- target: "/employee"
+- target: "/uuid"
   verb: "GET"
   secured: false
   scopes: []
@@ -209,7 +227,7 @@ Since this guide uses the <a href="https://httpbin.org/anything" target="_blank"
 ##### 3. Remove Response Header
 
 ```
-- target: "/employee"
+- target: "/uuid"
   verb: "GET"
   secured: false
   scopes: []
@@ -225,7 +243,7 @@ Since this guide uses the <a href="https://httpbin.org/anything" target="_blank"
 ##### 1. Add Request Header
 
 ```
-- target: "/employee"
+- target: "/uuid"
   verb: "GET"
   secured: false
   scopes: []
@@ -241,7 +259,7 @@ apiPolicies:
 ##### 2. Update Request Header
 
 ```
-- target: "/employee"
+- target: "/uuid"
   verb: "GET"
   secured: false
   scopes: []
@@ -257,7 +275,7 @@ apiPolicies:
 ##### 3. Remove Request Header
 
 ```
-- target: "/employee"
+- target: "/uuid"
   verb: "GET"
   secured: false
   scopes: []
@@ -275,7 +293,7 @@ apiPolicies:
 ##### 1. Add Response Header
 
 ```
-- target: "/employee"
+- target: "/uuid"
   verb: "GET"
   secured: false
   scopes: []
@@ -291,7 +309,7 @@ apiPolicies:
 ##### 2. Update Response Header
 
 ```
-- target: "/employee"
+- target: "/uuid"
   verb: "GET"
   secured: false
   scopes: []
@@ -307,7 +325,7 @@ apiPolicies:
 ##### 3. Remove Response Header
 
 ```
-- target: "/employee"
+- target: "/uuid"
   verb: "GET"
   secured: false
   scopes: []

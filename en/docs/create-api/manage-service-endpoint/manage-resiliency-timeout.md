@@ -43,33 +43,42 @@ endpointConfigurations:
 An example `apk-conf` file with the above configurations is shown below.
 
 ```
-name: "EmployeeServiceAPI"
-basePath: "/test"
-version: "4.0"
+name: "Sample API"
+basePath: "/sample-api"
+version: "0.1.0"
 type: "REST"
-defaultVersion: true
+defaultVersion: false
+subscriptionValidation: false
 endpointConfigurations:
   production:
-    - endpoint: "http://employee-service:8080"
+    - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
       resiliency:
         timeout:
           downstreamRequestIdleTimeout: 45
           upstreamResponseTimeout: 10
 operations:
-  - target: "/employees"
-    verb: "GET"
-    secured: true
-    scopes: []
-  - target: "/employee"
+  - target: "/ai/spelling"
     verb: "POST"
     secured: true
     scopes: []
-  - target: "/employee/{employeeId}"
-    verb: "PUT"
+  - target: "/base64/decode/{value}"
+    verb: "POST"
     secured: true
     scopes: []
-  - target: "/employee/{employeeId}"
-    verb: "DELETE"
+  - target: "/base64/encode/{value}"
+    verb: "POST"
+    secured: true
+    scopes: []
+  - target: "/ip"
+    verb: "GET"
+    secured: true
+    scopes: []
+  - target: "/user-agent"
+    verb: "GET"
+    secured: true
+    scopes: []
+  - target: "/uuid"
+    verb: "GET"
     secured: true
     scopes: []
 ```

@@ -7,8 +7,8 @@
    curl --location 'https://api.am.wso2.com:9095/api/configurator/1.3.0/apis/generate-k8s-resources?organization=carbon.super' \
    --header 'Content-Type: multipart/form-data' \
    --header 'Accept: application/zip' \
-   --form 'apkConfiguration=@"/Users/user/EmployeeService.apk-conf"' \
-   --form 'definitionFile=@"/Users/user/EmployeeServiceDefinition.json"' \
+   --form 'apkConfiguration=@"/Users/user/SampleService.apk-conf"' \
+   --form 'definitionFile=@"/Users/user/SampleAPIDefinition.json"' \
    -k --output ./api-crds.zip
    ```
 3. Deploy the generated K8s artifacts to the Kubernetes API server.

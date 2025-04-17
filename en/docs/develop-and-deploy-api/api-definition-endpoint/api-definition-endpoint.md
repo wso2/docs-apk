@@ -4,36 +4,44 @@ API Definition Endpoint is a way to retrieve the openapi definition. By default,
 
 ## Before you begin
 
-You can use the apk-conf file which is created in <a href="../../../get-started/quick-start-guide" target="_blank">Create an API</a> documentation and save this content into a file named `EmployeeServiceEndpoints.apk-conf`.
+You can use the apk-conf file which is created in <a href="../../../get-started/quick-start-guide" target="_blank">Create an API</a> documentation and save this content into a file named `SampleServiceEndpoints.apk-conf`.
 
 Sample content before the modification is shown below.
 
    ```yaml
-   name: "EmployeeServiceAPI"
-   basePath: "/test"
-   version: "3.14"
-   type: "REST"
-   defaultVersion: false
-   endpointConfigurations:
-    production:
-      - endpoint: "http://employee-service:8080"
-   operations:
-   - target: "/employees"
-     verb: "GET"
-     secured: true
-     scopes: []
-   - target: "/employee"
-     verb: "POST"
-     secured: true
-     scopes: []
-   - target: "/employee/{employeeId}"
-     verb: "PUT"
-     secured: true
-     scopes: []
-   - target: "/employee/{employeeId}"
-     verb: "DELETE"
-     secured: true
-     scopes: []
+    name: "Sample API"
+    basePath: "/sample-api"
+    version: "0.1.0"
+    type: "REST"
+    defaultVersion: false
+    endpointConfigurations:
+        production:
+          - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
+    operations:
+      - target: "/ai/spelling"
+        verb: "POST"
+        secured: true
+        scopes: []
+      - target: "/base64/decode/{value}"
+        verb: "POST"
+        secured: true
+        scopes: []
+      - target: "/base64/encode/{value}"
+        verb: "POST"
+        secured: true
+        scopes: []
+      - target: "/ip"
+        verb: "GET"
+        secured: true
+        scopes: []
+      - target: "/user-agent"
+        verb: "GET"
+        secured: true
+        scopes: []
+      - target: "/uuid"
+        verb: "GET"
+        secured: true
+        scopes: []
    ```
 ## Default API Definition Endpoint
 
@@ -43,7 +51,7 @@ You can execute following command to retrieve the Open API Definition for a part
 
 === "Sample Request"
     ```
-        curl -k --location 'https://default.gw.wso2.com:9095/test/3.14/api-definition' \
+        curl -k --location 'https://default.gw.wso2.com:9095/sample-api/0.1.0/api-definition' \
         --header 'Host: default.gw.wso2.com' \
         --header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiZXhwIjoxNjg4MTMxNDQ0LCAibmJmIjoxNjg4MTI3ODQ0LCAiaWF0IjoxNjg4MTI3ODQ0LCAianRpIjoiMDFlZTE3NDEtMDA0Ni0xOGE2LWFhMjEtYmQwYTk4ZjYzNzkwIiwgImNsaWVudElkIjoiNDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyIiwgInNjb3BlIjoiZGVmYXVsdCJ9.RfKQq2fUZKZFAyjimvsPD3cOzaVWazabmq7b1iKYacqIdNjkvO9CQmu7qdtrVNDmdZ_gHhWLXiGhN4UTSCXv_n1ArDnxTLFBroRS8dxuFBZoD9Mpj10vYFSDDhUfFqjgMqtpr30TpDMfee1wkqB6K757ZSjgCDa0hAbv555GkLdZtRsSgR3xWcxPBsIozqAMFDCWoUCbgTQuA5OiEhhpVco2zv4XLq2sz--VRoBieO12C69KnGRmoLuPtvOayInvrnV96Tbt9fR0fLS2l1nvAdFzVou0SIf9rMZLnURLVQQYE64GR14m-cFRYdUI9vTsFHZBl5w-uCLdzMMofzZaLQ'
     ```
@@ -63,32 +71,40 @@ Update the APK configuration as the following to add API Definition Endpoint as 
 Here, we have added a property named `definitionPath` with the new value `/docs`.
 
    ```yaml
-   name: "EmployeeServiceAPI"
-   basePath: "/test"
-   version: "3.14"
-   type: "REST"
-   definitionPath: "/docs"
-   defaultVersion: false
-   endpointConfigurations:
-     production:
-       - endpoint: "http://employee-service:8080"
-   operations:
-     - target: "/employees"
-       verb: "GET"
-       secured: true
-       scopes: []
-     - target: "/employee"
-       verb: "POST"
-       secured: true
-       scopes: []
-     - target: "/employee/{employeeId}"
-       verb: "PUT"
-       secured: true
-       scopes: []
-     - target: "/employee/{employeeId}"
-       verb: "DELETE"
-       secured: true
-       scopes: []
+  name: "Sample API"
+  basePath: "/sample-api"
+  version: "0.1.0"
+  type: "REST"
+  definitionPath: "/docs"
+  defaultVersion: false
+  endpointConfigurations:
+      production:
+        - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
+  operations:
+    - target: "/ai/spelling"
+      verb: "POST"
+      secured: true
+      scopes: []
+    - target: "/base64/decode/{value}"
+      verb: "POST"
+      secured: true
+      scopes: []
+    - target: "/base64/encode/{value}"
+      verb: "POST"
+      secured: true
+      scopes: []
+    - target: "/ip"
+      verb: "GET"
+      secured: true
+      scopes: []
+    - target: "/user-agent"
+      verb: "GET"
+      secured: true
+      scopes: []
+    - target: "/uuid"
+      verb: "GET"
+      secured: true
+      scopes: []
    ```
 
 ## Deploy APK configuration
@@ -101,16 +117,16 @@ Now you can execute following command to retrieve the Open API Definition using 
 
 === "Request"
     ```
-        curl --location 'https://<host>:9095/test/3.14/docs' \
+        curl --location 'https://<host>:9095/sample-api/0.1.0/docs' \
         --header 'Host: <host>' \
         --header 'Authorization: Bearer <access-token>'
     ```
 === "Sample Request"
     ```
-        curl -k --location 'https://default.gw.wso2.com:9095/test/3.14/docs' \
+        curl -k --location 'https://default.gw.wso2.com:9095/sample-api/0.1.0/docs' \
         --header 'Host: default.gw.wso2.com' \
         --header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiZXhwIjoxNjg4MTMxNDQ0LCAibmJmIjoxNjg4MTI3ODQ0LCAiaWF0IjoxNjg4MTI3ODQ0LCAianRpIjoiMDFlZTE3NDEtMDA0Ni0xOGE2LWFhMjEtYmQwYTk4ZjYzNzkwIiwgImNsaWVudElkIjoiNDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyIiwgInNjb3BlIjoiZGVmYXVsdCJ9.RfKQq2fUZKZFAyjimvsPD3cOzaVWazabmq7b1iKYacqIdNjkvO9CQmu7qdtrVNDmdZ_gHhWLXiGhN4UTSCXv_n1ArDnxTLFBroRS8dxuFBZoD9Mpj10vYFSDDhUfFqjgMqtpr30TpDMfee1wkqB6K757ZSjgCDa0hAbv555GkLdZtRsSgR3xWcxPBsIozqAMFDCWoUCbgTQuA5OiEhhpVco2zv4XLq2sz--VRoBieO12C69KnGRmoLuPtvOayInvrnV96Tbt9fR0fLS2l1nvAdFzVou0SIf9rMZLnURLVQQYE64GR14m-cFRYdUI9vTsFHZBl5w-uCLdzMMofzZaLQ'
     ```
 
 !!!NOTE
-    In a default API, the API Definition Endpoint is also available at the following path: `https://<host>:9095/test/docs`
+    In a default API, the API Definition Endpoint is also available at the following path: `https://<host>:9095/sample-api/docs`

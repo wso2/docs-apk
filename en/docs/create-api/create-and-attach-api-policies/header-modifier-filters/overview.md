@@ -4,7 +4,7 @@ The header modification functionality allows the addition, modification, and rem
 
 Header modification can also be achieved using interceptors, as detailed in <a href="../../../../create-api/create-and-attach-api-policies/interceptors/interceptors-overview" target="_blank">this section</a>. In a scenario where both interceptors and header modification policies are used, **the header modification filters will be applied after the interceptor.** For example, consider the following scenario.
 
-Assume the GET /employee route is configured with the following.
+Assume the GET /uuid route is configured with the following.
 
 1. An interceptor policy to add a header with the name "Interceptor-Header" and the value "Interceptor-Value".
 2. A header modification policy to add a header with the name "Modifier-Header" and value "Modifier-Value".
