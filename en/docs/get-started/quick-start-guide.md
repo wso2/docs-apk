@@ -72,7 +72,7 @@ Download and save the <b><a target="_blank" href="https://raw.githubusercontent.
 Use the following command to download the file:
 
 ```
-curl -O https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/definitions/SampleAPIDefinition.json
+curl -O https://raw.githubusercontent.com/wso2/docs-apk/refs/heads/main/en/docs/assets/files/get-started/SampleAPIDefinition.json
 ```
 
 Then, verify the file exists:
