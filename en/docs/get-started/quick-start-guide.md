@@ -66,199 +66,381 @@ Ensure that Helm is installed correctly by running the following command:
 
 {!includes/start-apk.md!}
 
-## Step 2 - Deploy Backend Service
+## Step 3: Configure the Managed API for a Sample Backend Service
 
-Before deploying an API in Kubernetes Gateway, you need a backend service that the API will interact with. In this guide, we'll deploy a sample backend service inside Kubernetes that provides Employee information using a YAML configuration file.
-
-Run the following command to deploy the backend service:
-
-```
-kubectl apply -f https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/qsg-sample-backend.yaml
-```
-
-Check if the backend service is running:
-
-=== "Request"
-    ```
-    kubectl get pods
-    ```
-=== "Sample Response"
-    ```
-    employee-service-deployment-5bfdf5f868-jrdg7                 1/1     Running
-    ```
-
-## Step 3: Configure the Managed API for the Backend Service
-
-Download and save the <b>EmployeeServiceDefinition.json</b> file, which contains the OpenAPI Specification (OAS) definition for the API that corresponds to the backend service that we previously deployed. This definition will be used to deploy the API in Kubernetes Gateway.
+Download and save the <b><a target="_blank" href="https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/definitions/SampleAPIDefinition.json">SampleAPIDefinition.json</a></b> file, which contains the OpenAPI Specification (OAS) definition for the API that corresponds to the backend service that we previously deployed. This definition will be used to deploy the API in Kubernetes Gateway.
 Use the following command to download the file:
 
 ```
-curl -O https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/definitions/EmployeeServiceDefinition.json
+curl -O https://raw.githubusercontent.com/wso2/docs-apk/refs/heads/main/en/docs/assets/files/get-started/SampleAPIDefinition.json
 ```
 
 Then, verify the file exists:
 
 === "Command"
     ```
-    cat EmployeeServiceDefinition.json
+    cat SampleAPIDefinition.json
     ```
 === "Response"
     ```
     {
         "openapi": "3.0.1",
         "info": {
-            "title": "EmployeeServiceAPI",
-            "version": "3.14"
+            "title": "Sample API",
+            "description": "A set of helpers inspired by httpbin.org",
+            "version": "0.1.0"
         },
         "servers": [
             {
-                "url": "http://employee-service:8080",
-                "description": "Server URL",
-                "variables": {}
+            "url": "https://dev-tools.wso2.com/gs/helpers/v1.0"
+            }
+        ],
+        "tags": [
+            {
+            "name": "echo",
+            "description": "Echo data from the HTTP request"
+            },
+            {
+            "name": "dynamic",
+            "description": "Dynamic data generation"
+            },
+            {
+            "name": "convert",
+            "description": "Convert data across various formats"
+            },
+            {
+            "name": "AI",
+            "description": "Leverage AI to transform and validate data"
             }
         ],
         "paths": {
-            "/employees": {
-                "get": {
-                    "tags": [
-                        "employee-controller"
-                    ],
-                    "operationId": "getEmployees",
-                    "parameters": [
-                        {
-                            "name": "id",
-                            "in": "query",
-                            "required": true,
-                            "schema": {
-                                "type": "string"
-                            }
-                        }
-                    ],
-                    "responses": {
-                        "200": {
-                            "description": "default response",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "type": "array",
-                                        "items": {
-                                            "$ref": "#/components/schemas/Employee"
-                                        }
-                                    }
-                                }
-                            }
-                        }
+            "/ai/spelling": {
+            "post": {
+                "operationId": "postAiSpelling",
+                "requestBody": {
+                "content": {
+                    "application/json": {
+                    "schema": {
+                        "$ref": "#/components/schemas/ai_spelling_payload"
+                    }
                     }
                 },
-                "post": {
-                    "tags": [
-                        "employee-controller"
-                    ],
-                    "operationId": "addEmployee",
-                    "requestBody": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Employee"
-                                }
-                            }
-                        }
-                    },
-                    "responses": {
-                        "200": {
-                            "description": "default response",
-                            "content": {
-                                "*/*": {
-                                    "schema": {
-                                        "$ref": "#/components/schemas/Employee"
-                                    }
-                                }
-                            }
+                "required": true
+                },
+                "responses": {
+                "200": {
+                    "description": "Ok",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "$ref": "#/components/schemas/ai_spelling_response"
                         }
                     }
+                    }
+                },
+                "400": {
+                    "description": "BadRequest",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "oneOf": [
+                            {
+                            "$ref": "#/components/schemas/error_response"
+                            },
+                            {
+                            "$ref": "#/components/schemas/ErrorPayload"
+                            }
+                        ]
+                        }
+                    }
+                    }
+                },
+                "500": {
+                    "description": "InternalServerError",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "$ref": "#/components/schemas/ErrorPayload"
+                        }
+                    }
+                    }
                 }
+                }
+            }
             },
-            "/employee/{employeeId}": {
-                "put": {
-                    "tags": [
-                        "employee-controller"
-                    ],
-                    "operationId": "editEmployee",
-                    "parameters": [
-                        {
-                            "name": "employeeId",
-                            "in": "path",
-                            "required": true,
-                            "schema": {
-                                "type": "integer",
-                                "format": "int32"
-                            }
-                        }
-                    ],
-                    "responses": {
-                        "200": {
-                            "description": "default response",
-                            "content": {
-                                "*/*": {
-                                    "schema": {
-                                        "$ref": "#/components/schemas/Employee"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "delete": {
-                    "tags": [
-                        "employee-controller"
-                    ],
-                    "operationId": "deleteEmployee",
-                    "parameters": [
-                        {
-                            "name": "employeeId",
-                            "in": "path",
-                            "required": true,
-                            "schema": {
-                                "type": "integer",
-                                "format": "int32"
-                            }
-                        }
-                    ],
-                    "responses": {
-                        "200": {
-                            "description": "default response",
-                            "content": {
-                                "*/*": {
-                                    "schema": {
-                                        "$ref": "#/components/schemas/Employee"
-                                    }
-                                }
-                            }
-                        }
+            "/base64/decode/{value}": {
+            "post": {
+                "tags": [
+                "convert"
+                ],
+                "summary": "Decodes base64url-encoded string.",
+                "parameters": [
+                {
+                    "name": "value",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                    "maxLength": 500,
+                    "pattern": "^[0-9a-zA-Z=]+$",
+                    "type": "string",
+                    "default": "QmFsbGVyaW5hIGlzIGF3ZXNvbWUh"
                     }
                 }
+                ],
+                "responses": {
+                "200": {
+                    "description": "Decoded base64 content.",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "$ref": "#/components/schemas/base64_response"
+                        }
+                    }
+                    }
+                },
+                "400": {
+                    "$ref": "#/components/responses/error"
+                }
+                }
+            }
+            },
+            "/base64/encode/{value}": {
+            "post": {
+                "tags": [
+                "convert"
+                ],
+                "summary": "Base64 encode input string .",
+                "parameters": [
+                {
+                    "name": "value",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                    "maxLength": 500,
+                    "pattern": "^[0-9a-zA-Z\\s!$-_]+$",
+                    "type": "string",
+                    "default": "Ballerina is awesome!"
+                    }
+                }
+                ],
+                "responses": {
+                "200": {
+                    "description": "Encoded base64 content.",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "$ref": "#/components/schemas/base64_response"
+                        }
+                    }
+                    }
+                },
+                "400": {
+                    "$ref": "#/components/responses/error"
+                }
+                }
+            }
+            },
+            "/ip": {
+            "get": {
+                "tags": [
+                "echo"
+                ],
+                "summary": "Returns the client IP address.",
+                "responses": {
+                "200": {
+                    "description": "Get the client IP address.",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "$ref": "#/components/schemas/ip_response"
+                        }
+                    }
+                    }
+                },
+                "404": {
+                    "$ref": "#/components/responses/error"
+                }
+                }
+            }
+            },
+            "/user-agent": {
+            "get": {
+                "tags": [
+                "echo"
+                ],
+                "summary": "Return the User-Agent header value",
+                "responses": {
+                "200": {
+                    "description": "Get the request User-Agent header value.",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "$ref": "#/components/schemas/ua_response"
+                        }
+                    }
+                    }
+                },
+                "404": {
+                    "$ref": "#/components/responses/error"
+                }
+                }
+            }
+            },
+            "/uuid": {
+            "get": {
+                "tags": [
+                "dynamic"
+                ],
+                "summary": "Returns a unique ID as per UUID v4 spec",
+                "responses": {
+                "200": {
+                    "description": "Get a UUID V4.",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "$ref": "#/components/schemas/uuid_response"
+                        }
+                    }
+                    }
+                },
+                "default": {
+                    "$ref": "#/components/responses/error"
+                }
+                }
+            }
             }
         },
         "components": {
             "schemas": {
-                "Employee": {
-                    "type": "object",
-                    "properties": {
-                        "empId": {
-                            "type": "string"
-                        },
-                        "name": {
-                            "type": "string"
-                        },
-                        "designation": {
-                            "type": "string"
-                        },
-                        "salary": {
-                            "type": "number",
-                            "format": "double"
-                        }
+            "ip_response": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                "origin": {
+                    "maxLength": 64,
+                    "pattern": "^[0-9\\.]+$",
+                    "type": "string"
+                }
+                }
+            },
+            "base64_response": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                "value": {
+                    "maxLength": 100,
+                    "pattern": "^[0-9\\.]+$",
+                    "type": "string"
+                }
+                }
+            },
+            "ua_response": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                "user-agent": {
+                    "maxLength": 1000,
+                    "pattern": "^[0-9a-zA-Z_\\-\\/,();\\.\\s]+$",
+                    "type": "string"
+                }
+                }
+            },
+            "uuid_response": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                "uuid": {
+                    "maxLength": 36,
+                    "minLength": 36,
+                    "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$",
+                    "type": "string"
+                }
+                }
+            },
+            "error_response": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                "message": {
+                    "maxLength": 50,
+                    "type": "string"
+                },
+                "code": {
+                    "maxLength": 10,
+                    "type": "string"
+                }
+                }
+            },
+            "ai_spelling_payload": {
+                "required": [
+                "text"
+                ],
+                "type": "object",
+                "properties": {
+                "text": {
+                    "maxLength": 100,
+                    "pattern": "^[\\w\\s]+$",
+                    "type": "string"
+                }
+                }
+            },
+            "ai_spelling_response": {
+                "required": [
+                "correctedText"
+                ],
+                "type": "object",
+                "properties": {
+                "correctedText": {
+                    "maxLength": 150,
+                    "pattern": "^[\\w\\s]+$",
+                    "type": "string"
+                }
+                }
+            },
+            "ErrorPayload": {
+                "required": [
+                "message",
+                "method",
+                "path",
+                "reason",
+                "status",
+                "timestamp"
+                ],
+                "type": "object",
+                "properties": {
+                "timestamp": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "reason": {
+                    "type": "string"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "path": {
+                    "type": "string"
+                },
+                "method": {
+                    "type": "string"
+                }
+                }
+            }
+            },
+            "responses": {
+            "error": {
+                "description": "Response for any error",
+                "content": {
+                "application/json": {
+                    "schema": {
+                    "$ref": "#/components/schemas/error_response"
                     }
                 }
+                }
+            }
             }
         }
     }
@@ -270,15 +452,15 @@ Then, verify the file exists:
 In addition to the OpenAPI definition file, we need an Kubernetes Gateway configuration file (apk-conf) that defines metadata and settings for the API. Kubernetes Gateway provides a configuration service that automatically generates this file from the OpenAPI definition.
 Execute the following command to generate the apk-conf file. Use the values provided in the table below in the body of your request.
 
-| Field      | Value                                                                                                                     |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------- |
-| definition | `EmployeeServiceDefinition.json` file that was downloaded at the beginning of [Step 3](#step-3-create-and-deploy-the-api) |
+| Field      | Value                                                                                                               |
+| ---------- | ------------------------------------------------------------------------------------------------------------------- |
+| definition | `SampleAPIDefinition.json` file that was downloaded at the beginning of [Step 3](#step-3-create-and-deploy-the-api) |
 
 === "Sample Request"
     ```
     curl -k --location 'https://api.example.com:9095/api/configurator/1.3.0/apis/generate-configuration' \
     --header 'Host: api.example.com' \
-    --form 'definition=@"EmployeeServiceDefinition.json"' > EmployeeService.apk-conf
+    --form 'definition=@"SampleAPIDefinition.json"' > SampleService.apk-conf
     ```
 
 === "Request Format"
@@ -286,79 +468,97 @@ Execute the following command to generate the apk-conf file. Use the values prov
     curl --location 'https://<host>:9095/api/configurator/1.3.0/apis/generate-configuration' \
     --header 'Host: <host>' \
     --form 'apiType="<api-type>"' \
-    --form 'definition=@"<path/to/EmployeeServiceDefinition.json>"'
+    --form 'definition=@"<path/to/SampleAPIDefinition.json>"'
     ```
 
-The response will contain the Kubernetes Gateway configuration file content, which will be saved as EmployeeService.apk-conf. You can verify the saved content by running:
+The response will contain the Kubernetes Gateway configuration file content, which will be saved as SampleService.apk-conf. You can verify the saved content by running:
 
 === "Sample Request"
     ```
-    cat EmployeeService.apk-conf
+    cat SampleService.apk-conf
     ```
 
 === "Sample Response"
     ```
     ---
-    name: "EmployeeServiceAPI"
-    basePath: "/RW1wbG95ZWVTZXJ2aWNlQVBJMy4xNA"
-    version: "3.14"
+    name: "Sample API"
+    basePath: "/U2FtcGxlIEFQSTAuMS4w"
+    version: "0.1.0"
     type: "REST"
     defaultVersion: false
+    subscriptionValidation: false
     endpointConfigurations:
-       production:
-          - endpoint: "http://employee-service:8080"
+        production:
+        - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
     operations:
-       - target: "/employees
-         verb: "GET"
-         secured: true
-         scopes: []
-       - target: "/employee"
-         verb: "POST"
-         secured: true
-         scopes: []
-       - target: "/employee/{employeeId}"
-         verb: "PUT"
-         secured: true
-         scopes: []
-       - target: "/employee/{employeeId}"
-         verb: "DELETE"
-         secured: true
-         scopes: []
+    - target: "/ai/spelling"
+      verb: "POST"
+      secured: true
+      scopes: []
+    - target: "/base64/decode/{value}"
+      verb: "POST"
+      secured: true
+      scopes: []
+    - target: "/base64/encode/{value}"
+      verb: "POST"
+      secured: true
+      scopes: []
+    - target: "/ip"
+      verb: "GET"
+      secured: true
+      scopes: []
+    - target: "/user-agent"
+      verb: "GET"
+      secured: true
+      scopes: []
+    - target: "/uuid"
+      verb: "GET"
+      secured: true
+      scopes: []
     ```
 
 ### Customize the API Configuration
 
-The generated apk-conf file can be modified to suit your needs. For instance, you can update the file to create a cleaner base path for the API from the default value to /employees-info. Change the file to include the line basePath: "/employees-info" as shown below:
+The generated apk-conf file can be modified to suit your needs. For instance, you can update the file to create a cleaner base path for the API from the default value to /sample-api. Change the file to include the line basePath: "/sample-api" as shown below:
 
 !!! Important
     We recommend installing the <a href="../../api-management-overview/apk-conf-lang-support/" target="_blank">Kubernetes Gateway Config Language Support Visual Studio Code (VS Code) extension</a> to easily edit and validate the Kubernetes Gateway configuration file.
 
-=== "The Modified EmployeeService.apk-conf"
+=== "The Modified SampleService.apk-conf"
     ```
     ---
-    name: "EmployeeServiceAPI"
-    basePath: "/employees-info"
-    version: "3.14"
+    name: "Sample API"
+    basePath: "/sample-api"
+    version: "0.1.0"
     type: "REST"
     defaultVersion: false
+    subscriptionValidation: false
     endpointConfigurations:
-       production:
-           - endpoint: "http://employee-service:8080"
+        production:
+        - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
     operations:
-    - target: "/employees"
-      verb: "GET"
-      secured: true
-      scopes: []
-    - target: "/employee"
+    - target: "/ai/spelling"
       verb: "POST"
       secured: true
       scopes: []
-    - target: "/employee/{employeeId}"
-      verb: "PUT"
+    - target: "/base64/decode/{value}"
+      verb: "POST"
       secured: true
       scopes: []
-    - target: "/employee/{employeeId}"
-      verb: "DELETE"
+    - target: "/base64/encode/{value}"
+      verb: "POST"
+      secured: true
+      scopes: []
+    - target: "/ip"
+      verb: "GET"
+      secured: true
+      scopes: []
+    - target: "/user-agent"
+      verb: "GET"
+      secured: true
+      scopes: []
+    - target: "/uuid"
+      verb: "GET"
       secured: true
       scopes: []
     ```
@@ -410,14 +610,14 @@ Now that you have a valid access token, you can proceed to deploy and invoke API
 
 ## Step 5: Deploy and Invoke the API
 
-You now have the API Definition (`EmployeeServiceDefinition.json`) and the apk-conf file (`EmployeeService.apk-conf`) corresponding to the API. We can use these files to deploy the API in Kubernetes Gateway. 
+You now have the API Definition (`SampleAPIDefinition.json`) and the apk-conf file (`SampleService.apk-conf`) corresponding to the API. We can use these files to deploy the API in Kubernetes Gateway. 
 
 Use the provided values in the table below in the body of your request.
 
-| Field            | Value                                 | Required         |
-| ---------------- | ------------------------------------- | ---------------- |
-| apkConfiguration | `EmployeeService.apk-conf` file       | :material-check: |
-| definitionFile   | `EmployeeServiceDefinition.json` file | :material-check: |
+| Field            | Value                           | Required         |
+| ---------------- | ------------------------------- | ---------------- |
+| apkConfiguration | `SampleService.apk-conf` file   | :material-check: |
+| definitionFile   | `SampleAPIDefinition.json` file | :material-check: |
 
 Replace <your-access-token> with the one you obtained from the previous step and run the following command to deploy the API:
 
@@ -426,50 +626,60 @@ Replace <your-access-token> with the one you obtained from the previous step and
     curl -k --location 'https://api.example.com:9095/api/deployer/1.3.0/apis/deploy' \
     --header 'Host: api.example.com' \
     --header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiZXhwIjoxNjg4MTMxNDQ0LCAibmJmIjoxNjg4MTI3ODQ0LCAiaWF0IjoxNjg4MTI3ODQ0LCAianRpIjoiMDFlZTE3NDEtMDA0Ni0xOGE2LWFhMjEtYmQwYTk4ZjYzNzkwIiwgImNsaWVudElkIjoiNDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyIiwgInNjb3BlIjoiZGVmYXVsdCJ9.RfKQq2fUZKZFAyjimvsPD3cOzaVWazabmq7b1iKYacqIdNjkvO9CQmu7qdtrVNDmdZ_gHhWLXiGhN4UTSCXv_n1ArDnxTLFBroRS8dxuFBZoD9Mpj10vYFSDDhUfFqjgMqtpr30TpDMfee1wkqB6K757ZSjgCDa0hAbv555GkLdZtRsSgR3xWcxPBsIozqAMFDCWoUCbgTQuA5OiEhhpVco2zv4XLq2sz--VRoBieO12C69KnGRmoLuPtvOayInvrnV96Tbt9fR0fLS2l1nvAdFzVou0SIf9rMZLnURLVQQYE64GR14m-cFRYdUI9vTsFHZBl5w-uCLdzMMofzZaLQ' \
-    --form 'apkConfiguration=@"EmployeeService.apk-conf"' \
-    --form 'definitionFile=@"EmployeeServiceDefinition.json"'
+    --form 'apkConfiguration=@"SampleService.apk-conf"' \
+    --form 'definitionFile=@"SampleAPIDefinition.json"'
     ```
 
 === "Sample Response"
     ```
     ---
-    id: "3940857a942e08686e58b511d43d046a7168281e"
-    name: "EmployeeServiceAPI"
-    basePath: "/employees-info"
-    version: "3.14"
+    id: "2d43a29159fbc77652b687243d545a7038c3abd6"
+    name: "Sample API"
+    basePath: "/sample-api"
+    version: "0.1.0"
     type: "REST"
     defaultVersion: false
+    subscriptionValidation: false
     endpointConfigurations:
         production:
-            - endpoint: "http://employee-service:8080"
+        - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
     operations:
-    - target: "/employees"
-      verb: "GET"
-      secured: true
-      scopes: []
-    - target: "/employee"
+    - target: "/ai/spelling"
       verb: "POST"
       secured: true
       scopes: []
-    - target: "/employee/{employeeId}"
-      verb: "PUT"
+    - target: "/base64/decode/{value}"
+      verb: "POST"
       secured: true
       scopes: []
-    - target: "/employee/{employeeId}"
-      verb: "DELETE"
+    - target: "/base64/encode/{value}"
+      verb: "POST"
       secured: true
       scopes: []
+    - target: "/ip"
+      verb: "GET"
+      secured: true
+      scopes: []
+    - target: "/user-agent"
+      verb: "GET"
+      secured: true
+      scopes: []
+    - target: "/uuid"
+      verb: "GET"
+      secured: true
+      scopes: []
+
     ```
 === "Request Format"
     ```
     curl --location 'https://<host>:9095/api/deployer/1.3.0/apis/deploy' \
     --header 'Host: <host>' \
     --header 'Authorization: Bearer <access-token>' \
-    --form 'apkConfiguration=@"path/to/EmployeeService.apk-conf"' \
-    --form 'definitionFile=@"path/to/EmployeeServiceDefinition.json"'
+    --form 'apkConfiguration=@"path/to/SampleService.apk-conf"' \
+    --form 'definitionFile=@"path/to/SampleAPIDefinition.json"'
     ```
 
-Execute the command below. You will be able to see that the `EmployeeServiceAPI` is successfully deployed as shown in the image.
+Execute the command below. You will be able to see that the `Sample API` is successfully deployed as shown in the image.
 
 === "Command"
     ```
@@ -478,45 +688,26 @@ Execute the command below. You will be able to see that the `EmployeeServiceAPI`
 
     [![Deployed API](../assets/img/get-started/deployed-api.png)](../assets/img/get-started/deployed-api.png)
 
-Now the API is ready to be invoked. Let’s get the list of employees by invoking the `/employees` resource in the `EmployeeServiceAPI`.
+Now the API is ready to be invoked. Let’s get a random UUID by invoking the `/uuid` resource in the `Sample API`.
 
 To invoke the API, replace <your-access-token> with your access token here as well:
 
 === "Sample Request"
     ```
-    curl -k --location 'https://default.gw.example.com:9095/employees-info/3.14/employees' \
+    curl -k --location 'https://default.gw.example.com:9095/sample-api/0.1.0/uuid' \
     --header 'Host: default.gw.example.com' \
     --header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiZXhwIjoxNjg4MTMxNDQ0LCAibmJmIjoxNjg4MTI3ODQ0LCAiaWF0IjoxNjg4MTI3ODQ0LCAianRpIjoiMDFlZTE3NDEtMDA0Ni0xOGE2LWFhMjEtYmQwYTk4ZjYzNzkwIiwgImNsaWVudElkIjoiNDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyIiwgInNjb3BlIjoiZGVmYXVsdCJ9.RfKQq2fUZKZFAyjimvsPD3cOzaVWazabmq7b1iKYacqIdNjkvO9CQmu7qdtrVNDmdZ_gHhWLXiGhN4UTSCXv_n1ArDnxTLFBroRS8dxuFBZoD9Mpj10vYFSDDhUfFqjgMqtpr30TpDMfee1wkqB6K757ZSjgCDa0hAbv555GkLdZtRsSgR3xWcxPBsIozqAMFDCWoUCbgTQuA5OiEhhpVco2zv4XLq2sz--VRoBieO12C69KnGRmoLuPtvOayInvrnV96Tbt9fR0fLS2l1nvAdFzVou0SIf9rMZLnURLVQQYE64GR14m-cFRYdUI9vTsFHZBl5w-uCLdzMMofzZaLQ'
     ```
 
 === "Sample Response"
     ```
-    [
-        {
-            "id": "1234123",
-            "name": "Mrs. Heily Feyers",
-            "department": "IT"
-        },
-        {
-            "id": "23451234",
-            "name": "Mr. Brendon MacSmith",
-            "department": "Sales"
-        },
-        {
-            "id": "34561234",
-            "name": "Mr. Peter Queenslander",
-            "department": "IT"
-        },
-        {
-            "id": "45671243",
-            "name": "Miss. Liza MacAdams",
-            "department": "Finance"
-        }
-    ]
+    {
+        "uuid":"f4a38d31-21e8-4b5d-9c26-792e6805dd54"
+    }
     ```
 === "Request Format"
     ```
-    curl --location 'https://<host>:9095/<basePath>/3.14/employees' \
+    curl --location 'https://<host>:9095/<basePath>/0.1.0/uuid' \
     --header 'Host: <host>' \
     --header 'Authorization: Bearer <access-token>'
     ```
