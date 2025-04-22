@@ -118,7 +118,7 @@ Follow the instructions below to add an API-level Rate Limiting Policy to an API
 
 Here, you can use the following apk-conf file and save it into a file named `SampleServiceV2.apk-conf`.
 
-  ```
+  ```yaml
 name: "Sample API"
 basePath: "/sample-api"
 version: "0.1.0"
@@ -166,7 +166,7 @@ rateLimit:
 
 Sample content after the modification is shown below.
 
-  ```
+  ```yaml
 name: "Sample API"
 basePath: "/sample-api"
 version: "0.1.0"
@@ -306,7 +306,7 @@ Here, you can use the apk-conf file which is created in [Create an API](../../ge
 
 Sample content before the modification is shown below.
 
-  ```
+  ```yaml
   name: "Sample API"
   basePath: "/sample-api"
   version: "0.1.0"

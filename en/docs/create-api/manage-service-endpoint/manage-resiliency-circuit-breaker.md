@@ -59,7 +59,7 @@ endpointConfigurations:
 ```
 An example `apk-conf` file with the above configurations is shown below.
 
-```
+```yaml
 name: "Sample API"
 basePath: "/sample-api"
 version: "0.1.0"

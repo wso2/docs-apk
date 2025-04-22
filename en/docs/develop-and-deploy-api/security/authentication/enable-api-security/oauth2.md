@@ -10,7 +10,7 @@ You can use the apk-conf file which is created in [Create an API](../../../../ge
 
 Sample content before the modification is shown below.
 
-   ```yaml
+```yaml
   name: "Sample API"
   basePath: "/sample-api"
   version: "0.1.0"
@@ -44,7 +44,7 @@ Sample content before the modification is shown below.
       verb: "GET"
       secured: true
       scopes: []
-   ```
+```
 
 ### Disable OAuth2 authentication
 
@@ -59,7 +59,7 @@ Modify the content with the following config to disable OAuth2
 Sample APK configuration content after the modification to disable OAuth2 is shown below.
 
 
-   ```yaml
+```yaml
   name: "Sample API"
   basePath: "/sample-api"
   version: "0.1.0"
@@ -96,7 +96,7 @@ Sample APK configuration content after the modification to disable OAuth2 is sho
    authentication: 
       - authType: OAuth2
         enabled: false
-   ```
+```
   
   Deploy the APK configuration. As you have not added any other authentication, you will be able to invoke requests without providing any security credentials. However, if you add API key authentication to the configuration, you will receive a 401 response, even if you use a valid access token, since you have disabled OAuth2 authentication but added API-KEY.
 
@@ -114,7 +114,7 @@ Modify the content with the following config to use custom auth header name
 
 Sample APK configuration content after the modification to use a custom auth header name is shown below.
 
-   ```yaml
+```yaml
   name: "Sample API"
   basePath: "/sample-api"
   version: "0.1.0"
@@ -151,7 +151,7 @@ Sample APK configuration content after the modification to use a custom auth hea
   authentication: 
       - authType: OAuth2
         headerName: testAuth
-   ```
+```
   
   Deploy the APK configuration. Try invoking the request with a valid token in the Authorization header; you will receive a 401 response. Now, try with the testAuth header and a valid access token; you should receive a successful response.
 
@@ -169,7 +169,7 @@ Modify the content with the following config to send the OAuth2 header to backen
 
 Sample APK configuration content after the modification to send the OAuth2 header to the backend is shown below.
 
-   ```yaml
+```yaml
   name: "Sample API"
   basePath: "/sample-api"
   version: "0.1.0"
@@ -207,6 +207,6 @@ Sample APK configuration content after the modification to send the OAuth2 heade
       - authType: OAuth2
         headerName: Authorization
         sendTokenToUpstream: true
-   ```
+```
   
   Deploy the APK configuration. Try invoking the request with a valid token in the Authorization header; you will receive a 200 response. Check the backend to see it receiving the OAuth2 token in the same header.

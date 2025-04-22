@@ -2,7 +2,7 @@
 2. Click on the `REST API` button and then use `Import Open API` option.
 3. Provide the OpenAPI definition of the API and click `Next`. Select OpenAPI URL and provide the below link as the `URL`. Click `Next`.
    ```http
-   https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/definitions/SampleAPIDefinition.json
+   https://raw.githubusercontent.com/wso2/docs-apk/refs/heads/1.3.0/en/docs/assets/files/get-started/SampleAPIDefinition.json
    ```
 4. Edit the information as given below and click Create.
 

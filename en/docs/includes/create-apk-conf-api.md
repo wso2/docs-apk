@@ -20,11 +20,11 @@ kubectl get pods
 
 You will need an OpenAPI Specification 3.x that describes the structure and behavior of your API. This file serves as the foundation for configuring your API and is essential for generating the Kubernetes Gateway Configuration file.
 
-Download and save the sample [SampleAPIDefinition.json](https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/definitions/SampleAPIDefinition.json) file. This is the OAS definition of the API that we are going to deploy in Kubernetes Gateway.
+Download and save the sample [SampleAPIDefinition.json](https://raw.githubusercontent.com/wso2/docs-apk/refs/heads/1.3.0/en/docs/assets/files/get-started/SampleAPIDefinition.json) file. This is the OAS definition of the API that we are going to deploy in Kubernetes Gateway.
 
 ## Step 3. Generate Kubernetes Gateway configuration file.
     
-This service generates an Kubernetes Gateway configuration file by providing your 3.x OpenAPI specification file. Kubernetes Gateway configuration file includes important API metadata, rate limiting details, security settings, and other necessary information about your API.
+This service generates a Kubernetes Gateway configuration file by providing your 3.x OpenAPI specification file. Kubernetes Gateway configuration file includes important API metadata, rate limiting details, security settings, and other necessary information about your API.
 
 The OpenAPI specification file can be provided as a local file or as a URL containing a definition file.
 
@@ -45,7 +45,7 @@ The OpenAPI specification file can be provided as a local file or as a URL conta
     ```bash
     curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.3.0/apis/generate-configuration' \
     --header 'Host: api.am.wso2.com' \
-    ---form 'url="https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/definitions/SampleAPIDefinition.json"' \
+    ---form 'url="https://raw.githubusercontent.com/wso2/docs-apk/refs/heads/1.3.0/en/docs/assets/files/get-started/SampleAPIDefinition.json"' \
     --form 'apiType="REST"'
     ```
 
@@ -87,11 +87,11 @@ The OpenAPI specification file can be provided as a local file or as a URL conta
         scopes: []
     ```
 
-## Step 5. Save the response to a file with the extension .apk-conf. 
+## Step 4. Save the response to a file with the extension .apk-conf. 
 
 For example, you can save under the name SampleService.apk-conf.
 
-## Step 6. Update the Kubernetes Gateway configuration file.
+## Step 5. Update the Kubernetes Gateway configuration file.
 
 Review the content inside the apk-conf file and update it with additional API configurations as needed, such as rate limits, CORS configurations, etc.
 

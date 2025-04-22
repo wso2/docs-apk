@@ -1,7 +1,7 @@
 # Add Kubernetes Gateway to API Manager
 
-This guide provides instructions on how to add an Kubernetes Gateway dynamically to WSO2 API Manager using Admin Portal. 
-Follow the instructions below to add an Kubernetes Gateway to API Manager.
+This guide provides instructions on how to add a Kubernetes Gateway dynamically to WSO2 API Manager using Admin Portal. 
+Follow the instructions below to add a Kubernetes Gateway to API Manager.
 
 1. Log in to the API Manager Admin Portal using the following URL and admin credentials.
 

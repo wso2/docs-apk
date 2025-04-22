@@ -66,13 +66,13 @@ Ensure that Helm is installed correctly by running the following command:
 
 {!includes/start-apk.md!}
 
-## Step 3: Configure the Managed API for a Sample Backend Service
+## Step 2: Configure the Managed API for a Sample Backend Service
 
-Download and save the <b><a target="_blank" href="https://raw.githubusercontent.com/wso2/apk/main/developer/tryout/samples/definitions/SampleAPIDefinition.json">SampleAPIDefinition.json</a></b> file, which contains the OpenAPI Specification (OAS) definition for the API that corresponds to the backend service that we previously deployed. This definition will be used to deploy the API in Kubernetes Gateway.
+Download and save the <b><a href="../../assets/files/get-started/SampleAPIDefinition.json" target="_blank" download>SampleAPIDefinition.json</a></b> file, which contains the OpenAPI Specification (OAS) definition for the API that corresponds to the backend service that we previously deployed. This definition will be used to deploy the API in Kubernetes Gateway.
 Use the following command to download the file:
 
 ```
-curl -O https://raw.githubusercontent.com/wso2/docs-apk/refs/heads/main/en/docs/assets/files/get-started/SampleAPIDefinition.json
+curl -O https://raw.githubusercontent.com/wso2/docs-apk/refs/heads/1.3.0/en/docs/assets/files/get-started/SampleAPIDefinition.json
 ```
 
 Then, verify the file exists:
@@ -449,7 +449,7 @@ Then, verify the file exists:
 
 ### Generate Kubernetes Gateway Configuration File from the OpenAPI Definition
 
-In addition to the OpenAPI definition file, we need an Kubernetes Gateway configuration file (apk-conf) that defines metadata and settings for the API. Kubernetes Gateway provides a configuration service that automatically generates this file from the OpenAPI definition.
+In addition to the OpenAPI definition file, we need a Kubernetes Gateway configuration file (apk-conf) that defines metadata and settings for the API. Kubernetes Gateway provides a configuration service that automatically generates this file from the OpenAPI definition.
 Execute the following command to generate the apk-conf file. Use the values provided in the table below in the body of your request.
 
 | Field      | Value                                                                                                               |
@@ -563,7 +563,7 @@ The generated apk-conf file can be modified to suit your needs. For instance, yo
       scopes: []
     ```
 
-## Step 4: Generate Access Token
+## Step 3: Generate Access Token
 
 To deploy and manage APIs using Kubernetes Gateway, you need a valid access token issued by an identity provider (IdP). Kubernetes Gateway supports third-party IdPs such as <b>Asgardeo</b> and <b>Auth0</b>, but for this guide, we will use the <b>inbuilt non-production IdP</b>, which is only meant to be used for testing purposes.
 
@@ -608,7 +608,7 @@ Run the following command (with the provided values) to generate your access tok
 
 Now that you have a valid access token, you can proceed to deploy and invoke APIs using Kubernetes Gateway.
 
-## Step 5: Deploy and Invoke the API
+## Step 4: Deploy and Invoke the API
 
 You now have the API Definition (`SampleAPIDefinition.json`) and the apk-conf file (`SampleService.apk-conf`) corresponding to the API. We can use these files to deploy the API in Kubernetes Gateway. 
 

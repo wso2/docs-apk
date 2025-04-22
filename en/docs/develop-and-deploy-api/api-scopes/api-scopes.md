@@ -8,7 +8,7 @@ You can use the apk-conf file which is created in <a href="../../../get-started/
 
 Sample content before the modification is shown below.
 
-   ```yaml
+```yaml
   name: "Sample API"
   basePath: "/sample-api"
   version: "0.1.0"
@@ -42,7 +42,7 @@ Sample content before the modification is shown below.
       verb: "GET"
       secured: true
       scopes: []
-   ```
+```
 ## Invoke API using access token without API Scopes
 
 Before adding the scopes, let's deploy and invoke the API.
@@ -53,7 +53,7 @@ Refer the <a href="../../../get-started/quick-start-guide" target="_blank">Quick
 Update the APK configuration as the following to add API Scopes to relevant operations in apk-conf. 
 Here, we have added a property named `scopes` with the value `wso2` for `/uuid` resource.
 
-   ```yaml
+```yaml
   name: "Sample API"
   basePath: "/sample-api"
   version: "0.1.0"
@@ -87,7 +87,7 @@ Here, we have added a property named `scopes` with the value `wso2` for `/uuid` 
       verb: "GET"
       secured: true
       scopes: []
-   ```
+```
 
 ## Deploy APK configuration
 
