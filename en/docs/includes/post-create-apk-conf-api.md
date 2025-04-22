@@ -1,4 +1,4 @@
-## Step 7. Deploy the API to a Kubernetes cluster.
+## Step 6. Deploy the API to a Kubernetes cluster.
 
 Once you have crafted your APK Configuration File, you have two convenient options for deploying them. Choose the deployment option that best suits your development workflow. Whether you prefer the customization capabilities of the Config Generator and CI/CD pipeline or the simplicity and speed of the Config Deployer, APK empowers you with flexible and efficient API deployment methods in the Kubernetes ecosystem.
 

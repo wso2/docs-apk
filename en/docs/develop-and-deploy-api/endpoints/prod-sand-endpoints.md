@@ -12,7 +12,7 @@ You can use the apk-conf file which is created in [Create an API](../../get-star
 
 Sample content before the modification is shown below.
 
-   ```yaml
+```yaml
   name: "Sample API"
   basePath: "/sample-api"
   version: "0.1.0"
@@ -46,7 +46,7 @@ Sample content before the modification is shown below.
       verb: "GET"
       secured: true
       scopes: []
-   ```
+```
 
 
 ## API level
@@ -55,7 +55,7 @@ It is mandatory to define at least one of the production endpoint or sandbox end
 
 Update the APK configuration as the following to add different endpoints to sandbox and production endpoints. You can use your own endpoints. In this example, we have used two different mocky endpoints; these endpoints might not work when you test. 
 
-   ```yaml
+```yaml
   name: "Sample API"
   basePath: "/sample-api"
   version: "0.1.0"
@@ -91,7 +91,7 @@ Update the APK configuration as the following to add different endpoints to sand
       verb: "GET"
       secured: true
       scopes: []
-   ```
+```
 
 Deploy the APK configuration, and now you can send requests to different endpoints based on your environments, either production or sandbox.
 
@@ -103,7 +103,7 @@ Deploy the APK configuration, and now you can send requests to different endpoin
 You can define different endpoint URLs for different resources. The following is an example APK configuration to configure different production and sandbox endpoint for `/uuid` GET Resource.
 
 
-   ```yaml
+```yaml
   name: "Sample API"
   basePath: "/sample-api"
   version: "0.1.0"
@@ -144,7 +144,7 @@ You can define different endpoint URLs for different resources. The following is
           - endpoint: "https://run.mocky.io/v3/4bf0062b-042e-4adf-b8c9-7be0cf8745cb"
         sandbox:
           - endpoint: "https://run.mocky.io/v3/1327c339-354b-4080-8296-f6268365e67b"
-   ```
+```
 
 Deploy the APK configuration and invoke the following get requests
 

@@ -28,7 +28,7 @@ The following sections will guide you through the entire process, from API creat
 
 ### Step 1 - Generate Kubernetes Gateway Configuration File
 
-Generating an Kubernetes Gateway Configuration file is a crucial step in setting up your API using Kubernetes Gateway enhanced tools within the WSO2 Kubernetes Gateway ecosystem. This file contains essential API metadata, security settings, rate limiting details, and other vital information. 
+Generating a Kubernetes Gateway Configuration file is a crucial step in setting up your API using Kubernetes Gateway enhanced tools within the WSO2 Kubernetes Gateway ecosystem. This file contains essential API metadata, security settings, rate limiting details, and other vital information. 
 
 !!! note
     For production scenarios, it is recommended to commit the configuration to a source control system such as GitHub. This enables controlled and automated deployments through pipelines, ensuring a structured and controlled release process.
@@ -61,6 +61,6 @@ You can generate K8s resources as a zip file from config-deployer service and ap
 
 You can follow steps and samples mentioned in <a href="../../create-api/create-and-deploy-apis/rest/create-rest-api-using-rest-api" target="_blank">Deploy a REST API via Kubernetes Gateway REST API</a> to test out the above flows.
 
-### Step 5 - Undeploy API
+### Step 4 - Undeploy API
 
 {!includes/apk-conf-undeploy.md!}

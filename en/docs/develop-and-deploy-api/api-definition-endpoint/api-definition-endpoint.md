@@ -70,7 +70,7 @@ You can execute following command to retrieve the Open API Definition for a part
 Update the APK configuration as the following to add API Definition Endpoint as definitionPath in apk-conf. 
 Here, we have added a property named `definitionPath` with the new value `/docs`.
 
-   ```yaml
+```yaml
   name: "Sample API"
   basePath: "/sample-api"
   version: "0.1.0"
@@ -105,7 +105,7 @@ Here, we have added a property named `definitionPath` with the new value `/docs`
       verb: "GET"
       secured: true
       scopes: []
-   ```
+```
 
 ## Deploy APK configuration
 

@@ -53,7 +53,7 @@ Cross-Origin Resource Sharing (CORS) is a mechanism that allows accessing restri
 
 Here, you can save the following content into a file named `SampleServiceCORS.apk-conf` to use for the rest of this guide.
 
-  ```
+```yaml
 name: "Sample API"
 basePath: "/sample-api"
 version: "0.1.0"
@@ -88,7 +88,7 @@ operations:
     verb: "GET"
     secured: true
     scopes: []
-  ```
+```
 ### Update the API configuration with the CORS configurations
 
 Add the necessary CORS configurations to the `apk-conf` file. A possible example is shown below.
@@ -109,7 +109,7 @@ corsConfiguration:
 
 Sample APK configuration content after the modification is shown below.
 
-```
+```yaml
 name: "Sample API"
 basePath: "/sample-api"
 version: "0.1.0"

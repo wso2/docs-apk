@@ -64,7 +64,7 @@ You can create a K8s secret using the following format including your username a
 
 A sample `apk-conf` file with direct endpoints and basic authentication is shown below.
 
-```
+```yaml
 name: "Sample API"
 basePath: "/sample-api"
 version: "0.1.0"

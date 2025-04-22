@@ -12,7 +12,7 @@ This documentation explains how to make an API version the default version in WS
 Here, you can use the apk-conf file which is created in <a href="../../../get-started/quick-start-guide" target="_blank">Create an API</a> documentation and save this content into a file named `SampleServiceDefaultVersion.apk-conf`.
 
 Sample content before the modification is shown below.
-```
+```yaml
 name: "Sample API"
 basePath: "/sample-api"
 version: "0.1.0"
@@ -63,7 +63,7 @@ operations:
 </table>
 
    Sample content after the modification is shown below.
-```
+```yaml
 name: "Sample API"
 basePath: "/sample-api"
 version: "0.1.0"
