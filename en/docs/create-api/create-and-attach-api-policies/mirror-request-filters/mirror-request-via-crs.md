@@ -53,7 +53,7 @@ spec:
   - matches:
     - path:
         type: "RegularExpression"
-        value: "/employee"
+        value: "/uuid"
       method: "GET"
     filters:
     - type: "RequestMirror"
@@ -87,7 +87,7 @@ Follow the [Generate Access Token](../../../develop-and-deploy-api/security/gene
 You can invoke the API using the following command.
 
 ```
-curl --location 'https://default.gw.wso2.com:9095/employee/1.0/employee' \
+curl --location 'https://default.gw.wso2.com:9095/sample-api/0.1.0/uuid' \
 --header 'Host: default.gw.wso2.com' \
 --header 'Authorization: Bearer <accessToken>
 ```

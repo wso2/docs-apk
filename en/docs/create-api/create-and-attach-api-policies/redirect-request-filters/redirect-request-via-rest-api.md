@@ -4,33 +4,42 @@ Request redirection allows you to send clients to a different URL. This can be u
 
 ### Step 1 - Get the API configuration
 
-Save the following content into a file named `EmployeeService.apk-conf`. You can use this apk-conf file for the rest of this guide.
+Save the following content into a file named `SampleService.apk-conf`. You can use this apk-conf file for the rest of this guide.
 
 ```
 id: "redirect-request-api"
-name: "EmployeeServiceAPI"
-basePath: "/employee"
-version: "1.0"
+name: "Sample API"
+basePath: "/sample-api"
+version: "0.1.0"
 type: "REST"
 defaultVersion: false
+subscriptionValidation: false
 endpointConfigurations:
     production:
-        - endpoint: https://httpbin.org/anything
+      - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
 operations:
-- target: "/employees"
-  verb: "GET"
-  secured: false
-  scopes: []
-- target: "/employee"
+  - target: "/ai/spelling"
     verb: "POST"
     secured: true
     scopes: []
-- target: "/employee/{employeeId}"
-    verb: "PUT"
+  - target: "/base64/decode/{value}"
+    verb: "POST"
     secured: true
     scopes: []
-- target: "/employee/{employeeId}"
-    verb: "DELETE"
+  - target: "/base64/encode/{value}"
+    verb: "POST"
+    secured: true
+    scopes: []
+  - target: "/ip"
+    verb: "GET"
+    secured: true
+    scopes: []
+  - target: "/user-agent"
+    verb: "GET"
+    secured: true
+    scopes: []
+  - target: "/uuid"
+    verb: "GET"
     secured: true
     scopes: []
 ```
@@ -40,7 +49,7 @@ operations:
 A sample request redirection configuration is given below.
 
 ```
-- target: "/employees"
+- target: "/uuid"
   verb: "GET"
   secured: false
   scopes: []
@@ -53,42 +62,51 @@ A sample request redirection configuration is given below.
             statusCode: 301
 ```
 
-This policy will redirect an incoming request to the GET /employee route with a 301 status code.
+This policy will redirect an incoming request to the GET /uuid route with a 301 status code.
 
 The complete apk-conf file with this configuration is given below.
 
 ```
 id: "redirect-request-api"
-name: "EmployeeServiceAPI"
-basePath: "/employee"
-version: "1.0"
+name: "Sample API"
+basePath: "/sample-api"
+version: "0.1.0"
 type: "REST"
 defaultVersion: false
+subscriptionValidation: false
 endpointConfigurations:
     production:
-        - endpoint: https://httpbin.org/anything
+      - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
 operations:
-- target: "/employees"
-  verb: "GET"
-  secured: false
-  scopes: []
-  operationPolicies:
-    request:
-      - policyName: RequestRedirect
-        policyVersion: v1
-          parameters:
-            url: https://httpbin.org/anything
-            statusCode: 301
-- target: "/employee"
+  - target: "/uuid"
+    verb: "GET"
+    secured: false
+    scopes: []
+    operationPolicies:
+        request:
+        - policyName: RequestRedirect
+            policyVersion: v1
+            parameters:
+              url: https://httpbin.org/anything
+              statusCode: 301
+  - target: "/ai/spelling"
     verb: "POST"
     secured: true
     scopes: []
-- target: "/employee/{employeeId}"
-    verb: "PUT"
+  - target: "/base64/decode/{value}"
+    verb: "POST"
     secured: true
     scopes: []
-- target: "/employee/{employeeId}"
-    verb: "DELETE"
+  - target: "/base64/encode/{value}"
+    verb: "POST"
+    secured: true
+    scopes: []
+  - target: "/ip"
+    verb: "GET"
+    secured: true
+    scopes: []
+  - target: "/user-agent"
+    verb: "GET"
     secured: true
     scopes: []
 ```
@@ -105,7 +123,7 @@ Follow the <a href="../../../../develop-and-deploy-api/security/generate-access-
 You can invoke the API using the following command.
 
 ```
-curl --location 'https://default.gw.wso2.com:9095/employee/1.0/employee' \
+curl --location 'https://default.gw.wso2.com:9095/sample-api/0.1.0/uuid' \
 --header 'Host: default.gw.wso2.com' \
 --header 'Authorization: Bearer <accessToken> -I
 ```

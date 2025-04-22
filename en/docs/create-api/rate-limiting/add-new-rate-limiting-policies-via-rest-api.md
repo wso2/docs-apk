@@ -22,16 +22,16 @@ rateLimit:
     
     The following is a sample apk-conf file with an API-Level Rate Limiting Policy defined in it.
     ```
-    name: "EmployeeServiceAPI"
-    basePath: "/test"
-    version: "3.14"
+    name: "Sample API"
+    basePath: "/sample-api"
+    version: "0.1.0"
     type: "REST"
     defaultVersion: false
     endpointConfigurations:
       production:
-        - endpoint: "http://employee-service:8080"
+        - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
     operations:
-      - target: "/employees"
+      - target: "/uuid"
         verb: "GET"
         secured: true
         scopes: []
@@ -56,16 +56,16 @@ rateLimit:
     
     The following is a sample apk-conf file with an Operation-Level Rate Limiting Policy defined in it.
     ```
-    name: "EmployeeServiceAPI"
-    basePath: "/test"
-    version: "3.14"
+    name: "Sample API"
+    basePath: "/sample-api"
+    version: "0.1.0"
     type: "REST"
     defaultVersion: false
     endpointConfigurations:
       production:
-        - endpoint: "http://employee-service:8080"
+        - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
     operations:
-      - target: "/employees"
+      - target: "/uuid"
         verb: "GET"
         secured: true
         scopes: []
@@ -116,34 +116,42 @@ Follow the instructions below to add an API-level Rate Limiting Policy to an API
 
 ### Retrieve existing API configuration.
 
-Here, you can use the following apk-conf file and save it into a file named `EmployeeServiceV2.apk-conf`.
+Here, you can use the following apk-conf file and save it into a file named `SampleServiceV2.apk-conf`.
 
   ```
-  name: "EmployeeServiceAPI"
-  basePath: "/test"
-  version: "3.14"
-  type: "REST"
-  defaultVersion: false
-  endpointConfigurations:
+name: "Sample API"
+basePath: "/sample-api"
+version: "0.1.0"
+type: "REST"
+defaultVersion: false
+endpointConfigurations:
     production:
-      - endpoint: "http://employee-service:8080"
-  operations:
-    - target: "/employees"
-      verb: "GET"
-      secured: true
-      scopes: []
-    - target: "/employee"
-      verb: "POST"
-      secured: true
-      scopes: []
-    - target: "/employee/{employeeId}"
-      verb: "PUT"
-      secured: true
-      scopes: []
-    - target: "/employee/{employeeId}"
-      verb: "DELETE"
-      secured: true
-      scopes: []
+      - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
+operations:
+  - target: "/ai/spelling"
+    verb: "POST"
+    secured: true
+    scopes: []
+  - target: "/base64/decode/{value}"
+    verb: "POST"
+    secured: true
+    scopes: []
+  - target: "/base64/encode/{value}"
+    verb: "POST"
+    secured: true
+    scopes: []
+  - target: "/ip"
+    verb: "GET"
+    secured: true
+    scopes: []
+  - target: "/user-agent"
+    verb: "GET"
+    secured: true
+    scopes: []
+  - target: "/uuid"
+    verb: "GET"
+    secured: true
+    scopes: []
   ```
 
 ### Update the API configuration with the Rate Limit Policy.
@@ -159,32 +167,40 @@ rateLimit:
 Sample content after the modification is shown below.
 
   ```
-  name: "EmployeeServiceAPI"
-  basePath: "/test"
-  version: "1.0.0"
-  type: "REST"
-  defaultVersion: false
-  rateLimit:
-    requestsPerUnit: 5
-    unit: "Minute"
-  endpointConfigurations:
+name: "Sample API"
+basePath: "/sample-api"
+version: "0.1.0"
+type: "REST"
+defaultVersion: false
+rateLimit:
+  requestsPerUnit: 5
+  unit: "Minute"
+endpointConfigurations:
     production:
-      - endpoint: "http://employee-service:8080"
-  operations:
-  - target: "/employees"
-    verb: "GET"
-    secured: true
-    scopes: []
-  - target: "/employee"
+      - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
+operations:
+  - target: "/ai/spelling"
     verb: "POST"
     secured: true
     scopes: []
-  - target: "/employee/{employeeId}"
-    verb: "PUT"
+  - target: "/base64/decode/{value}"
+    verb: "POST"
     secured: true
     scopes: []
-  - target: "/employee/{employeeId}"
-    verb: "DELETE"
+  - target: "/base64/encode/{value}"
+    verb: "POST"
+    secured: true
+    scopes: []
+  - target: "/ip"
+    verb: "GET"
+    secured: true
+    scopes: []
+  - target: "/user-agent"
+    verb: "GET"
+    secured: true
+    scopes: []
+  - target: "/uuid"
+    verb: "GET"
     secured: true
     scopes: []
   ```
@@ -195,14 +211,14 @@ To invoke the system APIs such as for deploying, we need a valid access token is
 
 ### Deploy the API with API level rate limit policy.
 
-You now have the API Definition (`EmployeeServiceDefinition.json`) and the updated apk-conf file (`EmployeeServiceV2.apk-conf`) corresponding to the API. We can use these files to deploy the new API in APK.
+You now have the API Definition (`SampleAPIDefinition.json`) and the updated apk-conf file (`SampleServiceV2.apk-conf`) corresponding to the API. We can use these files to deploy the new API in APK.
 
 Use the values provided in the table below in the body of your request.
 
-   | Field            | Value                                 |
-   | ---------------- | ------------------------------------- |
-   | apkConfiguration | `EmployeeServiceV2.apk-conf` file     |
-   | definitionFile   | `EmployeeServiceDefinition.json` file |
+   | Field            | Value                           |
+   | ---------------- | ------------------------------- |
+   | apkConfiguration | `SampleServiceV2.apk-conf` file |
+   | definitionFile   | `SampleAPIDefinition.json` file |
 
 1.  Set the access token in the Authorization header as a bearer token. This is the access token received by following the steps under the <a href="../../../develop-and-deploy-api/security/generate-access-token" target="_blank">Generate an Access Token</a> section.
 2.  Execute the API deployment request. You will receive a successful response with an Id for the API.
@@ -213,8 +229,8 @@ Use the values provided in the table below in the body of your request.
         curl --location 'https://<host>:9095/api/deployer/1.3.0/apis/deploy' \
         --header 'Host: <host>' \
         --header 'Authorization: Bearer <access-token>' \
-        --form 'apkConfiguration=@"path/to/EmployeeServiceV2.apk-conf"' \
-        --form 'definitionFile=@"path/to/EmployeeServiceDefinition.json"'
+        --form 'apkConfiguration=@"path/to/SampleServiceV2.apk-conf"' \
+        --form 'definitionFile=@"path/to/SampleAPIDefinition.json"'
         ```
 
     === "Sample Request"
@@ -223,41 +239,49 @@ Use the values provided in the table below in the body of your request.
         curl -k --location 'https://api.am.wso2.com:9095/api/deployer/1.3.0/apis/deploy' \
         --header 'Host: api.am.wso2.com' \
         --header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiZXhwIjoxNjg4MTMxNDQ0LCAibmJmIjoxNjg4MTI3ODQ0LCAiaWF0IjoxNjg4MTI3ODQ0LCAianRpIjoiMDFlZTE3NDEtMDA0Ni0xOGE2LWFhMjEtYmQwYTk4ZjYzNzkwIiwgImNsaWVudElkIjoiNDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyIiwgInNjb3BlIjoiZGVmYXVsdCJ9.RfKQq2fUZKZFAyjimvsPD3cOzaVWazabmq7b1iKYacqIdNjkvO9CQmu7qdtrVNDmdZ_gHhWLXiGhN4UTSCXv_n1ArDnxTLFBroRS8dxuFBZoD9Mpj10vYFSDDhUfFqjgMqtpr30TpDMfee1wkqB6K757ZSjgCDa0hAbv555GkLdZtRsSgR3xWcxPBsIozqAMFDCWoUCbgTQuA5OiEhhpVco2zv4XLq2sz--VRoBieO12C69KnGRmoLuPtvOayInvrnV96Tbt9fR0fLS2l1nvAdFzVou0SIf9rMZLnURLVQQYE64GR14m-cFRYdUI9vTsFHZBl5w-uCLdzMMofzZaLQ' \
-        --form 'apkConfiguration=@"/Users/user/EmployeeServiceV2.apk-conf"' \
-        --form 'definitionFile=@"/Users/user/EmployeeServiceDefinition.json"'
+        --form 'apkConfiguration=@"/Users/user/SampleServiceV2.apk-conf"' \
+        --form 'definitionFile=@"/Users/user/SampleAPIDefinition.json"'
         ```
 
     === "Sample Response"
 
         ```
         ---
-        id: "a70e538aeaab278437dc4c3199dbaf6fcb7df2d9"
-        name: "EmployeeServiceAPI"
-        basePath: "/test"
-        version: "1.0.0"
+        id: "2d43a29159fbc77652b687243d545a7038c3abd6"
+        name: "Sample API"
+        basePath: "/sample-api"
+        version: "0.1.0"
         type: "REST"
         defaultVersion: false
         rateLimit:
           requestsPerUnit: 5
           unit: "Minute"
         endpointConfigurations:
-          production:
-            - endpoint: "http://employee-service:8080"
+            production:
+              - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
         operations:
-        - target: "/employees"
-          verb: "GET"
-          secured: true
-          scopes: []
-        - target: "/employee"
+        - target: "/ai/spelling"
           verb: "POST"
           secured: true
           scopes: []
-        - target: "/employee/{employeeId}"
-          verb: "PUT"
+        - target: "/base64/decode/{value}"
+          verb: "POST"
           secured: true
           scopes: []
-        - target: "/employee/{employeeId}"
-          verb: "DELETE"
+        - target: "/base64/encode/{value}"
+          verb: "POST"
+          secured: true
+          scopes: []
+        - target: "/ip"
+          verb: "GET"
+          secured: true
+          scopes: []
+        - target: "/user-agent"
+          verb: "GET"
+          secured: true
+          scopes: []
+        - target: "/uuid"
+          verb: "GET"
           secured: true
           scopes: []
         ```
@@ -278,34 +302,42 @@ Follow the instructions below to add an Resource-level Rate Limiting Policy to a
 
 ### Retrieve existing API configuration.
 
-Here, you can use the apk-conf file which is created in [Create an API](../../get-started/quick-start-guide.md) documentation and save this content into a file named `EmployeeServiceV3.apk-conf`.
+Here, you can use the apk-conf file which is created in [Create an API](../../get-started/quick-start-guide.md) documentation and save this content into a file named `SampleServiceV3.apk-conf`.
 
 Sample content before the modification is shown below.
 
   ```
-  name: "EmployeeServiceAPI"
-  basePath: "/test"
-  version: "3.14"
+  name: "Sample API"
+  basePath: "/sample-api"
+  version: "0.1.0"
   type: "REST"
   defaultVersion: false
   endpointConfigurations:
-    production:
-      - endpoint: "http://employee-service:8080"
+      production:
+        - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
   operations:
-    - target: "/employees"
-      verb: "GET"
-      secured: true
-      scopes: []
-    - target: "/employee"
+    - target: "/ai/spelling"
       verb: "POST"
       secured: true
       scopes: []
-    - target: "/employee/{employeeId}"
-      verb: "PUT"
+    - target: "/base64/decode/{value}"
+      verb: "POST"
       secured: true
       scopes: []
-    - target: "/employee/{employeeId}"
-      verb: "DELETE"
+    - target: "/base64/encode/{value}"
+      verb: "POST"
+      secured: true
+      scopes: []
+    - target: "/ip"
+      verb: "GET"
+      secured: true
+      scopes: []
+    - target: "/user-agent"
+      verb: "GET"
+      secured: true
+      scopes: []
+    - target: "/uuid"
+      verb: "GET"
       secured: true
       scopes: []
   ```
@@ -323,34 +355,42 @@ rateLimit:
 Sample content after the modification is shown below.
 
   ```
-  name: "EmployeeServiceAPI"
-  basePath: "/test"
-  version: "2.0.0"
+  name: "Sample API"
+  basePath: "/sample-api"
+  version: "0.1.0"
   type: "REST"
   defaultVersion: false
   endpointConfigurations:
-    production:
-      - endpoint: "http://employee-service:8080"
+      production:
+        - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
   operations:
-  - target: "/employees"
-    verb: "GET"
-    secured: true
-    scopes: []
-    rateLimit:
-      requestsPerUnit: 10
-      unit: "Minute"
-  - target: "/employee"
-    verb: "POST"
-    secured: true
-    scopes: []
-  - target: "/employee/{employeeId}"
-    verb: "PUT"
-    secured: true
-    scopes: []
-  - target: "/employee/{employeeId}"
-    verb: "DELETE"
-    secured: true
-    scopes: []
+    - target: "/uuid"
+      verb: "GET"
+      secured: true
+      scopes: []
+      rateLimit:
+        requestsPerUnit: 10
+        unit: "Minute"
+    - target: "/ai/spelling"
+      verb: "POST"
+      secured: true
+      scopes: []
+    - target: "/base64/decode/{value}"
+      verb: "POST"
+      secured: true
+      scopes: []
+    - target: "/base64/encode/{value}"
+      verb: "POST"
+      secured: true
+      scopes: []
+    - target: "/ip"
+      verb: "GET"
+      secured: true
+      scopes: []
+    - target: "/user-agent"
+      verb: "GET"
+      secured: true
+      scopes: []
   ```
 
 ### Generate an access token to deploy API
@@ -359,14 +399,14 @@ To invoke the system APIs such as for deploying, we need a valid access token is
 
 ### Deploy the API with resource level rate limit policy.
 
-You now have the API Definition (`EmployeeServiceDefinition.json`) and the updated apk-conf file (`EmployeeServiceV2.apk-conf`) corresponding to the API. We can use these files to deploy the new API in APK.
+You now have the API Definition (`SampleAPIDefinition.json`) and the updated apk-conf file (`SampleServiceV2.apk-conf`) corresponding to the API. We can use these files to deploy the new API in APK.
 
 Use the values provided in the table below in the body of your request.
 
-   | Field            | Value                                 |
-   | ---------------- | ------------------------------------- |
-   | apkConfiguration | `EmployeeServiceV3.apk-conf` file     |
-   | definitionFile   | `EmployeeServiceDefinition.json` file |
+   | Field            | Value                           |
+   | ---------------- | ------------------------------- |
+   | apkConfiguration | `SampleServiceV3.apk-conf` file |
+   | definitionFile   | `SampleAPIDefinition.json` file |
 
 1.  Set the access token in the Authorization header as a bearer token. This is the access token received by following the steps under the <a href="../../../develop-and-deploy-api/security/generate-access-token" target="_blank">Generate an Access Token</a> section.
 2.  Execute the API deployment request. You will receive a successful response with an Id for the API.
@@ -377,8 +417,8 @@ Use the values provided in the table below in the body of your request.
         curl --location 'https://<host>:9095/api/deployer/1.3.0/apis/deploy' \
         --header 'Host: <host>' \
         --header 'Authorization: Bearer <access-token>' \
-        --form 'apkConfiguration=@"path/to/EmployeeServiceV3.apk-conf"' \
-        --form 'definitionFile=@"path/to/EmployeeServiceDefinition.json"'
+        --form 'apkConfiguration=@"path/to/SampleServiceV3.apk-conf"' \
+        --form 'definitionFile=@"path/to/SampleAPIDefinition.json"'
         ```
 
     === "Sample Request"
@@ -387,46 +427,57 @@ Use the values provided in the table below in the body of your request.
         curl -k --location 'https://api.am.wso2.com:9095/api/deployer/1.3.0/apis/deploy' \
         --header 'Host: api.am.wso2.com' \
         --header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiZXhwIjoxNjg4MTMxNDQ0LCAibmJmIjoxNjg4MTI3ODQ0LCAiaWF0IjoxNjg4MTI3ODQ0LCAianRpIjoiMDFlZTE3NDEtMDA0Ni0xOGE2LWFhMjEtYmQwYTk4ZjYzNzkwIiwgImNsaWVudElkIjoiNDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyIiwgInNjb3BlIjoiZGVmYXVsdCJ9.RfKQq2fUZKZFAyjimvsPD3cOzaVWazabmq7b1iKYacqIdNjkvO9CQmu7qdtrVNDmdZ_gHhWLXiGhN4UTSCXv_n1ArDnxTLFBroRS8dxuFBZoD9Mpj10vYFSDDhUfFqjgMqtpr30TpDMfee1wkqB6K757ZSjgCDa0hAbv555GkLdZtRsSgR3xWcxPBsIozqAMFDCWoUCbgTQuA5OiEhhpVco2zv4XLq2sz--VRoBieO12C69KnGRmoLuPtvOayInvrnV96Tbt9fR0fLS2l1nvAdFzVou0SIf9rMZLnURLVQQYE64GR14m-cFRYdUI9vTsFHZBl5w-uCLdzMMofzZaLQ' \
-        --form 'apkConfiguration=@"/Users/user/EmployeeServiceV3.apk-conf"' \
-        --form 'definitionFile=@"/Users/user/EmployeeServiceDefinition.json"'
+        --form 'apkConfiguration=@"/Users/user/SampleServiceV3.apk-conf"' \
+        --form 'definitionFile=@"/Users/user/SampleAPIDefinition.json"'
         ```
 
     === "Sample Response"
 
         ```
         ---
-        id: "a70e538aeaab278437dc4c3199dbaf6fcb7df2d9"
-        name: "EmployeeServiceAPI"
-        basePath: "/test"
-        version: "2.0.0"
+        id: "2d43a29159fbc77652b687243d545a7038c3abd6"
+        name: "Sample API"
+        basePath: "/sample-api"
+        version: "0.1.0"
         type: "REST"
         defaultVersion: false
+        rateLimit:
+          requestsPerUnit: 5
+          unit: "Minute"
         endpointConfigurations:
-          production:
-            - endpoint: "http://employee-service:8080"
+            production:
+              - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
         operations:
-        - target: "/employees"
+        - target: "/uuid"
           verb: "GET"
           secured: true
           scopes: []
           rateLimit:
             requestsPerUnit: 10
             unit: "Minute"
-        - target: "/employee"
+        - target: "/ai/spelling"
           verb: "POST"
           secured: true
           scopes: []
-        - target: "/employee/{employeeId}"
-          verb: "PUT"
+        - target: "/base64/decode/{value}"
+          verb: "POST"
           secured: true
           scopes: []
-        - target: "/employee/{employeeId}"
-          verb: "DELETE"
+        - target: "/base64/encode/{value}"
+          verb: "POST"
+          secured: true
+          scopes: []
+        - target: "/ip"
+          verb: "GET"
+          secured: true
+          scopes: []
+        - target: "/user-agent"
+          verb: "GET"
           secured: true
           scopes: []
         ```
 
-By now you have deployed the new API with resouce level rate limit policies. You can invoke the GET /employee endpoint API multiple times using the access token generated in the previous step to monitor requests getting throttled out after 10 requests per minute.
+By now you have deployed the new API with resouce level rate limit policies. You can invoke the GET /uuid endpoint API multiple times using the access token generated in the previous step to monitor requests getting throttled out after 10 requests per minute.
 
 !!!NOTE
     Once the ratelimit is enforced, the ratelimited requests will receive a 429 response code with no content as the response.
