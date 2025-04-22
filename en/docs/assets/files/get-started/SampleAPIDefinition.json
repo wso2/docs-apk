@@ -1,0 +1,361 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Sample API",
+    "description": "A set of helpers inspired by httpbin.org",
+    "version": "0.1.0"
+  },
+  "servers": [
+    {
+      "url": "https://dev-tools.wso2.com/gs/helpers/v1.0"
+    }
+  ],
+  "tags": [
+    {
+      "name": "echo",
+      "description": "Echo data from the HTTP request"
+    },
+    {
+      "name": "dynamic",
+      "description": "Dynamic data generation"
+    },
+    {
+      "name": "convert",
+      "description": "Convert data across various formats"
+    },
+    {
+      "name": "AI",
+      "description": "Leverage AI to transform and validate data"
+    }
+  ],
+  "paths": {
+    "/ai/spelling": {
+      "post": {
+        "operationId": "postAiSpelling",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ai_spelling_payload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ai_spelling_response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "BadRequest",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/error_response"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ErrorPayload"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "InternalServerError",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorPayload"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/base64/decode/{value}": {
+      "post": {
+        "tags": [
+          "convert"
+        ],
+        "summary": "Decodes base64url-encoded string.",
+        "parameters": [
+          {
+            "name": "value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "maxLength": 500,
+              "pattern": "^[0-9a-zA-Z=]+$",
+              "type": "string",
+              "default": "QmFsbGVyaW5hIGlzIGF3ZXNvbWUh"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Decoded base64 content.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/base64_response"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/base64/encode/{value}": {
+      "post": {
+        "tags": [
+          "convert"
+        ],
+        "summary": "Base64 encode input string .",
+        "parameters": [
+          {
+            "name": "value",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "maxLength": 500,
+              "pattern": "^[0-9a-zA-Z\\s!$-_]+$",
+              "type": "string",
+              "default": "Ballerina is awesome!"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Encoded base64 content.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/base64_response"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/ip": {
+      "get": {
+        "tags": [
+          "echo"
+        ],
+        "summary": "Returns the client IP address.",
+        "responses": {
+          "200": {
+            "description": "Get the client IP address.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ip_response"
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/user-agent": {
+      "get": {
+        "tags": [
+          "echo"
+        ],
+        "summary": "Return the User-Agent header value",
+        "responses": {
+          "200": {
+            "description": "Get the request User-Agent header value.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ua_response"
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/uuid": {
+      "get": {
+        "tags": [
+          "dynamic"
+        ],
+        "summary": "Returns a unique ID as per UUID v4 spec",
+        "responses": {
+          "200": {
+            "description": "Get a UUID V4.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/uuid_response"
+                }
+              }
+            }
+          },
+          "default": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ip_response": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "origin": {
+            "maxLength": 64,
+            "pattern": "^[0-9\\.]+$",
+            "type": "string"
+          }
+        }
+      },
+      "base64_response": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "value": {
+            "maxLength": 100,
+            "pattern": "^[0-9\\.]+$",
+            "type": "string"
+          }
+        }
+      },
+      "ua_response": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "user-agent": {
+            "maxLength": 1000,
+            "pattern": "^[0-9a-zA-Z_\\-\\/,();\\.\\s]+$",
+            "type": "string"
+          }
+        }
+      },
+      "uuid_response": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "uuid": {
+            "maxLength": 36,
+            "minLength": 36,
+            "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$",
+            "type": "string"
+          }
+        }
+      },
+      "error_response": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "message": {
+            "maxLength": 50,
+            "type": "string"
+          },
+          "code": {
+            "maxLength": 10,
+            "type": "string"
+          }
+        }
+      },
+      "ai_spelling_payload": {
+        "required": [
+          "text"
+        ],
+        "type": "object",
+        "properties": {
+          "text": {
+            "maxLength": 100,
+            "pattern": "^[\\w\\s]+$",
+            "type": "string"
+          }
+        }
+      },
+      "ai_spelling_response": {
+        "required": [
+          "correctedText"
+        ],
+        "type": "object",
+        "properties": {
+          "correctedText": {
+            "maxLength": 150,
+            "pattern": "^[\\w\\s]+$",
+            "type": "string"
+          }
+        }
+      },
+      "ErrorPayload": {
+        "required": [
+          "message",
+          "method",
+          "path",
+          "reason",
+          "status",
+          "timestamp"
+        ],
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "responses": {
+      "error": {
+        "description": "Response for any error",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/error_response"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -5,13 +5,13 @@
      <html>
         <table>
         <th>Field</th><th>Value</th>
-        <tr><td>Application Name</td><td>SwaggerPetstoreApp</td></tr>
+        <tr><td>Application Name</td><td>SampleServiceApp</td></tr>
         <tr><td>Per Token Quota</td><td>10PerMin</td></tr>
-        <tr><td>Description</td><td>Petstore Application</td></tr>
+        <tr><td>Description</td><td>Sample Service Application</td></tr>
         </table>
      </html>
 
-4. Click **Subscriptions** to subscribe to the created SwaggerPetstore API.
+4. Click **Subscriptions** to subscribe to the created SampleService API.
 5. Click **Production Keys** or **Sandbox Keys** based on the environment for which you need to generate keys.
    Let's assume that you are working in a production environment. Therefore, click **Production Keys**.
 5. Click **Generate Keys** to create an application Access Token with relevant scopes.
