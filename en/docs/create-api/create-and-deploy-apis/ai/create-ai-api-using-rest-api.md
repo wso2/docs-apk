@@ -26,13 +26,13 @@ For this use case, we will use the Azure OpenAI service and will use the API Key
 
 This service generates an APK configuration file by providing your OAS file. APK configuration file includes important API metadata, rate limiting details, security settings, and other necessary information about your API.
 
-The OpenAPI specification file can be provided as a local file or as a URL containing a definition file. For this use case, we will use the Azure OpenAI OAS definition therefore download and save the azure OAS file as <b>azure_api.yaml</b>.
+The OpenAPI specification file can be provided as a local file or as a URL containing a definition file. For this use case, we will use the Azure OpenAI OAS definition therefore download and save the azure OAS file as <b>azure-api.yaml</b>.
 
 === "Sample Request"
     ```
-    curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.3.0/apis/generate-configuration' \
-    --header 'Host: api.am.wso2.com' \
-    --form 'definition=@"/Users/user/azure_api.yaml"'
+    curl -k --location 'https://api.example.com:9095/api/configurator/1.3.0/apis/generate-configuration' \
+    --header 'Host: api.example.com' \
+    --form 'definition=@"/Users/user/azure-api.yaml"'
     ```
 === "Request Format"
     ```
@@ -43,7 +43,7 @@ The OpenAPI specification file can be provided as a local file or as a URL conta
 === "Sample Response"
     ```yaml
     name: "Azure OpenAI Service API"
-    basePath: "/QXp1cmUgT3BlbkFJIFNlcnZpY2UgQVBJMjAyNC0wNi0wMQ"
+    basePath: "/azure-open-ai"
     version: "2024-06-01"
     type: "REST"
     defaultVersion: false
@@ -78,7 +78,7 @@ The OpenAPI specification file can be provided as a local file or as a URL conta
       scopes: []
     ```
 
-You will get the apk-conf file content as the response, as seen in the above sample response. Save this content into a file with the `.apk-conf` file extension. For example, you can save under the name, azure.apk-conf. 
+You will get the apk-conf file content as the response, as seen in the above sample response. Save this content into a file with the `.apk-conf` file extension. For example, you can save under the name <b>azure.apk-conf</b>. 
 
 !!! note 
     You will need to fill in the AI Provider and Endpoint Configuration fields such as endpoint and security, before deploying the API.
@@ -87,18 +87,18 @@ You will get the apk-conf file content as the response, as seen in the above sam
 
 Review the content inside the apk-conf file and update it with additional API configurations as needed, such as configuring AI Provider, LLM Service URl in the Endpoint Configuration, Secret which stores the API key provided from LLM Service and rate limits, CORS configurations, etc.
 
-Refer to the sample configuration file below:
+Refer to the sample configuration file below. For this guide, replace the contents of the apk-conf file that you generated with the contents of this sample configuration and replace the `{endpoint}` and `{deployment-id}` in the endpoint field with the actual values provided by the LLM Service Provider.
 
 ```yaml
 name: "Azure OpenAI Service API"
-basePath: "/QXp1cmUgT3BlbkFJIFNlcnZpY2UgQVBJMjAyNC0wNi0wMQ"
+basePath: "/azure-open-ai"
 version: "1.0.0"
 type: "REST"
 defaultVersion: false
 subscriptionValidation: false
 aiProvider:
   name: "AzureAI"
-  apiVersion: "2021-06-01"
+  apiVersion: "2024-06-01"
 endpointConfigurations:
   production:
     - endpoint: "https://{endpoint}/openai/deployments/{deployment-id}"
@@ -174,11 +174,11 @@ Create a secret containing the API Key of the LLM Service Provider using the fol
 
 === "Sample Command"
     ```bash
-        kubectl create secret generic azure-ai-secret --from-literal=apiKey='xxxxxxxxxxxxxxxxxxx' 
+    kubectl create secret generic azure-ai-secret --from-literal=apiKey='xxxxxxxxxxxxxxxxxxx' 
     ```
 === "Command Format"
     ```bash
-        kubectl create secret generic azure-ai-secret --from-literal=apiKey='<<api key of LLM Service>>' --namespace=<<namespace>>
+    kubectl create secret generic azure-ai-secret --from-literal=apiKey='<<api key of LLM Service>>' --namespace=<<namespace>>
     ```
 
 ## Step 6. Deploy the API to a Kubernetes cluster.
@@ -193,7 +193,7 @@ After generating the token, you can deploy the API directly into APK using API S
 
 === "Sample Request"
     ```
-    curl -k --location 'https://api.am.wso2.com:9095/api/deployer/1.3.0/apis/deploy' \
+    curl -k --location 'https://api.example.com:9095/api/deployer/1.3.0/apis/deploy' \
     --header 'Content-Type: multipart/form-data' \
     --header 'Accept: application/yaml' \
     --header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiYXVkIjoiYXVkMSIsICJleHAiOjE3MzAwMTQ0MjksICJuYmYiOjE3MzAwMTA4MjksICJpYXQiOjE3MzAwMTA4MjksICJqdGkiOiIwMWVmOTQyZC02Y2I0LTFjNDgtYmFmYS04Yzg5NGFlZWZkYzIiLCAiY2xpZW50SWQiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAic2NvcGUiOiJhcGs6YXBpX2NyZWF0ZSJ9.isgFKKbdmIApTpCcZEhn1aWpHPFs4ZRhEva9Hjj6WMQWtwlYYlcgBK_g08p1zA0HOxCOZuAsXBcEMLnJ9HzgBq0bWKegWwAt_oTHCvDu4yi4gNYR0TLPc_8goa6fXS-iLckrG22Csi7ODoj84agW6rwLEq4G62dVWt4dNMSSO91cy2HdYtVjcnbKxefVJ942uwJOqqL4HqDc4a-u1rHeLchvwn_b1ezZIyWHcZQFsY2PP3UBZ30t_5-08V3w2AbkVXvppYpHKNqg647MzdOChz66nF0va5FxmlTr71uY0Q4Gufv-tT6QENWX_GcYhDmdH4OQXTFt9jHgm8lcXxyK7g' \
@@ -212,7 +212,7 @@ After generating the token, you can deploy the API directly into APK using API S
     ```
     id: "8bcdea77634e2d4c827a7ea88f8075c4dd538834"
     name: "Azure OpenAI Service API"
-    basePath: "/QXp1cmUgT3BlbkFJIFNlcnZpY2UgQVBJMjAyNC0wNi0wMQ"
+    basePath: "/azure-open-ai"
     version: "1.0.0"
     type: "REST"
     defaultVersion: false
@@ -272,7 +272,7 @@ After generating the token, you can deploy the API directly into APK using API S
 You can generate K8s resources as a zip file from config-deployer service.
 
 ```
-curl --location 'https://api.am.wso2.com:9095/api/configurator/1.3.0/apis/generate-k8s-resources' \
+curl --location 'https://api.example.com:9095/api/configurator/1.3.0/apis/generate-k8s-resources' \
 --header 'Content-Type: multipart/form-data' \
 --header 'Accept: application/zip' \
 --form 'apkConfiguration=@"/Users/user/azure.apk-conf"' \
@@ -292,7 +292,7 @@ kubectl apply -f <path_to_extracted_zip_file>
 
 === "Sample Request"
     ```
-    curl -X POST "https://default.gw.wso2.com:9095/QXp1cmUgT3BlbkFJIFNlcnZpY2UgQVBJMjAyNC0wNi0wMQ/1.0.0/chat/completions?api-version=2024-06-01" \
+    curl -X POST "https://default.gw.example.com:9095/azure-open-ai/1.0.0/chat/completions?api-version=2024-06-01" \
       -H "Content-Type: application/json" \
       -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiYXVkIjoiYXVkMSIsICJleHAiOjE3MzAwMTU0NDIsICJuYmYiOjE3MzAwMTE4NDIsICJpYXQiOjE3MzAwMTE4NDIsICJqdGkiOiIwMWVmOTQyZi1jODgwLTE0ZDYtYTMzNC0yNTMyMDEzNzhkOWUiLCAiY2xpZW50SWQiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAic2NvcGUiOiJhcGs6YXBpX2NyZWF0ZSJ9.Lumx8tBDTNhwgfUHWwgiSQEwcjz6ZF-5f3UJfJlCNv7feAnIEsdGmb5sFw6wRQBZklSVsZYffj1uK7ManfSR6gfws-W1qo5itwYFixvkoOMU5HcxtVdTsYOl8CzN4u76hbbk_r7I3vov-2g4iMT2Lfu45g1u1sEj1JgjbpOnTZdZ2c2jWHal35idLSEBhULMElGPjce1uCwTS2zsEZQond1q3HvMouIJ58q2oGaD4qpcx-FTlbYKsBD5_h4v4U2PV3kGkxLzos4eXoeM88vbVhIew-z8NxZuxiuP3dS4AAIbHevkQgmueMdN6E0Y5xXoYbcTDVuB8dMYAuctof6b4A' \
       -d '{

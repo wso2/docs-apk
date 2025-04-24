@@ -164,9 +164,8 @@ You now have the API Definition (`SampleAPIDefinition.json`) and the apk-conf fi
     | apkConfiguration | `SampleService.apk-conf` file   | :material-check: |
     | definitionFile   | `SampleAPIDefinition.json` file | :material-check: |
 
-2. Set the access token in the Authorization header as a bearer token. This is the access token received by following the steps under the <a href="../quick-start-guide#generate-an-access-token-to-invoke-apis" target="_blank">Generate an access token to invoke APIs section</a> above.
 
-3. You can generate the Kubernetes custom resources as a zip file from the config-deployer service using the following command.
+2. You can generate the Kubernetes custom resources as a zip file from the config-deployer service using the following command.
 
     === "Sample Request"
         ```
@@ -188,13 +187,13 @@ You now have the API Definition (`SampleAPIDefinition.json`) and the apk-conf fi
         -k --output <path/and/name-for-generated-zip-file.zip>
         ```
 
-4. Once you have generated your K8s artifacts, the next step is to apply them to  the Kubernetes API server.
+3. Once you have generated your K8s artifacts, the next step is to apply them to  the Kubernetes API server.
 
     ```
     kubectl apply -n apk -f <path_to_extracted_zip_file>
     ```
 
-5. Execute the command below. You will be able to see that the `SampleServiceAPI` is successfully deployed as shown in the image.
+4. Execute the command below. You will be able to see that the `SampleServiceAPI` is successfully deployed as shown in the image.
 
 
     === "Command"
@@ -206,17 +205,17 @@ You now have the API Definition (`SampleAPIDefinition.json`) and the apk-conf fi
 
 ## Step 3 - Manage API From Control Plane
 
-1. Login to the Publisher Console ([https://am.wso2.com/publisher](https://am.wso2.com/publisher)) of the WSO2 API Manager.
+1. Login to the Publisher Console (<a href="https://am.wso2.com/publisher" target="_blank">https://am.wso2.com/publisher</a>) of the WSO2 API Manager.
 
-    you can see the deploy SampleService API as below.
+    you can see the deployed SampleService API as below.
 
     [![ControlPlane API](../assets/img/control-plane/cp-overview.png)](../assets/img/control-plane/cp-overview.png)
 
-2. Once you click the API you will redirect to overciew page.
+2. Once you click the API you will be redirected to the overview page.
 
     [![ControlPlaneOverview API](../assets/img/control-plane/main-overview.png)](../assets/img/control-plane/main-overview.png)
 
-3. Now you can edit portal cnfigurations such as basic info, documentation etc.
+3. Now you can edit portal configurations such as basic info, documentation etc.
 
     [![ControlPlaneBasic API](../assets/img/control-plane/portal-conf.png)](../assets/img/control-plane/portal-conf.png)
 
@@ -225,7 +224,7 @@ You now have the API Definition (`SampleAPIDefinition.json`) and the apk-conf fi
 
 ## Step 4 - Create Application and Subscribe to the API
 
-1. Login to the Developer Portal ([https://am.wso2.com/devportal](https://am.wso2.com/devportal)) of the WSO2 API Manager.
+1. Login to the Developer Portal (<a href="https://am.wso2.com/devportal" target="_blank">https://am.wso2.com/devportal</a>) of the WSO2 API Manager.
 2. Click on the `Applications` tab and then use `ADD NEW APPLICATION` option.
 3. Provide the information as given below and click `Save`.
 
@@ -251,7 +250,9 @@ You now have the API Definition (`SampleAPIDefinition.json`) and the apk-conf fi
 
 ## Step 5 - Invoke the API
 
-1. Use the following command to invoke the API using the access token generated in the previous step.
+1. Generate an access token by following the steps under <a href="../quick-start-guide#generate-an-access-token-to-invoke-apis" target="_blank">Generate an access token to invoke APIs</a> section.
+
+2. Use the following command to invoke the API using the access token generated in the previous step.
 
     ```bash
     curl -X GET "https://carbon.super.gw.wso2.com:9095/sample-api/0.1.0/uuid" -H "Authorization: Bearer <access-token>" -k
