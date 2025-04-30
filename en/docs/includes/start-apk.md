@@ -32,15 +32,15 @@ helm install apk wso2apk/apk-helm --version 1.3.0 -f https://raw.githubuserconte
         ```
 
 !!!Optional
-    If you want to update an existing Kubernetes Gateway installation, use the following Helm upgrade command. The --no-hooks flag disables the hooks available in the Kubernetes Gateway Helm chart)
+    If you want to update an existing Kubernetes Gateway installation, use the following Helm upgrade command. The --no-hooks flag disables the hooks available in the Kubernetes Gateway Helm chart.
 
     === "Command"
         ```
-        helm install apk wso2apk/apk-helm --version 1.3.0 -f values.yaml --no-hooks
+        helm upgrade apk wso2apk/apk-helm --version 1.3.0 -f values.yaml --no-hooks
         ```
     === "Format"
         ```
-        helm install <chart-name> <repository-name>/apk-helm --version <version-of-APK> -f <path-to-values.yaml-file> --no-hooks
+        helm upgrade <chart-name> <repository-name>/apk-helm --version <version-of-APK> -f <path-to-values.yaml-file> --no-hooks
         ```
 
 ### Verify the deployment

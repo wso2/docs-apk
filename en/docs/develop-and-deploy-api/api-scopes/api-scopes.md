@@ -4,37 +4,45 @@ API Scopes are used to define the access level of an API resources. You can defi
 
 ## Before you begin
 
-You can use the apk-conf file which is created in <a href="../../../get-started/quick-start-guide" target="_blank">Create an API</a> documentation and save this content into a file named `EmployeeServiceEndpoints.apk-conf`.
+You can use the apk-conf file which is created in <a href="../../../get-started/quick-start-guide" target="_blank">Create an API</a> documentation and save this content into a file named `SampleServiceEndpoints.apk-conf`.
 
 Sample content before the modification is shown below.
 
-   ```yaml
-   name: "EmployeeServiceAPI"
-   basePath: "/test"
-   version: "3.14"
-   type: "REST"
-   defaultVersion: false
-   endpointConfigurations:
-    production:
-      - endpoint: "http://employee-service:8080"
-   operations:
-   - target: "/employees"
-     verb: "GET"
-     secured: true
-     scopes: []
-   - target: "/employee"
-     verb: "POST"
-     secured: true
-     scopes: []
-   - target: "/employee/{employeeId}"
-     verb: "PUT"
-     secured: true
-     scopes: []
-   - target: "/employee/{employeeId}"
-     verb: "DELETE"
-     secured: true
-     scopes: []
-   ```
+```yaml
+  name: "Sample API"
+  basePath: "/sample-api"
+  version: "0.1.0"
+  type: "REST"
+  defaultVersion: false
+  endpointConfigurations:
+      production:
+        - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
+  operations:
+    - target: "/ai/spelling"
+      verb: "POST"
+      secured: true
+      scopes: []
+    - target: "/base64/decode/{value}"
+      verb: "POST"
+      secured: true
+      scopes: []
+    - target: "/base64/encode/{value}"
+      verb: "POST"
+      secured: true
+      scopes: []
+    - target: "/ip"
+      verb: "GET"
+      secured: true
+      scopes: []
+    - target: "/user-agent"
+      verb: "GET"
+      secured: true
+      scopes: []
+    - target: "/uuid"
+      verb: "GET"
+      secured: true
+      scopes: []
+```
 ## Invoke API using access token without API Scopes
 
 Before adding the scopes, let's deploy and invoke the API.
@@ -43,35 +51,43 @@ Refer the <a href="../../../get-started/quick-start-guide" target="_blank">Quick
 ## Adding API Scopes
 
 Update the APK configuration as the following to add API Scopes to relevant operations in apk-conf. 
-Here, we have added a property named `scopes` with the value `wso2` for `/employees` resource.
+Here, we have added a property named `scopes` with the value `wso2` for `/uuid` resource.
 
-   ```yaml
-   name: "EmployeeServiceAPI"
-   basePath: "/test"
-   version: "3.14"
-   type: "REST"
-   defaultVersion: false
-   endpointConfigurations:
-     production:
-       - endpoint: "http://employee-service:8080"
-   operations:
-     - target: "/employees"
-       verb: "GET"
-       secured: true
-       scopes: ["wso2"]
-     - target: "/employee"
-       verb: "POST"
-       secured: true
-       scopes: []
-     - target: "/employee/{employeeId}"
-       verb: "PUT"
-       secured: true
-       scopes: []
-     - target: "/employee/{employeeId}"
-       verb: "DELETE"
-       secured: true
-       scopes: []
-   ```
+```yaml
+  name: "Sample API"
+  basePath: "/sample-api"
+  version: "0.1.0"
+  type: "REST"
+  defaultVersion: false
+  endpointConfigurations:
+      production:
+        - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
+  operations:
+    - target: "/uuid"
+      verb: "GET"
+      secured: true
+      scopes: ["wso2"]
+    - target: "/ai/spelling"
+      verb: "POST"
+      secured: true
+      scopes: []
+    - target: "/base64/decode/{value}"
+      verb: "POST"
+      secured: true
+      scopes: []
+    - target: "/base64/encode/{value}"
+      verb: "POST"
+      secured: true
+      scopes: []
+    - target: "/ip"
+      verb: "GET"
+      secured: true
+      scopes: []
+    - target: "/user-agent"
+      verb: "GET"
+      secured: true
+      scopes: []
+```
 
 ## Deploy APK configuration
 

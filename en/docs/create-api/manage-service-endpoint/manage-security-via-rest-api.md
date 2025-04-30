@@ -36,7 +36,7 @@ You can create a K8s secret using the following format including your username a
   ```
     endpointConfigurations:
       production:
-        - endpoint: "https://httpbin.org"
+        - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
           endpointSecurity:
             enabled: true
             securityType:
@@ -50,7 +50,7 @@ You can create a K8s secret using the following format including your username a
   ```
     endpointConfigurations:
       production:
-        - endpoint: "https://httpbin.org"
+        - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
             name: "backend-service"
             port: 80
             protocol: "http"
@@ -64,15 +64,15 @@ You can create a K8s secret using the following format including your username a
 
 A sample `apk-conf` file with direct endpoints and basic authentication is shown below.
 
-```
-name: "EmployeeServiceAPI"
-basePath: "/test"
-version: "4.0"
+```yaml
+name: "Sample API"
+basePath: "/sample-api"
+version: "0.1.0"
 type: "REST"
-defaultVersion: true
+defaultVersion: false
 endpointConfigurations:
   production:
-    - endpoint: "http://employee-service:8080"
+    - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
       endpointSecurity:
         enabled: true
         securityType:
@@ -80,20 +80,28 @@ endpointConfigurations:
           userNameKey: "username"
           passwordKey: "password"
 operations:
-  - target: "/employees"
-    verb: "GET"
-    secured: true
-    scopes: []
-  - target: "/employee"
+  - target: "/ai/spelling"
     verb: "POST"
     secured: true
     scopes: []
-  - target: "/employee/{employeeId}"
-    verb: "PUT"
+  - target: "/base64/decode/{value}"
+    verb: "POST"
     secured: true
     scopes: []
-  - target: "/employee/{employeeId}"
-    verb: "DELETE"
+  - target: "/base64/encode/{value}"
+    verb: "POST"
+    secured: true
+    scopes: []
+  - target: "/ip"
+    verb: "GET"
+    secured: true
+    scopes: []
+  - target: "/user-agent"
+    verb: "GET"
+    secured: true
+    scopes: []
+  - target: "/uuid"
+    verb: "GET"
     secured: true
     scopes: []
 ```

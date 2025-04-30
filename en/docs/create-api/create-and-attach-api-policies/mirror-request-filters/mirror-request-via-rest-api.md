@@ -4,35 +4,44 @@ This functionality enables request mirroring, where a request can be duplicated 
 
 ### Step 1 - Get the API configuration
 
-Save the following content into a file named `EmployeeService.apk-conf`. You can use this apk-conf file for the rest of this guide.
+Save the following content into a file named `SampleService.apk-conf`. You can use this apk-conf file for the rest of this guide.
 
 ```
 id: "header-modifier-api"
-name: "EmployeeServiceAPI"
-basePath: "/employee"
-version: "1.0"
+name: "Sample API"
+basePath: "/sample-api"
+version: "0.1.0"
 type: "REST"
 defaultVersion: false
+subscriptionValidation: false
 endpointConfigurations:
-  production:
-    - endpoint: `WEBHOOK_URL`
+    production:
+      - endpoint: `WEBHOOK_URL`
 operations:
-- target: "/employees"
-  verb: "GET"
-  secured: false
-  scopes: []
-- target: "/employee"
-  verb: "POST"
-  secured: true
-  scopes: []
-- target: "/employee/{employeeId}"
-  verb: "PUT"
-  secured: true
-  scopes: []
-- target: "/employee/{employeeId}"
-  verb: "DELETE"
-  secured: true
-  scopes: []
+  - target: "/ai/spelling"
+    verb: "POST"
+    secured: true
+    scopes: []
+  - target: "/base64/decode/{value}"
+    verb: "POST"
+    secured: true
+    scopes: []
+  - target: "/base64/encode/{value}"
+    verb: "POST"
+    secured: true
+    scopes: []
+  - target: "/ip"
+    verb: "GET"
+    secured: true
+    scopes: []
+  - target: "/user-agent"
+    verb: "GET"
+    secured: true
+    scopes: []
+  - target: "/uuid"
+    verb: "GET"
+    secured: true
+    scopes: []
 ```
 
 ### Step 2 - Add the request mirroring policy to the apk-conf file
@@ -41,7 +50,7 @@ A sample request mirror configuration is given below.
 For this guide, it's best to use a webhook.site URL for both the production and request mirroring endpoints to view the duplicate requests. Replace the `WEBHOOK_URL` with a relevant webhook url from the site `https://webhook.site`. Ensure that you keep this webpage open to view the incoming requests.
 
 ```
-  - target: "/employees"
+  - target: "/uuid"
     verb: "GET"
     secured: false
     scopes: []
@@ -60,38 +69,47 @@ The complete apk-conf file with this configuration is given below.
 
 ```
 id: "header-modifier-api"
-name: "EmployeeServiceAPI"
-basePath: "/employee"
-version: "1.0"
+name: "Sample API"
+basePath: "/sample-api"
+version: "0.1.0"
 type: "REST"
 defaultVersion: false
+subscriptionValidation: false
 endpointConfigurations:
     production:
-        - endpoint: `WEBHOOK_URL`
+      - endpoint: `WEBHOOK_URL`
 operations:
-- target: "/employees"
-  verb: "GET"
-  secured: false
-  scopes: []
-  operationPolicies:
-    request:
-      - policyName: RequestMirror
-        policyVersion: v1
-          parameters:
-            urls:
-              - `WEBHOOK_URL`
-- target: "/employee"
-  verb: "POST"
-  secured: true
-  scopes: []
-- target: "/employee/{employeeId}"
-  verb: "PUT"
-  secured: true
-  scopes: []
-- target: "/employee/{employeeId}"
-  verb: "DELETE"
-  secured: true
-  scopes: []
+  - target: "/uuid"
+    verb: "GET"
+    secured: false
+    scopes: []
+    operationPolicies:
+      request:
+        - policyName: RequestMirror
+          policyVersion: v1
+            parameters:
+              urls:
+                - `WEBHOOK_URL`
+  - target: "/ai/spelling"
+    verb: "POST"
+    secured: true
+    scopes: []
+  - target: "/base64/decode/{value}"
+    verb: "POST"
+    secured: true
+    scopes: []
+  - target: "/base64/encode/{value}"
+    verb: "POST"
+    secured: true
+    scopes: []
+  - target: "/ip"
+    verb: "GET"
+    secured: true
+    scopes: []
+  - target: "/user-agent"
+    verb: "GET"
+    secured: true
+    scopes: []
 ```
 
 ### Step 3 - Deploy the API in APK
@@ -107,7 +125,7 @@ Follow the <a href="../../../../develop-and-deploy-api/security/generate-access-
 You can invoke the API using the following command.
 
 ```
-curl --location 'https://default.gw.wso2.com:9095/employee/1.0/employee' \
+curl --location 'https://default.gw.wso2.com:9095/sample-api/0.1.0/uuid' \
 --header 'Host: default.gw.wso2.com' \
 --header 'Authorization: Bearer <accessToken>
 ```

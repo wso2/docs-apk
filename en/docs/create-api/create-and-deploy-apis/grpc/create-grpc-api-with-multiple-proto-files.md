@@ -37,8 +37,8 @@ Execute the following request to generate the APK configuration. Use the values 
 
 === "Sample Request"
     ```
-    curl -k --location 'https://api.am.wso2.com:9095/api/configurator/1.3.0/apis/generate-configuration' \
-    --header 'Host: api.am.wso2.com' \
+    curl -k --location 'https://api.example.com:9095/api/configurator/1.3.0/apis/generate-configuration' \
+    --header 'Host: api.example.com' \
     --form 'apiType="GRPC"' \
     --form 'definition=@"/Users/user/OrderDefinition.zip"'
     ```
@@ -141,18 +141,18 @@ After generating the token, you can deploy the gRPC API with the following comma
 
 === "Sample Request"
     ```
-    curl -k --location 'https://api.am.wso2.com:9095/api/deployer/1.3.0/apis/deploy' \
-    --header 'Host: api.am.wso2.com' \
+    curl -k --location 'https://api.example.com:9095/api/deployer/1.3.0/apis/deploy' \
+    --header 'Host: api.example.com' \
     --header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiZXhwIjoxNjg4MTMxNDQ0LCAibmJmIjoxNjg4MTI3ODQ0LCAiaWF0IjoxNjg4MTI3ODQ0LCAianRpIjoiMDFlZTE3NDEtMDA0Ni0xOGE2LWFhMjEtYmQwYTk4ZjYzNzkwIiwgImNsaWVudElkIjoiNDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyIiwgInNjb3BlIjoiZGVmYXVsdCJ9.RfKQq2fUZKZFAyjimvsPD3cOzaVWazabmq7b1iKYacqIdNjkvO9CQmu7qdtrVNDmdZ_gHhWLXiGhN4UTSCXv_n1ArDnxTLFBroRS8dxuFBZoD9Mpj10vYFSDDhUfFqjgMqtpr30TpDMfee1wkqB6K757ZSjgCDa0hAbv555GkLdZtRsSgR3xWcxPBsIozqAMFDCWoUCbgTQuA5OiEhhpVco2zv4XLq2sz--VRoBieO12C69KnGRmoLuPtvOayInvrnV96Tbt9fR0fLS2l1nvAdFzVou0SIf9rMZLnURLVQQYE64GR14m-cFRYdUI9vTsFHZBl5w-uCLdzMMofzZaLQ' \
-    --form 'apkConfiguration=@"path/to/apk-conf-file.apk-conf"' \
-    --form 'definitionFile=@"<path/to/zip-file-containing-proto-definitions.zip>"'
+    --form 'apkConfiguration=@"/Users/user/Order.apk-conf"' \
+    --form 'definitionFile=@"/Users/user/OrderDefinition.zip"'
     ```
 === "Request Format"
     ```
     curl -k --location 'https://<host>:9095/api/deployer/1.3.0/apis/deploy' \
     --header 'Host: <host>' \
     --header 'Authorization: Bearer <access-token>' \
-    --form 'apkConfiguration=@"path/to/apk-conf-file.apk-conf"' \
+    --form 'apkConfiguration=@"<path/to/apk-conf-file.apk-conf>"' \
     --form 'definitionFile=@"<path/to/zip-file-containing-proto-definitions.zip>"'
     ```
 === "Sample Response"
@@ -198,7 +198,7 @@ Once your gRPC API has been deployed, you can invoke it either via Postman, a cu
 
 If you are using grpcurl, you can view the various flags needed for sending requests <a href="https://github.com/fullstorydev/grpcurl" target="_blank">here</a>.
 
-A sample gRPC call is provided below.
+<a href="../../../../develop-and-deploy-api/security/generate-access-token" target="_blank">Generate an access token</a> and invoke the sample gRPC call for the Student Service API provided below.
 
 === "Sample Request"
     ```
@@ -210,7 +210,7 @@ A sample gRPC call is provided below.
     -proto order.proto \
     -d '{"id": "1"}' \
     -H 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWI' \
-    default.gw.wso2.com:9095 grpcapi.v1.user.UserService/GetUser
+    default.gw.example.com:9095 grpcapi.v1.user.UserService/GetUser
     ```
 === "Request Format"
     ```
@@ -220,5 +220,5 @@ A sample gRPC call is provided below.
     -proto <file-2.proto> \
     -d '{"argument": value}' \
     -H 'Authorization: Bearer <Access-Token>' \
-    default.gw.wso2.com:9095 <complete-service-and-method-name>
+    <Host>:9095 <complete-service-and-method-name>
     ```

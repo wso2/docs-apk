@@ -48,9 +48,14 @@ For a production environment, it is recommended to use CA-validated public certi
 | Gateway server           | `<helm-installation-name>-gateway-service.<namespace-name>.svc`, `<helm-installation-name>-gateway-service.<namespace-name>.svc.cluster.local`                     |
 | Ratelimitter server      | `<helm-installation-name>-ratelimiter-service.<namespace-name>.svc`, `<helm-installation-name>-ratelimiter-service.<namespace-name>.svc.cluster.local`             |
 
-### 1. Use cert manager
+### 1: Use cert-manager
 
-By default, Kubernetes Gateway installs cert manager in your cluster and employs a SelfSigned issuer for certificate validations. To utilize cert manager for handling the certificates, you will need to create [Issuers](https://cert-manager.io/docs/configuration/). Choose the type of Issuer you are going to use for listeners and servers, and create the Issuers in accordance with the [cert-manager documentation](https://cert-manager.io/docs/configuration/) document. You will need to create two issuers: one for listeners and one for servers. 
+!!! note
+    This will install cert-manager **within the namespace APK is installed in**. If you already have a cert-manager installation, or you wish to install cert-manager in a different namespace, follow the steps provided in 
+
+By default, the Kubernetes Gateway helm installation installs-cert manager in your cluster and employs a SelfSigned ClusterIssuer for certificate validations. To utilize cert manager for handling the certificates, you will need to create **Issuers**. 
+
+Choose the type of Issuer you are going to use for listeners and servers, and create them in accordance with the <a href="https://cert-manager.io/docs/configuration/" target="_blank">official cert-manager documentation</a>. You will need to create two Issuers: one for listeners and one for servers. 
 
 Once created, update the values.yaml configuration as follows. This configuration is to be placed at the same indentation level as the `wso2` configuration in the values.yaml file.
 
@@ -60,36 +65,45 @@ wso2:
 certmanager:
   listeners:
     issuerName: "<issuer-name-created-for-listeners>"
-    issuerKind: "ClusterIssuer" # or "Issuer" Refer to cert-manager's issuer doc
-  servers: 
+    issuerKind: "ClusterIssuer" # or "Issuer"
+  servers:
     issuerName: "<issuer-name-created-for-servers>"
-    issuerKind: "ClusterIssuer" # or "Issuer" Refer to cert-manager's issuer doc
+    issuerKind: "ClusterIssuer" # or "Issuer"
 ```
 
-### 2. Use the certificate files
+### 2: Create the secrets
 
-<b>Prerequisites</b>
+#### Prerequisites
 
-For all the components(Listeners and servers) prepare the following required files.
+##### 1. Generate the necessary certificate information
+For all the components (listeners and servers), prepare the following information.
 
-1. TLS certificate verified by a Ceriticate Authority (tls.crt)
-2. Private key associated with the TLS certificate(tls.key)
-3. Certificate Authority's (CA) root certificate(ca.crt)
+1. TLS certificate verified by a Certificate Authority (tls.crt)
+2. Private key associated with the TLS certificate (tls.key)
+3. Certificate Authority's (CA) root certificate (ca.crt)
 
+##### 2. Create the secrets
 For each component create a secret in the same namespace as Kubernetes Gateway is deployed with the following key-value pairs:
 
 - tls.crt - Base64 encoded value of tls.crt file
 - tls.key - Base64 encoded value of tls.key file
 - ca.crt - Base64 encoded value of ca.crt file
 
-You can use the following command to create the secret from the files
+Apply them in the same namespace as the APK installation.
+  
+You can use the following command to create the secret from the files.
+=== "Command"
+    ```
+    kubectl create secret generic gateway-listener-secret --from-file=./tls.crt --from-file=tls.key=./tls.key --from-file=ca.crt=./ca.crt -n apk
+    ```
+=== "Format"
+    ```
+    kubectl create secret generic <SECRET_NAME> --from-file=tls.crt=<path/to/tls.crt> --from-file=tls.key=<path/to/tls.key> --from-file=ca.crt=<path/to/ca.crt> -n <NAMESPACE>
+    ```
 
-```
-kubectl create secret generic <SECRET_NAME> --from-file=tls.crt=path/to/tls.crt --from-file=tls.key=path/to/tls.key --from-file=ca.crt=path/to/ca.crt -n <NAMESPACE>
-```
+You will need the names of the secrets to add to the values.yaml file.
 
 - To update the gateway listener certificates, update the following values.yaml config
-
 ```yaml
 wso2:
   ...
@@ -130,11 +144,11 @@ Servers and their `configs` location in the value.yaml are listed below.
 | Servers                  | Config location                                            |
 | ------------------------ | ---------------------------------------------------------- |
 | Adapter server           | wso2.apk.dp.adapter.configs.tls                            |
-| Common controller server | wso2.apk.dp.configdeployer.deployment.configs.tls          |
-| Config deployer server   | wso2.apk.dp.configdeployer.deployment.configs.tls          |
+| Common Controller server | wso2.apk.dp.configdeployer.deployment.configs.tls          |
+| Config Deployer server   | wso2.apk.dp.configdeployer.deployment.configs.tls          |
 | Enforcer server          | wso2.apk.dp.gatewayRuntime.deployment.enforcer.configs.tls |
 | Gateway server           | wso2.apk.dp.gatewayRuntime.deployment.router.configs.tls   |
-| Ratelimitter server      | wso2.apk.dp.ratelimiter.deployment.configs.tls             |
+| Ratelimiter server       | wso2.apk.dp.ratelimiter.deployment.configs.tls             |
 
 ## Remove default IdP
 

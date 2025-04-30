@@ -6,7 +6,7 @@ You can secure the access to your backend via Basic Authentication scheme. For t
 
 Let's say you have the following `Secret` which contains the credentials:
 
-```
+```yaml
 apiVersion: v1
 kind: Secret
 metadata:
@@ -29,7 +29,7 @@ You can apply this CR using kubectl.
 
 You can refer to the above `Secret` data from your `Backend` as below:
 
-```
+```yaml
 apiVersion: dp.wso2.com/v1alpha1
 kind: Backend
 metadata:
@@ -55,7 +55,7 @@ In the following section, we will discuss a sample scenario to try out backend s
 
 ### Step 1 : Create a  K8s Secret
 
-```
+```yaml
     apiVersion: v1
     kind: Secret
     metadata:
@@ -70,7 +70,7 @@ In the following section, we will discuss a sample scenario to try out backend s
 
 We will create a sample backend by referring to the above `Secret` data.
 
-```
+```yaml
     apiVersion: "dp.wso2.com/v1alpha1"
     kind: "Backend"
     metadata:
@@ -98,7 +98,7 @@ We will create a sample backend by referring to the above `Secret` data.
 
 Create an `HTTPRoute` resource referring to the above `Backend`.
 
-```
+```yaml
     apiVersion: "gateway.networking.k8s.io/v1beta1"
     kind: "HTTPRoute"
     metadata:
@@ -141,8 +141,7 @@ Create an `HTTPRoute` resource referring to the above `Backend`.
 
 ### Step 4 : Create the API
 
-```
-    ```
+```yaml
     kind: "API"
     apiVersion: "dp.wso2.com/v1alpha1"
     metadata:
@@ -166,7 +165,7 @@ Create an `HTTPRoute` resource referring to the above `Backend`.
       sandbox: null
       apiProperties: []
     status: null
-    ```
+    ---
     kind: "ConfigMap"
     apiVersion: "v1"
     metadata:
@@ -186,7 +185,7 @@ Refer [Step 3](https://apk.docs.wso2.com/en/latest/get-started/quick-start-guide
 
 In this try out we will use [httpbin service's](https://httpbin.org/)  `/get` resource to test the backend security. It echoes back the request details including all the headers. Therefore if the backend security was correctly configured, you should see the header `"Authorization": "Basic YWRtaW4KOmFkbWluCg==",` in the received response. 
 
-```
+```json
     {
       "args": {}, 
       "headers": {
