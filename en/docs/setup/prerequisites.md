@@ -61,6 +61,7 @@ We recommend the following minimum resource requirements for running WSO2 Kubern
 | **IdP Domain Service** | 200m             | 512Mi                |
 | **IdP UI**             | 50m              | 64Mi                 |
 
+
 **Minimum requirements for Kubernetes Gateway Data Plane with APIM Control Plane:**
 
 | Resource | Minimum Requirement |

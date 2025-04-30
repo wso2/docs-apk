@@ -2,9 +2,11 @@
 
 In certain scenarios, you may already have **cert-manager** installed or need to install it in a different namespace. This guide outlines the steps to configure the WSO2 Kubernetes Gateway's **cert-manager** in such cases.  
 
+
 ## 1. Ensure Cert-Manager is Installed  
 
 Before proceeding, ensure that your **cert-manager** is installed and running in its own namespace. You can refer to the <a href="https://cert-manager.io/docs/installation/" target="_blank">official cert-manager documentation </a> for this.
+
 
 ## 2. Create the Namespace for WSO2 Kubernetes Gateway
 
@@ -15,6 +17,7 @@ kubectl create ns wso2-kg
 ```
 
 ## 3. Create an Issuer for Cert-Manager in the WSO2 Kubernetes Gateway namespace
+
 
 Create an Issuer required for cert-manager by applying the following configuration:
 ```
@@ -33,17 +36,20 @@ You can obtain the <a href="../../assets/files/cert-manager/issuer.yaml" target=
 !!! note
     ### Why Use an Issuer Instead of a ClusterIssuer?
 
+
     By default, WSO2 Kubernetes Gateway installation comes with a ClusterIssuer, which operates cluster-wide. However, the ClusterIssuer looks for the secret named `apk-root-certificate` in the namespace where the cert-manager is installed, whereas WSO2 Kubernetes Gateway creates the secret in its own namespace.
 
     There are two ways to fix this.
 
     1. Modify the cert-manager installation by forcing the ClusterIssuer to check the WSO2 Kubernetes Gateway namespace, as in the <a href="https://cert-manager.io/docs/configuration/#cluster-resource-namespace" target="_blank">official cert-manager documentation</a>.
+
    
     2. To avoid modifying cert-manager’s installation, **create an Issuer instead**, which will look for secrets in its own namespace. Then it can correctly reference the secret containing the root certificate.
 
     We will proceed with the **second method** in this guide.
 
 ## 4. Apply the Issuer
+
 
 Run the following command to apply the issuer in the wso2-kg namespace:
 
@@ -68,6 +74,7 @@ At this stage, if you run
 
 it may show a "False" Ready status. This is expected, as the root certificate secret is not created yet. The secret will be generated when WSO2 Kubernetes Gateway is installed.
 
+
 ## 5. Update `values.yaml`
 
 Modify the values.yaml file with the following configuration:
@@ -87,6 +94,7 @@ certmanager:
 ```
 
 This configuration 
+
 
 - disables the cert-manager included with WSO2 Kubernetes Gateway
 - creates the root certificate for the Issuer
