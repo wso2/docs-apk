@@ -1,6 +1,6 @@
-# Portal-Driven Design First API Management 
+# Deploying & Invoking a managed API on WSO2 Kubernetes Gateway With Control Plane 
 
-This section is a step-by-step guide to creating, deploying, and invoking an API using the WSO2 Kubernetes Gateway with APIM Control Plane. It also covers portal-driven development, including creating an API from the UI.
+This section is a step-by-step guide to creating, deploying, and invoking an API using the WSO2 Kubernetes Gateway with APIM Control Plane. It including creating an API from the UI.
 
 !!!NOTE
     To set up the Kubernetes Gateway as an enterprise version, please follow the steps specified in both the <a href="../../setup/enterprise-apk-install" target="_blank">Install Kubernetes Gateway Enterprise</a> and <a href="../../setup/enterprise-apim-apk-agent-install" target="_blank">Install Kubernetes Gateway Agent Enterprise</a>.
