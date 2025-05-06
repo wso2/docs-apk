@@ -37,6 +37,12 @@ There are 3 components which you need to setup to get the Kubernetes Gateway wor
 
 Setup WSO2 API Manager 4.5.0 in K8s cluster using Helm Charts.
 
+!!! Note
+    The Quick Start Guide (QSG) uses an in-memory H2 database for the API Manager Control Plane. Restarting the APIM pod will erase all existing data.
+    To enable persistent storage, configure APIM to use a production-grade database such as MySQL.
+    For step-by-step instructions, see the  <a href="../../setup/apim-deploy-with-db/" target="_blank">Deploy APIM with DB</a> guide.
+
+
 1. Create a new helm repository with the latest apim release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apim```.
 
     ```console

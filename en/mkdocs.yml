@@ -283,6 +283,7 @@ nav:
         - Prerequisites: setup/prerequisites.md
         - Install Dataplane: setup/install.md
         - Install Control Plane with Dataplane: setup/install-with-cp.md
+        - Install APIM Control Plane with Database: setup/apim-deploy-with-db.md
         - Install Enterprise Products:
               - Install Kubernetes Gateway Data plane: setup/enterprise-apk-install.md
               - Install Kubernetes Gateway Agent: setup/enterprise-apim-apk-agent-install.md
