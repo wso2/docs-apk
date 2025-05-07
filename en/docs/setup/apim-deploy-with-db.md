@@ -199,7 +199,7 @@ Open the `values.yaml` file and change the Docker image as follows.
 1. Create a new helm repository with the latest apim release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apim```.
 
     ```console
-    helm repo add wso2apim https://github.com/wso2/helm-apim/releases/download/acp-4.5.0-rc
+    helm repo add wso2apim https://github.com/wso2/helm-apim/releases/download/acp-4.5.0
     ```
 
 2. Execute the following command to update the helm repositories.
@@ -212,7 +212,7 @@ Open the `values.yaml` file and change the Docker image as follows.
 
 === "Command"
     ```
-     helm install apim wso2apim/wso2am-cp --version 4.5.0-rc -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/apim/cp/with-db/4.5.0-values.yaml -n apk
+     helm install apim wso2apim/wso2am-acp --version 4.5.0-1 -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/apim/cp/with-db/4.5.0-values.yaml -n apk
     ```
 === "Format"
     ```
