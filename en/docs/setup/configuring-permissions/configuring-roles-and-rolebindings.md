@@ -58,7 +58,7 @@ wso2:
         enabled: "false" 
         roleName: wso2apk-cluster-role
 ```
-5. Install APK with the following command using the local helm-chart and templates.
+3. Install APK with the following command using the local helm-chart and templates.
 
 ```
 helm install apk . -f values.yaml -n apk
