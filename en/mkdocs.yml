@@ -303,8 +303,8 @@ nav:
         - Customize Cert-Manager: setup/cert-manager.md
         - Configure Permissions:
             - Overview: setup/configuring-permissions/configuring-permissions-overview.md
-            - Configuring the Kubernetes Gateway per Cluster: setup/configuring-permissions/configuring-clusterrole-and-clusterrolebinding.md
-            - Configuring the Kubernetes Gateway per Namespace: setup/configuring-permissions/configuring-roles-and-rolebindings.md
+            - Configuring the Kubernetes Gateway per Cluster: setup/configuring-permissions/configuring-apk-per-cluster.md
+            - Configuring the Kubernetes Gateway per Namespace: setup/configuring-permissions/configuring-apk-per-namespace.md
         - Customize Webhook Configurations: setup/webhook-customization.md
         - Configure HPA for gateway: setup/configure-hpa.md
         - Deploy in OpenShift: setup/deploy-in-openshift.md
