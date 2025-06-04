@@ -19,13 +19,14 @@ kubectl apply -f crds.yaml
 skipCrds: true
 ```
 
-3. Change the `values.yaml` file by adding the following configurations for `resourceLevelPermissions`.
+3. Change the `values.yaml` file by adding the following configurations for `resourceLevelPermissions` and disabling ClusterRole creation.
 ```yaml
 wso2:
   apk:
     auth:
       enabled: true
       enableServiceAccountCreation: true
+      enableClusterRoleCreation: false
       serviceAccountName: wso2apk-platform
       resourceLevelPermissions: 
         scope: Namespaced
