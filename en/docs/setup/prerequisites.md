@@ -97,3 +97,9 @@ In addition to Kubernetes and Helm, WSO2 Kubernetes Gateway requires several oth
 **Note**: Docker version within the Kubernetes cluster may vary. To ensure compatibility with Kubernetes Gateway, confirm that your Docker version meets the minimum requirement listed above.
 
 **Note**: PostgreSQL is used in the Quick Start Guide for token generation from the non-production IdP.
+
+### ARM compatibility
+
+WSO2 Kubernetes Gateway is compatible with ARM processors. It can run on ARM-based systems, such as those with Apple Silicon or ARM-based Linux distributions.
+
+Note: Use a Redis Docker image that includes an ARM-compatible release.
