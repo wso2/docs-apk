@@ -42,34 +42,6 @@ The table below displays the resource allocations for the Gateway related compon
 </tbody>
 </table>
 
-For the Enforcer's Java Virtual Machine (JVM), memory allocation was changed as below.
-
-- `Xmx1500m (Maximum memory allocation for the JVM)`
-- `Xms1500m (Satrting memory allocation for the JVM)`
-
-In order to handle high request counts in Enforcer, `authService`'s resource allocation changed as below.
-
-```toml
-[enforcer.authService]
-    # Port of the Enforcer auth service
-    port = 8081
-    # Maximum message size in bytes
-    maxMessageSize = 1000000000
-    # Maximum header size in bytes
-    maxHeaderLimit = 8192
-    # Keep alive time in seconds for connection with the router via external authz service
-    keepAliveTime = 600
-    # Thread pool configurations of gRPC netty based server in Enforcer that handles the incoming requests in the Choreo Connect
-    [enforcer.authService.threadPool]
-        # Minimum number of workers to keep alive
-        coreSize = 400
-        # Maximum pool size
-        maxSize = 1000
-        # Timeout in seconds for idle threads waiting for work
-        keepAliveTime = 600
-        # Queue size of the worker threads
-        queueSize = 2000
-```
 
 ## Throughput (requests/sec) vs. concurrent users
 
