@@ -51,7 +51,8 @@ We recommend the following minimum resource requirements for running WSO2 Kubern
 | **Adapter**                                     | 50m              | 64Mi                 |
 | **Common Controller**                           | 50m              | 64Mi                 |
 | **Config Deployer Service**                     | 200m             | 512Mi                |
-| **Gateway Runtime (Enforcer + Router)**         | 1000m            | 1024Mi               |
+| **Router**         | 200m            | 128Mi               |
+| **Gateway Runtime (Enforcer + Router)**         | 200m            | 128Mi               |
 | **Rate Limiter** (If rate limiting is required) | 50m              | 64Mi                 |
 
 **Other Components (for non-production use):**
