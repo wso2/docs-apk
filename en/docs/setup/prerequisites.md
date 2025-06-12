@@ -18,9 +18,10 @@ WSO2 Kubernetes Gateway supports several managed Kubernetes services. To ensure 
 WSO2 Kubernetes Gateway is compatible with a variety of Kubernetes distributions. Check the compatible versions for each distribution below to ensure proper functionality.
 
 | Software Application | Cluster Version | Software Version |
-| -------------------- | --------------- | ---------------- |
+|----------------------| --------------- |------------------|
 | Minikube             | 1.26.3 - 1.32.2 | 1.30.1 - 1.35.0  |
-| Rancher              | 1.27.2 - 1.32.2 | 1.9.1 - 1.18.0   |
+| Rancher Desktop      | 1.27.2 - 1.32.2 | 1.9.1 - 1.18.0   |
+| Rancher Enterprise   | 1.32.3 (RKE2)   | 2.11.1           |
 | Kind                 | 1.26.3 - 1.32.2 | 0.24.0           |
 | OpenShift            | 1.28            | 4.15             |
 
