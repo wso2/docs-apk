@@ -2,6 +2,9 @@
 
 The Kubernetes Gateway can be configured to be deployed at the Namespace level using Roles and RoleBindings, instead of providing cluster level permissions. This is useful if you want to limit the permissions of the Kubernetes Gateway components to a specific namespace.
 
+!!! note
+    Deploying the Kubernetes Gateway at the Namespace level must be done using the updated 1.3.0-1 helm-chart which can be obtained from [this link](https://artifacthub.io/packages/helm/wso2/apk-helm/1.3.0-1). Additionally, the relevant enterprise images must be used for the installation as shown in the following link for [Enterprise Installation Instructions](https://apk.docs.wso2.com/en/latest/setup/enterprise-apk-install/).
+
 You can do so by following the steps below. 
 
 1. Create a namespace for your Kubernetes Gateway installation.
