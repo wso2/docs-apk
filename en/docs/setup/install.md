@@ -1,9 +1,17 @@
-# Install with Helm
+# Kubernetes Gateway Installation Patterns
 
-## Before you begin...
+This document outlines the recommended installation patterns for the WSO2 Kubernetes Gateway. 
 
-Install the <a href="../../setup/prerequisites#prerequisites" target="_blank">prerequisites</a>  that are required to run WSO2 Kubernetes Gateway.
+!!! important
+    Please clear any existing QSG configuration before you begin the production setup.
+    <a href="../uninstall/" target="_blank">Uninstall Kubernetes Gateway Components</a>
 
-## Start WSO2 Kubernetes Gateway
+!!! important
+    All patterns are deployed using Helm charts with public Docker images. If you have a WSO2 subscription, you can configure the chart to pull commercial Docker images instead—every pattern supports commercial images as well.
 
-{!includes/start-apk.md!}
+- <a href="../../setup/deployment/apk-data-plane-deployment-patterns" target="_blank">Pattern 1</a> - <b>Standalone Kubernetes Gateway</b>
+<p>&emsp;&emsp;&emsp;&emsp;In this pattern, you only get the Kubernetes Gateway. you must create APIs using the provided REST APIs.</p>
+- <a href="../../setup/deployment/apk-as-gateway-in-apim-deployment-patterns" target="_blank">Pattern 2</a> - <b>Integrate as a gateway within the API Manager control plane. </b><p>&emsp;&emsp;&emsp;&emsp;
+In this pattern you can design, manage, deploy, publish and delete API from API Manager control plane(ACP) UI. If you want to design &emsp;&emsp;&emsp;&emsp;APIs from the Control Plane UI, you should use this pattern.</p>
+- <a href="../../setup/deployment/apk-with-apim-cp-deployment-patterns" target="_blank">Pattern 3</a> - <b>Kubernetes Gateway with Control Plane</b></a> <p>&emsp;&emsp;&emsp;&emsp;
+In this pattern you can not design/create API from API Manager control plane. API design should be handle by kubernetes gateway &emsp;&emsp;&emsp;&emsp; and API reflect to control palne to govern and publish</p>

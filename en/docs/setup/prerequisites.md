@@ -80,8 +80,8 @@ We recommend the following minimum resource requirements for running WSO2 Kubern
 
 | Resource | Minimum Requirement |
 | -------- | ------------------- |
-| CPU      | 4 Cores             |
-| Memory   | 6 GB                |
+| CPU      | 1 Cores             |
+| Memory   | 1 GB                |
 | Storage  | 15 GB               |
 
 **Minimum requirements per Component - Production Setup:**
@@ -107,8 +107,8 @@ We recommend the following minimum resource requirements for running WSO2 Kubern
 
 | Resource | Minimum Requirement |
 | -------- | ------------------- |
-| CPU      | 6 Cores             |
-| Memory   | 8 GB                |
+| CPU      | 4 Cores             |
+| Memory   | 4 GB                |
 | Storage  | 15 GB               |
 
 
@@ -127,12 +127,10 @@ In addition to Kubernetes and Helm, WSO2 Kubernetes Gateway requires several oth
 
 | Dependency    | Version         | Notes                                                                                                           |
 | ------------- | --------------- | --------------------------------------------------------------------------------------------------------------- |
-| Docker Engine | 27.5.1 or above | Ensure compatibility with Kubernetes Gateway as Kubernetes clusters may have varying Docker versions installed. |
 | Redis         | 20.10.0         | Automatically installed with Kubernetes Gateway; no manual configuration required.                              |
 | Cert-manager  | v1.17.1         | Automatically installed with Kubernetes Gateway; no manual configuration required.                              |
 | PostgreSQL    | 16.4.14         | Automatically installed with Kubernetes Gateway; required only for non-production IdP configurations.           |
 
-**Note**: Docker version within the Kubernetes cluster may vary. To ensure compatibility with Kubernetes Gateway, confirm that your Docker version meets the minimum requirement listed above.
 
 **Note**: PostgreSQL is used in the Quick Start Guide for token generation from the non-production IdP.
 

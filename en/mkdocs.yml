@@ -282,11 +282,12 @@ nav:
     - Setup: 
         - Prerequisites: setup/prerequisites.md
         - Installation Patterns:
-              - Overview: setup/deployment/deployment-patterns-overview.md
+              - Overview: setup/install.md
               - Pattern 1:
                 - Overview: setup/deployment/apk-data-plane-deployment-patterns.md
                 - Kubernetes Gateway Per Cluster: setup/deployment/apk-dataplane-per-cluster.md
-                - Kubernetes Gateway Per NameSpace: setup/deployment/apk-dataplane-per-namespace.md
+                - Multi Gateways Per Cluster with cluster-scope: setup/deployment/apk-dataplane-per-namespace.md
+                - Multi Gateways Per Cluster with namespace-scope: setup/deployment/apk-dataplane-per-namespace_permission.md
               - Pattern 2: 
                 - Overview: setup/deployment/apk-as-gateway-in-apim-deployment-patterns.md
                 - Kubernetes Gateway and Control Plane both in Kubernetes: setup/deployment/apk-as-gateway-in-apim-deployment-patterns-k8s.md

@@ -11,9 +11,10 @@ In this approach, multiple environments (dev, prod, etc..) share the same Kubern
 * Simplified Management: Managing a single cluster with multiple namespaces can be more straightforward compared to managing separate clusters.
 
 ### Considerations
-* Isolation: While namespaces provide a level of isolation, they may not offer the same level of isolation as separate clusters. You still need a cluster-wide permission to add this option.
+* Isolation: While namespaces provide a level of isolation, they may not offer the same level of isolation as separate clusters. You don't need a cluster-wide permission to add this option.
 
 ### Installation guideline
+
 
 !!! note
     Deploying the multi gateway at the cluster must be done using the updated 1.3.0-1 helm-chart which can be obtained from [this link](https://artifacthub.io/packages/helm/wso2/apk-helm/1.3.0-1). Additionally, the relevant enterprise images must be used for the installation as shown in the following link for [Enterprise Installation Instructions](https://apk.docs.wso2.com/en/latest/setup/enterprise-apk-install/).
@@ -57,13 +58,26 @@ helm repo update
         helm show values <repository-name>/apk-helm --version <version-of-APK> > values.yaml
         ```
 
-
 2. Add the following key to the `values.yaml` file to skip the default installation of CRDs.
 ```yaml
 skipCrds: true
 ```
 
-3. By default, the helm installation creates a Service Account, Role, and RoleBinding for the Kubernetes Gateway components only within the namespace in which you install it. Optionally you may add other namespaces as desired to the `apiNamespaces` in the `values.yaml` file under the `adapter` and `commonController` sections. This will allow the Kubernetes Gateway to manage APIs in those namespaces as well. However, you will need to create additional Roles and RoleBindings for those namespaces as well.
+3. Change the `values.yaml` file by adding the following configurations for `resourceLevelPermissions` and disabling ClusterRole creation.
+```yaml
+wso2:
+  apk:
+    auth:
+      enabled: true
+      enableServiceAccountCreation: true
+      enableClusterRoleCreation: false
+      serviceAccountName: wso2apk-platform
+      resourceLevelPermissions: 
+        scope: Namespaced
+        roleName: wso2apk-role
+```
+
+4. By default, the helm installation creates a Service Account, Role, and RoleBinding for the Kubernetes Gateway components only within the namespace in which you install it. Optionally you may add other namespaces as desired to the `apiNamespaces` in the `values.yaml` file under the `adapter` and `commonController` sections. This will allow the Kubernetes Gateway to manage APIs in those namespaces as well. However, you will need to create additional Roles and RoleBindings for those namespaces as well.
 ```yaml
 adapter:
   deployment:
@@ -78,7 +92,13 @@ commonController:
         - "apk-v12"
 ```
 
-4. **Install Helm Chart** 
+5. Disable the ClusterRole and ClusterRoleBinding that are created by default to support the Kubernetes Gateway API admission webhook server. This can be done by modifying the `values.yaml` file as follows: 
+```yaml
+gatewaySystem:
+  enabled: false # Disables the Gateway API admission webhook server 
+```
+
+6. **Install Helm Chart** 
     Most production deployments require you to customize the values.yaml file. If you have no custom changes, you can use the default configuration as-is.
     To begin the installation, run the following command. 
 
@@ -91,7 +111,7 @@ commonController:
         helm install <chart-name> <repository-name>/apk-helm --version <version-of-APK> -f <path-to-values.yaml-file>  --skip-crds
         ```
 
-5. If you wish to deploy the Kubernetes Gateway in another namespace, you can follow the same steps.
+7. If you wish to deploy the Kubernetes Gateway in another namespace, you can follow the same steps starting from section 2.
 
 
 #### Verify the deployment
