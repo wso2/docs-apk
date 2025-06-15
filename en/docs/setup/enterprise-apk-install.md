@@ -1,10 +1,5 @@
-# Install Kubernetes Gateway with Enterprise Helm Chart
+# Add Kubernetes Gateway Helm Repository with Commercial Docker images 
 
-## Before you begin...
-
-Install the <a href="../../setup/prerequisites" target="_blank">prerequisites</a> that are required to run WSO2 Kubernetes Gateway.
-
-## Start WSO2 API Platform For Kubernetes Enterprise Version
 
 1.  Create WSO2 Kubernetes Gateway image pull secrets with your WSO2 credentials as shown below and apply
     this in K8s.
@@ -28,52 +23,52 @@ Install the <a href="../../setup/prerequisites" target="_blank">prerequisites</a
       helm repo update
       ```
 
-4. Install the Kubernetes Gateway components and start WSO2 API Platform For Kubernetes. Consider ```apk``` as the ```<chart-name>``` for this guide. As the ```--version``` of this command, use the version of the release you used in point 1 above. It will take a few minutes for the deployment to complete.
+### Commercial Docker Images
 
-#### Helm install for amd64
+| Component                  | AMD64 Image                                            | ARM64 Image                                               |
+|----------------------------|--------------------------------------------------------|-----------------------------------------------------------|
+| adapter          | `docker.wso2.com/apk-adapter:1.3.0.0`                         | `docker.wso2.com/apk-adapter:1.3.0.0-arm64`                      |
+| commonController  | `docker.wso2.com/apk-common-controller:1.3.0.0`                              | `docker.wso2.com/apk-common-controller:1.3.0.0-arm64`                           |
+| ratelimiter                | `docker.wso2.com/apk-ratelimiter:1.3.0.0`                               | `docker.wso2.com/apk-ratelimiter:1.3.0.0-arm64`                            |
+| router                 | `docker.wso2.com/apk-router:1.3.0.0`                                | `docker.wso2.com/apk-router:1.3.0.0-arm64`                             |
+| enforcer                 | `docker.wso2.com/apk-enforcer:1.3.0.0-arm64`                                | `docker.wso2.com/apk-enforcer:1.3.0.0-arm64`                             |
+| configdeployer                | `docker.wso2.com/apk-config-deployer-service:1.3.0.0`                                | `docker.wso2.com/apk-config-deployer-service:1.3.0.0-arm64` 
+| idpds                 | `docker.wso2.com/apk-idp-domain-service:1.3.0.0`                                | `docker.wso2.com/apk-idp-domain-service:1.3.0.0-arm64`                             |
+| idpui                 | `docker.wso2.com/apk-idp-ui:1.3.0.0`                                | `docker.wso2.com/apk-idp-ui:1.3.0.0-arm64`                             |                            |
+| apim-apk-agent                 | `docker.wso2.com/apim-apk-agent:1.3.0.0`                                | `docker.wso2.com/apim-apk-agent:1.3.0.0-arm64`                             | 
+
+
+### Pulling Commercial Docker Images
+
+From here onward you can use <a href="../../setup/deployment/deployment-patterns-overview" target="_blank">installation patterns</a> to install Kubernetes Gateway and Kubernetes Gateway Agent.
+To pull images from the WSO2 registry, add the following to your `values.yaml` before running your Helm install or upgrade.
+<p>To obtail `values.yaml` file using helm you can refer to the deployment-patterns.</p>
+
+```yaml
+wso2:
+  subscription:
+    imagePullSecrets: "apk-registry-secret"
+```
+
+Change <b>all the images</b> according to your system Architecture. Default we support both AMD and ARM images.
+
+Example image change.
+
+```yaml
+configdeployer::
+    deployment:
+        image: docker.wso2.com/apk-config-deployer-service:1.3.0.0
+```
+
+Make sure to change the Repository Name to <b>wso2</b> in helm installation comand.
+
+Example Helm Installation Command
 
 === "Command"
     ```
-    helm install apk wso2/apk-helm --version 1.3.0 --set wso2.subscription.imagePullSecrets="apk-registry-secret"
+    helm install apk wso2/apk-helm --version 1.3.0 -f values.yaml
     ```
 === "Format"
     ```
-    helm install <chart-name> <repository-name>/apk-helm --version <version-of-APK> --set wso2.subscription.imagePullSecrets=<secret-name>
+    helm install <chart-name> <repository-name>/apk-helm --version <version-of-APK> -f <path-to-values-yaml>
     ```
-
-#### Helm install for arm64
-
-=== "Command"
-    ```
-    helm install apk wso2/apk-helm --version 1.3.0 --set wso2.subscription.imagePullSecrets="apk-registry-secret" -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/enterprise/1.3.0-arm64.yaml
-    ```
-=== "Format"
-    ```
-    helm install <chart-name> <repository-name>/apk-helm --version <version-of-APK> -f <path-to-arm64.yaml-file>
-    ```
-
-!!! Optional
-    To commence the installation while making use of the customization capabilities inherent in the `values.yaml` file, follow the subsequent command format. Instructions in the <a href="../../setup/Customize-Configurations" target="_blank">customize configurations section</a> will guide you through the process of acquiring the `values.yaml` file.
-        
-    === "Command"
-         ```
-         helm install apk wso2apk/apk-helm --version 1.3.0 -set wso2.subscription.imagePullSecrets="apk-registry-secret" -f values.yaml
-         ```
-    === "Format"
-         ```
-         helm install <chart-name> <repository-name>/apk-helm --version <version-of-APK> --set wso2.subscription.imagePullSecrets=<secret-name> -f <path-to-values.yaml-file> 
-         ```
-
-### Verify the deployment
-
-Now you can verify the deployment by executing the following command. You will see the status of the pods as follows once completed.
-
-=== "Command"
-```
-kubectl get pods
-```
-
-[![Pod Status](../assets/img/get-started/pod-status.png)](../assets/img/get-started/podstatus.png)
-
-!!! Important
-    If the pods are not transitioning to the running state, please follow the steps in the <a href="../../about-apk/FAQs/#4-why-are-pods-not-transitioning-to-the-running-state-for-a-long-time" target="_blank">FAQs</a> to troubleshoot the problem.

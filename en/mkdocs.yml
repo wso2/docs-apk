@@ -281,18 +281,23 @@ nav:
     #    - Helm Catalog: catalogs/config-catalog.md
     - Setup: 
         - Prerequisites: setup/prerequisites.md
-        - Install Dataplane: setup/install.md
-        - Install Control Plane with Dataplane: setup/install-with-cp.md
-        - Install APIM Control Plane with Database: setup/apim-deploy-with-db.md
-        - Install Enterprise Products:
-              - Install Kubernetes Gateway Data plane: setup/enterprise-apk-install.md
-              - Install Kubernetes Gateway Agent: setup/enterprise-apim-apk-agent-install.md
+        - Installation Patterns:
+              - Overview: setup/install.md
+              - Pattern 1:
+                - Overview: setup/deployment/apk-data-plane-deployment-patterns.md
+                - Kubernetes Gateway Per Cluster: setup/deployment/apk-dataplane-per-cluster.md
+                - Multi Gateways Per Cluster with cluster-scope: setup/deployment/apk-dataplane-per-namespace.md
+                - Multi Gateways Per Cluster with namespace-scope: setup/deployment/apk-dataplane-per-namespace_permission.md
+              - Pattern 2: 
+                - Overview: setup/deployment/apk-as-gateway-in-apim-deployment-patterns.md
+                - Kubernetes Gateway and Control Plane both in Kubernetes: setup/deployment/apk-as-gateway-in-apim-deployment-patterns-k8s.md
+                - Kubernetes Gateway in Kubernetes and Control Plane in a VM: setup/deployment/apk-as-gateway-in-apim-deployment-patterns-vm.md
+              - Pattern 3: 
+                - Overview: setup/deployment/apk-with-apim-cp-deployment-patterns.md
+                - Kubernetes Gateway and Control Plane both in Kubernetes: setup/deployment/apk-with-apim-cp-deployment-patterns-k8s.md
+                - Kubernetes Gateway in Kubernetes and Control Plane in a VM: setup/deployment/apk-with-apim-cp-deployment-patterns-vm.md
+        - Install Commercial Docker images: setup/enterprise-apk-install.md
         - Uninstall: setup/uninstall.md
-        - Deployment Patterns:
-              - Overview: setup/deployment/deployment-patterns-overview.md
-              - Kubernetes Gateway Data Plane: setup/deployment/apk-data-plane-deployment-patterns.md
-              - Kubernetes Gateway Data Plane with API Manager Control Plane: setup/deployment/apk-with-apim-cp-deployment-patterns.md
-              - Kubernetes Gateway as a Gateway in API Manager: setup/deployment/apk-as-gateway-in-apim-deployment-patterns.md
         - CI/CD: 
             - CI/CD for APIs - Overview: setup/cicd/overview.md
             - Building a GitOps Workflow for APIs With WSO2 APK: setup/cicd/building-a-pipeline.md
