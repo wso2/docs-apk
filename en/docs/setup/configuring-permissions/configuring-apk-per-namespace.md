@@ -12,9 +12,11 @@ You can do so by following the steps below.
 kubectl create namespace apk
 ```
 
-2. Download the Custom Resource Definitions (CRDs) file from [this link](../../assets/files/configure-permissions/crds.zip) and install it in your Kubernetes cluster using the following command:
+2. Download the Custom Resource Definitions (CRDs) folder from [this link](../../assets/files/configure-permissions/crds.zip) unzip and navigate into it, and then install them in your Kubernetes cluster using the following commands:
 ```bash
-kubectl apply -f crds.yaml
+unzip crds.zip
+cd crds
+kubectl apply -f .
 ```
 
 2. Add the following key to the `values.yaml` file to skip the default installation of CRDs.
