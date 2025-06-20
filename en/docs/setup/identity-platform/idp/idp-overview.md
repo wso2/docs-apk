@@ -13,4 +13,6 @@ WSO2 Kubernetes Gateway integrates with IdPs to obtain a token to use the System
 
 - <a href="../../idp/auth0-idp" target="_blank">Using Auth0 as an IdP</a>  
 
+- <a href="../../idp/key-cloak" target="_blank">Using Key Cloak as an IdP</a> 
+
 - <a href="../../idp/third-party-idp" target="_blank">Using Any Third party IdP</a>  

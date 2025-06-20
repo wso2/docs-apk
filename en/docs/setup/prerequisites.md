@@ -54,23 +54,6 @@ Below is the version requirement for Helm to be compatible with WSO2 Kubernetes 
 Once you’ve completed both steps, you’re ready to install the Kubernetes Gateway.
 <a href="../../setup/deployment/deployment-patterns-overview/" target="_blank">Kubernetes Gateway Installation Patterns</a> 
 
-### Additional Dependencies
-
-In addition to Kubernetes and Helm, WSO2 Kubernetes Gateway requires several other dependencies. You do not required to install these dpendencies manually. **Redis, Cert-manager, and PostgreSQL are automatically handled during Kubernetes Gateway installation**. 
-
-| Dependency    | Version         | Notes                                                                                                           |
-| ------------- | --------------- | --------------------------------------------------------------------------------------------------------------- |
-| Redis         | 20.10.0         | Automatically installed with Kubernetes Gateway; no manual configuration required.                              |
-| Cert-manager  | v1.17.1         | Automatically installed with Kubernetes Gateway; no manual configuration required.                              |
-| PostgreSQL    | 16.4.14         | Automatically installed with Kubernetes Gateway; required only for non-production IdP configurations.           |
-
-
-!!!Note
-    PostgreSQL is used in the Quick Start Guide for token generation from the non-production IdP.
-
-!!!Note
-    Kubernetes Gateway uses a built-in standalone Redis service which is not suitable for production usage. Please use a production grade Redis in production setup.
-
 
 ### Resource Requirements
 
@@ -112,18 +95,9 @@ We recommend the following minimum resource requirements for running WSO2 Kubern
 | Storage  | 15 GB               |
 
 
-
-#### 2. Install the Kubernetes Client (`kubectl`)
-
-Refer to the <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/" target="_blank">Kubernetes documentation</a> to install the `kubectl` client.
-
-#### 3. Install Helm
-
-Refer to the <a href="https://helm.sh/docs/intro/install/" target="_blank">Helm documentation</a> to install Helm. 
-
 ### Additional Dependencies
 
-In addition to Kubernetes and Helm, WSO2 Kubernetes Gateway requires several other dependencies. **Redis, Cert-manager, and PostgreSQL are automatically handled during Kubernetes Gateway installation**. 
+In addition to Kubernetes and Helm, WSO2 Kubernetes Gateway requires several other dependencies. You do not required to install these dpendencies manually. **Redis, Cert-manager, and PostgreSQL are automatically handled during Kubernetes Gateway installation**. 
 
 | Dependency    | Version         | Notes                                                                                                           |
 | ------------- | --------------- | --------------------------------------------------------------------------------------------------------------- |
@@ -132,7 +106,14 @@ In addition to Kubernetes and Helm, WSO2 Kubernetes Gateway requires several oth
 | PostgreSQL    | 16.4.14         | Automatically installed with Kubernetes Gateway; required only for non-production IdP configurations.           |
 
 
-**Note**: PostgreSQL is used in the Quick Start Guide for token generation from the non-production IdP.
+!!!Note
+    PostgreSQL is used in the Quick Start Guide for token generation from the non-production IdP.
+
+!!!Note
+    Kubernetes Gateway uses a built-in standalone Redis service which is not suitable for production usage. Please use a production grade Redis in production setup.
+
+!!!Note
+    Kubernetes Gateway uses a built-in cert manager. But if you have your own cert manager running on kubernetes you can use that instaed of inbuild one.
 
 ### ARM compatibility
 
