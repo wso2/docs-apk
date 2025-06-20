@@ -334,6 +334,7 @@ nav:
             - Non-production: setup/identity-platform/idp/non-production-idp.md
             - Asgardeo: setup/identity-platform/idp/asgardeo-idp.md
             - Auth0: setup/identity-platform/idp/auth0-idp.md
+            - Keycloak: setup/identity-platform/idp/key-cloak.md
             - Any third-party IdP: setup/identity-platform/idp/third-party-idp.md
         - Configure Analytics: 
             - Choreo Insights: setup/analytics/configure-analytics-for-choreo-insights.md
