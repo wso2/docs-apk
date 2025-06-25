@@ -34,7 +34,7 @@ kubectl create ns apk
         helm show values <repository-name>/apk-helm --version <version-of-APK> > kg-values.yaml
         ```
 
-4. Configuration Require to add Kubernetes Gateway As a gateway in `kg-values.yaml`
+4. Configuration required to add Kubernetes Gateway as a gateway in `kg-values.yaml`
 
     - Add following configuration under `wso2.apk` section
 
@@ -49,7 +49,7 @@ kubectl create ns apk
   <tbody>
     <tr>
       <td style="white-space: nowrap;"><code>enabledSubscription</code></td>
-      <td>This field require to be true for getting subscription details to the gateway level</td>
+      <td>This field require to be true for getting subscription details to the gateway</td>
     </tr>
     <tr>
       <td style="white-space: nowrap;"><code>host</code></td>
@@ -72,30 +72,53 @@ kubectl create ns apk
   </tbody>
 </table>
 
-    - Change default Listner Host Names
+    - (Optional) Change default listener hostnames
 
-        By default Kubernets Gateway have 2 listenrs
+        By default Kubernetes Gateway has 2 listeners
 
-        - System APIs Listner - api.am.wso2.com
-        - Gateway Listner - gw.wso2.com
+        - System APIs Listener - api.am.wso2.com
+        - Gateway Listener - gw.wso2.com
 
-        If you wish to change the default hostname and vhost, change the following values.yaml configurations. Lets say you want to deploy a production environment and you have a domain name example.com and you want to expose your API's through prod.gw.example.com and expose APK system APIs through prod.apk.example.com then
+        If you wish to change the default hostname and vhost, change the following values.yaml configurations. Let's say you want to deploy a production environment and you have a domain name example.com and you want to expose your API's through prod.gw.example.com and expose APK system APIs through prod.apk.example.com then condfigure as follows,
        
             wso2.apk.listener.hostname: 'prod.apk.example.com'
             wso2.apk.dp.gateway.listener.hostname: 'gw.example.com'
             wso2.apk.dp.configdeployer.vhosts: [{"hosts":["gw.example.com"],"name":"prod","type":"production"}]
 
+    - Configure API Key Issuer
+
+        If you want to use API Key Authentication, you can enable it by changing the following configuration in `kg-values.yaml`
+        under `wso2.apk.dp.gatewayRuntime.deployment.enforcer.configs` section.
+
+        ``` yaml
+        apiKey:
+            enabled: true
+            issuer: "https://am.wso2.com:443/oauth2/token"
+        ```
+
+        <table>
+            <tbody>
+                <tr>
+                    <td style="white-space: nowrap;"><code>enabled</code></td>
+                    <td>Enable API Key Authentication</td>
+                </tr>
+                <tr>
+                    <td style="white-space: nowrap;"><code>issuer</code></td>
+                    <td>API Key Issuer URL. This is used to issue API Keys for the APIs.</td>
+                </tr>
+            </tbody>
+        </table>
 
 5. Install Helm Chart
     To begin the installation, run the following command. 
 
     === "Command"
         ```
-        helm install apk wso2apk/apk-helm --version 1.3.0 -f kg-values.yaml
+        helm install apk wso2apk/apk-helm --version 1.3.0 -f kg-values.yaml -n apk
         ```
     === "Format"
         ```
-        helm install <chart-name> <repository-name>/apk-helm --version <version-of-APK> -f <path-to-values.yaml-file> 
+        helm install <chart-name> <repository-name>/apk-helm --version <version-of-APK> -f <path-to-values.yaml-file> -n <namespace>
         ```
 
 
@@ -126,7 +149,7 @@ Change the configurations in the deployment.toml file as below.
 
     ``` toml
     [[apim.gateway.environment]]
-    name = "Default"
+    name = "Default_APK"
     type = "hybrid"
     gateway_type = "APK"
     provider = "wso2"
@@ -141,7 +164,7 @@ Change the configurations in the deployment.toml file as below.
   <tbody>
     <tr>
       <td style="white-space: nowrap;"><code>name</code></td>
-      <td>Gateway Name. This name is require to later part to configre Kubernetes gateway agent</td>
+      <td>Gateway Name. This name is required during Kubernetes gateway agent configuration</td>
     </tr>
     <tr>
       <td style="white-space: nowrap;"><code>type</code></td>
@@ -215,6 +238,7 @@ Change the configurations in the deployment.toml file as below.
             environmentLabels: Default
             skipSSLVerification: true
             eventListeningEndpoints: amqp://admin:admin@apim-wso2am-cp-1-service.apk.svc.cluster.local:5672?retries='10'&connectdelay='30'
+            internalKeyIssuer: https://am.wso2.com:443/oauth2/token
         ```
         <table>
     <tbody>
@@ -240,6 +264,10 @@ Change the configurations in the deployment.toml file as below.
         <tr>
         <td style="white-space: nowrap;"><code>Username and Password</code></td>
         <td>Admin credentials of the API Manager</td>
+        </tr>
+        <tr>
+        <td style="white-space: nowrap;"><code>internalKeyIssuer</code></td>
+        <td>Internal Key Issuer URL of the API Manager. This is used to issue internal keys for the APIs.</td>
         </tr>
     </tbody>
     </table>
@@ -288,7 +316,7 @@ Change the configurations in the deployment.toml file as below.
         ```
     === "Format"
         ```
-        helm install <chart-name> <repository-name>/apim-apk-agent --version <version-of-APK-Agent> -f <path-to-values.yaml-file>
+        helm install <chart-name> <repository-name>/apim-apk-agent --version <version-of-APK-Agent> -f <path-to-values.yaml-file> -n namespace
         ```
 
 #### Verify the deployment
