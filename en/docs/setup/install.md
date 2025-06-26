@@ -10,8 +10,8 @@ This document outlines the recommended installation patterns for the WSO2 Kubern
     All patterns are deployed using Helm charts with public Docker images. If you have a WSO2 subscription, you can configure the chart to pull commercial Docker images instead—every pattern supports commercial images as well.
 
 - <a href="../../setup/deployment/apk-data-plane-deployment-patterns" target="_blank">Pattern 1</a> - <b>Standalone Kubernetes Gateway</b>
-<p>&emsp;&emsp;&emsp;&emsp;In this pattern, you only get the Kubernetes Gateway. you must create APIs using the provided REST APIs.</p>
-- <a href="../../setup/deployment/apk-as-gateway-in-apim-deployment-patterns" target="_blank">Pattern 2</a> - <b>Integrate as a gateway within the API Manager control plane. </b><p>&emsp;&emsp;&emsp;&emsp;
-In this pattern you can design, manage, deploy, publish and delete API from API Manager control plane(ACP) UI. If you want to design &emsp;&emsp;&emsp;&emsp;APIs from the Control Plane UI, you should use this pattern.</p>
-- <a href="../../setup/deployment/apk-with-apim-cp-deployment-patterns" target="_blank">Pattern 3</a> - <b>Kubernetes Gateway with Control Plane</b></a> <p>&emsp;&emsp;&emsp;&emsp;
-In this pattern you can not design/create API from API Manager control plane. API design should be handle by kubernetes gateway &emsp;&emsp;&emsp;&emsp; and API reflect to control palne to govern and publish</p>
+<p>In this pattern, you only get the Kubernetes Gateway. You must create APIs using the provided REST APIs.</p>
+- <a href="../../setup/deployment/apk-as-gateway-in-apim-deployment-patterns" target="_blank">Pattern 2</a> - <b>Integrate as a gateway within the API Manager control plane. </b><p>
+In this pattern, you can design, manage, deploy, publish, and delete APIs from the API Manager control plane (ACP) UI. If you want to design APIs from the Control Plane UI, you should use this pattern.</p>
+- <a href="../../setup/deployment/apk-with-apim-cp-deployment-patterns" target="_blank">Pattern 3</a> - <b>Kubernetes Gateway with Control Plane</b></a> <p>
+In this pattern, you cannot design or create APIs from the API Manager control plane. API design should be handled by the Kubernetes Gateway, and APIs will reflect to the control plane for governance and publishing.</p>
