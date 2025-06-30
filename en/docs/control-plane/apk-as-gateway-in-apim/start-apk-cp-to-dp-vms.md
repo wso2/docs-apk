@@ -34,7 +34,7 @@ kubectl create ns apk
         helm show values <repository-name>/apk-helm --version <version-of-APK> > kg-values.yaml
         ```
 
-4. Configuration required to add the Kubernetes Gateway as a gateway in `kg-values.yaml`
+4. Configure as required to add the Kubernetes Gateway as a gateway in `kg-values.yaml`
 
     - Add the following configuration under `wso2.apk` section
 
@@ -218,7 +218,7 @@ Change the configurations in the `deployment.toml` file as below.
         helm show values <repository-name>/apk-helm --version <version-of-APK> > kg-agent-values.yaml
         ```
 
-4. Configuration Required to connect the Kubernetes Gateway Agent in `kg-agent-values.yaml`
+4. Configure as required to connect the Kubernetes Gateway Agent in `kg-agent-values.yaml`
 
     -   Configure Control Plane (APIM) related configurations in the Kubernetes Gateway Agent.
 
