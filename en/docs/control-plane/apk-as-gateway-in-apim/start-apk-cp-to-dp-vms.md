@@ -20,7 +20,7 @@ kubectl create ns apk
     helm repo update
     ```
 
-3. Download `values.yaml` File
+3. Download the `values.yaml` file
 
     To obtain the `values.yaml` file, you can use the `helm show values` command. Replace `<repository-name>` with the actual repository name and `<version-of-APK>` with the desired version of the Kubernetes Gateway. Run the following command:
 
@@ -36,7 +36,7 @@ kubectl create ns apk
 
 4. Configure as required to add the Kubernetes Gateway as a gateway in `kg-values.yaml`
 
-    - Add the following configuration under `wso2.apk` section
+    - Add the following configuration under the `wso2.apk` section
 
         ``` yaml
         cp:
@@ -45,29 +45,11 @@ kubectl create ns apk
             skipSSLVerification: true
         ```
 
-        <table>
-  <tbody>
-    <tr>
-      <td style="white-space: nowrap;"><code>enabledSubscription</code></td>
-      <td>This field is requires to be `true` for getting subscription details to the gateway</td>
-    </tr>
-    <tr>
-      <td style="white-space: nowrap;"><code>host</code></td>
-      <td>Agent hostname which is defined as `{agentService}.{namespace}.svc.cluster.local`
-      <p>
-      You can get the agentService name by using `kubectl get svc -n <namespace>`
-      </p>
-      <p>
-      At this point you do not have an agent configured, so you can keep the default value as it is. Once you configure it make sure to change it here and perform a Helm upgrade.
-      </p>
-      </td>
-    </tr>
-    <tr>
-      <td style="white-space: nowrap;"><code>skipSSLVerification</code></td>
-      <td>Skip SSL verification between Agent and Gateway</td>
-    </tr>
-  </tbody>
-</table>
+    | Key                   | Description                                                                                                                                                                                                                                                                          |
+    | :-------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | `enabledSubscription` | This field is required to be `true` for getting subscription details to the gateway.                                                                                                                                                                                                 |
+    | `host`                | Agent hostname, which is defined as `{agentService}.{namespace}.svc.cluster.local`. You can get the agentService name by using `kubectl get svc -n <namespace>`. At this point, you do not have an agent configured, so you can keep the default value as it is. Once you configure it, make sure to change it here and perform a Helm upgrade. |
+    | `skipSSLVerification` | Skip SSL verification between Agent and Gateway.                                                                                                                                                                                                                                    |
 
     - (Optional) Change the default listener hostnames
 
@@ -83,7 +65,7 @@ kubectl create ns apk
             wso2.apk.dp.gateway.listener.hostname: 'gw.example.com'
             wso2.apk.dp.configdeployer.vhosts: [{"hosts":["gw.example.com"],"name":"prod","type":"production"}]
 
-    - Configure API Key Issuer
+    - Configure the API Key Issuer
 
         If you want to use API Key Authentication, you can enable it by changing the following configuration in `kg-values.yaml`
         under the `wso2.apk.dp.gatewayRuntime.deployment.enforcer.configs` section.
@@ -220,7 +202,7 @@ Change the configurations in the `deployment.toml` file as below.
 
 4. Configure as required to connect the Kubernetes Gateway Agent in `kg-agent-values.yaml`
 
-    -   Configure Control Plane (APIM) related configurations in the Kubernetes Gateway Agent.
+    -   Configure the Control Plane (APIM) related configurations in the Kubernetes Gateway Agent.
 
         ``` yaml
         controlPlane:
@@ -261,7 +243,7 @@ Change the configurations in the `deployment.toml` file as below.
     </tbody>
     </table>
 
-    -   Configure the Data Plane (APK Gateway) related configurations in the Kubernetes Gateway Agent.
+    -   Configure the Data Plane (Kubernetes Gateway) related configurations in the Kubernetes Gateway Agent.
 
 
         ``` yaml
@@ -294,7 +276,7 @@ Change the configurations in the `deployment.toml` file as below.
             mode: CPtoDP
         ```
 
-5. Install the Kubernetes Gateway Agent components and start the WSO2 API Platform For Kubernetes. Consider `apim-apk-agent` as the `<chart-name>` for this guide. For the `--version` of this command, use the version of the release you used in point 1 above. It will take a few minutes for the deployment to complete.
+5. Install the Kubernetes Gateway Agent components and start the WSO2 API Platform For Kubernetes. Consider `apim-apk-agent` as the `<chart-name>` for this guide. For the `--version` of this command, use the version of the release you used in Step 1 above. It will take a few minutes for the deployment to complete.
 
     === "Command"
         ```
