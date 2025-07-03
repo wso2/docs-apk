@@ -1,5 +1,5 @@
 
-#### Create Kubernetes Namespace
+#### Create a Kubernetes Namespace
 
 ``` 
 kubectl create ns apk
@@ -62,7 +62,7 @@ Set up WSO2 API Manager 4.5.0 in a Kubernetes cluster using Helm Charts.
     helm repo update
     ```
 
-3. Install the Kubernetes Gateway components and start the WSO2 API Platform For Kubernetes. Consider `apk` as the `<chart-name>` for this guide. For the `--version` of this command, use the version of the release you used in point 1 above. It will take a few minutes for the deployment to complete.
+3. Install the Kubernetes Gateway components and start the WSO2 API Platform For Kubernetes. Consider `apk` as the `<chart-name>` for this guide. For the `--version` of this command, use the version of the release you used in Step 1 above. It will take a few minutes for the deployment to complete.
 
     === "Command"
         ```
@@ -116,7 +116,7 @@ Set up WSO2 API Manager 4.5.0 in a Kubernetes cluster using Helm Charts.
     helm repo update
     ```
 
-3. Install the Kubernetes Gateway Agent components and start the WSO2 API Platform For Kubernetes. Consider `apim-apk-agent` as the `<chart-name>` for this guide. For the `--version` of this command, use the version of the release you used in point 1 above. It will take a few minutes for the deployment to complete.
+3. Install the Kubernetes Gateway Agent components and start the WSO2 API Platform For Kubernetes. Consider `apim-apk-agent` as the `<chart-name>` for this guide. For the `--version` of this command, use the version of the release you used in Step 1 above. It will take a few minutes for the deployment to complete.
 
     === "Command"
         ```
