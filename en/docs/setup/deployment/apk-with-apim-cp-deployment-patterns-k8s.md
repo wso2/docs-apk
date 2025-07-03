@@ -6,13 +6,13 @@ In this approach, both the Kubernetes Gateway Data Plane and the APIM are in a s
 
 ### Advantages
 
-* **Resource Efficiency**: This pattern maximizes resource utilization by allowing multiple components to coexist within the same cluster.
-* **Simplified Management**: Managing a single cluster with multiple namespaces can be more straightforward compared to managing separate clusters.
+* Resource Efficiency: This pattern maximizes resource utilization by allowing multiple components to coexist within the same cluster.
+* Simplified Management: Managing a single cluster with multiple namespaces can be more straightforward compared to managing separate clusters.
 
 ### Considerations
 
-* **Isolation**: While namespaces provide a level of isolation, they may not offer the same level of isolation as separate clusters. Careful resource allocation and RBAC (Role-Based Access Control) policies are essential.
-* **APIM in K8s**: Running APIM in a Kubernetes cluster may require additional resources and configurations compared to running it in a VM.
+* Isolation: While namespaces provide a level of isolation, they may not offer the same level of isolation as separate clusters. Careful resource allocation and RBAC (Role-Based Access Control) policies are essential.
+* APIM in K8s: Running APIM in a Kubernetes cluster may require additional resources and configurations compared to running it in a VM.
 
 ### Deployment Guideline
 
