@@ -1,6 +1,6 @@
 ### Overview
 
-In this approach, the APK Data Plane is deployed in a Kubernetes cluster, and the APIM is in a Virtual Machine. In this pattern, the APK Data Plane will have visibility over all namespaces (or a predefined set of namespaces) in the cluster
+In this approach, the Kubernetes Gateway Data Plane is deployed in a Kubernetes cluster, and the APIM is in a Virtual Machine. In this pattern, the APK Data Plane will have visibility over all namespaces (or a predefined set of namespaces) in the cluster
 
 [![ap_cp_to_dp_vms](../../assets/img/deployment-patterns/vm--cp-dp.png)](../../assets/img/deployment-patterns/vm--cp-dp.png)
 
@@ -12,12 +12,12 @@ In this approach, the APK Data Plane is deployed in a Kubernetes cluster, and th
 
 #### Considerations
 
-* Resource Utilization: This approach may require additional resources due to the need for separate cluster and VM for each environment.
-* Administrative Overhead: Managing multiple cluster and VMs can be more complex and may require additional administrative effort.
+* Resource Utilization: This approach may require additional resources due to the need for separate clusters and VMs for each environment.
+* Administrative Overhead: Managing multiple clusters and VMs can be more complex and may require additional administrative effort.
 
 ### Installation Guideline
 
-By default, the WSO2 APK is configured to support the Data Plane Only Pattern. You can follow the steps below to perform the deployment using this pattern.
+By default, the WSO2 Kubernetes Gateway is configured to support the Data Plane Only Pattern. You can follow the steps below to perform the deployment using this pattern.
 
 {!control-plane/apk-as-gateway-in-apim/start-apk-cp-to-dp-vms.md!}
 
