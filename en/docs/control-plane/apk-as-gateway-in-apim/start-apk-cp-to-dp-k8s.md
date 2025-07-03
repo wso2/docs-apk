@@ -220,7 +220,7 @@ Set Up WSO2 API Manager 4.5.0 in K8s cluster using Helm Charts.
         | `eventListeningEndpoints` | Event listening endpoint in the API Manager.                                                                                                                                                                                                                                                                                                                                                                                                                      |
         | `Username and Password`   | Admin credentials of the API Manager.                                                                                                                                                                                                                                                                                                                                                                                                                             |
 
-    -   Configure Data Plane (APK Gateway) related configurations in the Kubernetes Gateway Agent
+    -   Configure Data Plane (Kubernetes Gateway) related configurations in the Kubernetes Gateway Agent
 
 
         ``` yaml
