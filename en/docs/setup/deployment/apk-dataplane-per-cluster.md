@@ -43,7 +43,7 @@ Next, install the Kubernetes Gateway components to set up the necessary infrastr
 Install the Kubernetes Gateway components and start the WSO2 API Platform For Kubernetes. Consider **apk** as the **`<chart-name>`** for this guide.
 Use the version of the release you added in the previous step.
 
-1. **Download the `values.yaml` file**
+1. Download the `values.yaml` file
 
     To obtain the `values.yaml` file, you can use the `helm show values` command. Replace `<repository-name>` with the actual repository name and `<version-of-APK>` with the desired version of the Kubernetes Gateway. Run the following command:
 
@@ -59,7 +59,8 @@ Use the version of the release you added in the previous step.
 
  
 
-2. **Install Helm Chart** 
+2. Install Helm Chart 
+
     Most production deployments require you to customize the `values.yaml` file. If you have no custom changes, you can use the default configuration as-is.
     To begin the installation, run the following command. 
 

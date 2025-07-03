@@ -43,7 +43,7 @@ helm repo update
 #### Section 2: Install Kubernetes Gateway Components
 
 
-1. **Download `values.yaml` File**
+1. Download the `values.yaml` file
 
     To obtain the `values.yaml` file, you can use the `helm show values` command. Replace `<repository-name>` with the actual repository name and `<version-of-APK>` with the desired version of the Kubernetes Gateway. Run the following command:
 
@@ -78,8 +78,9 @@ commonController:
         - "apk-v12"
 ```
 
-4. **Install Helm Chart** 
-    Most production deployments require you to customize the values.yaml file. If you have no custom changes, you can use the default configuration as-is.
+4. Install Helm Chart 
+
+    Most production deployments require you to customize the `values.yaml` file. If you have no custom changes, you can use the default configuration as-is.
     To begin the installation, run the following command. 
 
     === "Command"
