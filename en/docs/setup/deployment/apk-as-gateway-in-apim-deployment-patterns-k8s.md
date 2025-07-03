@@ -12,7 +12,7 @@ In this approach, both the Kubernetes Gateway and the APIM Control Plane are in 
 #### Considerations
 
 * Isolation: While namespaces provide a level of isolation, they may not offer the same level of isolation as separate clusters. Careful resource allocation and RBAC (Role-Based Access Control) policies are essential.
-* APIM in K8s: Running APIM in a Kubernetes cluster may require additional resources and configurations compared to running it in a VM.
+* APIM in K8s: Running the APIM in a Kubernetes cluster may require additional resources and configurations compared to running it in a VM.
 
 ### Installation Guideline
  

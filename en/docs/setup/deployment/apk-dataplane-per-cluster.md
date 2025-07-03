@@ -1,6 +1,6 @@
 ### Overview
 
-In this approach, each environment (dev, prod, etc..) has its own dedicated Kubernetes cluster hosting an instance of the Kubernetes Gateway. In this pattern Kubernetes Gateway will have visibility over all the namespaces (or a predefined set of namespaces) in the cluster.
+In this approach, each environment (dev, prod, etc.) has its own dedicated Kubernetes cluster hosting an instance of the Kubernetes Gateway. In this pattern the Kubernetes Gateway will have visibility over all the namespaces (or a predefined set of namespaces) in the cluster.
 
 
 [![dataplane-per-k8-cluster](../../assets/img/deployment-patterns/cluster-dp.png)](../../assets/img/deployment-patterns/APK_Dataplane_per_Cluster.png)

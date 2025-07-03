@@ -230,11 +230,10 @@ Set Up WSO2 API Manager 4.5.0 in K8s cluster using Helm Charts.
             namespace: apk
         ```
 
-        | Key                   | Description                                                                                                                                                        |
-        | :-------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-        | `enabledSubscription` | This field is required to be true for getting subscription details to the gateway level.                                                                                                                                                                                             |
-        | `host`                | Agent hostname, which is defined as `{agentService}.{namespace}.svc.cluster.local`. You can get the agentService name by using `kubectl get svc -n <namespace>`. At this point, you don't have an agent configured, so you can keep the default value as is. Once you configure it, make sure to change it here and perform a Helm upgrade. |
-        | `skipSSLVerification` | Skips SSL verification between Agent and Gateway.                                                                                                                                                                                                                                    |
+        | Key                  | Description                                                                                                                                                                                                                                                                          |
+        | :------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+        | `k8ResourceEndpoint` | Config deployer service endpoint, which is defined as `{configDeployerService}.{namespace}.svc.cluster.local:{port}/api/configurator/apis/`. You can get the Service name by using `kubectl get svc -n <namespace>`. |
+        | `namespace`          | Namespace where the Kubernetes Gateway is deployed.                                                                                                                                                                                                                                  |
 
     -   Change the mode of the agent configuration as shown below.
 
