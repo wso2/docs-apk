@@ -696,7 +696,15 @@ Replace <your-access-token> with the one you obtained from the previous step and
     --form 'definitionFile=@"path/to/SampleAPIDefinition.json"'
     ```
 
-Execute the command below. You will be able to see that the HttpRoutes and RouteMetadata related to the `Sample API` is successfully deployed as shown in the image.
+Execute the command below. You will be able to see that the RouteMetadata and HttpRoutes related to the `Sample API` is successfully deployed as shown in the image.
+
+=== "RouteMetadata"
+    ```
+    kubectl get routemetadata
+    ```
+
+    [![Deployed API](../assets/img/get-started/deployed-routemetada.png)](../assets/img/get-started/deployed-routemetada.png)
+
 
 === "HttpRoutes"
     ```
@@ -706,13 +714,6 @@ Execute the command below. You will be able to see that the HttpRoutes and Route
     [![Deployed API](../assets/img/get-started/deployed-api.png)](../assets/img/get-started/deployed-api.png)
 
 
-
-=== "RouteMetadata"
-    ```
-    kubectl get routemetadata
-    ```
-
-    [![Deployed API](../assets/img/get-started/deployed-routemetada.png)](../assets/img/get-started/deployed-routemetada.png)
 
 Now the API is ready to be invoked. Let’s get a random UUID by invoking the `/uuid` resource in the `Sample API`.
 
