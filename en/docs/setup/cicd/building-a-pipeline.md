@@ -35,7 +35,7 @@ After creating the cluster, retrieve the KUBE_CONFIG credentials and add it to y
 You can install APK for a given namespace by running the following commands.
 
 ```
-helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.3.0
+helm repo add wso2apk https://github.com/wso2/apk/releases/download/2.0.0-alpha
 helm repo update
 helm install apk-dev wso2apk/apk-helm --version 1.3.0 -n apk-dev
 helm install apk-stage wso2apk/apk-helm --version 1.3.0 -n apk-stage

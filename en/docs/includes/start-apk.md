@@ -3,7 +3,7 @@
 Adding the Kubernetes Gateway Helm repository allows your system to fetch and install the latest Kubernetes Gateway components from the remote repository. This ensures that you are always using the most up-to-date version of Kubernetes Gateway.
 
 ```console
-helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.3.0
+helm repo add wso2apk https://github.com/wso2/apk/releases/download/2.0.0-alpha
 
 helm repo update
 ```
@@ -16,7 +16,7 @@ Install the Kubernetes Gateway components and start the WSO2 API Platform For Ku
 Use the version of the release you added in Step 1.
 
 ```
-helm install apk wso2apk/apk-helm --version 1.3.0 -f https://raw.githubusercontent.com/wso2/apk/refs/heads/main/helm-charts/samples/apk/1.3.0-qsg-values.yaml
+helm install apk wso2apk/kubernetes-gateway-helm --version 2.0.0-alpha
 ```
 
 !!!Optional
@@ -24,11 +24,11 @@ helm install apk wso2apk/apk-helm --version 1.3.0 -f https://raw.githubuserconte
         
     === "Command"
         ```
-        helm install apk wso2apk/apk-helm --version 1.3.0 -f values.yaml
+        helm install apk wso2apk/kubernetes-gateway-helm --version 2.0.0-alpha -f values.yaml
         ```
     === "Format"
         ```
-        helm install <chart-name> <repository-name>/apk-helm --version <version-of-APK> -f <path-to-values.yaml-file> 
+        helm install <chart-name> <repository-name>/kubernetes-gateway-helm --version <version-of-APK> -f <path-to-values.yaml-file> 
         ```
 
 !!!Optional
@@ -36,11 +36,11 @@ helm install apk wso2apk/apk-helm --version 1.3.0 -f https://raw.githubuserconte
 
     === "Command"
         ```
-        helm upgrade apk wso2apk/apk-helm --version 1.3.0 -f values.yaml --no-hooks
+        helm upgrade apk wso2apk/kubernetes-gateway-helm --version 2.0.0-alpha -f values.yaml --no-hooks
         ```
     === "Format"
         ```
-        helm upgrade <chart-name> <repository-name>/apk-helm --version <version-of-APK> -f <path-to-values.yaml-file> --no-hooks
+        helm upgrade <chart-name> <repository-name>/kubernetes-gateway-helm --version <version-of-APK> -f <path-to-values.yaml-file> --no-hooks
         ```
 
 ### Verify the deployment
