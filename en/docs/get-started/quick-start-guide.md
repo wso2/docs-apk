@@ -489,7 +489,7 @@ The response will contain the Kubernetes Gateway configuration file content, whi
     subscriptionValidation: false
     endpointConfigurations:
         production:
-        - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
+        - endpoint: "https://httpbin.org/"
     operations:
     - target: "/ai/spelling"
       verb: "POST"
@@ -535,7 +535,7 @@ The generated apk-conf file can be modified to suit your needs. For instance, yo
     subscriptionValidation: false
     endpointConfigurations:
         production:
-        - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
+        - endpoint: "https://httpbin.org/"
     operations:
     - target: "/ai/spelling"
       verb: "POST"
@@ -587,12 +587,13 @@ Run the following command (with the provided values) to generate your access tok
 
 === "Sample Request"
     ```
-    curl -k --location 'https://idp.example.com:9095/oauth2/1.0.0/token' \
-    --header 'Host: idp.example.com' \
-    --header 'Authorization: Basic NDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyOjRmYmQ2MmVjLWE5MmUtMTFlZC1hZmExLTAyNDJhYzEyMDAwMg==' \
-    --header 'Content-Type: application/x-www-form-urlencoded' \
-    --data-urlencode 'grant_type=client_credentials' \
-    --data-urlencode 'scope=apk:api_create'
+    token=$(curl -s -k --location 'https://idp.example.com:9095/oauth2/1.0.0/token' \
+        --header 'Host: idp.example.com' \
+        --header 'Authorization: Basic NDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyOjRmYmQ2MmVjLWE5MmUtMTFlZC1hZmExLTAyNDJhYzEyMDAwMg==' \
+        --header 'Content-Type: application/x-www-form-urlencoded' \
+        --data-urlencode 'grant_type=client_credentials' \
+        --data-urlencode 'scope=apk:api_create' \
+        | jq -r '.access_token')
     ```
 
 === "Sample Response"
@@ -633,7 +634,7 @@ Replace <your-access-token> with the one you obtained from the previous step and
     ```
     curl -k --location 'https://api.example.com:9095/api/deployer/1.3.0/apis/deploy' \
     --header 'Host: api.example.com' \
-    --header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiZXhwIjoxNjg4MTMxNDQ0LCAibmJmIjoxNjg4MTI3ODQ0LCAiaWF0IjoxNjg4MTI3ODQ0LCAianRpIjoiMDFlZTE3NDEtMDA0Ni0xOGE2LWFhMjEtYmQwYTk4ZjYzNzkwIiwgImNsaWVudElkIjoiNDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyIiwgInNjb3BlIjoiZGVmYXVsdCJ9.RfKQq2fUZKZFAyjimvsPD3cOzaVWazabmq7b1iKYacqIdNjkvO9CQmu7qdtrVNDmdZ_gHhWLXiGhN4UTSCXv_n1ArDnxTLFBroRS8dxuFBZoD9Mpj10vYFSDDhUfFqjgMqtpr30TpDMfee1wkqB6K757ZSjgCDa0hAbv555GkLdZtRsSgR3xWcxPBsIozqAMFDCWoUCbgTQuA5OiEhhpVco2zv4XLq2sz--VRoBieO12C69KnGRmoLuPtvOayInvrnV96Tbt9fR0fLS2l1nvAdFzVou0SIf9rMZLnURLVQQYE64GR14m-cFRYdUI9vTsFHZBl5w-uCLdzMMofzZaLQ' \
+    --header "Authorization: Bearer $token" \
     --form 'apkConfiguration=@"SampleService.apk-conf"' \
     --form 'definitionFile=@"SampleAPIDefinition.json"'
     ```
@@ -650,7 +651,7 @@ Replace <your-access-token> with the one you obtained from the previous step and
     subscriptionValidation: false
     endpointConfigurations:
         production:
-        - endpoint: "https://dev-tools.wso2.com/gs/helpers/v1.0"
+        - endpoint: "https://httpbin.org/"
     operations:
     - target: "/ai/spelling"
       verb: "POST"
@@ -676,6 +677,14 @@ Replace <your-access-token> with the one you obtained from the previous step and
       verb: "GET"
       secured: true
       scopes: []
+    keyManagers:
+    - name: local-idp
+      issuer: https://your-idp-host
+      JWKSEndpoint: https://apk-wso2-kgw-idp-ds-service.default.svc:9443/oauth2/jwks
+      claimMappings: []
+      k8sBackend:
+        name: apk-wso2-kgw-oauth-ds-backend
+        port: 9443
 
     ```
 === "Request Format"
@@ -687,11 +696,11 @@ Replace <your-access-token> with the one you obtained from the previous step and
     --form 'definitionFile=@"path/to/SampleAPIDefinition.json"'
     ```
 
-Execute the command below. You will be able to see that the `Sample API` is successfully deployed as shown in the image.
+Execute the command below. You will be able to see that the Httproutes related to the `Sample API` is successfully deployed as shown in the image.
 
 === "Command"
     ```
-    kubectl get apis
+    kubectl get httproutes
     ```
 
     [![Deployed API](../assets/img/get-started/deployed-api.png)](../assets/img/get-started/deployed-api.png)
