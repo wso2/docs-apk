@@ -16,7 +16,7 @@ Install the Kubernetes Gateway components and start the WSO2 API Platform For Ku
 Use the version of the release you added in Step 1.
 
 ```
-helm install apk wso2apk/apk-helm --version 1.3.0 -f https://raw.githubusercontent.com/wso2/apk/refs/heads/main/helm-charts/samples/apk/1.3.0-qsg-values.yaml
+helm install apk wso2apk/apk-helm --version 1.3.0 -f https://raw.githubusercontent.com/wso2/apk/refs/tags/1.3.0/helm-charts/samples/apk/1.3.0-qsg-values.yaml
 ```
 
 !!!Optional
