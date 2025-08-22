@@ -53,7 +53,7 @@ Check the status of deployed pods:
     kubectl get pods
     ```
 
-    [![Pod Status](../assets/img/get-started/pod-status.png)](../assets/img/get-started/pod-status.png)
+    [![Pod Status](../assets/img/get-started/podstatus.png)](../assets/img/get-started/podstatus.png)
 
     !!! Important
         Except for the `gateway-apim-admission` and `gateway-apim-admission-patch` (which will run as soon as Kubernetes Gateway is installed and then complete), all other pods should transition to the running state. If they have not, please refer the <a href="../../about-apk/FAQs/#4-why-are-pods-not-transitioning-to-the-running-state-for-a-long-time" target="_blank">FAQs</a> to troubleshoot the problem.
