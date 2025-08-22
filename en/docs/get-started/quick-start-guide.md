@@ -632,7 +632,7 @@ Replace <your-access-token> with the one you obtained from the previous step and
 
 === "Sample Request"
     ```
-    curl -k --location 'https://api.example.com:9095/api/deployer/1.3.0/apis/deploy' \
+    curl -k --location 'https://api.example.com:9095/api/deployer/1.3.0/apis/deploy?organization=default' \
     --header 'Host: api.example.com' \
     --header "Authorization: Bearer $token" \
     --form 'apkConfiguration=@"SampleService.apk-conf"' \
@@ -696,14 +696,23 @@ Replace <your-access-token> with the one you obtained from the previous step and
     --form 'definitionFile=@"path/to/SampleAPIDefinition.json"'
     ```
 
-Execute the command below. You will be able to see that the Httproutes related to the `Sample API` is successfully deployed as shown in the image.
+Execute the command below. You will be able to see that the HttpRoutes and RouteMetadata related to the `Sample API` is successfully deployed as shown in the image.
 
-=== "Command"
+=== "HttpRoutes"
     ```
     kubectl get httproutes
     ```
 
     [![Deployed API](../assets/img/get-started/deployed-api.png)](../assets/img/get-started/deployed-api.png)
+
+
+
+=== "RouteMetadata"
+    ```
+    kubectl get routemetadata
+    ```
+
+    [![Deployed API](../assets/img/get-started/deployed-routemetada.png)](../assets/img/get-started/deployed-routemetada.png)
 
 Now the API is ready to be invoked. Let’s get a random UUID by invoking the `/uuid` resource in the `Sample API`.
 
@@ -713,7 +722,7 @@ To invoke the API, replace <your-access-token> with your access token here as we
     ```
     curl -k --location 'https://default.gw.example.com:9095/sample-api/0.1.0/uuid' \
     --header 'Host: default.gw.example.com' \
-    --header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsICJ0eXAiOiJKV1QiLCAia2lkIjoiZ2F0ZXdheV9jZXJ0aWZpY2F0ZV9hbGlhcyJ9.eyJpc3MiOiJodHRwczovL2lkcC5hbS53c28yLmNvbS90b2tlbiIsICJzdWIiOiI0NWYxYzVjOC1hOTJlLTExZWQtYWZhMS0wMjQyYWMxMjAwMDIiLCAiZXhwIjoxNjg4MTMxNDQ0LCAibmJmIjoxNjg4MTI3ODQ0LCAiaWF0IjoxNjg4MTI3ODQ0LCAianRpIjoiMDFlZTE3NDEtMDA0Ni0xOGE2LWFhMjEtYmQwYTk4ZjYzNzkwIiwgImNsaWVudElkIjoiNDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyIiwgInNjb3BlIjoiZGVmYXVsdCJ9.RfKQq2fUZKZFAyjimvsPD3cOzaVWazabmq7b1iKYacqIdNjkvO9CQmu7qdtrVNDmdZ_gHhWLXiGhN4UTSCXv_n1ArDnxTLFBroRS8dxuFBZoD9Mpj10vYFSDDhUfFqjgMqtpr30TpDMfee1wkqB6K757ZSjgCDa0hAbv555GkLdZtRsSgR3xWcxPBsIozqAMFDCWoUCbgTQuA5OiEhhpVco2zv4XLq2sz--VRoBieO12C69KnGRmoLuPtvOayInvrnV96Tbt9fR0fLS2l1nvAdFzVou0SIf9rMZLnURLVQQYE64GR14m-cFRYdUI9vTsFHZBl5w-uCLdzMMofzZaLQ'
+    --header "Authorization: Bearer $token"
     ```
 
 === "Sample Response"
