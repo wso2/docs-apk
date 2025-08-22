@@ -27,7 +27,7 @@ In this approach, each environment (dev, prod, etc..) has its own dedicated Kube
 Adding the Kubernetes Gateway Helm repository allows your system to fetch and install the latest Kubernetes Gateway components from the remote repository. This ensures that you are always using the most up-to-date version of Kubernetes Gateway.
 
 ```console
-helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.3.0
+helm repo add wso2apk https://github.com/wso2/apk/releases/download/2.0.0-alpha
 
 helm repo update
 ```
