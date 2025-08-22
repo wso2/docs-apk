@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "https://dev-tools.wso2.com/gs/helpers/v1.0"
+      "url": "https://httpbin.org/"
     }
   ],
   "tags": [

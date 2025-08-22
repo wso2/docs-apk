@@ -72,7 +72,7 @@ Download and save the <b><a href="../../assets/files/get-started/SampleAPIDefini
 Use the following command to download the file:
 
 ```
-curl -O https://raw.githubusercontent.com/wso2/docs-apk/refs/heads/1.3.0/en/docs/assets/files/get-started/SampleAPIDefinition.json
+curl -O https://raw.githubusercontent.com/wso2/docs-apk/refs/heads/2.0.0/en/docs/assets/files/get-started/SampleAPIDefinition.json
 ```
 
 Then, verify the file exists:
@@ -561,6 +561,14 @@ The generated apk-conf file can be modified to suit your needs. For instance, yo
       verb: "GET"
       secured: true
       scopes: []
+    keyManagers:
+    - name: local-idp
+      issuer: https://your-idp-host
+      JWKSEndpoint: https://apk-wso2-kgw-idp-ds-service.default.svc:9443/oauth2/jwks
+      claimMappings: []
+      k8sBackend:
+        name: apk-wso2-kgw-oauth-ds-backend
+        port: 9443
     ```
 
 ## Step 3: Generate Access Token
@@ -579,7 +587,7 @@ Run the following command (with the provided values) to generate your access tok
 
 === "Sample Request"
     ```
-    curl -k --location 'https://idp.example.com:9095/oauth2/token' \
+    curl -k --location 'https://idp.example.com:9095/oauth2/1.0.0/token' \
     --header 'Host: idp.example.com' \
     --header 'Authorization: Basic NDVmMWM1YzgtYTkyZS0xMWVkLWFmYTEtMDI0MmFjMTIwMDAyOjRmYmQ2MmVjLWE5MmUtMTFlZC1hZmExLTAyNDJhYzEyMDAwMg==' \
     --header 'Content-Type: application/x-www-form-urlencoded' \

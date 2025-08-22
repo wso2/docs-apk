@@ -16,7 +16,7 @@ Install the Kubernetes Gateway components and start the WSO2 API Platform For Ku
 Use the version of the release you added in Step 1.
 
 ```
-helm install apk wso2apk/kubernetes-gateway-helm --version 2.0.0-alpha
+helm install apk wso2apk/kubernetes-gateway-helm --version 2.0.0-alpha -f https://raw.githubusercontent.com/wso2/apk/refs/heads/main/samples/helm/quickstart.yaml
 ```
 
 !!!Optional
@@ -105,16 +105,10 @@ To ensure that your local machine correctly resolves API requests, you need to m
     To interact with the deployed API from your local machine, you need to expose the gateway service and route traffic appropriately.
     This involves identifying the external IP of the gateway service and setting up a port forward to access it locally.
 
-    1. Identify the `gateway-service` external IP address.
-        
-        Find the external IP address assigned to the API gateway service, which allows external access to the deployed APIs.
-        ```console
-        kubectl get svc | grep gateway-service
-        ```
-    2. Port forward router service to localhost.
+    1. Port forward router service to localhost.
         
         If your cluster does not provide an external IP, you can use port forwarding to make the API gateway accessible from your local machine.
         ```console
-        kubectl port-forward svc/apk-wso2-apk-gateway-service 9095:9095
+        kubectl port-forward  svc/$(kubectl get svc -l app.kubernetes.io/component=proxy -o jsonpath='{.items[0].metadata.name}') 9095:9095
         ```
 
