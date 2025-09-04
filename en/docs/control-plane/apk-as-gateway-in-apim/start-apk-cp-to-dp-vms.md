@@ -6,7 +6,7 @@ In this guide, the APIM Control Plane and the Kubernetes Gateway are installed i
 ``` 
 kubectl create ns apk
 ```
-#### Setup WSO2 Kubernetes Gateway 1.3.0
+#### Setup WSO2 Kubernetes Gateway 2.0.0
 
 1. Create a new helm repository with the latest Kubernetes Gateway release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apk```.
 
@@ -26,17 +26,17 @@ kubectl create ns apk
 
     === "Command"
         ```
-        helm show values wso2apk/apk-helm --version 1.3.0  > kg-values.yaml
+        helm show values wso2apk/kubernetes-gateway-helm --version 2.0.0-alpha  > kg-values.yaml
         ```
 
     === "Format"
         ```
-        helm show values <repository-name>/apk-helm --version <version-of-APK> > kg-values.yaml
+        helm show values <repository-name>/kubernetes-gateway-helm --version <version-of-APK> > kg-values.yaml
         ```
 
 4. Configuration required to add Kubernetes Gateway as a gateway in `kg-values.yaml`
 
-    - Add following configuration under `wso2.apk` section
+    - Add following configuration under `wso2.kgw` section
 
         ``` yaml
         cp:
@@ -74,16 +74,15 @@ kubectl create ns apk
 
     - (Optional) Change default listener hostnames
 
-        By default Kubernetes Gateway has 2 listeners
+    By default Kubernetes Gateway has 2 listeners
 
         - System APIs Listener - api.am.wso2.com
         - Gateway Listener - gw.wso2.com
 
-        If you wish to change the default hostname and vhost, change the following values.yaml configurations. Let's say you want to deploy a production environment and you have a domain name example.com and you want to expose your API's through prod.gw.example.com and expose APK system APIs through prod.apk.example.com then condfigure as follows,
+        If you wish to change the default hostname and vhost, change the following values.yaml configurations. Let's say you want to deploy a production environment and you have a domain name example.com and you want to expose your API's through prod.gw.example.com and expose APK system APIs through prod.apk.example.com then configure as follows,
        
-            wso2.apk.listener.hostname: 'prod.apk.example.com'
-            wso2.apk.dp.gateway.listener.hostname: 'gw.example.com'
-            wso2.apk.dp.configdeployer.vhosts: [{"hosts":["gw.example.com"],"name":"prod","type":"production"}]
+            wso2.kgw.listener.hostname: 'prod.apk.example.com'
+            wso2.kgw.dp.gateway.listener.hostname: 'prod.gw.example.com'
 
     - Configure API Key Issuer
 
@@ -114,11 +113,11 @@ kubectl create ns apk
 
     === "Command"
         ```
-        helm install apk wso2apk/apk-helm --version 1.3.0 -f kg-values.yaml -n apk
+        helm install apk wso2apk/kubernetes-gateway-helm --version 2.0.0-alpha -f kg-values.yaml -n apk
         ```
     === "Format"
         ```
-        helm install <chart-name> <repository-name>/apk-helm --version <version-of-APK> -f <path-to-values.yaml-file> -n <namespace>
+        helm install <chart-name> <repository-name>/kubernetes-gateway-helm --version <version-of-APK> -f <path-to-values.yaml-file> -n <namespace>
         ```
 
 
@@ -194,7 +193,7 @@ Change the configurations in the deployment.toml file as below.
 
 
 
-#### Setup WSO2 Kubernetes Gateway Agent 1.3.0
+#### Setup WSO2 Kubernetes Gateway Agent 2.0.0
 
 !!!Note
     Kubernetes Gateway Agent Provide a connection between APIM Control Plane and Kubernetes Gateway.
@@ -202,7 +201,7 @@ Change the configurations in the deployment.toml file as below.
 1. Create a new helm repository with the latest kubernetes gateway agent release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apkagent``` for this guide.
 
     ```console
-    helm repo add wso2apkagent https://github.com/wso2/product-apim-tooling/releases/download/1.3.0
+    helm repo add wso2apkagent https://github.com/wso2/product-apim-tooling/releases/download/2.0.0
     ```
 
 2. Execute the following command to update the helm repositories.
@@ -217,12 +216,12 @@ Change the configurations in the deployment.toml file as below.
 
     === "Command"
         ```
-        helm show values wso2apkagent/apim-apk-agent --version 1.3.0  > kg-agent-values.yaml
+        helm show values wso2apkagent/apim-apk-agent --version 2.0.0  > kg-agent-values.yaml
         ```
 
     === "Format"
         ```
-        helm show values <repository-name>/apk-helm --version <version-of-APK> > kg-agent-values.yaml
+        helm show values <repository-name>/apim-apk-agent --version <version-of-Agent> > kg-agent-values.yaml
         ```
 
 4. Configuration Require to Connect Kubernetes Gateway Agent in `kg-agent-values.yaml`
@@ -312,11 +311,11 @@ Change the configurations in the deployment.toml file as below.
 
     === "Command"
         ```
-        helm install apim-apk-agent wso2apkagent/apim-apk-agent --version 1.3.0 -f kg-agent-values.yaml -n apk
+        helm install apim-apk-agent wso2apkagent/apim-apk-agent --version 2.0.0 -f kg-agent-values.yaml -n apk
         ```
     === "Format"
         ```
-        helm install <chart-name> <repository-name>/apim-apk-agent --version <version-of-APK-Agent> -f <path-to-values.yaml-file> -n namespace
+        helm install <chart-name> <repository-name>/apim-apk-agent --version <version-of-APK-Agent> -f <path-to-values.yaml-file> -n <namespace>
         ```
 
 #### Verify the deployment

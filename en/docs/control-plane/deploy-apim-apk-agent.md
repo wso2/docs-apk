@@ -16,7 +16,7 @@ Follow the instructions below to deploy the Kubernetes Gateway Agent.
 1. Create a new helm repository with the latest kubernetes gateway agent release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apk``` for this guide.
 
     ```console
-    helm repo add wso2apkagent https://github.com/wso2/product-apim-tooling/releases/download/1.3.0
+    helm repo add wso2apkagent https://github.com/wso2/product-apim-tooling/releases/download/2.0.0
     ```
 
 2. Execute the following command to update the helm repositories.
@@ -29,11 +29,11 @@ Follow the instructions below to deploy the Kubernetes Gateway Agent.
 
 === "Command"
     ```
-    helm install apim-apk-agent wso2apkagent/apk-agent-helm --version 1.3.0
+    helm install apim-apk-agent wso2apkagent/apim-apk-agent --version 2.0.0
     ```
 === "Format"
     ```
-    helm install <chart-name> <repository-name>/apk-agent-helm --version <version-of-APK-Agent>
+    helm install <chart-name> <repository-name>/apim-apk-agent --version <version-of-APK-Agent>
     ```
 
 !!! Optional
@@ -41,9 +41,9 @@ To commence the installation while making use of the customization capabilities 
 
 === "Command"
     ```
-    helm install apk wso2apkagent/apk-agent-helm --version 1.3.0 -f values.yaml
+    helm install apim-apk-agent wso2apkagent/apim-apk-agent --version 2.0.0 -f values.yaml
     ```
 === "Format"
     ```
-    helm install <chart-name> <repository-name>/apk-agent-helm --version <version-of-APK-Agent> -f <path-to-values.yaml-file>
+    helm install <chart-name> <repository-name>/apim-apk-agent --version <version-of-APK-Agent> -f <path-to-values.yaml-file>
     ```

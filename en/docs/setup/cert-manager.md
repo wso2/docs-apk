@@ -106,11 +106,11 @@ Now, install WSO2 Kubernetes Gateway using Helm with the modified values.yaml fi
 
 === "Command"
     ```
-    helm install apk wso2apk/apk-helm --version 1.3.0 -f values.yaml -n wso2-kg
+    helm install apk wso2apk/kubernetes-gateway-helm --version 2.0.0-alpha -f values.yaml -n wso2-kg
     ```
 === "Format"
     ```
-    helm install <chart-name> <repository-name>/apk-helm --version <version-of-WSO2-Kubernetes-Gateway> -f <path-to-values.yaml-file> -n <namespace>
+    helm install <chart-name> <repository-name>/kubernetes-gateway-helm --version <version-of-WSO2-Kubernetes-Gateway> -f <path-to-values.yaml-file> -n <namespace>
     ```
 
 ## 5. Verify the Certificate Status
