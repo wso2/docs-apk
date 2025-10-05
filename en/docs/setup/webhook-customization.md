@@ -37,7 +37,7 @@ After doing changes to the values.yaml file, you can redeploy the WSO2 Kubernete
 
 === "Command"
     ```
-    helm upgrade apk wso2apk/apk-helm --version 1.3.0 -f values.yaml --no-hooks
+    helm upgrade apk wso2apk/apk-helm --version 1.3.0-1-f values.yaml --no-hooks
     ```
 === "Format"
     ```
