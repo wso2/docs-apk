@@ -3,7 +3,7 @@
 Adding the Kubernetes Gateway Helm repository allows your system to fetch and install the latest Kubernetes Gateway components from the remote repository. This ensures that you are always using the most up-to-date version of Kubernetes Gateway.
 
 ```console
-helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.3.0
+helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.3.0-1
 
 helm repo update
 ```
@@ -16,7 +16,7 @@ Install the Kubernetes Gateway components and start the WSO2 API Platform For Ku
 Use the version of the release you added in Step 1.
 
 ```
-helm install apk wso2apk/apk-helm --version 1.3.0 -f https://raw.githubusercontent.com/wso2/apk/refs/heads/main/helm-charts/samples/apk/1.3.0-qsg-values.yaml
+helm install apk wso2apk/apk-helm --version 1.3.0-1 -f https://raw.githubusercontent.com/wso2/apk/refs/heads/main/helm-charts/samples/apk/1.3.0-qsg-values.yaml
 ```
 
 !!!Optional
@@ -24,7 +24,7 @@ helm install apk wso2apk/apk-helm --version 1.3.0 -f https://raw.githubuserconte
         
     === "Command"
         ```
-        helm install apk wso2apk/apk-helm --version 1.3.0 -f values.yaml
+        helm install apk wso2apk/apk-helm --version 1.3.0-1 -f values.yaml
         ```
     === "Format"
         ```
@@ -36,7 +36,7 @@ helm install apk wso2apk/apk-helm --version 1.3.0 -f https://raw.githubuserconte
 
     === "Command"
         ```
-        helm upgrade apk wso2apk/apk-helm --version 1.3.0 -f values.yaml --no-hooks
+        helm upgrade apk wso2apk/apk-helm --version 1.3.0-1-f values.yaml --no-hooks
         ```
     === "Format"
         ```
