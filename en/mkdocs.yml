@@ -382,6 +382,8 @@ nav:
            #    - Topic 1: get-started/dummy.md
            #    - Topic 2: get-started/dummy.md
         #- Product Pitch: https://wso2.com/api-manager
+    - Tutorials:
+        - gRPC API Management: tutorials/grpc-api-management.md
     - Reach Out:
         - Community: reachout/community.md # Brief description and links to Discord and Stack OverFlow
         - Support: https://wso2.com/subscription/#support
