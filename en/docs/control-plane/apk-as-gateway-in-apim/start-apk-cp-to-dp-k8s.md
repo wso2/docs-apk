@@ -235,11 +235,17 @@ Setup WSO2 API Manager 4.5.0 in K8s cluster using Helm Charts.
 !!!Note
     Kubernetes Gateway Agent Provide a connection between APIM Control Plane and Kubernetes Gateway.
 
-1. Create a new helm repository with the latest kubernetes gateway agent release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apkagent``` for this guide.
+1. Create a new helm repository with the latest kubernetes gateway agent release using the following command. Let's consider the ```<repository-name>``` as ```wso2apkagent``` for this guide.
 
-    ```console
-    helm repo add wso2apkagent https://github.com/wso2/product-apim-tooling/releases/download/1.3.0
-    ```
+    === "4.5.0"
+        ```console
+        helm repo add wso2apkagent https://github.com/wso2/product-apim-tooling/releases/download/1.3.0
+        ```
+
+    === "4.6.0"
+        ```console
+        helm repo add wso2apkagent https://github.com/wso2/product-apim-tooling/releases/download/1.3.1
+        ```
 
 2. Execute the following command to update the helm repositories.
 
@@ -251,9 +257,14 @@ Setup WSO2 API Manager 4.5.0 in K8s cluster using Helm Charts.
 
     To obtain the `values.yaml` file, you can use the `helm show values` command. Replace `<repository-name>` with the actual repository name and `<version-of-Agent>` with the desired version of the Kubernetes Gateway Agent. Run the following command:
 
-    === "Command"
+    === "4.5.0"
         ```
         helm show values wso2apkagent/apim-apk-agent --version 1.3.0  > kg-agent-values.yaml
+        ```
+
+    === "4.6.0"
+        ```
+        helm show values wso2apkagent/apim-apk-agent --version 1.3.1  > kg-agent-values.yaml
         ```
 
     === "Format"
@@ -355,10 +366,16 @@ Setup WSO2 API Manager 4.5.0 in K8s cluster using Helm Charts.
 
 3. Install the Kubernetes Gateway Agent components and start WSO2 API Platform For Kubernetes. Consider ```apk``` as the ```<chart-name>``` for this guide. As the ```--version``` of this command, use the version of the release you used in point 1 above. It will take a few minutes for the deployment to complete.
 
-    === "Command"
+    === "4.5.0"
         ```
         helm install apim-apk-agent wso2apkagent/apim-apk-agent --version 1.3.0 -f kg-agent-values.yaml -n apk
         ```
+
+    === "4.6.0"
+        ```
+        helm install apim-apk-agent wso2apkagent/apim-apk-agent --version 1.3.1 -f kg-agent-values.yaml -n apk
+        ```
+
     === "Format"
         ```
         helm install <chart-name> <repository-name>/apim-apk-agent --version <version-of-APK-Agent> -f <path-to-values.yaml-file>
