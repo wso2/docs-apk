@@ -144,20 +144,39 @@ Setup WSO2 API Manager 4.5.0 in K8s cluster using Helm Charts.
 
     Add kubernetes gateway environment to the Environment list.
 
+    === "4.5.0"
+        ``` yaml
+        gateway:
+        # -- Kubernetes Gateway environments
+            environments:
+            - name: "Default_APK"
+              type: "hybrid"
+              gatewayType: "APK"
+              provider: "wso2"
+              displayInApiConsole: true
+              description: "This is a kubernetes gateway that handles both production and sandbox token traffic."
+              showAsTokenEndpointUrl: true
+              httpHostname: "default.gw.wso2.com:9095"
+        ```
 
-    ``` yaml
-    gateway:
-    # -- Kubernetes Gateway environments
-        environments:
-        - name: "Default_APK"
-          type: "hybrid"
-          gatewayType: "APK"
-          provider: "wso2"
-          displayInApiConsole: true
-          description: "This is a kubernetes gateway that handles both production and sandbox token traffic."
-          showAsTokenEndpointUrl: true
-          httpHostname: "default.gw.wso2.com:9095"
-    ```
+    === "4.6.0"
+        ``` yaml
+        gateway:
+        # -- Kubernetes Gateway environments
+            environments:
+            - name: "Default_APK"
+              type: "hybrid"
+              provider: "wso2"
+              gatewayType: "APK"
+              displayInApiConsole: true
+              description: "This is a hybrid gateway that handles both production and sandbox token traffic."
+              showAsTokenEndpointUrl: true
+              serviceName: "wso2am-gateway-service"
+              servicePort: 9443
+              wsHostname: "websocket.wso2.com"
+              httpHostname: "default.gw.wso2.com:9095"
+              websubHostname: "websub.wso2.com"
+        ```
     <table>
   <tbody>
     <tr>
