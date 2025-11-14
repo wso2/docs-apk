@@ -212,10 +212,16 @@ Setup WSO2 API Manager 4.5.0 in K8s cluster using Helm Charts.
 
 4. Consider ```apim``` as the ```<chart-name>``` for this guide. As the ```--version``` of this command, use the version of the release you used in point 1 above. It will take a few minutes for the deployment to complete.
 
-    === "Command"
+    === "4.5.0"
         ```
         helm install apim wso2/wso2am-all-in-one --version 4.5.0-1 -f https://raw.githubusercontent.com/wso2/helm-apim/main/docs/am-pattern-0-all-in-one/default_values.yaml -n apk
         ```
+
+    === "4.6.0"
+        ```
+        helm install apim wso2/wso2am-all-in-one --version 4.6.0-1 -f https://raw.githubusercontent.com/wso2/helm-apim/main/docs/am-pattern-0-all-in-one/default_values.yaml -n apk
+        ```
+
     === "Format"
         ```
         helm install <chart-name> <repository-name>/wso2am-cp --version <version-of-APIM> -f <path-to-values.yaml-file>
@@ -259,16 +265,30 @@ Setup WSO2 API Manager 4.5.0 in K8s cluster using Helm Charts.
 
     -   Configure Control Plane(APIM) related configuration in Kubernetes Gateway Agent
 
-        ``` yaml
-        controlPlane:
-            enabled: true
-            serviceURL: https://apim-wso2am-cp-1-service.apk.svc.cluster.local:9443/
-            username: admin
-            password: admin
-            environmentLabels: Default
-            skipSSLVerification: true
-            eventListeningEndpoints: amqp://admin:admin@apim-wso2am-cp-1-service.apk.svc.cluster.local:5672?retries='10'&connectdelay='30'
-        ```
+        === "4.5.0"
+            ``` yaml
+            controlPlane:
+                enabled: true
+                serviceURL: https://apim-wso2am-cp-1-service.apk.svc.cluster.local:9443/
+                username: admin
+                password: admin
+                environmentLabels: Default
+                skipSSLVerification: true
+                eventListeningEndpoints: amqp://admin:admin@apim-wso2am-cp-1-service.apk.svc.cluster.local:5672?retries='10'&connectdelay='30'
+            ```
+
+        === "4.6.0"
+            ``` yaml
+            controlPlane:
+                enabled: true
+                serviceURL: https://apim-wso2am-all-in-one-am-service-1.apk.svc.cluster.local:9443/
+                username: admin
+                password: admin
+                environmentLabels: Default
+                skipSSLVerification: true
+                eventListeningEndpoints: amqp://admin:admin@apim-wso2am-all-in-one-am-service-1.apk.svc.cluster.local:5672?retries='10'&connectdelay='30'
+            ```
+
         <table>
     <tbody>
         <tr>
