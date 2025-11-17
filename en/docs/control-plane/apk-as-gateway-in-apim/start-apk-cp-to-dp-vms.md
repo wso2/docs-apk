@@ -288,10 +288,10 @@ Change the configurations in the deployment.toml file as below.
         <td style="white-space: nowrap;"><code>k8ResourceEndpoint</code></td>
         <td>Config deployer service endpoint.
         <p>
-        Format: {configDeployService}.{namespace}.svc.cluster.local:{port}/api/configurator/apis/
+        Format: {configDeployerService}.{namespace}.svc.cluster.local:{port}/api/configurator/apis/
         </p>
         <p>
-        You can retrieve the configDeployService name using `kubectl get svc -n <namespace>`
+        You can retrieve the configDeployerService name using `kubectl get svc -n <namespace>`
         </p></td>
         </tr>
         <tr>

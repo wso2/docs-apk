@@ -200,7 +200,7 @@ Follow the steps given below to set up WSO2 API Manager 4.5.0/4.6.0 in a Kuberne
         helm install <chart-name> <repository-name>/wso2am-cp --version <version-of-APIM> -f <path-to-values.yaml-file>
         ```
 
-1. Install the NGINX Ingress Controller. 
+6. Install the NGINX Ingress Controller. 
 
     Please refer to the <a href="https://kubernetes.github.io/ingress-nginx/deploy/#local-development-clusters" target="_blank">NGINX Ingress Controller</a> documentation for more information.
 
@@ -255,12 +255,12 @@ Follow the steps given below to set up WSO2 API Manager 4.5.0/4.6.0 in a Kuberne
             ``` yaml
             controlPlane:
                 enabled: true
-                serviceURL: https://apim-wso2am-cp-1-service.apk.svc.cluster.local:9443/
+                serviceURL: https://apim-wso2am-all-in-one-am-service-1.apk.svc.cluster.local:9443/
                 username: admin
                 password: admin
                 environmentLabels: Default
                 skipSSLVerification: true
-                eventListeningEndpoints: amqp://admin:admin@apim-wso2am-cp-1-service.apk.svc.cluster.local:5672?retries='10'&connectdelay='30'
+                eventListeningEndpoints: amqp://admin:admin@apim-wso2am-all-in-one-am-service-1.apk.svc.cluster.local:5672?retries='10'&connectdelay='30'
             ```
 
         === "4.6.0"
@@ -287,14 +287,14 @@ Follow the steps given below to set up WSO2 API Manager 4.5.0/4.6.0 in a Kuberne
         ``` yaml
         dataPlane:
             enabled: true
-            k8ResourceEndpoint: https://apk-wso2-apk-config-ds-service.apk.svc.cluster.local:9443/api/configurator/apis/generate-k8s-resources
-            namespace: apk
+            k8ResourceEndpoint: https://apk-wso2-apk-config-ds-service.default.svc.cluster.local:9443/api/configurator/apis/generate-k8s-resources
+            namespace: default
         ```
 
-        | Parameter            | Description                                                                                                                                                                                                                              |
-        | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-        | `k8ResourceEndpoint` | The service endpoint of the config deployer. </br>Format: `{configDeployService}.{namespace}.svc.cluster.local:{port}/api/configurator/apis/`. </br>You can retrieve the configDeployService name using `kubectl get svc -n <namespace>` |
-        | `namespace`          | Namespace where the Kubernetes Gateway is deployed.                                                                                                                                                                                      |
+        | Parameter            | Description                                                                                                                                                                                                                                  |
+        | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+        | `k8ResourceEndpoint` | The service endpoint of the config deployer. </br>Format: `{configDeployerService}.{namespace}.svc.cluster.local:{port}/api/configurator/apis/`. </br>You can retrieve the configDeployerService name using `kubectl get svc -n <namespace>` |
+        | `namespace`          | Namespace where the Kubernetes Gateway is deployed.                                                                                                                                                                                          |
 
     -   Change the mode of the agent configuration as shown below.
 
