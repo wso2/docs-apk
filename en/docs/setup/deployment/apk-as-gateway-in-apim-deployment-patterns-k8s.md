@@ -1,6 +1,6 @@
 ### Overview
 
-In this approach, both Kubernetes Gateway and APIM Control Plane are in a kubernetes cluster. 
+In this approach, both Kubernetes Gateway and APIM Control Plane are in a Kubernetes cluster. 
 
 [![apk_cp_to_dp](../../assets/img/deployment-patterns/cp-to-dp.png)](../../assets/img/deployment-patterns/cp-to-dp.png)
 

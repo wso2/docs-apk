@@ -13,7 +13,7 @@ To commence the installation while making use of the customization capabilities 
 
     === "Command"
         ```
-        helm upgrade apk wso2apk/apk-helm --version 1.3.0-1-f values.yaml --no-hooks
+        helm upgrade apk wso2apk/apk-helm --version 1.3.0-1 -f values.yaml --no-hooks
         ```
     === "Format"
         ```

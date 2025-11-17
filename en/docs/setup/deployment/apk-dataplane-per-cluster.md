@@ -49,7 +49,7 @@ Use the version of the release you added in Step.
 
     === "Command"
         ```
-        helm show values wso2apk/apk-helm --version 1.3.0  > values.yaml
+        helm show values wso2apk/apk-helm --version 1.3.0-1  > values.yaml
         ```
 
     === "Format"

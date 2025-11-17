@@ -26,7 +26,7 @@ kubectl create ns apk
 
     === "Command"
         ```
-        helm show values wso2apk/apk-helm --version 1.3.0  > kg-values.yaml
+        helm show values wso2apk/apk-helm --version 1.3.0-1  > kg-values.yaml
         ```
 
     === "Format"
@@ -34,7 +34,7 @@ kubectl create ns apk
         helm show values <repository-name>/apk-helm --version <version-of-APK> > kg-values.yaml
         ```
 
-4. Configuration required to add Kubernetes Gateway as a gateway in `kg-values.yaml`
+4. To add Kubernetes Gateway as a gateway, add the following configurations to `kg-values.yaml`.
 
     - Add following configuration under `wso2.apk` section
 
@@ -348,9 +348,9 @@ kubectl get ing -n apk
 
 Add a hostname mapping to the ```/etc/hosts``` file as follows.
 
-| Domain name        | IP         |
-| --------- | ------------------- |
-| am.wso2.com (APIM Control Plane ingress host name) | 135.171.24.117 (As per above image). You can find it by using   `kubectl get ing -n <namespace>`       |
-| default.gw.wso2.com(Value you change in Gateway listner should be added here) | 135.171.24.26(As per above image). You can find it by using   `kubectl get svc -n <namespace>`  |
-| api.am.wso2.com (Value you change in System APIs Listner should be added here) | 135.171.24.26(As per above image). You can find it by using   `kubectl get svc -n <namespace>`     |
-| idp.am.wso2.com(You dont need to change this) |   135.171.24.26(As per above image). You can find it by using   `kubectl get svc -n <namespace>`   |
+| Domain name                                                                                   | IP                                                                                               |
+| --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| am.wso2.com (APIM Control Plane ingress host name)                                            | 135.171.24.117 (As per above image). You can find it by using   `kubectl get ing -n <namespace>` |
+| default.gw.wso2.com (This should be the same as the value you added for the Gateway Listener) | 135.171.24.26(As per above image). You can find it by using   `kubectl get svc -n <namespace>`   |
+| api.am.wso2.com (This should be the same as the value you added for the System APIs Listener) | 135.171.24.26(As per above image). You can find it by using   `kubectl get svc -n <namespace>`   |
+| idp.am.wso2.com (You dont need to change this)                                                | 135.171.24.26(As per above image). You can find it by using   `kubectl get svc -n <namespace>`   |
