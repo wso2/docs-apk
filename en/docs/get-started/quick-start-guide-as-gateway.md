@@ -1,9 +1,9 @@
-# Deploying & Invoking a managed API on WSO2 Kubernetes Gateway With Control Plane 
+# Deploying & Invoking a Managed API on WSO2 Kubernetes Gateway With Control Plane 
 
-This section is a step-by-step guide to creating, deploying, and invoking an API using the WSO2 Kubernetes Gateway with APIM Control Plane. It including creating an API from the UI.
+This section provides a step-by-step guide to creating, deploying, and invoking an API using the WSO2 Kubernetes Gateway with the APIM Control Plane, including creating an API from the UI.
 
 !!!NOTE
-    To set up the Kubernetes Gateway as an enterprise version, please follow the steps specified in both the <a href="../../setup/enterprise-apk-install" target="_blank">Install Kubernetes Gateway Enterprise</a> and <a href="../../setup/enterprise-apim-apk-agent-install" target="_blank">Install Kubernetes Gateway Agent Enterprise</a>.
+    To set up the Kubernetes Gateway as an enterprise version, please follow the steps specified in both the <a href="../../setup/enterprise-apk-install" target="_blank">Install Kubernetes Gateway Enterprise</a> and <a href="../../setup/enterprise-apim-apk-agent-install" target="_blank">Install Kubernetes Gateway Agent Enterprise</a> guides.
 
 ## Before you begin...
 
@@ -18,9 +18,9 @@ Install the <a href="../../setup/prerequisites" target="_blank">prerequisites</a
 kubectl create ns apk
 ```
 
-### Configure the hosts file
+### Configure the Hosts File
 
-Add a hostname mapping to the ```/etc/hosts``` file as follows.
+Add hostname mappings to the `/etc/hosts` file as follows:
 
    | IP        | Domain name         |
    | --------- | ------------------- |
@@ -29,13 +29,13 @@ Add a hostname mapping to the ```/etc/hosts``` file as follows.
    | 127.0.0.1 | idp.am.wso2.com     |
    | 127.0.0.1 | default.gw.wso2.com |
 
-## Step 1 - Setup APIM Control Plane with Kubernetes Gateway
+## Step 1 - Set up APIM Control Plane with Kubernetes Gateway
 
-There are 3 components which you need to setup to get the Kubernetes Gateway working with APIM. They are,
+There are 3 components that you need to set up to get the Kubernetes Gateway working with APIM. They are:
 
-### Setup WSO2 API Manager Control Plane 4.5.0
+### Set up WSO2 API Manager Control Plane 4.5.0
 
-Setup WSO2 API Manager 4.5.0 in K8s cluster using Helm Charts.
+Set up WSO2 API Manager 4.5.0 in a Kubernetes cluster using Helm charts.
 
 !!! Note
     The Quick Start Guide (QSG) uses an in-memory H2 database for the API Manager Control Plane. Restarting the APIM pod will erase all existing data.
@@ -43,19 +43,21 @@ Setup WSO2 API Manager 4.5.0 in K8s cluster using Helm Charts.
     For step-by-step instructions, see the  <a href="../../setup/apim-deploy-with-db/" target="_blank">Deploy APIM with DB</a> guide.
 
 
-1. Create a new helm repository with the latest apim release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apim```.
+1. Create a new Helm repository with the latest APIM release using the following command. Let's consider the `<repository-name>` as `wso2apim`.
 
     ```console
     helm repo add wso2apim https://github.com/wso2/helm-apim/releases/download/acp-4.5.0
     ```
 
-2. Execute the following command to update the helm repositories.
+2. Execute the following command to update the Helm repositories.
 
     ```console
     helm repo update
     ```
 
-3. Consider ```apim``` as the ```<chart-name>``` for this guide. As the ```--version``` of this command, use the version of the release you used in point 1 above. It will take a few minutes for the deployment to complete.
+3. Install the API Manager Control Plane.
+
+    Consider `apim` as the `<chart-name>` for this guide. For the `--version` parameter, use the version corresponding to the release from step 1. The deployment will take a few minutes to complete.
 
     === "Command"
         ```
@@ -66,26 +68,30 @@ Setup WSO2 API Manager 4.5.0 in K8s cluster using Helm Charts.
         helm install <chart-name> <repository-name>/wso2am-acp --version <version-of-APIM> -f <path-to-values.yaml-file>
         ```
 
-4. Install NGINX Ingress Controller. Please refer to the <a href="https://kubernetes.github.io/ingress-nginx/deploy/#local-development-clusters" target="_blank">NGINX Ingress Controller</a> documentation for more information.
+4. Install the NGINX Ingress Controller. 
+
+    Please refer to the <a href="https://kubernetes.github.io/ingress-nginx/deploy/#local-development-clusters" target="_blank">NGINX Ingress Controller</a> documentation for more information.
 
 !!! Note
     Please refer to the <a href="../../control-plane/apim-deploy/" target="_blank">Advanced Configuration for APIM</a> for more information.
 
-### Setup WSO2 Kubernetes Gateway 1.3.0
+### Set up WSO2 Kubernetes Gateway 1.3.0
 
-1. Create a new helm repository with the latest kubernetes gateway release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apk```.
+1. Create a new Helm repository with the latest Kubernetes Gateway release using the following command. Let's consider the `<repository-name>` as `wso2apk`.
 
     ```console
     helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.3.0-1
     ```
 
-2. Execute the following command to update the helm repositories.
+2. Execute the following command to update the Helm repositories.
 
     ```console
     helm repo update
     ```
    
-3. Install the Kubernetes Gateway components and start WSO2 API Platform For Kubernetes. Consider ```apk``` as the ```<chart-name>``` for this guide. As the ```--version``` of this command, use the version of the release you used in point 1 above. It will take a few minutes for the deployment to complete.
+3. Install the Kubernetes Gateway components and start WSO2 API Platform For Kubernetes. 
+
+    Consider `apk` as the `<chart-name>` for this guide. For the `--version` parameter, use the version corresponding to the release from step 1. The deployment will take a few minutes to complete.
 
 !!!NOTE
     If you already have an installation of the Kubernetes Gateway in your cluster, please remove the installation by following the steps specified in the <a href="../../setup/uninstall" target="_blank">Uninstall Kubernetes Gateway</a> section.

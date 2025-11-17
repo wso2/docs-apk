@@ -6,9 +6,9 @@ In this guide, the APIM Control Plane and the Kubernetes Gateway are installed i
 ``` 
 kubectl create ns apk
 ```
-#### Setup WSO2 Kubernetes Gateway 1.3.0
+#### Set up WSO2 Kubernetes Gateway 1.3.0
 
-1. Create a new helm repository with the latest Kubernetes Gateway release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apk```.
+1. Create a new Helm repository with the latest Kubernetes Gateway release using the following command. Let's consider the `<repository-name>` as `wso2apk`.
 
     ```console
     helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.3.0-1
@@ -20,9 +20,9 @@ kubectl create ns apk
     helm repo update
     ```
 
-3. Download `values.yaml` File
+3. Download the `values.yaml` file
 
-    To obtain the `values.yaml` file, you can use the `helm show values` command. Replace `<repository-name>` with the actual repository name and `<version-of-APK>` with the desired version of the Kubernetes Gateway. Run the following command:
+    To obtain the `values.yaml` file, use the `helm show values` command. Replace `<repository-name>` with the actual repository name and `<version-of-APK>` with the desired version of the Kubernetes Gateway. Run the following command:
 
     === "Command"
         ```
@@ -36,7 +36,7 @@ kubectl create ns apk
 
 4. To add Kubernetes Gateway as a gateway, add the following configurations to `kg-values.yaml`.
 
-    - Add following configuration under `wso2.apk` section
+    - Add the following configuration under the `wso2.apk` section
 
         ``` yaml
         cp:
@@ -49,7 +49,7 @@ kubectl create ns apk
   <tbody>
     <tr>
       <td style="white-space: nowrap;"><code>enabledSubscription</code></td>
-      <td>This field require to be true for getting subscription details to the gateway</td>
+      <td>This field must be set to true to retrieve subscription details at the gateway level.</td>
     </tr>
     <tr>
       <td style="white-space: nowrap;"><code>host</code></td>
@@ -58,28 +58,28 @@ kubectl create ns apk
       {agentService}.{namespace}.svc.cluster.local
       </p>
       <p>
-      You can get the agentService name by using `kubectl get svc -n <namespace>`
+      You can retrieve the agentService name using `kubectl get svc -n <namespace>`
       </p>
       <p>
-      At this point you dont have agent configured so you can keep default value as it is. Once you configure it make sure to change it here and do helm upgrade.
+      At this point, the agent is not configured, so you can keep the default value as is. Once configured, ensure you update this value and perform a Helm upgrade.
       </p>
       </td>
     </tr>
     <tr>
       <td style="white-space: nowrap;"><code>skipSSLVerification</code></td>
-      <td>Skip SSL verification between Agent and Gateway</td>
+      <td>Skip SSL verification between the Agent and Gateway.</td>
     </tr>
   </tbody>
 </table>
 
-    - (Optional) Change default listener hostnames
+    - (Optional) Change the default listener hostnames
 
-        By default Kubernetes Gateway has 2 listeners
+        By default, the Kubernetes Gateway has 2 listeners:
 
         - System APIs Listener - api.am.wso2.com
         - Gateway Listener - gw.wso2.com
 
-        If you wish to change the default hostname and vhost, change the following values.yaml configurations. Let's say you want to deploy a production environment and you have a domain name example.com and you want to expose your API's through prod.gw.example.com and expose APK system APIs through prod.apk.example.com then condfigure as follows,
+        If you wish to change the default hostname and vhost, modify the following values.yaml configurations. For example, if you want to deploy a production environment with the domain name example.com, expose your APIs through prod.gw.example.com, and expose APK system APIs through prod.apk.example.com, configure as follows:
        
             wso2.apk.listener.hostname: 'prod.apk.example.com'
             wso2.apk.dp.gateway.listener.hostname: 'gw.example.com'
@@ -109,7 +109,8 @@ kubectl create ns apk
             </tbody>
         </table>
 
-5. Install Helm Chart
+5. Install the Helm chart
+    
     To begin the installation, run the following command. 
 
     === "Command"
@@ -123,9 +124,9 @@ kubectl create ns apk
 
 
 
-#### Setup WSO2 API Manager Control Plane 4.5.0
+#### Set up WSO2 API Manager Control Plane 4.5.0
 
-Setup WSO2 API Manager 4.5.0 in VM.
+Set up WSO2 API Manager 4.5.0 in a VM.
 
 Refer to the APIM Deployment Guide to deploy the APIM 4.5.0 in a VM.
 Change the configurations in the deployment.toml file as below.
@@ -168,25 +169,24 @@ Change the configurations in the deployment.toml file as below.
     </tr>
     <tr>
       <td style="white-space: nowrap;"><code>type</code></td>
-      <td>To handles both production and sandbox token traffic keep it as hybrid</td>
+      <td>To handle both production and sandbox token traffic, set this to hybrid.</td>
     </tr>
     <tr>
       <td style="white-space: nowrap;"><code>gateway_type</code></td>
-      <td>To identify as Kubernetes gateway. Type require to keep as APK</td>
+      <td>To identify the gateway as the Kubernetes Gateway, this type is required to be set as APK.</td>
     </tr>
     <tr>
       <td style="white-space: nowrap;"><code>provider</code></td>
-      <td>Gateway Provider</td>
+      <td>Gateway provider.</td>
     </tr>
     <tr>
       <td style="white-space: nowrap;"><code>https_endpoint</code></td>
       <td><p>
-  This setting is critical. In the Control Plane to locate the Gateway listener. <b>If you change the Gateway listener in Kubernetes Gateway configuration that should be added to here.</b>
+  This setting is critical for the Control Plane to locate the Gateway listener. <b>If you change the Gateway listener in the Kubernetes Gateway configuration, that change should be reflected here.</b>
   The Gateway listener hostname must be configured as 
   <code>default.{gateway.listener.hostname}:9095</code>, 
   where <code>default</code> and <code>9095</code> are fixed values.
 </p>
-      </p>
       </td>
     </tr>
   </tbody>
@@ -194,12 +194,12 @@ Change the configurations in the deployment.toml file as below.
 
 
 
-#### Setup WSO2 Kubernetes Gateway Agent 1.3.0
+#### Set up WSO2 Kubernetes Gateway Agent 1.3.0
 
 !!!Note
-    Kubernetes Gateway Agent Provide a connection between APIM Control Plane and Kubernetes Gateway.
+    The Kubernetes Gateway Agent provides a connection between the APIM Control Plane and the Kubernetes Gateway.
 
-1. Create a new helm repository with the latest kubernetes gateway agent release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apkagent``` for this guide.
+1. Create a new Helm repository with the latest Kubernetes Gateway Agent release using the following command. Let's consider the `<repository-name>` as `wso2apkagent` for this guide.
 
     ```console
     helm repo add wso2apkagent https://github.com/wso2/product-apim-tooling/releases/download/1.3.0
@@ -225,9 +225,9 @@ Change the configurations in the deployment.toml file as below.
         helm show values <repository-name>/apk-helm --version <version-of-APK> > kg-agent-values.yaml
         ```
 
-4. Configuration Require to Connect Kubernetes Gateway Agent in `kg-agent-values.yaml`
+4. Configuration required to connect the Kubernetes Gateway Agent in `kg-agent-values.yaml`
 
-    -   Configure Control Plane(APIM) related configuration in Kubernetes Gateway Agent
+    -   Configure Control Plane (APIM) related configuration in the Kubernetes Gateway Agent
 
         ``` yaml
         controlPlane:
@@ -244,26 +244,26 @@ Change the configurations in the deployment.toml file as below.
     <tbody>
         <tr>
         <td style="white-space: nowrap;"><code>serviceURL</code></td>
-        <td>Service URL of the API Manager Control Plane
+        <td>Service URL of the API Manager Control Plane.
         <p>
-      {apimService}.{namespace}.svc.cluster.local
+      Format: {apimService}.{namespace}.svc.cluster.local
       </p>
       <p>
-      You can get the apimService name by using `kubectl get svc -n <namespace>`
+      You can retrieve the apimService name using `kubectl get svc -n <namespace>`
       </p></td>
         </tr>
         <tr>
         <td style="white-space: nowrap;"><code>environmentLabels</code></td>
-        <td>Gateway environment labels is Environment Name that you define under the environments section
-        in the API Manager values yaml which sets up the Kubernetes gateway. In this scenario its `Default_APK`</td>
+        <td>Gateway environment label is the environment name that you define under the environments section
+        in the API Manager values.yaml file, which sets up the Kubernetes Gateway. In this scenario, it's `Default_APK`.</td>
         </tr>
         <tr>
         <td style="white-space: nowrap;"><code>eventListeningEndpoints</code></td>
-        <td>Event Listening Endpoint in the API Manager</td>
+        <td>Event listening endpoint in the API Manager.</td>
         </tr>
         <tr>
         <td style="white-space: nowrap;"><code>Username and Password</code></td>
-        <td>Admin credentials of the API Manager</td>
+        <td>Admin credentials of the API Manager.</td>
         </tr>
         <tr>
         <td style="white-space: nowrap;"><code>internalKeyIssuer</code></td>
@@ -272,7 +272,7 @@ Change the configurations in the deployment.toml file as below.
     </tbody>
     </table>
 
-    -   Configure Dataplane (APK Gateway) related configuration in Kubernetes Gateway Agent
+    -   Configure data plane (APK Gateway) related configuration in the Kubernetes Gateway Agent
 
 
         ``` yaml
@@ -286,17 +286,17 @@ Change the configurations in the deployment.toml file as below.
     <tbody>
         <tr>
         <td style="white-space: nowrap;"><code>k8ResourceEndpoint</code></td>
-        <td>Config deployer service endpoint
+        <td>Config deployer service endpoint.
         <p>
-        {configDepolyService}.{namespace}.svc.cluster.local:{port}/api/configurator/apis/
+        Format: {configDeployService}.{namespace}.svc.cluster.local:{port}/api/configurator/apis/
         </p>
         <p>
-        You can get the configDepolyService name by using `kubectl get svc -n <namespace>`
+        You can retrieve the configDeployService name using `kubectl get svc -n <namespace>`
         </p></td>
         </tr>
         <tr>
         <td style="white-space: nowrap;"><code>namespace</code></td>
-        <td>Namespace where <b>Kubernetes Gateway</b> is deployed</td>
+        <td>Namespace where the <b>Kubernetes Gateway</b> is deployed.</td>
         </tr>
     </tbody>
     </table>
@@ -308,7 +308,9 @@ Change the configurations in the deployment.toml file as below.
             mode: CPtoDP
         ```
 
-3. Install the Kubernetes Gateway Agent components and start WSO2 API Platform For Kubernetes. Consider ```apk``` as the ```<chart-name>``` for this guide. As the ```--version``` of this command, use the version of the release you used in point 1 above. It will take a few minutes for the deployment to complete.
+5. Install the Kubernetes Gateway Agent
+
+    Install the Kubernetes Gateway Agent components and start WSO2 API Platform For Kubernetes. Consider `apk` as the `<chart-name>` for this guide. For the `--version` parameter, use the version corresponding to the release from step 1. The deployment will take a few minutes to complete.
 
     === "Command"
         ```
@@ -319,9 +321,9 @@ Change the configurations in the deployment.toml file as below.
         helm install <chart-name> <repository-name>/apim-apk-agent --version <version-of-APK-Agent> -f <path-to-values.yaml-file> -n namespace
         ```
 
-#### Verify the deployment
+#### Verify the Deployment
 
-Now you can verify the deployment by executing the following command. You will see the status of the pods as follows once completed.
+You can verify the deployment by executing the following command. Once completed, you will see the status of the pods as shown below.
 
 === "Command"
 ```
@@ -331,7 +333,7 @@ kubectl get pods -n apk
 [![Pod Status](../../assets/img/deployment-patterns/cp-pod.png)](../../assets/img/deployment-patterns/cp-pod.png)
 
 
-#### Configure the hosts file
+#### Configure the Hosts File
 
 === "Command"
 ```
@@ -346,11 +348,11 @@ kubectl get ing -n apk
 
 [![Pod Status](../../assets/img/deployment-patterns/cp-ing.png)](../../assets/img/deployment-patterns/cp-ing.png)
 
-Add a hostname mapping to the ```/etc/hosts``` file as follows.
+Add hostname mappings to the `/etc/hosts` file as follows:
 
-| Domain name                                                                                   | IP                                                                                               |
-| --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| am.wso2.com (APIM Control Plane ingress host name)                                            | 135.171.24.117 (As per above image). You can find it by using   `kubectl get ing -n <namespace>` |
-| default.gw.wso2.com (This should be the same as the value you added for the Gateway Listener) | 135.171.24.26(As per above image). You can find it by using   `kubectl get svc -n <namespace>`   |
-| api.am.wso2.com (This should be the same as the value you added for the System APIs Listener) | 135.171.24.26(As per above image). You can find it by using   `kubectl get svc -n <namespace>`   |
-| idp.am.wso2.com (You dont need to change this)                                                | 135.171.24.26(As per above image). You can find it by using   `kubectl get svc -n <namespace>`   |
+| Domain name                                                                                   | IP                                                                                          |
+| --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| am.wso2.com (APIM Control Plane ingress hostname)                                             | 135.171.24.117 (As per above image). You can find it using `kubectl get ing -n <namespace>` |
+| default.gw.wso2.com (This should be the same as the value you added for the Gateway Listener) | 135.171.24.26 (As per above image). You can find it using `kubectl get svc -n <namespace>`  |
+| api.am.wso2.com (This should be the same as the value you added for the System APIs Listener) | 135.171.24.26 (As per above image). You can find it using `kubectl get svc -n <namespace>`  |
+| idp.am.wso2.com (You don't need to change this)                                               | 135.171.24.26 (As per above image). You can find it using `kubectl get svc -n <namespace>`  |
