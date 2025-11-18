@@ -1,6 +1,6 @@
 ### Overview
 
-In this approach, each environment (dev, prod, etc..) has its own dedicated Kubernetes cluster hosting an instance of the Kubernetes Gateway. In this pattern Kubernetes Gateway will have visibility over all the namespace (or a predefined set of namespaces) in the cluster.
+In this approach, each environment (dev, prod, etc.) has its own dedicated Kubernetes cluster hosting an instance of the Kubernetes Gateway. In this pattern, the Kubernetes Gateway will have visibility over all namespaces (or a predefined set of namespaces) in the cluster.
 
 
 [![dataplane-per-k8-cluster](../../assets/img/deployment-patterns/cluster-dp.png)](../../assets/img/deployment-patterns/APK_Dataplane_per_Cluster.png)
@@ -17,12 +17,12 @@ In this approach, each environment (dev, prod, etc..) has its own dedicated Kube
 * Administrative Overhead: Managing multiple clusters can be more complex and may require additional administrative effort.
 
 
-### Installation guideline
+### Installation Guidelines
 
 #### Section 1: Add Kubernetes Gateway Helm Repository
 
 !!!note
-    If you’d like to use the commercial Docker images and Helm chart, please use the <a href="../../enterprise-apk-install" target="_blank">Helm Repository with Commercial Docker Images</a> and skip this section.
+    If you'd like to use the commercial Docker images and Helm chart, please refer to the <a href="../../enterprise-apk-install" target="_blank">Helm Repository with Commercial Docker Images</a> guide and skip this section.
 
 Adding the Kubernetes Gateway Helm repository allows your system to fetch and install the latest Kubernetes Gateway components from the remote repository. This ensures that you are always using the most up-to-date version of Kubernetes Gateway.
 
@@ -36,20 +36,20 @@ helm repo update
 
 !!!note
     If you followed the commercial Docker images section, please use <b>wso2</b> as the <b>repository name</b> instead of <b>wso2apk</b> from now on. 
-    Make sure you have applied all require changes to `values yaml` as mention in  <a href="../../enterprise-apk-install" target="_blank">Helm Repository with Commercial Docker Images</a> before proceed with helm installation.
+    Ensure that you have applied all required changes to the `values.yaml` file as mentioned in the <a href="../../enterprise-apk-install" target="_blank">Helm Repository with Commercial Docker Images</a> guide before proceeding with the Helm installation.
 
-Next, install the Kubernetes Gateway components to set up the necessary infrastructure to manage and deploy APIs within your Kubernetes cluster.
+Next, install the Kubernetes Gateway components to set up the necessary infrastructure for managing and deploying APIs within your Kubernetes cluster.
 
-Install the Kubernetes Gateway components and start the WSO2 API Platform For Kubernetes. Consider <b>apk</b> as the <b><chart-name\></b> for this guide. 
-Use the version of the release you added in Step.
+Install the Kubernetes Gateway components and start the WSO2 API Platform For Kubernetes. Consider <b>apk</b> as the <b><chart-name></b> for this guide. 
+Use the version of the release you added in the previous step.
 
-1. **Download `values.yaml` File**
+1. **Download the `values.yaml` file**
 
-    To obtain the `values.yaml` file, you can use the `helm show values` command. Replace `<repository-name>` with the actual repository name and `<version-of-APK>` with the desired version of the Kubernetes Gateway. Run the following command:
+    To obtain the `values.yaml` file, use the `helm show values` command. Replace `<repository-name>` with the actual repository name and `<version-of-APK>` with the desired version of the Kubernetes Gateway. Run the following command:
 
     === "Command"
         ```
-        helm show values wso2apk/apk-helm --version 1.3.0  > values.yaml
+        helm show values wso2apk/apk-helm --version 1.3.0-1  > values.yaml
         ```
 
     === "Format"
@@ -59,8 +59,9 @@ Use the version of the release you added in Step.
 
  
 
-2. **Install Helm Chart** 
-    Most production deployments require you to customize the values.yaml file. If you have no custom changes, you can use the default configuration as-is.
+2. **Install the Helm chart** 
+    
+    Most production deployments require customization of the values.yaml file. If you have no custom changes, you can use the default configuration as-is.
     To begin the installation, run the following command. 
 
     === "Command"
@@ -84,7 +85,7 @@ Use the version of the release you added in Step.
         helm upgrade <chart-name> <repository-name>/apk-helm --version <version-of-APK> -f <path-to-values.yaml-file> --no-hooks
         ```
 
-#### Verify the deployment
+#### Verify the Deployment
 
 Verifying the deployment confirms that all Kubernetes Gateway components are successfully installed and running as expected. If any issues arise, troubleshooting them at this stage ensures a smooth API deployment process.
 Check the status of deployed pods:
