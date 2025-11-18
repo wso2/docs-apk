@@ -258,7 +258,7 @@ Follow the steps given below to set up WSO2 API Manager 4.5.0/4.6.0 in a Kuberne
                 serviceURL: https://apim-wso2am-all-in-one-am-service-1.apk.svc.cluster.local:9443/
                 username: admin
                 password: admin
-                environmentLabels: Default
+                environmentLabels: Default_APK
                 skipSSLVerification: true
                 eventListeningEndpoints: amqp://admin:admin@apim-wso2am-all-in-one-am-service-1.apk.svc.cluster.local:5672?retries='10'&connectdelay='30'
             ```
@@ -270,7 +270,7 @@ Follow the steps given below to set up WSO2 API Manager 4.5.0/4.6.0 in a Kuberne
                 serviceURL: https://apim-wso2am-all-in-one-am-service-1.apk.svc.cluster.local:9443/
                 username: admin
                 password: admin
-                environmentLabels: Default
+                environmentLabels: Default_APK
                 skipSSLVerification: true
                 eventListeningEndpoints: amqp://admin:admin@apim-wso2am-all-in-one-am-service-1.apk.svc.cluster.local:5672?retries='10'&connectdelay='30'
             ```
