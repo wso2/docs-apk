@@ -130,6 +130,14 @@ Follow the steps given below to set up WSO2 API Manager 4.5.0/4.6.0 in a Kuberne
             Configurations:
                 gatewayType: "APK"
         ```
+    
+    - Configure the JWKS URL to point to the APIM service URL
+
+        ``` yaml
+            oauth_config:
+                ...
+                oauth2JWKSUrl: "http://apim-wso2am-all-in-one-am-service-1:9763/oauth2/jwks"
+        ```
 
     - Add the Kubernetes gateway environment to the environments list.
 
