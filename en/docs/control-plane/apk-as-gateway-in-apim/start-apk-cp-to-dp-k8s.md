@@ -71,11 +71,11 @@ kubectl create ns apk
 
     === "Command"
         ```
-        helm install apk wso2apk/apk-helm --version 1.3.0-1 -f kg-values.yaml
+        helm install apk wso2apk/apk-helm --version 1.3.0-1 -f kg-values.yaml -n apk
         ```
     === "Format"
         ```
-        helm install <chart-name> <repository-name>/apk-helm --version <version-of-APK> -f <path-to-values.yaml-file> 
+        helm install <chart-name> <repository-name>/apk-helm --version <version-of-APK> -f <path-to-values.yaml-file> -n <namespace>
         ```
 
 
@@ -212,8 +212,24 @@ Follow the steps given below to set up WSO2 API Manager 4.5.0/4.6.0 in a Kuberne
 
     Please refer to the <a href="https://kubernetes.github.io/ingress-nginx/deploy/#local-development-clusters" target="_blank">NGINX Ingress Controller</a> documentation for more information.
 
+7. To expose the APIM JWKS URL for API authentication and testing purposes, follow these commands:
 
-#### Set up WSO2 Kubernetes Gateway Agent 1.3.0
+    - Edit the APIM service named `apim-wso2am-all-in-one-am-service-1` with the following command:
+    ```console
+    kubectl edit svc apim-wso2am-all-in-one-am-service-1 -n apk 
+    ```
+
+    - Under the ports section, add the following content:
+        ```
+        ports:
+          - name: apim-jwks-port
+            port: 9763
+            targetPort: 9763
+            protocol: TCP
+        ```
+
+
+#### Set up WSO2 Kubernetes Gateway Agent
 
 !!!Note
     The Kubernetes Gateway Agent provides the connection between the APIM Control Plane and the Kubernetes Gateway.
@@ -227,7 +243,7 @@ Follow the steps given below to set up WSO2 API Manager 4.5.0/4.6.0 in a Kuberne
 
     === "4.6.0"
         ```console
-        helm repo add wso2apkagent https://github.com/wso2/product-apim-tooling/releases/download/1.3.1
+        helm repo add wso2apkagent https://github.com/wso2/product-apim-tooling/releases/download/1.3.1-1
         ```
 
 2. Execute the following command to update the helm repositories.
@@ -247,7 +263,7 @@ Follow the steps given below to set up WSO2 API Manager 4.5.0/4.6.0 in a Kuberne
 
     === "4.6.0"
         ```
-        helm show values wso2apkagent/apim-apk-agent --version 1.3.1  > kg-agent-values.yaml
+        helm show values wso2apkagent/apim-apk-agent --version 1.3.1-1  > kg-agent-values.yaml
         ```
 
     === "Format"
@@ -263,24 +279,24 @@ Follow the steps given below to set up WSO2 API Manager 4.5.0/4.6.0 in a Kuberne
             ``` yaml
             controlPlane:
                 enabled: true
-                serviceURL: https://apim-wso2am-all-in-one-am-service-1.apk.svc.cluster.local:9443/
+                serviceURL: https://apim-wso2am-all-in-one-am-service-1:9443/
                 username: admin
                 password: admin
                 environmentLabels: Default_APK
                 skipSSLVerification: true
-                eventListeningEndpoints: amqp://admin:admin@apim-wso2am-all-in-one-am-service-1.apk.svc.cluster.local:5672?retries='10'&connectdelay='30'
+                eventListeningEndpoints: amqp://admin:admin@apim-wso2am-all-in-one-am-service-1:5672?retries='10'&connectdelay='30'
             ```
 
         === "4.6.0"
             ``` yaml
             controlPlane:
                 enabled: true
-                serviceURL: https://apim-wso2am-all-in-one-am-service-1.apk.svc.cluster.local:9443/
+                serviceURL: https://apim-wso2am-all-in-one-am-service-1:9443/
                 username: admin
                 password: admin
                 environmentLabels: Default_APK
                 skipSSLVerification: true
-                eventListeningEndpoints: amqp://admin:admin@apim-wso2am-all-in-one-am-service-1.apk.svc.cluster.local:5672?retries='10'&connectdelay='30'
+                eventListeningEndpoints: amqp://admin:admin@apim-wso2am-all-in-one-am-service-1:5672?retries='10'&connectdelay='30'
             ```
 
         | Parameter                 | Description                                                                                                                                                                                                       |
@@ -295,8 +311,8 @@ Follow the steps given below to set up WSO2 API Manager 4.5.0/4.6.0 in a Kuberne
         ``` yaml
         dataPlane:
             enabled: true
-            k8ResourceEndpoint: https://apk-wso2-apk-config-ds-service.default.svc.cluster.local:9443/api/configurator/apis/generate-k8s-resources
-            namespace: default
+            k8ResourceEndpoint: https://apk-wso2-apk-config-ds-service:9443/api/configurator/apis/generate-k8s-resources
+            namespace: apk
         ```
 
         | Parameter            | Description                                                                                                                                                                                                                                  |
@@ -325,7 +341,7 @@ Follow the steps given below to set up WSO2 API Manager 4.5.0/4.6.0 in a Kuberne
 
     === "4.6.0"
         ```
-        helm install apim-apk-agent wso2apkagent/apim-apk-agent --version 1.3.1 -f kg-agent-values.yaml -n apk
+        helm install apim-apk-agent wso2apkagent/apim-apk-agent --version 1.3.1-1 -f kg-agent-values.yaml -n apk
         ```
 
     === "Format"
