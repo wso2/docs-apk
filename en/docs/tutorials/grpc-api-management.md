@@ -201,7 +201,7 @@ Now you have successfully created, deployed and invoked a gRPC API. Next we will
 
 OAuth2 ensures only trusted clients with a valid access token can call your API. By default, OAuth2 is enabled for all APIs and the gateway expects the token in the Authorization header. You only need to add an authentication section (as shown below) if you want to change the header name or behavior.
 
-a. To customize the header name and allow the token to pass to the backend, you can modify the `authentication` section in the `apk-conf` file as follows. Let’s switch the header name to `X-Api-Auth`.
+a. To customize the header name and allow the token to pass to the backend, modify the `authentication` section in the `apk-conf` file as follows. Let’s switch the header name to `X-Api-Auth`.
 
   ```toml
   authentication:
@@ -277,7 +277,7 @@ Rate Limiting allows you to limit the number of successful hits to an API during
 2. To regulate traffic according to infrastructure availability.
 3. To make an API or a resource available to a consumer at different levels of the service, usually for monetization purposes.
 
-To add rate limiting to a gRPC API, you can add a section similar to the following in the `apk-conf` file.
+To add rate limiting to a gRPC API, add the following section in the `apk-conf` file.
 
 ```bash
 rateLimit:
@@ -436,7 +436,7 @@ default.gw.example.com:9095 grpcapi.v1.user.UserService/GetUser
 
 ## Enable request and response mediation for a gRPC API
 
-In this tutorial, we will be adding mediation for gRPC APIs with Interceptor services.
+In this tutorial, we will be adding mediation for gRPC APIs with Interceptor services in Kubernetes Gateway.
 
 Interceptor configurations can be used to carry out transformations and mediation on the requests and responses. Request interceptor gets triggered before sending the request to the backend. Response interceptor gets triggered before responding to the client. Here, an interceptor is a separate microservice that handles the request, response, or both request and response transformations.
 
