@@ -545,7 +545,7 @@ components:
         productionModels:
           type: "array"
           items:
-            $ref: "#/components/schemas//AIModel"
+            $ref: "#/components/schemas/AIModel"
         sandboxModels:
           type: "array"
           items:
@@ -677,7 +677,7 @@ components:
           default: 0
         totalLimit:
           type: integer
-          default": 0
+          default: 0
         unit:
           type: string
           default: Minute
