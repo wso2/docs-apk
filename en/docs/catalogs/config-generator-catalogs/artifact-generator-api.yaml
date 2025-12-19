@@ -90,7 +90,7 @@ components:
           example: "api.apk-conf"
         definitionFile:
           type: string
-          description: api definition (OAS/Graphql/WebSocket)
+          description: api definition (OAS/Graphql/gRPC)
           format: binary
           example: "openapi.yaml"
         apiType:
@@ -102,7 +102,7 @@ components:
       properties:
         definition:
           type: string
-          description: api definition (OAS/Graphql/WebSocket)
+          description: api definition (OAS/Graphql/gRPC)
           format: binary
           example: "openapi.yaml"
         url:
