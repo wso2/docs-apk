@@ -1,7 +1,7 @@
 ---
 openapi: 3.0.1
 info:
-  title: WSO2 API Platform for Kubernetes - Configuration generator API
+  title: WSO2 Kubernetes Gateway - Configuration Generator API
   description: |
     This document specifies a **RESTful API** for WSO2 **APK** - **Runtime Component**.
   version: 1.3.0
