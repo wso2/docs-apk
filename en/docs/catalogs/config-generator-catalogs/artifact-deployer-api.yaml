@@ -1,10 +1,12 @@
 ---
 openapi: 3.0.1
 info:
-  title: WSO2 API Platform for Kubernetes - Deploy K8s Resource API
+  title: WSO2 Kubernetes Gateway - Deploy K8s Resource API
   description: |
     This API is used to generate K8s resources for an API.
   version: 1.0.0
+servers:
+  - url: https://api.am.wso2.com:9095/api/deployer/1.0.0
 paths:
   /apis/deploy:
     post:
@@ -94,7 +96,7 @@ components:
           example: "api.apk-conf"
         definitionFile:
           type: string
-          description: api definition (OAS/Graphql/WebSocket)
+          description: api definition (OAS/Graphql/gRPC)
           format: binary
           example: "openapi.yaml"
 
