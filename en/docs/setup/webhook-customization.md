@@ -36,10 +36,10 @@ gatewaySystem:
 After doing changes to the values.yaml file, you can redeploy the WSO2 Kubernetes Gateway installation with
 
 === "Command"
-    ```
-    helm upgrade apk wso2apk/apk-helm --version 1.3.0 -f values.yaml --no-hooks
-    ```
+  ```
+  helm upgrade apk wso2apk/kubernetes-gateway-helm --version 2.0.0-alpha -f values.yaml --no-hooks
+  ```
 === "Format"
-    ```
-    helm upgrade <chart-name> <repository-name>/apk-helm --version <version-of-WSO2-Kubernetes-Gateway> -f <path-to-values.yaml-file> --no-hooks
-    ```
+  ```
+  helm upgrade <chart-name> <repository-name>/kubernetes-gateway-helm --version <version-of-WSO2-Kubernetes-Gateway> -f <path-to-values.yaml-file> --no-hooks
+  ```

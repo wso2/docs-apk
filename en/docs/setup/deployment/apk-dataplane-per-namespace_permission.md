@@ -17,7 +17,7 @@ In this approach, multiple environments (dev, prod, etc..) share the same Kubern
 
 
 !!! note
-    Deploying the multi gateway at the cluster must be done using the updated 1.3.0-1 helm-chart which can be obtained from [this link](https://artifacthub.io/packages/helm/wso2/apk-helm/1.3.0-1). Additionally, the relevant enterprise images must be used for the installation as shown in the following link for [Enterprise Installation Instructions](https://apk.docs.wso2.com/en/latest/setup/enterprise-apk-install/).
+  For 2.0.0, use the Kubernetes Gateway Helm repository at the GitHub release URL shown below. If you are using commercial Docker images, follow the Enterprise Installation Instructions and use the enterprise repository accordingly.
 
 #### Create a namespace for your Kubernetes Gateway installation.
 ```bash
@@ -36,7 +36,7 @@ kubectl apply -f crds.yaml
 Adding the Kubernetes Gateway Helm repository allows your system to fetch and install the latest Kubernetes Gateway components from the remote repository. This ensures that you are always using the most up-to-date version of Kubernetes Gateway.
 
 ```console
-helm repo add wso2 https://helm.wso2.com
+helm repo add wso2apk https://github.com/wso2/apk/releases/download/2.0.0-alpha
 
 helm repo update
 ```
@@ -48,15 +48,15 @@ helm repo update
 
     To obtain the `values.yaml` file, you can use the `helm show values` command. Replace `<repository-name>` with the actual repository name and `<version-of-APK>` with the desired version of the Kubernetes Gateway. Run the following command:
 
-    === "Command"
-        ```
-        helm show values wso2/apk-helm --version 1.3.0-1  > values.yaml
-        ```
+  === "Command"
+    ```
+    helm show values wso2apk/kubernetes-gateway-helm --version 2.0.0-alpha  > values.yaml
+    ```
 
-    === "Format"
-        ```
-        helm show values <repository-name>/apk-helm --version <version-of-APK> > values.yaml
-        ```
+  === "Format"
+    ```
+    helm show values <repository-name>/kubernetes-gateway-helm --version <version-of-APK> > values.yaml
+    ```
 
 2. Add the following key to the `values.yaml` file to skip the default installation of CRDs.
 ```yaml
@@ -102,14 +102,14 @@ gatewaySystem:
     Most production deployments require you to customize the values.yaml file. If you have no custom changes, you can use the default configuration as-is.
     To begin the installation, run the following command. 
 
-    === "Command"
-        ```
-        helm install apk wso2/apk-helm --version 1.3.0-1 -f values.yaml --skip-crds
-        ```
-    === "Format"
-        ```
-        helm install <chart-name> <repository-name>/apk-helm --version <version-of-APK> -f <path-to-values.yaml-file>  --skip-crds
-        ```
+  === "Command"
+    ```
+    helm install apk wso2apk/kubernetes-gateway-helm --version 2.0.0-alpha -f values.yaml --skip-crds
+    ```
+  === "Format"
+    ```
+    helm install <chart-name> <repository-name>/kubernetes-gateway-helm --version <version-of-APK> -f <path-to-values.yaml-file>  --skip-crds
+    ```
 
 7. If you wish to deploy the Kubernetes Gateway in another namespace, you can follow the same steps starting from section 2.
 

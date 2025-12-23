@@ -48,7 +48,7 @@ Setup WSO2 API Manager 4.5.0 in K8s cluster using Helm Charts.
 !!! Note
     Please refer to the <a href="../../control-plane/apim-deploy/" target="_blank">Advanced Configuration for APIM</a> for more information.
 
-#### Setup WSO2 Kubernetes Gateway 1.3.0
+#### Setup WSO2 Kubernetes Gateway 2.0.0
 
 1. Create a new helm repository with the latest Kubernetes Gateway release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apk```.
 
@@ -66,48 +66,42 @@ Setup WSO2 API Manager 4.5.0 in K8s cluster using Helm Charts.
 
     === "Command"
         ```
-        helm install apk wso2apk/apk-helm --version 1.3.0 -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/apk/1.3.0-values.yaml -n apk
+    helm install apk wso2apk/kubernetes-gateway-helm --version 2.0.0-alpha -f https://raw.githubusercontent.com/wso2/apk/refs/heads/main/helm-charts/samples/apk/cp-enabled-values.yaml -n apk
         ```
     === "Format"
         ```
-        helm install <chart-name> <repository-name>/apk-helm --version <version-of-APK> -f <path-to-values.yaml-file>
+    helm install <chart-name> <repository-name>/kubernetes-gateway-helm --version <version-of-APK> -f <path-to-values.yaml-file>
         ```
 
 !!! Note
-    If you wish to change the default hostname and vhost change the following values.yaml configurations. Lets say you want to deploy a production environment and you have a domain name example.com and you want to expose your API's through prod.gw.example.com and expose Kubernetes Gateway system APIs through prod.apk.example.com then
-       
-    - wso2.apk.listener.hostname: 'prod.apk.example.com'
-    - wso2.apk.dp.gateway.listener.hostname: 'gw.example.com'
-    - wso2.apk.dp.configdeployer.vhosts: [{"hosts":["gw.example.com"],"name":"prod","type":"production"}]
+    If you wish to change the default hostnames, update the following values.yaml configurations. For example, to expose your APIs through prod.gw.example.com and expose Kubernetes Gateway system APIs through prod.apk.example.com, set:
+
+    - wso2.kgw.listener.hostname: 'prod.apk.example.com'
+    - wso2.kgw.dp.gateway.listener.hostname: 'prod.gw.example.com'
 
 !!! Note
-    If you wish to specify a predefined set of namespaces for monitoring, you can configure the `wso2.apk.dp.adapter.configs.apiNamespaces` variable in the `values.yaml` file. For example, if you want the dataplane to monitor only the `ns-1` and `ns-2` namespaces, you can set it as follows:
-    ```yaml
-    Wso2:
-      apk:
-        dp:
-          adapter:
-            configs:
-              apiNamespaces:
-              - "ns-1"
-              - "ns-2"
-          commonController:
-            configs:
-              apiNamespaces:
-              - "ns-1"
-              - "ns-2"
-    ```
+            If you wish to specify a predefined set of namespaces for monitoring, configure the `wso2.kgw.dp.commonController.configs.apiNamespaces` variable in the `values.yaml` file. For example, to monitor only the `ns-1` and `ns-2` namespaces:
+        ```yaml
+            wso2:
+                kgw:
+                    dp:
+                        commonController:
+                            configs:
+                                apiNamespaces:
+                                    - "ns-1"
+                                    - "ns-2"
+        ```
 
 !!! Note
     Please refer to the <a href="../../control-plane/apim-deploy/" target="_blank">Advanced Configuration for APIM</a> for more information.
 
 
-#### Setup WSO2 Kubernetes Gateway Agent 1.3.0
+#### Setup WSO2 Kubernetes Gateway Agent 2.0.0
 
 1. Create a new helm repository with the latest kubernetes gateway agent release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apkagent``` for this guide.
 
     ```console
-    helm repo add wso2apkagent https://github.com/wso2/product-apim-tooling/releases/download/1.3.0
+    helm repo add wso2apkagent https://github.com/wso2/product-apim-tooling/releases/download/2.0.0
     ```
 
 2. Execute the following command to update the helm repositories.
@@ -120,7 +114,7 @@ Setup WSO2 API Manager 4.5.0 in K8s cluster using Helm Charts.
 
     === "Command"
         ```
-        helm install apim-apk-agent wso2apkagent/apim-apk-agent --version 1.3.0 -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/apim-apk-agent/cp/1.3.0-values.yaml -n apk
+    helm install apim-apk-agent wso2apkagent/apim-apk-agent --version 2.0.0 -f https://raw.githubusercontent.com/wso2/apk/refs/heads/main/helm-charts/samples/apim-apk-agent/cp/2.0.0-values.yaml -n apk
         ```
     === "Format"
         ```

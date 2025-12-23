@@ -37,8 +37,8 @@ You can install APK for a given namespace by running the following commands.
 ```
 helm repo add wso2apk https://github.com/wso2/apk/releases/download/2.0.0-alpha
 helm repo update
-helm install apk-dev wso2apk/apk-helm --version 1.3.0 -n apk-dev
-helm install apk-stage wso2apk/apk-helm --version 1.3.0 -n apk-stage
+helm install apk-dev wso2apk/kubernetes-gateway-helm --version 2.0.0-alpha -n apk-dev
+helm install apk-stage wso2apk/kubernetes-gateway-helm --version 2.0.0-alpha -n apk-stage
 ```
 
 You can also modify your APK installation using the instructions given in <a href="https://apk.docs.wso2.com/en/latest/setup/Customize-Configurations/" target="_blank">https://apk.docs.wso2.com/en/latest/setup/Customize-Configurations/</a>

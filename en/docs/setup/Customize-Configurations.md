@@ -6,12 +6,12 @@ To customize configurations in the Helm deployment, you need to create and modif
 
     === "Command"
         ```
-        helm show values wso2apk/apk-helm --version 1.3.0  > values.yaml
+        helm show values wso2apk/kubernetes-gateway-helm --version 2.0.0-alpha  > values.yaml
         ```
 
     === "Format"
         ```
-        helm show values <repository-name>/apk-helm --version <version-of-APK> > values.yaml
+        helm show values <repository-name>/kubernetes-gateway-helm --version <version-of-APK> > values.yaml
         ```
 
 2. **Modify the Configuration:**
@@ -22,13 +22,13 @@ To customize configurations in the Helm deployment, you need to create and modif
 
     To deploy the Kubernetes Gateway using the customized configuration, use the `helm install` command. Replace `<chart-name>`, `<repository-name>`, `<version-of-APK>`, and `<path-to-values.yaml-file>` with appropriate values. Run the following command:
 
-	=== "Command"
-		```
-		helm install apk-test wso2apk/apk-helm --version 1.3.0 -f values.yaml
-		```
+    === "Command"
+        ```
+        helm install apk-test wso2apk/kubernetes-gateway-helm --version 2.0.0-alpha -f values.yaml
+        ```
 
     === "Format"
-		```
-		helm install <chart-name> <repository-name>/apk-helm --version <version-of-APK> -f <path-to-values.yaml-file>
-		```
+        ```
+        helm install <chart-name> <repository-name>/kubernetes-gateway-helm --version <version-of-APK> -f <path-to-values.yaml-file>
+        ```
 	

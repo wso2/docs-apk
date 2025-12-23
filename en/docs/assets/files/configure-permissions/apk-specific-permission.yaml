@@ -1,7 +1,7 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
-  name: {{ .Values.wso2.apk.auth.roleName }}
+  name: {{ .Values.wso2.kgw.auth.roleName }}
   namespace: {{ .Release.Namespace }}
 rules:
   - apiGroups: [""]
@@ -164,21 +164,21 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: {{ template "apk-helm.resource.prefix" . }}-role-binding
+  name: '{{ template "kubernetes-gateway-helm.resource.prefix" . }}-role-binding'
   namespace: {{ .Release.Namespace }}
 roleRef:
   kind: Role
-  name: {{ .Values.wso2.apk.auth.roleName }}
+  name: {{ .Values.wso2.kgw.auth.roleName }}
   apiGroup: rbac.authorization.k8s.io
 subjects:
   - kind: ServiceAccount
-    name: {{ .Values.wso2.apk.auth.serviceAccountName }}
+    name: {{ .Values.wso2.kgw.auth.serviceAccountName }}
     namespace: {{ .Release.Namespace }}
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: {{ template "apk-helm.resource.prefix" . }}-gw-cluser-role
+  name: '{{ template "kubernetes-gateway-helm.resource.prefix" . }}-gw-cluser-role'
   namespace: {{ .Release.Namespace }}
 rules:
   - apiGroups: ["gateway.networking.k8s.io"]
@@ -191,13 +191,13 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: {{ template "apk-helm.resource.prefix" . }}-cluster-role-binding
+  name: '{{ template "kubernetes-gateway-helm.resource.prefix" . }}-cluster-role-binding'
   namespace: {{ .Release.Namespace }}
 roleRef:
   kind: ClusterRole
-  name: {{ template "apk-helm.resource.prefix" . }}-gw-cluser-role
+  name: '{{ template "kubernetes-gateway-helm.resource.prefix" . }}-gw-cluser-role'
   apiGroup: rbac.authorization.k8s.io
 subjects:
   - kind: ServiceAccount
-    name:  {{ .Values.wso2.apk.auth.serviceAccountName }}
+    name: {{ .Values.wso2.kgw.auth.serviceAccountName }}
     namespace: {{ .Release.Namespace }}

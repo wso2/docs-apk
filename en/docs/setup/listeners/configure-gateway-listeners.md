@@ -1,6 +1,6 @@
 # Configure Gateway Listeners(VHOSTs)
 
-This section is a step-by-step guide to add or configure existing listeners the WSO2 API Platform For Kubernetes. All the existing gateway listeners are configured in the `<APK-HELM>/helm-charts/templates/data-plane/gateway-components/adapter/gateway.yaml` file which is located in the APK Helm Charts. By default the following listeners are configured in the gateway.yaml file.
+This section is a step-by-step guide to add or configure existing listeners for the WSO2 Kubernetes Gateway. In 2.x, listener hostnames are configured via Helm values rather than editing templates directly. By default, the following listeners are configured via values:
 
 - API Listener (*.api.am.wso2.com)
 - IDP Listener (*.idp.am.wso2.com)
@@ -19,48 +19,34 @@ Install the <a href="../../../setup/prerequisites" target="_blank">prerequisites
 
 ## Step 2 - Adding a new listener
 
-1. Configure the `<APK-HELM>/helm-charts/templates/data-plane/gateway-components/adapter/gateway.yaml` file which is located in the APK Helm Charts with following content.
+1. Update your Helm `values.yaml` to add a new listener hostname.
 
 === "Configuration"
 
     ```
-    - name: <new_listener_name>
-      hostname: <domain_name>
-      port: <port_number>
-      protocol: <protocol>
-      tls:  
-        mode: Terminate
-        certificateRefs:
-          - kind: Secret
-            group: ""
-            name: <secret_name>
-            namespace: <namespace>
+    wso2:
+      kgw:
+        listener:
+          hostname: <domain_name>
     ```
 === "Sample Configuration"
 
     ```
-    - name: mylistener
-      hostname: *.mydomain.com
-      port: 9095
-      protocol: HTTPS
-      tls:  
-        mode: Terminate
-        certificateRefs:
-          - kind: Secret
-            group: ""
-            name: mycert-secret
-            namespace: apk
+    wso2:
+      kgw:
+        listener:
+          hostname: "*.mydomain.com"
     ```
 
-You can configure the public certificate of that particular domain as a k8s secret and refer it in the gateway.yaml file under added listener. For more information on how to create a k8s secret, see [Creating a k8s secret](https://kubernetes.io/docs/concepts/configuration/secret/#creating-a-secret).
+You can configure the public certificate of that particular domain as a Kubernetes Secret and reference it via cert-manager Issuer/ClusterIssuer configured in values. For more information on how to create a k8s secret, see [Creating a k8s secret](https://kubernetes.io/docs/concepts/configuration/secret/#creating-a-secret) and the cert-manager guide.
 
 ## Step 3 - Apply the changes
 
-Execute the command below to apply the new changes to the gateway.
+Apply the changes by upgrading your Helm release with the updated values file.
 
-   ```
-   kubectl apply -f <path_to_gateway.yaml>/gateway.yaml
-   ```
+```
+helm upgrade apk wso2apk/kubernetes-gateway-helm --version 2.0.0-alpha -f values.yaml --no-hooks
+```
 
 Now, you will be able to deploy APIs with a VHOST matching the new listener.
 

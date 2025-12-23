@@ -49,12 +49,12 @@ Use the version of the release you added in Step.
 
     === "Command"
         ```
-        helm show values wso2apk/apk-helm --version 1.3.0  > values.yaml
+        helm show values wso2apk/kubernetes-gateway-helm --version 2.0.0-alpha  > values.yaml
         ```
 
     === "Format"
         ```
-        helm show values <repository-name>/apk-helm --version <version-of-APK> > values.yaml
+        helm show values <repository-name>/kubernetes-gateway-helm --version <version-of-APK> > values.yaml
         ```
 
  
@@ -65,11 +65,11 @@ Use the version of the release you added in Step.
 
     === "Command"
         ```
-        helm install apk wso2apk/apk-helm --version 1.3.0 -f values.yaml
+        helm install apk wso2apk/kubernetes-gateway-helm --version 2.0.0-alpha -f values.yaml
         ```
     === "Format"
         ```
-        helm install <chart-name> <repository-name>/apk-helm --version <version-of-APK> -f <path-to-values.yaml-file> 
+        helm install <chart-name> <repository-name>/kubernetes-gateway-helm --version <version-of-APK> -f <path-to-values.yaml-file> 
         ```
 
 !!!Optional
@@ -77,11 +77,11 @@ Use the version of the release you added in Step.
 
     === "Command"
         ```
-        helm upgrade apk wso2apk/apk-helm --version 1.3.0 -f values.yaml --no-hooks
+        helm upgrade apk wso2apk/kubernetes-gateway-helm --version 2.0.0-alpha -f values.yaml --no-hooks
         ```
     === "Format"
         ```
-        helm upgrade <chart-name> <repository-name>/apk-helm --version <version-of-APK> -f <path-to-values.yaml-file> --no-hooks
+        helm upgrade <chart-name> <repository-name>/kubernetes-gateway-helm --version <version-of-APK> -f <path-to-values.yaml-file> --no-hooks
         ```
 
 #### Verify the deployment
