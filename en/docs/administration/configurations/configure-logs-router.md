@@ -28,6 +28,130 @@ enable = true
 format = "[%START_TIME%] '%REQ(:METHOD)% %REQ(X-ENVOY-ORIGINAL-PATH?:PATH)% %PROTOCOL%' %RESPONSE_CODE% %RESPONSE_FLAGS% %BYTES_RECEIVED% %BYTES_SENT% %DURATION% %RESP(X-ENVOY-UPSTREAM-SERVICE-TIME)% '%REQ(X-FORWARDED-FOR)%' '%REQ(USER-AGENT)%' '%REQ(X-REQUEST-ID)%' '%REQ(:AUTHORITY)%' '%UPSTREAM_HOST%'\n"
 ```
 
+### Traffic Logging
+
+Traffic logging records headers and metadata related to a request and its corresponding response in JSON format and can be used to observe the communication between the client, gateway, and backend (upstream) services. Additionally, it captures the time taken for the request and response to be processed within the Gateway and the time taken for the backend (upstream) to respond.
+This log gets printed once the Envoy request/response stream is completed.
+
+You can choose to log request headers, response headers, backend request headers, and backend response headers by enabling the relevant properties under `wso2.apk.dp.gatewayRuntime.deployment.router.logging` in the `values.yaml` . Traffic logging is disabled by default unless at least one logging property is set to `true`.
+
+```yaml
+  logging:
+    trafficLogging:
+      requestLogging:
+        enable: true
+      responseLogging:
+        enable: true
+      backendRequestLogging:
+        enable: true
+      backendResponseLogging:
+        enable: true
+```
+
+#### Configuration Details
+
+| Property | Description |
+| :--- | :--- |
+| `ignoredPathPrefixes` | List of URL prefixes to exclude from logs to reduce noise. Any path starting with these prefixes will be ignored |
+| `logAllHeaders` | If `true` captures all headers in the logs. If `false`, only captures those specified in `allowedHeaders`. |
+| `maxPayloadSize` | Specifies the maximum size (in Bytes) of the body to be captured. Data exceeding this is truncated |
+| `maxHeaders` | Limits the maximum number of headers to be logged per request/response |
+| `maskedHeaders` | Sensitive headers that should not have their values exposed in the logs. |
+| `allowedHeaders` | If `logAllHeaders` is set to false, this list specifies which headers should still be logged. Otherwise, this list will be ignored |
+| `requestLogging` | If the `enable` property is set to `true`, it captures the headers of incoming requests from the Client to the Gateway |
+| `responseLogging` | If the `enable` property is set to `true`, it captures the headers of outgoing responses from the Gateway to the Client |
+| `backendRequestLogging` | If the `enable` property is set to `true`, it captures the headers of outgoing requests from the Gateway to the Backend |
+| `backendResponseLogging` | If the `enable` property is set to `true`, it captures the headers of incoming responses from the Backend to the Gateway |
+| `logPayload` | Available for each of the logging types above; determines if the request or response body (payload) should be included in the logs. |
+
+
+!!! warning "Performance Impact"
+    Logging payloads (especially large ones) can add latency to requests because the payload is stored in metadata. Use these settings carefully in production environments.
+
+
+Sample traffic log configuration: 
+
+```yaml
+logging:
+  trafficLogging:
+    ignoredPathPrefixes: 
+      - "/health"
+    logAllHeaders: true
+    maxPayloadSize: 15
+    maskedHeaders: 
+      - "authorization"
+    allowedHeaders: []     
+    maxHeaders: 8
+    requestLogging:
+      enable: true
+      logPayload: true
+    responseLogging:
+      enable: true
+      logPayload: true
+    backendRequestLogging:
+      enable: true
+      logPayload: true
+    backendResponseLogging:
+      enable: true
+      logPayload: true
+```
+
+Sample traffic log entry:
+
+```json
+{
+  "authority": "host.docker.internal",
+  "backend_proc_duration_us": 2655,
+  "bytesReceived": 903185,
+  "bytesSent": 36,
+  "correlationId": "78bc9236-ad63-4f89-951e-86a8becb106f",
+  "method": "GET",
+  "path": "/endpoint/wait/0",
+  "protocol": "HTTP/1.1",
+  "requestBody": "{\n    \"chunks\":...(truncated)",
+  "requestHeaders": {
+    ":authority": "default.gw.wso2.com:9095",
+    ":method": "GET",
+    ":path": "/delayed-api/1.2.0/wait/0",
+    ":scheme": "https",
+  },
+  "request_proc_duration_us": 3802,
+  "responseBody": "{\"message\":\"Sec...(truncated)",
+  "responseFlags": "-",
+  "responseHeaders": {
+    ":status": "200",
+    "connection": "keep-alive",
+    "content-type": "application/json",
+    "date": "Tue, 03 Mar 2026 09:05:03 GMT",
+    "keep-alive": "timeout=5",
+    "transfer-encoding": "chunked",
+    "vary": "Accept-Encoding"
+  },
+  "response_proc_duration_us": 147,
+  "startTime": "1772528702.922906000",
+  "status": 200,
+  "total_duration_us": 9636,
+  "upstreamHost": "192.168.5.2:3000",
+  "upstreamRequestBody": "{\n    \"chunks\":...(truncated)",
+  "upstreamRequestHeaders": {
+    ":authority": "default.gw.wso2.com:9095",
+    ":method": "GET",
+    ":path": "/delayed-api/1.2.0/wait/0",
+    ":scheme": "https"
+  },
+  "upstreamResponseBody": "{\"message\":\"Sec...(truncated)",
+  "upstreamResponseHeaders": {
+    ":status": "200",
+    "connection": "keep-alive",
+    "content-type": "application/json",
+    "date": "Tue, 03 Mar 2026 09:05:03 GMT",
+    "keep-alive": "timeout=5",
+    "transfer-encoding": "chunked"
+  },
+  "userAgent": "PostmanRuntime/7.51.1"
+}
+```
+
 ## Router debug logs
 
 To enable Router debug logs, provide the log level as trailing arguments for the envoy command as follows.
