@@ -28,7 +28,7 @@ enable = true
 format = "[%START_TIME%] '%REQ(:METHOD)% %REQ(X-ENVOY-ORIGINAL-PATH?:PATH)% %PROTOCOL%' %RESPONSE_CODE% %RESPONSE_FLAGS% %BYTES_RECEIVED% %BYTES_SENT% %DURATION% %RESP(X-ENVOY-UPSTREAM-SERVICE-TIME)% '%REQ(X-FORWARDED-FOR)%' '%REQ(USER-AGENT)%' '%REQ(X-REQUEST-ID)%' '%REQ(:AUTHORITY)%' '%UPSTREAM_HOST%'\n"
 ```
 
-### Traffic Logging
+## Traffic Logging
 > **Note:** Traffic logging is only available for Helm charts version **1.3.0-8** and above.
 
 Traffic logging records headers and metadata related to a request and its corresponding response in JSON format and can be used to observe the communication between the client, gateway, and backend (upstream) services. Additionally, it captures the time taken for the request and response to be processed within the Gateway and the time taken for the backend (upstream) to respond.
@@ -152,6 +152,35 @@ Sample traffic log entry:
   "userAgent": "PostmanRuntime/7.51.1"
 }
 ```
+
+#### Traffic Log Field Definitions
+
+* **`correlationId`**: Unique ID (`X-REQUEST-ID`) for tracing the request across services.
+* **`startTime`**: Timestamp indicating exactly when the Gateway started receiving the request (with nanosecond precision).
+* **`authority`**: The host/authority header of the incoming request.
+* **`userAgent`**: The client software making the request
+* **`path`**: The resolved URI path sent to the backend.
+* **`responseFlags`**: Envoy response flags providing extra details about connection terminations or routing issues
+* **`upstreamHost`**: IP address and port of the backend service.
+* **`bytesReceived`** / **`bytesSent`**: Total bytes received from and sent to the client.
+* **`protocol`**: HTTP version used (e.g., `HTTP/1.1`).
+* **`requestHeaders`, `requestBody`**: Headers and Body sent by the **Client** to the **Gateway**.
+* **`upstreamRequestHeaders`, `upstreamRequestBody`**: Headers and Body sent by the **Gateway** to the **Backend**.
+* **`upstreamResponseHeaders`, `upstreamResponseBody`**: Headers and Body returned by the **Backend** to the **Gateway**.
+* **`responseHeaders`, `responseBody`**: Headers and Body returned by the **Gateway** to the **Client**.
+
+*Note: All durations are measured in microseconds (μs).*
+
+| Field | Description |
+| :--- | :--- |
+| `total_duration_us` | Total time taken from when the Gateway starts receiving the request to when it finishes sending the response. |
+| `backend_proc_duration_us` | Time the backend spent before sending the first response byte. |
+| `request_proc_duration_us` | Gateway request overhead: Time difference between the downstream request receiving end and the upstream request sending start. |
+| `response_proc_duration_us`| Gateway response overhead: Time difference between the upstream response receiving start and the downstream response sending start. |
+
+!!! note "Body Truncation"
+    Truncation occurs when the payload exceeds the `maxPayloadSize` defined in your `values.yaml` configuration.
+
 
 ## Router debug logs
 
