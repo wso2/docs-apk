@@ -29,6 +29,7 @@ format = "[%START_TIME%] '%REQ(:METHOD)% %REQ(X-ENVOY-ORIGINAL-PATH?:PATH)% %PRO
 ```
 
 ### Traffic Logging
+> **Note:** Traffic logging is only available for Helm charts version **1.3.0-8** and above.
 
 Traffic logging records headers and metadata related to a request and its corresponding response in JSON format and can be used to observe the communication between the client, gateway, and backend (upstream) services. Additionally, it captures the time taken for the request and response to be processed within the Gateway and the time taken for the backend (upstream) to respond.
 This log gets printed once the Envoy request/response stream is completed.
