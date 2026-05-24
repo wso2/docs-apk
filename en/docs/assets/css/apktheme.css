@@ -68,31 +68,6 @@
     text-decoration: underline;
 }
 
-/* Release note on homepage - full width banner at top */
-.homePage > .release-note {
-    width: 100%;
-    margin: 0 0 24px 0;
-    padding: 14px 18px;
-    background: #e8f4fd;
-    border-left: 4px solid #005eb8;
-    border-radius: 0;
-    box-sizing: border-box;
-}
-
-.homePage > .release-note strong {
-    color: #004085;
-    font-weight: 600;
-}
-
-.homePage > .release-note a {
-    color: #005eb8;
-    text-decoration: underline;
-}
-
-.homePage > .release-note a:hover {
-    color: #003d7a;
-}
-
 .section02 .linkWrapper {
     display: flex;
     flex-direction: row;

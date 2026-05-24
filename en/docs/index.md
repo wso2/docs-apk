@@ -1,7 +1,4 @@
 <div class="homePage">
-    <div class="release-note">
-        <strong>Note:</strong> WSO2 Kubernetes Gateway 2.0.0 has been released. For more information, visit the <a href="https://wso2.com/api-platform/docs/api-gateway/deployment/deployment-modes/kubernetes/overview/" target="_blank" rel="noopener">official documentation</a>.
-    </div>
     <div class="section01">
         <div class="leftContent">
             <div class="about-home">
