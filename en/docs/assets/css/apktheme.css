@@ -52,22 +52,6 @@
 }
 
 /* Home page specific styles */
-.home-release-banner {
-    background: #fff4e5;
-    border-bottom: 1px solid #ffb84d;
-}
-
-.home-release-banner__inner {
-    color: #4a2c00;
-    padding: 14px 18px;
-    text-align: center;
-}
-
-.home-release-banner__inner a {
-    color: #005eb8;
-    text-decoration: underline;
-}
-
 .section02 .linkWrapper {
     display: flex;
     flex-direction: row;
