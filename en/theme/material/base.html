@@ -143,6 +143,17 @@
           {% endif %}
         {% endif %}
       {% endblock %}
+      {% if page.is_homepage %}
+        <div class="home-release-banner">
+          <div class="home-release-banner__inner md-grid md-typeset">
+            A new release of WSO2 Kubernetes Gateway 2.0.0 is available.
+            Refer more details
+            <a href="https://wso2.com/api-platform/docs/api-gateway/deployment/deployment-modes/kubernetes/overview/" target="_blank" rel="noopener">
+              Documentation
+            </a>
+          </div>
+        </div>
+      {% endif %}
       {% block main_block %}
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">

@@ -16,7 +16,7 @@ apk/helm-charts/templates/data-plane/gateway-components/log-conf.yaml
 
 The sample for Adapter log configurations looks similar to the following.
 
-``` toml
+```toml
 # The logging configuration for Adapter
 
 ## Adapter root Level configurations
