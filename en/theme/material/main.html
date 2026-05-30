@@ -3,6 +3,26 @@ This file is the main template use in every page except the redoc and home page.
 -#}
 {% extends "base.html" %}
 
+{% block announce %}
+<style>
+.md-banner {
+  background-color: #ff6f00 !important;
+  color: #ffffff !important;
+}
+.md-banner__inner {
+  text-align: center !important;
+}
+.md-banner a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+.md-banner a:hover {
+  color: #f0f0f0;
+}
+</style>
+📢 A new release of WSO2 Kubernetes Gateway 2.0.0 is available. <a href="https://wso2.com/api-platform/docs/api-gateway/deployment/deployment-modes/kubernetes/overview/" target="_blank">Refer more details Documentation</a>
+{% endblock %}
+
 {% block analytics %}
 <!-- Google tag (gtag.js) --> 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EYFHTP2Z8Q"></script> 
