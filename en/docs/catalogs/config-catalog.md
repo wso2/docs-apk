@@ -364,14 +364,18 @@ A Helm chart for Kubernetes Gateway components
 | gatewaySystem.deployment.imagePullPolicy | string | `"Always"` |  |
 | gatewaySystem.deployment.affinity | object | `{"podAntiAffinity":{"preferredDuringSchedulingIgnoredDuringExecution":[{"podAffinityTerm":{"labelSelector":{"matchExpressions":[{"key":"app.kubernetes.io/app","operator":"In","values":["gateway-api-ad-server"]}]}}}]}}` | Configure Affinity for the deployment.  |
 | gatewaySystem.deployment.nodeSelector | object | `{}` | Configure Node Selector for the deployment.  |
-| certmanager.enabled | bool | `true` | Enable certificate manager to generate certificates |
-| certmanager.enableClusterIssuer | bool | `true` | Enable cluster issuer to generate certificates |
-| certmanager.enableRootCa | bool | `true` | Enable root CA to generate certificates |
-| certmanager.rootCaSecretName | string | `"apk-root-certificate"` | Enable CA certificate secret name. |
-| certmanager.listeners.issuerName | string | `"selfsigned-issuer"` | Issuer name |
-| certmanager.listeners.issuerKind | string | `"ClusterIssuer"` | Issuer kind |
-| certmanager.servers.issuerName | string | `"selfsigned-issuer"` | Issuer name |
-| certmanager.servers.issuerKind | string | `"ClusterIssuer"` | Issuer kind |
+| certmanager.enabled | bool | `true` | Install the bundled cert-manager subchart. Set to false when the cluster already runs its own cert-manager. This controls the subchart install only; whether APK's Certificate resources are created is controlled by `createCertificates` below. |
+| certmanager.createCertificates | bool | `true` | Create the Certificate resources for APK's internal TLS. Requires the cert-manager CRDs to be present in the cluster. Setting it to false means you must supply and rotate every `*-cert` secret yourself. |
+| certmanager.enableClusterIssuer | bool | `true` | Create the `<release>-wso2-apk-selfsigned-issuer` ClusterIssuer that signs those certificates. cert-manager resolves a ClusterIssuer's CA secret from its own cluster resource namespace (the `clusterResourceNamespace` setting, which defaults to the namespace cert-manager itself runs in), not from the APK release namespace. The bundled subchart is installed alongside the release so the two match, but an externally installed cert-manager usually looks elsewhere. When they do not match, set this to false and point `certmanager.servers.issuerName` and `certmanager.listeners.issuerName` at an issuer you manage. |
+| certmanager.enableRootCa | bool | `true` | Create the root CA secret that the ClusterIssuer above signs with, in the release namespace. Set to false to supply your own secret named `rootCaSecretName`. |
+| certmanager.rootCaSecretName | string | `"apk-root-certificate"` | Name of the root CA secret the ClusterIssuer signs with. |
+| certmanager.duration | string | unset | Certificate lifetime. Left unset, cert-manager's default of 90 days applies. |
+| certmanager.renewBefore | string | unset | How far ahead of expiry cert-manager renews. Left unset, its default of two-thirds of the lifetime applies. |
+| certmanager.issuerKind | string | `"ClusterIssuer"` | Default issuer kind, used when the per-group `issuerKind` is unset. Applies only when a per-group `issuerName` is set: the chart's own issuer is always a ClusterIssuer, so leaving `issuerName` unset pins the kind regardless of this value. |
+| certmanager.listeners.issuerName | string | unset | Issuer that signs the listener certificates. Leave unset to use the chart's own `<release>-wso2-apk-selfsigned-issuer` ClusterIssuer, which is created when `enableClusterIssuer` is true. |
+| certmanager.listeners.issuerKind | string | `"ClusterIssuer"` | Kind of `issuerName`, either `ClusterIssuer` or `Issuer`. An `Issuer` must live in the release namespace. |
+| certmanager.servers.issuerName | string | unset | Issuer that signs the server certificates. Leave unset to use the chart's own `<release>-wso2-apk-selfsigned-issuer` ClusterIssuer, which is created when `enableClusterIssuer` is true. |
+| certmanager.servers.issuerKind | string | `"ClusterIssuer"` | Kind of `issuerName`, either `ClusterIssuer` or `Issuer`. An `Issuer` must live in the release namespace. |
 | postgresql.enabled | bool | `true` | Enable postgresql database |
 | postgresql.fullnameOverride | string | `"wso2apk-db-service"` | String to fully override common.names.fullname template |
 | postgresql.auth.database | string | `"WSO2AM_DB"` | Name for a custom database to create |
