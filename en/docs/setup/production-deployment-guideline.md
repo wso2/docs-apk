@@ -51,7 +51,7 @@ For a production environment, it is recommended to use CA-validated public certi
 ### 1: Use cert-manager
 
 !!! note
-    This will install cert-manager **within the namespace APK is installed in**. If you already have a cert-manager installation, or you wish to install cert-manager in a different namespace, follow the steps provided in 
+    This will install cert-manager **within the namespace APK is installed in**. If you already have a cert-manager installation, or you wish to install cert-manager in a different namespace, follow the steps provided in [Configuring Cert-Manager in Custom Scenarios](cert-manager.md).
 
 By default, the Kubernetes Gateway helm installation installs-cert manager in your cluster and employs a SelfSigned ClusterIssuer for certificate validations. To utilize cert manager for handling the certificates, you will need to create **Issuers**. 
 

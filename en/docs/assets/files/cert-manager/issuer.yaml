@@ -2,7 +2,7 @@ apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
   name: custom-issuer
-  namespace: apk
+  namespace: wso2-kg
 spec:
   ca:
     secretName: apk-root-certificate
