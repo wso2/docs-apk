@@ -60,7 +60,7 @@ Set up WSO2 API Manager 4.5.0 in a Kubernetes cluster using Helm charts.
 
     === "Command"
         ```
-        helm install apk wso2apk/apk-helm --version 1.3.0 -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/apk/1.3.0-values.yaml -n apk
+        helm install apk wso2apk/apk-helm --version 1.3.0-1 -f https://raw.githubusercontent.com/wso2/apk/refs/tags/1.3.0-1/helm-charts/samples/apk/1.3.0-1-cp-enabled-values.yaml -n apk
         ``` 
     === "Format"
         ```

@@ -21,14 +21,14 @@ Add a hostname mapping to the ```/etc/hosts``` file as follows.
 Setup WSO2 API Manager 4.5.0 in VM.
 
 1. Refer to the [APIM Deployment Guide](https://apim.docs.wso2.com/en/latest/install-and-setup/install/installation-options/#2-dockerdocker-compose) to deploy the APIM 4.5.0 in a VM.
-2. Change the configurations in the ```deployment.toml``` file in the APIM 4.3.0 VM refer to the [Advanced Configuration for APIM](../../../control-plane/apim-deploy/) for more information.
+2. Change the configurations in the ```deployment.toml``` file in the APIM 4.5.0 VM. Refer to the [Advanced Configuration for APIM section](../../../control-plane/apim-deploy/) for more information.
 
 
-#### Setup WSO2 Kubernetes Gateway 1.3.0
+#### Set Up WSO2 Kubernetes Gateway 1.3.0
 
 1. Create a new helm repository with the latest Kubernetes Gateway release using the following command. Let’s consider the ```<repository-name>``` as ```wso2apk```.
 
-    ```console
+ ```console
     helm repo add wso2apk https://github.com/wso2/apk/releases/download/1.3.0-1
     ```
 
@@ -42,7 +42,7 @@ Setup WSO2 API Manager 4.5.0 in VM.
 
     === "Command"
         ```
-        helm install apk wso2apk/apk-helm --version 1.3.0 -f https://raw.githubusercontent.com/wso2/apk/main/helm-charts/samples/apk/1.3.0-values.yaml -n apk
+        helm install apk wso2apk/apk-helm --version 1.3.0-1 -f https://raw.githubusercontent.com/wso2/apk/refs/tags/1.3.0-1/helm-charts/samples/apk/1.3.0-1-cp-enabled-values.yaml -n apk
         ```
     === "Format"
         ```
