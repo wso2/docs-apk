@@ -32,7 +32,7 @@ By default, WSO2 APK is configured to support the Data Plane Only Pattern. You c
 {!control-plane/start-apk-dp-to-cp-k8s.md!}
 
 
-This approach is recommended for all Production, Dev, Test, and UAT environments. Here a seperate kubernetes cluster is required for each environment.
+This approach is recommended for all Production, Dev, Test, and UAT environments. Here a separate kubernetes cluster is required for each environment.
 
 
 ## Data Plane in Kubernetes cluster and Control Plane in a VM
@@ -62,4 +62,4 @@ By default, WSO2 APK is configured to support the Data Plane Only Pattern. You c
 
 {!control-plane/start-apk-dp-to-cp-vms.md!}
 
-This approach is recommended for all Production, Dev, Test, and UAT environments. Here a seperate kubernetes cluster and a VM server is required for each environment.
+This approach is recommended for all Production, Dev, Test, and UAT environments. Here a separate kubernetes cluster and a VM server is required for each environment.
